@@ -9,10 +9,34 @@ import { InterFont, InstrumentSerif, SITE } from "@/constants";
 import { config } from "@/lib/config";
 import "./globals.css";
 
+const isStaging = process.env.NEXT_PUBLIC_SITE_ENV === "staging";
+
 export const metadata: Metadata = {
   title: SITE.name,
   description: SITE.description,
   metadataBase: new URL(SITE.url),
+  ...(isStaging
+    ? {
+        robots: {
+          index: false,
+          follow: false,
+          nocache: true,
+          noarchive: true,
+          nosnippet: true,
+          noimageindex: true,
+          googleBot: {
+            index: false,
+            follow: false,
+            noimageindex: true,
+            nosnippet: true,
+            noarchive: true,
+            "max-video-preview": -1,
+            "max-image-preview": "none",
+            "max-snippet": -1,
+          },
+        },
+      }
+    : {}),
   openGraph: {
     title: SITE.name,
     description: SITE.description,

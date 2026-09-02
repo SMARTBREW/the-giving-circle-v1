@@ -1,6 +1,6 @@
 "use client";
 
-import type { MouseEvent } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import Link from "next/link";
 import { SEGOE_UI_CLASS } from "@/constants";
 
@@ -31,14 +31,16 @@ export default function CtaButton({
   onClick,
   variant = "solid",
   smoothScroll = false,
+  hoverFill = false,
 }: {
   href: string;
-  children: string;
+  children: ReactNode;
   className?: string;
   labelClassName?: string;
   onClick?: () => void;
   variant?: "solid" | "outline";
   smoothScroll?: boolean;
+  hoverFill?: boolean;
 }) {
   const isOutline = variant === "outline";
 
@@ -59,15 +61,23 @@ export default function CtaButton({
       href={href}
       onClick={handleClick}
       className={`inline-flex items-center justify-center rounded-[6.25rem] ${
+        hoverFill
+          ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--Main-CTA-button,#00A3BE)]"
+          : ""
+      } ${
         isOutline
           ? "border border-[var(--Main-CTA-button,#00A3BE)] bg-[#F6F3EF]"
           : "bg-[var(--Main-CTA-button,#00A3BE)]"
       } ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} flex h-[1.5rem] items-center justify-center text-center text-[1.125rem] leading-none whitespace-nowrap ${
+        className={`${SEGOE_UI_CLASS} relative z-10 flex h-[1.5rem] origin-center items-center justify-center text-center text-[1.125rem] leading-none whitespace-nowrap ${
           isOutline
-            ? "text-[var(--Secondary-outlined-button,#00A3BE)]"
+            ? `text-[var(--Secondary-outlined-button,#00A3BE)]${
+                hoverFill
+                  ? " [transition:color_500ms_cubic-bezier(0.22,1,0.36,1),transform_500ms_cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] group-hover:text-[#FFFFFF]"
+                  : ""
+              }`
             : "text-[#FFFFFF]"
         } ${labelClassName}`}
       >
