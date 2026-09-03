@@ -1,4 +1,6 @@
 export { InterFont, InstrumentSerif, SatoshiBold } from "./fonts";
+export { CAUSES_PAGE, CAUSE_FILTER_ALL } from "./causes";
+export { ABOUT_WHY_WE_GATHER, ABOUT_OUR_STORY } from "./about";
 
 export const SEGOE_UI_CLASS = "font-segoe";
 
@@ -15,8 +17,8 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/#about", label: "About" },
-  { href: "/#causes", label: "Live Causes" },
+  { href: "/about", label: "About" },
+  { href: "/causes", label: "Live Causes" },
   { href: "/#stories", label: "Impact Stories" },
   { href: "/#blogs", label: "Blogs" },
 ] as const;
@@ -39,8 +41,8 @@ export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} inline-block h-[1.75rem] tex
 export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} mt-1 h-[5.25rem] w-[23.75rem] text-[1rem] leading-[1.75rem] font-[300] tracking-normal text-[#212121]`;
 
 export const FOOTER_QUICK_LINKS = [
-  { href: "/#about", label: "About Us" },
-  { href: "/#causes", label: "Live Causes" },
+  { href: "/about", label: "About Us" },
+  { href: "/causes", label: "Live Causes" },
   { href: "/#stories", label: "Impact Stories" },
   { href: "/#blogs", label: "Blogs" },
   { href: "/#faqs", label: "FAQs" },
@@ -347,7 +349,7 @@ export const FAQ_ITEMS = [
     question: "What is a Cause Champion?",
     questionClassName: "",
     answer:
-      "A Cause Champion is someone who starts a Giving Circle — pooling support with friends, family, and colleagues to fund a live cause together, not alone.",
+      "A Cause Champion is someone who starts a Giving Circle, pooling support with friends, family, and colleagues to fund a live cause together, not alone.",
   },
   {
     question: "Does it cost anything to start a fundraiser?",

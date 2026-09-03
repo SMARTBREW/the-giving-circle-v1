@@ -11,8 +11,8 @@ export default function ChampionStep({
   body: string;
 }) {
   return (
-    <li className="flex flex-row items-start gap-4">
-      <span className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-[1rem] border border-[#00A98F40] bg-[#FFFFFF]">
+    <li className="group flex flex-row items-start gap-4">
+      <span className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-[1rem] border-2 border-[#00A98F40] bg-[#FFFFFF] transition-colors duration-300 group-hover:border-[var(--Main-CTA-button,#00A3BE)] group-hover:bg-[#00A3BE14]">
         <Image
           src={iconSrc}
           alt=""

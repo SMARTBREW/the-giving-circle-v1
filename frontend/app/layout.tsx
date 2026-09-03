@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={InterFont.className}>
         <ThemeProvider>
           <Header />
-          <main>{children}</main>
+          <main className="relative z-0 overflow-x-hidden">{children}</main>
           <Footer />
         </ThemeProvider>
         {config.features.enableAnalytics && (

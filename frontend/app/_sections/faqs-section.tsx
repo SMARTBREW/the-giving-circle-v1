@@ -6,9 +6,9 @@ export default function FaqsSection() {
   return (
     <section
       id="faqs"
-      className="mx-auto w-full max-w-[90rem] bg-[var(--Alternate-color,#F7FBFB)] md:h-[75.6875rem]"
+      className="w-full bg-[var(--Alternate-color,#F7FBFB)]"
     >
-      <FadeInSection className="flex h-full flex-col items-center px-[2rem] pt-[5rem] pb-[7.5rem] md:px-[6.25rem]">
+      <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-[2rem] pt-[5rem] pb-[7.5rem] md:h-[75.6875rem] md:px-[6.25rem]">
         <SectionIntro
           eyebrow="Frequently Asked Questions"
           eyebrowClassName="w-[17.5rem]"

@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import { PARTNER_LOGO_SETS } from "@/constants";
 
-const INTERVAL_MS = 5600;
+const INTERVAL_MS = 2000;
 
 export default function PartnersLogoCarousel() {
   const [index, setIndex] = useState(0);
@@ -21,39 +21,41 @@ export default function PartnersLogoCarousel() {
     return () => window.clearInterval(id);
   }, [prefersReducedMotion]);
 
-  const logos = PARTNER_LOGO_SETS[index];
-
   return (
     <div
-      className="relative h-[5.8125rem] w-full overflow-hidden md:w-[77.5rem]"
+      className="relative h-[5.8125rem] w-full overflow-hidden bg-[#FFFFFF] md:w-[77.5rem]"
       aria-roledescription="carousel"
       aria-label="Partner NGOs and campaigns"
     >
-      <AnimatePresence initial={false} mode="wait">
-        <motion.ul
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.95, ease: [0.4, 0, 0.2, 1] }}
-          className="absolute inset-0 flex items-center justify-between bg-[#FFFFFF] pt-[3px]"
-        >
-          {logos.map((logo) => (
-            <li
-              key={`${index}-${logo.alt}`}
-              className="flex h-[5.5rem] min-w-0 flex-1 items-center justify-center overflow-hidden"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={283}
-                height={88}
-                className={`h-[5.5rem] w-auto max-w-none object-contain ${logo.imageClassName}`}
-              />
-            </li>
-          ))}
-        </motion.ul>
-      </AnimatePresence>
+      {PARTNER_LOGO_SETS.map((logos, setIndex) => {
+        const isActive = setIndex === index;
+
+        return (
+          <ul
+            key={setIndex}
+            aria-hidden={!isActive}
+            className={`absolute inset-0 flex items-center justify-between pt-[3px] transition-opacity duration-700 ease-in-out motion-reduce:duration-0 ${
+              isActive ? "z-[1] opacity-100" : "z-0 opacity-0"
+            }`}
+          >
+            {logos.map((logo) => (
+              <li
+                key={logo.alt}
+                className="flex h-[5.5rem] min-w-0 flex-1 items-center justify-center overflow-hidden"
+              >
+                <Image
+                  src={logo.src}
+                  alt={isActive ? logo.alt : ""}
+                  width={283}
+                  height={88}
+                  loading="eager"
+                  className={`h-[5.5rem] w-auto max-w-none object-contain ${logo.imageClassName}`}
+                />
+              </li>
+            ))}
+          </ul>
+        );
+      })}
     </div>
   );
 }

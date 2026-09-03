@@ -8,9 +8,9 @@ export default function VolunteerSection() {
   return (
     <section
       id="volunteer"
-      className="mx-auto w-full max-w-[90rem] bg-[var(--Alternate-color,#F7FBFB)] md:h-[55.0625rem]"
+      className="w-full bg-[var(--Alternate-color,#F7FBFB)]"
     >
-      <FadeInSection className="flex h-full flex-col items-center px-[2rem] pt-[5rem] pb-[4.375rem] md:px-[6.25rem]">
+      <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-[2rem] pt-[5rem] pb-[4.375rem] md:h-[55.0625rem] md:px-[6.25rem]">
         <SectionIntro
           eyebrow="Volunteer for Change"
           eyebrowClassName="w-[13.875rem]"
@@ -19,7 +19,7 @@ export default function VolunteerSection() {
           subtitle="Contribute your time, skills, and energy to verified causes creating meaningful change across communities."
           subtitleClassName="h-[4rem] w-[30.125rem]"
         />
-        <ul className="mt-12 flex w-full flex-col items-center gap-6 md:flex-row md:justify-between md:gap-0">
+        <ul className="mt-12 flex w-full flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-center md:gap-[1.5rem] lg:flex-nowrap lg:gap-[1.125rem]">
           {VOLUNTEERS.map((volunteer) => (
             <VolunteerCard
               key={volunteer.name}
@@ -38,9 +38,9 @@ export default function VolunteerSection() {
             variant="outline"
             hoverFill
             className="h-[4rem] w-[17.25rem] rounded-[100px] bg-[#FFFFFF] px-10 py-5"
-            labelClassName="gap-2 font-[600] tracking-normal"
+            labelClassName="inline-flex items-center gap-2 font-[600] tracking-normal"
           >
-            <span className="inline-flex h-6 w-[10.25rem] items-center justify-center leading-none">
+            <span className="inline-flex h-6 items-center leading-none">
               Become a Volunteer
             </span>
             <span className="leading-none" aria-hidden="true">

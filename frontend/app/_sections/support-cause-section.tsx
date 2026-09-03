@@ -5,7 +5,7 @@ import { SEGOE_UI_CLASS, SUPPORT_CAUSE_PHOTO } from "@/constants";
 
 export default function SupportCauseSection() {
   return (
-    <section className="relative h-[29.625rem] w-full overflow-hidden">
+    <section className="relative isolate h-[29.625rem] w-full overflow-hidden">
       <Image
         src={SUPPORT_CAUSE_PHOTO}
         alt="Schoolchildren in our circle, smiling together"
@@ -17,7 +17,7 @@ export default function SupportCauseSection() {
         aria-hidden="true"
         className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.62)_20%,rgba(0,0,0,0.9)_43.5%,rgba(0,0,0,0.82)_66.99%,rgba(0,0,0,0.43)_90.49%,rgba(0,0,0,0.25)_102.24%,rgba(0,0,0,0.12)_108.11%,rgba(0,0,0,0)_113.99%)]"
       />
-      <FadeInSection className="relative z-10 flex h-full flex-col items-center pt-[5.5rem]">
+      <FadeInSection className="relative z-[1] flex h-full flex-col items-center pt-[5.5rem]">
         <h2 className="h-[6.875rem] w-[29.375rem] text-center font-['Georgia'] text-[3rem] leading-none font-[600] tracking-[0.5px] text-[#FFFFFF]">
           Your Giving Can Change a Life.
         </h2>

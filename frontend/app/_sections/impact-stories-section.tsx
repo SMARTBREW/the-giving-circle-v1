@@ -41,9 +41,9 @@ export default function ImpactStoriesSection() {
             variant="outline"
             hoverFill
             className="h-[4rem] w-[18.75rem] rounded-[100px] bg-[#FFFFFF] px-10 py-5"
-            labelClassName="gap-2 font-[600] tracking-normal"
+            labelClassName="inline-flex items-center gap-2 font-[600] tracking-normal"
           >
-            <span className="inline-flex h-6 w-[11.75rem] items-center justify-center leading-none">
+            <span className="inline-flex h-6 items-center leading-none">
               View All Impact Stories
             </span>
             <span className="leading-none" aria-hidden="true">

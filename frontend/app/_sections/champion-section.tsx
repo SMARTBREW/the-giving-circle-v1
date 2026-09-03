@@ -43,7 +43,7 @@ export default function ChampionSection() {
               href="/#contact"
               variant="outline"
               className="group h-[4rem] w-[20rem] gap-2 bg-[#FFFFFF] px-10 py-5 transition-colors duration-300 ease-out hover:bg-[var(--Main-CTA-button,#00A3BE)]"
-              labelClassName="h-6 w-[13rem] font-[600] tracking-normal transition-colors duration-300 ease-out group-hover:text-[#FFFFFF]"
+              labelClassName="inline-flex h-6 items-center font-[600] tracking-normal transition-colors duration-300 ease-out group-hover:text-[#FFFFFF]"
             >
               Start Your Giving Journey →
             </CtaButton>
@@ -58,10 +58,10 @@ export default function ChampionSection() {
             className="object-cover"
           />
           <span className="absolute inset-0 bg-[#00000040]" />
-          <span className="absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#FFFFFF]">
+          <span className="absolute top-1/2 left-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#FFFFFF]">
             <svg
-              width="20"
-              height="20"
+              width="64"
+              height="64"
               viewBox="0 0 20 20"
               fill="none"
               aria-hidden="true"

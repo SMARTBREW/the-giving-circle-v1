@@ -71,7 +71,7 @@ export default function CtaButton({
       } ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} relative z-10 flex h-[1.5rem] origin-center items-center justify-center text-center text-[1.125rem] leading-none whitespace-nowrap ${
+        className={`${SEGOE_UI_CLASS} relative z-[1] flex h-[1.5rem] origin-center items-center justify-center text-center text-[1.125rem] leading-none whitespace-nowrap ${
           isOutline
             ? `text-[var(--Secondary-outlined-button,#00A3BE)]${
                 hoverFill

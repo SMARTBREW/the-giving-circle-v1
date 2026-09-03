@@ -1,14 +1,14 @@
-import Hero from "@/components/hero";
-import ChampionSection from "@/components/champion-section";
-import CausesSection from "@/components/causes-section";
-import MomentsSection from "@/components/moments-section";
-import ReachSection from "@/components/reach-section";
-import HowItWorksSection from "@/components/how-it-works-section";
-import ImpactStoriesSection from "@/components/impact-stories-section";
-import VolunteerSection from "@/components/volunteer-section";
-import PartnersSection from "@/components/partners-section";
-import FaqsSection from "@/components/faqs-section";
-import SupportCauseSection from "@/components/support-cause-section";
+import Hero from "./_sections/hero";
+import ChampionSection from "./_sections/champion-section";
+import CausesSection from "./_sections/causes-section";
+import MomentsSection from "./_sections/moments-section";
+import ReachSection from "./_sections/reach-section";
+import HowItWorksSection from "./_sections/how-it-works-section";
+import ImpactStoriesSection from "./_sections/impact-stories-section";
+import VolunteerSection from "./_sections/volunteer-section";
+import PartnersSection from "./_sections/partners-section";
+import FaqsSection from "./_sections/faqs-section";
+import SupportCauseSection from "./_sections/support-cause-section";
 
 export default function HomePage() {
   return (
