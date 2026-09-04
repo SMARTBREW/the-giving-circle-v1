@@ -3,9 +3,18 @@ import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
 
+// Phone frame has no buttons — the sticky bar is the only CTA there.
+//
+// Figma hero banner is 1440x886 below a 100px header. From sm up the section keeps
+// that ratio but never exceeds the viewport, and every value below is a share of the
+// frame height (cqh) so the whole composition scales instead of cropping.
+//
+// When the viewport is shorter than the artboard the photo is cropped, which lifts the
+// group. The top padding subtracts that lift so the copy keeps Figma's clearance above
+// their heads; at the artboard size it resolves to Figma's 64px.
 export default function Hero() {
   return (
-    <section className="relative h-[calc(100vh-4rem)] w-full overflow-hidden bg-[#FAF1E8] sm:h-[calc(100vh-4.5rem)] md:h-[calc(100vh-5rem)] lg:h-[calc(100vh-5.5rem)] min-[90rem]:h-[calc(100vh-6.25rem)]">
+    <section className="relative h-[calc(100dvh-4rem-1px)] w-full overflow-hidden bg-[#F4F1ED] [container-type:size] sm:aspect-[1440/886] sm:h-auto sm:max-h-[calc(100dvh-4.5rem-1px)] md:max-h-[calc(100dvh-5rem-1px)] lg:max-h-[calc(100dvh-5.5rem-1px)] min-[90rem]:max-h-[calc(100dvh-6.25rem-1px)]">
       <Image
         src="/images/hero-mobile.png"
         alt="Young people in our circle, together"
@@ -16,30 +25,31 @@ export default function Hero() {
         priority
       />
       <Image
-        src="/images/image.png"
+        src="/images/hero-desktop.png"
         alt="Young people in our circle, together"
         fill
         sizes="100vw"
-        className="hidden object-cover object-[50%_10%] sm:block"
+        className="hidden object-cover object-[50%_50%] sm:block"
         priority
       />
-      <FadeInSection className="relative z-10 mx-auto flex h-full min-h-0 w-full max-w-[90rem] flex-col items-center pt-8 pb-0 sm:pt-10 md:pt-12 lg:pt-14 min-[90rem]:pt-[4rem]">
-        <h1 className="w-full px-4 text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#000000)] sm:px-6 sm:text-[2.25rem] sm:leading-[2.75rem] md:max-w-[36rem] md:px-10 md:text-[2.75rem] md:leading-[3.5rem] lg:max-w-[42rem] lg:px-0 lg:text-[3.25rem] lg:leading-[4rem] min-[90rem]:h-[10rem] min-[90rem]:w-[39.25rem] min-[90rem]:max-w-none min-[90rem]:text-[4rem] min-[90rem]:leading-[5rem]">
+
+      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-8 sm:px-0 sm:pt-[max(2cqh,16.2cqh_-_5.54cqw)]">
+        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#000000)] sm:w-[70.88cqh] sm:max-w-none sm:text-[7.22cqh] sm:leading-[9.03cqh]">
           A Stronger Circle.
           <br />
           A Greater Impact.
         </h1>
         <p
-          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 w-full max-w-[20.5rem] px-4 text-center text-[0.9375rem] leading-6 font-[350] tracking-normal text-[#212121] sm:mt-4 sm:max-w-[28rem] sm:px-6 sm:text-[1.125rem] sm:leading-7 md:max-w-[36rem] md:px-10 md:text-[1.25rem] md:leading-8 lg:max-w-[46rem] lg:px-0 lg:text-[1.375rem] lg:leading-8 min-[90rem]:h-[5rem] min-[90rem]:w-[46rem] min-[90rem]:max-w-none min-[90rem]:text-[1.5rem] min-[90rem]:leading-[2.5rem]`}
+          className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20.5rem] text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#212121] sm:mt-[1.81cqh] sm:w-[77.2cqh] sm:max-w-none sm:text-[2.71cqh] sm:leading-[4.51cqh]`}
         >
           Champion a cause backed by a verified NGO, bring your circle together,
           and help raise funds for meaningful change.
         </p>
 
-        <div className="relative z-10 mt-8 hidden flex-row items-center gap-4 min-[90rem]:flex min-[90rem]:h-[4rem] min-[90rem]:gap-[1.53125rem]">
+        <div className="hidden sm:mt-[3.61cqh] sm:flex sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-[2.765cqh]">
           <CtaButton
             href="/#champion"
-            className="h-[4rem] gap-2 px-[2.25rem] py-[1.125rem]"
+            className="sm:h-[7.22cqh] sm:gap-[0.9cqh] sm:px-[4.06cqh] sm:text-[2.03cqh]"
             labelClassName="font-[700]"
           >
             Champion a Cause
@@ -48,7 +58,7 @@ export default function Hero() {
             href="/#causes"
             variant="outline"
             smoothScroll
-            className="h-[4rem] px-8"
+            className="bg-[#F4F1ED] sm:h-[7.22cqh] sm:px-[3.61cqh] sm:text-[2.03cqh]"
             labelClassName="font-[700]"
           >
             Explore Causes

@@ -74,14 +74,14 @@ export default function PartnersLogoCarousel() {
           <ul
             key={`${perRound}-${roundIndex}`}
             aria-hidden={!isActive}
-            className={`absolute inset-0 flex items-stretch justify-between gap-3 transition-opacity duration-700 ease-in-out motion-reduce:duration-0 sm:gap-4 md:gap-5 lg:gap-6 ${
+            className={`absolute inset-y-0 right-4 left-4 flex items-stretch justify-between gap-4 transition-opacity duration-700 ease-in-out motion-reduce:duration-0 sm:right-6 sm:left-6 sm:gap-5 md:right-8 md:left-8 md:gap-6 lg:right-10 lg:left-10 lg:gap-8 min-[90rem]:right-0 min-[90rem]:left-0 ${
               isActive ? "z-[1] opacity-100" : "z-0 opacity-0"
             }`}
           >
             {logos.map((logo, slot) => (
               <li
                 key={`${roundIndex}-${slot}-${logo.src}`}
-                className="flex min-w-0 flex-1 items-center justify-center"
+                className="flex min-w-0 flex-1 items-center justify-center px-2 py-3 sm:px-3 sm:py-4 md:px-4"
               >
                 <Image
                   src={logo.src}
@@ -89,7 +89,7 @@ export default function PartnersLogoCarousel() {
                   width={400}
                   height={200}
                   loading="eager"
-                  className="h-full w-full object-contain"
+                  className="h-full max-h-full w-full object-contain"
                 />
               </li>
             ))}
