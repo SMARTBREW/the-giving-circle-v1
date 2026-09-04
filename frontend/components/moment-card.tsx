@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
@@ -18,71 +19,80 @@ const ringMotion = {
 export default function MomentCard({
   iconSrc,
   title,
-  titleClassName = "",
   body,
   ctaLabel,
   href,
 }: {
   iconSrc: string;
   title: string;
-  titleClassName?: string;
   body: string;
   ctaLabel: string;
   href: string;
 }) {
+  const [hoverMotion, setHoverMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px) and (hover: hover)");
+    const sync = () => setHoverMotion(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
   return (
     <motion.div
       initial="rest"
-      whileHover="hover"
-      className="group/moment relative"
+      animate="rest"
+      whileHover={hoverMotion ? "hover" : undefined}
+      className="group/moment relative h-full w-full"
     >
       <motion.article
-        variants={cardMotion}
+        variants={hoverMotion ? cardMotion : undefined}
         transition={{
           type: "spring",
           stiffness: 170,
           damping: 24,
           mass: 0.85,
         }}
-        className="relative h-[24.8125rem] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-colors duration-300 group-hover/moment:border-[var(--Main-CTA-button,#00A3BE)] md:w-[24.75rem]"
+        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-5 pb-5 shadow-[0px_4px_20px_0px_#0000000F] sm:px-6 sm:pt-6 sm:pb-6 md:px-8 md:pt-8 md:pb-8 lg:px-4 lg:pt-6 lg:pb-6 lg:transition-colors lg:duration-300 lg:group-hover/moment:border-[var(--Main-CTA-button,#00A3BE)] min-[90rem]:h-[24.8125rem] min-[90rem]:px-8 min-[90rem]:pt-[0.888125rem] min-[90rem]:pb-0"
       >
-        <motion.span
-          aria-hidden
-          variants={ringMotion}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          className="pointer-events-none absolute inset-0 z-20 rounded-[1rem] border-2 border-[var(--Main-CTA-button,#00A3BE)]"
-        />
-        <span className="absolute top-[0.888125rem] left-[8.653125rem] z-10 h-[7.044rem] w-[7.044rem] bg-[#FFFFFF]">
+        {hoverMotion ? (
+          <motion.span
+            aria-hidden
+            variants={ringMotion}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="pointer-events-none absolute inset-0 z-20 rounded-[1rem] border-2 border-[var(--Main-CTA-button,#00A3BE)]"
+          />
+        ) : null}
+        <span className="relative z-10 h-20 w-20 shrink-0 bg-[#FFFFFF] sm:h-24 sm:w-24 lg:h-28 lg:w-28 min-[90rem]:h-[7.044rem] min-[90rem]:w-[7.044rem]">
           <Image
             src={iconSrc}
             alt=""
             width={113}
             height={113}
-            className="h-[7.044rem] w-[7.044rem] object-contain"
+            className="h-full w-full object-contain"
           />
         </span>
         <h3
-          className={`${SEGOE_UI_CLASS} absolute top-[8rem] left-1/2 h-[2.3125rem] -translate-x-1/2 text-center text-[1.75rem] leading-none font-[700] tracking-normal text-[#000000] ${titleClassName}`}
+          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-center text-[1.375rem] leading-none font-[700] tracking-normal text-[#000000] sm:mt-4 sm:text-[1.5rem] lg:mt-4 lg:text-[1.625rem] min-[90rem]:text-[1.75rem]`}
         >
           {title}
         </h3>
         <p
-          className={`${SEGOE_UI_CLASS} absolute top-[10.8125rem] left-[2rem] h-[6rem] w-[20.75rem] text-center text-[1.125rem] leading-[2rem] font-[400] tracking-normal text-[var(--Subheading,#45564B)]`}
+          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 w-full text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-4 sm:text-[1rem] sm:leading-7 lg:mt-4 lg:text-[1.0625rem] lg:leading-7 min-[90rem]:mt-5 min-[90rem]:h-[6rem] min-[90rem]:max-w-[20.75rem] min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem]`}
         >
           {body}
         </p>
-        <div className="absolute top-[18.8125rem] left-[2rem]">
+        <div className="relative z-10 mt-5 w-full min-w-0 sm:mt-6 lg:mt-auto lg:pt-4 min-[90rem]:mb-8 min-[90rem]:mt-auto min-[90rem]:w-[20.75rem] min-[90rem]:pt-0">
           <CtaButton
             href={href}
             variant="outline"
             hoverFill
-            className="h-[4rem] w-[20.75rem] gap-2 bg-[#FFFFFF] px-6 py-5"
-            labelClassName="!text-[1.02rem] gap-2 font-[600] tracking-normal"
+            className="h-12 w-full min-w-0 gap-1 bg-[#FFFFFF] px-2.5 py-3 sm:h-14 sm:gap-1.5 sm:px-4 lg:h-12 lg:px-2 min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-6 min-[90rem]:py-5"
+            labelClassName="font-[600]"
           >
-            <span className="inline-flex h-6 items-center justify-center leading-none">
-              {ctaLabel}
-            </span>
-            <span className="leading-none" aria-hidden="true">
+            {ctaLabel}
+            <span className="shrink-0 leading-none" aria-hidden="true">
               →
             </span>
           </CtaButton>

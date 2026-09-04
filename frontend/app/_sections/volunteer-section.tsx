@@ -10,40 +10,33 @@ export default function VolunteerSection() {
       id="volunteer"
       className="w-full bg-[var(--Alternate-color,#F7FBFB)]"
     >
-      <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-[2rem] pt-[5rem] pb-[4.375rem] md:h-[55.0625rem] md:px-[6.25rem]">
+      <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[55.0625rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[4.375rem]">
         <SectionIntro
           eyebrow="Volunteer for Change"
-          eyebrowClassName="w-[13.875rem]"
           title="Make a Difference With Us"
-          titleClassName="h-[4rem] w-[41.375rem]"
           subtitle="Contribute your time, skills, and energy to verified causes creating meaningful change across communities."
-          subtitleClassName="h-[4rem] w-[30.125rem]"
         />
-        <ul className="mt-12 flex w-full flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-center md:gap-[1.5rem] lg:flex-nowrap lg:gap-[1.125rem]">
+        <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 md:gap-6 lg:mt-12 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:flex-nowrap min-[90rem]:justify-center min-[90rem]:gap-[1.125rem]">
           {VOLUNTEERS.map((volunteer) => (
             <VolunteerCard
               key={volunteer.name}
               name={volunteer.name}
-              nameClassName={volunteer.nameClassName}
               role={volunteer.role}
-              roleClassName={volunteer.roleClassName}
               src={volunteer.src}
               alt={volunteer.alt}
             />
           ))}
         </ul>
-        <div className="mt-12">
+        <div className="mt-10 sm:mt-10 lg:mt-12">
           <CtaButton
             href="/#contact"
             variant="outline"
             hoverFill
-            className="h-[4rem] w-[17.25rem] rounded-[100px] bg-[#FFFFFF] px-10 py-5"
-            labelClassName="inline-flex items-center gap-2 font-[600] tracking-normal"
+            className="h-12 w-full max-w-[17.25rem] rounded-[100px] bg-[#FFFFFF] px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[17.25rem] min-[90rem]:px-10 min-[90rem]:py-5"
+            labelClassName="font-[600]"
           >
-            <span className="inline-flex h-6 items-center leading-none">
-              Become a Volunteer
-            </span>
-            <span className="leading-none" aria-hidden="true">
+            Become a Volunteer
+            <span className="shrink-0 leading-none" aria-hidden="true">
               →
             </span>
           </CtaButton>

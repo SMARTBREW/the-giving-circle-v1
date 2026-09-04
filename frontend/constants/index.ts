@@ -4,7 +4,7 @@ export { ABOUT_WHY_WE_GATHER, ABOUT_OUR_STORY } from "./about";
 
 export const SEGOE_UI_CLASS = "font-segoe";
 
-export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} shrink-0 whitespace-nowrap font-[500] text-[1.125rem] text-[#000000]`;
+export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-[500] text-[0.8125rem] text-[#000000] min-[90rem]:text-[1.125rem]`;
 
 export const SITE = {
   name: "The Giving Circle",
@@ -29,16 +29,16 @@ export const GET_INVOLVED_LINKS = [
   { href: "/#volunteer", label: "Volunteer With Us" },
 ] as const;
 
-export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block w-[12.1875rem] h-[1.3125rem] font-[400] text-[1rem] leading-[1.3125rem] text-[#000000] whitespace-nowrap`;
+export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[#000000]`;
 
 export const FOOTER_BLURB =
   "A trusted social impact platform connecting people with verified NGOs, meaningful causes, and ways to get involved across India.";
 
-export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} inline-block h-[1.75rem] text-[1.25rem] leading-[1.75rem] font-[500] tracking-normal uppercase text-[var(--Main-headings,#000000)] whitespace-nowrap`;
+export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} text-[1.125rem] leading-7 font-[500] tracking-normal uppercase text-[var(--Main-headings,#000000)] sm:text-[1.25rem] sm:leading-[1.75rem]`;
 
-export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} inline-block h-[1.75rem] text-[1rem] leading-[1.75rem] font-[300] tracking-normal text-[#212121] whitespace-nowrap`;
+export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} break-words text-[1rem] leading-7 font-[400] tracking-normal text-[#212121]`;
 
-export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} mt-1 h-[5.25rem] w-[23.75rem] text-[1rem] leading-[1.75rem] font-[300] tracking-normal text-[#212121]`;
+export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#212121] sm:text-[1rem] sm:leading-7`;
 
 export const FOOTER_QUICK_LINKS = [
   { href: "/about", label: "About Us" },
@@ -69,7 +69,7 @@ export const FOOTER_CONTACT = [
 
 export const FOOTER_LEGAL_LINKS = [
   { href: "/#", label: "Privacy Policy" },
-  { href: "/#", label: "Terms of Service" },
+  { href: "/#", label: "Terms Of Service" },
   { href: "/#", label: "Sitemap" },
 ] as const;
 
@@ -111,7 +111,6 @@ export const CAUSE_CARDS = [
 export const MOMENT_CARDS = [
   {
     title: "Birthday",
-    titleClassName: "w-[7.125rem]",
     body: "Turn your celebration into support for a cause you care about, and bring your circle along.",
     ctaLabel: "Start a Birthday Fundraiser",
     iconSrc: "/images/moments/96e2113621a7af04d4cce296e51af5e80dc3bdff.png",
@@ -119,7 +118,6 @@ export const MOMENT_CARDS = [
   },
   {
     title: "Anniversary",
-    titleClassName: "w-[11.5rem]",
     body: "Mark your journey together by supporting a cause you care about, and bring your circle along.",
     ctaLabel: "Start an Anniversary Fundraiser",
     iconSrc: "/images/moments/af9d4dad96f552ff7f72f1bcc82853f2e29cfc3a.png",
@@ -127,7 +125,6 @@ export const MOMENT_CARDS = [
   },
   {
     title: "Remembrance",
-    titleClassName: "w-[12.25rem]",
     body: "Honour a loved one’s memory through a cause that mattered to them, and bring your circle together in support.",
     ctaLabel: "Start a Remembrance Fundraiser",
     iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
@@ -146,8 +143,7 @@ export const IMPACT_STORIES = [
   {
     featured: true,
     tag: "Women’s Health",
-    tagClassName: "w-[8.5rem] bg-[#ED3B58]",
-    tagLabelClassName: "w-[6.75rem]",
+    tagClassName: "bg-[#ED3B58]",
     overlayClassName:
       "bg-[linear-gradient(180deg,rgba(0,0,0,0)_55.41%,rgba(0,0,0,0.05)_62.12%,rgba(0,0,0,0.22)_64.65%,rgba(0,0,0,0.58)_67.04%,rgba(0,0,0,0.88)_70.32%)]",
     title: "Wings of Hope: Breaking Barriers Through Menstrual Health Education",
@@ -158,8 +154,7 @@ export const IMPACT_STORIES = [
   {
     featured: false,
     tag: "Animal Welfare",
-    tagClassName: "w-[8.125rem] bg-[var(--Brand-Green-Teal,#00A98F)]",
-    tagLabelClassName: "w-[6.375rem]",
+    tagClassName: "bg-[var(--Brand-Green-Teal,#00A98F)]",
     overlayClassName:
       "bg-[linear-gradient(180deg,rgba(0,0,0,0)_26.97%,rgba(0,0,0,0.04)_35.72%,rgba(0,0,0,0.18)_39.64%,rgba(0,0,0,0.52)_43.55%,rgba(0,0,0,0.86)_50%)]",
     title: "Pawsitive Protectors: Saving Lives One Animal at a Time",
@@ -170,8 +165,7 @@ export const IMPACT_STORIES = [
   {
     featured: false,
     tag: "Disaster Relief",
-    tagClassName: "w-[7.625rem] bg-[var(--Brand-Deep-Blue,#3976A8)]",
-    tagLabelClassName: "w-[5.875rem]",
+    tagClassName: "bg-[var(--Brand-Deep-Blue,#3976A8)]",
     overlayClassName:
       "bg-[linear-gradient(180deg,rgba(0,0,0,0)_19.09%,rgba(0,0,0,0.04)_28.07%,rgba(0,0,0,0.18)_32.09%,rgba(0,0,0,0.52)_36.11%,rgba(0,0,0,0.86)_42.73%)]",
     title: "Flood Relief Uttarakhand: Hope in the Face of Disaster",
@@ -205,33 +199,25 @@ export const HOW_IT_WORKS_STEPS = [
 export const VOLUNTEERS = [
   {
     name: "Priya Sharma",
-    nameClassName: "w-[8.9375rem]",
     role: "Teacher",
-    roleClassName: "w-[3.8125rem]",
     src: "/images/testmi/953105c0d2ea2d9d1703198bae02e59fa2c87e63.png",
     alt: "Priya Sharma standing in a classroom in front of a chalkboard",
   },
   {
     name: "Bhushan Khurana",
-    nameClassName: "",
     role: "Marketing Lead",
-    roleClassName: "",
     src: "/images/testmi/f846f5578286c4f1943dd07a272ad57a92cd1b3a.png",
     alt: "Bhushan Khurana smiling at a laptop in an office",
   },
   {
     name: "Ayesha Mehta",
-    nameClassName: "",
     role: "Doctor",
-    roleClassName: "",
     src: "/images/testmi/099e4d57b98ec71c66eb071e71b13ef69b282c7d.png",
     alt: "Ayesha Mehta in a clinic wearing a lab coat and stethoscope",
   },
   {
     name: "Suresh Nair",
-    nameClassName: "",
     role: "Entrepreneur",
-    roleClassName: "",
     src: "/images/testmi/096f144ac332a86ad699acc4cdc8e2eff813d811.png",
     alt: "Suresh Nair at a desk in an office",
   },
@@ -242,54 +228,44 @@ export const PARTNER_LOGO_SETS = [
     {
       src: "/images/partners/PehliClass-CampaignLogo-Org-JWP.png",
       alt: "Pehli Class",
-      imageClassName: "scale-[3.35]",
     },
     {
       src: "/images/partners/WingsofHope-CampaignLogo-Org-JWP.png.png",
       alt: "Wings of Hope",
-      imageClassName: "scale-[3.35]",
     },
     {
       src: "/images/partners/PawsitiveProtector-CampaignLogo-Org-AnimalCare.png",
       alt: "Pawsitive Protectors",
-      imageClassName: "scale-[4.2]",
     },
     {
       src: "/images/partners/JWP-Org-Logo.png",
       alt: "Joint Women's Programme",
-      imageClassName: "scale-[1.8]",
     },
     {
       src: "/images/partners/ICFG-Org-Logo.png",
       alt: "Institute of Community Forest Governance",
-      imageClassName: "scale-[4.2]",
     },
   ],
   [
     {
       src: "/images/partners/BrickByBrick-CampaignLogo-Org-AnimalCare.png",
       alt: "Brick by Brick",
-      imageClassName: "scale-[4.2]",
     },
     {
       src: "/images/partners/BowlsofHope-CampaignLogo-Org-AnimalCare.png",
       alt: "Bowls of Hope",
-      imageClassName: "scale-[3.35]",
     },
     {
       src: "/images/partners/AnimalCare-Org-Logo.png",
       alt: "AnimalCare",
-      imageClassName: "scale-[4.2]",
     },
     {
       src: "/images/partners/PehliClass-CampaignLogo-Org-JWP.png",
       alt: "Pehli Class",
-      imageClassName: "scale-[3.35]",
     },
     {
       src: "/images/partners/WingsofHope-CampaignLogo-Org-JWP.png.png",
       alt: "Wings of Hope",
-      imageClassName: "scale-[3.35]",
     },
   ],
 ] as const;
@@ -335,37 +311,31 @@ export const HOW_THE_CIRCLE_WORKS = [
 export const FAQ_ITEMS = [
   {
     question: "What is The Giving Circle?",
-    questionClassName: "w-[14.75rem]",
     answer:
       "The Giving Circle is an Indian fundraising platform for people who want to make a difference. You choose a cause you care about, start a fundraiser for the verified NGO working on it, and raise funds by sharing it with your personal and professional network. We call these volunteer fundraisers Cause Champions.",
   },
   {
     question: "How do I start a fundraiser for an NGO in India?",
-    questionClassName: "w-[27.1875rem]",
     answer:
       "Choose a live cause backed by a verified NGO, start your Giving Circle as a Cause Champion, and share it with your personal and professional network. Your circle’s gifts go directly to the NGO running the cause.",
   },
   {
     question: "What is a Cause Champion?",
-    questionClassName: "",
     answer:
       "A Cause Champion is someone who starts a Giving Circle, pooling support with friends, family, and colleagues to fund a live cause together, not alone.",
   },
   {
     question: "Does it cost anything to start a fundraiser?",
-    questionClassName: "",
     answer:
       "No. It costs nothing to start a Giving Circle and become a Cause Champion. Donations go directly to the verified NGO.",
   },
   {
     question: "Will I receive an 80G donation receipt?",
-    questionClassName: "",
     answer:
       "Eligible donations are receipted under 80G by the verified NGO, because your gift goes directly to them.",
   },
   {
     question: "Can I volunteer with The Giving Circle?",
-    questionClassName: "",
     answer:
       "Yes. You can volunteer your time, skills, and energy with verified causes across our circle. Write to us and we will help you find a place to start.",
   },

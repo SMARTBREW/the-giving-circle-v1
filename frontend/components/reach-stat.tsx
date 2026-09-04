@@ -3,27 +3,37 @@ import { SEGOE_UI_CLASS } from "@/constants";
 export default function ReachStat({
   value,
   label,
-  showDivider = false,
+  index,
 }: {
   value: string;
   label: string;
-  showDivider?: boolean;
+  index: number;
 }) {
+  const isRightCol = index % 2 === 1;
+  const hasPlus = value.endsWith("+");
+  const mainValue = hasPlus ? value.slice(0, -1) : value;
+
   return (
-    <li className="relative flex h-[6.75rem] w-full flex-col items-center">
-      {showDivider ? (
+    <li
+      className={`relative flex flex-col items-center justify-center px-3 py-5 sm:px-4 sm:py-6 lg:px-2 lg:py-4 min-[90rem]:h-[6.75rem] min-[90rem]:py-0 ${
+        index > 0 ? "lg:border-l lg:border-[#00000026]" : ""
+      }`}
+    >
+      {isRightCol ? (
         <span
-          aria-hidden="true"
-          className="absolute top-0 left-0 hidden h-[6.75rem] w-px bg-[#00000026] md:block"
+          aria-hidden
+          className="absolute top-3 bottom-3 left-0 w-px bg-[#00000026] lg:hidden"
         />
       ) : null}
       <span
-        className={`${SEGOE_UI_CLASS} h-[3.75rem] text-center text-[2.75rem] leading-[3.75rem] font-[700] tracking-[-0.025em] whitespace-nowrap text-[#00A98F]`}
+        aria-label={value}
+        className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center gap-1 text-[1.75rem] leading-none font-[700] tracking-[-0.025em] whitespace-nowrap text-[#00A98F] sm:gap-1.5 sm:text-[2.25rem] lg:text-[2.5rem] min-[90rem]:text-[2.75rem] min-[90rem]:leading-[3.75rem]`}
       >
-        {value}
+        <span aria-hidden>{mainValue}</span>
+        {hasPlus ? <span aria-hidden>+</span> : null}
       </span>
       <span
-        className={`${SEGOE_UI_CLASS} mt-4 h-8 text-center text-[1.25rem] leading-8 font-[300] tracking-normal whitespace-nowrap text-[#121212] capitalize`}
+        className={`${SEGOE_UI_CLASS} mt-2 text-center text-[0.8125rem] leading-5 font-[400] tracking-normal text-[#121212] capitalize sm:mt-3 sm:text-[1rem] sm:leading-6 lg:mt-3 lg:text-[1.125rem] lg:leading-7 min-[90rem]:mt-4 min-[90rem]:h-8 min-[90rem]:text-[1.25rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap`}
       >
         {label}
       </span>

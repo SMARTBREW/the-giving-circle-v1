@@ -109,11 +109,11 @@ function FooterLinkList({
   links: readonly { href: string; label: string }[];
 }) {
   return (
-    <div>
+    <div className="min-w-0">
       <p className={FOOTER_HEADING_CLASS}>{heading}</p>
-      <ul className="mt-4 flex flex-col gap-3">
+      <ul className="mt-3 flex flex-col gap-2.5 sm:mt-4 sm:gap-3">
         {links.map((link) => (
-          <li key={link.href} className="h-[1.75rem]">
+          <li key={link.href}>
             <Link href={link.href} className={FOOTER_LINK_CLASS}>
               {link.label}
             </Link>
@@ -126,24 +126,33 @@ function FooterLinkList({
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full bg-[#F5F5F5]">
-      <div className="mx-auto flex w-full max-w-[90rem] flex-col px-[2rem] pt-12 md:h-[29.75rem] md:px-[6.25rem] md:pt-[5rem]">
-        <div className="flex flex-col gap-10 md:grid md:grid-cols-[23.75rem_4.375rem_16.4375rem_11.9375rem_1fr] md:gap-0">
-          <div className="flex flex-col">
-            <Link href="/" className="block h-[3.75rem] w-[14.625rem]">
+    <footer id="contact" className="w-full min-w-0 bg-[#F5F5F5]">
+      <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-10 pb-6 sm:px-8 sm:pt-12 sm:pb-8 md:px-10 md:pt-14 md:pb-10 lg:px-12 lg:pt-16 lg:pb-12 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
+        <div className="grid w-full min-w-0 grid-cols-1 gap-9 sm:gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-10 min-[90rem]:grid-cols-4 min-[90rem]:gap-x-8 min-[90rem]:gap-y-0">
+          <div className="flex min-w-0 flex-col md:col-span-2 min-[90rem]:col-span-1">
+            <Link
+              href="/"
+              className="block h-9 w-full max-w-[10rem] sm:h-10 sm:max-w-[11rem] md:h-11 md:max-w-[12.5rem] lg:h-14 lg:max-w-[14rem] min-[90rem]:h-[3.75rem] min-[90rem]:max-w-[14.625rem]"
+            >
               <Image
                 src="/images/Frame 2071857645.png"
                 alt="The Giving Circle"
                 width={234}
                 height={60}
-                className="h-[3.75rem] w-[14.625rem] object-contain"
+                className="h-full w-full object-contain object-left"
               />
             </Link>
-            <p className={FOOTER_BLURB_CLASS}>{FOOTER_BLURB}</p>
-            <ul className="mt-8 flex items-center gap-4">
+            <p className={`${FOOTER_BLURB_CLASS} mt-4 min-[90rem]:max-w-[18.4375rem]`}>
+              {FOOTER_BLURB}
+            </p>
+            <ul className="mt-5 flex flex-nowrap items-center gap-3 sm:mt-6 sm:gap-3.5">
               {FOOTER_SOCIAL_LINKS.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} aria-label={item.label} className="block h-10 w-10">
+                <li key={item.label} className="shrink-0">
+                  <Link
+                    href={item.href}
+                    aria-label={item.label}
+                    className="block h-10 w-10"
+                  >
                     <SocialIcon label={item.label} />
                   </Link>
                 </li>
@@ -151,23 +160,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="hidden md:block" aria-hidden="true" />
-
           <FooterLinkList heading="Get Involved" links={GET_INVOLVED_LINKS} />
           <FooterLinkList heading="Quick Links" links={FOOTER_QUICK_LINKS} />
 
-          <div>
+          <div className="min-w-0">
             <p className={FOOTER_HEADING_CLASS}>Contact</p>
-            <ul className="mt-4 flex flex-col gap-3">
+            <ul className="mt-3 flex flex-col gap-2.5 sm:mt-4 sm:gap-3">
               {FOOTER_CONTACT.map((item) => (
-                <li key={item.label} className="flex h-[1.75rem] items-center gap-3">
-                  <ContactIcon type={item.type} />
+                <li key={item.label} className="flex items-center gap-3">
+                  <span className="shrink-0">
+                    <ContactIcon type={item.type} />
+                  </span>
                   {item.href ? (
-                    <Link href={item.href} className={FOOTER_LINK_CLASS}>
+                    <Link
+                      href={item.href}
+                      className={`${FOOTER_LINK_CLASS} min-w-0 whitespace-nowrap`}
+                    >
                       {item.label}
                     </Link>
                   ) : (
-                    <span className={FOOTER_LINK_CLASS}>{item.label}</span>
+                    <span
+                      className={`${FOOTER_LINK_CLASS} min-w-0 whitespace-nowrap`}
+                    >
+                      {item.label}
+                    </span>
                   )}
                 </li>
               ))}
@@ -175,11 +191,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-auto flex flex-col gap-6 border-t border-[#E0E0E0] py-6 md:flex-row md:items-center md:justify-between">
-          <p className={FOOTER_LINK_CLASS}>
-            © 2026 The Giving Circle Community Platform. All rights reserved.
-          </p>
-          <ul className="flex flex-wrap items-center gap-8">
+        <div className="mt-9 flex flex-col gap-4 border-t border-[#E0E0E0] pt-6 sm:mt-10 sm:gap-5 sm:pt-7 lg:mt-auto lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pt-8 min-[90rem]:pb-8">
+          <ul className="flex flex-col gap-2.5 sm:gap-3 lg:order-2 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-8 lg:gap-y-2">
             {FOOTER_LEGAL_LINKS.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className={FOOTER_LINK_CLASS}>
@@ -188,6 +201,9 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+          <p className={`${FOOTER_LINK_CLASS} min-w-0 lg:order-1`}>
+            © 2026 The Giving Circle Community Platform. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

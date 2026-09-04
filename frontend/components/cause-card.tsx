@@ -11,22 +11,22 @@ export default function CauseCard({
   alt: string;
 }) {
   return (
-    <li className="group relative h-[21.75rem] w-full cursor-pointer overflow-hidden rounded-[1rem] border border-[#BDBDBD] md:w-[18.5rem]">
+    <li className="group relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-[1rem] border border-[#BDBDBD] md:w-[calc(50%-0.625rem)] lg:aspect-[4/5] lg:w-full min-[90rem]:aspect-auto min-[90rem]:h-[21.75rem]">
       <Image
         src={src}
         alt={alt}
         fill
-        sizes="18.5rem"
+        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 18.5rem"
         className="object-cover"
       />
       <span className="absolute inset-0 bg-[linear-gradient(360deg,rgba(0,0,0,0.85)_26.44%,rgba(0,0,0,0)_55.17%)]" />
-      <span className="absolute right-6 bottom-6 left-6 flex items-center gap-3 transition-transform duration-700 ease-in-out group-hover:-translate-y-2">
+      <span className="absolute inset-x-4 bottom-4 flex items-center justify-center gap-3 transition-transform duration-700 ease-in-out group-hover:-translate-y-2 sm:inset-x-5 sm:bottom-5 lg:inset-x-6 lg:bottom-6">
         <span
-          className={`${SEGOE_UI_CLASS} text-[1.5rem] leading-none font-[700] tracking-normal whitespace-nowrap text-[#FFFFFF]`}
+          className={`${SEGOE_UI_CLASS} text-center text-[1.125rem] leading-none font-[700] tracking-normal text-[#FFFFFF] sm:text-[1.25rem] lg:text-[1.375rem] min-[90rem]:text-[1.5rem] min-[90rem]:whitespace-nowrap`}
         >
           {label}
         </span>
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFFFFF] opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100">
+        <span className="absolute right-0 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFFFFF] opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100">
           <svg
             width="18"
             height="18"

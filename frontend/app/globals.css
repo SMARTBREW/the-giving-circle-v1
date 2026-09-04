@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-segoe: "Segoe UI", sans-serif;
+  --font-segoe: "Segoe UI", var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {

@@ -4,20 +4,14 @@ import PartnersLogoCarousel from "@/components/partners-logo-carousel";
 
 export default function PartnersSection() {
   return (
-    <section
-      id="partner"
-      className="mx-auto w-full max-w-[90rem] bg-[#FFFFFF] md:h-[30.3125rem]"
-    >
-      <FadeInSection className="flex h-full flex-col items-center px-[2rem] pt-[5rem] pb-[5rem] md:px-[6.25rem]">
+    <section id="partner" className="w-full bg-[#FFFFFF]">
+      <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:min-h-[30.3125rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           eyebrow="Partners & Campaigns"
-          eyebrowClassName="w-[13.875rem]"
           title="Trusted NGOs & Programs"
-          titleClassName="h-[4rem] w-[41rem]"
-          subtitle="Working with trusted NGOs and initiatives to create meaningful change across communities."
-          subtitleClassName="h-[4rem] w-[30.125rem]"
+          subtitle="Partnering with trusted NGOs and organisations to create lasting social impact."
         />
-        <div className="mt-12 w-full">
+        <div className="mt-10 w-full sm:mt-10 lg:mt-12">
           <PartnersLogoCarousel />
         </div>
       </FadeInSection>

@@ -6,7 +6,6 @@ export default function ImpactStoryCard({
   featured = false,
   tag,
   tagClassName,
-  tagLabelClassName,
   overlayClassName,
   title,
   src,
@@ -16,7 +15,6 @@ export default function ImpactStoryCard({
   featured?: boolean;
   tag: string;
   tagClassName: string;
-  tagLabelClassName: string;
   overlayClassName: string;
   title: string;
   src: string;
@@ -27,8 +25,8 @@ export default function ImpactStoryCard({
     <li
       className={
         featured
-          ? "h-[22rem] w-full md:row-span-2 md:h-[42.75rem] md:w-[39.625rem]"
-          : "h-[16rem] w-full md:h-[20.625rem] md:w-[36.25rem]"
+          ? "aspect-square w-full sm:row-span-2 sm:aspect-auto sm:h-full min-[90rem]:h-[42.75rem] min-[90rem]:w-[39.625rem]"
+          : "aspect-square w-full sm:aspect-auto sm:h-full min-[90rem]:h-[20.625rem] min-[90rem]:w-[36.25rem]"
       }
     >
       <Link
@@ -41,40 +39,46 @@ export default function ImpactStoryCard({
           fill
           sizes={
             featured
-              ? "(min-width: 768px) 39.625rem, 100vw"
-              : "(min-width: 768px) 36.25rem, 100vw"
+              ? "(min-width: 1440px) 39.625rem, (min-width: 640px) 50vw, 100vw"
+              : "(min-width: 1440px) 36.25rem, (min-width: 640px) 50vw, 100vw"
           }
           className="object-cover"
         />
-        <span className={`absolute inset-0 ${overlayClassName}`} />
-        <span className="absolute right-8 bottom-8 left-8 z-10 flex flex-col items-start gap-3 md:contents">
+        <span
+          className={`absolute inset-0 hidden sm:block ${overlayClassName}`}
+        />
+
+        <span
+          className={`${SEGOE_UI_CLASS} absolute top-4 left-4 z-10 inline-flex items-center justify-center rounded-[50px] px-3 py-1.5 sm:top-5 sm:left-5 min-[90rem]:left-8 ${
+            featured
+              ? "min-[90rem]:top-[30.8125rem]"
+              : "min-[90rem]:top-[8.6875rem]"
+          } ${tagClassName}`}
+        >
           <span
-            className={`${SEGOE_UI_CLASS} inline-flex h-[2.0625rem] items-center justify-center gap-1 rounded-[50px] px-[0.875rem] md:absolute md:left-8 ${
-              featured ? "md:top-[30.8125rem]" : "md:top-[8.6875rem]"
-            } ${tagClassName}`}
+            className={`${SEGOE_UI_CLASS} text-[0.8125rem] leading-none font-[700] tracking-normal whitespace-nowrap text-[#FFFFFF]`}
           >
+            {tag}
+          </span>
+        </span>
+
+        <span className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 from-55% via-black/50 via-85% to-transparent pt-6 pr-4 pb-4 pl-4 sm:from-black/80 sm:pt-6 sm:pr-5 sm:pb-5 sm:pl-5 min-[90rem]:inset-x-8 min-[90rem]:bottom-8 min-[90rem]:bg-none min-[90rem]:from-transparent min-[90rem]:via-transparent min-[90rem]:to-transparent min-[90rem]:pt-0 min-[90rem]:pr-0 min-[90rem]:pb-0 min-[90rem]:pl-0">
+          <span className="flex flex-col items-start gap-2 sm:gap-2.5 min-[90rem]:gap-3">
             <span
-              className={`${SEGOE_UI_CLASS} inline-flex h-[1.1875rem] items-center text-[0.875rem] leading-none font-[700] tracking-normal whitespace-nowrap text-[#FFFFFF] ${tagLabelClassName}`}
+              className={`${SEGOE_UI_CLASS} w-full text-left text-[1.125rem] leading-6 font-[700] tracking-normal text-[#FFFFFF] sm:text-[1rem] sm:leading-5 md:text-[1.125rem] md:leading-6 lg:text-[1.25rem] lg:leading-7 min-[90rem]:h-[4.625rem] min-[90rem]:text-[1.75rem] min-[90rem]:leading-none ${
+                featured
+                  ? "min-[90rem]:w-[35.625rem]"
+                  : "min-[90rem]:w-[32.25rem]"
+              }`}
             >
-              {tag}
+              {title}
             </span>
-          </span>
-          <span
-            className={`${SEGOE_UI_CLASS} h-auto w-full text-[1.75rem] leading-none font-[700] tracking-normal text-[#FFFFFF] md:absolute md:left-8 md:h-[4.625rem] ${
-              featured
-                ? "md:top-[33.625rem] md:w-[35.625rem]"
-                : "md:top-[11.5rem] md:w-[32.25rem]"
-            }`}
-          >
-            {title}
-          </span>
-          <span
-            className={`${SEGOE_UI_CLASS} inline-flex h-6 items-center gap-2 border-b border-transparent text-[1.125rem] leading-none font-[600] tracking-normal whitespace-nowrap text-[#FFFFFF] group-hover:border-[#FFFFFF] md:absolute md:left-8 ${
-              featured ? "md:top-[39.25rem]" : "md:top-[17.125rem]"
-            }`}
-          >
-            Read the story
-            <span aria-hidden="true">→</span>
+            <span
+              className={`${SEGOE_UI_CLASS} inline-flex items-center gap-1.5 border-b border-transparent text-[0.9375rem] leading-none font-[600] tracking-normal whitespace-nowrap text-[#FFFFFF] group-hover:border-[#FFFFFF] sm:text-[0.8125rem] md:text-[0.875rem] min-[90rem]:gap-2 min-[90rem]:text-[1.125rem]`}
+            >
+              Read the story
+              <span aria-hidden="true">→</span>
+            </span>
           </span>
         </span>
       </Link>

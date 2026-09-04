@@ -8,12 +8,11 @@ export default function FaqsAccordion() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <ul className="flex w-full flex-col items-center gap-6">
+    <ul className="flex w-full flex-col items-center gap-4 sm:gap-5 md:gap-6">
       {FAQ_ITEMS.map((item, index) => (
         <FaqItem
           key={item.question}
           question={item.question}
-          questionClassName={item.questionClassName}
           answer={item.answer}
           isOpen={openIndex === index}
           onToggle={() =>

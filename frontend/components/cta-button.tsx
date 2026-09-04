@@ -60,7 +60,7 @@ export default function CtaButton({
     <Link
       href={href}
       onClick={handleClick}
-      className={`inline-flex items-center justify-center rounded-[6.25rem] ${
+          className={`inline-flex items-center justify-center rounded-[6.25rem] text-[0.8125rem] sm:text-[0.875rem] min-[90rem]:text-[1.125rem] ${
         hoverFill
           ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--Main-CTA-button,#00A3BE)]"
           : ""
@@ -71,7 +71,7 @@ export default function CtaButton({
       } ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} relative z-[1] flex h-[1.5rem] origin-center items-center justify-center text-center text-[1.125rem] leading-none whitespace-nowrap ${
+        className={`${SEGOE_UI_CLASS} relative z-[1] flex min-h-[1.5rem] min-w-0 shrink origin-center items-center justify-center gap-2 text-center text-[length:inherit] leading-none font-[600] tracking-normal whitespace-nowrap ${
           isOutline
             ? `text-[var(--Secondary-outlined-button,#00A3BE)]${
                 hoverFill

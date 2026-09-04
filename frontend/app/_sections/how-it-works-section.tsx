@@ -6,18 +6,16 @@ import { HOW_IT_WORKS_STEPS } from "@/constants";
 export default function HowItWorksSection() {
   return (
     <section id="how-it-works" className="w-full bg-[#3976A8]">
-      <FadeInSection className="relative mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-[2rem] pt-[5rem] pb-[5rem] md:h-[35.4375rem] md:px-[4rem]">
+      <FadeInSection className="relative mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[35.4375rem] min-[90rem]:px-[4rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           tone="onDark"
           eyebrow="How It Works"
-          eyebrowClassName="w-[8.5rem]"
           title="Three Simple Steps"
-          titleClassName="h-[4rem] w-[29.8125rem]"
         />
-        <div className="relative mt-12 w-full self-stretch">
+        <div className="relative mt-10 w-full self-stretch sm:mt-10 lg:mt-12">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden h-[6.25rem] md:block"
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden h-[6.25rem] min-[90rem]:block"
           >
             <svg
               viewBox="0 0 778 115"
@@ -37,13 +35,14 @@ export default function HowItWorksSection() {
               />
             </svg>
           </div>
-          <ul className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-0">
-            {HOW_IT_WORKS_STEPS.map((step) => (
+          <ul className="relative z-10 flex flex-col items-center gap-0 lg:grid lg:grid-cols-3 lg:gap-0">
+            {HOW_IT_WORKS_STEPS.map((step, index) => (
               <HowItWorksStep
                 key={step.title}
                 iconSrc={step.iconSrc}
                 title={step.title}
                 body={step.body}
+                showConnector={index < HOW_IT_WORKS_STEPS.length - 1}
               />
             ))}
           </ul>

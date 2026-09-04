@@ -9,20 +9,18 @@ export default function ReachSection() {
       id="reach"
       className="w-full bg-[var(--Alternate-color,#F7FBFB)]"
     >
-      <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-[2rem] pt-[5rem] pb-[5rem] md:h-[26.25rem] md:px-[4rem]">
+      <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[26.25rem] min-[90rem]:px-[4rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           eyebrow="Our Reach"
-          eyebrowClassName="w-[6.375rem]"
           title="One Circle, Countless Lives"
-          titleClassName="h-[4rem] w-[41.9375rem]"
         />
-        <ul className="mt-12 grid w-full min-w-full grid-cols-1 gap-8 self-stretch md:h-[6.75rem] md:grid-cols-4 md:gap-0">
+        <ul className="mt-10 grid w-full grid-cols-2 self-stretch sm:mt-10 lg:mt-12 lg:grid-cols-4 lg:gap-0">
           {REACH_STATS.map((stat, index) => (
             <ReachStat
               key={stat.label}
               value={stat.value}
               label={stat.label}
-              showDivider={index > 0}
+              index={index}
             />
           ))}
         </ul>

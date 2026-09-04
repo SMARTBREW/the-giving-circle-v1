@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Header from "@/components/header";
+import MobileStickyCta from "@/components/mobile-sticky-cta";
 import Footer from "@/components/footer";
 import { InterFont, InstrumentSerif, SITE } from "@/constants";
 import { config } from "@/lib/config";
@@ -55,12 +56,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${InterFont.variable} ${InstrumentSerif.variable}`}
     >
-      <body className={InterFont.className}>
+      <body className={`${InterFont.className} pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0`}>
         <ThemeProvider>
           <Header />
           <main className="relative z-0 overflow-x-hidden">{children}</main>
           <Footer />
         </ThemeProvider>
+        <MobileStickyCta />
         {config.features.enableAnalytics && (
           <>
             <SpeedInsights />

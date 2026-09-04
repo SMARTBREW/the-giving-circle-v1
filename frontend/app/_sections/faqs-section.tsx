@@ -8,16 +8,14 @@ export default function FaqsSection() {
       id="faqs"
       className="w-full bg-[var(--Alternate-color,#F7FBFB)]"
     >
-      <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-[2rem] pt-[5rem] pb-[7.5rem] md:h-[75.6875rem] md:px-[6.25rem]">
+      <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-10 sm:px-8 sm:pt-12 sm:pb-20 md:px-10 md:pt-14 md:pb-24 lg:px-12 lg:pt-16 min-[90rem]:h-[75.6875rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[7.5rem]">
         <SectionIntro
           eyebrow="Frequently Asked Questions"
-          eyebrowClassName="w-[17.5rem]"
           title="Everything You Need to Know"
-          titleClassName="h-[4rem] w-[46.1875rem]"
           subtitle="Find answers about donations, NGO verification, volunteering, and tracking your impact."
-          subtitleClassName="h-[4rem] w-[30.125rem] !text-[var(--Body-text,#000000B2)]"
+          subtitleClassName="text-[var(--Body-text,#000000B2)]"
         />
-        <div className="mt-12 w-full">
+        <div className="mt-10 w-full sm:mt-10 lg:mt-12">
           <FaqsAccordion />
         </div>
       </FadeInSection>

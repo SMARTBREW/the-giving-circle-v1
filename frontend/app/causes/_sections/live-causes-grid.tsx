@@ -14,10 +14,10 @@ export default function LiveCausesGrid() {
 
   return (
     <>
-      <div className="mt-12 w-full">
+      <div className="mt-8 w-full sm:mt-10 lg:mt-12">
         <CausesFilters value={filter} onChange={setFilter} />
       </div>
-      <ul className="mt-12 flex w-full flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-center md:gap-[1.5rem]">
+      <ul className="mt-8 flex w-full flex-col gap-4 sm:mt-10 sm:gap-5 md:flex-row md:flex-wrap md:justify-center md:gap-6 lg:mt-12">
         {cards.map((cause) => (
           <CauseCard
             key={cause.label}
