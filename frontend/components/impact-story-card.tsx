@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 export default function ImpactStoryCard({
@@ -77,7 +78,7 @@ export default function ImpactStoryCard({
               className={`${SEGOE_UI_CLASS} inline-flex items-center gap-1.5 border-b border-transparent text-[0.9375rem] leading-none font-[600] tracking-normal whitespace-nowrap text-[#FFFFFF] group-hover:border-[#FFFFFF] sm:text-[0.8125rem] md:text-[0.875rem] min-[90rem]:gap-2 min-[90rem]:text-[1.125rem]`}
             >
               Read the story
-              <span aria-hidden="true">→</span>
+              <CtaArrow className="h-3.5 w-3.5 text-[#FFFFFF] sm:h-3.5 sm:w-3.5 min-[90rem]:h-4 min-[90rem]:w-4" />
             </span>
           </span>
         </span>

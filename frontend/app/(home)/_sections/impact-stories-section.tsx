@@ -1,5 +1,6 @@
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
+import CtaArrow from "@/components/cta-arrow";
 import SectionIntro from "@/components/section-intro";
 import ImpactStoryCard from "@/components/impact-story-card";
 import { IMPACT_STORIES } from "@/constants";
@@ -30,16 +31,14 @@ export default function ImpactStoriesSection() {
         </ul>
         <div className="mt-10 sm:mt-10 lg:mt-12">
           <CtaButton
-            href="/#stories"
+            href="/stories"
             variant="outline"
             hoverFill
             className="h-12 w-full max-w-[18.75rem] rounded-[100px] bg-[#FFFFFF] px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[18.75rem] min-[90rem]:px-10 min-[90rem]:py-5"
             labelClassName="font-[600]"
           >
             View All Impact Stories
-            <span className="shrink-0 leading-none" aria-hidden="true">
-              →
-            </span>
+            <CtaArrow />
           </CtaButton>
         </div>
       </FadeInSection>

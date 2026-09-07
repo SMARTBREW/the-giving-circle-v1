@@ -3,7 +3,9 @@ import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
 
-// Phone frame has no buttons — the sticky bar is the only CTA there.
+// Phone frame has no in-hero buttons — the sticky bar is the only CTA there.
+// Mobile hero fills the viewport under the header; the floating CTA overlays the
+// bottom without a full-bleed bar so more of the people stay visible.
 //
 // Figma hero banner is 1440x886 below a 100px header. From sm up the section keeps
 // that ratio but never exceeds the viewport, and every value below is a share of the
@@ -20,7 +22,7 @@ export default function Hero() {
         alt="Young people in our circle, together"
         fill
         sizes="100vw"
-        className="object-cover object-bottom sm:hidden"
+        className="object-cover object-[50%_70%] sm:hidden"
         quality={100}
         priority
       />

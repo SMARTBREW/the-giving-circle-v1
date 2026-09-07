@@ -1,6 +1,24 @@
 export { InterFont, InstrumentSerif, SatoshiBold } from "./fonts";
 export { CAUSES_PAGE, CAUSE_FILTER_ALL } from "./causes";
-export { ABOUT_WHY_WE_GATHER, ABOUT_OUR_STORY } from "./about";
+export {
+  ABOUT_WHY_WE_GATHER,
+  ABOUT_OUR_STORY,
+  ABOUT_CORE_VALUES_INTRO,
+  ABOUT_CORE_VALUES,
+  ABOUT_NUMBERS,
+  ABOUT_TEAM,
+  ABOUT_MISSION,
+  ABOUT_VISION,
+  ABOUT_VISION_CTA,
+} from "./about";
+export {
+  STORY_ARTICLES,
+  IMPACT_STORIES,
+  STORIES_HERO,
+  STORIES_REACH,
+  STORIES_CTA,
+} from "./stories";
+export type { StoryArticle, StoryStatIcon } from "./stories";
 
 export const SEGOE_UI_CLASS = "font-segoe";
 
@@ -19,7 +37,7 @@ export const SITE = {
 export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/causes", label: "Live Causes" },
-  { href: "/#stories", label: "Impact Stories" },
+  { href: "/stories", label: "Impact Stories" },
   { href: "/#blogs", label: "Blogs" },
 ] as const;
 
@@ -43,7 +61,7 @@ export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] lea
 export const FOOTER_QUICK_LINKS = [
   { href: "/about", label: "About Us" },
   { href: "/causes", label: "Live Causes" },
-  { href: "/#stories", label: "Impact Stories" },
+  { href: "/stories", label: "Impact Stories" },
   { href: "/#blogs", label: "Blogs" },
   { href: "/#faqs", label: "FAQs" },
   { href: "/#contact", label: "Contact Us" },
@@ -85,10 +103,23 @@ export const CHAMPION_PHOTO = "/images/cta images/24cd8db82cca8c8ff709461cd6a0ce
 export const SUPPORT_CAUSE_PHOTO =
   "/images/b03847b9986d8aa9337b328b4e6d518339e813ae.png";
 
+export const EDUCATION_PHOTO =
+  "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png";
+
+export const SUPPORT_CAUSE_BAND = {
+  src: SUPPORT_CAUSE_PHOTO,
+  alt: "Schoolchildren in our circle, smiling together",
+  title: "Your Giving Can Change a Life.",
+  subtitle:
+    "Every verified donation helps children, families, and communities access better education, healthcare, and opportunities.",
+  ctaLabel: "Support a Cause",
+  href: "/#causes",
+} as const;
+
 export const CAUSE_CARDS = [
   {
     label: "Education",
-    src: "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
+    src: EDUCATION_PHOTO,
     alt: "A schoolgirl in class, smiling with her classmates",
   },
   {
@@ -139,42 +170,6 @@ export const REACH_STATS = [
   { value: "₹300L+", label: "Funds Mobilised" },
 ] as const;
 
-export const IMPACT_STORIES = [
-  {
-    featured: true,
-    tag: "Women’s Health",
-    tagClassName: "bg-[#ED3B58]",
-    overlayClassName:
-      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_55.41%,rgba(0,0,0,0.05)_62.12%,rgba(0,0,0,0.22)_64.65%,rgba(0,0,0,0.58)_67.04%,rgba(0,0,0,0.88)_70.32%)]",
-    title: "Wings of Hope: Breaking Barriers Through Menstrual Health Education",
-    src: "/images/stories/c0fcbd6be0a24b7c89a15933e825abe1b1a9ea02.png",
-    alt: "Schoolgirls holding menstrual health education pamphlets at a Wings of Hope session",
-    href: "/#stories",
-  },
-  {
-    featured: false,
-    tag: "Animal Welfare",
-    tagClassName: "bg-[var(--Brand-Green-Teal,#00A98F)]",
-    overlayClassName:
-      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_26.97%,rgba(0,0,0,0.04)_35.72%,rgba(0,0,0,0.18)_39.64%,rgba(0,0,0,0.52)_43.55%,rgba(0,0,0,0.86)_50%)]",
-    title: "Pawsitive Protectors: Saving Lives One Animal at a Time",
-    src: "/images/stories/8085a2143fded1b5d4a64084b028d63971664fc4.png",
-    alt: "Volunteers feeding and caring for street dogs",
-    href: "/#stories",
-  },
-  {
-    featured: false,
-    tag: "Disaster Relief",
-    tagClassName: "bg-[var(--Brand-Deep-Blue,#3976A8)]",
-    overlayClassName:
-      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_19.09%,rgba(0,0,0,0.04)_28.07%,rgba(0,0,0,0.18)_32.09%,rgba(0,0,0,0.52)_36.11%,rgba(0,0,0,0.86)_42.73%)]",
-    title: "Flood Relief Uttarakhand: Hope in the Face of Disaster",
-    src: "/images/stories/c8329e59978e6b525af70415259a31cd1f388a41.png",
-    alt: "Volunteers helping an elderly woman along a flooded mountain path",
-    href: "/#stories",
-  },
-] as const;
-
 export const HOW_IT_WORKS_STEPS = [
   {
     title: "1. Find a Cause",
@@ -195,6 +190,15 @@ export const HOW_IT_WORKS_STEPS = [
       "/images/how it works/d2a8060bb71c100889a6d7d61b3f262eaf635a9b.png",
   },
 ] as const;
+
+export const VOLUNTEER_BAND = {
+  eyebrow: "Volunteer for Change",
+  title: "Make a Difference With Us",
+  subtitle:
+    "Contribute your time, skills, and energy to verified causes creating meaningful change across communities.",
+  ctaLabel: "Become a Volunteer",
+  href: "/#contact",
+} as const;
 
 export const VOLUNTEERS = [
   {

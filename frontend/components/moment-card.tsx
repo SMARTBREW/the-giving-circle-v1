@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CtaButton from "@/components/cta-button";
+import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 const cardMotion = {
@@ -88,13 +89,11 @@ export default function MomentCard({
             href={href}
             variant="outline"
             hoverFill
-            className="h-12 w-full min-w-0 gap-1 bg-[#FFFFFF] px-2.5 py-3 sm:h-14 sm:gap-1.5 sm:px-4 lg:h-12 lg:px-2 min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-6 min-[90rem]:py-5"
-            labelClassName="font-[600]"
+            className="h-12 w-full min-w-0 gap-2 bg-[#FFFFFF] px-3 py-3 text-[0.875rem] sm:h-14 sm:px-4 sm:text-[0.9375rem] lg:h-12 lg:px-3 min-[90rem]:h-[4rem] min-[90rem]:gap-2.5 min-[90rem]:px-6 min-[90rem]:py-5 min-[90rem]:text-[1.125rem]"
+            labelClassName="font-[600] !whitespace-normal"
           >
             {ctaLabel}
-            <span className="shrink-0 leading-none" aria-hidden="true">
-              →
-            </span>
+            <CtaArrow className="min-[90rem]:h-5 min-[90rem]:w-5" />
           </CtaButton>
         </div>
       </motion.article>

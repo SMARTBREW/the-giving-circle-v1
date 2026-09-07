@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
+import CtaArrow from "@/components/cta-arrow";
 import SectionIntro from "@/components/section-intro";
 import ChampionStep from "@/components/champion-step";
 import { CHAMPION_PHOTO, CHAMPION_STEPS } from "@/constants";
@@ -70,7 +71,8 @@ export default function ChampionSection() {
               className="group h-11 w-full gap-2 bg-[#FFFFFF] px-6 py-3 transition-colors duration-300 ease-out hover:bg-[var(--Main-CTA-button,#00A3BE)] sm:h-14 md:h-[4rem] min-[90rem]:w-[20rem] min-[90rem]:px-10 min-[90rem]:py-5"
               labelClassName="inline-flex h-6 items-center font-[600] tracking-normal transition-colors duration-300 ease-out group-hover:text-[#FFFFFF]"
             >
-              Start Your Giving Journey →
+              Start Your Giving Journey
+              <CtaArrow />
             </CtaButton>
           </div>
         </div>

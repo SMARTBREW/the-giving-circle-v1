@@ -11,14 +11,14 @@ export default function ChampionStep({
   body: string;
 }) {
   return (
-    <li className="group flex flex-row items-start gap-3">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[0.5rem] border-2 border-[#00A98F40] bg-[#FFFFFF] transition-colors duration-300 group-hover:border-[var(--Main-CTA-button,#00A3BE)] group-hover:bg-[#00A3BE14] sm:h-12 sm:w-12 sm:rounded-[0.75rem] min-[90rem]:h-[4.5rem] min-[90rem]:w-[4.5rem] min-[90rem]:rounded-[1rem]">
+    <li className="group flex flex-row items-start gap-3 sm:gap-4">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[0.75rem] border-2 border-[#00A98F40] bg-[#FFFFFF] transition-colors duration-300 group-hover:border-[var(--Main-CTA-button,#00A3BE)] group-hover:bg-[#00A3BE14] sm:h-14 sm:w-14 min-[90rem]:h-[4.5rem] min-[90rem]:w-[4.5rem] min-[90rem]:rounded-[1rem]">
         <Image
           src={iconSrc}
           alt=""
           width={48}
           height={48}
-          className="h-5 w-5 object-contain sm:h-7 sm:w-7 min-[90rem]:h-12 min-[90rem]:w-12"
+          className="h-7 w-7 object-contain sm:h-8 sm:w-8 min-[90rem]:h-12 min-[90rem]:w-12"
         />
       </span>
       <span className="flex flex-col gap-0.5 sm:gap-1 min-[90rem]:gap-2">

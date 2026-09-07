@@ -1,5 +1,6 @@
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
+import CtaArrow from "@/components/cta-arrow";
 import SectionIntro from "@/components/section-intro";
 import CauseCard from "@/components/cause-card";
 import { CAUSE_CARDS } from "@/constants";
@@ -35,9 +36,7 @@ export default function CausesSection() {
             labelClassName="font-[600]"
           >
             View All Causes
-            <span className="leading-none" aria-hidden="true">
-              →
-            </span>
+            <CtaArrow />
           </CtaButton>
         </div>
       </FadeInSection>
