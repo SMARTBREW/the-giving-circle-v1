@@ -50,7 +50,7 @@ export default function Hero() {
 
         <div className="hidden sm:mt-[3.61cqh] sm:flex sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-[2.765cqh]">
           <CtaButton
-            href="/#champion"
+            href="/champion"
             className="sm:h-[7.22cqh] sm:gap-[0.9cqh] sm:px-[4.06cqh] sm:text-[2.03cqh]"
             labelClassName="font-[700]"
           >

@@ -10,7 +10,7 @@ export default function StoriesCta() {
       subtitle={STORIES_CTA.subtitle}
       ctaLabel={STORIES_CTA.ctaLabel}
       href={STORIES_CTA.href}
-      objectPosition="sm:object-[50%_40%]"
+      objectPosition="object-[42%_40%] sm:object-[50%_40%]"
     />
   );
 }

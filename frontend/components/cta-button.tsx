@@ -46,11 +46,11 @@ export default function CtaButton({
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (smoothScroll) {
-      e.preventDefault();
       const id = href.split("#")[1];
-      if (id) {
+      if (id && document.getElementById(id)) {
+        e.preventDefault();
         scrollToId(id, 300);
-        window.history.pushState(null, "", href);
+        window.history.pushState(null, "", href.includes("#") ? `#${id}` : href);
       }
     }
     onClick?.();

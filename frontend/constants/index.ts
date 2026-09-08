@@ -1,4 +1,4 @@
-export { InterFont, InstrumentSerif, SatoshiBold } from "./fonts";
+export { InterFont, InstrumentSerif, PoppinsFont, SatoshiBold } from "./fonts";
 export { CAUSES_PAGE, CAUSE_FILTER_ALL } from "./causes";
 export {
   ABOUT_WHY_WE_GATHER,
@@ -19,6 +19,25 @@ export {
   STORIES_CTA,
 } from "./stories";
 export type { StoryArticle, StoryStatIcon } from "./stories";
+export {
+  BLOG_ARTICLES,
+  BLOG_HERO,
+  BLOG_REACH,
+  BLOG_CTA,
+  getBlogArticle,
+} from "./blog";
+export type { BlogArticle, BlogSection } from "./blog";
+export {
+  CHAMPION_PAGE_HERO,
+  CHAMPION_HOW_IT_WORKS,
+  CHAMPION_CAMPAIGNS,
+  CHAMPION_TRUST,
+  CHAMPION_VOICES,
+  CHAMPION_MEET,
+  CHAMPION_FAQS,
+  CHAMPION_CTA,
+} from "./champion";
+export type { ChampionCampaignCard, ChampionTestimonial } from "./champion";
 
 export const SEGOE_UI_CLASS = "font-segoe";
 
@@ -38,11 +57,11 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/causes", label: "Live Causes" },
   { href: "/stories", label: "Impact Stories" },
-  { href: "/#blogs", label: "Blogs" },
+  { href: "/blog", label: "Blogs" },
 ] as const;
 
 export const GET_INVOLVED_LINKS = [
-  { href: "/#champion", label: "Become a Cause Champion" },
+  { href: "/champion", label: "Become a Cause Champion" },
   { href: "/#partner", label: "Partner as an NGO" },
   { href: "/#volunteer", label: "Volunteer With Us" },
 ] as const;
@@ -62,7 +81,7 @@ export const FOOTER_QUICK_LINKS = [
   { href: "/about", label: "About Us" },
   { href: "/causes", label: "Live Causes" },
   { href: "/stories", label: "Impact Stories" },
-  { href: "/#blogs", label: "Blogs" },
+  { href: "/blog", label: "Blogs" },
   { href: "/#faqs", label: "FAQs" },
   { href: "/#contact", label: "Contact Us" },
 ] as const;

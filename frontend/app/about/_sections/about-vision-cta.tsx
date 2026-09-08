@@ -10,7 +10,7 @@ export default function AboutVisionCta() {
       subtitle={ABOUT_VISION_CTA.subtitle}
       ctaLabel={ABOUT_VISION_CTA.ctaLabel}
       href={ABOUT_VISION_CTA.href}
-      objectPosition="sm:object-[50%_40%]"
+      objectPosition="object-[42%_40%] sm:object-[50%_40%]"
     />
   );
 }

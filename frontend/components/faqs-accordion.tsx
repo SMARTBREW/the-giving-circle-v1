@@ -4,12 +4,21 @@ import { useState } from "react";
 import FaqItem from "@/components/faq-item";
 import { FAQ_ITEMS } from "@/constants";
 
-export default function FaqsAccordion() {
+type FaqEntry = {
+  question: string;
+  answer: string;
+};
+
+export default function FaqsAccordion({
+  items = FAQ_ITEMS,
+}: {
+  items?: readonly FaqEntry[];
+}) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <ul className="flex w-full flex-col items-center gap-4 sm:gap-5 md:gap-6">
-      {FAQ_ITEMS.map((item, index) => (
+      {items.map((item, index) => (
         <FaqItem
           key={item.question}
           question={item.question}

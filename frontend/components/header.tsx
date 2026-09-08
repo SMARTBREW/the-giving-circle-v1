@@ -184,7 +184,7 @@ export default function Header() {
 
             <div className="mt-8">
               <CtaButton
-                href="/#champion"
+                href="/champion"
                 className="h-12 w-full !rounded-[0.5rem] px-4"
                 labelClassName="font-[600]"
                 onClick={closeDrawer}
@@ -265,7 +265,7 @@ export default function Header() {
 
           <div className="hidden shrink-0 lg:block">
             <CtaButton
-              href="/#champion"
+              href="/champion"
               className="h-10 px-3.5 lg:h-11 lg:px-4 min-[90rem]:h-[3.5rem] min-[90rem]:px-6"
               labelClassName="font-[600]"
             >

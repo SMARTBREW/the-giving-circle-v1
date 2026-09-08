@@ -1,4 +1,4 @@
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
 export const InterFont = Inter({
@@ -13,6 +13,13 @@ export const InstrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-instrument-serif",
+});
+
+export const PoppinsFont = Poppins({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const SatoshiBold = InterFont;

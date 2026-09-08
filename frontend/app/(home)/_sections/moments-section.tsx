@@ -3,13 +3,14 @@ import SectionIntro from "@/components/section-intro";
 import MomentCard from "@/components/moment-card";
 import { MOMENT_CARDS } from "@/constants";
 
-export default function MomentsSection() {
+export default function MomentsSection({
+  className = "bg-[#FFFFFF]",
+}: {
+  className?: string;
+}) {
   return (
-    <section
-      id="moments"
-      className="w-full bg-[#FFFFFF] min-[90rem]:mx-auto min-[90rem]:h-[50.9375rem] min-[90rem]:max-w-[90rem]"
-    >
-      <FadeInSection className="flex h-full flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
+    <section id="moments" className={`w-full ${className}`}>
+      <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[50.9375rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           eyebrow="Meaningful Moments"
           title="Celebrate. Remember. Give."
