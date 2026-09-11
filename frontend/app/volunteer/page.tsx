@@ -23,7 +23,7 @@ export default function VolunteerPage() {
       <VolunteerHero />
       <VolunteerHowItWorks />
       <VolunteerTrust />
-      <MomentsSection className="bg-gray-100" />
+      <MomentsSection className="bg-[#FFFFFF]" />
       <VolunteerMeet />
       <PartnersSection />
       <FaqsSection
@@ -32,6 +32,7 @@ export default function VolunteerPage() {
         title={title}
         subtitle={subtitle}
         items={items}
+        className="bg-gray-100"
       />
       <VolunteerCta />
     </>

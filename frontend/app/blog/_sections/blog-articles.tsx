@@ -23,12 +23,14 @@ export default function BlogArticles() {
       : BLOG_ARTICLES.filter((article) => article.category === filter);
 
   return (
-    <PageSection id="guides" tone="gray">
-      <SectionIntro
-        eyebrow={BLOG_ARTICLES_INTRO.eyebrow}
-        title={BLOG_ARTICLES_INTRO.title}
-        subtitle={BLOG_ARTICLES_INTRO.subtitle}
-      />
+    <PageSection id="guides" tone="gray" fade={false}>
+      <FadeInSection>
+        <SectionIntro
+          eyebrow={BLOG_ARTICLES_INTRO.eyebrow}
+          title={BLOG_ARTICLES_INTRO.title}
+          subtitle={BLOG_ARTICLES_INTRO.subtitle}
+        />
+      </FadeInSection>
 
       <div className="mt-8 w-full sm:mt-10 lg:mt-12">
         <FilterChips options={options} value={filter} onChange={setFilter} />

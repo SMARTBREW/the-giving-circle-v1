@@ -109,7 +109,17 @@ export default function Header() {
   };
 
   return (
-    <motion.header
+    <>
+      {/* Covers the gap above the floating header so scrolled content cannot peek through */}
+      <div
+        aria-hidden
+        className={`pointer-events-none fixed inset-x-0 top-0 z-40 bg-[#FFFFFF] transition-[height,opacity] duration-500 ${
+          scrolled
+            ? "h-3 opacity-100 sm:h-3.5 md:h-4"
+            : "h-0 opacity-0"
+        }`}
+      />
+      <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -270,5 +280,6 @@ export default function Header() {
         </div>
       </div>
     </motion.header>
+    </>
   );
 }

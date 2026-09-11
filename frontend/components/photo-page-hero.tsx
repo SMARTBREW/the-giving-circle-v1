@@ -33,7 +33,7 @@ export default function PhotoPageHero({
 
   return (
     <section
-      className={`relative isolate h-dvh w-full overflow-hidden ${HERO_BLEED}`}
+      className={`relative isolate min-h-[70vh] w-full overflow-hidden lg:h-dvh ${HERO_BLEED}`}
     >
       <Image
         src={src}

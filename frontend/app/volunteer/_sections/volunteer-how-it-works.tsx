@@ -10,7 +10,7 @@ export default function VolunteerHowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="w-full bg-[#FFFFFF] min-[90rem]:h-[36.5rem]"
+      className="w-full bg-[#FFFFFF] min-[90rem]:min-h-[36.5rem]"
     >
       <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-4 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:px-10 md:pt-16 md:pb-16 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[3.5rem] min-[90rem]:pb-0">
         <div className="flex w-full flex-col items-center text-center">

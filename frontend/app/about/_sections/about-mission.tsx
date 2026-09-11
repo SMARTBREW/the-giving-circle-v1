@@ -10,12 +10,12 @@ export default function AboutMission() {
     >
       <div className="flex min-w-0 flex-1 flex-col md:pr-10 lg:pr-14 min-[90rem]:pr-16">
         <SectionIntro
-          align="left"
+          align="center-to-left"
           eyebrow={ABOUT_MISSION.eyebrow}
           title={ABOUT_MISSION.title}
         />
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-5 sm:text-[1rem] sm:leading-7 lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
+          className={`${SEGOE_UI_CLASS} mt-4 text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-5 sm:text-[1rem] sm:leading-7 md:text-left lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
         >
           {ABOUT_MISSION.body}
         </p>
@@ -28,12 +28,12 @@ export default function AboutMission() {
 
       <div className="flex min-w-0 flex-1 flex-col md:pl-10 lg:pl-14 min-[90rem]:pl-16">
         <SectionIntro
-          align="left"
+          align="center-to-left"
           eyebrow={ABOUT_VISION.eyebrow}
           title={ABOUT_VISION.title}
         />
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-5 sm:text-[1rem] sm:leading-7 lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
+          className={`${SEGOE_UI_CLASS} mt-4 text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-5 sm:text-[1rem] sm:leading-7 md:text-left lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
         >
           {ABOUT_VISION.body}
         </p>

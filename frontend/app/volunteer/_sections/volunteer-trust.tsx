@@ -7,7 +7,7 @@ export default function VolunteerTrust() {
   const { eyebrow, title, subtitle, features } = VOLUNTEER_TRUST;
 
   return (
-    <section className="w-full overflow-hidden bg-[#FFFFFF]">
+    <section className="w-full overflow-hidden bg-gray-100">
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:px-10 md:pt-16 md:pb-16 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[4rem]">
         <SectionIntro
           eyebrow={eyebrow}

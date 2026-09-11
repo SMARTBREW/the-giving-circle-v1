@@ -10,16 +10,18 @@ const fadeVariants = {
 export default function FadeInSection({
   children,
   className,
+  amount = "some",
 }: {
   children: React.ReactNode;
   className?: string;
+  amount?: "some" | "all" | number;
 }) {
   return (
     <motion.div
       variants={fadeVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount }}
       transition={{ duration: 0.5 }}
       className={className}
     >

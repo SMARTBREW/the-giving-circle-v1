@@ -22,7 +22,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
         className={`relative z-0 ${
           isFormShell
             ? "max-lg:min-h-dvh lg:h-dvh lg:overflow-hidden"
-            : `overflow-x-hidden ${HEADER_OFFSET} pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0`
+            : `overflow-x-hidden bg-[#F5F5F5] ${HEADER_OFFSET} pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0`
         }`}
       >
         {children}

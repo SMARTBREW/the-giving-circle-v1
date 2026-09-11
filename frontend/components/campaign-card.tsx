@@ -58,7 +58,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
   const href = `/causes/${card.id}`;
 
   return (
-    <article className="flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-transform duration-300 ease-out hover:-translate-y-1 min-[90rem]:h-[39.0625rem] min-[90rem]:w-[24.75rem]">
+    <article className="flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-transform duration-300 ease-out hover:-translate-y-1 min-[90rem]:h-[39.0625rem] min-[90rem]:w-full">
       <Link
         href={href}
         className="relative aspect-[396/240] w-full shrink-0 overflow-hidden rounded-t-[1rem] min-[90rem]:h-[15rem] min-[90rem]:aspect-auto"

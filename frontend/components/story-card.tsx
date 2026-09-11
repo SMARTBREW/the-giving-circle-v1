@@ -168,17 +168,17 @@ export default function StoryCard({
   onToggle: () => void;
 }) {
   const imageBlock = (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] md:aspect-auto md:w-[44%] md:shrink-0 md:self-stretch lg:w-[42%] min-[90rem]:w-[40%]">
+    <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:aspect-[16/10] md:aspect-[4/5] md:w-[41%] md:self-start lg:w-[39%] min-[90rem]:w-[38%]">
       <Image
         src={story.src}
         alt={story.alt}
         fill
-        sizes="(max-width: 767px) 100vw, 42vw"
+        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 41vw, 38vw"
         className="object-cover"
       />
 
       <span
-        className={`${SEGOE_UI_CLASS} absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-[50px] bg-[var(--Brand-Green-Teal,#00A98F)] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:left-4 sm:text-[0.8125rem]`}
+        className={`${SEGOE_UI_CLASS} absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-[50px] bg-[var(--Brand-Green-Teal,#00A98F)] px-2.5 py-1 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:left-4 sm:px-3 sm:py-1.5 sm:text-[0.8125rem]`}
       >
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="h-3.5 w-3.5">
           <circle cx="8" cy="8" r="6.5" stroke="#FFFFFF" strokeWidth="1.5" />
@@ -194,7 +194,7 @@ export default function StoryCard({
       </span>
 
       <span
-        className={`${SEGOE_UI_CLASS} absolute top-3 right-3 z-10 inline-flex items-center rounded-[50px] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:right-4 sm:text-[0.8125rem] ${story.tagClassName}`}
+        className={`${SEGOE_UI_CLASS} absolute top-3 right-3 z-10 inline-flex items-center rounded-[50px] px-2.5 py-1 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:right-4 sm:px-3 sm:py-1.5 sm:text-[0.8125rem] ${story.tagClassName}`}
       >
         {story.tag}
       </span>
@@ -231,7 +231,7 @@ export default function StoryCard({
         </span>
       </div>
 
-      <h2 className="mt-3 font-['Georgia'] text-[1.5rem] font-[700] leading-[2rem] tracking-normal text-[var(--Main-headings,#000000)] sm:mt-4 sm:text-[1.75rem] sm:leading-[2.25rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.25rem] lg:leading-[2.75rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]">
+      <h2 className="mt-3 font-['Georgia'] text-[1.5rem] font-[700] leading-[2rem] tracking-normal text-[var(--Main-headings,#000000)] sm:mt-4 sm:text-[1.75rem] sm:leading-[2.25rem] md:text-[1.625rem] md:leading-[2.125rem] lg:text-[2.125rem] lg:leading-[2.625rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]">
         {story.title}
       </h2>
 
@@ -283,7 +283,7 @@ export default function StoryCard({
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className={`${SEGOE_UI_CLASS} inline-flex h-12 items-center justify-center rounded-[100px] border border-[var(--Main-CTA-button,#00A3BE)] px-6 text-[0.875rem] font-[600] leading-none tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-colors hover:bg-[var(--Main-CTA-button,#00A3BE)] hover:text-[#FFFFFF] sm:h-14 sm:px-8 sm:text-[0.9375rem]`}
+          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-[100px] border border-[var(--Main-CTA-button,#00A3BE)] px-6 text-[0.875rem] font-[600] leading-none tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-colors hover:bg-[var(--Main-CTA-button,#00A3BE)] hover:text-[#FFFFFF] sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
         >
           {expanded ? "Show Less" : "Read Full Story"}
         </button>
@@ -321,7 +321,7 @@ export default function StoryCard({
       className="scroll-mt-24 flex w-full flex-col gap-6 md:items-start md:gap-8 lg:gap-10 min-[90rem]:gap-12"
     >
       <div
-        className={`flex w-full flex-col gap-6 md:items-center md:gap-8 lg:gap-10 min-[90rem]:gap-12 ${
+        className={`flex w-full flex-col gap-6 md:items-start md:gap-8 lg:gap-10 min-[90rem]:gap-12 ${
           imageFirst ? "md:flex-row" : "md:flex-row-reverse"
         }`}
       >

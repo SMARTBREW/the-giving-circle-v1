@@ -52,7 +52,7 @@ export default function LiveCausesGrid() {
         <FilterChips options={options} value={filter} onChange={setFilter} />
       </div>
 
-      <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 md:gap-6 lg:mt-12 lg:gap-8 min-[90rem]:grid-cols-3 min-[90rem]:gap-6">
+      <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 md:gap-6 lg:mt-12 lg:grid-cols-3 lg:gap-6 min-[90rem]:grid-cols-3 min-[90rem]:gap-6">
         {visible.map((cause) => (
           <li key={cause.id} className="min-w-0">
             <CampaignCard card={toCampaignCard(cause)} />

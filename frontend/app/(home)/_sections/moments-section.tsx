@@ -16,7 +16,7 @@ export default function MomentsSection({
           title="Celebrate. Remember. Give."
           subtitle="The flowers fade. Start a fundraiser instead, and let the people who love you give where your heart already is."
         />
-        <ul className="relative mt-6 flex w-full flex-col items-stretch gap-4 sm:mt-8 sm:gap-5 md:gap-6 lg:mt-8 lg:overflow-visible min-[90rem]:mt-10 min-[90rem]:flex-row min-[90rem]:gap-[1.625rem] min-[90rem]:pt-3 min-[90rem]:pb-3">
+        <ul className="relative mt-6 flex w-full flex-col items-stretch gap-4 sm:mt-8 sm:gap-5 md:gap-6 lg:mt-8 lg:grid lg:grid-cols-3 lg:gap-5 min-[90rem]:mt-10 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:gap-[1.625rem] min-[90rem]:pt-3 min-[90rem]:pb-3">
           {MOMENT_CARDS.map((moment) => (
             <li
               key={moment.title}

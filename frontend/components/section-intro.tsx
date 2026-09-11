@@ -14,13 +14,18 @@ export default function SectionIntro({
   eyebrow: string;
   title: ReactNode;
   subtitle?: string;
-  align?: "center" | "left";
+  align?: "center" | "left" | "center-to-left";
   tone?: "default" | "onDark";
   eyebrowClassName?: string;
   titleClassName?: string;
   subtitleClassName?: string;
 }) {
-  const alignClass = align === "center" ? "text-center" : "text-left";
+  const alignClass =
+    align === "center"
+      ? "text-center"
+      : align === "center-to-left"
+        ? "text-center md:text-left"
+        : "text-left";
   const isOnDark = tone === "onDark";
 
   return (

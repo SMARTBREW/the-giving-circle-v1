@@ -23,16 +23,16 @@ const optionButtonClass = (isSelected: boolean) =>
       : "border-[#E4E7EC] bg-[#FFFFFF] hover:border-[#B8C0CC]"
   }`;
 
-const primaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 min-w-40 items-center justify-center rounded-lg bg-[var(--Main-CTA-button,#00A3BE)] px-5 text-[1rem] leading-none font-[700] text-[#FFFFFF] transition-opacity disabled:cursor-not-allowed disabled:opacity-40 sm:h-[3.75rem] sm:min-w-[11.25rem] sm:text-[1.125rem]`;
+const primaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-xl bg-[var(--Main-CTA-button,#00A3BE)] px-5 text-[1rem] leading-none font-[700] text-[#FFFFFF] transition-opacity disabled:cursor-not-allowed disabled:opacity-40 sm:h-[3.75rem] sm:w-auto sm:min-w-[11.25rem] sm:rounded-lg sm:text-[1.125rem]`;
 
-const outlineBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-40 items-center justify-center rounded-lg border-2 border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] text-[1rem] leading-none font-[700] text-[var(--Main-CTA-button,#00A3BE)] sm:h-[3.75rem] sm:w-[11.25rem] sm:text-[1.125rem]`;
+const outlineBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-xl border border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] text-[1rem] leading-none font-[700] text-[var(--Main-CTA-button,#00A3BE)] sm:h-[3.75rem] sm:w-[11.25rem] sm:rounded-lg sm:border-2 sm:text-[1.125rem]`;
 
 const fieldClass = `${SEGOE_UI_CLASS} champion-apply-field h-14 w-full rounded-[4px] border border-[#BDBDBD] bg-[#F8F8F8] px-4 text-[1rem] text-[#212121] outline-none placeholder:text-[#98A2B3] focus:border-[#BDBDBD] focus:outline-none focus:ring-0 sm:h-16`;
 
 const fieldLabelClass = `${SEGOE_UI_CLASS} text-[1.125rem] leading-none font-[400] text-[#212121] sm:text-[1.25rem]`;
 
 const footerBarClass =
-  "mt-auto flex w-full shrink-0 flex-wrap items-center justify-end gap-3 border-t border-[#BDBDBD] pt-5 pb-5 sm:gap-4";
+  "mt-auto flex w-full shrink-0 flex-col-reverse gap-3 border-t border-[#E4E7EC] px-5 pt-5 pb-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:gap-4 sm:px-0";
 
 function StepCheckIcon() {
   return (
@@ -269,7 +269,7 @@ export default function PartnerApplyForm() {
 
                 {currentStep === 1 ? (
                   <>
-                    <div className="min-h-0 flex-1 overflow-y-auto">
+                    <div className="min-h-0 flex-1 overflow-y-auto pb-5 lg:pb-0">
                       <h2
                         className={`${SEGOE_UI_CLASS} mt-6 text-[1.625rem] leading-8 font-[700] tracking-normal text-[#212121] sm:mt-7 sm:text-[2rem] sm:leading-tight md:text-[2.25rem] lg:text-[2.375rem] min-[90rem]:mt-8 min-[90rem]:text-[2.5rem] min-[90rem]:leading-[1.15]`}
                       >
@@ -343,7 +343,7 @@ export default function PartnerApplyForm() {
 
                 {currentStep === 2 ? (
                   <>
-                    <div className="min-h-0 flex-1 overflow-y-auto">
+                    <div className="min-h-0 flex-1 overflow-y-auto pb-5 lg:pb-0">
                       <h2
                         className={`${SEGOE_UI_CLASS} mt-6 text-[1.75rem] leading-none font-[700] tracking-normal text-[#212121] sm:mt-7 sm:text-[2.25rem] min-[90rem]:mt-8 min-[90rem]:text-[3rem]`}
                       >

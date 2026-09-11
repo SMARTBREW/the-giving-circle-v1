@@ -30,7 +30,7 @@ export default function SplitMediaSection({
     >
       <div className="flex flex-col md:flex-1">
         <SectionIntro
-          align="left"
+          align="center-to-left"
           eyebrow={eyebrow}
           title={title}
           subtitle={subtitle}
@@ -40,7 +40,7 @@ export default function SplitMediaSection({
             {paragraphs.map((para) => (
               <p
                 key={para.slice(0, 40)}
-                className={`${SEGOE_UI_CLASS} text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
+                className={`${SEGOE_UI_CLASS} text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7 md:text-left lg:text-[1.125rem] lg:leading-8`}
               >
                 {para}
               </p>

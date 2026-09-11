@@ -54,13 +54,14 @@ export default function AboutPage() {
         href={ABOUT_TEAM.href}
       />
       <AboutMission />
-      <PartnersSection />
+      <PartnersSection className="bg-gray-100" />
       <FaqsSection
         id="about-faqs"
         eyebrow={eyebrow}
         title={title}
         subtitle={subtitle}
         items={items}
+        className="bg-[#FFFFFF]"
       />
       <PhotoCtaBand
         src={ABOUT_VISION_CTA.src}
