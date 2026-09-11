@@ -36,3 +36,107 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Champion apply — shared fields */
+.champion-apply-field,
+.champion-apply-field:focus,
+.champion-apply-field:focus-visible {
+  border-color: #bdbdbd;
+  outline: none;
+  box-shadow: none;
+  background-color: #f8f8f8;
+  color-scheme: light;
+}
+
+select.champion-apply-field {
+  background-color: #f8f8f8;
+}
+
+.champion-apply-field:-webkit-autofill,
+.champion-apply-field:-webkit-autofill:hover,
+.champion-apply-field:-webkit-autofill:focus,
+.champion-apply-field:-webkit-autofill:active {
+  -webkit-text-fill-color: #212121;
+  -webkit-box-shadow: 0 0 0 1000px #f8f8f8 inset;
+  box-shadow: 0 0 0 1000px #f8f8f8 inset;
+  transition: background-color 99999s ease-in-out 0s;
+  caret-color: #212121;
+}
+
+/* Champion apply — phone field (react-phone-number-input) */
+.champion-phone-input.PhoneInput {
+  margin-top: 0.5rem;
+  height: 3.5rem;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #bdbdbd;
+  background: #f8f8f8;
+  padding-left: 0.75rem;
+  padding-right: 1rem;
+  box-shadow: none;
+}
+
+@media (min-width: 640px) {
+  .champion-phone-input.PhoneInput {
+    height: 4rem;
+  }
+}
+
+.champion-phone-input.PhoneInput:focus-within {
+  border-color: #bdbdbd;
+  box-shadow: none;
+}
+
+.champion-phone-input .PhoneInputCountry {
+  margin-right: 0.625rem;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+  border-right: 1px solid #bdbdbd;
+}
+
+.champion-phone-input .PhoneInputCountryIcon {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.champion-phone-input .PhoneInputCountryIcon--border {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.champion-phone-input .PhoneInputCountrySelectArrow {
+  opacity: 0.55;
+  border-color: #667085;
+  margin-left: 0.35rem;
+}
+
+.champion-phone-input .PhoneInputInput {
+  height: 100%;
+  border: 0;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  font-size: 1rem;
+  color: #212121;
+}
+
+.champion-phone-input .PhoneInputInput:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.champion-phone-input .PhoneInputInput::placeholder {
+  color: #98a2b3;
+}
+
+.champion-phone-input .PhoneInputInput:-webkit-autofill,
+.champion-phone-input .PhoneInputInput:-webkit-autofill:hover,
+.champion-phone-input .PhoneInputInput:-webkit-autofill:focus {
+  -webkit-text-fill-color: #212121;
+  -webkit-box-shadow: 0 0 0 1000px #f8f8f8 inset;
+  box-shadow: 0 0 0 1000px #f8f8f8 inset;
+  transition: background-color 99999s ease-in-out 0s;
+}

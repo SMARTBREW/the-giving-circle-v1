@@ -5,7 +5,18 @@ export const BLOG_HERO = {
     "Practical, trust-first guides for families, students, and donors: education and 80G, verified NGO partnerships, internships with impact, Cause Champions and Young Champions, and summers that colleges can recognise for the right reasons.",
   src: "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
   alt: "A schoolgirl smiling in class, representing learning and community giving",
+  ctaLabel: "Browse Guides",
+  ctaHref: "#guides",
 } as const;
+
+export const BLOG_ARTICLES_INTRO = {
+  eyebrow: "Guides & Insights",
+  title: "Read Before You Give",
+  subtitle:
+    "Clear writing for Cause Champions, families, students, and companies — verification, 80G, and collective impact without the jargon.",
+} as const;
+
+export const BLOG_FILTER_ALL = "All Guides";
 
 export const BLOG_REACH = {
   eyebrow: "Why These Guides Matter",
@@ -15,12 +26,14 @@ export const BLOG_REACH = {
 } as const;
 
 export const BLOG_CTA = {
-  alt: "A schoolgirl smiling in class, representing the impact of every giving circle",
+  src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
+  alt: "A volunteer with a rescued dog",
   title: "Ready to Give with Confidence?",
   subtitle:
     "Explore verified causes, start a giving circle, and support outcomes you can follow.",
   ctaLabel: "Explore Live Causes",
   href: "/causes",
+  objectPosition: "object-[42%_40%] sm:object-[50%_40%]",
 } as const;
 
 export const BLOG_ARTICLES = [
@@ -445,4 +458,8 @@ export type BlogSection = BlogArticle["sections"][number];
 
 export function getBlogArticle(id: string): BlogArticle | undefined {
   return BLOG_ARTICLES.find((article) => article.id === id);
+}
+
+export function getBlogCategories(): string[] {
+  return [...new Set(BLOG_ARTICLES.map((article) => article.category))];
 }

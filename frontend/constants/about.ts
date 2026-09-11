@@ -5,6 +5,8 @@ export const ABOUT_WHY_WE_GATHER = {
     "Bridging community giving with verified causes, where Cause Champions create a circle of support for social impact across India.",
   src: "/images/causes/353777ccdbf9acbedc2cfa91e44db8b6ebe0d296.png",
   alt: "A health worker checking a woman’s blood pressure in our circle",
+  ctaLabel: "Champion a Cause",
+  ctaHref: "/champion/apply",
 } as const;
 
 export const ABOUT_OUR_STORY = {
@@ -17,6 +19,8 @@ export const ABOUT_OUR_STORY = {
     "We act as a bridge, linking Cause Champions with causes close to their hearts. We partner only with government-certified NGOs, ensuring every organisation meets official standards. For complete transparency, contributions go directly to NGOs and never pass through us. This is the foundation of everything we do.",
     "What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join community activities. We believe in communities for communities, where every giving circle member can witness real change in person.",
   ],
+  src: "/images/cta images/24cd8db82cca8c8ff709461cd6a0ce14e96b9b3e.png",
+  alt: "Women in our circle gathered together",
 } as const;
 
 export const ABOUT_CORE_VALUES_INTRO = {
@@ -60,16 +64,17 @@ export const ABOUT_TEAM = {
   subtitle:
     "Volunteers from every walk of life lending time, skills, and heart to verified causes across India.",
   ctaLabel: "Become a Volunteer",
-  href: "/#volunteer",
+  href: "/volunteer",
 } as const;
 
 export const ABOUT_VISION_CTA = {
-  alt: "A schoolgirl smiling in class, representing a world transformed through community giving",
+  src: "/images/b03847b9986d8aa9337b328b4e6d518339e813ae.png",
+  alt: "Schoolchildren in our circle, smiling together",
   title: "Your Giving Can Change a Life.",
   subtitle:
-    "Every verified donation helps children, families, and communities access better education, healthcare, and opportunities.",
+    "Every verified donation helps children, families, and communities\naccess better education, healthcare, and opportunities.",
   ctaLabel: "Champion a Cause",
-  href: "/#champion",
+  href: "/champion/apply",
 } as const;
 
 export const ABOUT_MISSION = {
@@ -82,4 +87,33 @@ export const ABOUT_VISION = {
   eyebrow: "Our Vision",
   title: "Transform Giving Across India",
   body: "A future where community giving is completely transparent, deeply impactful, and universally trusted, where every member of our circle creates lasting social change across India.",
+} as const;
+
+export const ABOUT_FAQS = {
+  eyebrow: "About The Giving Circle",
+  title: "Questions About Who We Are",
+  subtitle:
+    "How we verify partners, where gifts go, and what makes our circle different from a typical donation portal.",
+  items: [
+    {
+      question: "Who runs The Giving Circle?",
+      answer:
+        "The Giving Circle is an India-based community giving platform founded in 2022. We connect Cause Champions with verified NGOs so collective support reaches real causes with transparency and trust.",
+    },
+    {
+      question: "Do donations pass through The Giving Circle?",
+      answer:
+        "No. Contributions go directly to the verified NGO running the cause. We enable the giving-circle model, verify partners, and help report impact — we do not hold your gift as an intermediary wallet.",
+    },
+    {
+      question: "How do you verify NGO partners?",
+      answer:
+        "We partner only with government-certified organisations that meet official standards. Verification covers registration, programme fit, and the ability to share clear updates back to every giving circle.",
+    },
+    {
+      question: "Can supporters visit project sites?",
+      answer:
+        "Yes. We believe in communities for communities. Cause Champions and supporters are encouraged to visit project sites, meet beneficiaries, and join community activities whenever partners can host them safely.",
+    },
+  ],
 } as const;

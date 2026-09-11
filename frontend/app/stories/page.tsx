@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import StoriesHero from "./_sections/stories-hero";
+import PhotoPageHero from "@/components/photo-page-hero";
+import ReachBand from "@/components/reach-band";
+import PhotoCtaBand from "@/components/photo-cta-band";
+import MomentsSection from "@/app/(home)/_sections/moments-section";
 import StoriesArticles from "./_sections/stories-articles";
-import StoriesReach from "./_sections/stories-reach";
-import StoriesCta from "./_sections/stories-cta";
+import {
+  REACH_STATS,
+  STORIES_CTA,
+  STORIES_HERO,
+  STORIES_REACH,
+} from "@/constants";
 
 export const metadata: Metadata = {
   title: "Impact Stories | The Giving Circle",
@@ -13,10 +20,34 @@ export const metadata: Metadata = {
 export default function StoriesPage() {
   return (
     <>
-      <StoriesHero />
+      <PhotoPageHero
+        src={STORIES_HERO.src}
+        alt={STORIES_HERO.alt}
+        eyebrow={STORIES_HERO.eyebrow}
+        title={STORIES_HERO.title}
+        subtitle={STORIES_HERO.subtitle}
+        ctaLabel={STORIES_HERO.ctaLabel}
+        ctaHref={STORIES_HERO.ctaHref}
+        priority
+        objectPosition="object-[50%_48%]"
+      />
       <StoriesArticles />
-      <StoriesReach />
-      <StoriesCta />
+      <MomentsSection />
+      <ReachBand
+        eyebrow={STORIES_REACH.eyebrow}
+        title={STORIES_REACH.title}
+        subtitle={STORIES_REACH.subtitle}
+        stats={REACH_STATS}
+      />
+      <PhotoCtaBand
+        src={STORIES_CTA.src}
+        alt={STORIES_CTA.alt}
+        title={STORIES_CTA.title}
+        subtitle={STORIES_CTA.subtitle}
+        ctaLabel={STORIES_CTA.ctaLabel}
+        href={STORIES_CTA.href}
+        objectPosition={STORIES_CTA.objectPosition}
+      />
     </>
   );
 }

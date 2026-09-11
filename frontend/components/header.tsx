@@ -3,85 +3,134 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
-import { createPortal } from "react-dom";
+import { motion } from "framer-motion";
 import CtaButton from "@/components/cta-button";
 import {
   GET_INVOLVED_ITEM_CLASS,
   GET_INVOLVED_LINKS,
-  NAV_ITEM_CLASS,
   NAV_LINKS,
   SEGOE_UI_CLASS,
 } from "@/constants";
 
-export default function Header() {
-  const drawerId = useId();
-  const involvedId = useId();
-  const drawerInvolvedId = useId();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [isDrawerInvolvedOpen, setIsDrawerInvolvedOpen] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
+const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-2 py-2.5 text-[0.8125rem] font-[600] text-[#212121] transition-colors hover:text-[#000000] lg:px-2.5 lg:text-[0.875rem] min-[90rem]:px-3 min-[90rem]:text-[1rem]`;
 
-  const closeDrawer = () => {
-    setIsDrawerOpen(false);
-    setIsDrawerInvolvedOpen(false);
-  };
+const NAV_CTA_CLASS =
+  "h-11 !rounded-lg px-4 text-[0.8125rem] sm:h-12 sm:px-5 sm:text-[0.875rem] lg:h-12 lg:px-5 min-[90rem]:h-[3.25rem] min-[90rem]:px-6 min-[90rem]:text-[1rem]";
+
+function MenuIcon({ open }: { open: boolean }) {
+  return open ? (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M6 6L18 18M6 18L18 6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  ) : (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M4 7H20M4 12H20M4 17H20"
+        stroke="currentColor"
+        strokeWidth="2.25"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ChevronIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      aria-hidden
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      className={`shrink-0 transition-transform duration-200 ${
+        open ? "rotate-180" : ""
+      }`}
+    >
+      <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+export default function Header() {
+  const involvedId = useId();
+  const mobileInvolvedId = useId();
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isInvolvedOpen, setIsInvolvedOpen] = useState(false);
+  const [isMobileInvolvedOpen, setIsMobileInvolvedOpen] = useState(false);
 
   useEffect(() => {
-    setHasMounted(true);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeDrawer();
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        setIsInvolvedOpen(false);
+        setIsMobileInvolvedOpen(false);
+      }
     };
-
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
   useEffect(() => {
-    if (!isDrawerOpen) return undefined;
+    if (!isOpen) return undefined;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = previous;
     };
-  }, [isDrawerOpen]);
+  }, [isOpen]);
 
-  const mobileDrawer =
-    hasMounted &&
-    createPortal(
-      <div
-        className={`fixed inset-0 z-[100] lg:hidden ${
-          isDrawerOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-        aria-hidden={!isDrawerOpen}
-      >
-        <button
-          type="button"
-          tabIndex={isDrawerOpen ? 0 : -1}
-          aria-label="Close navigation menu"
-          className={`absolute inset-0 bg-black/45 transition-opacity duration-300 ease-out ${
-            isDrawerOpen ? "opacity-100" : "opacity-0"
-          }`}
-          onClick={closeDrawer}
-        />
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest("[data-involved-menu]")) {
+        setIsInvolvedOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
+  const closeMobile = () => {
+    setIsOpen(false);
+    setIsMobileInvolvedOpen(false);
+  };
+
+  return (
+    <motion.header
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed inset-x-0 z-50 transition-[top] duration-500 ${
+        scrolled ? "top-2 sm:top-2.5 md:top-3" : "top-3 sm:top-3.5 md:top-4"
+      }`}
+    >
+      <div className="mx-auto w-full max-w-[86rem] px-4 sm:px-5 md:px-7 lg:px-10 min-[90rem]:px-12">
         <div
-          id={drawerId}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Main navigation"
-          className={`absolute inset-y-0 right-0 flex w-[min(22.5rem,85%)] flex-col bg-[#FFFFFF] shadow-[-0.5rem_0_1.5rem_rgba(0,0,0,0.14)] transition-transform duration-300 ease-out will-change-transform ${
-            isDrawerOpen ? "translate-x-0" : "translate-x-full"
+          className={`rounded-lg border border-[#E5E5E5] bg-[#FFFFFF] px-3 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500 sm:rounded-xl sm:px-3.5 sm:py-3.5 md:rounded-2xl md:px-4 md:py-4 lg:px-5 lg:py-4 min-[90rem]:px-6 min-[90rem]:py-[1.125rem] ${
+            scrolled ? "shadow-[0_16px_48px_rgba(0,0,0,0.14)]" : ""
           }`}
         >
-          <div className="flex items-center justify-between gap-4 px-5 pt-5 pb-4">
+          <nav
+            className="flex items-center justify-between gap-2"
+            aria-label="Main navigation"
+          >
             <Link
               href="/"
-              className="block h-9 w-[9.75rem] shrink-0"
-              tabIndex={isDrawerOpen ? 0 : -1}
-              onClick={closeDrawer}
+              className="block h-10 w-[9.5rem] shrink-0 sm:h-11 sm:w-[11rem] md:h-12 md:w-[12.5rem] min-[90rem]:h-[3.25rem] min-[90rem]:w-[14rem]"
+              onClick={closeMobile}
             >
               <Image
                 src="/images/Frame 2071857645.png"
@@ -89,216 +138,137 @@ export default function Header() {
                 width={234}
                 height={60}
                 className="h-full w-full object-contain object-left"
+                priority
               />
             </Link>
-            <button
-              type="button"
-              tabIndex={isDrawerOpen ? 0 : -1}
-              className="flex h-10 w-10 items-center justify-center text-[#000000]"
-              aria-label="Close navigation menu"
-              onClick={closeDrawer}
-            >
-              <svg
-                aria-hidden="true"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M6 6L18 18M6 18L18 6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-          </div>
 
-          <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 pb-10">
-            <ul className="flex flex-col">
+            <div className="hidden min-w-0 flex-1 items-center justify-end gap-0.5 lg:flex min-[90rem]:gap-1">
               {NAV_LINKS.map((link) => (
-                <li key={link.href} className="border-b border-[#E0E0E0]">
-                  <Link
-                    href={link.href}
-                    tabIndex={isDrawerOpen ? 0 : -1}
-                    className={`${SEGOE_UI_CLASS} flex min-h-[3.5rem] items-center text-[1.125rem] leading-none font-[400] text-[#000000]`}
-                    onClick={closeDrawer}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+                <Link key={link.href} href={link.href} className={NAV_LINK_CLASS}>
+                  {link.label}
+                </Link>
               ))}
-              <li className="border-b border-[#E0E0E0]">
+
+              <div className="relative" data-involved-menu>
                 <button
                   type="button"
-                  tabIndex={isDrawerOpen ? 0 : -1}
-                  className={`${SEGOE_UI_CLASS} flex min-h-[3.5rem] w-full items-center justify-between gap-3 text-left text-[1.125rem] leading-none font-[400] text-[#000000]`}
-                  aria-expanded={isDrawerInvolvedOpen}
-                  aria-controls={drawerInvolvedId}
-                  onClick={() => setIsDrawerInvolvedOpen((open) => !open)}
+                  className={`${NAV_LINK_CLASS} inline-flex items-center gap-1`}
+                  aria-expanded={isInvolvedOpen}
+                  aria-haspopup="true"
+                  aria-controls={involvedId}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsInvolvedOpen((open) => !open);
+                  }}
                 >
                   Get Involved
-                  <svg
-                    aria-hidden="true"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    className={`shrink-0 transition-transform duration-200 ${
-                      isDrawerInvolvedOpen ? "rotate-180" : ""
-                    }`}
-                  >
-                    <path
-                      d="M2 4L6 8L10 4"
-                      stroke="#000000"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
+                  <ChevronIcon open={isInvolvedOpen} />
                 </button>
-                <div
-                  id={drawerInvolvedId}
-                  className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
-                    isDrawerInvolvedOpen
-                      ? "max-h-48 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <ul className="flex flex-col gap-4 pb-4 pl-5">
+                {isInvolvedOpen ? (
+                  <div
+                    id={involvedId}
+                    className="absolute top-full right-0 z-50 mt-2 flex w-[16.5625rem] flex-col gap-6 rounded-xl border border-[#E5E5E5] bg-[#FFFFFF] py-4 pr-4 pl-4 shadow-[0_12px_32px_rgba(0,0,0,0.12)] lg:right-auto lg:left-0"
+                  >
                     {GET_INVOLVED_LINKS.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          tabIndex={isDrawerOpen ? 0 : -1}
-                          className={`${SEGOE_UI_CLASS} block text-[1rem] leading-6 font-[400] text-[#212121]`}
-                          onClick={closeDrawer}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={GET_INVOLVED_ITEM_CLASS}
+                        onClick={() => setIsInvolvedOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
                     ))}
-                  </ul>
-                </div>
-              </li>
-            </ul>
+                  </div>
+                ) : null}
+              </div>
+            </div>
 
-            <div className="mt-8">
+            <div className="hidden shrink-0 lg:block lg:ml-2">
               <CtaButton
-                href="/champion"
-                className="h-12 w-full !rounded-[0.5rem] px-4"
+                href="/champion/apply"
+                className={NAV_CTA_CLASS}
                 labelClassName="font-[600]"
-                onClick={closeDrawer}
               >
                 Become a Cause Champion
               </CtaButton>
             </div>
-          </div>
-        </div>
-      </div>,
-      document.body,
-    );
 
-  return (
-    <>
-      <header
-        className={`sticky top-0 z-40 w-full min-w-0 border-b border-[#BDBDBD] bg-[#FFFFFF] ${SEGOE_UI_CLASS}`}
-      >
-        <nav
-          className="relative mx-auto flex h-16 w-full min-w-0 max-w-[90rem] items-center justify-between gap-3 px-4 sm:h-[4.5rem] sm:px-6 md:h-20 md:gap-4 md:px-8 lg:h-[5.5rem] lg:gap-3 lg:px-6 min-[90rem]:h-[6.25rem] min-[90rem]:gap-6 min-[90rem]:px-[6.25rem]"
-          aria-label="Main navigation"
-        >
-          <Link
-            href="/"
-            className="block h-10 w-[10.5rem] shrink-0 sm:h-11 sm:w-[12rem] md:h-12 md:w-[12.5rem] lg:h-11 lg:w-[11.25rem] min-[90rem]:h-[3.75rem] min-[90rem]:w-[14.625rem]"
+            <button
+              type="button"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-[#212121] transition-colors hover:bg-[#F5F5F5] lg:hidden"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((open) => !open)}
+            >
+              <MenuIcon open={isOpen} />
+            </button>
+          </nav>
+
+          <div
+            className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
+              isOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+            }`}
           >
-            <Image
-              src="/images/Frame 2071857645.png"
-              alt="The Giving Circle"
-              width={234}
-              height={60}
-              className="h-full w-full object-contain object-left"
-              priority
-            />
-          </Link>
+            <div className="flex flex-col gap-1 border-t border-[#EFEFEF] pt-3 pb-2">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`${SEGOE_UI_CLASS} rounded-lg px-3 py-2.5 text-[0.9375rem] font-[600] text-[#212121]`}
+                  onClick={closeMobile}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-2.5 lg:flex lg:h-6 min-[90rem]:gap-6">
-            {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className={NAV_ITEM_CLASS}>
-                {link.label}
-              </Link>
-            ))}
-            <div className="group relative h-6">
               <button
                 type="button"
-                className={`${NAV_ITEM_CLASS} inline-flex items-center gap-1`}
-                aria-expanded={false}
-                aria-haspopup="true"
-                aria-controls={involvedId}
+                className={`${SEGOE_UI_CLASS} flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-[0.9375rem] font-[600] text-[#212121]`}
+                aria-expanded={isMobileInvolvedOpen}
+                aria-controls={mobileInvolvedId}
+                onClick={() => setIsMobileInvolvedOpen((open) => !open)}
               >
                 Get Involved
-                <svg
-                  aria-hidden="true"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                >
-                  <path d="M2 4L6 8L10 4" stroke="#000000" strokeWidth="1.5" />
-                </svg>
+                <ChevronIcon open={isMobileInvolvedOpen} />
               </button>
               <div
-                id={involvedId}
-                className="absolute top-full right-0 z-20 hidden w-[16.5625rem] flex-col gap-8 rounded-[0.5rem] border border-[#BDBDBD] bg-[#FFFFFF] pt-[1.375rem] pr-4 pb-[1.375rem] pl-4 group-hover:flex group-focus-within:flex lg:right-auto lg:left-0"
+                id={mobileInvolvedId}
+                className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
+                  isMobileInvolvedOpen
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
               >
-                {GET_INVOLVED_LINKS.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={GET_INVOLVED_ITEM_CLASS}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <ul className="flex flex-col gap-1 pb-2 pl-4">
+                  {GET_INVOLVED_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={`${SEGOE_UI_CLASS} block rounded-lg px-3 py-2 text-[0.875rem] font-[400] text-[#212121]`}
+                        onClick={closeMobile}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="pt-2 px-1">
+                <CtaButton
+                  href="/champion/apply"
+                  className={`${NAV_CTA_CLASS} h-11 w-full sm:h-12`}
+                  labelClassName="font-[600]"
+                  onClick={closeMobile}
+                >
+                  Become a Cause Champion
+                </CtaButton>
               </div>
             </div>
           </div>
-
-          <div className="hidden shrink-0 lg:block">
-            <CtaButton
-              href="/champion"
-              className="h-10 px-3.5 lg:h-11 lg:px-4 min-[90rem]:h-[3.5rem] min-[90rem]:px-6"
-              labelClassName="font-[600]"
-            >
-              Become a Cause Champion
-            </CtaButton>
-          </div>
-
-          <button
-            type="button"
-            className="text-[var(--Main-CTA-button,#00A3BE)] lg:hidden"
-            aria-label="Open navigation menu"
-            aria-expanded={isDrawerOpen}
-            aria-controls={drawerId}
-            onClick={() => setIsDrawerOpen(true)}
-          >
-            <svg
-              aria-hidden="true"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M4 7H20M4 12H20M4 17H20"
-                stroke="currentColor"
-                strokeWidth="2.25"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-        </nav>
-      </header>
-      {mobileDrawer}
-    </>
+        </div>
+      </div>
+    </motion.header>
   );
 }

@@ -1,6 +1,12 @@
 import Image from "next/image";
 import FadeInSection from "@/components/fade-in-section";
+import CtaButton from "@/components/cta-button";
+import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS } from "@/constants";
+
+/** Matches floating header offset so the hero can bleed under the nav at 100dvh. */
+const HERO_BLEED =
+  "-mt-[5.5rem] pt-[5.5rem] sm:-mt-[6.25rem] sm:pt-[6.25rem] md:-mt-[6.75rem] md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:pt-[7.25rem]";
 
 export default function PhotoPageHero({
   src,
@@ -8,19 +14,27 @@ export default function PhotoPageHero({
   eyebrow,
   title,
   subtitle,
+  ctaLabel,
+  ctaHref,
   priority = false,
-  objectPosition = "object-[50%_42%]",
+  objectPosition = "object-[50%_55%]",
 }: {
   src: string;
   alt: string;
   eyebrow: string;
   title: string;
   subtitle: string;
+  ctaLabel?: string;
+  ctaHref?: string;
   priority?: boolean;
   objectPosition?: string;
 }) {
+  const showCta = Boolean(ctaLabel && ctaHref);
+
   return (
-    <section className="relative isolate min-h-[28rem] w-full overflow-hidden sm:min-h-[30rem] md:min-h-[32rem] lg:min-h-[30rem] min-[90rem]:h-[34rem] min-[90rem]:min-h-0">
+    <section
+      className={`relative isolate h-dvh w-full overflow-hidden ${HERO_BLEED}`}
+    >
       <Image
         src={src}
         alt={alt}
@@ -33,7 +47,7 @@ export default function PhotoPageHero({
         aria-hidden="true"
         className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.58)_50%,rgba(0,0,0,0.72)_100%)]"
       />
-      <FadeInSection className="relative z-[1] mx-auto flex h-full min-h-[28rem] w-full max-w-[90rem] flex-col items-center justify-center px-6 py-14 text-center sm:min-h-[30rem] sm:px-10 sm:py-16 md:min-h-[32rem] md:px-12 md:py-16 lg:min-h-[30rem] lg:px-14 lg:py-16 min-[90rem]:min-h-[34rem] min-[90rem]:px-[6.25rem]">
+      <FadeInSection className="relative z-[1] mx-auto flex h-full w-full max-w-[90rem] flex-col items-center justify-center px-6 py-14 text-center sm:px-10 sm:py-16 md:px-12 lg:px-14 min-[90rem]:px-[6.25rem]">
         <p
           className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[700] leading-[1.5rem] tracking-[0.08em] uppercase text-[#FFFFFFCC] sm:text-[0.875rem] min-[90rem]:text-[1rem]`}
         >
@@ -47,6 +61,19 @@ export default function PhotoPageHero({
         >
           {subtitle}
         </p>
+        {showCta ? (
+          <div className="mt-7 sm:mt-8">
+            <CtaButton
+              href={ctaHref!}
+              smoothScroll={ctaHref!.startsWith("#")}
+              className="h-12 rounded-[100px] bg-[#00A3BE] px-8 py-3 sm:h-14 sm:px-9 min-[90rem]:h-[4rem] min-[90rem]:px-9 min-[90rem]:py-[1.125rem]"
+              labelClassName="gap-2 font-[700]"
+            >
+              {ctaLabel}
+              <CtaArrow />
+            </CtaButton>
+          </div>
+        ) : null}
       </FadeInSection>
     </section>
   );

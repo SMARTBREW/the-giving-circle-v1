@@ -5,7 +5,7 @@ export const CHAMPION_PAGE_HERO = {
   titleAccent: "Impact.",
   subtitle:
     "Become a Cause Champion for a verified cause you care about, and inspire your circle to support meaningful change.",
-  primaryCta: { label: "Start Your Giving Circle", href: "/#contact" },
+  primaryCta: { label: "Start Your Giving Circle", href: "/champion/apply" },
   secondaryCta: { label: "Explore Causes", href: "/#causes" },
   src: "/images/cause-champion-hero.png",
   alt: "A Cause Champion smiling with children from our circle",
@@ -45,60 +45,7 @@ export const CHAMPION_CAMPAIGNS = {
   subtitle: "Explore verified campaigns and find one that speaks to you.",
   ctaLabel: "View All Live Causes",
   href: "/causes",
-  cards: [
-    {
-      category: "Education",
-      categoryClassName: "text-[var(--Brand-Deep-Blue,#3976A8)]",
-      title: "Keep Girls in School With Better Period Care",
-      titleLines: null,
-      org: "JWP",
-      location: "Uttarakhand",
-      raised: "₹1,92,000",
-      goal: "₹3,00,000",
-      percent: 55,
-      supporters: "500 Supporters",
-      daysLeft: "24 Days Left",
-      src: "/images/stories/c0fcbd6be0a24b7c89a15933e825abe1b1a9ea02.png",
-      alt: "Schoolgirls with menstrual health education materials",
-      href: "/causes",
-    },
-    {
-      category: "Animal Welfare",
-      categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
-      title: "Give Injured Street Animals a Second Chance",
-      titleLines: ["Give Injured Street Animals", "a Second Chance"] as const,
-      org: "Animal Care",
-      location: "Mumbai",
-      raised: "₹4,50,000",
-      goal: "₹6,00,000",
-      percent: 60,
-      supporters: "320 Supporters",
-      daysLeft: "18 Days Left",
-      src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
-      alt: "A volunteer caring for a rescued dog",
-      href: "/causes",
-    },
-    {
-      category: "Disaster Relief",
-      categoryClassName: "text-[var(--Brand-Coral,#ED3B58)]",
-      title: "Help Families Rebuild After the Uttarakhand Floods",
-      titleLines: null,
-      org: "GUS",
-      location: "Uttarakhand",
-      raised: "₹6,20,000",
-      goal: "₹8,50,000",
-      percent: 70,
-      supporters: "410 Supporters",
-      daysLeft: "12 Days Left",
-      src: "/images/stories/c8329e59978e6b525af70415259a31cd1f388a41.png",
-      alt: "Volunteers helping families after flooding in the mountains",
-      href: "/causes",
-    },
-  ],
 } as const;
-
-export type ChampionCampaignCard = (typeof CHAMPION_CAMPAIGNS.cards)[number];
-
 export const CHAMPION_TRUST = {
   eyebrow: "Built on Trust",
   title: "Champion with Confidence",
@@ -207,7 +154,7 @@ export const CHAMPION_MEET = {
   subtitle:
     "People from different walks of life are bringing their networks together to support meaningful causes.",
   ctaLabel: "Become a Cause Champion",
-  href: "/#contact",
+  href: "/champion/apply",
   people: [
     {
       name: "Ajay Mehrotra",
@@ -282,5 +229,150 @@ export const CHAMPION_CTA = {
   subtitle:
     "Bring your circle together around a cause you believe in, and turn shared support into meaningful change.",
   ctaLabel: "Become a Cause Champion",
-  href: "/#contact",
+  href: "/champion/apply",
 } as const;
+
+export const CHAMPION_APPLY = {
+  title: "Champion a Cause",
+  subtitle:
+    "Choose a cause and bring your circle together to create meaningful impact.",
+  steps: [
+    {
+      number: 1,
+      title: "Choose A Cause",
+      description: "Select the cause you want to support.",
+    },
+    {
+      number: 2,
+      title: "Reason for Support",
+      description: "Choose what brings you to this cause.",
+    },
+    {
+      number: 3,
+      title: "Personal Details",
+      description: "Add your basic contact information.",
+    },
+  ],
+  step1: {
+    progressLabel: "Step 1 of 3",
+    question: "Which cause would you like to champion?",
+    questionLine1: "Which cause would you like to",
+    questionLine2: "champion?",
+    nextLabel: "Next",
+    otherPlaceholder: "Tell us about the cause you care about",
+    causes: [
+      {
+        id: "education",
+        label: "Education",
+        iconSrc: "/images/forms/education.png",
+      },
+      {
+        id: "animal-welfare",
+        label: "Animal Welfare",
+        iconSrc: "/images/forms/animal-welfare.png",
+      },
+      {
+        id: "womens-health",
+        label: "Women’s Health",
+        iconSrc: "/images/forms/womens-health.png",
+      },
+      {
+        id: "disaster-relief",
+        label: "Disaster Relief",
+        iconSrc: "/images/forms/disaster-relief.png",
+      },
+      {
+        id: "other",
+        label: "Other Cause",
+        iconSrc: "/images/forms/other-cause.png",
+      },
+    ],
+  },
+  step2: {
+    progressLabel: "Step 2 of 3",
+    question: "What’s inspiring you to support this cause?",
+    previousLabel: "Previous",
+    nextLabel: "Next",
+    otherPlaceholder: "Tell us a little more about your reason",
+    reasons: [
+      {
+        id: "birthday",
+        label: "Birthday",
+        iconSrc: "/images/forms/birthday.png",
+      },
+      {
+        id: "anniversary",
+        label: "Anniversary",
+        iconSrc: "/images/forms/anniversary.png",
+      },
+      {
+        id: "remembrance",
+        label: "Remembrance",
+        iconSrc: "/images/forms/remembrance.png",
+      },
+      {
+        id: "personal",
+        label: "Personal Reason",
+        iconSrc: "/images/forms/personal-reason.png",
+      },
+      {
+        id: "other-occasion",
+        label: "Other Occasion",
+        iconSrc: "/images/forms/other-occasion.png",
+      },
+    ],
+  },
+  step3: {
+    progressLabel: "Step 3 of 3",
+    title: "Personal Details",
+    subtitle: "Share your details so our team can help you get started.",
+    previousLabel: "Previous",
+    submitLabel: "Submit",
+    agreeLabel:
+      "I agree to receive updates from The Giving Circle about becoming a Cause Champion.",
+    fields: {
+      fullName: { label: "Full Name", placeholder: "John Doe", required: true },
+      mobile: {
+        label: "Mobile Number",
+        placeholder: "98211 14112",
+        required: true,
+      },
+      email: {
+        label: "Email Address",
+        placeholder: "john.doe@abc.com",
+        required: true,
+      },
+      city: { label: "City", placeholder: "Mumbai", required: true },
+    },
+    cities: [
+      "Mumbai",
+      "Delhi",
+      "Bengaluru",
+      "Hyderabad",
+      "Chennai",
+      "Kolkata",
+      "Pune",
+      "Ahmedabad",
+      "Gurugram",
+      "Noida",
+      "Other",
+    ],
+  },
+  thanks: {
+    title: "Thank You!",
+    eyebrow: "You’ve taken the first step to create change.",
+    body: "Our team will connect with you shortly with relevant NGOs and campaigns based on your preferences.",
+    inviteLabel: "Your Invite Link",
+    inviteHint:
+      "Share this link with friends, family or colleagues interested in becoming a Cause Champion.",
+    inviteUrl: "thegivingcircle.in/ref/TGC84721",
+    copyLabel: "Copy",
+    homeLabel: "Back to Homepage",
+    homeHref: "/",
+  },
+} as const;
+
+export type ChampionApplyCauseId =
+  (typeof CHAMPION_APPLY.step1.causes)[number]["id"];
+export type ChampionApplyReasonId =
+  (typeof CHAMPION_APPLY.step2.reasons)[number]["id"];

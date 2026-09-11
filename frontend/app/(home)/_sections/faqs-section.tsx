@@ -14,7 +14,7 @@ export default function FaqsSection({
   title = "Everything You Need to Know",
   subtitle = "Find answers about donations, NGO verification, volunteering, and tracking your impact.",
   items = FAQ_ITEMS,
-  className = "bg-[var(--Alternate-color,#F7FBFB)]",
+  className = "bg-gray-100",
 }: {
   id?: string;
   eyebrow?: string;
@@ -25,7 +25,7 @@ export default function FaqsSection({
 }) {
   return (
     <section id={id} className={`w-full ${className}`}>
-      <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-10 pb-16 sm:px-8 sm:pt-12 sm:pb-20 md:px-10 md:pt-14 md:pb-24 lg:px-12 lg:pt-16 min-[90rem]:h-[75.6875rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[7.5rem]">
+      <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-10 pb-16 sm:px-8 sm:pt-12 sm:pb-20 md:px-10 md:pt-14 md:pb-24 lg:px-12 lg:pt-16 lg:pb-20 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           eyebrow={eyebrow}
           title={title}

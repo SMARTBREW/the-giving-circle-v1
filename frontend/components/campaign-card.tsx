@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SEGOE_UI_CLASS, type ChampionCampaignCard } from "@/constants";
+import CtaButton from "@/components/cta-button";
+import { SEGOE_UI_CLASS, type CampaignCardData } from "@/constants";
 
 function PeopleIcon() {
   return (
@@ -53,10 +54,15 @@ function LocationIcon() {
   );
 }
 
-export default function CampaignCard({ card }: { card: ChampionCampaignCard }) {
+export default function CampaignCard({ card }: { card: CampaignCardData }) {
+  const href = `/causes/${card.id}`;
+
   return (
-    <article className="flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] min-[90rem]:h-[39.0625rem] min-[90rem]:w-[24.75rem]">
-      <div className="relative aspect-[396/240] w-full shrink-0 overflow-hidden rounded-t-[1rem] min-[90rem]:h-[15rem] min-[90rem]:aspect-auto">
+    <article className="flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-transform duration-300 ease-out hover:-translate-y-1 min-[90rem]:h-[39.0625rem] min-[90rem]:w-[24.75rem]">
+      <Link
+        href={href}
+        className="relative aspect-[396/240] w-full shrink-0 overflow-hidden rounded-t-[1rem] min-[90rem]:h-[15rem] min-[90rem]:aspect-auto"
+      >
         <Image
           src={card.src}
           alt={card.alt}
@@ -85,7 +91,7 @@ export default function CampaignCard({ card }: { card: ChampionCampaignCard }) {
           </span>
           Verified
         </span>
-      </div>
+      </Link>
 
       <div className="flex flex-1 flex-col gap-3 px-4 pt-4 pb-4 sm:gap-3.5 sm:px-5 sm:pt-5 sm:pb-5 min-[90rem]:gap-4 min-[90rem]:px-6 min-[90rem]:pt-5 min-[90rem]:pb-6">
         <p
@@ -97,14 +103,16 @@ export default function CampaignCard({ card }: { card: ChampionCampaignCard }) {
         <h3
           className={`${SEGOE_UI_CLASS} line-clamp-2 text-[1.25rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#000000)] sm:text-[1.375rem] sm:leading-8 min-[90rem]:min-h-[4.625rem] min-[90rem]:text-[1.75rem] min-[90rem]:leading-[2.1875rem]`}
         >
-          {card.titleLines ? (
-            <>
-              <span className="block">{card.titleLines[0]}</span>
-              <span className="block">{card.titleLines[1]}</span>
-            </>
-          ) : (
-            card.title
-          )}
+          <Link href={href} className="transition-colors hover:text-[var(--Main-CTA-button,#00A3BE)]">
+            {card.titleLines ? (
+              <>
+                <span className="block">{card.titleLines[0]}</span>
+                <span className="block">{card.titleLines[1]}</span>
+              </>
+            ) : (
+              card.title
+            )}
+          </Link>
         </h3>
 
         <div
@@ -160,12 +168,13 @@ export default function CampaignCard({ card }: { card: ChampionCampaignCard }) {
             </span>
           </div>
 
-          <Link
-            href={card.href}
-            className={`${SEGOE_UI_CLASS} mt-1 inline-flex h-12 w-full items-center justify-center rounded-[100px] bg-[var(--Main-CTA-button,#00A3BE)] px-[1.1875rem] text-[0.9375rem] font-[700] leading-none tracking-normal text-[#FFFFFF] transition-opacity duration-300 ease-out hover:opacity-90 min-[90rem]:h-14 min-[90rem]:text-[1rem]`}
+          <CtaButton
+            href={href}
+            className="mt-1 h-12 w-full px-[1.1875rem] text-[0.9375rem] min-[90rem]:h-14 min-[90rem]:text-[1rem]"
+            labelClassName="font-[700]"
           >
-            Champion This Cause
-          </Link>
+            View Cause
+          </CtaButton>
         </div>
       </div>
     </article>

@@ -43,19 +43,18 @@ export default function MomentCard({
   return (
     <motion.div
       initial="rest"
-      animate="rest"
       whileHover={hoverMotion ? "hover" : undefined}
       className="group/moment relative h-full w-full"
     >
       <motion.article
-        variants={hoverMotion ? cardMotion : undefined}
+        variants={cardMotion}
         transition={{
           type: "spring",
           stiffness: 170,
           damping: 24,
           mass: 0.85,
         }}
-        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-5 pb-5 shadow-[0px_4px_20px_0px_#0000000F] sm:px-6 sm:pt-6 sm:pb-6 md:px-8 md:pt-8 md:pb-8 lg:px-4 lg:pt-6 lg:pb-6 lg:transition-colors lg:duration-300 lg:group-hover/moment:border-[var(--Main-CTA-button,#00A3BE)] min-[90rem]:h-[24.8125rem] min-[90rem]:px-8 min-[90rem]:pt-[0.888125rem] min-[90rem]:pb-0"
+        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-5 pb-5 shadow-[0px_4px_20px_0px_#0000000F] sm:px-6 sm:pt-6 sm:pb-6 md:px-8 md:pt-8 md:pb-8 lg:px-5 lg:pt-6 lg:pb-6 lg:transition-colors lg:duration-300 lg:group-hover/moment:border-[var(--Main-CTA-button,#00A3BE)] min-[90rem]:h-[24.8125rem] min-[90rem]:px-6 min-[90rem]:pt-[0.888125rem] min-[90rem]:pb-0"
       >
         {hoverMotion ? (
           <motion.span
@@ -84,16 +83,16 @@ export default function MomentCard({
         >
           {body}
         </p>
-        <div className="relative z-10 mt-5 w-full min-w-0 sm:mt-6 lg:mt-auto lg:pt-4 min-[90rem]:mb-8 min-[90rem]:mt-auto min-[90rem]:w-[20.75rem] min-[90rem]:pt-0">
+        <div className="relative z-10 mt-5 w-full min-w-0 sm:mt-6 lg:mt-auto lg:pt-4 min-[90rem]:mb-8 min-[90rem]:mt-auto min-[90rem]:pt-0">
           <CtaButton
             href={href}
             variant="outline"
             hoverFill
-            className="h-12 w-full min-w-0 gap-2 bg-[#FFFFFF] px-3 py-3 text-[0.875rem] sm:h-14 sm:px-4 sm:text-[0.9375rem] lg:h-12 lg:px-3 min-[90rem]:h-[4rem] min-[90rem]:gap-2.5 min-[90rem]:px-6 min-[90rem]:py-5 min-[90rem]:text-[1.125rem]"
-            labelClassName="font-[600] !whitespace-normal"
+            className="h-12 w-full bg-[#FFFFFF] px-5 py-3 text-[0.8125rem] sm:h-14 sm:px-6 sm:text-[0.875rem] lg:h-12 lg:px-5 lg:text-[0.8125rem] min-[90rem]:h-[4rem] min-[90rem]:px-6 min-[90rem]:py-5 min-[90rem]:text-[1rem]"
+            labelClassName="shrink-0"
           >
             {ctaLabel}
-            <CtaArrow className="min-[90rem]:h-5 min-[90rem]:w-5" />
+            <CtaArrow />
           </CtaButton>
         </div>
       </motion.article>

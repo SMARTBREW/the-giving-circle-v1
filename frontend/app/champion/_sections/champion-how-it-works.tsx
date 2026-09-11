@@ -46,7 +46,7 @@ export default function ChampionHowItWorks() {
                 </div>
 
                 <h3
-                  className={`${SEGOE_UI_CLASS} mt-5 w-full text-center text-[1.125rem] font-[700] leading-8 tracking-normal whitespace-nowrap text-[var(--Main-headings,#000000)] sm:mt-6 sm:text-[1.25rem] min-[90rem]:mt-6 min-[90rem]:h-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8`}
+                  className={`${SEGOE_UI_CLASS} mt-5 w-full text-center text-[1.125rem] font-[700] leading-8 tracking-normal text-[var(--Main-headings,#000000)] sm:mt-6 sm:text-[1.25rem] min-[90rem]:mt-6 min-[90rem]:h-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap`}
                 >
                   {step.title}
                 </h3>

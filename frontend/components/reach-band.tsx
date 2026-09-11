@@ -23,7 +23,7 @@ export default function ReachBand({
       className={
         tone === "white"
           ? "w-full bg-[#FFFFFF]"
-          : "w-full bg-[var(--Alternate-color,#F7FBFB)]"
+          : "w-full bg-gray-100"
       }
     >
       <FadeInSection

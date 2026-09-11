@@ -5,6 +5,15 @@ export const STORIES_HERO = {
     "Discover how Cause Champions and verified NGOs are turning collective support into meaningful change across India.",
   src: "/images/stories/c0fcbd6be0a24b7c89a15933e825abe1b1a9ea02.png",
   alt: "Schoolgirls holding menstrual health education pamphlets at a Wings of Hope session",
+  ctaLabel: "Champion a Cause",
+  ctaHref: "/champion/apply",
+} as const;
+
+export const STORIES_ARTICLES_INTRO = {
+  eyebrow: "From Our Circle",
+  title: "Stories That Stay With You",
+  subtitle:
+    "Each story follows Cause Champions and verified NGOs as collective giving becomes education, care, relief, and dignity on the ground.",
 } as const;
 
 export const STORIES_REACH = {
@@ -15,12 +24,14 @@ export const STORIES_REACH = {
 } as const;
 
 export const STORIES_CTA = {
-  alt: "A schoolgirl smiling in class, representing the impact of every giving circle",
+  src: "/images/stories/c8329e59978e6b525af70415259a31cd1f388a41.png",
+  alt: "Volunteers helping an elderly woman along a flooded mountain path",
   title: "Be Part of the Next Story.",
   subtitle:
     "Champion a cause, build your giving circle, and create change that communities will remember for years.",
   ctaLabel: "Champion a Cause",
-  href: "/#champion",
+  href: "/champion/apply",
+  objectPosition: "object-[50%_40%] sm:object-[48%_35%]",
 } as const;
 
 export const STORY_ARTICLES = [

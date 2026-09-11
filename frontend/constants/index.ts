@@ -1,6 +1,27 @@
 export { InterFont, InstrumentSerif, PoppinsFont, SatoshiBold } from "./fonts";
 export { CAUSES_PAGE, CAUSE_FILTER_ALL } from "./causes";
 export {
+  CAUSES_HERO,
+  CAUSES_LIST_INTRO,
+  CAUSES_REACH,
+  CAUSES_CTA,
+  CAUSE_CATEGORY_CARDS,
+  LIVE_CAUSES,
+  getLiveCause,
+  getFeaturedCauses,
+  getCauseCategories,
+  toCampaignCard,
+} from "./causes";
+export type { LiveCause, CampaignCardData } from "./causes";
+export {
+  CAUSE_DETAIL_CONTENT,
+  getCauseDetailContent,
+} from "./cause-details";
+export type { CauseDetailContent } from "./cause-details";
+
+/** @deprecated Prefer CAUSE_CATEGORY_CARDS — kept for existing home imports during rename. */
+export { CAUSE_CATEGORY_CARDS as CAUSE_CARDS } from "./causes";
+export {
   ABOUT_WHY_WE_GATHER,
   ABOUT_OUR_STORY,
   ABOUT_CORE_VALUES_INTRO,
@@ -10,11 +31,13 @@ export {
   ABOUT_MISSION,
   ABOUT_VISION,
   ABOUT_VISION_CTA,
+  ABOUT_FAQS,
 } from "./about";
 export {
   STORY_ARTICLES,
   IMPACT_STORIES,
   STORIES_HERO,
+  STORIES_ARTICLES_INTRO,
   STORIES_REACH,
   STORIES_CTA,
 } from "./stories";
@@ -22,9 +45,12 @@ export type { StoryArticle, StoryStatIcon } from "./stories";
 export {
   BLOG_ARTICLES,
   BLOG_HERO,
+  BLOG_ARTICLES_INTRO,
+  BLOG_FILTER_ALL,
   BLOG_REACH,
   BLOG_CTA,
   getBlogArticle,
+  getBlogCategories,
 } from "./blog";
 export type { BlogArticle, BlogSection } from "./blog";
 export {
@@ -36,9 +62,24 @@ export {
   CHAMPION_MEET,
   CHAMPION_FAQS,
   CHAMPION_CTA,
+  CHAMPION_APPLY,
 } from "./champion";
-export type { ChampionCampaignCard, ChampionTestimonial } from "./champion";
-
+export type {
+  ChampionTestimonial,
+  ChampionApplyCauseId,
+  ChampionApplyReasonId,
+} from "./champion";
+export { PARTNER_APPLY } from "./partner";
+export type { PartnerApplyFocusId } from "./partner";
+export {
+  VOLUNTEER_PAGE_HERO,
+  VOLUNTEER_HOW_IT_WORKS,
+  VOLUNTEER_TRUST,
+  VOLUNTEER_MEET,
+  VOLUNTEER_FAQS,
+  VOLUNTEER_CTA,
+} from "./volunteer";
+export type { CampaignCardData as ChampionCampaignCard } from "./causes";
 export const SEGOE_UI_CLASS = "font-segoe";
 
 export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-[500] text-[0.8125rem] text-[#000000] min-[90rem]:text-[1.125rem]`;
@@ -62,8 +103,8 @@ export const NAV_LINKS = [
 
 export const GET_INVOLVED_LINKS = [
   { href: "/champion", label: "Become a Cause Champion" },
-  { href: "/#partner", label: "Partner as an NGO" },
-  { href: "/#volunteer", label: "Volunteer With Us" },
+  { href: "/partner", label: "Partner as an NGO" },
+  { href: "/volunteer", label: "Volunteer With Us" },
 ] as const;
 
 export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[#000000]`;
@@ -130,33 +171,10 @@ export const SUPPORT_CAUSE_BAND = {
   alt: "Schoolchildren in our circle, smiling together",
   title: "Your Giving Can Change a Life.",
   subtitle:
-    "Every verified donation helps children, families, and communities access better education, healthcare, and opportunities.",
+    "Every verified donation helps children, families, and communities\naccess better education, healthcare, and opportunities.",
   ctaLabel: "Support a Cause",
-  href: "/#causes",
+  href: "/causes",
 } as const;
-
-export const CAUSE_CARDS = [
-  {
-    label: "Education",
-    src: EDUCATION_PHOTO,
-    alt: "A schoolgirl in class, smiling with her classmates",
-  },
-  {
-    label: "Animal Welfare",
-    src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
-    alt: "A volunteer with a rescued dog",
-  },
-  {
-    label: "Women’s Health",
-    src: "/images/causes/353777ccdbf9acbedc2cfa91e44db8b6ebe0d296.png",
-    alt: "A health worker checking a woman’s blood pressure",
-  },
-  {
-    label: "Disaster Relief",
-    src: "/images/causes/a070e0c62ce4ae1ad271d88e7bb2549a0cc4173a.png",
-    alt: "Volunteers handing relief supplies to a family",
-  },
-] as const;
 
 export const MOMENT_CARDS = [
   {
@@ -164,21 +182,21 @@ export const MOMENT_CARDS = [
     body: "Turn your celebration into support for a cause you care about, and bring your circle along.",
     ctaLabel: "Start a Birthday Fundraiser",
     iconSrc: "/images/moments/96e2113621a7af04d4cce296e51af5e80dc3bdff.png",
-    href: "/#contact",
+    href: "/champion/apply",
   },
   {
     title: "Anniversary",
     body: "Mark your journey together by supporting a cause you care about, and bring your circle along.",
     ctaLabel: "Start an Anniversary Fundraiser",
     iconSrc: "/images/moments/af9d4dad96f552ff7f72f1bcc82853f2e29cfc3a.png",
-    href: "/#contact",
+    href: "/champion/apply",
   },
   {
     title: "Remembrance",
     body: "Honour a loved one’s memory through a cause that mattered to them, and bring your circle together in support.",
     ctaLabel: "Start a Remembrance Fundraiser",
     iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
-    href: "/#contact",
+    href: "/champion/apply",
   },
 ] as const;
 
@@ -216,7 +234,7 @@ export const VOLUNTEER_BAND = {
   subtitle:
     "Contribute your time, skills, and energy to verified causes creating meaningful change across communities.",
   ctaLabel: "Become a Volunteer",
-  href: "/#contact",
+  href: "/volunteer",
 } as const;
 
 export const VOLUNTEERS = [

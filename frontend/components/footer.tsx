@@ -126,7 +126,10 @@ function FooterLinkList({
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full min-w-0 bg-[#F5F5F5]">
+    <footer
+      id="contact"
+      className="w-full min-w-0 bg-[#F5F5F5] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0"
+    >
       <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-10 pb-6 sm:px-8 sm:pt-12 sm:pb-8 md:px-10 md:pt-14 md:pb-10 lg:px-12 lg:pt-16 lg:pb-12 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
         <div className="grid w-full min-w-0 grid-cols-1 gap-9 sm:gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-10 min-[90rem]:grid-cols-4 min-[90rem]:gap-x-8 min-[90rem]:gap-y-0">
           <div className="flex min-w-0 flex-col md:col-span-2 min-[90rem]:col-span-1">

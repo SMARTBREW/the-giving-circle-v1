@@ -3,16 +3,18 @@ import SectionIntro from "@/components/section-intro";
 import CampaignCard from "@/components/campaign-card";
 import CtaButton from "@/components/cta-button";
 import CtaArrow from "@/components/cta-arrow";
-import { CHAMPION_CAMPAIGNS } from "@/constants";
+import {
+  CHAMPION_CAMPAIGNS,
+  getFeaturedCauses,
+  toCampaignCard,
+} from "@/constants";
 
 export default function ChampionCampaigns() {
-  const { eyebrow, title, subtitle, ctaLabel, href, cards } = CHAMPION_CAMPAIGNS;
+  const { eyebrow, title, subtitle, ctaLabel, href } = CHAMPION_CAMPAIGNS;
+  const cards = getFeaturedCauses().map(toCampaignCard);
 
   return (
-    <section
-      id="causes"
-      className="w-full bg-[var(--Alternate-color,#F7FBFB)] min-[90rem]:h-[67.875rem]"
-    >
+    <section id="causes" className="w-full bg-gray-100">
       <FadeInSection className="mx-auto flex h-full w-full max-w-[90rem] flex-col items-center px-4 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:px-10 md:pt-16 md:pb-16 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[4rem]">
         <SectionIntro
           eyebrow={eyebrow}
@@ -22,9 +24,9 @@ export default function ChampionCampaigns() {
           subtitleClassName="min-[90rem]:h-8 min-[90rem]:whitespace-nowrap"
         />
 
-        <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-12 lg:grid-cols-3 min-[90rem]:mt-[3.5625rem] min-[90rem]:flex min-[90rem]:justify-center min-[90rem]:gap-6">
+        <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-12 min-[90rem]:mt-[3.5625rem] min-[90rem]:flex min-[90rem]:justify-center min-[90rem]:gap-6">
           {cards.map((card) => (
-            <li key={card.title} className="min-w-0 min-[90rem]:w-[24.75rem]">
+            <li key={card.id} className="min-w-0 min-[90rem]:w-[24.75rem]">
               <CampaignCard card={card} />
             </li>
           ))}

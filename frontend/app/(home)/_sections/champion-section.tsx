@@ -66,10 +66,10 @@ export default function ChampionSection() {
           </ul>
           <div className="mt-5 sm:mt-7 min-[90rem]:mt-10">
             <CtaButton
-              href="/#contact"
+              href="/champion/apply"
               variant="outline"
-              className="group h-11 w-full gap-2 bg-[#FFFFFF] px-6 py-3 transition-colors duration-300 ease-out hover:bg-[var(--Main-CTA-button,#00A3BE)] sm:h-14 md:h-[4rem] min-[90rem]:w-[20rem] min-[90rem]:px-10 min-[90rem]:py-5"
-              labelClassName="inline-flex h-6 items-center font-[600] tracking-normal transition-colors duration-300 ease-out group-hover:text-[#FFFFFF]"
+              hoverFill
+              className="h-11 w-full gap-2 bg-[#FFFFFF] px-6 py-3 sm:h-14 md:h-[4rem] min-[90rem]:w-[20rem] min-[90rem]:px-10 min-[90rem]:py-5"
             >
               Start Your Giving Journey
               <CtaArrow />

@@ -7,7 +7,6 @@ import CtaArrow from "@/components/cta-arrow";
 import {
   BLOG_ARTICLES,
   BLOG_CTA,
-  EDUCATION_PHOTO,
   SEGOE_UI_CLASS,
   getBlogArticle,
 } from "@/constants";
@@ -49,7 +48,7 @@ export default async function BlogArticlePage({
 
   return (
     <>
-      <section className="w-full bg-[var(--Alternate-color,#F7FBFB)]">
+      <section className="w-full bg-gray-100">
         <div className="mx-auto w-full max-w-[90rem] px-4 pt-8 pb-10 sm:px-8 sm:pt-10 sm:pb-12 md:px-10 md:pt-12 md:pb-14 lg:px-12 lg:pt-14 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[4rem] min-[90rem]:pb-[4.5rem]">
           <nav
             aria-label="Breadcrumb"
@@ -196,13 +195,13 @@ export default async function BlogArticlePage({
       </section>
 
       <PhotoCtaBand
-        src={EDUCATION_PHOTO}
+        src={BLOG_CTA.src}
         alt={BLOG_CTA.alt}
         title={BLOG_CTA.title}
         subtitle={BLOG_CTA.subtitle}
         ctaLabel={BLOG_CTA.ctaLabel}
         href={BLOG_CTA.href}
-        objectPosition="sm:object-[50%_40%]"
+        objectPosition={BLOG_CTA.objectPosition}
       />
     </>
   );

@@ -1,19 +1,19 @@
 "use client";
 
-import { CAUSE_CARDS, CAUSE_FILTER_ALL, SEGOE_UI_CLASS } from "@/constants";
+import { SEGOE_UI_CLASS } from "@/constants";
 
-export default function CausesFilters({
+export default function FilterChips({
+  options,
   value,
   onChange,
 }: {
+  options: readonly string[];
   value: string;
   onChange: (value: string) => void;
 }) {
-  const filters = [CAUSE_FILTER_ALL, ...CAUSE_CARDS.map((cause) => cause.label)];
-
   return (
     <div className="flex w-full flex-wrap justify-center gap-2 sm:gap-3">
-      {filters.map((label) => {
+      {options.map((label) => {
         const isActive = value === label;
 
         return (

@@ -55,7 +55,7 @@ export default function PhotoCtaBand({
         </>
       ) : null}
       <FadeInSection
-        className={`relative z-[1] mx-auto flex h-full min-h-[20rem] w-full max-w-[90rem] flex-col justify-center px-6 py-12 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] sm:min-h-[30rem] sm:px-10 sm:py-16 sm:pb-16 md:min-h-[32rem] md:px-12 md:py-16 lg:min-h-[30rem] lg:px-14 lg:py-16 lg:pb-16 min-[90rem]:min-h-0 min-[90rem]:py-0 min-[90rem]:pb-0 ${
+        className={`relative z-[1] mx-auto flex h-full min-h-[20rem] w-full max-w-[90rem] flex-col justify-center px-6 py-12 sm:min-h-[30rem] sm:px-10 sm:py-16 md:min-h-[32rem] md:px-12 md:py-16 lg:min-h-[30rem] lg:px-14 lg:py-16 min-[90rem]:min-h-0 min-[90rem]:py-0 min-[90rem]:pb-0 ${
           isLeft
             ? "items-center min-[90rem]:relative min-[90rem]:flex min-[90rem]:items-start min-[90rem]:justify-center min-[90rem]:px-[6.25rem]"
             : "items-center min-[90rem]:relative min-[90rem]:block min-[90rem]:px-0"
@@ -71,10 +71,10 @@ export default function PhotoCtaBand({
           {title}
         </h2>
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 w-full max-w-[22rem] text-[0.9375rem] leading-6 font-[400] tracking-[0.0025em] text-[#FFFFFF] sm:mt-5 sm:max-w-[30rem] sm:text-[1.0625rem] sm:leading-7 md:mt-5 md:max-w-[36rem] md:text-[1.125rem] md:leading-8 min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2.25rem] ${
+          className={`${SEGOE_UI_CLASS} mt-4 w-full max-w-[22rem] whitespace-pre-line text-[0.9375rem] leading-6 font-[400] tracking-[0.0025em] text-[#FFFFFF] sm:mt-5 sm:max-w-[34rem] sm:text-[1.0625rem] sm:leading-7 md:mt-5 md:max-w-[40rem] md:text-[1.125rem] md:leading-8 lg:max-w-[42rem] min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-9 ${
             isLeft
-              ? "text-center min-[90rem]:mt-6 min-[90rem]:w-[32.5rem] min-[90rem]:text-left"
-              : "text-center min-[90rem]:absolute min-[90rem]:top-[13.875rem] min-[90rem]:left-1/2 min-[90rem]:mt-0 min-[90rem]:h-[4.5rem] min-[90rem]:w-[32.5rem] min-[90rem]:-translate-x-1/2"
+              ? "text-center min-[90rem]:mt-6 min-[90rem]:w-[40rem] min-[90rem]:text-left"
+              : "text-center min-[90rem]:absolute min-[90rem]:top-[13.875rem] min-[90rem]:left-1/2 min-[90rem]:mt-0 min-[90rem]:h-[4.5rem] min-[90rem]:w-[40rem] min-[90rem]:-translate-x-1/2"
           }`}
         >
           {subtitle}

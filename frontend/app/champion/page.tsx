@@ -26,7 +26,7 @@ export default function ChampionPage() {
       <ChampionHowItWorks />
       <ChampionCampaigns />
       <ChampionTrust />
-      <MomentsSection className="bg-[#F7FBFB]" />
+      <MomentsSection className="bg-gray-100" />
       <ChampionVoices />
       <ChampionMeet />
       <PartnersSection />

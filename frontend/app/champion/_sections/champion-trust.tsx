@@ -18,7 +18,7 @@ export default function ChampionTrust() {
         />
 
         <div className="relative mt-10 w-full max-w-[77.5rem] overflow-hidden sm:mt-12 lg:mt-14 min-[90rem]:mt-16">
-          <ul className="relative z-10 grid w-full grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 md:gap-0 lg:grid-cols-3">
+          <ul className="relative z-10 grid w-full grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 md:gap-0 min-[90rem]:grid-cols-3">
             {features.map((feature, index) => (
               <li
                 key={feature.title}
@@ -54,17 +54,17 @@ export default function ChampionTrust() {
           {/* Vertical dividers — Figma 1px #E4E4E7 */}
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-1/3 z-0 hidden w-px -translate-x-1/2 bg-[#E4E4E7] lg:block"
+            className="pointer-events-none absolute inset-y-0 left-1/3 z-0 hidden w-px -translate-x-1/2 bg-[#E4E4E7] min-[90rem]:block"
           />
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-2/3 z-0 hidden w-px -translate-x-1/2 bg-[#E4E4E7] lg:block"
+            className="pointer-events-none absolute inset-y-0 left-2/3 z-0 hidden w-px -translate-x-1/2 bg-[#E4E4E7] min-[90rem]:block"
           />
 
           {/* Horizontal divider — Figma 1240px #E4E4E7 */}
           <span
             aria-hidden
-            className="pointer-events-none absolute top-1/2 left-0 z-0 hidden h-px w-full -translate-y-1/2 bg-[#E4E4E7] lg:block"
+            className="pointer-events-none absolute top-1/2 left-0 z-0 hidden h-px w-full -translate-y-1/2 bg-[#E4E4E7] min-[90rem]:block"
           />
         </div>
       </FadeInSection>

@@ -16,7 +16,7 @@ import { SEGOE_UI_CLASS } from "@/constants";
 // their heads; at the artboard size it resolves to Figma's 64px.
 export default function Hero() {
   return (
-    <section className="relative h-[calc(100dvh-4rem-1px)] w-full overflow-hidden bg-[#F4F1ED] [container-type:size] sm:aspect-[1440/886] sm:h-auto sm:max-h-[calc(100dvh-4.5rem-1px)] md:max-h-[calc(100dvh-5rem-1px)] lg:max-h-[calc(100dvh-5.5rem-1px)] min-[90rem]:max-h-[calc(100dvh-6.25rem-1px)]">
+    <section className="relative -mt-[5.5rem] h-dvh w-full overflow-hidden bg-[#F4F1ED] pt-[5.5rem] [container-type:size] sm:-mt-[6.25rem] sm:aspect-[1440/886] sm:h-auto sm:max-h-dvh sm:pt-[6.25rem] md:-mt-[6.75rem] md:max-h-dvh md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:max-h-dvh min-[90rem]:pt-[7.25rem]">
       <Image
         src="/images/hero-mobile.png"
         alt="Young people in our circle, together"
@@ -31,11 +31,11 @@ export default function Hero() {
         alt="Young people in our circle, together"
         fill
         sizes="100vw"
-        className="hidden object-cover object-[50%_50%] sm:block"
+        className="hidden object-cover object-[50%_62%] translate-y-[7vh] sm:block"
         priority
       />
 
-      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-8 sm:px-0 sm:pt-[max(2cqh,16.2cqh_-_5.54cqw)]">
+      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-8 sm:px-0 sm:pt-[max(3cqh,18.5cqh_-_5.54cqw)]">
         <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#000000)] sm:w-[70.88cqh] sm:max-w-none sm:text-[7.22cqh] sm:leading-[9.03cqh]">
           A Stronger Circle.
           <br />
@@ -48,7 +48,7 @@ export default function Hero() {
           and help raise funds for meaningful change.
         </p>
 
-        <div className="hidden sm:mt-[3.61cqh] sm:flex sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-[2.765cqh]">
+        <div className="hidden sm:mt-[3.61cqh] sm:flex sm:flex-col sm:items-center sm:gap-[2cqh] md:flex-row md:flex-nowrap md:justify-center md:gap-[2.765cqh]">
           <CtaButton
             href="/champion"
             className="sm:h-[7.22cqh] sm:gap-[0.9cqh] sm:px-[4.06cqh] sm:text-[2.03cqh]"

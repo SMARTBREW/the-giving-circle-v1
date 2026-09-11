@@ -1,19 +1,49 @@
-import FadeInSection from "@/components/fade-in-section";
-import SectionIntro from "@/components/section-intro";
-import { CAUSES_PAGE } from "@/constants";
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import ReachBand from "@/components/reach-band";
+import PhotoCtaBand from "@/components/photo-cta-band";
+import CausesHero from "./_sections/causes-hero";
 import LiveCausesGrid from "./_sections/live-causes-grid";
+import {
+  CAUSES_CTA,
+  CAUSES_REACH,
+  REACH_STATS,
+} from "@/constants";
+
+export const metadata: Metadata = {
+  title: "Live Causes | The Giving Circle",
+  description:
+    "Explore verified causes across education, women’s health, animal welfare, and disaster relief. Champion a campaign and give directly to NGO partners.",
+};
 
 export default function CausesPage() {
   return (
-    <section className="mx-auto w-full max-w-[90rem] bg-[var(--Alternate-color,#F7FBFB)]">
-      <FadeInSection className="flex flex-col items-center px-4 pt-10 pb-12 sm:px-8 sm:pt-12 sm:pb-16 md:px-10 md:pt-14 md:pb-20 lg:px-12 lg:pt-16 lg:pb-24 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[7.5rem]">
-        <SectionIntro
-          eyebrow={CAUSES_PAGE.eyebrow}
-          title={CAUSES_PAGE.title}
-          subtitle={CAUSES_PAGE.subtitle}
-        />
+    <>
+      <CausesHero />
+      <Suspense
+        fallback={
+          <section className="w-full bg-gray-100 px-4 py-16 text-center text-[var(--Subheading,#45564B)]">
+            Loading causes…
+          </section>
+        }
+      >
         <LiveCausesGrid />
-      </FadeInSection>
-    </section>
+      </Suspense>
+      <ReachBand
+        eyebrow={CAUSES_REACH.eyebrow}
+        title={CAUSES_REACH.title}
+        subtitle={CAUSES_REACH.subtitle}
+        stats={REACH_STATS}
+        tone="white"
+      />
+      <PhotoCtaBand
+        src={CAUSES_CTA.src}
+        alt={CAUSES_CTA.alt}
+        title={CAUSES_CTA.title}
+        subtitle={CAUSES_CTA.subtitle}
+        ctaLabel={CAUSES_CTA.ctaLabel}
+        href={CAUSES_CTA.href}
+      />
+    </>
   );
 }
