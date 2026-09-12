@@ -12,7 +12,7 @@ export default function VolunteerMeet() {
       subtitle={subtitle}
       ctaLabel={ctaLabel}
       href={href}
-      ctaClassName="h-12 w-full max-w-[17.25rem] gap-2 rounded-[100px] border bg-[#FFFFFF] px-8 py-4 sm:h-14 min-[90rem]:h-16 min-[90rem]:w-[17.25rem] min-[90rem]:px-10 min-[90rem]:py-5"
+      ctaClassName="h-12 w-full max-w-[17.25rem] gap-2 rounded-full border bg-[#FFFFFF] px-8 py-4 sm:h-14 min-[90rem]:h-16 min-[90rem]:w-[17.25rem] min-[90rem]:px-10 min-[90rem]:py-5"
     />
   );
 }

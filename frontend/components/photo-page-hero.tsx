@@ -66,7 +66,7 @@ export default function PhotoPageHero({
             <CtaButton
               href={ctaHref!}
               smoothScroll={ctaHref!.startsWith("#")}
-              className="h-12 rounded-[100px] bg-[#00A3BE] px-8 py-3 sm:h-14 sm:px-9 min-[90rem]:h-[4rem] min-[90rem]:px-9 min-[90rem]:py-[1.125rem]"
+              className="h-12 rounded-full bg-[#00A3BE] px-8 py-3 sm:h-14 sm:px-9 min-[90rem]:h-[4rem] min-[90rem]:px-9 min-[90rem]:py-[1.125rem]"
               labelClassName="gap-2 font-[700]"
             >
               {ctaLabel}

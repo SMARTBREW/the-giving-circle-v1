@@ -50,7 +50,7 @@ export default function ImpactStoryCard({
         />
 
         <span
-          className={`${SEGOE_UI_CLASS} absolute top-4 left-4 z-10 inline-flex items-center justify-center rounded-[50px] px-3 py-1.5 sm:top-5 sm:left-5 min-[90rem]:left-8 ${
+          className={`${SEGOE_UI_CLASS} absolute top-4 left-4 z-10 inline-flex items-center justify-center rounded-full px-3 py-1.5 sm:top-5 sm:left-5 min-[90rem]:left-8 ${
             featured
               ? "min-[90rem]:top-[30.8125rem]"
               : "min-[90rem]:top-[8.6875rem]"

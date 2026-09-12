@@ -34,7 +34,7 @@ export default function ImpactStoriesSection() {
             href="/stories"
             variant="outline"
             hoverFill
-            className="h-12 w-full max-w-[18.75rem] rounded-[100px] bg-[#FFFFFF] px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[18.75rem] min-[90rem]:px-10 min-[90rem]:py-5"
+            className="h-12 w-full max-w-[18.75rem] rounded-full bg-[#FFFFFF] px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[18.75rem] min-[90rem]:px-10 min-[90rem]:py-5"
             labelClassName="font-[600]"
           >
             View All Impact Stories

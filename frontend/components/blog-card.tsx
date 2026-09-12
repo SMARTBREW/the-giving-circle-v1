@@ -4,10 +4,10 @@ import { SEGOE_UI_CLASS, type BlogArticle } from "@/constants";
 
 export default function BlogCard({ article }: { article: BlogArticle }) {
   return (
-    <article className="flex h-full w-full flex-col rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:p-6 md:p-7 min-[90rem]:p-8">
+    <article className="flex h-full w-full flex-col rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] p-5 shadow-[0_0.25rem_1.25rem_0_#0000000F] sm:p-6 md:p-7 min-[90rem]:p-8">
       <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
         <span
-          className={`${SEGOE_UI_CLASS} inline-flex items-center rounded-[50px] bg-[rgba(0,169,143,0.12)] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[var(--Brand-Green-Teal,#00A98F)] sm:text-[0.8125rem]`}
+          className={`${SEGOE_UI_CLASS} inline-flex items-center rounded-full bg-[rgba(0,169,143,0.12)] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[var(--Brand-Green-Teal,#00A98F)] sm:text-[0.8125rem]`}
         >
           {article.category}
         </span>

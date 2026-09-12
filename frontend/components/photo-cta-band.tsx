@@ -88,7 +88,7 @@ export default function PhotoCtaBand({
         >
           <CtaButton
             href={href}
-            className="h-12 rounded-[100px] bg-[#00A3BE] px-8 py-3 sm:h-14 sm:px-9 min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-9 min-[90rem]:py-[1.125rem]"
+            className="h-12 rounded-full bg-[#00A3BE] px-8 py-3 sm:h-14 sm:px-9 min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-9 min-[90rem]:py-[1.125rem]"
             labelClassName="font-[700]"
           >
             {ctaLabel}

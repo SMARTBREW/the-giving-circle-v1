@@ -178,7 +178,7 @@ export default function StoryCard({
       />
 
       <span
-        className={`${SEGOE_UI_CLASS} absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-[50px] bg-[var(--Brand-Green-Teal,#00A98F)] px-2.5 py-1 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:left-4 sm:px-3 sm:py-1.5 sm:text-[0.8125rem]`}
+        className={`${SEGOE_UI_CLASS} absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-[var(--Brand-Green-Teal,#00A98F)] px-2.5 py-1 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:left-4 sm:px-3 sm:py-1.5 sm:text-[0.8125rem]`}
       >
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="h-3.5 w-3.5">
           <circle cx="8" cy="8" r="6.5" stroke="#FFFFFF" strokeWidth="1.5" />
@@ -194,12 +194,12 @@ export default function StoryCard({
       </span>
 
       <span
-        className={`${SEGOE_UI_CLASS} absolute top-3 right-3 z-10 inline-flex items-center rounded-[50px] px-2.5 py-1 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:right-4 sm:px-3 sm:py-1.5 sm:text-[0.8125rem] ${story.tagClassName}`}
+        className={`${SEGOE_UI_CLASS} absolute top-3 right-3 z-10 inline-flex items-center rounded-full px-2.5 py-1 text-[0.75rem] font-[700] leading-none tracking-normal text-[#FFFFFF] sm:top-4 sm:right-4 sm:px-3 sm:py-1.5 sm:text-[0.8125rem] ${story.tagClassName}`}
       >
         {story.tag}
       </span>
 
-      <span className="absolute bottom-3 left-3 z-10 rounded-[0.75rem] bg-[#FFFFFF] px-3 py-2 shadow-[0px_4px_16px_0px_#00000014] sm:bottom-4 sm:left-4 sm:px-4 sm:py-2.5">
+      <span className="absolute bottom-3 left-3 z-10 rounded-[0.75rem] bg-[#FFFFFF] px-3 py-2 shadow-[0_0.25rem_1rem_0_#00000014] sm:bottom-4 sm:left-4 sm:px-4 sm:py-2.5">
         <span
           className={`${SEGOE_UI_CLASS} block text-[1.125rem] font-[700] leading-none tracking-normal text-[var(--Brand-Green-Teal,#00A98F)] sm:text-[1.25rem]`}
         >
@@ -259,7 +259,7 @@ export default function StoryCard({
         ))}
       </ul>
 
-      <blockquote className="mt-5 border-l-[3px] border-[var(--Brand-Green-Teal,#00A98F)] pl-4 sm:mt-6 sm:pl-5">
+      <blockquote className="mt-5 border-l-[0.1875rem] border-[var(--Brand-Green-Teal,#00A98F)] pl-4 sm:mt-6 sm:pl-5">
         <p
           className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#45564B)] italic sm:text-[1rem] sm:leading-7`}
         >
@@ -283,7 +283,7 @@ export default function StoryCard({
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-[100px] border border-[var(--Main-CTA-button,#00A3BE)] px-6 text-[0.875rem] font-[600] leading-none tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-colors hover:bg-[var(--Main-CTA-button,#00A3BE)] hover:text-[#FFFFFF] sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
+          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-full border border-[var(--Main-CTA-button,#00A3BE)] px-6 text-[0.875rem] font-[600] leading-none tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-colors hover:bg-[var(--Main-CTA-button,#00A3BE)] hover:text-[#FFFFFF] sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
         >
           {expanded ? "Show Less" : "Read Full Story"}
         </button>

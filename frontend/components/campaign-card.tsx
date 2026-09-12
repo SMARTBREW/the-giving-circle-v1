@@ -71,7 +71,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
           className="object-cover"
         />
         <span
-          className={`${SEGOE_UI_CLASS} absolute top-4 left-4 inline-flex h-[2.125rem] items-center gap-1 rounded-[50px] border border-[#BDBDBD] bg-[#FFFFFF] py-1 pr-3 pl-3 text-[0.8125rem] font-[600] leading-none tracking-normal text-[var(--Main-headings,#000000)]`}
+          className={`${SEGOE_UI_CLASS} absolute top-4 left-4 inline-flex h-[2.125rem] items-center gap-1 rounded-full border border-[#BDBDBD] bg-[#FFFFFF] py-1 pr-3 pl-3 text-[0.8125rem] font-[600] leading-none tracking-normal text-[var(--Main-headings,#000000)]`}
         >
           <span className="relative inline-flex h-[1.3125rem] w-[1.375rem] shrink-0 items-center justify-center">
             <Image

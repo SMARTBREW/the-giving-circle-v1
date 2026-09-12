@@ -140,6 +140,7 @@ export default function ContactForm() {
         <input
           id="phone"
           type="tel"
+          maxLength={20}
           autoComplete="tel"
           aria-invalid={!!errors.phone}
           aria-describedby={errors.phone ? "phone-error" : undefined}

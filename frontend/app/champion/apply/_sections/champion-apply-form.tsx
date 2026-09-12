@@ -28,7 +28,7 @@ const primaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center 
 
 const outlineBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-xl border border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] text-[1rem] leading-none font-[700] text-[var(--Main-CTA-button,#00A3BE)] sm:h-[3.75rem] sm:w-[11.25rem] sm:rounded-lg sm:border-2 sm:text-[1.125rem]`;
 
-const fieldClass = `${SEGOE_UI_CLASS} champion-apply-field h-14 w-full rounded-[4px] border border-[#BDBDBD] bg-[#F8F8F8] px-4 text-[1rem] text-[#212121] outline-none placeholder:text-[#98A2B3] focus:border-[#BDBDBD] focus:outline-none focus:ring-0 sm:h-16`;
+const fieldClass = `${SEGOE_UI_CLASS} champion-apply-field h-14 w-full rounded border border-[#BDBDBD] bg-[#F8F8F8] px-4 text-[1rem] text-[#212121] outline-none placeholder:text-[#98A2B3] focus:border-[#BDBDBD] focus:outline-none focus:ring-0 sm:h-16`;
 
 const fieldLabelClass = `${SEGOE_UI_CLASS} text-[1.125rem] leading-none font-[400] text-[#212121] sm:text-[1.25rem]`;
 
@@ -86,6 +86,7 @@ function OtherDetailField({
       </span>
       <input
         type="text"
+        maxLength={100}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
@@ -518,6 +519,8 @@ export default function ChampionApplyForm() {
                           </span>
                           <input
                             type="text"
+                            maxLength={100}
+                            autoComplete="name"
                             value={fullName}
                             onChange={(e) => setFullName(e.target.value)}
                             placeholder={step3.fields.fullName.placeholder}
@@ -548,6 +551,8 @@ export default function ChampionApplyForm() {
                           </span>
                           <input
                             type="email"
+                            maxLength={100}
+                            autoComplete="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder={step3.fields.email.placeholder}

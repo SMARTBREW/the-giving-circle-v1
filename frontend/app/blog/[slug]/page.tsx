@@ -76,7 +76,7 @@ export default async function BlogArticlePage({
           <FadeInSection className="mt-6 sm:mt-8">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <span
-                className={`${SEGOE_UI_CLASS} inline-flex items-center rounded-[50px] bg-[rgba(0,169,143,0.12)] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[var(--Brand-Green-Teal,#00A98F)] sm:text-[0.8125rem]`}
+                className={`${SEGOE_UI_CLASS} inline-flex items-center rounded-full bg-[rgba(0,169,143,0.12)] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[var(--Brand-Green-Teal,#00A98F)] sm:text-[0.8125rem]`}
               >
                 {article.category}
               </span>
