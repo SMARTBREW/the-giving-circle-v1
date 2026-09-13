@@ -19,7 +19,7 @@ export {
 } from "./cause-details";
 export type { CauseDetailContent } from "./cause-details";
 
-/** @deprecated Prefer CAUSE_CATEGORY_CARDS — kept for existing home imports during rename. */
+/** @deprecated Prefer CAUSE_CATEGORY_CARDS   kept for existing home imports during rename. */
 export { CAUSE_CATEGORY_CARDS as CAUSE_CARDS } from "./causes";
 export {
   ABOUT_WHY_WE_GATHER,
@@ -161,13 +161,16 @@ export const FOOTER_SOCIAL_LINKS = [
 export const CHAMPION_PHOTO = "/images/cta images/24cd8db82cca8c8ff709461cd6a0ce14e96b9b3e.png";
 
 export const SUPPORT_CAUSE_PHOTO =
-  "/images/b03847b9986d8aa9337b328b4e6d518339e813ae.png";
+  "/images/support-cause-desktop.png";
+export const SUPPORT_CAUSE_PHOTO_MOBILE =
+  "/images/support-cause-mobile.png";
 
 export const EDUCATION_PHOTO =
   "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png";
 
 export const SUPPORT_CAUSE_BAND = {
   src: SUPPORT_CAUSE_PHOTO,
+  mobileSrc: SUPPORT_CAUSE_PHOTO_MOBILE,
   alt: "Schoolchildren in our circle, smiling together",
   title: "Your Giving Can Change a Life.",
   subtitle:
@@ -337,7 +340,7 @@ export const CHAMPION_STEPS = [
 export const HOW_THE_CIRCLE_WORKS = [
   {
     title: "Cause Champions",
-    body: "Individuals who pool donations with their network and fund a live cause — together, not alone.",
+    body: "Individuals who pool donations with their network and fund a live cause   together, not alone.",
   },
   {
     title: "Verified NGOs",
@@ -345,7 +348,7 @@ export const HOW_THE_CIRCLE_WORKS = [
   },
   {
     title: "Young Champions",
-    body: "Students leading school and college fundraising and volunteering — the next generation of our circle.",
+    body: "Students leading school and college fundraising and volunteering   the next generation of our circle.",
   },
 ] as const;
 

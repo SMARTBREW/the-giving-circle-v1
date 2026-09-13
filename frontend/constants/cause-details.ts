@@ -4,13 +4,13 @@ export const CAUSE_DETAIL_CONTENT = {
   "wings-of-hope": {
     responseHeading: "How Wings of Hope Responds",
     response: [
-      "When girls start menstruating, they need someone ready immediately — with the right products, education, and understanding. Every month of delay costs educational opportunities.",
+      "When girls start menstruating, they need someone ready immediately   with the right products, education, and understanding. Every month of delay costs educational opportunities.",
       "The programme runs year-round workshops across Delhi NCR covering menstrual hygiene, body awareness, product use, and breaking taboos. Trained women health ambassadors lead sessions that are age-appropriate, culturally sensitive, and empowering.",
       "Education is only the first step. Girls receive reusable sanitary kits with care instructions, then follow-up so products are used safely and attendance improves. Community and parent sessions build a supportive ecosystem around every girl.",
     ],
-    whyNowHeading: "Period Poverty in India — What Donors Should Know",
+    whyNowHeading: "Period Poverty in India: What Donors Should Know",
     whyNow: [
-      "Roughly one in five girls in India drop out of school after menarche. The cause is rarely academic — it is shame, lack of products, absent school toilets, and zero counselling when periods begin.",
+      "Roughly one in five girls in India drop out of school after menarche. The cause is rarely academic   it is shame, lack of products, absent school toilets, and zero counselling when periods begin.",
       "Wings of Hope operates at that exact moment: trained community workers, reusable pad kits where appropriate, and classroom sessions that normalise biology without spectacle. A month of missed school can become a year, then a lifetime of lost wages.",
     ],
     howItWorks: [
@@ -28,7 +28,7 @@ export const CAUSE_DETAIL_CONTENT = {
       },
       {
         title: "Follow-up",
-        body: "Tracking and check-ins so girls who miss days return — and attendance gains stick.",
+        body: "Tracking and check-ins so girls who miss days return   and attendance gains stick.",
       },
     ],
     coversHeading: "What Your Circle’s Gifts Typically Fund",
@@ -47,7 +47,7 @@ export const CAUSE_DETAIL_CONTENT = {
     partner: {
       name: "Joint Women’s Programme (JWP)",
       blurb:
-        "JWP has worked alongside India’s most vulnerable women and children for decades — pairing menstrual support with education continuity so girls are not pushed out of school when periods begin.",
+        "JWP has worked alongside India’s most vulnerable women and children for decades   pairing menstrual support with education continuity so girls are not pushed out of school when periods begin.",
       stats: [
         { value: "15+", label: "Years Active" },
         { value: "12", label: "States Covered" },
@@ -60,14 +60,14 @@ export const CAUSE_DETAIL_CONTENT = {
   "pehli-class": {
     responseHeading: "The Promise: One Year, Then a Real Classroom",
     response: [
-      "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school — into their first formal class, on time.",
-      "Where girls cannot attend regular school, JWP opens NIOS for Classes 9–12 and IGNOU for higher education — so education continues even when daily attendance is blocked by family circumstances.",
+      "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school   into their first formal class, on time.",
+      "Where girls cannot attend regular school, JWP opens NIOS for Classes 9–12 and IGNOU for higher education   so education continues even when daily attendance is blocked by family circumstances.",
       "About ₹1,600 per month or ₹19,000 for the year is positioned to cover structured support at the centre and enrolment-related accompaniment as described by JWP.",
     ],
-    whyNowHeading: "Why #PehliClass — Why Now",
+    whyNowHeading: "Why #PehliClass, Why Now",
     whyNow: [
-      "The right to education is anchored in our Constitution and the RTE framework — but for thousands of children, realising that right takes a hand across learning gaps, missing paperwork, lost years, and closed gates.",
-      "Millions of Indian children never enter formal school — or drop out when migration, paperwork gaps, or learning delays make re-entry impossible. A bridge centre is not a replacement for school; it is the airlock between informal settlements and a registered classroom.",
+      "The right to education is anchored in our Constitution and the RTE framework   but for thousands of children, realising that right takes a hand across learning gaps, missing paperwork, lost years, and closed gates.",
+      "Millions of Indian children never enter formal school   or drop out when migration, paperwork gaps, or learning delays make re-entry impossible. A bridge centre is not a replacement for school; it is the airlock between informal settlements and a registered classroom.",
     ],
     howItWorks: [
       {
@@ -80,7 +80,7 @@ export const CAUSE_DETAIL_CONTENT = {
       },
       {
         title: "Enrolment",
-        body: "Families are accompanied into government or private school — Pehli Class, on time.",
+        body: "Families are accompanied into government or private school   Pehli Class, on time.",
       },
       {
         title: "Pathways",
@@ -90,7 +90,7 @@ export const CAUSE_DETAIL_CONTENT = {
     coversHeading: "What ₹19,000/Year Per Child Typically Covers",
     quotes: [
       {
-        text: "When paperwork and learning gaps block the school gate, families lose hope. A single year of structured bridge support — with dignity — changes whether a child ever sits in a formal classroom.",
+        text: "When paperwork and learning gaps block the school gate, families lose hope. A single year of structured bridge support   with dignity   changes whether a child ever sits in a formal classroom.",
         author: "Community educator",
         role: "Delhi NCR",
       },
@@ -103,7 +103,7 @@ export const CAUSE_DETAIL_CONTENT = {
     partner: {
       name: "Joint Women’s Programme (JWP)",
       blurb:
-        "With 48+ years alongside India’s most vulnerable women and children, JWP concentrates that experience into #PehliClass — finite, focused, and measurable. Recognition includes statutory registrations and credentials available on the organisation’s portal.",
+        "With 48+ years alongside India’s most vulnerable women and children, JWP concentrates that experience into #PehliClass   finite, focused, and measurable. Recognition includes statutory registrations and credentials available on the organisation’s portal.",
       stats: [
         { value: "48+", label: "Years Active" },
         { value: "95%", label: "Transparency" },
@@ -113,16 +113,72 @@ export const CAUSE_DETAIL_CONTENT = {
       note: "80G-eligible donations where applicable · receipts via partner process.",
     },
   },
+  "community-forest-governance": {
+    responseHeading: "Protecting Forests, Empowering Forest Dwellers",
+    response: [
+      "ICFG aims to protect, regenerate, and govern forests for the people and the planet by enabling a symbiotic relationship between forest biodiversity and forest dwellers.",
+      "By fostering active participation, leadership, and decision-making power of forest-dwelling communities under the Forest Rights Act (FRA 2006), conservation becomes sustainable and community-owned.",
+      "Contributions go directly to the Institute of Community Forest Governance (ICFG). The Giving Circle provides the collaborative giving circle framework and transparent milestone tracking.",
+    ],
+    whyNowHeading: "Why Forest Governance Needs a Circle",
+    whyNow: [
+      "Top-down conservation often sidelines the very people who know the forest best. Securing community land and forest rights transforms tribal families from vulnerable dwellers into empowered guardians.",
+      "A giving circle multiplies grassroots impact: one Champion mobilises friends and colleagues to fund village nurseries, indigenous sapling plantations, and legal training workshops across hundreds of forest villages.",
+    ],
+    howItWorks: [
+      {
+        title: "Rights enablement",
+        body: "Assisting Gram Sabhas in securing community forest rights under the Forest Rights Act (2006).",
+      },
+      {
+        title: "Community nurseries",
+        body: "Establishing native sapling nurseries managed by local tribal and village committees.",
+      },
+      {
+        title: "Sustainable livelihoods",
+        body: "Enhancing non-timber forest produce value chains to ensure economic self-reliance.",
+      },
+      {
+        title: "Transparent updates",
+        body: "Circle champions receive verifiable ecological and community progress directly from the field.",
+      },
+    ],
+    coversHeading: "What Your Support Puts on the Ground",
+    quotes: [
+      {
+        text: "ICFG's unwavering support and focus on community empowerment have truly created a positive and lasting change, making a significant contribution to forest conservation.",
+        author: "Dev Nathan",
+        role: "Author & Professor",
+      },
+      {
+        text: "I am incredibly impressed by the remarkable work of ICFG in empowering forest dwellers and strengthening their abilities in forest conservation and management.",
+        author: "Jyotsna Chatterji",
+        role: "Founder & Director, JWP India",
+      },
+    ],
+    partner: {
+      name: "Institute of Community Forest Governance (ICFG)",
+      blurb:
+        "ICFG partners with more than 2,000 village organisations across India to protect, regenerate, and govern forests through community empowerment and ecological stewardship.",
+      stats: [
+        { value: "2,000+", label: "Villages Mobilised" },
+        { value: "Direct", label: "NGO Transfers" },
+        { value: "FRA 2006", label: "Rights Framework" },
+        { value: "Verified", label: "Partner Listing" },
+      ],
+      note: "Donations go directly to ICFG. Learn more about their field initiatives at icfgindia.org.",
+    },
+  },
   "flood-relief-uttarakhand": {
     responseHeading: "From Relief to Rebuilding",
     response: [
       "Emergency response starts with food, dry kits, shelter, and medical care on routes that are hard to reach. Cause Champions help GUS move quickly with partners already trusted on the ground.",
-      "As waters recede, the work shifts to rehabilitation — homes, local leadership, and community recovery — with updates shared back to every giving circle.",
+      "As waters recede, the work shifts to rehabilitation   homes, local leadership, and community recovery   with updates shared back to every giving circle.",
       "Contributions go directly to the verified NGO. The Giving Circle enables collective giving and transparent reporting; it does not hold gifts as an intermediary wallet.",
     ],
     whyNowHeading: "Why Disaster Relief Needs a Circle",
     whyNow: [
-      "Floods tear through mountain communities overnight. Families need people willing to travel difficult roads with essentials — then stay for the longer rebuild.",
+      "Floods tear through mountain communities overnight. Families need people willing to travel difficult roads with essentials   then stay for the longer rebuild.",
       "A giving circle multiplies urgency: one Champion invites a network, so food packets, treatment, and rebuilding support reach more families than any single donor alone.",
     ],
     howItWorks: [
@@ -146,7 +202,7 @@ export const CAUSE_DETAIL_CONTENT = {
     coversHeading: "What Your Support Puts on the Ground",
     quotes: [
       {
-        text: "We lost everything in the floods, but GUS gave us hope. They didn't just help us survive — they helped us rebuild.",
+        text: "We lost everything in the floods, but GUS gave us hope. They didn't just help us survive   they helped us rebuild.",
         author: "Ram Singh Rawat",
         role: "Flood Survivor & Community Leader",
       },
@@ -159,7 +215,7 @@ export const CAUSE_DETAIL_CONTENT = {
     partner: {
       name: "GUS",
       blurb:
-        "GUS runs verified disaster relief and rehabilitation with communities in Uttarakhand — from emergency kits to longer-term rebuilding alongside local leaders.",
+        "GUS runs verified disaster relief and rehabilitation with communities in Uttarakhand   from emergency kits to longer-term rebuilding alongside local leaders.",
       stats: [
         { value: "2,400", label: "Families Supported" },
         { value: "Direct", label: "NGO Transfers" },
@@ -173,13 +229,13 @@ export const CAUSE_DETAIL_CONTENT = {
     responseHeading: "How Pawsitive Protectors Works",
     response: [
       "Animal Care runs vaccination, deworming, and helpline-led response so street animals and neighbourhoods stay safer together.",
-      "Cause Champions fund the lane of work that is hardest to sustain alone — preventive care, emergency treatment, and caregiver networks — with gifts going directly to the NGO.",
+      "Cause Champions fund the lane of work that is hardest to sustain alone   preventive care, emergency treatment, and caregiver networks   with gifts going directly to the NGO.",
       "Supporters can visit, meet animals, and walk with volunteers while transparent updates flow back to every circle.",
     ],
     whyNowHeading: "Why Vaccination Circles Matter",
     whyNow: [
       "Rabies and untreated injury put both animals and people at risk. Community helplines only work when vaccines, transport, and follow-up care are funded.",
-      "Collective giving turns one Champion’s network into coverage for hundreds of animals — measurable, local, and verified.",
+      "Collective giving turns one Champion’s network into coverage for hundreds of animals   measurable, local, and verified.",
     ],
     howItWorks: [
       {
@@ -207,7 +263,7 @@ export const CAUSE_DETAIL_CONTENT = {
         role: "Cause Champion",
       },
       {
-        text: "When we found Max with a broken leg, Animal Care gave him a second chance — and our family a reason to champion the work.",
+        text: "When we found Max with a broken leg, Animal Care gave him a second chance   and our family a reason to champion the work.",
         author: "Priya Sharma",
         role: "Pet Adopter",
       },
@@ -228,14 +284,14 @@ export const CAUSE_DETAIL_CONTENT = {
   "bowls-of-hope": {
     responseHeading: "Daily Care That Adds Up",
     response: [
-      "Bowls of Hope keeps shelter feeding and veterinary care running day after day — the quiet work that keeps strays alive between emergencies.",
+      "Bowls of Hope keeps shelter feeding and veterinary care running day after day   the quiet work that keeps strays alive between emergencies.",
       "Cause Champions invite their networks to fill bowls and fund treatment, with every contribution reaching Animal Care directly.",
       "Transparent updates show meals served, animals treated, and feeding points expanded in high-need neighbourhoods.",
     ],
     whyNowHeading: "Why Feeding Programmes Need Circles",
     whyNow: [
       "One-off rescues matter, but daily nutrition and basic care decide whether animals survive the week. Shelters cannot run on urgency alone.",
-      "A giving circle turns recurring kindness into a reliable line item — bowls filled, vets paid, caregivers supported.",
+      "A giving circle turns recurring kindness into a reliable line item   bowls filled, vets paid, caregivers supported.",
     ],
     howItWorks: [
       {
@@ -266,7 +322,7 @@ export const CAUSE_DETAIL_CONTENT = {
     partner: {
       name: "Animal Care",
       blurb:
-        "Verified shelter and street-animal programmes — feeding, veterinary care, and community welfare across Delhi and beyond.",
+        "Verified shelter and street-animal programmes   feeding, veterinary care, and community welfare across Delhi and beyond.",
       stats: [
         { value: "1,859", label: "Bowls Installed" },
         { value: "Daily", label: "Shelter Feeding" },
@@ -279,13 +335,13 @@ export const CAUSE_DETAIL_CONTENT = {
   "brick-by-brick": {
     responseHeading: "From Boundary Wall to Full Centre",
     response: [
-      "Animal Care is securing a 17,500 sq ft rescue and rehab plot in Gurgaon. Brick by Brick funds the boundary wall first — the foundation for a safer centre and Zero Rabies work.",
+      "Animal Care is securing a 17,500 sq ft rescue and rehab plot in Gurgaon. Brick by Brick funds the boundary wall first   the foundation for a safer centre and Zero Rabies work.",
       "Each contribution is positioned around ₹10 per brick so Champions can invite friends with a clear, buildable goal.",
       "As the wall rises, updates show progress from plot to protected space for injured and critical strays.",
     ],
     whyNowHeading: "Why a Wall Matters Now",
     whyNow: [
-      "Injured and critical strays need secure ground — not only emergency runs. A boundary wall turns open land into a place care can happen safely.",
+      "Injured and critical strays need secure ground   not only emergency runs. A boundary wall turns open land into a place care can happen safely.",
       "Sponsoring bricks makes impact tangible: your circle can see exactly what their gifts build.",
     ],
     howItWorks: [
@@ -309,7 +365,7 @@ export const CAUSE_DETAIL_CONTENT = {
     coversHeading: "What Brick Sponsorship Supports",
     quotes: [
       {
-        text: "Sponsoring bricks made impact feel tangible — my friends could see exactly what their gift built.",
+        text: "Sponsoring bricks made impact feel tangible   my friends could see exactly what their gift built.",
         author: "Ajay Mehrotra",
         role: "Cause Champion",
       },
@@ -317,7 +373,7 @@ export const CAUSE_DETAIL_CONTENT = {
     partner: {
       name: "Animal Care",
       blurb:
-        "Building Them a Home in Gurgaon — boundary wall to full rescue and rehab centre, under a verified Zero Rabies mission.",
+        "Building Them a Home in Gurgaon   boundary wall to full rescue and rehab centre, under a verified Zero Rabies mission.",
       stats: [
         { value: "17,500", label: "Sq Ft Plot" },
         { value: "₹10", label: "Per Brick" },
@@ -331,7 +387,7 @@ export const CAUSE_DETAIL_CONTENT = {
     responseHeading: "Emergency Response for Animals",
     response: [
       "When floods hit, animals are stranded, injured, or left without food. Animal Care runs rescue and rehabilitation alongside community response in Uttarakhand and Punjab.",
-      "Cause Champions fund transport, treatment, temporary shelter, and rehab until animals are stable — with gifts going directly to the NGO.",
+      "Cause Champions fund transport, treatment, temporary shelter, and rehab until animals are stable   with gifts going directly to the NGO.",
       "This lane sits beside human flood-relief campaigns so circles can support both families and animals in the same crisis.",
     ],
     whyNowHeading: "Why Animal Rescue Cannot Wait",
@@ -368,14 +424,14 @@ export const CAUSE_DETAIL_CONTENT = {
     partner: {
       name: "Animal Care",
       blurb:
-        "Emergency animal rescue and rehab during floods — verified welfare operations working communities for communities.",
+        "Emergency animal rescue and rehab during floods   verified welfare operations working communities for communities.",
       stats: [
         { value: "812", label: "Animals Rescued" },
         { value: "99", label: "Impact Score" },
         { value: "Verified", label: "NGO Partner" },
         { value: "Direct", label: "Donations" },
       ],
-      note: "Separate from GUS family flood relief — champion both if your circle wants full-crisis coverage.",
+      note: "Separate from GUS family flood relief   champion both if your circle wants full-crisis coverage.",
     },
   },
 } as const;
@@ -386,5 +442,8 @@ export type CauseDetailContent =
 export function getCauseDetailContent(
   id: string,
 ): CauseDetailContent | undefined {
+  if (id === "flood-relief-uttarakhand") {
+    return CAUSE_DETAIL_CONTENT["community-forest-governance"];
+  }
   return CAUSE_DETAIL_CONTENT[id as keyof typeof CAUSE_DETAIL_CONTENT];
 }

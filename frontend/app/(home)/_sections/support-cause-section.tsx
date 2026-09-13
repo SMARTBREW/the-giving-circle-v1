@@ -5,6 +5,7 @@ export default function SupportCauseSection() {
   return (
     <PhotoCtaBand
       src={SUPPORT_CAUSE_BAND.src}
+      mobileSrc={SUPPORT_CAUSE_BAND.mobileSrc}
       alt={SUPPORT_CAUSE_BAND.alt}
       title={SUPPORT_CAUSE_BAND.title}
       subtitle={SUPPORT_CAUSE_BAND.subtitle}

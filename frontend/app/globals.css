@@ -8,9 +8,9 @@
   --background: #ffffff;
   --foreground: #000000;
   --header-border: #bdbdbd;
-  --Main-CTA-button: #00a3be;
+  --Main-CTA-button: #228b22;
   --Main-headings: #000000;
-  --Secondary-outlined-button: #00a3be;
+  --Secondary-outlined-button: #228b22;
   --Eyebrow-label: #00a98f;
   --Subheading: #45564b;
   --Neutral-Black: #000000;
@@ -140,3 +140,30 @@ select.champion-apply-field {
   box-shadow: 0 0 0 1000px #f8f8f8 inset;
   transition: background-color 99999s ease-in-out 0s;
 }
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.group:hover .animate-marquee,
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused;
+  }
+}
+

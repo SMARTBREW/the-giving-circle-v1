@@ -66,21 +66,7 @@ export default function CauseDetailSections({
       </PageSection>
 
       <PageSection tone="white">
-        <SectionIntro eyebrow="Why It Matters" title={detail.whyNowHeading} />
-        <div className="mx-auto mt-6 w-full max-w-4xl text-center sm:mt-7">
-          {detail.whyNow.map((para, index) => (
-            <p
-              key={para.slice(0, 48)}
-              className={`${SEGOE_UI_CLASS} ${
-                index === 0 ? "mt-0" : "mt-4"
-              } text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
-            >
-              {para}
-            </p>
-          ))}
-        </div>
-
-        <div className="mt-12 w-full sm:mt-14">
+        <div className="w-full">
           <SectionIntro
             eyebrow="Transparency"
             title={detail.coversHeading}
@@ -130,7 +116,7 @@ export default function CauseDetailSections({
         />
         <ul className="mx-auto mt-8 grid w-full max-w-6xl grid-cols-1 gap-5 sm:mt-10 md:grid-cols-2 md:gap-6">
           {detail.quotes.map((item, index) => {
-            const accent = getCauseCardAccent(index);
+            const accent = getCauseCardAccent(index === 1 ? 2 : index);
             return (
               <li
                 key={`${item.author}-${item.text.slice(0, 24)}`}
@@ -165,7 +151,7 @@ export default function CauseDetailSections({
 
       <PageSection
         tone="white"
-        innerClassName="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-14 min-[90rem]:gap-16"
+        innerClassName="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-14 min-[90rem]:gap-16"
       >
         <div className="min-w-0 flex-1">
           <SectionIntro
@@ -185,7 +171,7 @@ export default function CauseDetailSections({
           </p>
         </div>
 
-        <ul className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:w-[22rem] lg:shrink-0 min-[90rem]:w-[24rem]">
+        <ul className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:w-[22rem] lg:shrink-0 lg:pt-6 min-[90rem]:w-[24rem] min-[90rem]:pt-8">
           {detail.partner.stats.map((stat, index) => {
             const accent = getCauseCardAccent(index);
             return (

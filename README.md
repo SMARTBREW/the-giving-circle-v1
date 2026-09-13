@@ -35,13 +35,15 @@ UI and layout follow **Figma**. This repo holds the product story, engineering c
 
 ```
 frontend/          Next.js 15 (port 3000)
-backend/           Express + Mongo API (port 4000, /v1)
+backend/           FastAPI public API (port 3001, /api)
 .cursor/rules/     Frontend, backend, and product conventions
 ```
 
 ```bash
 cd frontend && npm run dev
-cd backend && cp .env.example .env && npm run dev
+cd backend && python3.11 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt && cp .env.example .env
+uvicorn app.main:app --reload --port 3001
 ```
 
 ## Who we serve

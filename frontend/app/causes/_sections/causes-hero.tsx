@@ -31,7 +31,7 @@ export default function CausesHero() {
               <span className="block min-[90rem]:whitespace-nowrap">
                 {titleLine1}
               </span>
-              <span className="block text-[var(--Main-CTA-button,#00A3BE)] min-[90rem]:whitespace-nowrap">
+              <span className="block text-[#228B22] min-[90rem]:whitespace-nowrap">
                 {titleLine2}
               </span>
             </h1>
@@ -54,8 +54,8 @@ export default function CausesHero() {
               <CtaButton
                 href={secondaryCta.href}
                 variant="outline"
-                className="h-12 w-full border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] px-6 sm:h-14 sm:w-auto sm:min-w-[12rem] sm:px-8 min-[90rem]:h-16 min-[90rem]:min-w-[14rem] min-[90rem]:px-9 min-[90rem]:text-[1.125rem]"
-                labelClassName="font-[700]"
+                className="h-12 w-full bg-[#FFFFFF] px-6 sm:h-14 sm:w-auto sm:min-w-[12rem] sm:px-8 min-[90rem]:h-16 min-[90rem]:min-w-[14rem] min-[90rem]:px-9 min-[90rem]:text-[1.125rem]"
+                labelClassName="font-[700] text-[#228B22]"
               >
                 {secondaryCta.label}
               </CtaButton>

@@ -5,6 +5,7 @@ export default function VolunteerCta() {
   return (
     <PhotoCtaBand
       src={VOLUNTEER_CTA.src}
+      mobileSrc={VOLUNTEER_CTA.mobileSrc}
       alt={VOLUNTEER_CTA.alt}
       title={VOLUNTEER_CTA.title}
       subtitle={VOLUNTEER_CTA.subtitle}
@@ -12,7 +13,8 @@ export default function VolunteerCta() {
       href={VOLUNTEER_CTA.href}
       align="left"
       overlay={false}
-      objectPosition="object-[50%_42%]"
+      objectPosition="object-right min-[90rem]:object-center"
+      mobileObjectPosition="object-[85%_center]"
     />
   );
 }

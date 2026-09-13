@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Ground line -->
+  <path d="M64 448h384" stroke="#00A98F" stroke-width="28" stroke-linecap="round"/>
+  <!-- Trunk -->
+  <path d="M256 448V256" stroke="#8B5A2B" stroke-width="28" stroke-linecap="round"/>
+  <path d="M256 340c-24-30-60-44-90-48" stroke="#8B5A2B" stroke-width="24" stroke-linecap="round"/>
+  <path d="M256 300c24-25 60-38 90-42" stroke="#8B5A2B" stroke-width="24" stroke-linecap="round"/>
+  <!-- Leaves / Canopy clusters -->
+  <circle cx="256" cy="160" r="88" fill="#00A98F" fill-opacity="0.15" stroke="#00A98F" stroke-width="24"/>
+  <circle cx="176" cy="220" r="68" fill="#228B22" fill-opacity="0.15" stroke="#228B22" stroke-width="24"/>
+  <circle cx="336" cy="220" r="68" fill="#228B22" fill-opacity="0.15" stroke="#228B22" stroke-width="24"/>
+  <!-- Small sprout accent -->
+  <path d="M256 120c0-30 20-56 50-60-4 30-20 56-50 60z" fill="#00A98F"/>
+  <path d="M256 120c0-30-20-56-50-60 4 30 20 56 50 60z" fill="#228B22"/>
+</svg>

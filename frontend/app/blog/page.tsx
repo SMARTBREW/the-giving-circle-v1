@@ -40,12 +40,14 @@ export default function BlogPage() {
       />
       <PhotoCtaBand
         src={BLOG_CTA.src}
+        mobileSrc={BLOG_CTA.mobileSrc}
         alt={BLOG_CTA.alt}
         title={BLOG_CTA.title}
         subtitle={BLOG_CTA.subtitle}
         ctaLabel={BLOG_CTA.ctaLabel}
         href={BLOG_CTA.href}
         objectPosition={BLOG_CTA.objectPosition}
+        mobileObjectPosition={BLOG_CTA.mobileObjectPosition}
       />
     </>
   );

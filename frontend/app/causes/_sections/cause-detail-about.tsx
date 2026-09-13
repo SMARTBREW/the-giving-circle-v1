@@ -42,16 +42,10 @@ export default function CauseDetailAbout({ cause }: { cause: LiveCause }) {
             Impact So Far
           </p>
           <ul className="relative mt-5 grid grid-cols-2 gap-4">
-            {cause.impact.map((stat, index) => (
+            {cause.impact.map((stat) => (
               <li key={stat.label} className="flex flex-col">
                 <span
-                  className={`${SEGOE_UI_CLASS} text-[1.5rem] font-[700] leading-none sm:text-[1.75rem] ${
-                    index % 3 === 0
-                      ? "text-[var(--Brand-Green-Teal,#00A98F)]"
-                      : index % 3 === 1
-                        ? "text-[var(--Main-CTA-button,#00A3BE)]"
-                        : "text-[var(--Brand-Coral,#ED3B58)]"
-                  }`}
+                  className={`${SEGOE_UI_CLASS} text-[1.5rem] font-[700] leading-none text-[var(--Main-headings,#000000)] sm:text-[1.75rem]`}
                 >
                   {stat.value}
                 </span>
@@ -69,7 +63,7 @@ export default function CauseDetailAbout({ cause }: { cause: LiveCause }) {
           <blockquote className="rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] p-5 sm:p-6">
             <div
               aria-hidden
-              className="mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-[var(--Brand-Green-Teal,#00A98F)] via-[var(--Main-CTA-button,#00A3BE)] to-[var(--Brand-Coral,#ED3B58)]"
+              className="mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-[var(--Brand-Green-Teal,#00A98F)] to-[var(--Main-CTA-button,#228b22)]"
             />
             <p
               className={`${SEGOE_UI_CLASS} text-[1rem] leading-7 font-[400] text-[var(--Main-headings,#000000)] sm:text-[1.0625rem] sm:leading-8`}

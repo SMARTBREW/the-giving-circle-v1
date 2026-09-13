@@ -14,7 +14,7 @@ export default function HowItWorksStep({
 }) {
   return (
     <li className="relative flex w-full flex-col items-center">
-      <span className="relative z-10 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] sm:h-20 sm:w-20 lg:h-24 lg:w-24 min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]">
+      <span className="relative z-10 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[#00A3BE] bg-[#FFFFFF] sm:h-20 sm:w-20 lg:h-24 lg:w-24 min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]">
         <Image
           src={iconSrc}
           alt=""

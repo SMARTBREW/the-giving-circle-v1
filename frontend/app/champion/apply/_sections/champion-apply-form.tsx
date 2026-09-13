@@ -14,7 +14,8 @@ import {
   type ChampionApplyCauseId,
   type ChampionApplyReasonId,
 } from "@/constants";
-
+import { submitCauseChampion } from "@/lib/api";
+import { logger } from "@/lib/logger";
 type FormStep = 1 | 2 | 3 | 4;
 
 const optionButtonClass = (isSelected: boolean) =>
@@ -112,6 +113,8 @@ export default function ChampionApplyForm() {
   const [city, setCity] = useState(step3.cities[0] as string);
   const [agreed, setAgreed] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const progressStep = currentStep === 4 ? 3 : currentStep;
   const progressLabel =
@@ -134,7 +137,42 @@ export default function ChampionApplyForm() {
     fullName.trim().length > 1 &&
     Boolean(mobile && isValidPhoneNumber(mobile)) &&
     email.includes("@") &&
-    city.length > 0;
+    city.length > 0 &&
+    agreed;
+
+  const handleSubmit = async () => {
+    if (!canSubmit || !selectedCauseId || !selectedReasonId || !mobile) return;
+
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      await submitCauseChampion({
+        fullName: fullName.trim(),
+        email: email.trim(),
+        mobile,
+        city,
+        selectedCauseId,
+        selectedReasonId,
+        ...(selectedCauseId === "other"
+          ? { otherCauseDetail: otherCauseDetail.trim() }
+          : {}),
+        ...(selectedReasonId === "other-occasion"
+          ? { otherReasonDetail: otherReasonDetail.trim() }
+          : {}),
+        agreed: true,
+      });
+      setCurrentStep(4);
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
+      setSubmitError(message);
+      logger.error("Cause champion apply failed", { message });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleCopy = async () => {
     try {
@@ -222,7 +260,13 @@ export default function ChampionApplyForm() {
           {currentStep === 4 ? (
             <div className="flex min-h-0 flex-1 flex-col items-center justify-center bg-[#FFFFFF] px-5 py-10 sm:px-8 md:px-10 lg:px-12 min-[90rem]:px-[6.25rem]">
               <div className="flex w-full max-w-[36rem] flex-col items-center sm:max-w-[45rem] min-[90rem]:w-[51rem] min-[90rem]:max-w-[51rem]">
-                <span className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-[var(--Main-CTA-button,#00A3BE)] bg-[#00A3BE0D] min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]">
+                <span
+                  className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-[var(--Brand-Green-Teal,#00A98F)] min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 40% 35%, rgba(0,169,143,0.18) 0%, rgba(0,169,143,0.07) 60%, rgba(0,169,143,0.03) 100%)",
+                  }}
+                >
                   <svg
                     viewBox="0 0 48 48"
                     fill="none"
@@ -231,7 +275,7 @@ export default function ChampionApplyForm() {
                   >
                     <path
                       d="M10 25.5 18.5 34 38 13"
-                      stroke="#00A3BE"
+                      stroke="#00A98F"
                       strokeWidth="3.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -454,14 +498,19 @@ export default function ChampionApplyForm() {
                                 aria-pressed={isSelected}
                                 className={optionButtonClass(isSelected)}
                               >
-                                <span className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden sm:h-10 sm:w-10 min-[90rem]:h-11 min-[90rem]:w-11">
+                                {/* Fixed-width icon column so all labels align regardless of icon size */}
+                                <span className="relative flex h-12 w-12 shrink-0 items-center justify-center sm:h-14 sm:w-14 min-[90rem]:h-16 min-[90rem]:w-16">
                                   <Image
                                     src={reason.iconSrc}
                                     alt=""
-                                    width={44}
-                                    height={44}
+                                    width={64}
+                                    height={64}
                                     unoptimized
-                                    className="h-full w-full object-contain"
+                                    className={`object-contain ${
+                                      reason.iconSrc.includes("/images/moments/")
+                                        ? "h-full w-full"
+                                        : "h-9 w-9 sm:h-10 sm:w-10 min-[90rem]:h-11 min-[90rem]:w-11"
+                                    }`}
                                   />
                                 </span>
                                 <span
@@ -620,18 +669,27 @@ export default function ChampionApplyForm() {
                         type="button"
                         onClick={() => setCurrentStep(2)}
                         className={outlineBtnClass}
+                        disabled={isSubmitting}
                       >
                         {step3.previousLabel}
                       </button>
                       <button
                         type="button"
-                        disabled={!canSubmit}
-                        onClick={() => setCurrentStep(4)}
+                        disabled={!canSubmit || isSubmitting}
+                        onClick={() => void handleSubmit()}
                         className={primaryBtnClass}
                       >
-                        {step3.submitLabel}
+                        {isSubmitting ? "Submitting…" : step3.submitLabel}
                       </button>
                     </div>
+                    {submitError ? (
+                      <p
+                        role="alert"
+                        className={`${SEGOE_UI_CLASS} px-5 pb-5 text-[0.9375rem] leading-6 text-[#B42318] sm:px-0`}
+                      >
+                        {submitError}
+                      </p>
+                    ) : null}
                   </>
                 ) : null}
               </div>

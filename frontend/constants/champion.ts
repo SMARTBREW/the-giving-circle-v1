@@ -207,24 +207,25 @@ export const CHAMPION_FAQS = {
     {
       question: "What if I do not raise the amount I pledged?",
       answer:
-        "Your pledge is a goal, not a commitment you are held to. Every gift your circle makes still goes directly to the verified NGO. You can keep sharing, adjust your goal with our team, or close the fundraiser when you are ready—there is no penalty for falling short.",
+        "Your pledge is a goal, not a commitment you are held to. Every gift your circle makes still goes directly to the verified NGO. You can keep sharing, adjust your goal with our team, or close the fundraiser when you are ready there is no penalty for falling short.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Donations go directly to the partner NGO through its own payment gateway and registered bank account. The Giving Circle does not hold or receive the funds—we verify partners and help you run the Giving Circle.",
+        "Donations go directly to the partner NGO through its own payment gateway and registered bank account. The Giving Circle does not hold or receive the funds we verify partners and help you run the Giving Circle.",
     },
     {
       question: "Can I start a fundraiser for my birthday, wedding or another occasion?",
       answer:
-        "Yes. Many Cause Champions mark birthdays, weddings, anniversaries, and other milestones by starting a Giving Circle for a verified cause. Choose a cause you care about, set your goal, and invite guests and loved ones to give instead of—or alongside—gifts.",
+        "Yes. Many Cause Champions mark birthdays, weddings, anniversaries, and other milestones by starting a Giving Circle for a verified cause. Choose a cause you care about, set your goal, and invite guests and loved ones to give instead of or alongside gifts.",
     },
   ],
 } as const;
 
 export const CHAMPION_CTA = {
-  src: "/images/champions/image.png",
-  alt: "A Cause Champion delivering relief supplies to a family in need",
+  src: "/images/champions/champion-cta-desktop.png",
+  mobileSrc: "/images/champions/champion-cta-mobile.png",
+  alt: "Cause Champions collaborating with community members",
   title: "Ready to Turn Your Circle Into Impact?",
   subtitle:
     "Bring your circle together around a cause you believe in, and turn shared support into meaningful change.",
@@ -277,9 +278,9 @@ export const CHAMPION_APPLY = {
         iconSrc: "/images/forms/womens-health.png",
       },
       {
-        id: "disaster-relief",
-        label: "Disaster Relief",
-        iconSrc: "/images/forms/disaster-relief.png",
+        id: "forest-governance",
+        label: "Forest Rights",
+        iconSrc: "/images/forms/forest-governance.svg",
       },
       {
         id: "other",
@@ -298,17 +299,17 @@ export const CHAMPION_APPLY = {
       {
         id: "birthday",
         label: "Birthday",
-        iconSrc: "/images/forms/birthday.png",
+        iconSrc: "/images/moments/96e2113621a7af04d4cce296e51af5e80dc3bdff.png",
       },
       {
         id: "anniversary",
         label: "Anniversary",
-        iconSrc: "/images/forms/anniversary.png",
+        iconSrc: "/images/moments/af9d4dad96f552ff7f72f1bcc82853f2e29cfc3a.png",
       },
       {
         id: "remembrance",
         label: "Remembrance",
-        iconSrc: "/images/forms/remembrance.png",
+        iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
       },
       {
         id: "personal",

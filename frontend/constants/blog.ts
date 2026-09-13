@@ -13,7 +13,7 @@ export const BLOG_ARTICLES_INTRO = {
   eyebrow: "Guides & Insights",
   title: "Read Before You Give",
   subtitle:
-    "Clear writing for Cause Champions, families, students, and companies — verification, 80G, and collective impact without the jargon.",
+    "Clear writing for Cause Champions, families, students, and companies   verification, 80G, and collective impact without the jargon.",
 } as const;
 
 export const BLOG_FILTER_ALL = "All Guides";
@@ -26,14 +26,16 @@ export const BLOG_REACH = {
 } as const;
 
 export const BLOG_CTA = {
-  src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
-  alt: "A volunteer with a rescued dog",
+  src: "/images/about-cta-desktop.png",
+  mobileSrc: "/images/about-cta-mobile.png",
+  alt: "Schoolchildren in our circle, smiling together",
   title: "Ready to Give with Confidence?",
   subtitle:
     "Explore verified causes, start a giving circle, and support outcomes you can follow.",
   ctaLabel: "Explore Live Causes",
   href: "/causes",
-  objectPosition: "object-[42%_40%] sm:object-[50%_40%]",
+  objectPosition: "object-center",
+  mobileObjectPosition: "object-[50%_62%]",
 } as const;
 
 export const BLOG_ARTICLES = [

@@ -25,6 +25,7 @@ export default function ImpactStoriesSection() {
               title={story.title}
               src={story.src}
               alt={story.alt}
+              objectPosition={story.objectPosition}
               href={story.href}
             />
           ))}

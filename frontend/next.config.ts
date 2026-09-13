@@ -6,13 +6,23 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
+function apiOrigin(): string {
+  const raw = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+  try {
+    return new URL(raw).origin;
+  } catch {
+    return "http://localhost:3001";
+  }
+}
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https: blob:",
-  "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+  // Allow the FastAPI public API (forms / blog / animal welfare)
+  `connect-src 'self' ${apiOrigin()} https://vitals.vercel-insights.com https://va.vercel-scripts.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

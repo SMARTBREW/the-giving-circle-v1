@@ -13,6 +13,8 @@ import {
   SEGOE_UI_CLASS,
   type PartnerApplyFocusId,
 } from "@/constants";
+import { submitNgoPartner } from "@/lib/api";
+import { logger } from "@/lib/logger";
 
 type FormStep = 1 | 2 | 3;
 
@@ -108,6 +110,8 @@ export default function PartnerApplyForm() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState<PhoneValue>();
   const [agreed, setAgreed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const progressStep = currentStep === 3 ? 2 : currentStep;
   const progressLabel =
@@ -122,7 +126,39 @@ export default function PartnerApplyForm() {
     country.length > 0 &&
     contactPerson.trim().length > 1 &&
     Boolean(phone && isValidPhoneNumber(phone)) &&
-    email.includes("@");
+    email.includes("@") &&
+    agreed;
+
+  const handleSubmit = async () => {
+    if (!canSubmit || !selectedFocusId || !phone) return;
+
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      await submitNgoPartner({
+        organizationName: organizationName.trim(),
+        country,
+        contactPerson: contactPerson.trim(),
+        email: email.trim(),
+        phone,
+        selectedFocusId,
+        ...(selectedFocusId === "other"
+          ? { otherFocusDetail: otherFocusDetail.trim() }
+          : {}),
+        agreed: true,
+      });
+      setCurrentStep(3);
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
+      setSubmitError(message);
+      logger.error("NGO partner apply failed", { message });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="flex min-h-dvh w-full flex-col bg-[#FFFFFF] max-lg:overflow-y-auto lg:h-dvh lg:min-h-0 lg:overflow-hidden">
@@ -200,7 +236,13 @@ export default function PartnerApplyForm() {
           {currentStep === 3 ? (
             <div className="flex min-h-0 flex-1 flex-col items-center justify-center bg-[#FFFFFF] px-5 py-10 sm:px-8 md:px-10 lg:px-12 min-[90rem]:px-[6.25rem]">
               <div className="flex w-full max-w-[36rem] flex-col items-center sm:max-w-[45rem] min-[90rem]:w-[51rem] min-[90rem]:max-w-[51rem]">
-                <span className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-[var(--Main-CTA-button,#00A3BE)] bg-[#00A3BE0D] min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]">
+                <span
+                  className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-[var(--Brand-Green-Teal,#00A98F)] min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 40% 35%, rgba(0,169,143,0.18) 0%, rgba(0,169,143,0.07) 60%, rgba(0,169,143,0.03) 100%)",
+                  }}
+                >
                   <svg
                     viewBox="0 0 48 48"
                     fill="none"
@@ -209,7 +251,7 @@ export default function PartnerApplyForm() {
                   >
                     <path
                       d="M10 25.5 18.5 34 38 13"
-                      stroke="#00A3BE"
+                      stroke="#00A98F"
                       strokeWidth="3.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -486,18 +528,27 @@ export default function PartnerApplyForm() {
                         type="button"
                         onClick={() => setCurrentStep(1)}
                         className={outlineBtnClass}
+                        disabled={isSubmitting}
                       >
                         {step2.previousLabel}
                       </button>
                       <button
                         type="button"
-                        disabled={!canSubmit}
-                        onClick={() => setCurrentStep(3)}
+                        disabled={!canSubmit || isSubmitting}
+                        onClick={() => void handleSubmit()}
                         className={primaryBtnClass}
                       >
-                        {step2.submitLabel}
+                        {isSubmitting ? "Submitting…" : step2.submitLabel}
                       </button>
                     </div>
+                    {submitError ? (
+                      <p
+                        role="alert"
+                        className={`${SEGOE_UI_CLASS} px-5 pb-5 text-[0.9375rem] leading-6 text-[#B42318] sm:px-0`}
+                      >
+                        {submitError}
+                      </p>
+                    ) : null}
                   </>
                 ) : null}
               </div>

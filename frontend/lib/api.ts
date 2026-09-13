@@ -1,0 +1,75 @@
+import { config } from "@/lib/config";
+import { safeJsonParse } from "@/lib/safe-json";
+
+export type ApiResponse = {
+  success: boolean;
+  message: string;
+};
+
+function apiUrl(path: string): string {
+  const base = config.apiUrl.replace(/\/$/, "");
+  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export async function postJson<TBody extends Record<string, unknown>>(
+  path: string,
+  body: TBody,
+): Promise<ApiResponse> {
+  let response: Response;
+  try {
+    response = await fetch(apiUrl(path), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    throw new Error(
+      "Could not reach the API. Is the backend running on the configured URL?",
+    );
+  }
+
+  const raw = await response.text();
+  const data = safeJsonParse<ApiResponse>(raw, {
+    success: false,
+    message: "Something went wrong. Please try again.",
+  });
+
+  if (!response.ok || !data.success) {
+    throw new Error(
+      data.message || "Something went wrong. Please try again.",
+    );
+  }
+
+  return data;
+}
+
+export type CauseChampionPayload = {
+  fullName: string;
+  email: string;
+  mobile: string;
+  city: string;
+  selectedCauseId: string;
+  selectedReasonId: string;
+  otherCauseDetail?: string;
+  otherReasonDetail?: string;
+  agreed: true;
+};
+
+export type NgoPartnerPayload = {
+  organizationName: string;
+  country: string;
+  contactPerson: string;
+  email: string;
+  phone: string;
+  selectedFocusId: string;
+  otherFocusDetail?: string;
+  agreed: true;
+};
+
+export function submitCauseChampion(payload: CauseChampionPayload) {
+  return postJson("/api/submit/cause-champion", payload);
+}
+
+export function submitNgoPartner(payload: NgoPartnerPayload) {
+  return postJson("/api/submit/ngo-partner", payload);
+}

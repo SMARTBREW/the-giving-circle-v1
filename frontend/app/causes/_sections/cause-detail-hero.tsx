@@ -46,9 +46,9 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
         </nav>
 
         {/* Image + funding card */}
-        <div className="mt-8 grid w-full grid-cols-1 gap-6 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24.75rem)] lg:items-start lg:gap-10 min-[90rem]:mt-12 min-[90rem]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] min-[90rem]:gap-14">
-          <FadeInSection className="min-w-0">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:rounded-[1.25rem] min-[90rem]:rounded-[1.5rem]">
+        <div className="mt-8 grid w-full grid-cols-1 gap-6 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24.75rem)] lg:items-stretch lg:gap-10 min-[90rem]:mt-12 min-[90rem]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] min-[90rem]:gap-14">
+          <FadeInSection className="h-full min-w-0">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:rounded-[1.25rem] lg:aspect-auto lg:h-full min-[90rem]:rounded-[1.5rem]">
               <Image
                 src={cause.src}
                 alt={cause.alt}
@@ -60,7 +60,7 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
             </div>
           </FadeInSection>
 
-          <aside className="w-full lg:sticky lg:top-28">
+          <aside className="w-full lg:h-full">
             <CauseFundingCard
               raised={cause.raised}
               goal={cause.goal}

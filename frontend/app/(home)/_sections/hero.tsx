@@ -3,7 +3,7 @@ import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
 
-// Phone frame has no in-hero buttons — the sticky bar is the only CTA there.
+// Phone frame has no in-hero buttons   the sticky bar is the only CTA there.
 // Mobile hero fills the viewport under the header; the floating CTA overlays the
 // bottom without a full-bleed bar so more of the people stay visible.
 //
@@ -35,7 +35,7 @@ export default function Hero() {
         priority
       />
 
-      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-8 sm:px-0 sm:pt-[max(3cqh,18.5cqh_-_5.54cqw)]">
+      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-5 sm:px-0 sm:pt-[max(2cqh,14.5cqh_-_5.54cqw)]">
         <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#000000)] sm:w-[70.88cqh] sm:max-w-none sm:text-[7.22cqh] sm:leading-[9.03cqh]">
           A Stronger Circle.
           <br />
@@ -60,7 +60,7 @@ export default function Hero() {
             href="/#causes"
             variant="outline"
             smoothScroll
-            className="bg-[#F4F1ED] sm:h-[7.22cqh] sm:px-[3.61cqh] sm:text-[2.03cqh]"
+            className="sm:h-[7.22cqh] sm:px-[3.61cqh] sm:text-[2.03cqh]"
             labelClassName="font-[700]"
           >
             Explore Causes

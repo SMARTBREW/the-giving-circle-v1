@@ -37,9 +37,9 @@ export const PARTNER_APPLY = {
         iconSrc: "/images/forms/womens-health.png",
       },
       {
-        id: "disaster-relief",
-        label: "Disaster Relief",
-        iconSrc: "/images/forms/disaster-relief.png",
+        id: "forest-governance",
+        label: "Forest Rights",
+        iconSrc: "/images/forms/forest-governance.svg",
       },
       {
         id: "other",

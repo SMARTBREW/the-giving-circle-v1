@@ -65,11 +65,14 @@ export default function AboutPage() {
       />
       <PhotoCtaBand
         src={ABOUT_VISION_CTA.src}
+        mobileSrc={ABOUT_VISION_CTA.mobileSrc}
         alt={ABOUT_VISION_CTA.alt}
         title={ABOUT_VISION_CTA.title}
         subtitle={ABOUT_VISION_CTA.subtitle}
         ctaLabel={ABOUT_VISION_CTA.ctaLabel}
         href={ABOUT_VISION_CTA.href}
+        objectPosition="object-center"
+        mobileObjectPosition="object-[50%_62%]"
       />
     </>
   );

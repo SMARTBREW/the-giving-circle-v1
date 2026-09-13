@@ -58,17 +58,17 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
   const href = `/causes/${card.id}`;
 
   return (
-    <article className="flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-transform duration-300 ease-out hover:-translate-y-1 min-[90rem]:h-[39.0625rem] min-[90rem]:w-full">
+    <article className="group flex h-full w-full flex-col overflow-hidden isolate rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[var(--Main-CTA-button,#228b22)] hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.12)] min-[90rem]:h-[39.0625rem] min-[90rem]:w-full">
       <Link
         href={href}
-        className="relative aspect-[396/240] w-full shrink-0 overflow-hidden rounded-t-[1rem] min-[90rem]:h-[15rem] min-[90rem]:aspect-auto"
+        className="relative -mt-px -mx-px aspect-[396/240] w-[calc(100%+2px)] shrink-0 overflow-hidden min-[90rem]:h-[15rem] min-[90rem]:aspect-auto"
       >
         <Image
           src={card.src}
           alt={card.alt}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1439px) 45vw, 24.75rem"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
         <span
           className={`${SEGOE_UI_CLASS} absolute top-4 left-4 inline-flex h-[2.125rem] items-center gap-1 rounded-full border border-[#BDBDBD] bg-[#FFFFFF] py-1 pr-3 pl-3 text-[0.8125rem] font-[600] leading-none tracking-normal text-[var(--Main-headings,#000000)]`}
@@ -103,7 +103,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
         <h3
           className={`${SEGOE_UI_CLASS} line-clamp-2 text-[1.25rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#000000)] sm:text-[1.375rem] sm:leading-8 min-[90rem]:min-h-[4.625rem] min-[90rem]:text-[1.75rem] min-[90rem]:leading-[2.1875rem]`}
         >
-          <Link href={href} className="transition-colors hover:text-[var(--Main-CTA-button,#00A3BE)]">
+          <Link href={href} className="transition-colors hover:text-[var(--Main-CTA-button,#228b22)]">
             {card.titleLines ? (
               <>
                 <span className="block">{card.titleLines[0]}</span>
@@ -142,7 +142,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
               </span>
             </p>
             <span
-              className={`${SEGOE_UI_CLASS} shrink-0 text-[0.875rem] font-[700] leading-none tracking-normal text-[var(--Eyebrow-label,#00A98F)] min-[90rem]:text-[1rem]`}
+              className={`${SEGOE_UI_CLASS} shrink-0 text-[0.875rem] font-[700] leading-none tracking-normal text-[var(--Main-CTA-button,#228b22)] min-[90rem]:text-[1rem]`}
             >
               {card.percent}%
             </span>
@@ -150,7 +150,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
 
           <div className="h-3 w-full overflow-hidden rounded-full bg-[#E8EEEC]">
             <div
-              className="h-full rounded-full bg-[var(--Eyebrow-label,#00A98F)]"
+              className="h-full rounded-full bg-[var(--Main-CTA-button,#228b22)] transition-all duration-500"
               style={{ width: `${card.percent}%` }}
             />
           </div>

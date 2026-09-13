@@ -21,6 +21,7 @@
     "@vercel/speed-insights": "^1.2.1",
     "framer-motion": "^12.23.12",
     "isomorphic-dompurify": "^2.26.0",
+    "lucide-react": "^1.45.0",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

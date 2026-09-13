@@ -3,8 +3,8 @@ export const ABOUT_WHY_WE_GATHER = {
   title: "India's Leading Giving Platform",
   subtitle:
     "Bridging community giving with verified causes, where Cause Champions create a circle of support for social impact across India.",
-  src: "/images/causes/353777ccdbf9acbedc2cfa91e44db8b6ebe0d296.png",
-  alt: "A health worker checking a woman’s blood pressure in our circle",
+  src: "/images/Smileshero.jpg",
+  alt: "Children in our circle smiling together",
   ctaLabel: "Champion a Cause",
   ctaHref: "/champion/apply",
 } as const;
@@ -19,8 +19,8 @@ export const ABOUT_OUR_STORY = {
     "We act as a bridge, linking Cause Champions with causes close to their hearts. We partner only with government-certified NGOs, ensuring every organisation meets official standards. For complete transparency, contributions go directly to NGOs and never pass through us. This is the foundation of everything we do.",
     "What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join community activities. We believe in communities for communities, where every giving circle member can witness real change in person.",
   ],
-  src: "/images/cta images/24cd8db82cca8c8ff709461cd6a0ce14e96b9b3e.png",
-  alt: "Women in our circle gathered together",
+  src: "/images/HomePageTop.jpg",
+  alt: "Schoolgirls in class smiling and looking up together",
 } as const;
 
 export const ABOUT_CORE_VALUES_INTRO = {
@@ -68,7 +68,8 @@ export const ABOUT_TEAM = {
 } as const;
 
 export const ABOUT_VISION_CTA = {
-  src: "/images/b03847b9986d8aa9337b328b4e6d518339e813ae.png",
+  src: "/images/about-cta-desktop.png",
+  mobileSrc: "/images/about-cta-mobile.png",
   alt: "Schoolchildren in our circle, smiling together",
   title: "Your Giving Can Change a Life.",
   subtitle:
@@ -103,7 +104,7 @@ export const ABOUT_FAQS = {
     {
       question: "Do donations pass through The Giving Circle?",
       answer:
-        "No. Contributions go directly to the verified NGO running the cause. We enable the giving-circle model, verify partners, and help report impact — we do not hold your gift as an intermediary wallet.",
+        "No. Contributions go directly to the verified NGO running the cause. We enable the giving-circle model, verify partners, and help report impact   we do not hold your gift as an intermediary wallet.",
     },
     {
       question: "How do you verify NGO partners?",

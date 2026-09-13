@@ -35,9 +35,9 @@ export default function ChampionSection() {
   return (
     <section
       id="champion"
-      className="w-full bg-[#FFFFFF] min-[90rem]:mx-auto min-[90rem]:h-[60.5rem] min-[90rem]:max-w-[90rem]"
+      className="w-full bg-[#FFFFFF] min-[90rem]:h-[60.5rem]"
     >
-      <FadeInSection className="relative flex h-full w-full flex-col px-4 pt-6 pb-4 sm:px-8 sm:pt-10 sm:pb-10 md:flex-row md:gap-6 md:px-10 md:pt-12 md:pb-12 lg:gap-10 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:block min-[90rem]:px-0 min-[90rem]:pt-0 min-[90rem]:pb-0">
+      <FadeInSection className="relative mx-auto flex h-full w-full max-w-[90rem] flex-col px-4 pt-6 pb-4 sm:px-8 sm:pt-10 sm:pb-10 md:flex-row md:gap-6 md:px-10 md:pt-12 md:pb-12 lg:gap-10 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:block min-[90rem]:px-0 min-[90rem]:pt-0 min-[90rem]:pb-0">
         <div className="flex flex-col md:flex-1 min-[90rem]:absolute min-[90rem]:top-[5rem] min-[90rem]:left-[6.25rem] min-[90rem]:w-[36rem]">
           <SectionIntro
             align="center"
@@ -67,9 +67,8 @@ export default function ChampionSection() {
           <div className="mt-5 sm:mt-7 min-[90rem]:mt-10">
             <CtaButton
               href="/champion/apply"
-              variant="outline"
-              hoverFill
-              className="h-11 w-full gap-2 bg-[#FFFFFF] px-6 py-3 sm:h-14 md:h-[4rem] min-[90rem]:w-[20rem] min-[90rem]:px-10 min-[90rem]:py-5"
+              className="h-11 w-full gap-2 px-6 py-3 sm:h-14 md:h-[4rem] min-[90rem]:w-[20rem] min-[90rem]:px-10 min-[90rem]:py-5"
+              labelClassName="font-[700]"
             >
               Start Your Giving Journey
               <CtaArrow />

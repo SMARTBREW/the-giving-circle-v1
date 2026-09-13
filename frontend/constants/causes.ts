@@ -15,8 +15,8 @@ export const CAUSES_HERO = {
     "Every cause is run by a verified NGO. Champion one with your circle, and watch collective giving reach communities across India.",
   primaryCta: { label: "Browse Causes", href: "#live-causes" },
   secondaryCta: { label: "Champion a Cause", href: "/champion/apply" },
-  src: "/images/causes/a070e0c62ce4ae1ad271d88e7bb2549a0cc4173a.png",
-  alt: "Volunteers handing relief supplies to a family",
+  src: "/images/causes/_DSC9767.jpg",
+  alt: "A schoolgirl reading in class, smiling toward the camera",
   stats: [
     { value: "7+", label: "Live Causes" },
     { value: "80,000+", label: "Lives Impacted" },
@@ -35,11 +35,12 @@ export const CAUSES_REACH = {
   eyebrow: "Why These Causes Matter",
   title: "Transparent Giving, Measurable Change",
   subtitle:
-    "Cause Champions pool support around verified work — education, women’s health, animal welfare, and disaster relief.",
+    "Cause Champions pool support around verified work   education, women’s health, animal welfare, and forest rights.",
 } as const;
 
 export const CAUSES_CTA = {
-  src: "/images/b03847b9986d8aa9337b328b4e6d518339e813ae.png",
+  src: "/images/support-cause-desktop.png",
+  mobileSrc: "/images/support-cause-mobile.png",
   alt: "Schoolchildren in our circle, smiling together",
   title: "Ready to Lead Your Circle?",
   subtitle:
@@ -51,23 +52,23 @@ export const CAUSES_CTA = {
 export const CAUSE_CATEGORY_CARDS = [
   {
     label: "Education",
-    src: "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
-    alt: "A schoolgirl in class, smiling with her classmates",
+    src: "/images/causes/IMG-20240404-WA0014.jpg",
+    alt: "Schoolchildren smiling together in class",
   },
   {
     label: "Animal Welfare",
-    src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
-    alt: "A volunteer with a rescued dog",
+    src: "/images/causes/WhatsApp_Image_2025-12-12_at_14.16.18.jpg",
+    alt: "A volunteer smiling with a rescued dog",
   },
   {
     label: "Women’s Health",
-    src: "/images/causes/353777ccdbf9acbedc2cfa91e44db8b6ebe0d296.png",
-    alt: "A health worker checking a woman’s blood pressure",
+    src: "/images/causes/Copy-of-IMG_5028.jpeg",
+    alt: "Women and girls gathered with Wings of Hope menstrual health kits",
   },
   {
-    label: "Disaster Relief",
-    src: "/images/causes/a070e0c62ce4ae1ad271d88e7bb2549a0cc4173a.png",
-    alt: "Volunteers handing relief supplies to a family",
+    label: "Forest Rights",
+    src: "/images/causes/DSC06535-1.webp",
+    alt: "Community members under a large tree in a forest landscape",
   },
 ] as const;
 
@@ -76,8 +77,8 @@ export const LIVE_CAUSES = [
     id: "wings-of-hope",
     category: "Women’s Health",
     categoryClassName: "text-[var(--Brand-Coral,#ED3B58)]",
-    title: "Wings of Hope — Menstrual Health So Girls Stay in School",
-    titleLines: ["Wings of Hope — Menstrual Health", "So Girls Stay in School"] as const,
+    title: "Wings of Hope: Menstrual Health So Girls Stay in School",
+    titleLines: ["Wings of Hope: Menstrual Health", "So Girls Stay in School"] as const,
     org: "JWP",
     location: "Delhi & NCR",
     raised: "₹4,80,000",
@@ -85,8 +86,8 @@ export const LIVE_CAUSES = [
     percent: 74,
     supporters: "234 Supporters",
     daysLeft: "22 Days Left",
-    src: "/images/stories/c0fcbd6be0a24b7c89a15933e825abe1b1a9ea02.png",
-    alt: "Schoolgirls with menstrual health education materials",
+    src: "/images/causes/Copy-of-IMG_5028.jpeg",
+    alt: "Women and girls gathered with Wings of Hope menstrual hygiene kits",
     summary:
       "Every month, thousands of girls miss school when periods begin. Wings of Hope funds menstrual health education and reusable hygiene kits so girls stay in class with dignity.",
     trustBadges: ["Tax Benefits · 80G", "Verified NGO Partner", "15+ Years Active"],
@@ -94,7 +95,7 @@ export const LIVE_CAUSES = [
     aboutHeading: "When Periods Become Barriers",
     about: [
       "India has one of the highest rates of school dropout among adolescent girls in the world. When menstruation starts, many face a choice: miss school or face shame and discomfort. For thousands of girls, that monthly interruption becomes permanent.",
-      "Studies in Delhi NCR show many girls miss five or more school days every month during menstruation. Schools often lack proper sanitation, families cannot always afford products, and taboos keep conversations closed. Wings of Hope responds with education, kits, and community support — so girls do not lose their future over something preventable.",
+      "Studies in Delhi NCR show many girls miss five or more school days every month during menstruation. Schools often lack proper sanitation, families cannot always afford products, and taboos keep conversations closed. Wings of Hope responds with education, kits, and community support   so girls do not lose their future over something preventable.",
     ],
     impact: [
       { value: "22,418", label: "Girls Empowered" },
@@ -127,7 +128,7 @@ export const LIVE_CAUSES = [
       {
         question: "Where does the money go?",
         answer:
-          "Contributions support workshops, product kits, community sessions, and follow-up tracking. Donations go directly to the NGO — The Giving Circle does not hold your gift as an intermediary wallet.",
+          "Contributions support workshops, product kits, community sessions, and follow-up tracking. Donations go directly to the NGO   The Giving Circle does not hold your gift as an intermediary wallet.",
       },
     ],
     featured: true,
@@ -136,7 +137,7 @@ export const LIVE_CAUSES = [
     id: "pehli-class",
     category: "Education",
     categoryClassName: "text-[var(--Brand-Deep-Blue,#3976A8)]",
-    title: "PehliClass — Into Formal School, On Time",
+    title: "PehliClass: Into Formal School, On Time",
     titleLines: null as null | readonly [string, string],
     org: "JWP",
     location: "Noida · Delhi NCR",
@@ -145,16 +146,16 @@ export const LIVE_CAUSES = [
     percent: 57,
     supporters: "142 Supporters",
     daysLeft: "28 Days Left",
-    src: "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
-    alt: "A schoolgirl smiling in class with her classmates",
+    src: "/images/causes/IMG-20240404-WA0014.jpg",
+    alt: "Schoolchildren smiling in class at the learning centre",
     summary:
       "Every parent remembers the first day of school. For thousands of children, that day never comes. #PehliClass is JWP’s path from out-of-school to a real classroom at Mera Sahara, Nithari.",
     trustBadges: ["Tax Benefits · 80G", "Verified Partner Listing", "48+ Years Active"],
     operations: "Active operations · Mera Sahara Bridge Learning Centre, Nithari · Delhi NCR",
     aboutHeading: "When the School Gate Stays Shut",
     about: [
-      "The children served are first-generation learners, dropouts, and children who have never entered a formal classroom. Many could not access government school because families lacked documents — a birth certificate, Aadhaar, transfer certificate — or because learning gaps made enrolment impossible.",
-      "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school — into their first formal class, on time. Where girls cannot attend regular school, JWP opens NIOS and IGNOU pathways so education continues.",
+      "The children served are first-generation learners, dropouts, and children who have never entered a formal classroom. Many could not access government school because families lacked documents   a birth certificate, Aadhaar, transfer certificate   or because learning gaps made enrolment impossible.",
+      "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school   into their first formal class, on time. Where girls cannot attend regular school, JWP opens NIOS and IGNOU pathways so education continues.",
     ],
     impact: [
       { value: "48+", label: "Years of JWP Impact" },
@@ -177,7 +178,7 @@ export const LIVE_CAUSES = [
       {
         question: "What is #PehliClass?",
         answer:
-          "#PehliClass is Joint Women’s Programme’s measured campaign to move out-of-school children — especially first-generation learners — into formal school on time. Children spend up to one year at the Mera Sahara Bridge Learning Centre while gaps are closed and enrolment is completed.",
+          "#PehliClass is Joint Women’s Programme’s measured campaign to move out-of-school children   especially first-generation learners   into formal school on time. Children spend up to one year at the Mera Sahara Bridge Learning Centre while gaps are closed and enrolment is completed.",
       },
       {
         question: "How much does it cost to sponsor one child for the bridge year?",
@@ -198,56 +199,64 @@ export const LIVE_CAUSES = [
     featured: true,
   },
   {
-    id: "flood-relief-uttarakhand",
-    category: "Disaster Relief",
-    categoryClassName: "text-[var(--Brand-Coral,#ED3B58)]",
-    title: "Flood Relief in Uttarakhand",
-    titleLines: null,
-    org: "GUS",
-    location: "Uttarakhand",
-    raised: "₹6,20,000",
-    goal: "₹8,50,000",
-    percent: 73,
-    supporters: "267 Supporters",
-    daysLeft: "12 Days Left",
-    src: "/images/stories/c8329e59978e6b525af70415259a31cd1f388a41.png",
-    alt: "Volunteers helping families after flooding in the mountains",
+    id: "community-forest-governance",
+    category: "Forest Rights",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
+    title: "Community Forest Governance: Protecting Forests, Empowering People",
+    titleLines: [
+      "Community Forest Governance:",
+      "Protecting Forests, Empowering People",
+    ] as const,
+    org: "ICFG",
+    location: "Jharkhand & Central India",
+    raised: "₹5,40,000",
+    goal: "₹7,50,000",
+    percent: 72,
+    supporters: "284 Supporters",
+    daysLeft: "16 Days Left",
+    src: "/images/causes/DSC06535-1.webp",
+    alt: "Community members under a large tree in a forest landscape",
     summary:
-      "Emergency relief for flood-affected communities: shelter, food, medical aid, and rehabilitation through a verified disaster-relief partner on the ground.",
-    trustBadges: ["Verified NGO Partner", "Direct to NGO", "Impact Updates"],
-    operations: "Active operations · Uttarakhand, India · 2,000+ flood-affected families",
-    aboutHeading: "Hope in the Face of Disaster",
+      "Empowering tribal and forest-dwelling communities under the Forest Rights Act to conserve ecosystems, restore biodiversity, and build sustainable livelihoods.",
+    trustBadges: ["Verified NGO Partner", "FRA 2006 Rights", "2,000+ Villages"],
+    operations: "Active operations · Chaingada & 2,000+ Forest Villages · India",
+    aboutHeading: "Forests Governed by Those Who Know Them Best",
     about: [
-      "When floods tore through mountain communities, families needed food, dry shelter, medical care, and people willing to travel difficult roads. Cause Champions and GUS moved relief quickly with partners already trusted on the ground.",
-      "Support begins with essentials, then shifts to rebuilding homes and supporting local leaders. Contributions go directly to the NGO, with updates shared back to every giving circle.",
+      "India's forests are home to millions of indigenous and forest-dwelling people whose culture, sustenance, and ecological balance depend on nature. Under the Forest Rights Act (FRA 2006), granting community forest rights transforms conservation by placing decision-making power directly in the hands of the community.",
+      "The Institute of Community Forest Governance (ICFG) works on the ground with over 2,000 village organisations   empowering forest dwellers with legal rights, planting indigenous saplings, protecting natural biodiversity, and fostering sustainable livelihoods so communities and ecosystems thrive together.",
     ],
     impact: [
-      { value: "2,400", label: "Families Supported" },
-      { value: "50,000+", label: "Food Packets" },
-      { value: "8,000+", label: "Medical Treatments" },
-      { value: "450", label: "Homes Rebuilt" },
+      { value: "2,000+", label: "Villages Mobilised" },
+      { value: "10,000+", label: "Hectares Protected" },
+      { value: "50,000+", label: "Saplings Planted" },
+      { value: "100%", label: "Community Led" },
     ],
     whatYourSupportDoes: [
-      "Deliver food, dry kits, and emergency shelter",
-      "Fund medical camps on hard-to-reach routes",
-      "Help rebuild homes with local partners",
-      "Keep champions informed as relief becomes recovery",
+      "Fund community-led forest nurseries and indigenous tree planting",
+      "Provide legal and operational training for Gram Sabha forest committees",
+      "Strengthen sustainable non-timber forest produce (NTFP) livelihoods",
+      "Track biodiversity regeneration and share transparent progress with champions",
     ],
     quote: {
-      text: "We lost everything in the floods, but GUS gave us hope. They didn't just help us survive — they helped us rebuild.",
-      author: "Ram Singh Rawat",
-      role: "Flood Survivor & Community Leader",
+      text: "The Forest Rights Act has given our community legal rights over our ancestral forest. Together with ICFG, we protect our trees and secure our future.",
+      author: "Chaingada Village Leader",
+      role: "Community Forest Governance Committee",
     },
     faqs: [
       {
-        question: "Who receives the funds?",
+        question: "What is ICFG's mission?",
         answer:
-          "Donations go directly to GUS, the verified NGO running relief and rehabilitation. The Giving Circle enables the giving-circle model and transparent updates.",
+          "The Institute of Community Forest Governance (ICFG) aims to protect, regenerate, and govern forests for people and the planet by enabling a symbiotic relationship between forest biodiversity and forest dwellers.",
       },
       {
-        question: "Can I visit or volunteer?",
+        question: "How do donations create impact?",
         answer:
-          "Where partners can host safely, Cause Champions and supporters are encouraged to visit and see the work. Write to us and we will help you find a place to start.",
+          "Contributions go directly to ICFG to fund sapling nurseries, village council forest rights training, and sustainable community forest management.",
+      },
+      {
+        question: "Is my donation eligible for 80G?",
+        answer:
+          "Eligible donations receive tax benefits under 80G as provided directly by the partner NGO where applicable.",
       },
     ],
     featured: true,
@@ -265,8 +274,8 @@ export const LIVE_CAUSES = [
     percent: 75,
     supporters: "312 Supporters",
     daysLeft: "18 Days Left",
-    src: "/images/stories/8085a2143fded1b5d4a64084b028d63971664fc4.png",
-    alt: "Volunteers feeding and caring for street dogs",
+    src: "/images/causes/pawsitive-protectors.jpg",
+    alt: "A caregiver treating a rescued dog at an Animal Care shelter",
     summary:
       "Protecting street animals and communities with free rabies vaccinations, deworming, and care through Animal Care’s community helpline network.",
     trustBadges: ["Verified NGO Partner", "80G Where Eligible", "Zero Rabies Mission"],
@@ -297,7 +306,7 @@ export const LIVE_CAUSES = [
       {
         question: "What does this campaign fund?",
         answer:
-          "Rabies vaccinations, deworming, emergency treatment, and community helpline response with Animal Care — a verified welfare partner.",
+          "Rabies vaccinations, deworming, emergency treatment, and community helpline response with Animal Care   a verified welfare partner.",
       },
       {
         question: "Do donations go directly to the NGO?",
@@ -320,10 +329,10 @@ export const LIVE_CAUSES = [
     percent: 79,
     supporters: "445 Supporters",
     daysLeft: "20 Days Left",
-    src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
-    alt: "A volunteer with a rescued dog",
+    src: "/images/causes/bowls-of-hope.jpg",
+    alt: "Rescued dogs drinking from metal bowls at a feeding station",
     summary:
-      "Daily feeding and care at Animal Care shelters for strays — nutritious meals and veterinary support through collective giving.",
+      "Daily feeding and care at Animal Care shelters for strays   nutritious meals and veterinary support through collective giving.",
     trustBadges: ["Verified NGO Partner", "Shelter Feeding", "Veterinary Care"],
     operations: "Active operations · Delhi · 2,000+ street animals",
     aboutHeading: "Meals That Keep Strays Alive",
@@ -361,8 +370,8 @@ export const LIVE_CAUSES = [
     id: "brick-by-brick",
     category: "Animal Welfare",
     categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
-    title: "Brick by Brick — Building Them a Home",
-    titleLines: ["Brick by Brick —", "Building Them a Home"] as const,
+    title: "Brick by Brick: Building Them a Home",
+    titleLines: ["Brick by Brick:", "Building Them a Home"] as const,
     org: "Animal Care",
     location: "Gurgaon, Haryana",
     raised: "₹10,000",
@@ -370,15 +379,15 @@ export const LIVE_CAUSES = [
     percent: 20,
     supporters: "12 Supporters",
     daysLeft: "45 Days Left",
-    src: "/images/causes/b84b54a937c5a76ee7ec494500962ef6787e488c.png",
-    alt: "A volunteer with a rescued dog at an Animal Care shelter",
+    src: "/images/causes/brick-by-brick.jpeg",
+    alt: "Animal Care Centre construction site in Gurgaon with bricks and project sign",
     summary:
-      "₹10 per brick for the boundary wall on a 17,500 sq ft stray rescue and rehab plot in Gurgaon — part of Animal Care’s Zero Rabies mission.",
+      "₹10 per brick for the boundary wall on a 17,500 sq ft stray rescue and rehab plot in Gurgaon   part of Animal Care’s Zero Rabies mission.",
     trustBadges: ["Verified Welfare Partner", "Zero Rabies Mission", "Gurgaon Plot"],
     operations: "Active operations · Gurgaon · Boundary wall → full centre",
     aboutHeading: "A Wall That Becomes a Home",
     about: [
-      "Animal Care is building a home for injured and critical strays on a 17,500 sq ft rescue and rehab plot in Gurgaon. Brick by Brick funds the boundary wall first — then a safer centre for Zero Rabies work.",
+      "Animal Care is building a home for injured and critical strays on a 17,500 sq ft rescue and rehab plot in Gurgaon. Brick by Brick funds the boundary wall first   then a safer centre for Zero Rabies work.",
       "Cause Champions can invite their network to sponsor bricks and watch the shelter take shape with transparent updates from a verified partner.",
     ],
     impact: [
@@ -394,7 +403,7 @@ export const LIVE_CAUSES = [
       "Share a clear, buildable goal with your circle",
     ],
     quote: {
-      text: "Sponsoring bricks made impact feel tangible — my friends could see exactly what their gift built.",
+      text: "Sponsoring bricks made impact feel tangible   my friends could see exactly what their gift built.",
       author: "Ajay Mehrotra",
       role: "Cause Champion",
     },
@@ -409,8 +418,8 @@ export const LIVE_CAUSES = [
   },
   {
     id: "flood-animal-rescue",
-    category: "Disaster Relief",
-    categoryClassName: "text-[var(--Brand-Coral,#ED3B58)]",
+    category: "Animal Welfare",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
     title: "Emergency Animal Rescue",
     titleLines: null,
     org: "Animal Care",
@@ -420,25 +429,25 @@ export const LIVE_CAUSES = [
     percent: 71,
     supporters: "198 Supporters",
     daysLeft: "15 Days Left",
-    src: "/images/causes/a070e0c62ce4ae1ad271d88e7bb2549a0cc4173a.png",
-    alt: "Volunteers handing relief supplies during disaster response",
+    src: "/images/causes/emergency-animal-rescue.png",
+    alt: "Animal Care rescuers wading through floodwater on an emergency response",
     summary:
-      "Emergency rescue and rehabilitation for animals affected by floods in Uttarakhand and Punjab — communities for communities, with a verified welfare partner.",
+      "Emergency rescue and rehabilitation for animals in crisis   communities for communities, with a verified welfare partner.",
     trustBadges: ["Verified NGO Partner", "Emergency Response", "Direct Donations"],
-    operations: "Active operations · Uttarakhand & Punjab · 500+ flood-affected animals",
-    aboutHeading: "When Floods Hit Animals Too",
+    operations: "Active operations · Uttarakhand & Punjab · 500+ rescue animals",
+    aboutHeading: "When Crises Hit Animals Too",
     about: [
-      "Floods displace families and animals alike. This campaign funds emergency rescue and rehabilitation operations for animals affected in Uttarakhand and Punjab.",
-      "Cause Champions rally their networks so Animal Care can respond quickly — treatment, shelter, and follow-up care — with gifts going directly to the NGO.",
+      "Floods displace families and animals alike. This campaign funds emergency rescue and rehabilitation operations for animals affected across vulnerable regions.",
+      "Cause Champions rally their networks so Animal Care can respond quickly   treatment, shelter, and follow-up care   with gifts going directly to the NGO.",
     ],
     impact: [
       { value: "812", label: "Animals Rescued" },
-      { value: "500+", label: "Flood-Affected" },
+      { value: "500+", label: "Crisis-Affected" },
       { value: "99", label: "Impact Score" },
       { value: "8 mo", label: "Response Window" },
     ],
     whatYourSupportDoes: [
-      "Fund emergency animal rescues in flood zones",
+      "Fund emergency animal rescues in crisis zones",
       "Cover treatment and temporary shelter",
       "Support rehab until animals are stable",
       "Keep your circle updated on urgent response",
@@ -450,9 +459,9 @@ export const LIVE_CAUSES = [
     },
     faqs: [
       {
-        question: "Is this separate from human flood relief?",
+        question: "Who runs this campaign?",
         answer:
-          "Yes. This lane focuses on animal rescue and rehab with Animal Care, alongside GUS-led family relief campaigns you can also champion.",
+          "This campaign is managed by Animal Care, a verified animal welfare partner.",
       },
     ],
     featured: false,
@@ -479,6 +488,9 @@ export type CampaignCardData = Pick<
 >;
 
 export function getLiveCause(id: string): LiveCause | undefined {
+  if (id === "flood-relief-uttarakhand") {
+    return LIVE_CAUSES.find((cause) => cause.id === "community-forest-governance");
+  }
   return LIVE_CAUSES.find((cause) => cause.id === id);
 }
 

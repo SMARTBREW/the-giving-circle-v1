@@ -5,6 +5,7 @@ export default function ChampionCta() {
   return (
     <PhotoCtaBand
       src={CHAMPION_CTA.src}
+      mobileSrc={CHAMPION_CTA.mobileSrc}
       alt={CHAMPION_CTA.alt}
       title={CHAMPION_CTA.title}
       subtitle={CHAMPION_CTA.subtitle}
@@ -12,7 +13,8 @@ export default function ChampionCta() {
       href={CHAMPION_CTA.href}
       align="left"
       overlay={false}
-      objectPosition="object-center"
+      objectPosition="object-right min-[90rem]:object-center"
+      mobileObjectPosition="object-[85%_center]"
     />
   );
 }

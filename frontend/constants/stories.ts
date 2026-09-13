@@ -3,8 +3,8 @@ export const STORIES_HERO = {
   title: "Real Stories. Lasting Impact.",
   subtitle:
     "Discover how Cause Champions and verified NGOs are turning collective support into meaningful change across India.",
-  src: "/images/stories/c0fcbd6be0a24b7c89a15933e825abe1b1a9ea02.png",
-  alt: "Schoolgirls holding menstrual health education pamphlets at a Wings of Hope session",
+  src: "/images/stories/asdasd.jpg",
+  alt: "Schoolchildren in green uniforms and community volunteers gathered together in a classroom",
   ctaLabel: "Champion a Cause",
   ctaHref: "/champion/apply",
 } as const;
@@ -24,14 +24,16 @@ export const STORIES_REACH = {
 } as const;
 
 export const STORIES_CTA = {
-  src: "/images/stories/c8329e59978e6b525af70415259a31cd1f388a41.png",
-  alt: "Volunteers helping an elderly woman along a flooded mountain path",
+  src: "/images/stories/stories-cta-desktop.png",
+  mobileSrc: "/images/stories/stories-cta-mobile.png",
+  alt: "A community group of women and youth smiling and conversing together outdoors",
   title: "Be Part of the Next Story.",
   subtitle:
     "Champion a cause, build your giving circle, and create change that communities will remember for years.",
   ctaLabel: "Champion a Cause",
   href: "/champion/apply",
-  objectPosition: "object-[50%_40%] sm:object-[48%_35%]",
+  objectPosition: "object-[50%_50%] sm:object-[50%_45%]",
+  mobileObjectPosition: "object-[50%_65%]",
 } as const;
 
 export const STORY_ARTICLES = [
@@ -61,8 +63,9 @@ export const STORY_ARTICLES = [
       "Wings of Hope began with a simple observation: too many girls were missing school every month because periods were treated as something to hide. Working with our verified partner Joint Women’s Programme, Cause Champions built a circle of support around classrooms that needed open conversation, accurate information, and practical help.",
       "Each session brings schoolgirls together for clear education, access to safe products, and space to ask questions without shame. Teachers and parents join the circle too, so the learning continues. Champions can visit project sites, meet participants, and see the change they helped fund, with every contribution going directly to the NGO.",
     ],
-    src: "/images/stories/c0fcbd6be0a24b7c89a15933e825abe1b1a9ea02.png",
-    alt: "Schoolgirls holding menstrual health education pamphlets at a Wings of Hope session",
+    src: "/images/stories/WhatsApp_Image_2026-05-18_at_4.24.50_PM.jpg",
+    alt: "Students at Rajkiya Balika Inter College holding Wings of Hope menstrual health kits",
+    objectPosition: "object-[50%_35%]",
   },
   {
     id: "pawsitive-protectors",
@@ -90,37 +93,39 @@ export const STORY_ARTICLES = [
       "Street animals rarely get a second chance. Through Pawsitive Protectors, Cause Champions stand with Animal Care to vaccinate, treat, rescue, and protect dogs and other animals living without a home. The work is urgent and local, from emergency rescues to vaccination drives that keep neighbourhoods safer.",
       "Every contribution goes directly to the NGO. Champions invite their circle to multiply the impact, and supporters can visit, meet the animals, and walk with volunteers. Since 2021, the campaign has grown through collective giving across Mumbai, Delhi & NCR, and beyond.",
     ],
-    src: "/images/stories/8085a2143fded1b5d4a64084b028d63971664fc4.png",
-    alt: "Volunteers feeding and caring for street dogs",
+    src: "/images/stories/WhatsApp_Image_2025-12-12_at_14.16.19.jpg",
+    alt: "A volunteer smiling while holding a rescued puppy",
+    objectPosition: "object-[50%_25%]",
   },
   {
-    id: "flood-relief-uttarakhand",
-    tag: "Disaster Relief",
-    tagClassName: "bg-[var(--Brand-Deep-Blue,#3976A8)]",
-    org: "GUS",
-    location: "Uttarakhand, India",
-    title: "Flood Relief Uttarakhand: Hope in the Face of Disaster",
+    id: "community-forest-governance",
+    tag: "Forest Rights",
+    tagClassName: "bg-[var(--Brand-Green-Teal,#00A98F)]",
+    org: "ICFG",
+    location: "Jharkhand & Central India",
+    title: "Community Forest Governance: Protecting Forests, Empowering People",
     summary:
-      "When floods hit Uttarakhand, Cause Champions and GUS moved relief, medical care, and rebuilding support directly to families on the ground.",
-    highlight: { value: "3,000+", label: "Families Supported" },
+      "Under the Forest Rights Act, ICFG and Cause Champions empower tribal forest communities to secure legal rights, plant indigenous saplings, and restore ecosystems.",
+    highlight: { value: "2,000+", label: "Villages Mobilised" },
     stats: [
-      { icon: "people" as const, value: "3,000+", label: "Families Rescued" },
-      { icon: "heart" as const, value: "50,000+", label: "Food Packets Distributed" },
-      { icon: "check" as const, value: "8,000+", label: "Medical Treatments" },
-      { icon: "pin" as const, value: "450", label: "Homes Rebuilt" },
+      { icon: "pin" as const, value: "2,000+", label: "Villages Mobilised" },
+      { icon: "check" as const, value: "10,000+", label: "Hectares Protected" },
+      { icon: "heart" as const, value: "50,000+", label: "Native Trees Planted" },
+      { icon: "people" as const, value: "100%", label: "Community Run" },
     ],
     quote: {
-      text: "We lost everything in the floods, but GUS gave us hope. They didn't just help us survive, they helped us rebuild our lives stronger than before.",
-      author: "Ram Singh Rawat",
-      role: "Flood Survivor & Community Leader",
+      text: "The Forest Rights Act has changed the life of the forest dwellers of Chaingada, fostering self-reliance and environmental sustainability.",
+      author: "Chaingada Community Leader",
+      role: "Forest Governance Committee",
     },
-    date: "January 2024",
+    date: "February 2024",
     body: [
-      "When floods tore through communities in Uttarakhand, families needed food, dry shelter, medical care, and people willing to travel difficult roads. Cause Champions and their circles moved quickly with GUS and verified partners already trusted on the ground.",
-      "Relief began with essentials, then shifted to rebuilding homes and supporting local leaders. Contributions went directly to NGO partners, with updates shared back to every giving circle. Hope returned as food delivered, treatment given, and homes rebuilt one by one.",
+      "India's forests are home to millions of indigenous and tribal people whose culture and daily sustenance depend directly on nature. Through community forest governance, ICFG empowers villagers to take legal stewardship over their ancestral ecosystems.",
+      "Village committees establish native tree nurseries, protect bio-corridors, and manage non-timber forest produce sustainably. Giving circles fund local workshops and sapling drives, with every milestone reported transparently back to donors.",
     ],
-    src: "/images/stories/c8329e59978e6b525af70415259a31cd1f388a41.png",
-    alt: "Volunteers helping an elderly woman along a flooded mountain path",
+    src: "/images/stories/DSC05008-scaled.webp",
+    alt: "Tribal women weaving bamboo and forest produce crafts outside their home",
+    objectPosition: "object-center",
   },
 ] as const;
 
@@ -135,13 +140,13 @@ const IMPACT_STORY_CARD_META = [
     id: "pawsitive-protectors",
     featured: false,
     overlayClassName:
-      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_26.97%,rgba(0,0,0,0.04)_35.72%,rgba(0,0,0,0.18)_39.64%,rgba(0,0,0,0.52)_43.55%,rgba(0,0,0,0.86)_50%)]",
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_36%,rgba(0,0,0,0.08)_44%,rgba(0,0,0,0.28)_50%,rgba(0,0,0,0.62)_58%,rgba(0,0,0,0.9)_70%)]",
   },
   {
-    id: "flood-relief-uttarakhand",
+    id: "community-forest-governance",
     featured: false,
     overlayClassName:
-      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_19.09%,rgba(0,0,0,0.04)_28.07%,rgba(0,0,0,0.18)_32.09%,rgba(0,0,0,0.52)_36.11%,rgba(0,0,0,0.86)_42.73%)]",
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0)_36%,rgba(0,0,0,0.08)_44%,rgba(0,0,0,0.28)_50%,rgba(0,0,0,0.62)_58%,rgba(0,0,0,0.9)_70%)]",
   },
 ] as const;
 
@@ -159,6 +164,7 @@ export const IMPACT_STORIES = IMPACT_STORY_CARD_META.map((meta) => {
     title: story.title,
     src: story.src,
     alt: story.alt,
+    objectPosition: story.objectPosition,
     href: `/stories#${story.id}`,
   };
 });

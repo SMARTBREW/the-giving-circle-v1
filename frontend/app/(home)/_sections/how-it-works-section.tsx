@@ -5,7 +5,10 @@ import { HOW_IT_WORKS_STEPS } from "@/constants";
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="w-full bg-[#3976A8]">
+    <section
+      id="how-it-works"
+      className="w-full bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900"
+    >
       <FadeInSection className="relative mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[35.4375rem] min-[90rem]:px-[4rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           tone="onDark"

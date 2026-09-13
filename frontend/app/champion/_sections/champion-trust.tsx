@@ -51,7 +51,7 @@ export default function ChampionTrust() {
             ))}
           </ul>
 
-          {/* Vertical dividers — Figma 1px #E4E4E7 */}
+          {/* Vertical dividers   Figma 1px #E4E4E7 */}
           <span
             aria-hidden
             className="pointer-events-none absolute inset-y-0 left-1/3 z-0 hidden w-px -translate-x-1/2 bg-[#E4E4E7] min-[90rem]:block"
@@ -61,7 +61,7 @@ export default function ChampionTrust() {
             className="pointer-events-none absolute inset-y-0 left-2/3 z-0 hidden w-px -translate-x-1/2 bg-[#E4E4E7] min-[90rem]:block"
           />
 
-          {/* Horizontal divider — Figma 1240px #E4E4E7 */}
+          {/* Horizontal divider   Figma 1240px #E4E4E7 */}
           <span
             aria-hidden
             className="pointer-events-none absolute top-1/2 left-0 z-0 hidden h-px w-full -translate-y-1/2 bg-[#E4E4E7] min-[90rem]:block"

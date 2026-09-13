@@ -56,7 +56,7 @@ export default function SplitMediaSection({
           alt={alt}
           fill
           sizes="(max-width: 767px) 100vw, 44vw"
-          className="object-cover"
+          className="object-cover object-[50%_38%]"
         />
       </div>
     </PageSection>

@@ -9,11 +9,6 @@ const cardMotion = {
   hover: { y: -10 },
 };
 
-const ringMotion = {
-  rest: { opacity: 0 },
-  hover: { opacity: 1 },
-};
-
 export default function CauseMotionCard({
   children,
   className = "",
@@ -50,21 +45,12 @@ export default function CauseMotionCard({
           damping: 24,
           mass: 0.85,
         }}
-        className={`relative flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-[border-color] duration-300 ${className}`}
+        className={`relative flex h-full w-full flex-col overflow-hidden isolate rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 ${accent.hoverBorder} ${className}`}
       >
         {showBar ? (
           <span
             aria-hidden
             className={`absolute top-0 left-0 h-1 w-full origin-left scale-x-0 transition-transform duration-300 ease-out group-hover/cause-card:scale-x-100 ${accent.bar}`}
-          />
-        ) : null}
-
-        {hoverMotion ? (
-          <motion.span
-            aria-hidden
-            variants={ringMotion}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className={`pointer-events-none absolute inset-0 z-20 rounded-[1rem] border-2 ${accent.ring}`}
           />
         ) : null}
 

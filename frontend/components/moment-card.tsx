@@ -54,14 +54,14 @@ export default function MomentCard({
           damping: 24,
           mass: 0.85,
         }}
-        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-5 pb-5 shadow-[0px_4px_20px_0px_#0000000F] sm:px-6 sm:pt-6 sm:pb-6 md:px-8 md:pt-8 md:pb-8 lg:px-5 lg:pt-6 lg:pb-6 lg:transition-colors lg:duration-300 lg:group-hover/moment:border-[var(--Main-CTA-button,#00A3BE)] min-[90rem]:h-[24.8125rem] min-[90rem]:px-6 min-[90rem]:pt-[0.888125rem] min-[90rem]:pb-0"
+        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-5 pb-5 shadow-[0px_4px_20px_0px_#0000000F] transition-colors duration-300 group-hover/moment:border-[var(--Main-CTA-button,#228b22)] sm:px-6 sm:pt-6 sm:pb-6 md:px-8 md:pt-8 md:pb-8 lg:px-5 lg:pt-6 lg:pb-6 min-[90rem]:h-[24.8125rem] min-[90rem]:px-6 min-[90rem]:pt-[0.888125rem] min-[90rem]:pb-0"
       >
         {hoverMotion ? (
           <motion.span
             aria-hidden
             variants={ringMotion}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="pointer-events-none absolute inset-0 z-20 rounded-[1rem] border-2 border-[var(--Main-CTA-button,#00A3BE)]"
+            className="pointer-events-none absolute -inset-[1px] z-20 rounded-[1rem] border border-[var(--Main-CTA-button,#228b22)]"
           />
         ) : null}
         <span className="relative z-10 h-20 w-20 shrink-0 bg-[#FFFFFF] sm:h-24 sm:w-24 lg:h-28 lg:w-28 min-[90rem]:h-[7.044rem] min-[90rem]:w-[7.044rem]">

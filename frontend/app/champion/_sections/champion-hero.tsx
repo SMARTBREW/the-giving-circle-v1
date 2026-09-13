@@ -58,7 +58,7 @@ export default function ChampionHero() {
                 href={secondaryCta.href}
                 variant="outline"
                 smoothScroll
-                className="h-12 w-full border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] px-6 sm:h-14 sm:w-auto sm:px-8 min-[90rem]:h-16 min-[90rem]:w-[12.4375rem] min-[90rem]:px-0 min-[90rem]:text-[1.125rem]"
+                className="h-12 w-full bg-[#FFFFFF] px-6 sm:h-14 sm:w-auto sm:px-8 min-[90rem]:h-16 min-[90rem]:w-[12.4375rem] min-[90rem]:px-0 min-[90rem]:text-[1.125rem]"
                 labelClassName="font-[700]"
               >
                 {secondaryCta.label}

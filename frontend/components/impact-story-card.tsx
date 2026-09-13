@@ -11,6 +11,7 @@ export default function ImpactStoryCard({
   title,
   src,
   alt,
+  objectPosition = "object-center",
   href,
 }: {
   featured?: boolean;
@@ -20,6 +21,7 @@ export default function ImpactStoryCard({
   title: string;
   src: string;
   alt: string;
+  objectPosition?: string;
   href: string;
 }) {
   return (
@@ -43,7 +45,7 @@ export default function ImpactStoryCard({
               ? "(min-width: 1440px) 39.625rem, (min-width: 640px) 50vw, 100vw"
               : "(min-width: 1440px) 36.25rem, (min-width: 640px) 50vw, 100vw"
           }
-          className="object-cover"
+          className={`object-cover ${objectPosition}`}
         />
         <span
           className={`absolute inset-0 hidden sm:block ${overlayClassName}`}
@@ -53,7 +55,7 @@ export default function ImpactStoryCard({
           className={`${SEGOE_UI_CLASS} absolute top-4 left-4 z-10 inline-flex items-center justify-center rounded-full px-3 py-1.5 sm:top-5 sm:left-5 min-[90rem]:left-8 ${
             featured
               ? "min-[90rem]:top-[30.8125rem]"
-              : "min-[90rem]:top-[8.6875rem]"
+              : "min-[90rem]:top-5"
           } ${tagClassName}`}
         >
           <span

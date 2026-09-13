@@ -29,7 +29,7 @@ export default function StoriesPage() {
         ctaLabel={STORIES_HERO.ctaLabel}
         ctaHref={STORIES_HERO.ctaHref}
         priority
-        objectPosition="object-[50%_48%]"
+        objectPosition="object-[50%_10%] sm:object-[50%_14%]"
       />
       <StoriesArticles />
       <MomentsSection />
@@ -41,12 +41,14 @@ export default function StoriesPage() {
       />
       <PhotoCtaBand
         src={STORIES_CTA.src}
+        mobileSrc={STORIES_CTA.mobileSrc}
         alt={STORIES_CTA.alt}
         title={STORIES_CTA.title}
         subtitle={STORIES_CTA.subtitle}
         ctaLabel={STORIES_CTA.ctaLabel}
         href={STORIES_CTA.href}
         objectPosition={STORIES_CTA.objectPosition}
+        mobileObjectPosition={STORIES_CTA.mobileObjectPosition}
       />
     </>
   );

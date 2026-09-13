@@ -15,7 +15,7 @@ import {
 const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-2 py-2.5 text-[0.8125rem] font-[600] text-[#212121] transition-colors hover:text-[#000000] lg:px-2.5 lg:text-[0.875rem] min-[90rem]:px-3 min-[90rem]:text-[1rem]`;
 
 const NAV_CTA_CLASS =
-  "h-11 !rounded-lg px-4 text-[0.8125rem] sm:h-12 sm:px-5 sm:text-[0.875rem] lg:h-12 lg:px-5 min-[90rem]:h-[3.25rem] min-[90rem]:px-6 min-[90rem]:text-[1rem]";
+  "h-11 !rounded-lg !bg-[#ED3B58] px-4 text-[0.8125rem] sm:h-12 sm:px-5 sm:text-[0.875rem] lg:h-12 lg:px-5 min-[90rem]:h-[3.25rem] min-[90rem]:px-6 min-[90rem]:text-[1rem]";
 
 function MenuIcon({ open }: { open: boolean }) {
   return open ? (

@@ -174,7 +174,7 @@ export default function StoryCard({
         alt={story.alt}
         fill
         sizes="(max-width: 767px) 100vw, (max-width: 1023px) 41vw, 38vw"
-        className="object-cover"
+        className={`object-cover ${story.objectPosition || "object-center"}`}
       />
 
       <span
@@ -283,7 +283,7 @@ export default function StoryCard({
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-full border border-[var(--Main-CTA-button,#00A3BE)] px-6 text-[0.875rem] font-[600] leading-none tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-colors hover:bg-[var(--Main-CTA-button,#00A3BE)] hover:text-[#FFFFFF] sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
+          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-full border border-[#228B22] bg-[#FFFFFF] px-6 text-[0.875rem] font-[600] leading-none tracking-normal text-[#228B22] transition-colors hover:bg-[#228B22] hover:text-[#FFFFFF] sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
         >
           {expanded ? "Show Less" : "Read Full Story"}
         </button>

@@ -13,7 +13,7 @@ export default function VolunteerCard({
   alt: string;
 }) {
   return (
-    <li className="relative w-full min-[90rem]:h-[24.1875rem] min-[90rem]:w-[18.5rem]">
+    <li className="relative w-full min-[90rem]:h-[23.4375rem] min-[90rem]:w-[18.5rem]">
       <div className="flex w-full flex-col overflow-hidden rounded-[0.75rem] border border-[#BDBDBD] bg-[#FFFFFF] min-[90rem]:border-0 min-[90rem]:bg-transparent">
         <div className="relative aspect-[4/3] w-full overflow-hidden min-[90rem]:aspect-auto min-[90rem]:h-[21.0625rem] min-[90rem]:rounded-[0.75rem]">
           <Image
@@ -24,14 +24,14 @@ export default function VolunteerCard({
             className="object-cover"
           />
         </div>
-        <div className="flex flex-col items-center justify-center gap-1 px-4 py-4 sm:gap-2 sm:py-5 min-[90rem]:absolute min-[90rem]:top-[17.9375rem] min-[90rem]:left-[1.5625rem] min-[90rem]:z-10 min-[90rem]:h-[6.25rem] min-[90rem]:w-[15.4375rem] min-[90rem]:gap-2 min-[90rem]:rounded-[0.375rem] min-[90rem]:border min-[90rem]:border-[#BDBDBD] min-[90rem]:bg-[#FFFFFF] min-[90rem]:px-0 min-[90rem]:py-[0.8125rem]">
+        <div className="flex flex-col items-center justify-center gap-0.5 px-4 py-3 sm:gap-1 sm:py-3.5 min-[90rem]:absolute min-[90rem]:top-[18.6875rem] min-[90rem]:left-[1.5625rem] min-[90rem]:z-10 min-[90rem]:h-[4.75rem] min-[90rem]:w-[15.4375rem] min-[90rem]:gap-0.5 min-[90rem]:rounded-[0.375rem] min-[90rem]:border min-[90rem]:border-[#BDBDBD] min-[90rem]:bg-[#FFFFFF] min-[90rem]:px-0 min-[90rem]:py-2">
           <p
-            className={`${SEGOE_UI_CLASS} text-center text-[1.25rem] leading-7 font-[600] tracking-normal text-[var(--Main-headings,#000000)] sm:text-[1.375rem] min-[90rem]:h-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap`}
+            className={`${SEGOE_UI_CLASS} text-center text-[1.125rem] leading-6 font-[600] tracking-normal text-[var(--Main-headings,#000000)] sm:text-[1.25rem] sm:leading-7 min-[90rem]:text-[1.375rem] min-[90rem]:leading-7 min-[90rem]:whitespace-nowrap`}
           >
             {name}
           </p>
           <p
-            className={`${SEGOE_UI_CLASS} text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#2D2E2E] sm:text-[1rem] min-[90rem]:h-8 min-[90rem]:text-[1.125rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap`}
+            className={`${SEGOE_UI_CLASS} text-center text-[0.875rem] leading-5 font-[400] tracking-normal text-[#2D2E2E] sm:text-[0.9375rem] min-[90rem]:text-[1rem] min-[90rem]:leading-6 min-[90rem]:whitespace-nowrap`}
           >
             {role}
           </p>
