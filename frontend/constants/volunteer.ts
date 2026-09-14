@@ -72,40 +72,6 @@ export const VOLUNTEER_MEET = {
   href: "/#contact",
 } as const;
 
-export const VOLUNTEER_FAQS = {
-  eyebrow: "Volunteer FAQs",
-  title: "Everything You Need to Know",
-  subtitle:
-    "Practical answers about roles, students, safety, and how volunteering differs from becoming a Cause Champion.",
-  items: [
-    {
-      question: "How do I start volunteering?",
-      answer:
-        "Write to us through Become a Volunteer or Contact Us. Share your city, skills, and availability. Our team matches you with a verified NGO partner and a role you can begin with.",
-    },
-    {
-      question: "Do I need prior experience?",
-      answer:
-        "No. Many roles are partner-led   classroom support, feeding drives, awareness sessions, or event help. Partners welcome people ready to show up and learn.",
-    },
-    {
-      question: "Can students volunteer?",
-      answer:
-        "Yes. Young Champions can join school and college volunteering or fundraising with verified partners, with clearer documentation when partners can provide it.",
-    },
-    {
-      question: "Is this the same as being a Cause Champion?",
-      answer:
-        "No. Cause Champions rally their network to fund a verified cause. Volunteers give time and skills on the ground. You can do either   or both over time.",
-    },
-    {
-      question: "How do you keep volunteering safe and clear?",
-      answer:
-        "We only connect you with verified partners and help set expectations before you begin. Partners share guidance for visits and community activities, and our team stays available if you need support.",
-    },
-  ],
-} as const;
-
 export const VOLUNTEER_CTA = {
   src: "/images/champions/volunteer-cta-desktop.png",
   mobileSrc: "/images/champions/champion-cta-mobile.png",

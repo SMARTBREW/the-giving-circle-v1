@@ -223,7 +223,7 @@ export default async function CauseDetailPage({
       {detail ? <CauseDetailSections cause={cause} detail={detail} /> : null}
 
       {cause.faqs.length > 0 ? (
-        <PageSection tone="gray">
+        <PageSection tone="gray" id="cause-faqs">
           <SectionIntro
             eyebrow="Questions About This Cause"
             title="Frequently Asked Questions"

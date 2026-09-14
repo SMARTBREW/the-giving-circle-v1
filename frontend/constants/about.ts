@@ -89,32 +89,3 @@ export const ABOUT_VISION = {
   title: "Transform Giving Across India",
   body: "A future where community giving is completely transparent, deeply impactful, and universally trusted, where every member of our circle creates lasting social change across India.",
 } as const;
-
-export const ABOUT_FAQS = {
-  eyebrow: "About The Giving Circle",
-  title: "Questions About Who We Are",
-  subtitle:
-    "How we verify partners, where gifts go, and what makes our circle different from a typical donation portal.",
-  items: [
-    {
-      question: "Who runs The Giving Circle?",
-      answer:
-        "The Giving Circle is an India-based community giving platform founded in 2022. We connect Cause Champions with verified NGOs so collective support reaches real causes with transparency and trust.",
-    },
-    {
-      question: "Do donations pass through The Giving Circle?",
-      answer:
-        "No. Contributions go directly to the verified NGO running the cause. We enable the giving-circle model, verify partners, and help report impact   we do not hold your gift as an intermediary wallet.",
-    },
-    {
-      question: "How do you verify NGO partners?",
-      answer:
-        "We partner only with government-certified organisations that meet official standards. Verification covers registration, programme fit, and the ability to share clear updates back to every giving circle.",
-    },
-    {
-      question: "Can supporters visit project sites?",
-      answer:
-        "Yes. We believe in communities for communities. Cause Champions and supporters are encouraged to visit project sites, meet beneficiaries, and join community activities whenever partners can host them safely.",
-    },
-  ],
-} as const;

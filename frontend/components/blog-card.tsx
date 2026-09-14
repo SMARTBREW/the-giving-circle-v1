@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS, type BlogArticle } from "@/constants";
@@ -43,11 +44,28 @@ const FALLBACK_STYLE = {
 
 export default function BlogCard({ article }: { article: BlogArticle }) {
   const style = CATEGORY_STYLES[article.category as Category] ?? FALLBACK_STYLE;
+  const hasImage = "image" in article && Boolean(article.image);
 
   return (
     <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0_0.25rem_1.25rem_0_#0000000F] transition-all duration-300 hover:-translate-y-1 hover:border-[#D0D0D0] hover:shadow-[0_0.5rem_2rem_0_#00000012]">
       {/* Category accent bar */}
       <div className={`h-1 w-full origin-left transition-transform duration-300 ${style.bar}`} />
+
+      {hasImage ? (
+        <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100">
+          <Image
+            src={article.image as string}
+            alt={
+              "imageAlt" in article && typeof article.imageAlt === "string"
+                ? article.imageAlt
+                : (article as { title: string }).title
+            }
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      ) : null}
 
       <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-7 min-[90rem]:p-8">
         {/* Header row */}

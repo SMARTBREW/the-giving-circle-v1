@@ -31,7 +31,6 @@ export {
   ABOUT_MISSION,
   ABOUT_VISION,
   ABOUT_VISION_CTA,
-  ABOUT_FAQS,
 } from "./about";
 export {
   STORY_ARTICLES,
@@ -60,7 +59,6 @@ export {
   CHAMPION_TRUST,
   CHAMPION_VOICES,
   CHAMPION_MEET,
-  CHAMPION_FAQS,
   CHAMPION_CTA,
   CHAMPION_APPLY,
 } from "./champion";
@@ -72,11 +70,23 @@ export type {
 export { PARTNER_APPLY } from "./partner";
 export type { PartnerApplyFocusId } from "./partner";
 export {
+  SITE_FAQS,
+  ALL_FAQS,
+  FAQ_ITEMS,
+  FAQS_PAGE,
+  ABOUT_FAQS,
+  CHAMPION_FAQS,
+  VOLUNTEER_FAQS,
+  PARTNER_FAQS,
+  faqsByIds,
+  getFaq,
+} from "./faqs";
+export type { FaqEntry, FaqLink, SiteFaqId } from "./faqs";
+export {
   VOLUNTEER_PAGE_HERO,
   VOLUNTEER_HOW_IT_WORKS,
   VOLUNTEER_TRUST,
   VOLUNTEER_MEET,
-  VOLUNTEER_FAQS,
   VOLUNTEER_CTA,
 } from "./volunteer";
 export type { CampaignCardData as ChampionCampaignCard } from "./causes";
@@ -123,7 +133,7 @@ export const FOOTER_QUICK_LINKS = [
   { href: "/causes", label: "Live Causes" },
   { href: "/stories", label: "Impact Stories" },
   { href: "/blog", label: "Blogs" },
-  { href: "/#faqs", label: "FAQs" },
+  { href: "/faqs", label: "FAQs" },
   { href: "/#contact", label: "Contact Us" },
 ] as const;
 
@@ -349,39 +359,6 @@ export const HOW_THE_CIRCLE_WORKS = [
   {
     title: "Young Champions",
     body: "Students leading school and college fundraising and volunteering   the next generation of our circle.",
-  },
-] as const;
-
-export const FAQ_ITEMS = [
-  {
-    question: "What is The Giving Circle?",
-    answer:
-      "The Giving Circle is an Indian fundraising platform for people who want to make a difference. You choose a cause you care about, start a fundraiser for the verified NGO working on it, and raise funds by sharing it with your personal and professional network. We call these volunteer fundraisers Cause Champions.",
-  },
-  {
-    question: "How do I start a fundraiser for an NGO in India?",
-    answer:
-      "Choose a live cause backed by a verified NGO, start your Giving Circle as a Cause Champion, and share it with your personal and professional network. Your circle’s gifts go directly to the NGO running the cause.",
-  },
-  {
-    question: "What is a Cause Champion?",
-    answer:
-      "A Cause Champion is someone who starts a Giving Circle, pooling support with friends, family, and colleagues to fund a live cause together, not alone.",
-  },
-  {
-    question: "Does it cost anything to start a fundraiser?",
-    answer:
-      "No. It costs nothing to start a Giving Circle and become a Cause Champion. Donations go directly to the verified NGO.",
-  },
-  {
-    question: "Will I receive an 80G donation receipt?",
-    answer:
-      "Eligible donations are receipted under 80G by the verified NGO, because your gift goes directly to them.",
-  },
-  {
-    question: "Can I volunteer with The Giving Circle?",
-    answer:
-      "Yes. You can volunteer your time, skills, and energy with verified causes across our circle. Write to us and we will help you find a place to start.",
   },
 ] as const;
 

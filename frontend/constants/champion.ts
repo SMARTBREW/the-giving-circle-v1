@@ -183,45 +183,6 @@ export const CHAMPION_MEET = {
   ],
 } as const;
 
-export const CHAMPION_FAQS = {
-  eyebrow: "Cause Champion FAQs",
-  title: "Everything You Need to Know",
-  subtitle:
-    "Learn how to become a Cause Champion, engage your circle, and support a verified cause with confidence.",
-  items: [
-    {
-      question: "What is a Cause Champion?",
-      answer:
-        "A Cause Champion is a volunteer fundraiser. You pick a cause, pledge an amount you would like to raise, and share your fundraising page with the people who know you. The donations directly go to the verified NGO behind the cause. Cause Champions never handle or receive donation funds themselves.",
-    },
-    {
-      question: "Does it cost anything to start a fundraiser?",
-      answer:
-        "No. It costs nothing to start a Giving Circle and become a Cause Champion. Donations go directly to the verified NGO.",
-    },
-    {
-      question: "What support do I get to run my fundraiser?",
-      answer:
-        "Our team helps set up your personalised fundraiser, goal, and campaign link, and stays with you throughout. You get guidance, campaign materials, progress updates, and ongoing support so you can rally your circle with confidence.",
-    },
-    {
-      question: "What if I do not raise the amount I pledged?",
-      answer:
-        "Your pledge is a goal, not a commitment you are held to. Every gift your circle makes still goes directly to the verified NGO. You can keep sharing, adjust your goal with our team, or close the fundraiser when you are ready there is no penalty for falling short.",
-    },
-    {
-      question: "Where does my donation go?",
-      answer:
-        "Donations go directly to the partner NGO through its own payment gateway and registered bank account. The Giving Circle does not hold or receive the funds we verify partners and help you run the Giving Circle.",
-    },
-    {
-      question: "Can I start a fundraiser for my birthday, wedding or another occasion?",
-      answer:
-        "Yes. Many Cause Champions mark birthdays, weddings, anniversaries, and other milestones by starting a Giving Circle for a verified cause. Choose a cause you care about, set your goal, and invite guests and loved ones to give instead of or alongside gifts.",
-    },
-  ],
-} as const;
-
 export const CHAMPION_CTA = {
   src: "/images/champions/champion-cta-desktop.png",
   mobileSrc: "/images/champions/champion-cta-mobile.png",
