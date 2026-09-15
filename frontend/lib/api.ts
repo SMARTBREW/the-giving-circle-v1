@@ -31,7 +31,10 @@ export async function postJson<TBody extends Record<string, unknown>>(
   const raw = await response.text();
   const data = safeJsonParse<ApiResponse>(raw, {
     success: false,
-    message: "Something went wrong. Please try again.",
+    message:
+      response.headers.get("content-type")?.includes("application/json")
+        ? "Something went wrong. Please try again."
+        : `API returned ${response.status}. Check NEXT_PUBLIC_API_URL (expected FastAPI, not Next.js).`,
   });
 
   if (!response.ok || !data.success) {

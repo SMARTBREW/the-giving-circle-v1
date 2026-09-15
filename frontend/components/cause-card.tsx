@@ -26,7 +26,7 @@ export default function CauseCard({
           sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 18.5rem"
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
-        <span className="absolute inset-0 bg-[linear-gradient(360deg,rgba(0,0,0,0.85)_26.44%,rgba(0,0,0,0)_55.17%)]" />
+        <span className="absolute inset-0 bg-[linear-gradient(360deg,rgba(0,0,0,0.85)_10%,rgba(0,0,0,0)_28%)]" />
         <span className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2.5 transition-transform duration-500 ease-in-out group-hover:-translate-y-2 sm:inset-x-5 sm:bottom-5 lg:inset-x-5 lg:bottom-5">
           <span
             className={`${SEGOE_UI_CLASS} min-w-0 text-left text-[1.0625rem] leading-tight font-[700] tracking-normal text-[#FFFFFF] sm:text-[1.1875rem] lg:text-[1.25rem] min-[90rem]:text-[1.25rem]`}

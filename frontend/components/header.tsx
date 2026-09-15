@@ -12,10 +12,10 @@ import {
   SEGOE_UI_CLASS,
 } from "@/constants";
 
-const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-2 py-2.5 text-[0.8125rem] font-[600] text-[#212121] transition-colors hover:text-[#000000] lg:px-2.5 lg:text-[0.875rem] min-[90rem]:px-3 min-[90rem]:text-[1rem]`;
+const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-2 py-2 text-[0.8125rem] font-[600] text-[#212121] transition-colors hover:text-[#000000] lg:px-2.5 lg:text-[0.875rem] min-[90rem]:px-3 min-[90rem]:text-[0.9375rem]`;
 
 const NAV_CTA_CLASS =
-  "h-11 !rounded-lg !bg-[#ED3B58] px-4 text-[0.8125rem] sm:h-12 sm:px-5 sm:text-[0.875rem] lg:h-12 lg:px-5 min-[90rem]:h-[3.25rem] min-[90rem]:px-6 min-[90rem]:text-[1rem]";
+  "h-10 !rounded-lg !bg-[#ED3B58] px-4 !text-[0.8125rem] sm:h-11 sm:px-5 sm:!text-[0.875rem] lg:h-11 lg:px-5 min-[90rem]:h-12 min-[90rem]:px-5 min-[90rem]:!text-[0.9375rem]";
 
 function MenuIcon({ open }: { open: boolean }) {
   return open ? (
@@ -110,15 +110,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Covers the gap above the floating header so scrolled content cannot peek through */}
-      <div
-        aria-hidden
-        className={`pointer-events-none fixed inset-x-0 top-0 z-40 bg-[#FFFFFF] transition-[height,opacity] duration-500 ${
-          scrolled
-            ? "h-3 opacity-100 sm:h-3.5 md:h-4"
-            : "h-0 opacity-0"
-        }`}
-      />
       <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -129,7 +120,7 @@ export default function Header() {
     >
       <div className="mx-auto w-full max-w-[86rem] px-4 sm:px-5 md:px-7 lg:px-10 min-[90rem]:px-12">
         <div
-          className={`rounded-lg border border-[#E5E5E5] bg-[#FFFFFF] px-3 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500 sm:rounded-xl sm:px-3.5 sm:py-3.5 md:rounded-2xl md:px-4 md:py-4 lg:px-5 lg:py-4 min-[90rem]:px-6 min-[90rem]:py-[1.125rem] ${
+          className={`rounded-lg border border-[#E5E5E5] bg-[#FFFFFF] px-4 py-2.5 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500 sm:rounded-xl sm:px-5 sm:py-3 md:rounded-2xl md:px-6 md:py-3.5 lg:px-7 lg:py-3.5 min-[90rem]:px-8 min-[90rem]:py-4 ${
             scrolled ? "shadow-[0_16px_48px_rgba(0,0,0,0.14)]" : ""
           }`}
         >
@@ -152,7 +143,7 @@ export default function Header() {
               />
             </Link>
 
-            <div className="hidden min-w-0 flex-1 items-center justify-end gap-0.5 lg:flex min-[90rem]:gap-1">
+            <div className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex min-[90rem]:gap-1">
               {NAV_LINKS.map((link) => (
                 <Link key={link.href} href={link.href} className={NAV_LINK_CLASS}>
                   {link.label}
@@ -194,11 +185,11 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="hidden shrink-0 lg:block lg:ml-2">
+            <div className="hidden shrink-0 lg:block lg:ml-0">
               <CtaButton
                 href="/champion/apply"
                 className={NAV_CTA_CLASS}
-                labelClassName="font-[600]"
+                labelClassName="!text-[length:inherit] font-[600]"
               >
                 Become a Cause Champion
               </CtaButton>
@@ -268,8 +259,8 @@ export default function Header() {
               <div className="pt-2 px-1">
                 <CtaButton
                   href="/champion/apply"
-                  className={`${NAV_CTA_CLASS} h-11 w-full sm:h-12`}
-                  labelClassName="font-[600]"
+                  className={`${NAV_CTA_CLASS} h-11 w-full sm:h-11`}
+                  labelClassName="!text-[length:inherit] font-[600]"
                   onClick={closeMobile}
                 >
                   Become a Cause Champion

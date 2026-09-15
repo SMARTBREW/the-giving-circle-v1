@@ -66,6 +66,11 @@ export type {
   ChampionTestimonial,
   ChampionApplyCauseId,
   ChampionApplyReasonId,
+  ChampionApplyPresetReason,
+} from "./champion";
+export {
+  isChampionApplyPresetReason,
+  CHAMPION_APPLY_PRESET_REASONS,
 } from "./champion";
 export { PARTNER_APPLY } from "./partner";
 export type { PartnerApplyFocusId } from "./partner";
@@ -195,21 +200,21 @@ export const MOMENT_CARDS = [
     body: "Turn your celebration into support for a cause you care about, and bring your circle along.",
     ctaLabel: "Start a Birthday Fundraiser",
     iconSrc: "/images/moments/96e2113621a7af04d4cce296e51af5e80dc3bdff.png",
-    href: "/champion/apply",
+    href: "/champion/apply?reason=birthday",
   },
   {
     title: "Anniversary",
     body: "Mark your journey together by supporting a cause you care about, and bring your circle along.",
     ctaLabel: "Start an Anniversary Fundraiser",
     iconSrc: "/images/moments/af9d4dad96f552ff7f72f1bcc82853f2e29cfc3a.png",
-    href: "/champion/apply",
+    href: "/champion/apply?reason=anniversary",
   },
   {
     title: "Remembrance",
     body: "Honour a loved one’s memory through a cause that mattered to them, and bring your circle together in support.",
     ctaLabel: "Start a Remembrance Fundraiser",
     iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
-    href: "/champion/apply",
+    href: "/champion/apply?reason=remembrance",
   },
 ] as const;
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import PhoneInput, {
   isValidPhoneNumber,
@@ -11,11 +12,13 @@ import "react-phone-number-input/style.css";
 import {
   CHAMPION_APPLY,
   SEGOE_UI_CLASS,
+  isChampionApplyPresetReason,
   type ChampionApplyCauseId,
   type ChampionApplyReasonId,
 } from "@/constants";
 import { submitCauseChampion } from "@/lib/api";
 import { logger } from "@/lib/logger";
+
 type FormStep = 1 | 2 | 3 | 4;
 
 const optionButtonClass = (isSelected: boolean) =>
@@ -100,11 +103,26 @@ function OtherDetailField({
 
 export default function ChampionApplyForm() {
   const { title, subtitle, steps, step1, step2, step3, thanks } = CHAMPION_APPLY;
+  const searchParams = useSearchParams();
+  const reasonParam = searchParams.get("reason");
+  const presetReason = isChampionApplyPresetReason(reasonParam)
+    ? reasonParam
+    : null;
+  const skipReasonStep = presetReason !== null;
+  const totalSteps = skipReasonStep ? 2 : 3;
+
+  const visibleSteps = skipReasonStep
+    ? [
+        { ...steps[0], number: 1 },
+        { ...steps[2], number: 2 },
+      ]
+    : steps;
+
   const [currentStep, setCurrentStep] = useState<FormStep>(1);
   const [selectedCauseId, setSelectedCauseId] =
     useState<ChampionApplyCauseId | null>(null);
   const [selectedReasonId, setSelectedReasonId] =
-    useState<ChampionApplyReasonId | null>(null);
+    useState<ChampionApplyReasonId | null>(presetReason);
   const [otherCauseDetail, setOtherCauseDetail] = useState("");
   const [otherReasonDetail, setOtherReasonDetail] = useState("");
   const [fullName, setFullName] = useState("");
@@ -116,13 +134,22 @@ export default function ChampionApplyForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const progressStep = currentStep === 4 ? 3 : currentStep;
-  const progressLabel =
-    currentStep === 1
+  const progressStep = (() => {
+    if (currentStep === 4) return totalSteps;
+    if (skipReasonStep) return currentStep === 1 ? 1 : 2;
+    return currentStep;
+  })();
+
+  const progressLabel = (() => {
+    if (skipReasonStep) {
+      return currentStep === 1 ? "Step 1 of 2" : "Step 2 of 2";
+    }
+    return currentStep === 1
       ? step1.progressLabel
       : currentStep === 2
         ? step2.progressLabel
         : step3.progressLabel;
+  })();
 
   const canGoStep1 =
     selectedCauseId !== null &&
@@ -139,6 +166,14 @@ export default function ChampionApplyForm() {
     email.includes("@") &&
     city.length > 0 &&
     agreed;
+
+  const goAfterCause = () => setCurrentStep(skipReasonStep ? 3 : 2);
+  const goBackFromDetails = () => setCurrentStep(skipReasonStep ? 1 : 2);
+
+  const sidebarFormStep = (displayNumber: number): FormStep => {
+    if (!skipReasonStep) return displayNumber as FormStep;
+    return displayNumber === 1 ? 1 : 3;
+  };
 
   const handleSubmit = async () => {
     if (!canSubmit || !selectedCauseId || !selectedReasonId || !mobile) return;
@@ -209,14 +244,19 @@ export default function ChampionApplyForm() {
           </p>
 
           <ol className="mt-6 flex flex-col sm:mt-8 min-[90rem]:mt-10">
-            {steps.map((step, index) => {
-              const isActive = currentStep !== 4 && step.number === currentStep;
-              const isComplete = currentStep === 4 || step.number < currentStep;
-              const isLast = index === steps.length - 1;
+            {visibleSteps.map((step, index) => {
+              const formStep = sidebarFormStep(step.number);
+              const isActive = currentStep !== 4 && currentStep === formStep;
+              const isComplete =
+                currentStep === 4 ||
+                (skipReasonStep
+                  ? formStep === 1 && currentStep >= 3
+                  : step.number < currentStep);
+              const isLast = index === visibleSteps.length - 1;
               const titleActive = isActive || isComplete;
 
               return (
-                <li key={step.number} className="flex gap-3.5">
+                <li key={step.title} className="flex gap-3.5">
                   <div className="flex w-8 shrink-0 flex-col items-center">
                     <span
                       className={`flex h-8 w-8 items-center justify-center rounded-full text-[0.9375rem] leading-none font-[700] ${
@@ -378,12 +418,12 @@ export default function ChampionApplyForm() {
                     role="progressbar"
                     aria-valuenow={progressStep}
                     aria-valuemin={1}
-                    aria-valuemax={3}
+                    aria-valuemax={totalSteps}
                     aria-label={progressLabel}
                   >
                     <div
                       className="h-full rounded-2xl bg-[var(--Brand-Green-Teal,#00A98F)] transition-[width] duration-300 ease-out"
-                      style={{ width: `${(progressStep / 3) * 100}%` }}
+                      style={{ width: `${(progressStep / totalSteps) * 100}%` }}
                     />
                   </div>
                 </div>
@@ -453,7 +493,7 @@ export default function ChampionApplyForm() {
                       <button
                         type="button"
                         disabled={!canGoStep1}
-                        onClick={() => setCurrentStep(2)}
+                        onClick={goAfterCause}
                         className={primaryBtnClass}
                       >
                         {step1.nextLabel}
@@ -462,7 +502,7 @@ export default function ChampionApplyForm() {
                   </>
                 ) : null}
 
-                {currentStep === 2 ? (
+                {currentStep === 2 && !skipReasonStep ? (
                   <>
                     <div className="min-h-0 flex-1 overflow-y-auto pb-5 lg:pb-0">
                       <h2
@@ -667,7 +707,7 @@ export default function ChampionApplyForm() {
                     <div className={footerBarClass}>
                       <button
                         type="button"
-                        onClick={() => setCurrentStep(2)}
+                        onClick={goBackFromDetails}
                         className={outlineBtnClass}
                         disabled={isSubmitting}
                       >

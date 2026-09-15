@@ -51,36 +51,31 @@ export default function ImpactStoryCard({
           className={`absolute inset-0 hidden sm:block ${overlayClassName}`}
         />
 
-        <span
-          className={`${SEGOE_UI_CLASS} absolute top-4 left-4 z-10 inline-flex items-center justify-center rounded-full px-3 py-1.5 sm:top-5 sm:left-5 min-[90rem]:left-8 ${
-            featured
-              ? "min-[90rem]:top-[30.8125rem]"
-              : "min-[90rem]:top-5"
-          } ${tagClassName}`}
-        >
-          <span
-            className={`${SEGOE_UI_CLASS} text-[0.8125rem] leading-none font-[700] tracking-normal whitespace-nowrap text-[#FFFFFF]`}
-          >
-            {tag}
-          </span>
-        </span>
-
-        <span className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 from-55% via-black/50 via-85% to-transparent pt-6 pr-4 pb-4 pl-4 sm:from-black/80 sm:pt-6 sm:pr-5 sm:pb-5 sm:pl-5 min-[90rem]:inset-x-8 min-[90rem]:bottom-8 min-[90rem]:bg-none min-[90rem]:from-transparent min-[90rem]:via-transparent min-[90rem]:to-transparent min-[90rem]:pt-0 min-[90rem]:pr-0 min-[90rem]:pb-0 min-[90rem]:pl-0">
-          <span className="flex flex-col items-start gap-2 sm:gap-2.5 min-[90rem]:gap-3">
+        <span className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/85 from-25% via-black/35 via-55% to-transparent px-4 pt-4 pb-3 sm:from-black/75 sm:px-5 sm:pt-4 sm:pb-3.5 min-[90rem]:inset-x-6 min-[90rem]:bottom-5 min-[90rem]:bg-none min-[90rem]:from-transparent min-[90rem]:via-transparent min-[90rem]:to-transparent min-[90rem]:px-0 min-[90rem]:pt-0 min-[90rem]:pb-0">
+          <span className="flex flex-col items-start gap-1.5 sm:gap-2 min-[90rem]:gap-2">
             <span
-              className={`${SEGOE_UI_CLASS} w-full text-left text-[1.125rem] leading-6 font-[700] tracking-normal text-[#FFFFFF] sm:text-[1rem] sm:leading-5 md:text-[1.125rem] md:leading-6 lg:text-[1.25rem] lg:leading-7 min-[90rem]:h-[4.625rem] min-[90rem]:text-[1.75rem] min-[90rem]:leading-none ${
+              className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center rounded-full px-2.5 py-1 ${tagClassName}`}
+            >
+              <span
+                className={`${SEGOE_UI_CLASS} text-[0.6875rem] leading-none font-[700] tracking-normal whitespace-nowrap text-[#FFFFFF] sm:text-[0.75rem]`}
+              >
+                {tag}
+              </span>
+            </span>
+            <span
+              className={`${SEGOE_UI_CLASS} w-full text-left text-[0.9375rem] leading-5 font-[700] tracking-normal text-[#FFFFFF] sm:text-[0.875rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.0625rem] lg:leading-6 min-[90rem]:text-[1.25rem] min-[90rem]:leading-7 ${
                 featured
-                  ? "min-[90rem]:w-[35.625rem]"
-                  : "min-[90rem]:w-[32.25rem]"
+                  ? "line-clamp-2 min-[90rem]:w-[35.625rem]"
+                  : "truncate min-[90rem]:w-[32.25rem]"
               }`}
             >
               {title}
             </span>
             <span
-              className={`${SEGOE_UI_CLASS} inline-flex items-center gap-1.5 border-b border-transparent text-[0.9375rem] leading-none font-[600] tracking-normal whitespace-nowrap text-[#FFFFFF] group-hover:border-[#FFFFFF] sm:text-[0.8125rem] md:text-[0.875rem] min-[90rem]:gap-2 min-[90rem]:text-[1.125rem]`}
+              className={`${SEGOE_UI_CLASS} inline-flex items-center gap-1 border-b border-transparent text-[0.8125rem] leading-none font-[600] tracking-normal whitespace-nowrap text-[#FFFFFF] group-hover:border-[#FFFFFF] sm:text-[0.75rem] md:text-[0.8125rem] min-[90rem]:gap-1.5 min-[90rem]:text-[0.9375rem]`}
             >
               Read the story
-              <CtaArrow className="h-3.5 w-3.5 text-[#FFFFFF] sm:h-3.5 sm:w-3.5 min-[90rem]:h-4 min-[90rem]:w-4" />
+              <CtaArrow className="h-3 w-3 text-[#FFFFFF] min-[90rem]:h-3.5 min-[90rem]:w-3.5" />
             </span>
           </span>
         </span>

@@ -19,8 +19,8 @@ export const ABOUT_OUR_STORY = {
     "We act as a bridge, linking Cause Champions with causes close to their hearts. We partner only with government-certified NGOs, ensuring every organisation meets official standards. For complete transparency, contributions go directly to NGOs and never pass through us. This is the foundation of everything we do.",
     "What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join community activities. We believe in communities for communities, where every giving circle member can witness real change in person.",
   ],
-  src: "/images/HomePageTop.jpg",
-  alt: "Schoolgirls in class smiling and looking up together",
+  src: "/images/hero.jpg",
+  alt: "Children in green Joint Women’s Programme uniforms smiling together",
 } as const;
 
 export const ABOUT_CORE_VALUES_INTRO = {

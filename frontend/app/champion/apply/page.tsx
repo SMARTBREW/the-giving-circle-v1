@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ChampionApplyForm from "./_sections/champion-apply-form";
 
 export const metadata: Metadata = {
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function ChampionApplyPage() {
-  return <ChampionApplyForm />;
+  return (
+    <Suspense fallback={null}>
+      <ChampionApplyForm />
+    </Suspense>
+  );
 }

@@ -273,11 +273,6 @@ export const CHAMPION_APPLY = {
         iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
       },
       {
-        id: "personal",
-        label: "Personal Reason",
-        iconSrc: "/images/forms/personal-reason.png",
-      },
-      {
         id: "other-occasion",
         label: "Other Occasion",
         iconSrc: "/images/forms/other-occasion.png",
@@ -338,3 +333,22 @@ export type ChampionApplyCauseId =
   (typeof CHAMPION_APPLY.step1.causes)[number]["id"];
 export type ChampionApplyReasonId =
   (typeof CHAMPION_APPLY.step2.reasons)[number]["id"];
+
+/** Occasion CTAs (Birthday / Anniversary / Remembrance) skip the reason step. */
+export const CHAMPION_APPLY_PRESET_REASONS = [
+  "birthday",
+  "anniversary",
+  "remembrance",
+] as const satisfies readonly ChampionApplyReasonId[];
+
+export type ChampionApplyPresetReason =
+  (typeof CHAMPION_APPLY_PRESET_REASONS)[number];
+
+export function isChampionApplyPresetReason(
+  value: string | null | undefined,
+): value is ChampionApplyPresetReason {
+  return (
+    !!value &&
+    (CHAMPION_APPLY_PRESET_REASONS as readonly string[]).includes(value)
+  );
+}
