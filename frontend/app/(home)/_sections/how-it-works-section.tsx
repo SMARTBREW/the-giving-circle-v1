@@ -18,14 +18,14 @@ export default function HowItWorksSection() {
         <div className="relative mt-10 w-full self-stretch sm:mt-10 lg:mt-12">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden h-[6.25rem] min-[90rem]:block"
+            className="pointer-events-none absolute inset-x-0 -top-2 z-0 hidden h-[6.25rem] min-[56.25rem]:block sm:-top-2.5 lg:-top-3"
           >
             <svg
               viewBox="0 0 778 115"
               fill="none"
               overflow="visible"
               preserveAspectRatio="none"
-              className="absolute top-1/2 left-[16.666%] h-[7.1875rem] w-2/3 -translate-y-[55.3%] overflow-visible"
+              className="absolute top-1/2 left-[16.666%] h-[5.5rem] w-2/3 -translate-y-[55.3%] overflow-visible lg:h-[6.5rem] min-[90rem]:h-[7.1875rem]"
             >
               <path
                 d="M2 63.6387C52.99 17.1032 201.77 -48.0464 389 63.6387C512.99 137.903 673.8 120.345 776 63.6387"
@@ -38,7 +38,7 @@ export default function HowItWorksSection() {
               />
             </svg>
           </div>
-          <ul className="relative z-10 flex flex-col items-center gap-0 lg:grid lg:grid-cols-3 lg:gap-0">
+          <ul className="relative z-10 flex flex-col items-center gap-0 min-[56.25rem]:grid min-[56.25rem]:grid-cols-3 min-[56.25rem]:gap-0">
             {HOW_IT_WORKS_STEPS.map((step, index) => (
               <HowItWorksStep
                 key={step.title}

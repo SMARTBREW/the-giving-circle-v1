@@ -70,26 +70,26 @@ export default function ChampionVoices() {
           aria-roledescription="carousel"
           aria-label="Champion testimonials"
         >
-          <div className="flex w-full items-center justify-center gap-3 sm:gap-4 lg:gap-5 min-[90rem]:gap-6">
-            <div className="hidden shrink-0 lg:block">
+          <div className="flex w-full items-center justify-center gap-3 sm:gap-4 min-[56.25rem]:gap-4 lg:gap-5 min-[90rem]:gap-6">
+            <div className="hidden shrink-0 min-[56.25rem]:block">
               <NavArrow direction="prev" onClick={goPrev} label="Previous testimonial" />
             </div>
 
             <article
               key={active.name}
-              className="flex min-w-0 w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] lg:max-w-[68.5rem] lg:flex-row min-[90rem]:h-[31.125rem] min-[90rem]:w-[68.5rem] min-[90rem]:max-w-none min-[90rem]:shrink-0 min-[90rem]:rounded-[1.5rem]"
+              className="flex min-w-0 w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] min-[56.25rem]:max-w-[68.5rem] min-[56.25rem]:flex-row min-[56.25rem]:items-stretch min-[90rem]:h-[31.125rem] min-[90rem]:w-[68.5rem] min-[90rem]:max-w-none min-[90rem]:shrink-0 min-[90rem]:rounded-[1.5rem]"
             >
-              <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden lg:aspect-auto lg:h-auto lg:w-1/2 min-[90rem]:h-full min-[90rem]:w-[32.25rem]">
+              <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden min-[56.25rem]:aspect-auto min-[56.25rem]:min-h-[22rem] min-[56.25rem]:w-1/2 min-[56.25rem]:self-stretch lg:min-h-[24rem] min-[90rem]:h-full min-[90rem]:min-h-0 min-[90rem]:w-[32.25rem]">
                 <Image
                   src={active.imageSrc}
                   alt={active.imageAlt}
                   fill
-                  sizes="(min-width: 1440px) 32.25rem, (min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1440px) 32.25rem, (min-width: 900px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
 
-              <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col px-5 py-6 sm:px-7 sm:py-8 md:px-8 lg:px-8 lg:py-8 min-[90rem]:px-8 min-[90rem]:pt-10 min-[90rem]:pb-0">
+              <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col px-5 py-6 sm:px-7 sm:py-8 md:px-8 min-[56.25rem]:px-6 min-[56.25rem]:py-6 lg:px-8 lg:py-8 min-[90rem]:px-8 min-[90rem]:pt-10 min-[90rem]:pb-0">
                 <div className="relative mb-4 h-8 w-10 shrink-0 sm:mb-5 sm:h-9 sm:w-11 min-[90rem]:mb-5 min-[90rem]:h-10 min-[90rem]:w-10">
                   <Image
                     src={quoteSrc}
@@ -141,12 +141,12 @@ export default function ChampionVoices() {
               </div>
             </article>
 
-            <div className="hidden shrink-0 lg:block">
+            <div className="hidden shrink-0 min-[56.25rem]:block">
               <NavArrow direction="next" onClick={goNext} label="Next testimonial" />
             </div>
           </div>
 
-          <div className="mt-5 flex items-center gap-4 lg:hidden">
+          <div className="mt-5 flex items-center gap-4 min-[56.25rem]:hidden">
             <NavArrow direction="prev" onClick={goPrev} label="Previous testimonial" />
             <NavArrow direction="next" onClick={goNext} label="Next testimonial" />
           </div>

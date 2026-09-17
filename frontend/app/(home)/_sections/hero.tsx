@@ -3,20 +3,16 @@ import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
 
-// Phone frame has no in-hero buttons   the sticky bar is the only CTA there.
-// Mobile hero fills the viewport under the header; the floating CTA overlays the
-// bottom without a full-bleed bar so more of the people stay visible.
+// Phone + small tablet (<900px): no in-hero buttons — sticky bar is the CTA.
 //
-// Figma hero banner is 1440x886 below a 100px header. From sm up the section keeps
-// that ratio but never exceeds the viewport, and every value below is a share of the
-// frame height (cqh) so the whole composition scales instead of cropping.
+// Figma hero is 1440×886. From sm up the section keeps that ratio (capped by
+// max-h-dvh). Copy/CTAs use cqh but are capped in rem so large/tall laptops
+// don’t overscale into the faces (same clearance as the 1440 artboard).
 //
-// When the viewport is shorter than the artboard the photo is cropped, which lifts the
-// group. The top padding subtracts that lift so the copy keeps Figma's clearance above
-// their heads; at the artboard size it resolves to Figma's 64px.
+// Mid-zoom (< lg, ≥56.25rem): compact rem copy + stronger photo lift.
 export default function Hero() {
   return (
-    <section className="relative -mt-[5.5rem] h-dvh w-full overflow-hidden bg-[#F4F1ED] pt-[5.5rem] [container-type:size] sm:-mt-[6.25rem] sm:aspect-[1440/886] sm:h-auto sm:max-h-dvh sm:pt-[6.25rem] md:-mt-[6.75rem] md:max-h-dvh md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:max-h-dvh min-[90rem]:pt-[7.25rem]">
+    <section className="relative -mt-[5.5rem] h-dvh w-full overflow-x-hidden overflow-hidden bg-[#F4F1ED] pt-[5.5rem] [container-type:size] sm:-mt-[6.25rem] sm:aspect-[1440/886] sm:h-auto sm:max-h-dvh sm:pt-[6.25rem] md:-mt-[6.75rem] md:max-h-dvh md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:max-h-dvh min-[90rem]:pt-[7.25rem]">
       <Image
         src="/images/hero-mobile.png"
         alt="Young people in our circle, together"
@@ -31,27 +27,27 @@ export default function Hero() {
         alt="Young people in our circle, together"
         fill
         sizes="100vw"
-        className="hidden object-cover object-[50%_62%] translate-y-[7vh] sm:block"
+        className="hidden object-cover object-[50%_62%] translate-y-8 sm:block min-[56.25rem]:translate-y-[4.5rem] lg:translate-y-[min(7vh,4.5rem)] min-[90rem]:translate-y-[min(7vh,5rem)]"
         priority
       />
 
-      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-5 sm:px-0 sm:pt-[max(2cqh,14.5cqh_-_5.54cqw)]">
-        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#000000)] sm:w-[70.88cqh] sm:max-w-none sm:text-[7.22cqh] sm:leading-[9.03cqh]">
+      <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-5 sm:px-0 sm:pt-[max(2cqh,14.5cqh_-_5.54cqw)] min-[56.25rem]:max-[89.99rem]:pt-6">
+        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#000000)] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[1.875rem] min-[56.25rem]:max-[89.99rem]:leading-9 min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
           A Stronger Circle.
           <br />
           A Greater Impact.
         </h1>
         <p
-          className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20.5rem] text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#212121] sm:mt-[1.81cqh] sm:w-[77.2cqh] sm:max-w-none sm:text-[2.71cqh] sm:leading-[4.51cqh]`}
+          className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20.5rem] text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#212121] sm:mt-[1.81cqh] sm:w-[min(77.2cqh,100%)] sm:max-w-none sm:text-[min(2.71cqh,1.125rem)] sm:leading-[min(4.51cqh,1.75rem)] min-[56.25rem]:max-[89.99rem]:mt-2.5 min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[30rem] min-[56.25rem]:max-[89.99rem]:text-[0.9375rem] min-[56.25rem]:max-[89.99rem]:leading-5 min-[90rem]:mt-[min(1.81cqh,1rem)] min-[90rem]:w-[min(77.2cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(2.71cqh,1.5rem)] min-[90rem]:leading-[min(4.51cqh,2.25rem)]`}
         >
           Champion a cause backed by a verified NGO, bring your circle together,
           and help raise funds for meaningful change.
         </p>
 
-        <div className="hidden sm:mt-[3.61cqh] sm:flex sm:flex-col sm:items-center sm:gap-[2cqh] md:flex-row md:flex-nowrap md:justify-center md:gap-[2.765cqh]">
+        <div className="hidden min-[56.25rem]:mt-3.5 min-[56.25rem]:flex min-[56.25rem]:flex-row min-[56.25rem]:flex-nowrap min-[56.25rem]:items-center min-[56.25rem]:justify-center min-[56.25rem]:gap-3.5 min-[90rem]:mt-[min(3.61cqh,2rem)] min-[90rem]:gap-[min(2.765cqh,1.5rem)]">
           <CtaButton
             href="/champion"
-            className="sm:h-[7.22cqh] sm:gap-[0.9cqh] sm:px-[4.06cqh] sm:text-[2.03cqh]"
+            className="h-10 px-5 text-[0.8125rem] min-[90rem]:h-[min(7.22cqh,3.75rem)] min-[90rem]:gap-[0.9cqh] min-[90rem]:px-[min(4.06cqh,2.5rem)] min-[90rem]:text-[min(2.03cqh,1.125rem)]"
             labelClassName="font-[700]"
           >
             Champion a Cause
@@ -60,7 +56,7 @@ export default function Hero() {
             href="/#causes"
             variant="outline"
             smoothScroll
-            className="sm:h-[7.22cqh] sm:px-[3.61cqh] sm:text-[2.03cqh]"
+            className="h-10 px-5 text-[0.8125rem] min-[90rem]:h-[min(7.22cqh,3.75rem)] min-[90rem]:px-[min(3.61cqh,2.25rem)] min-[90rem]:text-[min(2.03cqh,1.125rem)]"
             labelClassName="font-[700]"
           >
             Explore Causes

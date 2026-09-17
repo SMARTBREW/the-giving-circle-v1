@@ -24,9 +24,9 @@ export default function ChampionCampaigns() {
           subtitleClassName="min-[90rem]:h-8 min-[90rem]:whitespace-nowrap"
         />
 
-        <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-12 min-[90rem]:mt-[3.5625rem] min-[90rem]:flex min-[90rem]:justify-center min-[90rem]:gap-6">
+        <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 min-[56.25rem]:mt-12 min-[56.25rem]:grid-cols-3 min-[56.25rem]:gap-5 lg:gap-6 min-[90rem]:mt-[3.5625rem] min-[90rem]:gap-6">
           {cards.map((card) => (
-            <li key={card.id} className="min-w-0 min-[90rem]:w-[24.75rem]">
+            <li key={card.id} className="min-w-0 min-[90rem]:w-auto">
               <CampaignCard card={card} />
             </li>
           ))}

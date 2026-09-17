@@ -6,7 +6,7 @@ import { SEGOE_UI_CLASS, type LiveCause } from "@/constants";
 
 export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
   return (
-    <section className="relative -mt-[5.5rem] w-full overflow-hidden bg-[#F3F9FF] pt-[5.5rem] sm:-mt-[6.25rem] sm:pt-[6.25rem] md:-mt-[6.75rem] md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:pt-[7.25rem]">
+    <section className="relative -mt-[5.5rem] w-full overflow-x-hidden bg-[#F3F9FF] pt-[5.5rem] sm:-mt-[6.25rem] sm:pt-[6.25rem] md:-mt-[6.75rem] md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:pt-[7.25rem]">
       {/* Soft brand-color ambient motion */}
       <div
         aria-hidden
@@ -45,22 +45,22 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
           </span>
         </nav>
 
-        {/* Image + funding card */}
-        <div className="mt-8 grid w-full grid-cols-1 gap-6 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,24.75rem)] lg:items-stretch lg:gap-10 min-[90rem]:mt-12 min-[90rem]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] min-[90rem]:gap-14">
-          <FadeInSection className="h-full min-w-0">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:rounded-[1.25rem] lg:aspect-auto lg:h-full min-[90rem]:rounded-[1.5rem]">
+        {/* Image + funding card — image stretches to match card */}
+        <div className="mt-8 grid w-full grid-cols-1 items-stretch gap-6 min-[56.25rem]:mt-10 min-[56.25rem]:grid-cols-[minmax(0,1fr)_minmax(16rem,min(22rem,38%))] min-[56.25rem]:gap-6 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,min(24.75rem,36%))] lg:gap-8 min-[90rem]:mt-12 min-[90rem]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] min-[90rem]:gap-14">
+          <FadeInSection className="flex min-w-0 min-[56.25rem]:h-full">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:rounded-[1.25rem] min-[56.25rem]:aspect-auto min-[56.25rem]:h-full min-[56.25rem]:min-h-[22rem] min-[90rem]:rounded-[1.5rem]">
               <Image
                 src={cause.src}
                 alt={cause.alt}
                 fill
                 priority
-                sizes="(max-width: 1023px) 100vw, 55vw"
+                sizes="(max-width: 899px) 100vw, (max-width: 1439px) 60vw, 55vw"
                 className="object-cover"
               />
             </div>
           </FadeInSection>
 
-          <aside className="w-full lg:h-full">
+          <aside className="w-full min-w-0">
             <CauseFundingCard
               raised={cause.raised}
               goal={cause.goal}

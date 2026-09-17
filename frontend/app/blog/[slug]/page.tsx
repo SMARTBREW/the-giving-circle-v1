@@ -245,7 +245,7 @@ export default async function BlogArticlePage({
             <div
               className={
                 hasImage
-                  ? "mt-5 grid grid-cols-1 gap-8 lg:mt-7 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10 min-[90rem]:gap-14"
+                  ? "mt-5 grid grid-cols-1 gap-8 min-[56.25rem]:mt-7 min-[56.25rem]:grid-cols-[1.15fr_1fr] min-[56.25rem]:items-center min-[56.25rem]:gap-8 lg:gap-10 min-[90rem]:gap-14"
                   : "mt-5"
               }
             >
@@ -271,7 +271,7 @@ export default async function BlogArticlePage({
                     }
                     fill
                     priority
-                    sizes="(max-width: 1023px) 100vw, 45vw"
+                    sizes="(max-width: 899px) 100vw, 45vw"
                     className="object-cover"
                   />
                 </div>
@@ -447,9 +447,9 @@ export default async function BlogArticlePage({
                     <li key={item.title}>
                       <Link
                         href={item.href}
-                        className={`${SEGOE_UI_CLASS} inline-flex items-center gap-2 text-[0.9375rem] font-[600] leading-snug tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-opacity hover:opacity-80 sm:text-[1rem]`}
+                        className={`${SEGOE_UI_CLASS} inline-flex max-w-full min-w-0 items-start gap-2 text-[0.9375rem] font-[600] leading-snug tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-opacity hover:opacity-80 sm:text-[1rem]`}
                       >
-                        <span>{item.title}</span>
+                        <span className="min-w-0 flex-1 text-balance">{item.title}</span>
                         <CtaArrow />
                       </Link>
                     </li>
@@ -468,9 +468,9 @@ export default async function BlogArticlePage({
                     <li key={item.id}>
                       <Link
                         href={`/blog/${item.id}`}
-                        className={`${SEGOE_UI_CLASS} inline-flex items-center gap-2 text-[1rem] font-[600] leading-snug tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-opacity hover:opacity-80 sm:text-[1.0625rem]`}
+                        className={`${SEGOE_UI_CLASS} inline-flex max-w-full min-w-0 items-start gap-2 text-[1rem] font-[600] leading-snug tracking-normal text-[var(--Main-CTA-button,#00A3BE)] transition-opacity hover:opacity-80 sm:text-[1.0625rem]`}
                       >
-                        {item.title}
+                        <span className="min-w-0 flex-1 text-balance">{item.title}</span>
                         <CtaArrow />
                       </Link>
                     </li>

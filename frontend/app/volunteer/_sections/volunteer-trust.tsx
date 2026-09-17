@@ -17,7 +17,7 @@ export default function VolunteerTrust() {
           subtitleClassName="max-w-[35rem] text-[var(--Paragraph,#5F6D64)] min-[90rem]:max-w-[35rem]"
         />
 
-        <ul className="mt-10 grid w-full max-w-[77.5rem] grid-cols-1 gap-10 sm:mt-12 sm:gap-12 md:grid-cols-3 md:gap-8 lg:mt-14 min-[90rem]:mt-16 min-[90rem]:gap-10">
+        <ul className="mt-10 grid w-full max-w-[77.5rem] grid-cols-1 gap-10 sm:mt-12 sm:gap-12 min-[56.25rem]:mt-14 min-[56.25rem]:grid-cols-3 min-[56.25rem]:gap-6 lg:gap-8 min-[90rem]:mt-16 min-[90rem]:gap-10">
           {features.map((feature) => (
             <li
               key={feature.title}

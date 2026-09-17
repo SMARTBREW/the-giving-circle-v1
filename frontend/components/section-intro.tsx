@@ -40,7 +40,7 @@ export default function SectionIntro({
         {eyebrow}
       </p>
       <h2
-        className={`mt-4 font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-normal sm:text-[2rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3.25rem] lg:text-[2.75rem] lg:leading-[3.5rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[4rem] ${alignClass} ${
+        className={`mt-4 font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-normal sm:text-[2rem] sm:leading-[2.75rem] md:text-[2.25rem] md:leading-[2.875rem] lg:text-[2.375rem] lg:leading-[3rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[4rem] ${alignClass} ${
           isOnDark ? "text-[#FFFFFF]" : "text-[var(--Main-headings,#000000)]"
         } ${titleClassName}`}
       >
@@ -48,7 +48,7 @@ export default function SectionIntro({
       </h2>
       {subtitle ? (
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 ${alignClass} text-[0.9375rem] leading-[1.5rem] font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-[1.75rem] md:text-[1.0625rem] lg:text-[1.125rem] lg:leading-[2rem] ${subtitleClassName}`}
+          className={`${SEGOE_UI_CLASS} mt-4 ${alignClass} text-[0.9375rem] leading-[1.5rem] font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-[1.75rem] md:text-[1.0625rem] lg:text-[1.0625rem] lg:leading-[1.75rem] min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem] ${subtitleClassName}`}
         >
           {subtitle}
         </p>

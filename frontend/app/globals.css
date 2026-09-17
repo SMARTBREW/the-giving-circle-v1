@@ -52,6 +52,31 @@ select.champion-apply-field {
   background-color: #f8f8f8;
 }
 
+.champion-apply-field.apply-field-mobile,
+.champion-apply-field.apply-field-mobile:focus,
+.champion-apply-field.apply-field-mobile:focus-visible {
+  border-color: #d0d5dd;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+}
+
+.champion-apply-field.apply-field-mobile:focus,
+.champion-apply-field.apply-field-mobile:focus-visible {
+  border-color: var(--Main-CTA-button, #00a3be);
+}
+
+select.champion-apply-field.apply-field-mobile {
+  background-color: #ffffff;
+}
+
+.champion-apply-field.apply-field-mobile:-webkit-autofill,
+.champion-apply-field.apply-field-mobile:-webkit-autofill:hover,
+.champion-apply-field.apply-field-mobile:-webkit-autofill:focus,
+.champion-apply-field.apply-field-mobile:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  box-shadow: 0 0 0 1000px #ffffff inset;
+}
+
 .champion-apply-field:-webkit-autofill,
 .champion-apply-field:-webkit-autofill:hover,
 .champion-apply-field:-webkit-autofill:focus,
@@ -76,15 +101,31 @@ select.champion-apply-field {
   box-shadow: none;
 }
 
+.champion-phone-input.champion-phone-input-mobile.PhoneInput {
+  margin-top: 0;
+  height: 3rem;
+  border-radius: 0.75rem;
+  border-color: #d0d5dd;
+  background: #ffffff;
+}
+
 @media (min-width: 640px) {
   .champion-phone-input.PhoneInput {
     height: 4rem;
+  }
+
+  .champion-phone-input.champion-phone-input-mobile.PhoneInput {
+    height: 3.5rem;
   }
 }
 
 .champion-phone-input.PhoneInput:focus-within {
   border-color: #bdbdbd;
   box-shadow: none;
+}
+
+.champion-phone-input.champion-phone-input-mobile.PhoneInput:focus-within {
+  border-color: var(--Main-CTA-button, #00a3be);
 }
 
 .champion-phone-input .PhoneInputCountry {
@@ -139,6 +180,13 @@ select.champion-apply-field {
   -webkit-box-shadow: 0 0 0 1000px #f8f8f8 inset;
   box-shadow: 0 0 0 1000px #f8f8f8 inset;
   transition: background-color 99999s ease-in-out 0s;
+}
+
+.champion-phone-input.champion-phone-input-mobile .PhoneInputInput:-webkit-autofill,
+.champion-phone-input.champion-phone-input-mobile .PhoneInputInput:-webkit-autofill:hover,
+.champion-phone-input.champion-phone-input-mobile .PhoneInputInput:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  box-shadow: 0 0 0 1000px #ffffff inset;
 }
 
 /* Infinite Marquee Animation */

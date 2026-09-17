@@ -32,6 +32,7 @@ export default function CtaButton({
   variant = "solid",
   smoothScroll = false,
   hoverFill = false,
+  wrap = false,
 }: {
   href: string;
   children: ReactNode;
@@ -41,6 +42,7 @@ export default function CtaButton({
   variant?: "solid" | "outline";
   smoothScroll?: boolean;
   hoverFill?: boolean;
+  wrap?: boolean;
 }) {
   const isOutline = variant === "outline";
 
@@ -71,7 +73,11 @@ export default function CtaButton({
       } ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} relative z-[1] flex min-h-[1.5rem] min-w-0 shrink origin-center items-center justify-center gap-2 text-center text-[length:inherit] leading-none font-[600] tracking-normal whitespace-nowrap text-current ${
+        className={`${SEGOE_UI_CLASS} relative z-[1] flex min-h-[1.5rem] min-w-0 shrink origin-center items-center justify-center gap-2 text-center text-[length:inherit] font-[600] tracking-normal text-current ${
+          wrap
+            ? "gap-1.5 text-balance leading-snug whitespace-normal"
+            : "leading-none whitespace-normal min-[90rem]:whitespace-nowrap"
+        } ${
           hoverFill
             ? "[transition:transform_500ms_cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
             : ""

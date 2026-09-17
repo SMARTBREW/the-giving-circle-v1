@@ -54,7 +54,7 @@ export default function MomentCard({
           damping: 24,
           mass: 0.85,
         }}
-        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-5 pb-5 shadow-[0px_4px_20px_0px_#0000000F] transition-colors duration-300 group-hover/moment:border-[var(--Main-CTA-button,#228b22)] sm:px-6 sm:pt-6 sm:pb-6 md:px-8 md:pt-8 md:pb-8 lg:px-5 lg:pt-6 lg:pb-6 min-[90rem]:h-[24.8125rem] min-[90rem]:px-6 min-[90rem]:pt-[0.888125rem] min-[90rem]:pb-0"
+        className="relative flex h-full w-full flex-col items-center overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] px-5 pt-6 pb-5 shadow-[0px_4px_20px_0px_#0000000F] transition-colors duration-300 group-hover/moment:border-[var(--Main-CTA-button,#228b22)] sm:px-6 sm:pt-7 sm:pb-6 md:px-8 md:pt-8 md:pb-8 min-[56.25rem]:px-4 min-[56.25rem]:pt-6 min-[56.25rem]:pb-5 lg:px-5 lg:pt-7 lg:pb-6 min-[90rem]:h-[24.8125rem] min-[90rem]:px-6 min-[90rem]:pt-6 min-[90rem]:pb-0"
       >
         {hoverMotion ? (
           <motion.span
@@ -64,35 +64,35 @@ export default function MomentCard({
             className="pointer-events-none absolute -inset-[1px] z-20 rounded-[1rem] border border-[var(--Main-CTA-button,#228b22)]"
           />
         ) : null}
-        <span className="relative z-10 h-20 w-20 shrink-0 bg-[#FFFFFF] sm:h-24 sm:w-24 lg:h-28 lg:w-28 min-[90rem]:h-[7.044rem] min-[90rem]:w-[7.044rem]">
+        <span className="relative z-10 mx-auto flex h-24 w-24 shrink-0 items-center justify-center overflow-visible sm:h-28 sm:w-28 min-[56.25rem]:h-24 min-[56.25rem]:w-24 lg:h-[6.5rem] lg:w-[6.5rem] min-[90rem]:h-[8rem] min-[90rem]:w-[8rem]">
           <Image
             src={iconSrc}
             alt=""
-            width={113}
-            height={113}
-            className="h-full w-full object-contain"
+            width={160}
+            height={160}
+            className="h-full w-full object-contain object-center"
           />
         </span>
         <h3
-          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-center text-[1.375rem] leading-none font-[700] tracking-normal text-[#000000] sm:mt-4 sm:text-[1.5rem] lg:mt-4 lg:text-[1.625rem] min-[90rem]:text-[1.75rem]`}
+          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-center text-[1.375rem] leading-none font-[700] tracking-normal text-[#000000] sm:mt-4 sm:text-[1.5rem] min-[56.25rem]:mt-3 min-[56.25rem]:text-[1.25rem] lg:mt-3.5 lg:text-[1.375rem] min-[90rem]:text-[1.75rem]`}
         >
           {title}
         </h3>
         <p
-          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 w-full text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-4 sm:text-[1rem] sm:leading-7 lg:mt-4 lg:text-[1.0625rem] lg:leading-7 min-[90rem]:mt-5 min-[90rem]:h-[6rem] min-[90rem]:max-w-[20.75rem] min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem]`}
+          className={`${SEGOE_UI_CLASS} relative z-10 mt-3 w-full text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-4 sm:text-[1rem] sm:leading-7 min-[56.25rem]:mt-3 min-[56.25rem]:flex-1 min-[56.25rem]:text-[0.875rem] min-[56.25rem]:leading-5 lg:mt-3 lg:text-[0.9375rem] lg:leading-6 min-[90rem]:mt-5 min-[90rem]:h-[6rem] min-[90rem]:max-w-[20.75rem] min-[90rem]:flex-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem]`}
         >
           {body}
         </p>
-        <div className="relative z-10 mt-5 w-full min-w-0 sm:mt-6 lg:mt-auto lg:pt-4 min-[90rem]:mb-8 min-[90rem]:mt-auto min-[90rem]:pt-0">
+        <div className="relative z-10 mt-5 w-full min-w-0 sm:mt-6 min-[56.25rem]:mt-auto min-[56.25rem]:pt-4 lg:pt-4 min-[90rem]:mb-8 min-[90rem]:pt-0">
           <CtaButton
             href={href}
             variant="outline"
             hoverFill
-            className="h-12 w-full bg-[#FFFFFF] px-5 py-3 text-[0.8125rem] sm:h-14 sm:px-6 sm:text-[0.875rem] lg:h-12 lg:px-5 lg:text-[0.8125rem] min-[90rem]:h-[4rem] min-[90rem]:px-6 min-[90rem]:py-5 min-[90rem]:text-[1rem]"
-            labelClassName="shrink-0"
+            className="h-12 w-full max-w-full bg-[#FFFFFF] px-3 py-3 text-[0.75rem] sm:h-14 sm:px-4 sm:text-[0.8125rem] min-[56.25rem]:h-11 min-[56.25rem]:px-2 min-[56.25rem]:text-[0.6875rem] lg:h-12 lg:px-2.5 lg:text-[0.75rem] min-[90rem]:h-[4rem] min-[90rem]:px-6 min-[90rem]:py-5 min-[90rem]:text-[1rem]"
+            labelClassName="max-w-full"
           >
             {ctaLabel}
-            <CtaArrow />
+            <CtaArrow className="shrink-0" />
           </CtaButton>
         </div>
       </motion.article>

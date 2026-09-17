@@ -242,7 +242,7 @@ export default async function CauseDetailPage({
             title="Keep Exploring"
             subtitle="Other verified campaigns your circle can champion next."
           />
-          <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-12 min-[90rem]:grid-cols-3 min-[90rem]:gap-6">
+          <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-6 min-[90rem]:gap-6">
             {related.map((card) => (
               <li key={card.id} className="min-w-0">
                 <CampaignCard card={card} />

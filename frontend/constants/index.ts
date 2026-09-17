@@ -174,6 +174,8 @@ export const FOOTER_SOCIAL_LINKS = [
 ] as const;
 
 export const CHAMPION_PHOTO = "/images/cta images/24cd8db82cca8c8ff709461cd6a0ce14e96b9b3e.png";
+export const CHAMPION_VIDEO = "/images/TGC_Shivi_WoH_Homepage.mp4";
+export const CHAMPION_VIDEO_POSTER = "/images/champion-shivi-poster.jpg";
 
 export const SUPPORT_CAUSE_PHOTO =
   "/images/support-cause-desktop.png";
@@ -199,21 +201,21 @@ export const MOMENT_CARDS = [
     title: "Birthday",
     body: "Turn your celebration into support for a cause you care about, and bring your circle along.",
     ctaLabel: "Start a Birthday Fundraiser",
-    iconSrc: "/images/moments/96e2113621a7af04d4cce296e51af5e80dc3bdff.png",
+    iconSrc: "/images/moments/birthday-v3.png",
     href: "/champion/apply?reason=birthday",
   },
   {
     title: "Anniversary",
     body: "Mark your journey together by supporting a cause you care about, and bring your circle along.",
     ctaLabel: "Start an Anniversary Fundraiser",
-    iconSrc: "/images/moments/af9d4dad96f552ff7f72f1bcc82853f2e29cfc3a.png",
+    iconSrc: "/images/moments/anniversary-v3.png",
     href: "/champion/apply?reason=anniversary",
   },
   {
     title: "Remembrance",
     body: "Honour a loved one’s memory through a cause that mattered to them, and bring your circle together in support.",
     ctaLabel: "Start a Remembrance Fundraiser",
-    iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
+    iconSrc: "/images/moments/remembrance-v3.png",
     href: "/champion/apply?reason=remembrance",
   },
 ] as const;
@@ -229,20 +231,17 @@ export const HOW_IT_WORKS_STEPS = [
   {
     title: "1. Find a Cause",
     body: "Explore verified causes and choose one that matters to you.",
-    iconSrc:
-      "/images/how it works/8ced2d2958840a613a126abc40353e58ce5151bf.png",
+    iconSrc: "/images/how-it-works/find-cause-v2.png",
   },
   {
     title: "2. Choose How to Support",
     body: "Donate to an NGO or rally your circle as a Cause Champion.",
-    iconSrc:
-      "/images/how it works/173baae52fce27e8eef82db1710a5bec73a3beed.png",
+    iconSrc: "/images/how-it-works/choose-support-v2.png",
   },
   {
     title: "3. Follow the Impact",
     body: "Follow updates and see the difference your support creates.",
-    iconSrc:
-      "/images/how it works/d2a8060bb71c100889a6d7d61b3f262eaf635a9b.png",
+    iconSrc: "/images/how-it-works/follow-impact-v2.png",
   },
 ] as const;
 
@@ -331,22 +330,22 @@ export const PARTNER_LOGO_SETS = [
 
 export const CHAMPION_STEPS = [
   {
-    iconSrc: "/images/cta images/3538e015ff2f3dcbb143d7e71aca9a88c5979510.png",
+    iconSrc: "/images/cta-icons/start-your-journey.png",
     title: "Start your fundraising journey",
     body: "Choose a cause and begin your Giving Circle.",
   },
   {
-    iconSrc: "/images/cta images/df6be06ffdd8ae18ad5573832334dd0eb085f00c.png",
+    iconSrc: "/images/cta-icons/invite-circle.png",
     title: "Invite your friends and colleagues",
     body: "Rally your circle and multiply your impact.",
   },
   {
-    iconSrc: "/images/cta images/541c5609f9971e42c70b5397389ba28031114fa3.png",
+    iconSrc: "/images/cta-icons/track-milestones.png",
     title: "Track every milestone",
     body: "Follow donations and campaign progress as it grows.",
   },
   {
-    iconSrc: "/images/cta images/012ca56cf24da21b558a1062ef43353e11b12fdc.png",
+    iconSrc: "/images/cta-icons/receive-updates.png",
     title: "Receive impact updates",
     body: "Get regular updates and stories from the communities.",
   },

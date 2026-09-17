@@ -34,7 +34,7 @@ export default function CauseDetailSections({
           ))}
         </div>
 
-        <ul className="mt-10 grid w-full grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 min-[90rem]:gap-6">
+        <ul className="mt-10 grid w-full grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 lg:mt-14 min-[90rem]:grid-cols-4 min-[90rem]:gap-6">
           {detail.howItWorks.map((step, index) => {
             const accent = getCauseCardAccent(index);
             return (
@@ -151,7 +151,7 @@ export default function CauseDetailSections({
 
       <PageSection
         tone="white"
-        innerClassName="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-14 min-[90rem]:gap-16"
+        innerClassName="flex flex-col gap-8 min-[56.25rem]:flex-row min-[56.25rem]:items-center min-[56.25rem]:gap-8 lg:gap-12 min-[90rem]:gap-16"
       >
         <div className="min-w-0 flex-1">
           <SectionIntro
@@ -171,7 +171,7 @@ export default function CauseDetailSections({
           </p>
         </div>
 
-        <ul className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:w-[22rem] lg:shrink-0 lg:pt-6 min-[90rem]:w-[24rem] min-[90rem]:pt-8">
+        <ul className="grid w-full grid-cols-2 gap-3 sm:gap-4 min-[56.25rem]:w-[min(20rem,38%)] min-[56.25rem]:shrink-0 min-[56.25rem]:pt-4 lg:w-[min(22rem,36%)] lg:pt-6 min-[90rem]:w-[24rem] min-[90rem]:pt-8">
           {detail.partner.stats.map((stat, index) => {
             const accent = getCauseCardAccent(index);
             return (

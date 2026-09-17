@@ -14,7 +14,7 @@ export default function ImpactStoriesSection() {
           title="Real Stories. Lasting Impact."
           subtitle="Discover how Cause Champions and verified NGOs are turning collective support into meaningful outcomes."
         />
-        <ul className="mt-8 flex w-full flex-col gap-4 sm:mt-10 sm:grid sm:grid-cols-2 sm:gap-4 md:gap-5 lg:mt-12 min-[90rem]:h-[42.75rem] min-[90rem]:grid-cols-[39.625rem_36.25rem] min-[90rem]:grid-rows-[20.625rem_20.625rem] min-[90rem]:gap-6">
+        <ul className="mt-8 flex w-full flex-col gap-4 sm:mt-10 sm:grid sm:grid-cols-2 sm:grid-rows-[auto_auto] sm:items-stretch sm:gap-4 md:gap-5 lg:mt-12 min-[90rem]:h-[42.75rem] min-[90rem]:grid-cols-[39.625rem_36.25rem] min-[90rem]:grid-rows-[20.625rem_20.625rem] min-[90rem]:gap-6">
           {IMPACT_STORIES.map((story) => (
             <ImpactStoryCard
               key={story.title}

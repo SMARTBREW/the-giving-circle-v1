@@ -6,7 +6,7 @@ export default function CauseDetailAbout({ cause }: { cause: LiveCause }) {
   return (
     <PageSection
       tone="white"
-      innerClassName="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14 min-[90rem]:gap-16"
+      innerClassName="flex flex-col gap-10 min-[56.25rem]:flex-row min-[56.25rem]:items-start min-[56.25rem]:gap-8 lg:gap-12 min-[90rem]:gap-16"
     >
       <div className="min-w-0 flex-1">
         <SectionIntro
@@ -26,7 +26,7 @@ export default function CauseDetailAbout({ cause }: { cause: LiveCause }) {
         </div>
       </div>
 
-      <aside className="flex w-full shrink-0 flex-col gap-5 lg:sticky lg:top-28 lg:w-[22rem] min-[90rem]:w-[24rem]">
+      <aside className="flex w-full shrink-0 flex-col gap-5 min-[56.25rem]:sticky min-[56.25rem]:top-28 min-[56.25rem]:w-[min(20rem,38%)] lg:w-[min(22rem,36%)] min-[90rem]:w-[24rem]">
         <div className="relative overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-gray-100 p-5 sm:p-6">
           <div
             aria-hidden

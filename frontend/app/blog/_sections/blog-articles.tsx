@@ -36,7 +36,7 @@ export default function BlogArticles() {
         <FilterChips options={options} value={filter} onChange={setFilter} />
       </div>
 
-      <div className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 sm:gap-8 md:grid-cols-2 md:gap-8 lg:gap-10 min-[90rem]:mt-12 min-[90rem]:grid-cols-3 min-[90rem]:gap-8">
+      <div className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 sm:gap-8 md:grid-cols-2 md:gap-8 lg:mt-12 lg:grid-cols-3 lg:gap-8 min-[90rem]:mt-12 min-[90rem]:gap-8">
         {visible.map((article) => (
           <FadeInSection key={article.id} className="h-full">
             <BlogCard article={article} />

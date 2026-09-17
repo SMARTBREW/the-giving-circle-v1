@@ -28,8 +28,8 @@ export default function ImpactStoryCard({
     <li
       className={
         featured
-          ? "aspect-square w-full sm:row-span-2 sm:aspect-auto sm:h-full min-[90rem]:h-[42.75rem] min-[90rem]:w-[39.625rem]"
-          : "aspect-square w-full sm:aspect-auto sm:h-full min-[90rem]:h-[20.625rem] min-[90rem]:w-[36.25rem]"
+          ? "aspect-square w-full sm:row-span-2 sm:aspect-auto sm:h-full sm:min-h-[24rem] md:min-h-[28rem] lg:min-h-[32rem] min-[90rem]:h-[42.75rem] min-[90rem]:min-h-0 min-[90rem]:w-[39.625rem]"
+          : "aspect-square w-full sm:aspect-[36.25/20.625] sm:h-auto min-[90rem]:aspect-auto min-[90rem]:h-[20.625rem] min-[90rem]:w-[36.25rem]"
       }
     >
       <Link

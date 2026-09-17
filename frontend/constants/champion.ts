@@ -22,17 +22,17 @@ export const CHAMPION_HOW_IT_WORKS = {
   arrowSrc: "/images/champions/how-it-works-arrow.png",
   steps: [
     {
-      iconSrc: "/images/champions/find-cause.svg",
+      iconSrc: "/images/champions/find-cause-v2.png",
       title: "1. Find a Cause",
       body: "Explore the causes that matter to you and choose where you’d like your circle to make a difference.",
     },
     {
-      iconSrc: "/images/champions/become-champion.svg",
+      iconSrc: "/images/champions/become-champion-v2.png",
       title: "2. Become a Champion",
       body: "Tell us you’d like to champion it. Our team helps set up your personalised fundraiser, goal and campaign link.",
     },
     {
-      iconSrc: "/images/champions/rally-circle.svg",
+      iconSrc: "/images/champions/rally-circle-v2.png",
       title: "3. Rally Your Circle",
       body: "Share your Giving Circle with your network, build support, and follow the impact you help create.",
     },
@@ -196,6 +196,7 @@ export const CHAMPION_CTA = {
 
 export const CHAMPION_APPLY = {
   title: "Champion a Cause",
+  mobileTitle: "Become a Cause Champion",
   subtitle:
     "Choose a cause and bring your circle together to create meaningful impact.",
   steps: [
@@ -260,17 +261,17 @@ export const CHAMPION_APPLY = {
       {
         id: "birthday",
         label: "Birthday",
-        iconSrc: "/images/moments/96e2113621a7af04d4cce296e51af5e80dc3bdff.png",
+        iconSrc: "/images/moments/birthday-v3.png",
       },
       {
         id: "anniversary",
         label: "Anniversary",
-        iconSrc: "/images/moments/af9d4dad96f552ff7f72f1bcc82853f2e29cfc3a.png",
+        iconSrc: "/images/moments/anniversary-v3.png",
       },
       {
         id: "remembrance",
         label: "Remembrance",
-        iconSrc: "/images/moments/4bfa4bfbeda58617c8b0d01a16ffa880c6024337.png",
+        iconSrc: "/images/moments/remembrance-v3.png",
       },
       {
         id: "other-occasion",
@@ -323,7 +324,7 @@ export const CHAMPION_APPLY = {
     inviteHint:
       "Share this link with friends, family or colleagues interested in becoming a Cause Champion.",
     inviteUrl: "thegivingcircle.in/ref/TGC84721",
-    copyLabel: "Copy",
+    copyLabel: "Copy Link",
     homeLabel: "Back to Homepage",
     homeHref: "/",
   },

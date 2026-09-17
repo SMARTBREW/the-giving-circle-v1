@@ -12,9 +12,19 @@ import {
   GET_INVOLVED_LINKS,
 } from "@/constants";
 
-function SocialIcon({ label }: { label: string }) {
+function SocialIcon({
+  label,
+  className = "",
+}: {
+  label: string;
+  className?: string;
+}) {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+    <svg
+      viewBox="0 0 40 40"
+      aria-hidden="true"
+      className={`h-full w-full ${className}`}
+    >
       <circle cx="20" cy="20" r="19.5" fill="#FFFFFF" stroke="#E0E0E0" />
       {label === "Facebook" ? (
         <path
@@ -130,25 +140,25 @@ export default function Footer() {
       id="contact"
       className="w-full min-w-0 bg-[#F5F5F5] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0"
     >
-      <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-10 pb-6 sm:px-8 sm:pt-12 sm:pb-8 md:px-10 md:pt-14 md:pb-10 lg:px-12 lg:pt-16 lg:pb-12 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
-        <div className="grid w-full min-w-0 grid-cols-1 gap-9 sm:gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-10 min-[90rem]:grid-cols-4 min-[90rem]:gap-x-8 min-[90rem]:gap-y-0">
-          <div className="flex min-w-0 flex-col md:col-span-2 min-[90rem]:col-span-1">
+      <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-10 pb-6 sm:px-8 sm:pt-12 sm:pb-8 md:px-10 md:pt-14 md:pb-10 lg:px-14 lg:pt-16 lg:pb-12 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
+        <div className="grid w-full min-w-0 grid-cols-1 items-start gap-9 sm:gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-10 lg:gap-x-10 lg:gap-y-10 min-[90rem]:grid-cols-4 min-[90rem]:gap-x-8 min-[90rem]:gap-y-0">
+          <div className="flex min-w-0 flex-col">
             <Link
               href="/"
-              className="block h-9 w-full max-w-[10rem] sm:h-10 sm:max-w-[11rem] md:h-11 md:max-w-[12.5rem] lg:h-14 lg:max-w-[14rem] min-[90rem]:h-[3.75rem] min-[90rem]:max-w-[14.625rem]"
+              className="block h-10 w-full max-w-[11.5rem] sm:h-11 sm:max-w-[13rem] md:h-12 md:max-w-[14.5rem] lg:h-[3.75rem] lg:max-w-[16rem] min-[90rem]:h-[4.25rem] min-[90rem]:max-w-[18rem]"
             >
               <Image
-                src="/images/Frame 2071857645.png"
+                src="/images/gc-logo-final.png"
                 alt="The Giving Circle"
-                width={234}
-                height={60}
+                width={1893}
+                height={439}
                 className="h-full w-full object-contain object-left"
               />
             </Link>
-            <p className={`${FOOTER_BLURB_CLASS} mt-4 min-[90rem]:max-w-[18.4375rem]`}>
+            <p className={`${FOOTER_BLURB_CLASS} mt-3 max-w-[22rem] sm:mt-3.5 lg:max-w-[16rem] min-[90rem]:mt-4 min-[90rem]:max-w-[18.4375rem]`}>
               {FOOTER_BLURB}
             </p>
-            <ul className="mt-5 flex flex-nowrap items-center gap-3 sm:mt-6 sm:gap-3.5">
+            <ul className="mt-4 flex flex-wrap items-center gap-3 sm:mt-4 sm:gap-3.5 lg:mt-5">
               {FOOTER_SOCIAL_LINKS.map((item) => (
                 <li key={item.label} className="shrink-0">
                   <Link
@@ -177,13 +187,13 @@ export default function Footer() {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={`${FOOTER_LINK_CLASS} min-w-0 whitespace-nowrap`}
+                      className={`${FOOTER_LINK_CLASS} min-w-0 break-words lg:text-[0.9375rem] lg:leading-6 min-[90rem]:text-[1rem] min-[90rem]:leading-7`}
                     >
                       {item.label}
                     </Link>
                   ) : (
                     <span
-                      className={`${FOOTER_LINK_CLASS} min-w-0 whitespace-nowrap`}
+                      className={`${FOOTER_LINK_CLASS} min-w-0 break-words lg:text-[0.9375rem] lg:leading-6 min-[90rem]:text-[1rem] min-[90rem]:leading-7`}
                     >
                       {item.label}
                     </span>
@@ -194,7 +204,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-9 flex flex-col gap-4 border-t border-[#E0E0E0] pt-6 sm:mt-10 sm:gap-5 sm:pt-7 lg:mt-auto lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pt-8 min-[90rem]:pb-8">
+        <div className="mt-12 flex flex-col gap-4 border-t border-[#E0E0E0] pt-6 sm:mt-14 sm:gap-5 sm:pt-7 lg:mt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pt-8 min-[90rem]:mt-auto min-[90rem]:pb-8">
           <ul className="flex flex-col gap-2.5 sm:gap-3 lg:order-2 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-8 lg:gap-y-2">
             {FOOTER_LEGAL_LINKS.map((link) => (
               <li key={link.label}>

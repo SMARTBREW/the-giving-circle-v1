@@ -1,5 +1,6 @@
 export const PARTNER_APPLY = {
   title: "Partner as an NGO",
+  mobileTitle: "Partner as an NGO",
   subtitle:
     "Join our verified partner circle and connect with Cause Champions who care about your work.",
   steps: [

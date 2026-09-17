@@ -40,7 +40,7 @@ export default function VolunteerBand({
     >
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro eyebrow={eyebrow} title={title} subtitle={subtitle} />
-        <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 md:gap-6 lg:mt-12 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:flex-nowrap min-[90rem]:justify-center min-[90rem]:gap-[1.125rem]">
+        <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 md:gap-5 min-[56.25rem]:grid-cols-4 min-[56.25rem]:gap-3 lg:mt-12 lg:gap-4 min-[90rem]:mt-12 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:flex-nowrap min-[90rem]:justify-center min-[90rem]:gap-[1.125rem]">
           {people.map((person) => (
             <VolunteerCard
               key={person.name}

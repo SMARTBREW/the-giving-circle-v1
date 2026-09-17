@@ -46,17 +46,17 @@ export const VOLUNTEER_HOW_IT_WORKS = {
   arrowSrc: "/images/champions/how-it-works-arrow.png",
   steps: [
     {
-      iconSrc: "/images/champions/find-cause.svg",
+      iconSrc: "/images/volunteer/choose-cause.png",
       title: "1. Choose a Cause",
       body: "Explore verified causes across education, women’s health, animal welfare, and disaster relief   and pick where you want to show up.",
     },
     {
-      iconSrc: "/images/champions/become-champion.svg",
+      iconSrc: "/images/volunteer/tell-us-ready.png",
       title: "2. Tell Us You’re Ready",
       body: "Share your skills, availability, and city. Our team matches you with a verified NGO partner and a clear way to help.",
     },
     {
-      iconSrc: "/images/champions/rally-circle.svg",
+      iconSrc: "/images/volunteer/on-the-ground.png",
       title: "3. Volunteer On the Ground",
       body: "Join workshops, feeding drives, classroom support, or relief work   and see the impact of showing up together.",
     },

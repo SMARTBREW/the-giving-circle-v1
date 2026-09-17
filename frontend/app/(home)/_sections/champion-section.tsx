@@ -1,48 +1,28 @@
-import Image from "next/image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import CtaArrow from "@/components/cta-arrow";
 import SectionIntro from "@/components/section-intro";
 import ChampionStep from "@/components/champion-step";
-import { CHAMPION_PHOTO, CHAMPION_STEPS } from "@/constants";
-
-function ChampionPhoto({ className }: { className: string }) {
-  return (
-    <div className={className}>
-      <Image
-        src={CHAMPION_PHOTO}
-        alt="Women in our circle gathered together"
-        fill
-        sizes="(max-width: 1023px) 100vw, (max-width: 1439px) 44vw, 37.0625rem"
-        className="object-cover"
-      />
-      <span className="absolute inset-0 bg-[#00000040]" />
-      <span className="absolute top-1/2 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#FFFFFF] sm:h-16 sm:w-16 lg:h-20 lg:w-20">
-        <svg
-          className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12"
-          viewBox="0 0 20 20"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path d="M7 5L15 10L7 15V5Z" fill="#00A3BE" />
-        </svg>
-      </span>
-    </div>
-  );
-}
+import ChampionVideo from "@/components/champion-video";
+import { CHAMPION_STEPS } from "@/constants";
 
 export default function ChampionSection() {
   return (
     <section
       id="champion"
-      className="w-full bg-[#FFFFFF] lg:h-dvh lg:overflow-hidden"
+      className="w-full scroll-mt-[5.5rem] bg-[#FFFFFF] sm:scroll-mt-[6.25rem] md:scroll-mt-[6.75rem] lg:scroll-mt-[7rem] min-[90rem]:h-dvh min-[90rem]:overflow-hidden"
     >
-      <FadeInSection className="relative mx-auto flex h-full w-full max-w-[90rem] flex-col px-4 pt-6 pb-4 sm:px-8 sm:pt-10 sm:pb-10 md:px-10 md:pt-12 md:pb-12 lg:flex-row lg:items-center lg:gap-8 lg:px-12 lg:py-8 min-[90rem]:gap-12 min-[90rem]:px-[6.25rem] min-[90rem]:py-10">
-        <div className="flex min-h-0 w-full flex-col items-center lg:flex-1 lg:items-start lg:justify-center">
+      {/*
+        Phone + small tablet (<768): stacked, taller 4:3 video.
+        Tablet md–lg: side-by-side with smaller type so the row fits.
+        Desktop lg+: full type + tall video.
+      */}
+      <FadeInSection className="relative mx-auto flex h-full w-full max-w-[90rem] flex-col px-4 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-8 md:flex-row md:items-center md:gap-5 md:px-10 md:py-10 lg:gap-8 lg:px-12 lg:py-8 min-[90rem]:gap-12 min-[90rem]:px-[6.25rem] min-[90rem]:py-10">
+        <div className="flex min-h-0 w-full flex-col items-center md:w-[50%] md:min-w-0 md:shrink md:items-start md:justify-center lg:w-auto lg:flex-1">
           <SectionIntro
             align="center"
             eyebrow="Become a Cause Champion"
-            eyebrowClassName="w-full max-w-[36rem] lg:max-w-none lg:text-left min-[90rem]:w-[16rem]"
+            eyebrowClassName="w-full max-w-[36rem] text-[0.6875rem] sm:text-[0.75rem] md:max-w-none md:text-left md:text-[0.75rem] lg:text-[0.9375rem] min-[90rem]:w-[16rem] min-[90rem]:text-[1rem]"
             title={
               <>
                 Lead Your Circle.
@@ -50,11 +30,11 @@ export default function ChampionSection() {
                 Create Real Impact.
               </>
             }
-            titleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[1.75rem] leading-9 sm:text-[2.25rem] sm:leading-10 md:text-[2.5rem] md:leading-[3rem] lg:max-w-none lg:text-left lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3.125rem]"
+            titleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[1.5rem] leading-8 sm:text-[1.625rem] sm:leading-8 md:max-w-none md:text-left md:text-[1.625rem] md:leading-8 lg:text-[1.875rem] lg:leading-[2.375rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3.125rem]"
             subtitle="Start a Giving Circle, rally your network around a verified cause, and track the change you help create."
-            subtitleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[0.875rem] leading-5 sm:text-[1rem] sm:leading-6 lg:max-w-none lg:text-left lg:text-[1rem] lg:leading-6 min-[90rem]:max-w-[36rem]"
+            subtitleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[0.8125rem] leading-5 sm:text-[0.875rem] md:max-w-none md:text-left md:text-[0.8125rem] md:leading-5 lg:text-[0.9375rem] lg:leading-6 min-[90rem]:max-w-[36rem] min-[90rem]:text-[1rem]"
           />
-          <ul className="mt-4 flex w-full max-w-[28rem] flex-col gap-2.5 sm:mt-5 sm:gap-3 md:mt-6 md:gap-3.5 lg:mt-5 lg:max-w-none lg:gap-3 min-[90rem]:mt-6 min-[90rem]:gap-3.5">
+          <ul className="mx-auto mt-3 flex w-fit max-w-[28rem] flex-col gap-2 sm:mt-4 sm:gap-2.5 md:mx-0 md:mt-4 md:w-full md:max-w-none md:gap-2 lg:mt-5 lg:gap-3 min-[90rem]:mt-6 min-[90rem]:gap-3.5">
             {CHAMPION_STEPS.map((step) => (
               <ChampionStep
                 key={step.title}
@@ -64,10 +44,10 @@ export default function ChampionSection() {
               />
             ))}
           </ul>
-          <div className="mt-4 flex w-full justify-center sm:mt-5 md:mt-6 lg:mt-5 lg:justify-start min-[90rem]:mt-6">
+          <div className="mt-4 flex w-full justify-center sm:mt-5 md:mt-4 md:justify-start lg:mt-5 min-[90rem]:mt-6">
             <CtaButton
               href="/champion/apply"
-              className="mx-auto h-11 w-full max-w-[20rem] gap-2 px-6 py-3 sm:h-12 md:h-12 lg:mx-0 lg:h-14 lg:max-w-none min-[90rem]:h-14 min-[90rem]:w-[18rem] min-[90rem]:px-8 min-[90rem]:py-4"
+              className="mx-auto h-11 w-full max-w-[20rem] gap-2 px-6 py-3 text-[0.8125rem] sm:h-11 md:mx-0 md:h-10 md:w-auto md:max-w-none md:px-5 md:text-[0.8125rem] lg:h-12 lg:text-[0.9375rem] min-[90rem]:h-14 min-[90rem]:w-[18rem] min-[90rem]:px-8 min-[90rem]:py-4 min-[90rem]:text-[length:inherit]"
               labelClassName="font-[700]"
             >
               Start Your Giving Journey
@@ -76,7 +56,7 @@ export default function ChampionSection() {
           </div>
         </div>
 
-        <ChampionPhoto className="relative mt-6 aspect-[16/10] max-h-[14rem] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:mt-8 sm:max-h-[18rem] md:mt-10 md:max-h-[20rem] lg:mt-0 lg:aspect-auto lg:h-[calc(100dvh-14rem)] lg:max-h-none lg:w-[44%] lg:shrink-0 min-[90rem]:h-[calc(100dvh-12rem)] min-[90rem]:w-[37.0625rem]" />
+        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:mt-6 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(48%,26rem)] md:shrink-0 lg:w-[min(44%,30rem)] min-[90rem]:h-[37.0625rem] min-[90rem]:w-[37.0625rem] min-[90rem]:aspect-auto" />
       </FadeInSection>
     </section>
   );

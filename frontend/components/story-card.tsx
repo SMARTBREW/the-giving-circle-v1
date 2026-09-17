@@ -168,12 +168,12 @@ export default function StoryCard({
   onToggle: () => void;
 }) {
   const imageBlock = (
-    <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:aspect-[16/10] md:aspect-[4/5] md:w-[41%] md:self-start lg:w-[39%] min-[90rem]:w-[38%]">
+    <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:aspect-[16/10] md:aspect-auto md:h-[32rem] md:w-[min(46%,26rem)] md:self-start lg:h-[36rem] lg:w-[min(44%,28rem)] min-[90rem]:aspect-[4/5] min-[90rem]:h-auto min-[90rem]:w-[38%]">
       <Image
         src={story.src}
         alt={story.alt}
         fill
-        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 41vw, 38vw"
+        sizes="(max-width: 767px) 100vw, (max-width: 1439px) 46vw, 38vw"
         className={`object-cover ${story.objectPosition || "object-center"}`}
       />
 
@@ -241,7 +241,7 @@ export default function StoryCard({
         {story.summary}
       </p>
 
-      <ul className="mt-5 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-5 min-[90rem]:grid-cols-4 min-[90rem]:gap-3">
+      <ul className="mt-5 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-5 min-[56.25rem]:grid-cols-4 min-[56.25rem]:gap-3 min-[90rem]:gap-3">
         {story.stats.map((stat) => (
           <li key={stat.label} className="flex flex-col gap-1.5">
             <StatIcon icon={stat.icon} />

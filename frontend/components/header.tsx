@@ -12,10 +12,10 @@ import {
   SEGOE_UI_CLASS,
 } from "@/constants";
 
-const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-2 py-2 text-[0.8125rem] font-[600] text-[#212121] transition-colors hover:text-[#000000] lg:px-2.5 lg:text-[0.875rem] min-[90rem]:px-3 min-[90rem]:text-[0.9375rem]`;
+const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-1.5 py-2 text-[0.6875rem] font-[600] text-[#212121] transition-colors hover:text-[#000000] lg:px-2 lg:text-[0.8125rem] min-[90rem]:px-3 min-[90rem]:text-[0.9375rem]`;
 
 const NAV_CTA_CLASS =
-  "h-10 !rounded-lg !bg-[#ED3B58] px-4 !text-[0.8125rem] sm:h-11 sm:px-5 sm:!text-[0.875rem] lg:h-11 lg:px-5 min-[90rem]:h-12 min-[90rem]:px-5 min-[90rem]:!text-[0.9375rem]";
+  "h-9 !rounded-lg !bg-[#ED3B58] px-3 !text-[0.6875rem] sm:h-9 sm:px-3.5 sm:!text-[0.75rem] lg:h-10 lg:px-4 lg:!text-[0.8125rem] min-[90rem]:h-12 min-[90rem]:px-5 min-[90rem]:!text-[0.9375rem]";
 
 function MenuIcon({ open }: { open: boolean }) {
   return open ? (
@@ -115,35 +115,35 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed inset-x-0 z-50 transition-[top] duration-500 ${
-        scrolled ? "top-2 sm:top-2.5 md:top-3" : "top-3 sm:top-3.5 md:top-4"
+        scrolled ? "top-0 sm:top-2.5 md:top-3" : "top-0 sm:top-3.5 md:top-4"
       }`}
     >
-      <div className="mx-auto w-full max-w-[86rem] px-4 sm:px-5 md:px-7 lg:px-10 min-[90rem]:px-12">
+      <div className="mx-auto w-full max-w-[86rem] px-0 sm:px-5 md:px-7 lg:px-10 min-[90rem]:px-12">
         <div
-          className={`rounded-lg border border-[#E5E5E5] bg-[#FFFFFF] px-4 py-2.5 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500 sm:rounded-xl sm:px-5 sm:py-3 md:rounded-2xl md:px-6 md:py-3.5 lg:px-7 lg:py-3.5 min-[90rem]:px-8 min-[90rem]:py-4 ${
-            scrolled ? "shadow-[0_16px_48px_rgba(0,0,0,0.14)]" : ""
+          className={`border-b border-[#E5E5E5] bg-[#FFFFFF] px-4 py-2.5 transition-shadow duration-500 sm:rounded-xl sm:border sm:border-[#E5E5E5] sm:px-6 sm:py-3 sm:shadow-[0_12px_40px_rgba(0,0,0,0.12)] md:rounded-2xl md:px-7 md:py-3.5 lg:px-7 lg:py-3.5 min-[90rem]:px-8 min-[90rem]:py-4 ${
+            scrolled ? "sm:shadow-[0_16px_48px_rgba(0,0,0,0.14)]" : ""
           }`}
         >
           <nav
-            className="flex items-center justify-between gap-2"
+            className="flex items-center justify-between gap-3 min-[56.25rem]:gap-4 lg:gap-5 min-[90rem]:gap-6"
             aria-label="Main navigation"
           >
             <Link
               href="/"
-              className="block h-10 w-[9.5rem] shrink-0 sm:h-11 sm:w-[11rem] md:h-12 md:w-[12.5rem] min-[90rem]:h-[3.25rem] min-[90rem]:w-[14rem]"
+              className="block h-10 w-[10.5rem] shrink-0 sm:h-11 sm:w-[11.75rem] md:h-11 md:w-[12rem] min-[56.25rem]:h-10 min-[56.25rem]:w-[10.75rem] lg:h-11 lg:w-[12.5rem] min-[90rem]:h-[3.75rem] min-[90rem]:w-[16.5rem]"
               onClick={closeMobile}
             >
               <Image
-                src="/images/Frame 2071857645.png"
+                src="/images/gc-logo-final.png"
                 alt="The Giving Circle"
-                width={234}
-                height={60}
+                width={1893}
+                height={439}
                 className="h-full w-full object-contain object-left"
                 priority
               />
             </Link>
 
-            <div className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex min-[90rem]:gap-1">
+            <div className="hidden min-w-0 flex-1 items-center justify-center gap-1 min-[56.25rem]:flex lg:gap-1.5 min-[90rem]:gap-1">
               {NAV_LINKS.map((link) => (
                 <Link key={link.href} href={link.href} className={NAV_LINK_CLASS}>
                   {link.label}
@@ -168,7 +168,7 @@ export default function Header() {
                 {isInvolvedOpen ? (
                   <div
                     id={involvedId}
-                    className="absolute top-full right-0 z-50 mt-2 flex w-[16.5625rem] flex-col gap-6 rounded-xl border border-[#E5E5E5] bg-[#FFFFFF] py-4 pr-4 pl-4 shadow-[0_12px_32px_rgba(0,0,0,0.12)] lg:right-auto lg:left-0"
+                    className="absolute top-full right-0 z-50 mt-2 flex w-[16.5625rem] flex-col gap-6 rounded-xl border border-[#E5E5E5] bg-[#FFFFFF] py-4 pr-4 pl-4 shadow-[0_12px_32px_rgba(0,0,0,0.12)] min-[56.25rem]:right-auto min-[56.25rem]:left-0"
                   >
                     {GET_INVOLVED_LINKS.map((link) => (
                       <Link
@@ -185,7 +185,7 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="hidden shrink-0 lg:block lg:ml-0">
+            <div className="hidden shrink-0 min-[56.25rem]:block">
               <CtaButton
                 href="/champion/apply"
                 className={NAV_CTA_CLASS}
@@ -197,7 +197,7 @@ export default function Header() {
 
             <button
               type="button"
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-[#212121] transition-colors hover:bg-[#F5F5F5] lg:hidden"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[#212121] transition-colors hover:bg-[#F5F5F5] sm:h-11 sm:w-11 min-[56.25rem]:hidden"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               onClick={() => setIsOpen((open) => !open)}
@@ -207,7 +207,7 @@ export default function Header() {
           </nav>
 
           <div
-            className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
+            className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out min-[56.25rem]:hidden ${
               isOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
             }`}
           >

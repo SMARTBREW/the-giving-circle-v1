@@ -32,7 +32,7 @@ export default function ReachBand({
         }`}
       >
         <SectionIntro eyebrow={eyebrow} title={title} subtitle={subtitle} />
-        <ul className="mt-10 grid w-full grid-cols-2 self-stretch sm:mt-10 lg:mt-12 lg:grid-cols-4 lg:gap-0">
+        <ul className="mt-10 grid w-full grid-cols-2 self-stretch sm:mt-10 min-[56.25rem]:grid-cols-4 min-[56.25rem]:gap-0 lg:mt-12">
           {stats.map((stat, index) => (
             <ReachStat
               key={stat.label}

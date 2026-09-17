@@ -14,7 +14,7 @@ export default function CausesSection() {
           title="Causes That Need You"
           subtitle="Find a cause you care about and see where your support can make a difference."
         />
-        <ul className="mt-6 flex w-full flex-col gap-4 sm:mt-8 sm:gap-5 md:flex-row md:flex-wrap md:justify-center md:gap-5 lg:mt-10 min-[90rem]:mt-8 min-[90rem]:flex-nowrap min-[90rem]:gap-6">
+        <ul className="mt-6 flex w-full flex-col gap-4 sm:mt-8 sm:gap-5 md:flex-row md:flex-wrap md:justify-center md:gap-5 min-[56.25rem]:mt-8 min-[56.25rem]:flex-nowrap min-[56.25rem]:gap-3 lg:mt-10 lg:gap-4 min-[90rem]:mt-8 min-[90rem]:gap-6">
           {CAUSE_CARDS.map((cause) => (
             <CauseCard
               key={cause.label}
