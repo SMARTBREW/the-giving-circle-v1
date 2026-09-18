@@ -10,24 +10,24 @@ const CATEGORY_STYLES: Record<
   { pill: string; accent: string; bar: string }
 > = {
   "Student & Family Guide": {
-    pill: "bg-[rgba(57,118,168,0.12)] text-[#3976A8]",
-    accent: "text-[#3976A8]",
-    bar: "bg-[#3976A8]",
+    pill: "bg-[rgba(11,97,154,0.12)] text-[#0b619a]",
+    accent: "text-[#0b619a]",
+    bar: "bg-[#0b619a]",
   },
   "Giving Guide": {
-    pill: "bg-[rgba(34,139,34,0.1)] text-[var(--Main-CTA-button,#228b22)]",
-    accent: "text-[var(--Main-CTA-button,#228b22)]",
-    bar: "bg-[var(--Main-CTA-button,#228b22)]",
+    pill: "bg-[rgba(2,147,140,0.1)] text-[var(--Main-CTA-button,#02938c)]",
+    accent: "text-[var(--Main-CTA-button,#02938c)]",
+    bar: "bg-[var(--Main-CTA-button,#02938c)]",
   },
   "Trust & Verification Guide": {
-    pill: "bg-[rgba(0,169,143,0.12)] text-[var(--Brand-Green-Teal,#00A98F)]",
-    accent: "text-[var(--Brand-Green-Teal,#00A98F)]",
-    bar: "bg-[var(--Brand-Green-Teal,#00A98F)]",
+    pill: "bg-[rgba(2,147,140,0.12)] text-[var(--Brand-Green-Teal,#02938c)]",
+    accent: "text-[var(--Brand-Green-Teal,#02938c)]",
+    bar: "bg-[var(--Brand-Green-Teal,#02938c)]",
   },
   "CSR for Companies": {
-    pill: "bg-[rgba(237,59,88,0.1)] text-[#ED3B58]",
-    accent: "text-[#ED3B58]",
-    bar: "bg-[#ED3B58]",
+    pill: "bg-[rgba(230,43,79,0.1)] text-[#e62b4f]",
+    accent: "text-[#e62b4f]",
+    bar: "bg-[#e62b4f]",
   },
   "Family & Parent Guide": {
     pill: "bg-[rgba(139,69,19,0.1)] text-[#8B4513]",
@@ -37,9 +37,9 @@ const CATEGORY_STYLES: Record<
 };
 
 const FALLBACK_STYLE = {
-  pill: "bg-[rgba(0,169,143,0.12)] text-[var(--Brand-Green-Teal,#00A98F)]",
-  accent: "text-[var(--Brand-Green-Teal,#00A98F)]",
-  bar: "bg-[var(--Brand-Green-Teal,#00A98F)]",
+  pill: "bg-[rgba(2,147,140,0.12)] text-[var(--Brand-Green-Teal,#02938c)]",
+  accent: "text-[var(--Brand-Green-Teal,#02938c)]",
+  bar: "bg-[var(--Brand-Green-Teal,#02938c)]",
 };
 
 export default function BlogCard({ article }: { article: BlogArticle }) {
@@ -47,12 +47,12 @@ export default function BlogCard({ article }: { article: BlogArticle }) {
   const hasImage = "image" in article && Boolean(article.image);
 
   return (
-    <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0_0.25rem_1.25rem_0_#0000000F] transition-all duration-300 hover:-translate-y-1 hover:border-[#D0D0D0] hover:shadow-[0_0.5rem_2rem_0_#00000012]">
+    <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0_0.25rem_1.25rem_0_#0000000F] transition-all duration-300 hover:-translate-y-1 hover:border-[#D9E1E2] hover:shadow-[0_0.5rem_2rem_0_#00000012]">
       {/* Category accent bar */}
       <div className={`h-1 w-full origin-left transition-transform duration-300 ${style.bar}`} />
 
       {hasImage ? (
-        <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100">
+        <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EEF2F2]">
           <Image
             src={article.image as string}
             alt={
@@ -76,14 +76,14 @@ export default function BlogCard({ article }: { article: BlogArticle }) {
             {article.category}
           </span>
           <span
-            className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[400] leading-none tracking-normal text-[#9CA3A8] sm:text-[0.8125rem]`}
+            className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[400] leading-none tracking-normal text-[#4A5558] sm:text-[0.8125rem]`}
           >
             {article.updated}
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="mt-4 font-['Georgia'] text-[1.1875rem] font-[700] leading-[1.6rem] tracking-normal text-[var(--Main-headings,#000000)] sm:mt-5 sm:text-[1.3125rem] sm:leading-[1.8rem] md:text-[1.375rem] md:leading-[1.875rem]">
+        <h2 className="mt-4 font-['Georgia'] text-[1.1875rem] font-[700] leading-[1.6rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-5 sm:text-[1.3125rem] sm:leading-[1.8rem] md:text-[1.375rem] md:leading-[1.875rem]">
           <Link
             href={`/blog/${article.id}`}
             className={`transition-colors duration-200 ${style.accent}`}
@@ -94,7 +94,7 @@ export default function BlogCard({ article }: { article: BlogArticle }) {
 
         {/* Summary */}
         <p
-          className={`${SEGOE_UI_CLASS} mt-3 flex-1 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#5A6570] sm:text-[1rem] sm:leading-7`}
+          className={`${SEGOE_UI_CLASS} mt-3 flex-1 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#4A5558] sm:text-[1rem] sm:leading-7`}
         >
           {article.summary}
         </p>

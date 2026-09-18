@@ -3,10 +3,7 @@ import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS } from "@/constants";
-
-/** Matches floating header offset so the hero can bleed under the nav. */
-const HERO_BLEED =
-  "-mt-[5.5rem] pt-[5.5rem] sm:-mt-[6.25rem] sm:pt-[6.25rem] md:-mt-[6.75rem] md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[7.25rem] min-[90rem]:pt-[7.25rem]";
+import { PAGE_HERO_BLEED } from "@/lib/page-hero-layout";
 
 export default function PhotoPageHero({
   src,
@@ -33,7 +30,7 @@ export default function PhotoPageHero({
 
   return (
     <section
-      className={`relative isolate min-h-[min(70vh,28rem)] w-full overflow-hidden sm:min-h-[min(36rem,70vh)] md:min-h-[min(38rem,72vh)] min-[56.25rem]:min-h-[min(36rem,70vh)] min-[90rem]:min-h-[min(48rem,80vh)] ${HERO_BLEED}`}
+      className={`relative isolate min-h-[min(70vh,28rem)] w-full overflow-hidden sm:min-h-[min(36rem,70vh)] md:min-h-[min(38rem,72vh)] min-[56.25rem]:min-h-[min(36rem,70vh)] min-[90rem]:min-h-[min(48rem,80vh)] ${PAGE_HERO_BLEED}`}
     >
       <Image
         src={src}

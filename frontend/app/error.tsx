@@ -37,14 +37,14 @@ export default function Error({
       >
         Something went wrong
       </h2>
-      <p className="text-[#000000] mb-8">
+      <p className="text-[var(--Dark-Charcoal,#1c2426)] mb-8">
         We have been notified and are looking into it. Thank you for your
         patience.
       </p>
       <button
         type="button"
         onClick={() => reset()}
-        className="rounded-[0.5rem] bg-[var(--Main-CTA-button,#00A3BE)] px-8 py-3 text-white"
+        className="rounded-[0.5rem] bg-[var(--Main-CTA-button,#02938c)] px-8 py-3 text-white"
       >
         Try again
       </button>

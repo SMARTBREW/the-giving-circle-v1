@@ -17,7 +17,7 @@ export default function CauseCard({
     href ?? `/causes?category=${encodeURIComponent(label)}`;
 
   return (
-    <li className="group relative aspect-[4/3] w-full overflow-hidden isolate rounded-[1rem] border border-[#BDBDBD] transition-all duration-300 hover:border-[var(--Main-CTA-button,#228b22)] md:aspect-[3/4] md:max-h-[min(24rem,55dvh)] md:w-[calc(50%-0.625rem)] min-[56.25rem]:aspect-auto min-[56.25rem]:h-[clamp(14rem,42dvh,18rem)] min-[56.25rem]:max-h-none min-[56.25rem]:min-w-0 min-[56.25rem]:w-auto min-[56.25rem]:flex-1 lg:h-[clamp(15rem,45dvh,20rem)] min-[90rem]:h-[21.75rem]">
+    <li className="group relative aspect-[4/3] w-full overflow-hidden isolate rounded-[1rem] border border-[#d9e1e2] transition-all duration-300 hover:border-[var(--Main-CTA-button,#02938c)] md:aspect-[3/4] md:max-h-[min(24rem,55dvh)] md:w-[calc(50%-0.625rem)] min-[56.25rem]:aspect-auto min-[56.25rem]:h-[clamp(14rem,42dvh,18rem)] min-[56.25rem]:max-h-none min-[56.25rem]:min-w-0 min-[56.25rem]:w-auto min-[56.25rem]:flex-1 lg:h-[clamp(15rem,45dvh,20rem)] min-[90rem]:h-[21.75rem]">
       <Link href={destination} className="absolute -inset-px block">
         <Image
           src={src}
@@ -43,7 +43,7 @@ export default function CauseCard({
             >
               <path
                 d="M3 11L11 3M11 3H5.5M11 3V8.5"
-                stroke="var(--Main-CTA-button, #228b22)"
+                stroke="var(--Main-CTA-button, #02938c)"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"

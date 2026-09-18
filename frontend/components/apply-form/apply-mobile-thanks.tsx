@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { SEGOE_UI_CLASS } from "@/constants";
 
-export const applyMobilePrimaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--Main-CTA-button,#00A3BE)] text-[1rem] leading-none font-[700] text-[#FFFFFF] transition-opacity disabled:cursor-not-allowed disabled:opacity-40`;
+export const applyMobilePrimaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--Main-CTA-button,#02938c)] text-[1rem] leading-none font-[700] text-[#FFFFFF] transition-opacity disabled:cursor-not-allowed disabled:opacity-40`;
 
-export const applyMobileOutlineBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border-2 border-[var(--Main-CTA-button,#00A3BE)] bg-[#FFFFFF] text-[1rem] leading-none font-[700] text-[var(--Main-CTA-button,#00A3BE)] transition-opacity disabled:cursor-not-allowed disabled:opacity-40`;
+export const applyMobileOutlineBtnClass = `${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border-2 border-[var(--Main-CTA-button,#02938c)] bg-[#FFFFFF] text-[1rem] leading-none font-[700] text-[var(--Main-CTA-button,#02938c)] transition-opacity disabled:cursor-not-allowed disabled:opacity-40`;
 
-export const applyMobileFieldClass = `${SEGOE_UI_CLASS} champion-apply-field h-12 w-full rounded-xl border border-[#D0D5DD] bg-[#FFFFFF] px-4 text-[1rem] text-[#212121] outline-none placeholder:text-[#98A2B3] focus:border-[var(--Main-CTA-button,#00A3BE)] focus:outline-none focus:ring-0 sm:h-14`;
+export const applyMobileFieldClass = `${SEGOE_UI_CLASS} champion-apply-field h-12 w-full rounded-xl border border-[#d9e1e2] bg-[#FFFFFF] px-4 text-[1rem] text-[#4a5558] outline-none placeholder:text-[#4A5558] focus:border-[var(--Main-CTA-button,#02938c)] focus:outline-none focus:ring-0 sm:h-14`;
 
 export const applyMobileFooterClass =
   "flex w-full items-center gap-3";
@@ -13,7 +13,7 @@ export const applyMobileFooterClass =
 function SuccessCheck() {
   return (
     <span
-      className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--Main-CTA-button,#00A3BE)] sm:h-[4.5rem] sm:w-[4.5rem]"
+      className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--Main-CTA-button,#02938c)] sm:h-[4.5rem] sm:w-[4.5rem]"
       aria-hidden
     >
       <svg viewBox="0 0 48 48" fill="none" className="h-8 w-8 sm:h-9 sm:w-9">
@@ -92,48 +92,48 @@ export function ApplyMobileThanks({
           <SuccessCheck />
 
           <h2
-            className={`${SEGOE_UI_CLASS} mt-5 text-[1.75rem] leading-none font-[700] text-[#212121] sm:mt-6 sm:text-[2rem]`}
+            className={`${SEGOE_UI_CLASS} mt-5 text-[1.75rem] leading-none font-[700] text-[#4a5558] sm:mt-6 sm:text-[2rem]`}
           >
             {title}
           </h2>
 
           <p
-            className={`${SEGOE_UI_CLASS} mt-3 text-[1rem] leading-6 font-[700] text-[var(--Main-CTA-button,#00A3BE)] sm:mt-4 sm:text-[1.125rem] sm:leading-7`}
+            className={`${SEGOE_UI_CLASS} mt-3 text-[1rem] leading-6 font-[700] text-[var(--Main-CTA-button,#02938c)] sm:mt-4 sm:text-[1.125rem] sm:leading-7`}
           >
             {eyebrow}
           </p>
 
           <p
-            className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] leading-6 font-[400] text-[#212121] sm:text-[1rem] sm:leading-7`}
+            className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] leading-6 font-[400] text-[#4a5558] sm:text-[1rem] sm:leading-7`}
           >
             {body}
           </p>
 
           {hasInvite ? (
             <>
-              <div className="mt-6 w-full border-t border-[#E4E7EC] pt-6 text-left">
+              <div className="mt-6 w-full border-t border-[#D9E1E2] pt-6 text-left">
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[1.125rem] leading-none font-[700] text-[#000000] sm:text-[1.25rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[1.125rem] leading-none font-[700] text-[var(--Dark-Charcoal,#1c2426)] sm:text-[1.25rem]`}
                 >
                   {inviteLabel}
                 </p>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.875rem] leading-5 font-[400] text-[#212121] sm:text-[0.9375rem] sm:leading-6`}
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.875rem] leading-5 font-[400] text-[#4a5558] sm:text-[0.9375rem] sm:leading-6`}
                 >
                   {inviteHint}
                 </p>
 
-                <div className="mt-4 flex h-12 w-full items-center overflow-hidden rounded-xl border border-[#D0D5DD] bg-[#FFFFFF] sm:h-14">
+                <div className="mt-4 flex h-12 w-full items-center overflow-hidden rounded-xl border border-[#d9e1e2] bg-[#FFFFFF] sm:h-14">
                   <input
                     readOnly
                     value={inviteUrl}
-                    className={`${SEGOE_UI_CLASS} min-w-0 flex-1 bg-transparent px-3.5 text-[0.875rem] text-[#667085] outline-none sm:px-4 sm:text-[0.9375rem]`}
+                    className={`${SEGOE_UI_CLASS} min-w-0 flex-1 bg-transparent px-3.5 text-[0.875rem] text-[#4A5558] outline-none sm:px-4 sm:text-[0.9375rem]`}
                   />
                   <button
                     type="button"
                     onClick={onCopy}
                     aria-label="Copy invite link"
-                    className="flex h-full shrink-0 items-center justify-center px-3.5 text-[#667085] hover:text-[#212121]"
+                    className="flex h-full shrink-0 items-center justify-center px-3.5 text-[#4A5558] hover:text-[#4a5558]"
                   >
                     <CopyIcon className="h-5 w-5" />
                   </button>

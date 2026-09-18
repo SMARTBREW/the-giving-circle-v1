@@ -34,7 +34,7 @@ export default function ImpactStoryCard({
     >
       <Link
         href={href}
-        className="group relative block h-full w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD]"
+        className="group relative block h-full w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2]"
       >
         <Image
           src={src}

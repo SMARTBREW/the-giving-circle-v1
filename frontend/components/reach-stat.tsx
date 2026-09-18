@@ -27,7 +27,7 @@ export default function ReachStat({
       ) : null}
       <span
         aria-label={value}
-        className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center gap-1 text-[1.75rem] leading-none font-[700] tracking-[-0.025em] text-[#00A98F] sm:gap-1.5 sm:text-[2.25rem] min-[56.25rem]:text-[1.75rem] lg:text-[2.25rem] min-[90rem]:text-[2.75rem] min-[90rem]:leading-[3.75rem] min-[90rem]:whitespace-nowrap`}
+        className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center gap-1 text-[1.75rem] leading-none font-[700] tracking-[-0.025em] text-[#02938c] sm:gap-1.5 sm:text-[2.25rem] min-[56.25rem]:text-[1.75rem] lg:text-[2.25rem] min-[90rem]:text-[2.75rem] min-[90rem]:leading-[3.75rem] min-[90rem]:whitespace-nowrap`}
       >
         <span aria-hidden>{mainValue}</span>
         {hasPlus ? <span aria-hidden>+</span> : null}

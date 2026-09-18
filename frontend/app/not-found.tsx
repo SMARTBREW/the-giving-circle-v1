@@ -9,12 +9,12 @@ export default function NotFound() {
       >
         This page is not in our circle
       </h2>
-      <p className="text-[#000000] mb-8">
+      <p className="text-[var(--Dark-Charcoal,#1c2426)] mb-8">
         We could not find what you were looking for.
       </p>
       <Link
         href="/"
-        className="inline-flex items-center justify-center rounded-[0.5rem] bg-[var(--Main-CTA-button,#00A3BE)] px-8 py-3 text-white"
+        className="inline-flex items-center justify-center rounded-[0.5rem] bg-[var(--Main-CTA-button,#02938c)] px-8 py-3 text-white"
       >
         Back home
       </Link>

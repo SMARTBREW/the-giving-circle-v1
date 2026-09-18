@@ -23,7 +23,7 @@ export default function ChampionVideo({ className }: { className: string }) {
   }
 
   return (
-    <div className={`${className} bg-[#D4C4B0]`}>
+    <div className={`${className} bg-[#EEF2F2]`}>
       {!started ? (
         <Image
           src={CHAMPION_VIDEO_POSTER}
@@ -62,7 +62,7 @@ export default function ChampionVideo({ className }: { className: string }) {
               fill="none"
               aria-hidden="true"
             >
-              <path d="M7 5L15 10L7 15V5Z" fill="#00A3BE" />
+              <path d="M7 5L15 10L7 15V5Z" fill="#0ba5bb" />
             </svg>
           </span>
         </button>

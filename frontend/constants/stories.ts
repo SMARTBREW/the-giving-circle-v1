@@ -40,7 +40,7 @@ export const STORY_ARTICLES = [
   {
     id: "wings-of-hope",
     tag: "Women’s Health",
-    tagClassName: "bg-[#ED3B58]",
+    tagClassName: "bg-[#e62b4f]",
     org: "JWP",
     location: "Multiple States, India",
     title: "Wings of Hope: Breaking Barriers Through Menstrual Health Education",
@@ -70,7 +70,7 @@ export const STORY_ARTICLES = [
   {
     id: "pawsitive-protectors",
     tag: "Animal Welfare",
-    tagClassName: "bg-[var(--Brand-Green-Teal,#00A98F)]",
+    tagClassName: "bg-[var(--Brand-Green-Teal,#02938c)]",
     org: "Animal Care",
     location: "Mumbai, Maharashtra",
     title: "Pawsitive Protectors: Saving Lives One Animal at a Time",
@@ -100,7 +100,7 @@ export const STORY_ARTICLES = [
   {
     id: "community-forest-governance",
     tag: "Forest Rights",
-    tagClassName: "bg-[var(--Brand-Green-Teal,#00A98F)]",
+    tagClassName: "bg-[var(--Brand-Green-Teal,#02938c)]",
     org: "ICFG",
     location: "Jharkhand & Central India",
     title: "Community Forest Governance: Protecting Forests, Empowering People",

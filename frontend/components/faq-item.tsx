@@ -24,7 +24,7 @@ export default function FaqItem({
     <li className="w-full min-[90rem]:w-[52.1875rem]">
       <details
         id={id}
-        className="group w-full rounded-[1rem] border border-[var(--Divider,#D9E1EC)] bg-[#FFFFFF] py-5 shadow-[0px_5px_15px_0px_#00142F0F] sm:py-6 md:py-8"
+        className="group w-full rounded-[1rem] border border-[var(--Divider,#D9E1E2)] bg-[#FFFFFF] py-5 shadow-[0px_5px_15px_0px_#00142F0F] sm:py-6 md:py-8"
         open={open}
         onToggle={(event) => {
           setOpen(event.currentTarget.open);
@@ -32,13 +32,13 @@ export default function FaqItem({
       >
         <summary className="flex w-full cursor-pointer list-none items-start justify-between gap-3 px-4 text-left sm:items-center sm:gap-4 sm:px-6 md:gap-6 md:px-8 min-[90rem]:px-10 [&::-webkit-details-marker]:hidden">
           <h3
-            className={`${SEGOE_UI_CLASS} min-w-0 flex-1 text-[1rem] leading-6 font-[500] tracking-normal text-[var(--Main-headings,#000000)] sm:text-[1.125rem] sm:leading-7 md:text-[1.25rem] md:leading-8`}
+            className={`${SEGOE_UI_CLASS} min-w-0 flex-1 text-[1rem] leading-6 font-[500] tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] sm:leading-7 md:text-[1.25rem] md:leading-8`}
           >
             {question}
           </h3>
           <span
             aria-hidden="true"
-            className="relative mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--Main-CTA-button,#00A3BE)] bg-transparent sm:mt-0"
+            className="relative mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--Main-CTA-button,#02938c)] bg-transparent sm:mt-0"
           >
             <svg
               width="14"
@@ -49,12 +49,12 @@ export default function FaqItem({
             >
               <path
                 d="M2.5 7H11.5M7 2.5V11.5"
-                stroke="var(--Main-CTA-button, #00A3BE)"
+                stroke="var(--Main-CTA-button, #02938c)"
                 strokeWidth="1.5"
                 strokeLinecap="round"
               />
             </svg>
-            <span className="hidden h-0.5 w-3.5 rounded-full bg-[var(--Main-CTA-button,#00A3BE)] group-open:block" />
+            <span className="hidden h-0.5 w-3.5 rounded-full bg-[var(--Main-CTA-button,#02938c)] group-open:block" />
           </span>
         </summary>
         {/* Always in the DOM so crawlers see full answers even when collapsed */}

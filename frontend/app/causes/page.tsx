@@ -22,7 +22,7 @@ export default function CausesPage() {
       <CausesHero />
       <Suspense
         fallback={
-          <section className="w-full bg-gray-100 px-4 py-16 text-center text-[var(--Subheading,#45564B)]">
+          <section className="w-full bg-gray-100 px-4 py-16 text-center text-[var(--Subheading,#4a5558)]">
             Loading causes…
           </section>
         }

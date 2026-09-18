@@ -40,7 +40,7 @@ export default function SplitMediaSection({
             {paragraphs.map((para) => (
               <p
                 key={para.slice(0, 40)}
-                className={`${SEGOE_UI_CLASS} text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7 md:text-left lg:text-[1.125rem] lg:leading-8`}
+                className={`${SEGOE_UI_CLASS} text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 md:text-left lg:text-[1.125rem] lg:leading-8`}
               >
                 {para}
               </p>
@@ -50,7 +50,7 @@ export default function SplitMediaSection({
         {children}
       </div>
 
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] md:w-[42%] md:self-stretch md:aspect-auto lg:w-[44%]">
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] md:w-[42%] md:self-stretch md:aspect-auto lg:w-[44%]">
         <Image
           src={src}
           alt={alt}

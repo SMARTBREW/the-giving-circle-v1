@@ -7,7 +7,7 @@ import CtaButton from "@/components/cta-button";
  */
 export default function MobileStickyCta() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 rounded-t-[1.25rem] border-t border-[#BDBDBD] bg-[#FFFFFF] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 rounded-t-[1.25rem] border-t border-[#d9e1e2] bg-[#FFFFFF] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
       <CtaButton
         href="/champion/apply"
         className="h-12 w-full !rounded-lg sm:h-14"

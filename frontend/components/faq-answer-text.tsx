@@ -66,7 +66,7 @@ function renderWithLinks(
       <Link
         key={`${hit.href}-${hit.start}-${i}`}
         href={hit.href}
-        className="font-[500] text-[var(--Main-CTA-button,#00A3BE)] underline underline-offset-2"
+        className="font-[500] text-[var(--Main-CTA-button,#02938c)] underline underline-offset-2"
       >
         {hit.label}
       </Link>,

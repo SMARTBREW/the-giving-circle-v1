@@ -13,8 +13,8 @@ export default function VolunteerTrust() {
           eyebrow={eyebrow}
           title={title}
           subtitle={subtitle}
-          titleClassName="text-[#1D2D23] min-[90rem]:h-16 min-[90rem]:whitespace-nowrap"
-          subtitleClassName="max-w-[35rem] text-[var(--Paragraph,#5F6D64)] min-[90rem]:max-w-[35rem]"
+          titleClassName="text-[#1C2426] min-[90rem]:h-16 min-[90rem]:whitespace-nowrap"
+          subtitleClassName="max-w-[35rem] text-[var(--Paragraph,#4a5558)] min-[90rem]:max-w-[35rem]"
         />
 
         <ul className="mt-10 grid w-full max-w-[77.5rem] grid-cols-1 gap-10 sm:mt-12 sm:gap-12 min-[56.25rem]:mt-14 min-[56.25rem]:grid-cols-3 min-[56.25rem]:gap-6 lg:gap-8 min-[90rem]:mt-16 min-[90rem]:gap-10">
@@ -34,13 +34,13 @@ export default function VolunteerTrust() {
               </span>
 
               <h3
-                className={`${SEGOE_UI_CLASS} mt-5 text-[1.25rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#000000)] sm:mt-6 sm:text-[1.375rem] min-[90rem]:mt-6 min-[90rem]:text-[1.5rem] min-[90rem]:leading-7`}
+                className={`${SEGOE_UI_CLASS} mt-5 text-[1.25rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-6 sm:text-[1.375rem] min-[90rem]:mt-6 min-[90rem]:text-[1.5rem] min-[90rem]:leading-7`}
               >
                 {feature.title}
               </h3>
 
               <p
-                className={`${SEGOE_UI_CLASS} mt-3 max-w-[21.4375rem] text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#52525B] sm:mt-4 sm:text-[1rem] sm:leading-[1.625rem]`}
+                className={`${SEGOE_UI_CLASS} mt-3 max-w-[21.4375rem] text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#4A5558] sm:mt-4 sm:text-[1rem] sm:leading-[1.625rem]`}
               >
                 {feature.body}
               </p>

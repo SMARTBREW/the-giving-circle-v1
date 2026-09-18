@@ -76,7 +76,7 @@ export const LIVE_CAUSES = [
   {
     id: "wings-of-hope",
     category: "Women’s Health",
-    categoryClassName: "text-[var(--Brand-Coral,#ED3B58)]",
+    categoryClassName: "text-[var(--Brand-Coral,#e62b4f)]",
     title: "Wings of Hope: Menstrual Health So Girls Stay in School",
     titleLines: ["Wings of Hope: Menstrual Health", "So Girls Stay in School"] as const,
     org: "JWP",
@@ -136,7 +136,7 @@ export const LIVE_CAUSES = [
   {
     id: "pehli-class",
     category: "Education",
-    categoryClassName: "text-[var(--Brand-Deep-Blue,#3976A8)]",
+    categoryClassName: "text-[var(--Brand-Deep-Blue,#0b619a)]",
     title: "PehliClass: Into Formal School, On Time",
     titleLines: null as null | readonly [string, string],
     org: "JWP",
@@ -201,7 +201,7 @@ export const LIVE_CAUSES = [
   {
     id: "community-forest-governance",
     category: "Forest Rights",
-    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Community Forest Governance: Protecting Forests, Empowering People",
     titleLines: [
       "Community Forest Governance:",
@@ -264,7 +264,7 @@ export const LIVE_CAUSES = [
   {
     id: "pawsitive-protectors",
     category: "Animal Welfare",
-    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Pawsitive Protectors",
     titleLines: null,
     org: "Animal Care",
@@ -319,7 +319,7 @@ export const LIVE_CAUSES = [
   {
     id: "bowls-of-hope",
     category: "Animal Welfare",
-    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Bowls of Hope",
     titleLines: null,
     org: "Animal Care",
@@ -369,7 +369,7 @@ export const LIVE_CAUSES = [
   {
     id: "brick-by-brick",
     category: "Animal Welfare",
-    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Brick by Brick: Building Them a Home",
     titleLines: ["Brick by Brick:", "Building Them a Home"] as const,
     org: "Animal Care",
@@ -419,7 +419,7 @@ export const LIVE_CAUSES = [
   {
     id: "flood-animal-rescue",
     category: "Animal Welfare",
-    categoryClassName: "text-[var(--Brand-Green-Teal,#00A98F)]",
+    categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Emergency Animal Rescue",
     titleLines: null,
     org: "Animal Care",

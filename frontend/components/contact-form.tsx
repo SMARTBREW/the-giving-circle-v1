@@ -94,8 +94,8 @@ export default function ContactForm() {
           aria-describedby={errors.name ? "name-error" : undefined}
           {...register("name")}
           className={`mt-1 block w-full rounded-[0.5rem] border ${
-            errors.name ? "border-red-500" : "border-[#BDBDBD]"
-          } bg-[#FFFFFF] px-3 py-2 text-[#000000]`}
+            errors.name ? "border-red-500" : "border-[#d9e1e2]"
+          } bg-[#FFFFFF] px-3 py-2 text-[var(--Dark-Charcoal,#1c2426)]`}
         />
         {errors.name && (
           <p id="name-error" className="mt-1 text-sm text-red-600">
@@ -120,8 +120,8 @@ export default function ContactForm() {
           aria-describedby={errors.email ? "email-error" : undefined}
           {...register("email")}
           className={`mt-1 block w-full rounded-[0.5rem] border ${
-            errors.email ? "border-red-500" : "border-[#BDBDBD]"
-          } bg-[#FFFFFF] px-3 py-2 text-[#000000]`}
+            errors.email ? "border-red-500" : "border-[#d9e1e2]"
+          } bg-[#FFFFFF] px-3 py-2 text-[var(--Dark-Charcoal,#1c2426)]`}
         />
         {errors.email && (
           <p id="email-error" className="mt-1 text-sm text-red-600">
@@ -146,8 +146,8 @@ export default function ContactForm() {
           aria-describedby={errors.phone ? "phone-error" : undefined}
           {...register("phone")}
           className={`mt-1 block w-full rounded-[0.5rem] border ${
-            errors.phone ? "border-red-500" : "border-[#BDBDBD]"
-          } bg-[#FFFFFF] px-3 py-2 text-[#000000]`}
+            errors.phone ? "border-red-500" : "border-[#d9e1e2]"
+          } bg-[#FFFFFF] px-3 py-2 text-[var(--Dark-Charcoal,#1c2426)]`}
         />
         {errors.phone && (
           <p id="phone-error" className="mt-1 text-sm text-red-600">
@@ -172,8 +172,8 @@ export default function ContactForm() {
           aria-describedby={errors.message ? "message-error" : undefined}
           {...register("message")}
           className={`mt-1 block w-full rounded-[0.5rem] border ${
-            errors.message ? "border-red-500" : "border-[#BDBDBD]"
-          } bg-[#FFFFFF] px-3 py-2 text-[#000000]`}
+            errors.message ? "border-red-500" : "border-[#d9e1e2]"
+          } bg-[#FFFFFF] px-3 py-2 text-[var(--Dark-Charcoal,#1c2426)]`}
         />
         {errors.message && (
           <p id="message-error" className="mt-1 text-sm text-red-600">
@@ -216,8 +216,8 @@ export default function ContactForm() {
         disabled={isSubmitting}
         className={`w-full rounded-[0.5rem] px-8 py-3 font-[500] ${
           isSubmitting
-            ? "bg-[#BDBDBD] text-[#000000] cursor-not-allowed"
-            : "bg-[var(--Main-CTA-button,#00A3BE)] text-white"
+            ? "bg-[#d9e1e2] text-[var(--Dark-Charcoal,#1c2426)] cursor-not-allowed"
+            : "bg-[var(--Main-CTA-button,#02938c)] text-white"
         }`}
       >
         {isSubmitting ? "Submitting..." : "Submit"}

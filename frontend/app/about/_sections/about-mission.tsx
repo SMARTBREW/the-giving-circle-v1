@@ -15,7 +15,7 @@ export default function AboutMission() {
           title={ABOUT_MISSION.title}
         />
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-5 sm:text-[1rem] sm:leading-7 md:text-left lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
+          className={`${SEGOE_UI_CLASS} mt-4 text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-5 sm:text-[1rem] sm:leading-7 md:text-left lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
         >
           {ABOUT_MISSION.body}
         </p>
@@ -33,7 +33,7 @@ export default function AboutMission() {
           title={ABOUT_VISION.title}
         />
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#45564B)] sm:mt-5 sm:text-[1rem] sm:leading-7 md:text-left lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
+          className={`${SEGOE_UI_CLASS} mt-4 text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-5 sm:text-[1rem] sm:leading-7 md:text-left lg:mt-6 lg:text-[1.125rem] lg:leading-8`}
         >
           {ABOUT_VISION.body}
         </p>

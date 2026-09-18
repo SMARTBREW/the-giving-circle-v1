@@ -25,7 +25,7 @@ function BackChevron() {
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
       <path
         d="M12.5 4.5 7 10l5.5 5.5"
-        stroke="#212121"
+        stroke="#4a5558"
         strokeWidth="1.75"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -64,16 +64,16 @@ export function ApplyHorizontalStepper({
                   aria-hidden
                   className={`absolute top-1/2 left-[calc(50%+1.125rem)] right-[calc(-50%+1.125rem)] h-0.5 -translate-y-1/2 ${
                     isComplete || isActive
-                      ? "bg-[var(--Main-CTA-button,#00A3BE)]"
-                      : "bg-[#D0D5DD]"
+                      ? "bg-[var(--Main-CTA-button,#02938c)]"
+                      : "bg-[#d9e1e2]"
                   }`}
                 />
               ) : null}
               <span
                 className={`relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[0.8125rem] leading-none font-[700] ${SEGOE_UI_CLASS} ${
                   isComplete || isActive
-                    ? "bg-[var(--Main-CTA-button,#00A3BE)] text-[#FFFFFF]"
-                    : "border border-[#D0D5DD] bg-[#FFFFFF] text-[#98A2B3]"
+                    ? "bg-[var(--Main-CTA-button,#02938c)] text-[#FFFFFF]"
+                    : "border border-[#d9e1e2] bg-[#FFFFFF] text-[#4A5558]"
                 }`}
               >
                 {isComplete ? (
@@ -86,8 +86,8 @@ export function ApplyHorizontalStepper({
             <p
               className={`${SEGOE_UI_CLASS} mt-2 whitespace-nowrap text-center text-[0.625rem] leading-none font-[600] sm:text-[0.6875rem] ${
                 labelActive
-                  ? "text-[var(--Main-CTA-button,#00A3BE)]"
-                  : "text-[#98A2B3]"
+                  ? "text-[var(--Main-CTA-button,#02938c)]"
+                  : "text-[#4A5558]"
               }`}
             >
               {step.title}
@@ -121,12 +121,12 @@ export default function ApplyFormMobileChrome({
           <Link
             href={backHref}
             aria-label="Go back"
-            className="absolute top-1/2 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg hover:bg-[#F5F5F5]"
+            className="absolute top-1/2 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg hover:bg-[#eef2f2]"
           >
             <BackChevron />
           </Link>
           <h1
-            className={`${SEGOE_UI_CLASS} max-w-[14rem] truncate text-center text-[1rem] leading-6 font-[700] text-[#212121] sm:max-w-[18rem] sm:text-[1.0625rem]`}
+            className={`${SEGOE_UI_CLASS} max-w-[14rem] truncate text-center text-[1rem] leading-6 font-[700] text-[#4a5558] sm:max-w-[18rem] sm:text-[1.0625rem]`}
           >
             {title}
           </h1>
@@ -140,7 +140,7 @@ export default function ApplyFormMobileChrome({
         {children}
       </div>
 
-      <footer className="shrink-0 border-t border-[#E8E8E8] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-5 sm:pt-4">
+      <footer className="shrink-0 border-t border-[#D9E1E2] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-5 sm:pt-4">
         {footer}
       </footer>
     </div>

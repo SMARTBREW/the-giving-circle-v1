@@ -64,12 +64,12 @@ export default function CtaButton({
       onClick={handleClick}
       className={`inline-flex items-center justify-center rounded-[6.25rem] text-[0.8125rem] sm:text-[0.875rem] min-[90rem]:text-[1.125rem] ${
         hoverFill
-          ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1),color_400ms_cubic-bezier(0.22,1,0.36,1),border-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-[#228B22] hover:text-[#FFFFFF]"
+          ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1),color_400ms_cubic-bezier(0.22,1,0.36,1),border-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--Circle-Green,#02938c)] hover:text-[#FFFFFF]"
           : ""
       } ${
         isOutline
-          ? "border border-solid border-[#228B22] bg-[#FFFFFF] text-[#228B22]"
-          : "border border-transparent bg-[#228B22] text-[#FFFFFF]"
+          ? "border border-solid border-[var(--Circle-Green,#02938c)] bg-[#FFFFFF] text-[var(--Circle-Green,#02938c)]"
+          : "border border-transparent bg-[var(--Circle-Green,#02938c)] text-[#FFFFFF]"
       } ${className}`}
     >
       <span

@@ -27,7 +27,7 @@ export default function CauseDetailSections({
               key={para.slice(0, 48)}
               className={`${SEGOE_UI_CLASS} ${
                 index === 0 ? "mt-0" : "mt-4"
-              } text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
+              } text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
             >
               {para}
             </p>
@@ -49,12 +49,12 @@ export default function CauseDetailSections({
                     {index + 1}
                   </span>
                   <h3
-                    className={`${SEGOE_UI_CLASS} relative z-10 mt-5 text-[1.125rem] font-[700] leading-7 text-[var(--Main-headings,#000000)] sm:text-[1.25rem]`}
+                    className={`${SEGOE_UI_CLASS} relative z-10 mt-5 text-[1.125rem] font-[700] leading-7 text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem]`}
                   >
                     {step.title}
                   </h3>
                   <p
-                    className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7`}
+                    className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
                   >
                     {step.body}
                   </p>
@@ -96,7 +96,7 @@ export default function CauseDetailSections({
                       </svg>
                     </span>
                     <p
-                      className={`${SEGOE_UI_CLASS} relative z-10 text-[0.9375rem] leading-6 font-[400] text-[var(--Main-headings,#000000)] sm:text-[1rem] sm:leading-7`}
+                      className={`${SEGOE_UI_CLASS} relative z-10 text-[0.9375rem] leading-6 font-[400] text-[var(--Main-headings,#1c2426)] sm:text-[1rem] sm:leading-7`}
                     >
                       {item}
                     </p>
@@ -126,18 +126,18 @@ export default function CauseDetailSections({
                   className={`flex h-full flex-col rounded-[1rem] border-2 bg-[#FFFFFF] p-6 sm:p-7 ${accent.ring}`}
                 >
                   <p
-                    className={`${SEGOE_UI_CLASS} flex-1 text-[1rem] leading-7 font-[400] text-[var(--Main-headings,#000000)] sm:text-[1.0625rem] sm:leading-8`}
+                    className={`${SEGOE_UI_CLASS} flex-1 text-[1rem] leading-7 font-[400] text-[var(--Main-headings,#1c2426)] sm:text-[1.0625rem] sm:leading-8`}
                   >
                     “{item.text}”
                   </p>
-                  <footer className="mt-6 border-t border-[#E8E8E8] pt-5">
+                  <footer className="mt-6 border-t border-[#D9E1E2] pt-5">
                     <p
-                      className={`${SEGOE_UI_CLASS} text-[1rem] font-[700] text-[var(--Main-headings,#000000)]`}
+                      className={`${SEGOE_UI_CLASS} text-[1rem] font-[700] text-[var(--Main-headings,#1c2426)]`}
                     >
                       {item.author}
                     </p>
                     <p
-                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.875rem] font-[400] text-[var(--Paragraph,#5F6D64)]`}
+                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.875rem] font-[400] text-[var(--Paragraph,#4a5558)]`}
                     >
                       {item.role}
                     </p>
@@ -160,12 +160,12 @@ export default function CauseDetailSections({
             title={`About ${detail.partner.name}`}
           />
           <p
-            className={`${SEGOE_UI_CLASS} mt-6 text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#45564B)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
+            className={`${SEGOE_UI_CLASS} mt-6 text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
           >
             {detail.partner.blurb}
           </p>
           <p
-            className={`${SEGOE_UI_CLASS} mt-4 text-[0.875rem] leading-6 font-[400] text-[var(--Paragraph,#5F6D64)] sm:text-[0.9375rem]`}
+            className={`${SEGOE_UI_CLASS} mt-4 text-[0.875rem] leading-6 font-[400] text-[var(--Paragraph,#4a5558)] sm:text-[0.9375rem]`}
           >
             {detail.partner.note}
           </p>
@@ -185,7 +185,7 @@ export default function CauseDetailSections({
                   {stat.value}
                 </p>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-5 text-[var(--Paragraph,#5F6D64)]`}
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-5 text-[var(--Paragraph,#4a5558)]`}
                 >
                   {stat.label}
                 </p>

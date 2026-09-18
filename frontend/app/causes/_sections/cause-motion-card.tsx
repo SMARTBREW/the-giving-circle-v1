@@ -45,7 +45,7 @@ export default function CauseMotionCard({
           damping: 24,
           mass: 0.85,
         }}
-        className={`relative flex h-full w-full flex-col overflow-hidden isolate rounded-[1rem] border border-[#BDBDBD] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 ${accent.hoverBorder} ${className}`}
+        className={`relative flex h-full w-full flex-col overflow-hidden isolate rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 ${accent.hoverBorder} ${className}`}
       >
         {showBar ? (
           <span

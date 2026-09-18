@@ -97,7 +97,7 @@ export {
 export type { CampaignCardData as ChampionCampaignCard } from "./causes";
 export const SEGOE_UI_CLASS = "font-segoe";
 
-export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-[500] text-[0.8125rem] text-[#000000] min-[90rem]:text-[1.125rem]`;
+export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-[500] text-[0.8125rem] text-[var(--Dark-Charcoal,#1c2426)] min-[90rem]:text-[1.125rem]`;
 
 export const SITE = {
   name: "The Giving Circle",
@@ -122,16 +122,16 @@ export const GET_INVOLVED_LINKS = [
   { href: "/volunteer", label: "Volunteer With Us" },
 ] as const;
 
-export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[#000000]`;
+export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[var(--Dark-Charcoal,#1c2426)]`;
 
 export const FOOTER_BLURB =
   "A trusted social impact platform connecting people with verified NGOs, meaningful causes, and ways to get involved across India.";
 
-export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} text-[1.125rem] leading-7 font-[500] tracking-normal uppercase text-[var(--Main-headings,#000000)] sm:text-[1.25rem] sm:leading-[1.75rem]`;
+export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} text-[1.125rem] leading-7 font-[500] tracking-normal uppercase text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem] sm:leading-[1.75rem]`;
 
-export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} break-words text-[1rem] leading-7 font-[400] tracking-normal text-[#212121]`;
+export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} break-words text-[1rem] leading-7 font-[400] tracking-normal text-[#4a5558]`;
 
-export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#212121] sm:text-[1rem] sm:leading-7`;
+export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#4a5558] sm:text-[1rem] sm:leading-7`;
 
 export const FOOTER_QUICK_LINKS = [
   { href: "/about", label: "About Us" },

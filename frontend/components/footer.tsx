@@ -25,23 +25,23 @@ function SocialIcon({
       aria-hidden="true"
       className={`h-full w-full ${className}`}
     >
-      <circle cx="20" cy="20" r="19.5" fill="#FFFFFF" stroke="#E0E0E0" />
+      <circle cx="20" cy="20" r="19.5" fill="#FFFFFF" stroke="#D9E1E2" />
       {label === "Facebook" ? (
         <path
-          fill="#000000"
+          fill="#1c2426"
           d="M22.4 20.9h2.9l.45-3.2h-3.35v-1.72c0-.93.26-1.56 1.58-1.56h1.88V11.1A21.8 21.8 0 0 0 21.93 10.95c-2.58 0-4.35 1.57-4.35 4.47v2.2H14.7v3.2h2.88V29h3.62v-8.1Z"
         />
       ) : null}
       {label === "LinkedIn" ? (
         <path
-          fill="#000000"
+          fill="#1c2426"
           d="M15.2 16.2H12v11.6h3.2V16.2ZM13.58 10.6c-1.02 0-1.85.83-1.85 1.86s.83 1.85 1.85 1.85 1.86-.82 1.86-1.85c0-1.03-.83-1.86-1.86-1.86ZM28.2 21.55c0-3.44-1.84-5.04-4.3-5.04-1.98 0-2.86 1.1-3.36 1.86v-1.17h-3.14c.04.71 0 11.7 0 11.7h3.14v-6.52c0-.35.02-.69.13-.94.28-.69.94-1.4 2.05-1.4 1.45 0 2.03 1.1 2.03 2.72v6.14H28.2v-6.35Z"
         />
       ) : null}
       {label === "YouTube" ? (
         <>
           <path
-            fill="#000000"
+            fill="#1c2426"
             d="M28.9 16.06c.26 1.02.38 3.16.38 3.16s0 2.14-.38 3.16a2.44 2.44 0 0 1-1.72 1.72c-1.52.4-6.8.4-6.8.4s-5.28 0-6.8-.4a2.44 2.44 0 0 1-1.72-1.72C11.6 21.36 11.48 19.22 11.48 19.22s.12-2.14.38-3.16a2.44 2.44 0 0 1 1.72-1.72c1.52-.4 6.8-.4 6.8-.4s5.28 0 6.8.4a2.44 2.44 0 0 1 1.72 1.72Z"
           />
           <path fill="#FFFFFF" d="M17.9 16.4v5.64l4.88-2.82L17.9 16.4Z" />
@@ -56,7 +56,7 @@ function SocialIcon({
             height="16.8"
             rx="4.7"
             fill="none"
-            stroke="#000000"
+            stroke="#1c2426"
             strokeWidth="1.7"
           />
           <circle
@@ -64,10 +64,10 @@ function SocialIcon({
             cy="20"
             r="4.05"
             fill="none"
-            stroke="#000000"
+            stroke="#1c2426"
             strokeWidth="1.7"
           />
-          <circle cx="25.35" cy="14.7" r="1.2" fill="#000000" />
+          <circle cx="25.35" cy="14.7" r="1.2" fill="#1c2426" />
         </>
       ) : null}
     </svg>
@@ -80,7 +80,7 @@ function ContactIcon({ type }: { type: string }) {
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03Z"
-          stroke="#000000"
+          stroke="#1c2426"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -92,8 +92,8 @@ function ContactIcon({ type }: { type: string }) {
   if (type === "email") {
     return (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" stroke="#000000" strokeWidth="1.5" />
-        <path d="m4 7 8 6 8-6" stroke="#000000" strokeWidth="1.5" strokeLinejoin="round" />
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="#1c2426" strokeWidth="1.5" />
+        <path d="m4 7 8 6 8-6" stroke="#1c2426" strokeWidth="1.5" strokeLinejoin="round" />
       </svg>
     );
   }
@@ -102,11 +102,11 @@ function ContactIcon({ type }: { type: string }) {
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"
-        stroke="#000000"
+        stroke="#1c2426"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <circle cx="12" cy="10" r="2.2" stroke="#000000" strokeWidth="1.5" />
+      <circle cx="12" cy="10" r="2.2" stroke="#1c2426" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -138,7 +138,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="w-full min-w-0 bg-[#F5F5F5] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0"
+      className="w-full min-w-0 bg-[#FFFFFF] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0"
     >
       <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-10 pb-6 sm:px-8 sm:pt-12 sm:pb-8 md:px-10 md:pt-14 md:pb-10 lg:px-14 lg:pt-16 lg:pb-12 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
         <div className="grid w-full min-w-0 grid-cols-1 items-start gap-9 sm:gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-10 lg:gap-x-10 lg:gap-y-10 min-[90rem]:grid-cols-4 min-[90rem]:gap-x-8 min-[90rem]:gap-y-0">
@@ -204,7 +204,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-[#E0E0E0] pt-6 sm:mt-14 sm:gap-5 sm:pt-7 lg:mt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pt-8 min-[90rem]:mt-auto min-[90rem]:pb-8">
+        <div className="mt-12 flex flex-col gap-4 border-t border-[#D9E1E2] pt-6 sm:mt-14 sm:gap-5 sm:pt-7 lg:mt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pt-8 min-[90rem]:mt-auto min-[90rem]:pb-8">
           <ul className="flex flex-col gap-2.5 sm:gap-3 lg:order-2 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-8 lg:gap-y-2">
             {FOOTER_LEGAL_LINKS.map((link) => (
               <li key={link.label}>

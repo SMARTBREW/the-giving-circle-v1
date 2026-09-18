@@ -46,13 +46,13 @@ export default function VolunteerHowItWorks() {
                 </div>
 
                 <h3
-                  className={`${SEGOE_UI_CLASS} mt-5 w-full text-center text-[1.125rem] font-[700] leading-8 tracking-normal text-[var(--Main-headings,#000000)] sm:mt-6 sm:text-[1.25rem] min-[56.25rem]:text-[1.125rem] lg:text-[1.25rem] min-[90rem]:mt-6 min-[90rem]:h-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap`}
+                  className={`${SEGOE_UI_CLASS} mt-5 w-full text-center text-[1.125rem] font-[700] leading-8 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-6 sm:text-[1.25rem] min-[56.25rem]:text-[1.125rem] lg:text-[1.25rem] min-[90rem]:mt-6 min-[90rem]:h-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap`}
                 >
                   {step.title}
                 </h3>
 
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20rem] text-center text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#000000] sm:mt-4 sm:text-[1rem] sm:leading-7 min-[56.25rem]:max-w-[16rem] min-[56.25rem]:text-[0.875rem] min-[56.25rem]:leading-5 lg:max-w-[18rem] lg:text-[1rem] lg:leading-7 min-[90rem]:mt-4 min-[90rem]:h-[5.25rem] min-[90rem]:w-[20rem] min-[90rem]:max-w-[20rem] min-[90rem]:text-[1.125rem] min-[90rem]:leading-7`}
+                  className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20rem] text-center text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Dark-Charcoal,#1c2426)] sm:mt-4 sm:text-[1rem] sm:leading-7 min-[56.25rem]:max-w-[16rem] min-[56.25rem]:text-[0.875rem] min-[56.25rem]:leading-5 lg:max-w-[18rem] lg:text-[1rem] lg:leading-7 min-[90rem]:mt-4 min-[90rem]:h-[5.25rem] min-[90rem]:w-[20rem] min-[90rem]:max-w-[20rem] min-[90rem]:text-[1.125rem] min-[90rem]:leading-7`}
                 >
                   {step.body}
                 </p>
@@ -60,7 +60,7 @@ export default function VolunteerHowItWorks() {
                 {!isLast ? (
                   <span
                     aria-hidden
-                    className="my-6 h-10 w-0 border-l-2 border-dashed border-[#C5C9D6] min-[56.25rem]:hidden"
+                    className="my-6 h-10 w-0 border-l-2 border-dashed border-[#D9E1E2] min-[56.25rem]:hidden"
                   />
                 ) : null}
               </li>

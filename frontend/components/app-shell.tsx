@@ -9,7 +9,7 @@ import MobileStickyCta from "@/components/mobile-sticky-cta";
 
 /** Matches floating inset header card + top offset */
 const HEADER_OFFSET =
-  "pt-[5.5rem] sm:pt-[6.25rem] md:pt-[6.75rem] lg:pt-[7rem] min-[90rem]:pt-[7.25rem]";
+  "pt-[5.5rem] sm:pt-[6.25rem] md:pt-[6.75rem] lg:pt-[7rem] min-[90rem]:pt-[8.75rem]";
 
 export default function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -49,7 +49,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
         className={`relative z-0 ${
           isFormShell
             ? "fixed inset-0 flex min-h-0 min-w-0 flex-col overflow-hidden"
-            : `overflow-x-hidden bg-[#F5F5F5] ${HEADER_OFFSET} pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0`
+            : `overflow-x-clip bg-[#F5F5F5] ${HEADER_OFFSET} pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0`
         }`}
       >
         {children}

@@ -5,16 +5,53 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --header-border: #bdbdbd;
-  --Main-CTA-button: #228b22;
-  --Main-headings: #000000;
-  --Secondary-outlined-button: #228b22;
-  --Eyebrow-label: #00a98f;
-  --Subheading: #45564b;
-  --Neutral-Black: #000000;
-  --Paragraph: #5f6d64;
+  /* Brand Colours (Web) — from TGC color guide */
+  --Giving-Blue: #0b619a;
+  --Giving-Teal: #0ba5bb;
+  --Circle-Green: #02938c;
+  --Giving-Red: #e62b4f;
+  --Warm-Coral: #f05961;
+
+  /* Neutrals (Web) */
+  --White: #ffffff;
+  --Off-White: #f7f9f9;
+  --Soft-Grey: #eef2f2;
+  --Border-Grey: #d9e1e2;
+  --Body-Grey: #4a5558;
+  --Dark-Charcoal: #1c2426;
+
+  /* Tints (Web) */
+  --Blue-Tint: #eaf4f8;
+  --Teal-Tint: #e8f7f8;
+  --Green-Tint: #e8f5f3;
+  --Coral-Tint: #fef0f1;
+
+  /* Gradient (Web): Blue → Teal → Green → Red */
+  --Brand-Gradient: linear-gradient(
+    90deg,
+    var(--Giving-Blue) 0%,
+    var(--Giving-Teal) 33%,
+    var(--Circle-Green) 66%,
+    var(--Giving-Red) 100%
+  );
+
+  /* Semantic aliases used across the site */
+  --background: var(--White);
+  --foreground: var(--Dark-Charcoal);
+  --header-border: var(--Border-Grey);
+  --Main-CTA-button: var(--Circle-Green);
+  --Main-headings: var(--Dark-Charcoal);
+  --Secondary-outlined-button: var(--Circle-Green);
+  --Eyebrow-label: var(--Circle-Green);
+  --Subheading: var(--Body-Grey);
+  --Neutral-Black: var(--Dark-Charcoal);
+  --Paragraph: var(--Body-Grey);
+  --Brand-Green-Teal: var(--Circle-Green);
+  --Brand-Coral: var(--Giving-Red);
+  --Brand-Deep-Blue: var(--Giving-Blue);
+  --Brand-Teal: var(--Giving-Teal);
+  --Alternate-color: #f5f5f5;
+  --brand-selected: var(--Green-Tint);
 }
 
 html {
@@ -41,28 +78,28 @@ body {
 .champion-apply-field,
 .champion-apply-field:focus,
 .champion-apply-field:focus-visible {
-  border-color: #bdbdbd;
+  border-color: #d9e1e2;
   outline: none;
   box-shadow: none;
-  background-color: #f8f8f8;
+  background-color: #eef2f2;
   color-scheme: light;
 }
 
 select.champion-apply-field {
-  background-color: #f8f8f8;
+  background-color: #eef2f2;
 }
 
 .champion-apply-field.apply-field-mobile,
 .champion-apply-field.apply-field-mobile:focus,
 .champion-apply-field.apply-field-mobile:focus-visible {
-  border-color: #d0d5dd;
+  border-color: #D9E1E2;
   background-color: #ffffff;
   border-radius: 0.75rem;
 }
 
 .champion-apply-field.apply-field-mobile:focus,
 .champion-apply-field.apply-field-mobile:focus-visible {
-  border-color: var(--Main-CTA-button, #00a3be);
+  border-color: var(--Main-CTA-button, #02938c);
 }
 
 select.champion-apply-field.apply-field-mobile {
@@ -81,11 +118,11 @@ select.champion-apply-field.apply-field-mobile {
 .champion-apply-field:-webkit-autofill:hover,
 .champion-apply-field:-webkit-autofill:focus,
 .champion-apply-field:-webkit-autofill:active {
-  -webkit-text-fill-color: #212121;
-  -webkit-box-shadow: 0 0 0 1000px #f8f8f8 inset;
-  box-shadow: 0 0 0 1000px #f8f8f8 inset;
+  -webkit-text-fill-color: #4a5558;
+  -webkit-box-shadow: 0 0 0 1000px #eef2f2 inset;
+  box-shadow: 0 0 0 1000px #eef2f2 inset;
   transition: background-color 99999s ease-in-out 0s;
-  caret-color: #212121;
+  caret-color: #4a5558;
 }
 
 /* Champion apply — phone field (react-phone-number-input) */
@@ -94,8 +131,8 @@ select.champion-apply-field.apply-field-mobile {
   height: 3.5rem;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #bdbdbd;
-  background: #f8f8f8;
+  border: 1px solid #d9e1e2;
+  background: #eef2f2;
   padding-left: 0.75rem;
   padding-right: 1rem;
   box-shadow: none;
@@ -105,7 +142,7 @@ select.champion-apply-field.apply-field-mobile {
   margin-top: 0;
   height: 3rem;
   border-radius: 0.75rem;
-  border-color: #d0d5dd;
+  border-color: #D9E1E2;
   background: #ffffff;
 }
 
@@ -120,12 +157,12 @@ select.champion-apply-field.apply-field-mobile {
 }
 
 .champion-phone-input.PhoneInput:focus-within {
-  border-color: #bdbdbd;
+  border-color: #d9e1e2;
   box-shadow: none;
 }
 
 .champion-phone-input.champion-phone-input-mobile.PhoneInput:focus-within {
-  border-color: var(--Main-CTA-button, #00a3be);
+  border-color: var(--Main-CTA-button, #02938c);
 }
 
 .champion-phone-input .PhoneInputCountry {
@@ -134,7 +171,7 @@ select.champion-apply-field.apply-field-mobile {
   display: flex;
   align-items: center;
   padding-right: 0.5rem;
-  border-right: 1px solid #bdbdbd;
+  border-right: 1px solid #d9e1e2;
 }
 
 .champion-phone-input .PhoneInputCountryIcon {
@@ -150,7 +187,7 @@ select.champion-apply-field.apply-field-mobile {
 
 .champion-phone-input .PhoneInputCountrySelectArrow {
   opacity: 0.55;
-  border-color: #667085;
+  border-color: #4A5558;
   margin-left: 0.35rem;
 }
 
@@ -161,7 +198,7 @@ select.champion-apply-field.apply-field-mobile {
   outline: none;
   box-shadow: none;
   font-size: 1rem;
-  color: #212121;
+  color: #4a5558;
 }
 
 .champion-phone-input .PhoneInputInput:focus {
@@ -170,15 +207,15 @@ select.champion-apply-field.apply-field-mobile {
 }
 
 .champion-phone-input .PhoneInputInput::placeholder {
-  color: #98a2b3;
+  color: #4A5558;
 }
 
 .champion-phone-input .PhoneInputInput:-webkit-autofill,
 .champion-phone-input .PhoneInputInput:-webkit-autofill:hover,
 .champion-phone-input .PhoneInputInput:-webkit-autofill:focus {
-  -webkit-text-fill-color: #212121;
-  -webkit-box-shadow: 0 0 0 1000px #f8f8f8 inset;
-  box-shadow: 0 0 0 1000px #f8f8f8 inset;
+  -webkit-text-fill-color: #4a5558;
+  -webkit-box-shadow: 0 0 0 1000px #eef2f2 inset;
+  box-shadow: 0 0 0 1000px #eef2f2 inset;
   transition: background-color 99999s ease-in-out 0s;
 }
 

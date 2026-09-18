@@ -61,7 +61,7 @@ export default function LiveCausesGrid() {
       </ul>
 
       {visible.length === 0 ? (
-        <p className="mt-10 text-center text-[1rem] text-[var(--Subheading,#45564B)]">
+        <p className="mt-10 text-center text-[1rem] text-[var(--Subheading,#4a5558)]">
           No live causes in this category right now. Try another filter.
         </p>
       ) : null}

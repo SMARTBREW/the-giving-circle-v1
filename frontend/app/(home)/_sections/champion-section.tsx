@@ -56,7 +56,7 @@ export default function ChampionSection() {
           </div>
         </div>
 
-        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-[#BDBDBD] sm:mt-6 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(48%,26rem)] md:shrink-0 lg:w-[min(44%,30rem)] min-[90rem]:h-[37.0625rem] min-[90rem]:w-[37.0625rem] min-[90rem]:aspect-auto" />
+        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] sm:mt-6 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(48%,26rem)] md:shrink-0 lg:w-[min(44%,30rem)] min-[90rem]:h-[37.0625rem] min-[90rem]:w-[37.0625rem] min-[90rem]:aspect-auto" />
       </FadeInSection>
     </section>
   );

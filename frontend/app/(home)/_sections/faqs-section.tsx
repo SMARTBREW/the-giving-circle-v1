@@ -29,7 +29,7 @@ export default function FaqsSection({
           eyebrow={eyebrow}
           title={title}
           subtitle={subtitle}
-          subtitleClassName="text-[var(--Body-text,#000000B2)]"
+          subtitleClassName="text-[var(--Body-text,#4a5558b2)]"
         />
         <div className="mt-10 w-full sm:mt-10 lg:mt-12">
           <FaqsAccordion items={items} />
