@@ -62,13 +62,13 @@ export const CAUSE_CATEGORY_CARDS = [
   },
   {
     label: "Women’s Health",
-    src: "/images/causes/Copy-of-IMG_5028.jpeg",
-    alt: "Women and girls gathered with Wings of Hope menstrual health kits",
+    src: "/images/causes/womens-health.jpg",
+    alt: "Schoolgirls smiling in class holding handmade pouches",
   },
   {
     label: "Forest Rights",
-    src: "/images/causes/DSC06535-1.webp",
-    alt: "Community members under a large tree in a forest landscape",
+    src: "/images/causes/forest-rights.jpg",
+    alt: "A young woman carrying woven baskets through a forest",
   },
 ] as const;
 
@@ -86,8 +86,8 @@ export const LIVE_CAUSES = [
     percent: 74,
     supporters: "234 Supporters",
     daysLeft: "22 Days Left",
-    src: "/images/causes/Copy-of-IMG_5028.jpeg",
-    alt: "Women and girls gathered with Wings of Hope menstrual hygiene kits",
+    src: "/images/causes/womens-health.jpg",
+    alt: "Schoolgirls smiling in class holding handmade pouches",
     summary:
       "Every month, thousands of girls miss school when periods begin. Wings of Hope funds menstrual health education and reusable hygiene kits so girls stay in class with dignity.",
     trustBadges: ["Tax Benefits · 80G", "Verified NGO Partner", "15+ Years Active"],
@@ -214,8 +214,8 @@ export const LIVE_CAUSES = [
     percent: 72,
     supporters: "284 Supporters",
     daysLeft: "16 Days Left",
-    src: "/images/causes/DSC06535-1.webp",
-    alt: "Community members under a large tree in a forest landscape",
+    src: "/images/causes/forest-rights.jpg",
+    alt: "A young woman carrying woven baskets through a forest",
     summary:
       "Empowering tribal and forest-dwelling communities under the Forest Rights Act to conserve ecosystems, restore biodiversity, and build sustainable livelihoods.",
     trustBadges: ["Verified NGO Partner", "FRA 2006 Rights", "2,000+ Villages"],

@@ -206,11 +206,11 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "Volunteer Opportunities (Delhi focus)",
-        href: "/volunteer",
+        href: "/champion",
       },
       {
         title: "How to Volunteer in India (full guide)",
-        href: "/volunteer",
+        href: "/champion",
       },
       {
         title: "Does Community Service Help with US/UK College Applications?",
@@ -356,11 +356,11 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "Volunteer Opportunities (Delhi focus) →",
-        href: "/volunteer",
+        href: "/champion",
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/volunteer",
+        href: "/champion",
       },
     ],
   },
@@ -1007,7 +1007,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/volunteer",
+        href: "/champion",
       },
       {
         title: "Explore Live Causes →",
@@ -1403,7 +1403,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/volunteer",
+        href: "/champion",
       },
     ],
   },
@@ -1549,7 +1549,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/volunteer",
+        href: "/champion",
       },
     ],
   },
@@ -1686,7 +1686,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/volunteer",
+        href: "/champion",
       },
     ],
   },

@@ -10,6 +10,7 @@ type VolunteerPerson = {
   role: string;
   src: string;
   alt: string;
+  objectPosition?: string;
 };
 
 export default function VolunteerBand({
@@ -43,11 +44,12 @@ export default function VolunteerBand({
         <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 md:gap-5 min-[56.25rem]:grid-cols-4 min-[56.25rem]:gap-3 lg:mt-12 lg:gap-4 min-[90rem]:mt-12 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:flex-nowrap min-[90rem]:justify-center min-[90rem]:gap-[1.125rem]">
           {people.map((person) => (
             <VolunteerCard
-              key={person.name}
+              key={person.src}
               name={person.name}
               role={person.role}
               src={person.src}
               alt={person.alt}
+              objectPosition={person.objectPosition}
             />
           ))}
         </ul>

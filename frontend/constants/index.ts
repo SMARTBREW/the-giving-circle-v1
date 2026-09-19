@@ -256,28 +256,28 @@ export const VOLUNTEER_BAND = {
 
 export const VOLUNTEERS = [
   {
-    name: "Priya Sharma",
-    role: "Teacher",
-    src: "/images/testmi/953105c0d2ea2d9d1703198bae02e59fa2c87e63.png",
-    alt: "Priya Sharma standing in a classroom in front of a chalkboard",
+    name: "Surendra Sukhraj",
+    role: "Trustee - Animal Care",
+    src: "/images/volunteer/surendra-sukhraj-animal-care.jpg",
+    alt: "Surendra Sukhraj with a rescued dog during animal care work",
   },
   {
-    name: "Bhushan Khurana",
-    role: "Marketing Lead",
-    src: "/images/testmi/f846f5578286c4f1943dd07a272ad57a92cd1b3a.png",
-    alt: "Bhushan Khurana smiling at a laptop in an office",
+    name: "Sanjay Bosu Mullick",
+    role: "Founder - ICFG",
+    src: "/images/volunteer/sanjay-bosu-mullick-icfg.jpg",
+    alt: "Sanjay Bosu Mullick of ICFG",
   },
   {
-    name: "Ayesha Mehta",
-    role: "Doctor",
-    src: "/images/testmi/099e4d57b98ec71c66eb071e71b13ef69b282c7d.png",
-    alt: "Ayesha Mehta in a clinic wearing a lab coat and stethoscope",
+    name: "Jyotsna Chatterji",
+    role: "Founder - JWP",
+    src: "/images/volunteer/jyotsna-chatterji-jwp.jpg",
+    alt: "Jyotsna Chatterji of JWP speaking at an event",
   },
   {
-    name: "Suresh Nair",
-    role: "Entrepreneur",
-    src: "/images/testmi/096f144ac332a86ad699acc4cdc8e2eff813d811.png",
-    alt: "Suresh Nair at a desk in an office",
+    name: "Vanshu Saini",
+    role: "Passionate about Animals",
+    src: "/images/volunteer/vanshu-saini-animals.jpg",
+    alt: "Vanshu Saini with a mountain dog in the Himalayas",
   },
 ] as const;
 

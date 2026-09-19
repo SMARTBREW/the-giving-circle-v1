@@ -7,8 +7,8 @@ export const VOLUNTEER_PAGE_HERO = {
     "Give your time, skills, and energy to verified causes. Walk with communities, support NGO partners, and help our circle create change on the ground.",
   primaryCta: { label: "Become a Volunteer", href: "/#contact" },
   secondaryCta: { label: "Explore Causes", href: "/causes" },
-  src: "/images/cause-champion-hero.png",
-  alt: "A volunteer smiling with children from our circle",
+  src: "/images/volunteer/surendra-sukhraj-animal-care.jpg",
+  alt: "Surendra Sukhraj with a rescued dog during animal care work",
   stats: [
     { value: "7+", label: "Live Causes" },
     { value: "80,000+", label: "Lives Impacted" },
