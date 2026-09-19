@@ -34,7 +34,7 @@ export default function ChampionSection() {
             subtitle="Start a Giving Circle, rally your network around a verified cause, and track the change you help create."
             subtitleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[0.8125rem] leading-5 sm:text-[0.875rem] md:max-w-none md:text-left md:text-[0.8125rem] md:leading-5 lg:text-[0.9375rem] lg:leading-6 min-[90rem]:max-w-[36rem] min-[90rem]:text-[1rem]"
           />
-          <ul className="mx-auto mt-3 flex w-fit max-w-[28rem] flex-col gap-2 sm:mt-4 sm:gap-2.5 md:mx-0 md:mt-4 md:w-full md:max-w-none md:gap-2 lg:mt-5 lg:gap-3 min-[90rem]:mt-6 min-[90rem]:gap-3.5">
+          <ul className="mx-auto mt-3 flex w-fit max-w-[28rem] flex-col gap-3 sm:mt-4 sm:gap-3.5 md:mx-0 md:mt-4 md:w-full md:max-w-none md:gap-3.5 lg:mt-5 lg:gap-4.5 min-[90rem]:mt-6 min-[90rem]:gap-5">
             {CHAMPION_STEPS.map((step) => (
               <ChampionStep
                 key={step.title}
@@ -56,7 +56,7 @@ export default function ChampionSection() {
           </div>
         </div>
 
-        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] sm:mt-6 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(48%,26rem)] md:shrink-0 lg:w-[min(44%,30rem)] min-[90rem]:h-[37.0625rem] min-[90rem]:w-[37.0625rem] min-[90rem]:aspect-auto" />
+        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] sm:mt-6 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(50%,28rem)] md:shrink-0 lg:w-[min(46%,33rem)] min-[90rem]:h-[40rem] min-[90rem]:w-[40rem] min-[90rem]:aspect-auto" />
       </FadeInSection>
     </section>
   );
