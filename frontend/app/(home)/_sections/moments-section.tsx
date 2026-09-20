@@ -17,10 +17,10 @@ export default function MomentsSection({
           subtitle="The flowers fade. Start a fundraiser instead, and let the people who love you give where your heart already is."
         />
         {/*
-          Stack through ~825–899px so button type stays full size.
-          3-up from 900px covers 150% zoom (~960) without the cramped mid-tablet row.
+          Stack below 70rem so ~1055px / 150% zoom keep full-width nowrap CTAs.
+          3-up from 70rem covers 110% (~1309) without cramped labels.
         */}
-        <ul className="relative mt-6 flex w-full flex-col items-stretch gap-4 sm:mt-8 sm:gap-5 md:gap-6 min-[56.25rem]:mt-8 min-[56.25rem]:grid min-[56.25rem]:grid-cols-3 min-[56.25rem]:gap-4 lg:mt-8 lg:gap-5 min-[90rem]:mt-10 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:gap-[1.625rem] min-[90rem]:pt-3 min-[90rem]:pb-3">
+        <ul className="relative mt-6 flex w-full flex-col items-stretch gap-4 sm:mt-8 sm:gap-5 md:gap-6 min-[70rem]:mt-8 min-[70rem]:grid min-[70rem]:grid-cols-3 min-[70rem]:gap-5 min-[90rem]:mt-10 min-[90rem]:flex min-[90rem]:flex-row min-[90rem]:gap-[1.625rem] min-[90rem]:pt-3 min-[90rem]:pb-3">
           {MOMENT_CARDS.map((moment) => (
             <li
               key={moment.title}

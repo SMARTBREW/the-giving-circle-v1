@@ -11,12 +11,15 @@ export default function FaqItem({
   answer,
   links,
   defaultOpen = false,
+  questionAs: QuestionTag = "h4",
 }: {
   id: string;
   question: string;
   answer: string;
   links?: readonly FaqLink[];
   defaultOpen?: boolean;
+  /** h4 under FaqsSection (h3); h3 when nested under a content h2 (e.g. blog). */
+  questionAs?: "h3" | "h4";
 }) {
   const [open, setOpen] = useState(defaultOpen);
 
@@ -31,11 +34,11 @@ export default function FaqItem({
         }}
       >
         <summary className="flex w-full cursor-pointer list-none items-start justify-between gap-3 px-4 text-left sm:items-center sm:gap-4 sm:px-6 md:gap-6 md:px-8 min-[90rem]:px-10 [&::-webkit-details-marker]:hidden">
-          <h3
+          <QuestionTag
             className={`${SEGOE_UI_CLASS} min-w-0 flex-1 text-[1rem] leading-6 font-[500] tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] sm:leading-7 md:text-[1.25rem] md:leading-8`}
           >
             {question}
-          </h3>
+          </QuestionTag>
           <span
             aria-hidden="true"
             className="relative mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--Main-CTA-button,#02938c)] bg-transparent sm:mt-0"

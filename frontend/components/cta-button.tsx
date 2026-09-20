@@ -62,7 +62,7 @@ export default function CtaButton({
     <Link
       href={href}
       onClick={handleClick}
-      className={`inline-flex items-center justify-center rounded-[6.25rem] text-[0.8125rem] sm:text-[0.875rem] min-[90rem]:text-[1.125rem] ${
+      className={`inline-flex items-center justify-center rounded-[6.25rem] text-[0.9375rem] sm:text-[1rem] min-[90rem]:text-[1.125rem] ${
         hoverFill
           ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1),color_400ms_cubic-bezier(0.22,1,0.36,1),border-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--Circle-Green,#02938c)] hover:text-[#FFFFFF]"
           : ""

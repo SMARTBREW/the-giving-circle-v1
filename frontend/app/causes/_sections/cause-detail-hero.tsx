@@ -43,7 +43,7 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
             Live Causes
           </Link>
           <span aria-hidden>/</span>
-          <span className="max-w-[14rem] truncate text-[var(--Main-headings,#1c2426)] sm:max-w-none">
+          <span className="min-w-0 break-words text-[var(--Main-headings,#1c2426)]">
             {cause.title}
           </span>
         </nav>

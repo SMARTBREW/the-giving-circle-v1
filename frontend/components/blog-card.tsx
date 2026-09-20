@@ -83,14 +83,14 @@ export default function BlogCard({ article }: { article: BlogArticle }) {
         </div>
 
         {/* Title */}
-        <h2 className="mt-4 font-['Georgia'] text-[1.1875rem] font-[700] leading-[1.6rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-5 sm:text-[1.3125rem] sm:leading-[1.8rem] md:text-[1.375rem] md:leading-[1.875rem]">
+        <h3 className="mt-4 font-['Georgia'] text-[1.1875rem] font-[700] leading-[1.6rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-5 sm:text-[1.3125rem] sm:leading-[1.8rem] md:text-[1.375rem] md:leading-[1.875rem]">
           <Link
             href={`/blog/${article.id}`}
             className={`transition-colors duration-200 ${style.accent}`}
           >
             {article.title}
           </Link>
-        </h2>
+        </h3>
 
         {/* Summary */}
         <p

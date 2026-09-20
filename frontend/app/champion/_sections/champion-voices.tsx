@@ -100,11 +100,11 @@ export default function ChampionVoices() {
                   />
                 </div>
 
-                <h3
+                <p
                   className={`${SEGOE_UI_CLASS} shrink-0 text-[1.25rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem] sm:leading-8 lg:text-[1.625rem] lg:leading-8 min-[90rem]:w-full min-[90rem]:max-w-[33.5rem] min-[90rem]:text-[1.75rem] min-[90rem]:leading-9`}
                 >
                   {active.title}
-                </h3>
+                </p>
 
                 <p
                   className={`${SEGOE_UI_CLASS} mt-3 shrink-0 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Paragraph,#4a5558)] sm:mt-4 sm:text-[1rem] sm:leading-7 lg:leading-8 min-[90rem]:mt-5 min-[90rem]:h-32 min-[90rem]:w-full min-[90rem]:max-w-[34rem] min-[90rem]:text-[1.0625rem] min-[90rem]:leading-8`}

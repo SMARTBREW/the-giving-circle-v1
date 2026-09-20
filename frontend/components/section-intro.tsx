@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ElementType, ReactNode } from "react";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 export default function SectionIntro({
@@ -7,6 +7,7 @@ export default function SectionIntro({
   subtitle,
   align = "center",
   tone = "default",
+  titleAs: TitleTag = "h2",
   eyebrowClassName = "",
   titleClassName = "",
   subtitleClassName = "",
@@ -16,6 +17,7 @@ export default function SectionIntro({
   subtitle?: string;
   align?: "center" | "left" | "center-to-left";
   tone?: "default" | "onDark";
+  titleAs?: Extract<ElementType, "h2" | "h3">;
   eyebrowClassName?: string;
   titleClassName?: string;
   subtitleClassName?: string;
@@ -39,13 +41,13 @@ export default function SectionIntro({
       >
         {eyebrow}
       </p>
-      <h2
+      <TitleTag
         className={`mt-4 font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-normal sm:text-[2rem] sm:leading-[2.75rem] md:text-[2.25rem] md:leading-[2.875rem] lg:text-[2.375rem] lg:leading-[3rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[4rem] ${alignClass} ${
           isOnDark ? "text-[#FFFFFF]" : "text-[var(--Main-headings,#1c2426)]"
         } ${titleClassName}`}
       >
         {title}
-      </h2>
+      </TitleTag>
       {subtitle ? (
         <p
           className={`${SEGOE_UI_CLASS} mt-4 ${alignClass} text-[0.9375rem] leading-[1.5rem] font-[400] tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-[1.75rem] md:text-[1.0625rem] lg:text-[1.0625rem] lg:leading-[1.75rem] min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem] ${subtitleClassName}`}

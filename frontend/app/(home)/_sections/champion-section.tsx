@@ -30,7 +30,7 @@ export default function ChampionSection() {
                 Create Real Impact.
               </>
             }
-            titleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[1.5rem] leading-8 sm:text-[1.625rem] sm:leading-8 md:max-w-none md:text-left md:text-[1.625rem] md:leading-8 lg:text-[1.875rem] lg:leading-[2.375rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3.125rem]"
+            titleClassName="!mt-2 h-auto w-full max-w-[36rem] !text-[1.5rem] !leading-8 sm:!text-[1.625rem] sm:!leading-8 md:max-w-none md:text-left md:!text-[1.625rem] md:!leading-8 lg:!text-[1.875rem] lg:!leading-[2.375rem] min-[90rem]:!text-[2.5rem] min-[90rem]:!leading-[3.125rem]"
             subtitle="Start a Giving Circle, rally your network around a verified cause, and track the change you help create."
             subtitleClassName="!mt-2 h-auto w-full max-w-[36rem] text-[0.8125rem] leading-5 sm:text-[0.875rem] md:max-w-none md:text-left md:text-[0.8125rem] md:leading-5 lg:text-[0.9375rem] lg:leading-6 min-[90rem]:max-w-[36rem] min-[90rem]:text-[1rem]"
           />

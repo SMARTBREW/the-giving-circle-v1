@@ -34,7 +34,7 @@ export default function PhotoCtaBand({
   const isLeft = align === "left";
 
   return (
-    <section className="relative isolate aspect-[6/5] min-h-[min(22rem,70vh)] w-full overflow-hidden sm:aspect-auto sm:min-h-[min(28rem,70vh)] md:min-h-[min(30rem,72vh)] min-[56.25rem]:min-h-[min(28rem,72vh)] lg:min-h-[min(30rem,74vh)] min-[90rem]:min-h-[29.625rem]">
+    <section className="relative isolate aspect-[6/5] min-h-[min(22rem,70vh)] w-full overflow-hidden sm:aspect-auto sm:min-h-[min(26rem,65vh)] md:min-h-[min(28rem,65vh)] min-[56.25rem]:min-h-[min(26rem,62vh)] lg:min-h-[min(28rem,64vh)] min-[90rem]:min-h-[29.625rem]">
       {mobileSrc ? (
         <>
           <Image

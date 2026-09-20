@@ -63,10 +63,8 @@ export default function ImpactStoryCard({
               </span>
             </span>
             <span
-              className={`${SEGOE_UI_CLASS} w-full text-left text-[0.9375rem] leading-5 font-[700] tracking-normal text-[#FFFFFF] sm:text-[0.875rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.0625rem] lg:leading-6 min-[90rem]:text-[1.25rem] min-[90rem]:leading-7 ${
-                featured
-                  ? "line-clamp-2 min-[90rem]:w-[35.625rem]"
-                  : "truncate min-[90rem]:w-[32.25rem]"
+              className={`${SEGOE_UI_CLASS} w-full text-left text-[0.9375rem] leading-5 font-[700] tracking-normal text-[#FFFFFF] sm:text-[0.875rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.0625rem] lg:leading-6 min-[90rem]:text-[1.25rem] min-[90rem]:leading-7 line-clamp-2 ${
+                featured ? "min-[90rem]:w-[35.625rem]" : "min-[90rem]:w-[32.25rem]"
               }`}
             >
               {title}

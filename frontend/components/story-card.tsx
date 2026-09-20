@@ -231,9 +231,9 @@ export default function StoryCard({
         </span>
       </div>
 
-      <h2 className="mt-3 font-['Georgia'] text-[1.5rem] font-[700] leading-[2rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-4 sm:text-[1.75rem] sm:leading-[2.25rem] md:text-[1.625rem] md:leading-[2.125rem] lg:text-[2.125rem] lg:leading-[2.625rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]">
+      <h3 className="mt-3 font-['Georgia'] text-[1.5rem] font-[700] leading-[2rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-4 sm:text-[1.75rem] sm:leading-[2.25rem] md:text-[1.625rem] md:leading-[2.125rem] lg:text-[2.125rem] lg:leading-[2.625rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]">
         {story.title}
-      </h2>
+      </h3>
 
       <p
         className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-4 sm:text-[1rem] sm:leading-7`}

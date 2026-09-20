@@ -228,6 +228,7 @@ export default async function CauseDetailPage({
             eyebrow="Questions About This Cause"
             title="Frequently Asked Questions"
             subtitle="Clarity on where gifts go, how the programme works, and how your circle can champion it."
+            titleAs="h3"
           />
           <div className="mt-8 w-full sm:mt-10 lg:mt-12">
             <FaqsAccordion items={cause.faqs} />

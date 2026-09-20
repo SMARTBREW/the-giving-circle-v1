@@ -21,9 +21,9 @@ export default function VolunteerHero() {
     <section
       className={`relative min-h-0 w-full overflow-x-hidden bg-[#eaf4f8] min-[90rem]:flex min-[90rem]:min-h-dvh min-[90rem]:flex-col ${PAGE_HERO_BLEED}`}
     >
-      <div className="mx-auto flex h-full w-full max-w-[90rem] flex-1 flex-col gap-6 px-4 py-6 sm:gap-8 sm:px-8 sm:py-8 md:px-10 md:py-10 min-[56.25rem]:flex-row min-[56.25rem]:items-stretch min-[56.25rem]:justify-between min-[56.25rem]:gap-8 min-[56.25rem]:px-10 min-[56.25rem]:py-10 lg:gap-14 lg:px-12 lg:py-12 min-[90rem]:items-center min-[90rem]:gap-16 min-[90rem]:px-[6.25rem] min-[90rem]:py-8">
+      <div className="mx-auto flex h-full w-full max-w-[90rem] flex-1 flex-col gap-6 px-4 py-6 sm:gap-8 sm:px-8 sm:py-8 md:px-10 md:py-10 min-[56.25rem]:flex-row min-[56.25rem]:items-stretch min-[56.25rem]:gap-6 min-[56.25rem]:px-10 min-[56.25rem]:py-10 lg:gap-8 lg:px-12 lg:py-12 min-[90rem]:items-center min-[90rem]:gap-16 min-[90rem]:px-[6.25rem] min-[90rem]:py-8">
         <FadeInSection
-          className={`flex min-h-0 w-full min-w-0 flex-1 flex-col justify-center min-[56.25rem]:max-w-[48%] lg:max-w-[36rem] min-[90rem]:max-w-[36rem] ${PAGE_HERO_COL_H}`}
+          className={`flex min-h-0 w-full min-w-0 flex-1 flex-col justify-center min-[56.25rem]:max-w-none lg:max-w-[38rem] min-[90rem]:max-w-[36rem] ${PAGE_HERO_COL_H}`}
         >
           <div className="flex flex-col">
             <p
@@ -71,7 +71,7 @@ export default function VolunteerHero() {
         </FadeInSection>
 
         <FadeInSection
-          className={`relative mx-auto hidden aspect-[4/3] w-full max-w-[26rem] shrink-0 overflow-hidden rounded-[1.25rem] min-[56.25rem]:mx-0 min-[56.25rem]:block min-[56.25rem]:aspect-auto min-[56.25rem]:h-auto min-[56.25rem]:min-h-[28rem] min-[56.25rem]:w-[min(44%,24rem)] min-[56.25rem]:max-w-none min-[56.25rem]:self-stretch min-[56.25rem]:rounded-[1.5rem] lg:w-[min(44%,28rem)] min-[90rem]:min-h-0 min-[90rem]:w-[32.125rem] min-[90rem]:self-auto min-[90rem]:rounded-[2rem] ${PAGE_HERO_COL_H}`}
+          className={`relative mx-auto hidden aspect-[4/3] w-full max-w-[26rem] shrink-0 overflow-hidden rounded-[1.25rem] min-[56.25rem]:mx-0 min-[56.25rem]:block min-[56.25rem]:aspect-auto min-[56.25rem]:h-auto min-[56.25rem]:min-h-[28rem] min-[56.25rem]:w-[min(46%,26rem)] min-[56.25rem]:max-w-none min-[56.25rem]:self-stretch min-[56.25rem]:rounded-[1.5rem] lg:w-[min(46%,30rem)] min-[90rem]:min-h-0 min-[90rem]:w-[32.125rem] min-[90rem]:self-auto min-[90rem]:rounded-[2rem] ${PAGE_HERO_COL_H}`}
         >
           <Image
             src={src}

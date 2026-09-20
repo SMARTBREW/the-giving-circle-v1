@@ -7,7 +7,7 @@ import { SEGOE_UI_CLASS } from "@/constants";
 //
 // Figma hero is 1440×886. From sm up the section keeps that ratio (capped by
 // max-h-dvh). Copy/CTAs use cqh but are capped in rem so large/tall laptops
-// don’t overscale into the faces (same clearance as the 1440 artboard).
+// don't overscale into the faces (same clearance as the 1440 artboard).
 //
 // Mid-zoom (< lg, ≥56.25rem): compact rem copy + stronger photo lift.
 export default function Hero() {
@@ -32,7 +32,7 @@ export default function Hero() {
       />
 
       <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-5 sm:px-0 sm:pt-[max(2cqh,14.5cqh_-_5.54cqw)] min-[56.25rem]:max-[89.99rem]:pt-6 min-[90rem]:-translate-y-3">
-        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#1c2426)] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[1.875rem] min-[56.25rem]:max-[89.99rem]:leading-9 min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
+        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#1c2426)] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[2.25rem] min-[56.25rem]:max-[89.99rem]:leading-[2.75rem] lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
           A Stronger Circle.
           <br />
           A Greater Impact.

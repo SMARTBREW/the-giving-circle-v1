@@ -138,14 +138,15 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="w-full min-w-0 bg-[#FFFFFF] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0"
+      className="w-full min-w-0 bg-[#FFFFFF] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0"
     >
-      <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-10 pb-6 sm:px-8 sm:pt-12 sm:pb-8 md:px-10 md:pt-14 md:pb-10 lg:px-14 lg:pt-16 lg:pb-12 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
-        <div className="grid w-full min-w-0 grid-cols-1 items-start gap-9 sm:gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-10 lg:gap-x-10 lg:gap-y-10 min-[90rem]:grid-cols-4 min-[90rem]:gap-x-8 min-[90rem]:gap-y-0">
-          <div className="flex min-w-0 flex-col">
+      <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8 md:px-10 md:pt-12 md:pb-10 lg:px-12 lg:pt-12 lg:pb-10 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
+        {/* Brand left; link columns share the remaining width (not flush-right). */}
+        <div className="flex w-full min-w-0 flex-col gap-8 sm:gap-9 lg:flex-row lg:items-start lg:gap-12 min-[90rem]:gap-16">
+          <div className="flex w-full min-w-0 max-w-[22rem] shrink-0 flex-col sm:max-w-[24rem] min-[90rem]:max-w-[18.4375rem]">
             <Link
               href="/"
-              className="block h-10 w-full max-w-[11.5rem] sm:h-11 sm:max-w-[13rem] md:h-12 md:max-w-[14.5rem] lg:h-[3.75rem] lg:max-w-[16rem] min-[90rem]:h-[4.25rem] min-[90rem]:max-w-[18rem]"
+              className="block h-10 w-full max-w-[11.5rem] sm:h-11 sm:max-w-[13rem] md:h-12 md:max-w-[14.5rem] min-[90rem]:h-[4.25rem] min-[90rem]:max-w-[18rem]"
             >
               <Image
                 src="/images/gc-logo-final.png"
@@ -155,7 +156,7 @@ export default function Footer() {
                 className="h-full w-full object-contain object-left"
               />
             </Link>
-            <p className={`${FOOTER_BLURB_CLASS} mt-3 max-w-[22rem] sm:mt-3.5 lg:max-w-[16rem] min-[90rem]:mt-4 min-[90rem]:max-w-[18.4375rem]`}>
+            <p className={`${FOOTER_BLURB_CLASS} mt-3 sm:mt-3.5 min-[90rem]:mt-4`}>
               {FOOTER_BLURB}
             </p>
             <ul className="mt-4 flex flex-wrap items-center gap-3 sm:mt-4 sm:gap-3.5 lg:mt-5">
@@ -173,39 +174,39 @@ export default function Footer() {
             </ul>
           </div>
 
-          <FooterLinkList heading="Get Involved" links={GET_INVOLVED_LINKS} />
-          <FooterLinkList heading="Quick Links" links={FOOTER_QUICK_LINKS} />
+          <div className="grid min-w-0 flex-1 grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-9 lg:grid-cols-3 lg:gap-x-6 xl:gap-x-8 min-[90rem]:gap-x-10">
+            <FooterLinkList heading="Get Involved" links={GET_INVOLVED_LINKS} />
+            <FooterLinkList heading="Quick Links" links={FOOTER_QUICK_LINKS} />
 
-          <div className="min-w-0">
-            <p className={FOOTER_HEADING_CLASS}>Contact</p>
-            <ul className="mt-3 flex flex-col gap-2.5 sm:mt-4 sm:gap-3">
-              {FOOTER_CONTACT.map((item) => (
-                <li key={item.label} className="flex items-center gap-3">
-                  <span className="shrink-0">
-                    <ContactIcon type={item.type} />
-                  </span>
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      className={`${FOOTER_LINK_CLASS} min-w-0 break-words lg:text-[0.9375rem] lg:leading-6 min-[90rem]:text-[1rem] min-[90rem]:leading-7`}
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <span
-                      className={`${FOOTER_LINK_CLASS} min-w-0 break-words lg:text-[0.9375rem] lg:leading-6 min-[90rem]:text-[1rem] min-[90rem]:leading-7`}
-                    >
-                      {item.label}
+            <div className="min-w-0">
+              <p className={FOOTER_HEADING_CLASS}>Contact</p>
+              <ul className="mt-3 flex flex-col gap-2.5 sm:mt-4 sm:gap-3">
+                {FOOTER_CONTACT.map((item) => (
+                  <li key={item.label} className="flex min-w-0 items-start gap-3">
+                    <span className="mt-0.5 shrink-0">
+                      <ContactIcon type={item.type} />
                     </span>
-                  )}
-                </li>
-              ))}
-            </ul>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className={`${FOOTER_LINK_CLASS} min-w-0 break-words`}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <span className={`${FOOTER_LINK_CLASS} min-w-0 break-words`}>
+                        {item.label}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-[#D9E1E2] pt-6 sm:mt-14 sm:gap-5 sm:pt-7 lg:mt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pt-8 min-[90rem]:mt-auto min-[90rem]:pb-8">
-          <ul className="flex flex-col gap-2.5 sm:gap-3 lg:order-2 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-8 lg:gap-y-2">
+        <div className="mt-10 flex flex-col gap-4 border-t border-[#D9E1E2] pt-5 sm:mt-12 sm:gap-5 sm:pt-6 lg:mt-12 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:pt-7 min-[90rem]:mt-auto min-[90rem]:gap-8 min-[90rem]:pt-8 min-[90rem]:pb-8">
+          <ul className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2 lg:order-2 lg:gap-x-8">
             {FOOTER_LEGAL_LINKS.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className={FOOTER_LINK_CLASS}>

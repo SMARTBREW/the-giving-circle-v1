@@ -427,7 +427,7 @@ export default async function BlogArticlePage({
 
                   {faqs && faqs.length > 0 ? (
                     <div className="mt-6">
-                      <FaqsAccordion items={faqs} />
+                      <FaqsAccordion items={faqs} questionAs="h3" />
                     </div>
                   ) : null}
                 </FadeInSection>

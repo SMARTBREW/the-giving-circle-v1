@@ -138,7 +138,7 @@ export const LIVE_CAUSES = [
     category: "Education",
     categoryClassName: "text-[var(--Brand-Deep-Blue,#0b619a)]",
     title: "PehliClass: Into Formal School, On Time",
-    titleLines: null as null | readonly [string, string],
+    titleLines: ["PehliClass: Into Formal School,", "On Time"] as const,
     org: "JWP",
     location: "Noida · Delhi NCR",
     raised: "₹2,85,000",

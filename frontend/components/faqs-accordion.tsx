@@ -17,8 +17,10 @@ function faqId(item: FaqEntry | { question: string; answer: string; id?: string 
 
 export default function FaqsAccordion({
   items = FAQ_ITEMS,
+  questionAs = "h4",
 }: {
   items?: readonly (FaqEntry | { question: string; answer: string; id?: string })[];
+  questionAs?: "h3" | "h4";
 }) {
   return (
     <ul className="flex w-full flex-col items-center gap-4 sm:gap-5 md:gap-6">
@@ -30,6 +32,7 @@ export default function FaqsAccordion({
           answer={item.answer}
           links={"links" in item ? item.links : undefined}
           defaultOpen={index === 0}
+          questionAs={questionAs}
         />
       ))}
     </ul>
