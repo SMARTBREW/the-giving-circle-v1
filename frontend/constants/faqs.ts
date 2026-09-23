@@ -25,7 +25,7 @@ export const SITE_FAQS = [
       "The Giving Circle is an Indian fundraising platform for people who want to make a difference. You choose a cause you care about, start a fundraiser for the verified NGO working on it, and raise funds by sharing it with your personal and professional network. We call these volunteer fundraisers Cause Champions.",
     links: [
       { label: "cause you care about", href: "/causes" },
-      { label: "Cause Champions", href: "/champion" },
+      { label: "Cause Champions", href: "/become-a-cause-champion" },
     ],
   },
   {
@@ -109,7 +109,7 @@ export const SITE_FAQS = [
     answer:
       "There are two ways to volunteer through The Giving Circle.\n\nBecome a Cause Champion. Give your voice to a cause you believe in and raise awareness and funds for the NGO working on it. This can be done entirely online, from anywhere.\n\nVolunteer directly with one of our partner NGOs. Bring your time and your skills, on the field or off it, and we will put you in touch with the right organisation.\n\nTell us which appeals to you through the form on this site and we will take it from there.",
     links: [
-      { label: "Become a Cause Champion", href: "/champion" },
+      { label: "Become a Cause Champion", href: "/become-a-cause-champion" },
       { label: "Volunteer directly with one of our partner NGOs", href: "/volunteer" },
       { label: "form on this site", href: "/volunteer" },
     ],

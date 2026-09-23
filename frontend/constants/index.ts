@@ -117,7 +117,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const GET_INVOLVED_LINKS = [
-  { href: "/champion", label: "Become a Cause Champion" },
+  { href: "/become-a-cause-champion", label: "Become a Cause Champion" },
   { href: "/partner", label: "Partner as an NGO" },
   { href: "/volunteer", label: "Volunteer With Us" },
 ] as const;

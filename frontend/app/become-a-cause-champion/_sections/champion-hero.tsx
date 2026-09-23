@@ -98,7 +98,7 @@ export default function ChampionHero() {
             alt={alt}
             fill
             sizes="(max-width: 899px) 90vw, (max-width: 1439px) 44vw, 32.125rem"
-            className="object-cover object-[50%_28%]"
+            className="object-cover object-[50%_38%]"
             priority
           />
         </FadeInSection>

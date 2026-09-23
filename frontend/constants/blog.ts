@@ -190,7 +190,7 @@ export const BLOG_ARTICLES = [
     relatedLinks: [
       {
         title: "Young Champions · School & university projects",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
       {
         title: "#PehliClass · donate for education India",
@@ -206,11 +206,11 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "Volunteer Opportunities (Delhi focus)",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
       {
         title: "How to Volunteer in India (full guide)",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
       {
         title: "Does Community Service Help with US/UK College Applications?",
@@ -344,7 +344,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "Young Champions · School & university projects →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
       {
         title: "Become a Cause Champion →",
@@ -356,11 +356,11 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "Volunteer Opportunities (Delhi focus) →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
     ],
   },
@@ -1007,7 +1007,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
       {
         title: "Explore Live Causes →",
@@ -1403,7 +1403,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
     ],
   },
@@ -1549,7 +1549,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
     ],
   },
@@ -1686,7 +1686,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "How to Volunteer in India (full guide) →",
-        href: "/champion",
+        href: "/become-a-cause-champion",
       },
     ],
   },

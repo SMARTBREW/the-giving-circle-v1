@@ -87,6 +87,15 @@ const nextConfig: NextConfig = {
             },
           ];
         },
+        async redirects() {
+          return [
+            {
+              source: "/champion",
+              destination: "/become-a-cause-champion",
+              permanent: true,
+            },
+          ];
+        },
       }),
 };
 

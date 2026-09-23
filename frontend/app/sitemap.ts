@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/causes",
     "/stories",
     "/blog",
-    "/champion",
+    "/become-a-cause-champion",
     "/champion/apply",
     "/partner",
     "/volunteer",

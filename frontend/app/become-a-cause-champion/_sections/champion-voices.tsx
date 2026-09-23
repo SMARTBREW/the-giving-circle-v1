@@ -89,7 +89,7 @@ export default function ChampionVoices() {
                 />
               </div>
 
-              <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col px-5 py-6 sm:px-7 sm:py-8 md:px-8 min-[56.25rem]:px-6 min-[56.25rem]:py-6 lg:px-8 lg:py-8 min-[90rem]:px-8 min-[90rem]:pt-10 min-[90rem]:pb-0">
+              <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col items-start justify-center px-5 py-6 sm:px-7 sm:py-8 md:px-8 min-[56.25rem]:px-6 min-[56.25rem]:py-6 lg:px-8 lg:py-8 min-[90rem]:px-8 min-[90rem]:py-10">
                 <div className="relative mb-4 h-8 w-10 shrink-0 sm:mb-5 sm:h-9 sm:w-11 min-[90rem]:mb-5 min-[90rem]:h-10 min-[90rem]:w-10">
                   <Image
                     src={quoteSrc}
@@ -101,42 +101,33 @@ export default function ChampionVoices() {
                 </div>
 
                 <p
-                  className={`${SEGOE_UI_CLASS} shrink-0 text-[1.25rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem] sm:leading-8 lg:text-[1.625rem] lg:leading-8 min-[90rem]:w-full min-[90rem]:max-w-[33.5rem] min-[90rem]:text-[1.75rem] min-[90rem]:leading-9`}
+                  className={`${SEGOE_UI_CLASS} shrink-0 text-[1.0625rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.1875rem] sm:leading-7 lg:text-[1.25rem] lg:leading-8 min-[90rem]:w-full min-[90rem]:max-w-[33.5rem] min-[90rem]:text-[1.375rem] min-[90rem]:leading-8`}
                 >
-                  {active.title}
+                  {active.quote}
                 </p>
 
-                <p
-                  className={`${SEGOE_UI_CLASS} mt-3 shrink-0 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Paragraph,#4a5558)] sm:mt-4 sm:text-[1rem] sm:leading-7 lg:leading-8 min-[90rem]:mt-5 min-[90rem]:h-32 min-[90rem]:w-full min-[90rem]:max-w-[34rem] min-[90rem]:text-[1.0625rem] min-[90rem]:leading-8`}
-                >
-                  {active.body}
-                </p>
-
-                <div className="mt-8 flex min-h-0 w-full flex-1 flex-col sm:mt-10 min-[90rem]:mt-10">
-                  <div className="w-full max-w-[32rem] shrink-0 border-t border-[#d9e1e2]" aria-hidden />
-                  <div className="my-auto flex w-full max-w-[32rem] items-center gap-3 py-5 sm:gap-4 sm:py-6 min-[90rem]:py-0">
-                    <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14 min-[90rem]:h-[4.5rem] min-[90rem]:w-[4.5rem]">
-                      <Image
-                        src={active.avatarSrc}
-                        alt={active.avatarAlt}
-                        fill
-                        sizes="72px"
-                        className="object-cover"
-                      />
+                <div className="mt-5 flex w-full max-w-[32rem] items-center gap-3 sm:mt-6 sm:gap-4 min-[90rem]:mt-8">
+                  <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14 min-[90rem]:h-[4.5rem] min-[90rem]:w-[4.5rem]">
+                    <Image
+                      src={active.avatarSrc}
+                      alt={active.avatarAlt}
+                      fill
+                      sizes="72px"
+                      className="object-cover"
+                    />
+                  </span>
+                  <span className="min-w-0 text-left">
+                    <span
+                      className={`${SEGOE_UI_CLASS} block text-[1rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] min-[90rem]:text-[1.25rem] min-[90rem]:leading-6`}
+                    >
+                      {active.name}
                     </span>
-                    <span className="min-w-0 text-left">
-                      <span
-                        className={`${SEGOE_UI_CLASS} block text-[1rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] min-[90rem]:text-[1.5rem] min-[90rem]:leading-5`}
-                      >
-                        {active.name}
-                      </span>
-                      <span
-                        className={`${SEGOE_UI_CLASS} mt-1 block text-[0.875rem] font-[400] leading-5 tracking-normal text-[#4A5558] sm:text-[1rem] min-[90rem]:mt-2.5 min-[90rem]:text-[1.125rem] min-[90rem]:leading-5`}
-                      >
-                        {active.role}
-                      </span>
+                    <span
+                      className={`${SEGOE_UI_CLASS} mt-1 block text-[0.875rem] font-[400] leading-5 tracking-normal text-[var(--Paragraph,#4a5558)] sm:text-[1rem] min-[90rem]:mt-1.5 min-[90rem]:text-[1.0625rem] min-[90rem]:leading-5`}
+                    >
+                      {active.role}
                     </span>
-                  </div>
+                  </span>
                 </div>
               </div>
             </article>

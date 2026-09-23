@@ -12,7 +12,7 @@ import {
   SEGOE_UI_CLASS,
 } from "@/constants";
 
-const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-1.5 py-2 text-[0.6875rem] font-[600] text-[#4a5558] transition-colors hover:text-[var(--Dark-Charcoal,#1c2426)] lg:px-2 lg:text-[0.8125rem] min-[90rem]:px-3 min-[90rem]:text-[0.9375rem]`;
+const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-1.5 py-2 text-[0.8125rem] font-[600] text-[#4a5558] transition-colors hover:text-[var(--Dark-Charcoal,#1c2426)] lg:px-2 lg:text-[0.9375rem] min-[90rem]:px-3 min-[90rem]:text-[1.0625rem]`;
 
 const NAV_CTA_CLASS =
   "h-9 !rounded-lg !bg-[#e62b4f] px-3 !text-[0.6875rem] sm:h-9 sm:px-3.5 sm:!text-[0.75rem] lg:h-10 lg:px-4 lg:!text-[0.8125rem] min-[90rem]:h-12 min-[90rem]:px-5 min-[90rem]:!text-[0.9375rem]";
