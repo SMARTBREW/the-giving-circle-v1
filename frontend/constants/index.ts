@@ -262,23 +262,42 @@ export const VOLUNTEERS = [
     alt: "Surendra Sukhraj with a rescued dog during animal care work",
   },
   {
-    name: "Sanjay Bosu Mullick",
-    role: "Founder - ICFG",
-    src: "/images/volunteer/sanjay-bosu-mullick-icfg.jpg",
-    alt: "Sanjay Bosu Mullick of ICFG",
+    name: "Priya Sharma",
+    role: "ngo-1",
+    src: "/images/testmi/953105c0d2ea2d9d1703198bae02e59fa2c87e63.png",
+    alt: "Priya Sharma standing in a classroom in front of a chalkboard",
   },
   {
-    name: "Jyotsna Chatterji",
-    role: "Founder - JWP",
-    src: "/images/volunteer/jyotsna-chatterji-jwp.jpg",
-    alt: "Jyotsna Chatterji of JWP speaking at an event",
+    name: "Bhushan Khurana",
+    role: "ngo-2",
+    src: "/images/testmi/f846f5578286c4f1943dd07a272ad57a92cd1b3a.png",
+    alt: "Bhushan Khurana smiling at a laptop in an office",
   },
   {
-    name: "Vanshu Saini",
-    role: "Passionate about Animals",
-    src: "/images/volunteer/vanshu-saini-animals.jpg",
-    alt: "Vanshu Saini with a mountain dog in the Himalayas",
+    name: "Ayesha Mehta",
+    role: "ngo-3",
+    src: "/images/testmi/099e4d57b98ec71c66eb071e71b13ef69b282c7d.png",
+    alt: "Ayesha Mehta in a clinic wearing a lab coat and stethoscope",
   },
+  // Muted for now — swap back in when ready:
+  // {
+  //   name: "Sanjay Bosu Mullick",
+  //   role: "Founder - ICFG",
+  //   src: "/images/volunteer/sanjay-bosu-mullick-icfg.jpg",
+  //   alt: "Sanjay Bosu Mullick of ICFG",
+  // },
+  // {
+  //   name: "Jyotsna Chatterji",
+  //   role: "Founder - JWP",
+  //   src: "/images/volunteer/jyotsna-chatterji-jwp.jpg",
+  //   alt: "Jyotsna Chatterji of JWP speaking at an event",
+  // },
+  // {
+  //   name: "Vanshu Saini",
+  //   role: "Passionate about Animals",
+  //   src: "/images/volunteer/vanshu-saini-animals.jpg",
+  //   alt: "Vanshu Saini with a mountain dog in the Himalayas",
+  // },
 ] as const;
 
 export const PARTNER_LOGO_SETS = [
