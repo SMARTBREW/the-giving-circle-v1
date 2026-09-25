@@ -177,7 +177,9 @@ function handler(event) {
   // Skip known extensionless assets (Next /icon route, etc.).
   var ASSET_EXACT = {
     '/icon': true,
+    '/icon.png': true,
     '/apple-icon': true,
+    '/apple-icon.png': true,
     '/favicon.ico': true,
   };
   if (ASSET_EXACT[path] || ASSET_EXACT[uri]) {

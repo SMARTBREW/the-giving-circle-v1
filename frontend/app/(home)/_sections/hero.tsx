@@ -47,7 +47,7 @@ export default function Hero() {
       </picture>
 
       <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-2 sm:px-0 sm:pt-3 md:pt-4 lg:pt-6 min-[90rem]:pt-8">
-        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#1c2426)] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[2.25rem] min-[56.25rem]:max-[89.99rem]:leading-[2.75rem] lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
+        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-bold tracking-[0.02em] text-[var(--Main-headings,#1c2426)] [-webkit-text-stroke:0.45px_currentColor] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] sm:[-webkit-text-stroke:0] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[2.25rem] min-[56.25rem]:max-[89.99rem]:leading-[2.75rem] lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
           A Stronger Circle.
           <br />
           A Greater Impact.

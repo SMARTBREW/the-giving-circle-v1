@@ -14,7 +14,7 @@ export default function MomentsSection({
         <SectionIntro
           eyebrow="Cherish what matters"
           title="Make your special moments count"
-          subtitle="Celebrate a milestone, honour a memory, or mark a special day by making a difference"        />
+          subtitle="Celebrate a milestone, honour a memory, or mark a special day by making a difference that lasts."        />
         {/*
           Stack below 70rem so ~1055px / 150% zoom keep full-width nowrap CTAs.
           3-up from 70rem covers 110% (~1309) without cramped labels.

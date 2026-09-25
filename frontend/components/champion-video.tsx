@@ -11,18 +11,41 @@ export default function ChampionVideo({ className }: { className: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
 
-  function play() {
+  async function play() {
     const video = videoRef.current;
     if (!video) return;
-    // Attach the video only after the user asks to play.
-    if (!video.src) {
+
+    // Attach the Cloudinary URL only after the user asks to play.
+    // video.src is "" until set — do not call play() before the file is ready
+    // or Chrome throws NotSupportedError ("no supported source was found").
+    if (!video.getAttribute("src")) {
       video.src = VIDEO_SRC;
+      video.load();
+      await new Promise<void>((resolve, reject) => {
+        const onReady = () => {
+          cleanup();
+          resolve();
+        };
+        const onError = () => {
+          cleanup();
+          reject(video.error ?? new Error("Video failed to load"));
+        };
+        const cleanup = () => {
+          video.removeEventListener("canplay", onReady);
+          video.removeEventListener("error", onError);
+        };
+        video.addEventListener("canplay", onReady, { once: true });
+        video.addEventListener("error", onError, { once: true });
+      });
     }
+
     setStarted(true);
-    requestAnimationFrame(() => {
-      video.muted = false;
-      void video.play();
-    });
+    video.muted = false;
+    try {
+      await video.play();
+    } catch {
+      // Autoplay / interrupted play — controls stay available once started.
+    }
   }
 
   function onEnded() {
@@ -56,7 +79,9 @@ export default function ChampionVideo({ className }: { className: string }) {
       {!started ? (
         <button
           type="button"
-          onClick={play}
+          onClick={() => {
+            void play();
+          }}
           className="absolute inset-0 z-10 flex items-center justify-center"
           aria-label="Play video"
         >

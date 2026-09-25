@@ -15,7 +15,13 @@ export const metadata: Metadata = {
   description: SITE.description,
   metadataBase: new URL(SITE.url),
   icons: {
-    icon: [{ url: "/icon", type: "image/png", sizes: "32x32" }],
+    icon: [
+      { url: "/favicon.ico?v=2", type: "image/png", sizes: "48x48" },
+      { url: "/favicon.png?v=2", type: "image/png", sizes: "48x48" },
+      { url: "/icon.png?v=2", type: "image/png", sizes: "48x48" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico?v=2",
   },
   ...(isStaging
     ? {
