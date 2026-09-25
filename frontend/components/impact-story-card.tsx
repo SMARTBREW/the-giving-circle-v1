@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS } from "@/constants";
@@ -36,7 +36,7 @@ export default function ImpactStoryCard({
         href={href}
         className="group relative block h-full w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2]"
       >
-        <Image
+        <CldImage
           src={src}
           alt={alt}
           fill
@@ -45,6 +45,7 @@ export default function ImpactStoryCard({
               ? "(min-width: 1440px) 39.625rem, (min-width: 640px) 50vw, 100vw"
               : "(min-width: 1440px) 36.25rem, (min-width: 640px) 50vw, 100vw"
           }
+          loading="lazy"
           className={`object-cover ${objectPosition}`}
         />
         <span

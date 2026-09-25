@@ -285,18 +285,26 @@ export const CHAMPION_APPLY = {
     agreeLabel:
       "I agree to receive updates from The Giving Circle about becoming a Cause Champion.",
     fields: {
-      fullName: { label: "Full Name", placeholder: "John Doe", required: true },
+      fullName: {
+        label: "Your full name",
+        placeholder: "John Doe",
+        required: true,
+      },
       mobile: {
-        label: "Mobile Number",
+        label: "Your contact number",
         placeholder: "98211 14112",
         required: true,
       },
       email: {
-        label: "Email Address",
+        label: "Your personal email",
         placeholder: "john.doe@abc.com",
         required: true,
       },
-      city: { label: "City", placeholder: "Mumbai", required: true },
+      city: {
+        label: "Where you live",
+        placeholder: "Mumbai",
+        required: true,
+      },
     },
     cities: [
       "Mumbai",
@@ -319,7 +327,7 @@ export const CHAMPION_APPLY = {
     inviteLabel: "Your Invite Link",
     inviteHint:
       "Share this link with friends, family or colleagues interested in becoming a Cause Champion.",
-    inviteUrl: "thegivingcircle.in/ref/TGC84721",
+    invitePath: "/champion/apply",
     copyLabel: "Copy Link",
     homeLabel: "Back to Homepage",
     homeHref: "/",

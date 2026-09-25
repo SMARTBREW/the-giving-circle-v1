@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import SectionIntro from "@/components/section-intro";
 import { CHAMPION_VOICES, SEGOE_UI_CLASS } from "@/constants";
@@ -80,7 +80,7 @@ export default function ChampionVoices() {
               className="flex min-w-0 w-full flex-col overflow-hidden rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] min-[56.25rem]:max-w-[68.5rem] min-[56.25rem]:flex-row min-[56.25rem]:items-stretch min-[90rem]:h-[31.125rem] min-[90rem]:w-[68.5rem] min-[90rem]:max-w-none min-[90rem]:shrink-0 min-[90rem]:rounded-[1.5rem]"
             >
               <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden min-[56.25rem]:aspect-auto min-[56.25rem]:min-h-[22rem] min-[56.25rem]:w-1/2 min-[56.25rem]:self-stretch lg:min-h-[24rem] min-[90rem]:h-full min-[90rem]:min-h-0 min-[90rem]:w-[32.25rem]">
-                <Image
+                <CldImage
                   src={active.imageSrc}
                   alt={active.imageAlt}
                   fill
@@ -91,7 +91,7 @@ export default function ChampionVoices() {
 
               <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col items-start justify-center px-5 py-6 sm:px-7 sm:py-8 md:px-8 min-[56.25rem]:px-6 min-[56.25rem]:py-6 lg:px-8 lg:py-8 min-[90rem]:px-8 min-[90rem]:py-10">
                 <div className="relative mb-4 h-8 w-10 shrink-0 sm:mb-5 sm:h-9 sm:w-11 min-[90rem]:mb-5 min-[90rem]:h-10 min-[90rem]:w-10">
-                  <Image
+                  <CldImage
                     src={quoteSrc}
                     alt=""
                     fill
@@ -108,7 +108,7 @@ export default function ChampionVoices() {
 
                 <div className="mt-5 flex w-full max-w-[32rem] items-center gap-3 sm:mt-6 sm:gap-4 min-[90rem]:mt-8">
                   <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14 min-[90rem]:h-[4.5rem] min-[90rem]:w-[4.5rem]">
-                    <Image
+                    <CldImage
                       src={active.avatarSrc}
                       alt={active.avatarAlt}
                       fill

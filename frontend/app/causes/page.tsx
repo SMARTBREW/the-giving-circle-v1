@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import ReachBand from "@/components/reach-band";
 import PhotoCtaBand from "@/components/photo-cta-band";
 import CausesHero from "./_sections/causes-hero";
 import LiveCausesGrid from "./_sections/live-causes-grid";
-import {
-  CAUSES_CTA,
-  CAUSES_REACH,
-  REACH_STATS,
-} from "@/constants";
+import { CAUSES_CTA } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Live Causes | The Giving Circle",
@@ -29,13 +24,6 @@ export default function CausesPage() {
       >
         <LiveCausesGrid />
       </Suspense>
-      <ReachBand
-        eyebrow={CAUSES_REACH.eyebrow}
-        title={CAUSES_REACH.title}
-        subtitle={CAUSES_REACH.subtitle}
-        stats={REACH_STATS}
-        tone="white"
-      />
       <PhotoCtaBand
         src={CAUSES_CTA.src}
         alt={CAUSES_CTA.alt}

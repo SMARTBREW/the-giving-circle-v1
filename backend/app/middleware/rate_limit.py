@@ -89,4 +89,16 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                     },
                 )
 
+        if path.startswith("/api/client-logs") and request.method.upper() == "POST":
+            ok_logs, retry_logs = self.form_limiter.hit(f"logs:{ip}")
+            if not ok_logs:
+                return JSONResponse(
+                    status_code=429,
+                    content={
+                        "success": False,
+                        "message": "Too many log events from this IP.",
+                        "retryAfterSeconds": retry_logs,
+                    },
+                )
+
         return await call_next(request)

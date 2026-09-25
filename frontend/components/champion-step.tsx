@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 export default function ChampionStep({
@@ -17,7 +17,7 @@ export default function ChampionStep({
         baked-in teal frame is clipped — hover just recolors this border + fill.
       */}
       <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-[0.625rem] border-2 border-[#02938c40] bg-[#FFFFFF] transition-colors duration-300 group-hover:border-[#0ba5bb] group-hover:bg-[#0ba5bb14] sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-[3.25rem] lg:w-[3.25rem] min-[90rem]:h-14 min-[90rem]:w-14 min-[90rem]:rounded-[0.875rem]">
-        <Image
+        <CldImage
           src={iconSrc}
           alt=""
           fill

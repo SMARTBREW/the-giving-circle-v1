@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS, type BlogArticle } from "@/constants";
@@ -53,7 +53,7 @@ export default function BlogCard({ article }: { article: BlogArticle }) {
 
       {hasImage ? (
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EEF2F2]">
-          <Image
+          <CldImage
             src={article.image as string}
             alt={
               "imageAlt" in article && typeof article.imageAlt === "string"

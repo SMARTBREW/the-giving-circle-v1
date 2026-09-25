@@ -1,7 +1,10 @@
-import Image from "next/image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
+import { cloudinarySrc } from "@/lib/cloudinary";
+
+const HERO_MOBILE = cloudinarySrc("/images/hero-mobile.png", { width: 750 });
+const HERO_DESKTOP = cloudinarySrc("/images/hero-desktop.png", { width: 1400 });
 
 // Phone + small tablet (<900px): no in-hero buttons — sticky bar is the CTA.
 //
@@ -10,26 +13,38 @@ import { SEGOE_UI_CLASS } from "@/constants";
 // don't overscale into the faces (same clearance as the 1440 artboard).
 //
 // Mid-zoom (< lg, ≥56.25rem): compact rem copy + stronger photo lift.
+//
+// <picture> so the browser downloads only mobile *or* desktop — not both.
 export default function Hero() {
   return (
     <section className="relative -mt-[5.5rem] h-dvh w-full overflow-x-hidden overflow-hidden bg-[#F6F3EE] pt-[5.5rem] [container-type:size] sm:-mt-[6.25rem] sm:aspect-[1440/886] sm:h-auto sm:max-h-dvh sm:pt-[6.25rem] md:-mt-[6.75rem] md:max-h-dvh md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[8.75rem] min-[90rem]:max-h-dvh min-[90rem]:pt-[8.75rem]">
-      <Image
-        src="/images/hero-mobile.png"
-        alt="Young people in our circle, together"
-        fill
-        sizes="100vw"
-        className="object-cover object-[50%_70%] sm:hidden"
-        quality={100}
-        priority
+      {/* Preload only the LCP candidate for the current viewport */}
+      <link
+        rel="preload"
+        as="image"
+        href={HERO_MOBILE}
+        media="(max-width: 639px)"
+        fetchPriority="high"
       />
-      <Image
-        src="/images/hero-desktop.png"
-        alt="Young people in our circle, together"
-        fill
-        sizes="100vw"
-        className="hidden object-cover object-[50%_62%] translate-y-16 sm:block min-[56.25rem]:translate-y-24 lg:translate-y-28 min-[90rem]:translate-y-[7.5rem]"
-        priority
+      <link
+        rel="preload"
+        as="image"
+        href={HERO_DESKTOP}
+        media="(min-width: 640px)"
+        fetchPriority="high"
       />
+      <picture className="absolute inset-0 block h-full w-full">
+        <source media="(min-width: 640px)" srcSet={HERO_DESKTOP} />
+        <img
+          src={HERO_MOBILE}
+          alt="Young people in our circle, together"
+          width={750}
+          height={1334}
+          fetchPriority="high"
+          decoding="async"
+          className="h-full w-full object-cover object-[50%_70%] sm:object-[50%_62%] sm:translate-y-16 min-[56.25rem]:translate-y-24 lg:translate-y-28 min-[90rem]:translate-y-[7.5rem]"
+        />
+      </picture>
 
       <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-2 sm:px-0 sm:pt-3 md:pt-4 lg:pt-6 min-[90rem]:pt-8">
         <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-[0.02em] text-[var(--Main-headings,#1c2426)] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[2.25rem] min-[56.25rem]:max-[89.99rem]:leading-[2.75rem] lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">

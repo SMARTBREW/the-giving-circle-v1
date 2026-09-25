@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CtaButton from "@/components/cta-button";
@@ -65,7 +65,7 @@ export default function MomentCard({
           />
         ) : null}
         <span className="relative z-10 mx-auto flex h-24 w-24 shrink-0 items-center justify-center overflow-visible sm:h-28 sm:w-28 min-[70rem]:h-[6.5rem] min-[70rem]:w-[6.5rem] min-[90rem]:h-[8rem] min-[90rem]:w-[8rem]">
-          <Image
+          <CldImage
             src={iconSrc}
             alt=""
             width={160}

@@ -18,6 +18,7 @@ from app.email.templates import (
 )
 from app.fields import Agreed
 from app.services import form_submissions as form_svc
+from app.services import champion_referrals as referral_svc
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/submit", tags=["forms"])
@@ -84,6 +85,14 @@ class CauseChampionBody(BaseModel):
     otherCauseDetail: str | None = None
     otherReasonDetail: str | None = None
     agreed: Agreed
+    # Referral attribution (optional)
+    referredByInviteCode: str | None = None
+    visitorKey: str | None = None
+
+
+class ChampionReferralOpenBody(BaseModel):
+    inviteCode: str = Field(min_length=8, max_length=16)
+    visitorKey: str = Field(min_length=8, max_length=80)
 
 
 # Matches frontend/app/partner/_sections/partner-apply-form.tsx
@@ -121,6 +130,15 @@ class PehliClassChampionBody(BaseModel):
     whyItMatters: str | None = None
 
 
+# Matches frontend/components/contact-form.tsx
+class ContactBody(BaseModel):
+    name: str = Field(min_length=2, max_length=50)
+    email: EmailStr
+    phone: str | None = None
+    message: str = Field(min_length=10, max_length=5000)
+    agree: Agreed
+
+
 async def _store_submission(*, form_type: str, payload: dict[str, Any]) -> ObjectId:
     try:
         return await form_svc.insert_form_submission(
@@ -144,9 +162,46 @@ async def submit_cause_champion(
     ).strip():
         raise api_error(400, "Please describe the other occasion")
 
+    settings = get_settings()
+    invite_code = referral_svc.new_invite_code()
+    referred_by = referral_svc.normalize_invite_code(body.referredByInviteCode)
+    visitor_key = (body.visitorKey or "").strip() or None
+
+    # Don't attribute a self-referral to the same brand-new code
+    payload = body.model_dump()
+    payload["inviteCode"] = invite_code
+    if referred_by:
+        payload["referredByInviteCode"] = referred_by
+    else:
+        payload.pop("referredByInviteCode", None)
+    if visitor_key:
+        payload["visitorKey"] = visitor_key
+    else:
+        payload.pop("visitorKey", None)
+
     submission_id = await _store_submission(
-        form_type="cause_champion", payload=body.model_dump()
+        form_type="cause_champion", payload=payload
     )
+
+    await referral_svc.create_champion_invite(
+        invite_code=invite_code,
+        owner_submission_id=submission_id,
+        owner_name=body.fullName.strip(),
+        owner_email=str(body.email),
+    )
+
+    if referred_by:
+        await referral_svc.mark_referral_submitted(
+            invite_code=referred_by,
+            visitor_key=visitor_key,
+            referred_submission_id=submission_id,
+            referred_name=body.fullName.strip(),
+            referred_email=str(body.email),
+        )
+
+    frontend = settings.FRONTEND_URL.rstrip("/")
+    invite_path = f"/champion/apply?ref={invite_code}"
+    invite_url = f"{frontend}{invite_path}"
 
     fields = {
         "Full name": body.fullName,
@@ -157,6 +212,8 @@ async def submit_cause_champion(
         "Cause detail": body.otherCauseDetail or "",
         "Reason": body.selectedReasonId,
         "Reason detail": body.otherReasonDetail or "",
+        "Invite code": invite_code,
+        "Referred by": referred_by or "",
         "Agreed to updates": "Yes",
     }
     background_tasks.add_task(
@@ -169,6 +226,39 @@ async def submit_cause_champion(
     return {
         "success": True,
         "message": "Thank you! Your Cause Champion application was received.",
+        "inviteCode": invite_code,
+        "inviteUrl": invite_url,
+        "inviteDisplayUrl": invite_url.replace("https://", "").replace("http://", ""),
+    }
+
+
+@router.post("/champion-referral-open")
+async def champion_referral_open(body: ChampionReferralOpenBody) -> dict[str, Any]:
+    """Track that someone opened a shared champion invite link (before submitting)."""
+    invite_code = referral_svc.normalize_invite_code(body.inviteCode)
+    visitor_key = body.visitorKey.strip()
+    if not invite_code:
+        raise api_error(400, "Invalid invite code")
+    if len(visitor_key) < 8:
+        raise api_error(400, "Invalid visitor key")
+
+    result = await referral_svc.record_referral_open(
+        invite_code=invite_code, visitor_key=visitor_key
+    )
+    if not result.get("recorded") and result.get("reason") == "unknown_invite":
+        # Soft-fail: don't block the apply form for a mistyped/old link
+        return {
+            "success": True,
+            "message": "Invite not found",
+            "known": False,
+        }
+
+    return {
+        "success": True,
+        "message": "Referral open recorded",
+        "known": True,
+        "status": result.get("status"),
+        "alreadyTracked": result.get("alreadyTracked", False),
     }
 
 
@@ -277,4 +367,33 @@ async def submit_pehli_class_champion(
     return {
         "success": True,
         "message": "Thank you! Your PehliClass Champion application was received.",
+    }
+
+
+@router.post("/contact")
+async def submit_contact(
+    body: ContactBody, background_tasks: BackgroundTasks
+) -> dict[str, Any]:
+    phone = (body.phone or "").strip()
+    submission_id = await _store_submission(
+        form_type="contact", payload=body.model_dump()
+    )
+
+    fields = {
+        "Name": body.name,
+        "Email": str(body.email),
+        "Phone": phone,
+        "Message": body.message,
+        "Agreed to be contacted": "Yes",
+    }
+    background_tasks.add_task(
+        _send_form_email_bg,
+        submission_id=submission_id,
+        title="New contact form message",
+        fields=fields,
+        reply_to=str(body.email),
+    )
+    return {
+        "success": True,
+        "message": "Thank you. We received your note and will write back.",
     }

@@ -1,4 +1,4 @@
-import { logger } from "@/lib/logger";
+import { config } from "@/lib/config";
 
 export function logErrorToService(error: {
   message: string;
@@ -8,11 +8,20 @@ export function logErrorToService(error: {
   userAgent: string;
   timestamp: string;
 }) {
-  fetch("/api/log-error", {
+  const base = config.apiUrl.replace(/\/$/, "");
+  void fetch(`${base}/api/client-logs`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(error),
+    body: JSON.stringify({
+      level: "error",
+      message: error.message,
+      stack: error.stack,
+      digest: error.digest,
+      url: error.url,
+      userAgent: error.userAgent,
+      timestamp: error.timestamp,
+    }),
   }).catch(() => {
-    logger.error("Failed to log error");
+    // Swallow — never break the UI if logging fails
   });
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeInSection from "@/components/fade-in-section";
@@ -12,6 +12,23 @@ import {
   SEGOE_UI_CLASS,
   getBlogArticle,
 } from "@/constants";
+import { cloudinarySrc } from "@/lib/cloudinary";
+
+const DEFAULT_OG_IMAGE = cloudinarySrc(
+  "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
+  { width: 1200 },
+);
+
+function blogOgImageUrl(image?: string): string {
+  if (!image) return DEFAULT_OG_IMAGE;
+  if (image.startsWith("/images/")) {
+    return cloudinarySrc(image, { width: 1200 });
+  }
+  if (image.startsWith("/")) {
+    return `https://www.thegivingcircle.in${image}`;
+  }
+  return image;
+}
 
 export function generateStaticParams() {
   return BLOG_ARTICLES.map((article) => ({ slug: article.id }));
@@ -31,12 +48,9 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = `https://www.thegivingcircle.in/blog/${slug}`;
-  const ogImageUrl =
-    "image" in article && article.image
-      ? article.image.startsWith("/")
-        ? `https://www.thegivingcircle.in${article.image}`
-        : article.image
-      : "https://www.thegivingcircle.in/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png";
+  const ogImageUrl = blogOgImageUrl(
+    "image" in article ? article.image : undefined,
+  );
 
   return {
     title: `${article.title} | The Giving Circle`,
@@ -96,12 +110,9 @@ export default async function BlogArticlePage({
   );
 
   const canonicalUrl = `https://www.thegivingcircle.in/blog/${slug}`;
-  const ogImageUrl =
-    "image" in article && article.image
-      ? article.image.startsWith("/")
-        ? `https://www.thegivingcircle.in${article.image}`
-        : article.image
-      : "https://www.thegivingcircle.in/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png";
+  const ogImageUrl = blogOgImageUrl(
+    "image" in article ? article.image : undefined,
+  );
 
   // Collect any FAQs for JSON-LD
   const allFaqs: { question: string; answer: string }[] = [];
@@ -264,7 +275,7 @@ export default async function BlogArticlePage({
 
               {hasImage ? (
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] shadow-[0_0.25rem_1.25rem_0_#0000000F] sm:rounded-[1.25rem]">
-                  <Image
+                  <CldImage
                     src={article.image as string}
                     alt={
                       "imageAlt" in article && typeof article.imageAlt === "string"

@@ -25,10 +25,10 @@ export const CAUSES_HERO = {
 } as const;
 
 export const CAUSES_LIST_INTRO = {
-  eyebrow: "Open Campaigns",
+  eyebrow: "Live Causes",
   title: "Pick a Cause to Champion",
   subtitle:
-    "Filter by focus area, open a cause to learn the story, then invite your circle to give directly to the verified NGO.",
+    "Find a cause you care about, learn its story, and bring your circle together to make a difference",
 } as const;
 
 export const CAUSES_REACH = {
@@ -79,6 +79,7 @@ export const LIVE_CAUSES = [
     categoryClassName: "text-[var(--Brand-Coral,#e62b4f)]",
     title: "Wings of Hope: Menstrual Health So Girls Stay in School",
     titleLines: ["Wings of Hope: Menstrual Health", "So Girls Stay in School"] as const,
+    cardTitle: "Wings of Hope",
     org: "JWP",
     location: "Delhi & NCR",
     raised: "₹4,80,000",
@@ -90,6 +91,8 @@ export const LIVE_CAUSES = [
     alt: "Schoolgirls smiling in class holding handmade pouches",
     summary:
       "Every month, thousands of girls miss school when periods begin. Wings of Hope funds menstrual health education and reusable hygiene kits so girls stay in class with dignity.",
+    cardDescription:
+      "Keeps girls in school through their periods with reusable pads and menstrual health support.",
     trustBadges: ["Tax Benefits · 80G", "Verified NGO Partner", "15+ Years Active"],
     operations: "Active operations · Delhi & NCR, India",
     aboutHeading: "When Periods Become Barriers",
@@ -139,6 +142,7 @@ export const LIVE_CAUSES = [
     categoryClassName: "text-[var(--Brand-Deep-Blue,#0b619a)]",
     title: "PehliClass: Into Formal School, On Time",
     titleLines: ["PehliClass: Into Formal School,", "On Time"] as const,
+    cardTitle: "PehliClass",
     org: "JWP",
     location: "Noida · Delhi NCR",
     raised: "₹2,85,000",
@@ -150,6 +154,8 @@ export const LIVE_CAUSES = [
     alt: "Schoolchildren smiling in class at the learning centre",
     summary:
       "Every parent remembers the first day of school. For thousands of children, that day never comes. #PehliClass is JWP’s path from out-of-school to a real classroom at Mera Sahara, Nithari.",
+    cardDescription:
+      "Helps out-of-school children close learning gaps and enrol into formal school on time.",
     trustBadges: ["Tax Benefits · 80G", "Verified Partner Listing", "48+ Years Active"],
     operations: "Active operations · Mera Sahara Bridge Learning Centre, Nithari · Delhi NCR",
     aboutHeading: "When the School Gate Stays Shut",
@@ -158,7 +164,7 @@ export const LIVE_CAUSES = [
       "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school   into their first formal class, on time. Where girls cannot attend regular school, JWP opens NIOS and IGNOU pathways so education continues.",
     ],
     impact: [
-      { value: "48+", label: "Years of JWP Impact" },
+      { value: "48+", label: "Years of Impact" },
       { value: "1 year", label: "Max Bridge Stay" },
       { value: "₹19,000", label: "Full Bridge Year" },
       { value: "₹1,600", label: "Per Child / Month" },
@@ -207,6 +213,7 @@ export const LIVE_CAUSES = [
       "Community Forest Governance:",
       "Protecting Forests, Empowering People",
     ] as const,
+    cardTitle: "Forest Governance",
     org: "ICFG",
     location: "Jharkhand & Central India",
     raised: "₹5,40,000",
@@ -218,6 +225,8 @@ export const LIVE_CAUSES = [
     alt: "A young woman carrying woven baskets through a forest",
     summary:
       "Empowering tribal and forest-dwelling communities under the Forest Rights Act to conserve ecosystems, restore biodiversity, and build sustainable livelihoods.",
+    cardDescription:
+      "Empowers forest communities to protect ecosystems and build sustainable livelihoods.",
     trustBadges: ["Verified NGO Partner", "FRA 2006 Rights", "2,000+ Villages"],
     operations: "Active operations · Chaingada & 2,000+ Forest Villages · India",
     aboutHeading: "Forests Governed by Those Who Know Them Best",
@@ -267,6 +276,7 @@ export const LIVE_CAUSES = [
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Pawsitive Protectors",
     titleLines: null,
+    cardTitle: "Pawsitive Protectors",
     org: "Animal Care",
     location: "Mumbai, Maharashtra",
     raised: "₹3,90,000",
@@ -278,6 +288,8 @@ export const LIVE_CAUSES = [
     alt: "A caregiver treating a rescued dog at an Animal Care shelter",
     summary:
       "Protecting street animals and communities with free rabies vaccinations, deworming, and care through Animal Care’s community helpline network.",
+    cardDescription:
+      "Protects street animals and communities with free rabies vaccinations and care.",
     trustBadges: ["Verified NGO Partner", "80G Where Eligible", "Zero Rabies Mission"],
     operations: "Active operations · Mumbai & Delhi NCR · 1,500+ animals",
     aboutHeading: "Vaccinate, Treat, Protect",
@@ -322,6 +334,7 @@ export const LIVE_CAUSES = [
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Bowls of Hope",
     titleLines: null,
+    cardTitle: "Bowls of Hope",
     org: "Animal Care",
     location: "Delhi",
     raised: "₹6,20,000",
@@ -333,6 +346,8 @@ export const LIVE_CAUSES = [
     alt: "Rescued dogs drinking from metal bowls at a feeding station",
     summary:
       "Daily feeding and care at Animal Care shelters for strays   nutritious meals and veterinary support through collective giving.",
+    cardDescription:
+      "Funds daily feeding and veterinary care for strays at Animal Care shelters.",
     trustBadges: ["Verified NGO Partner", "Shelter Feeding", "Veterinary Care"],
     operations: "Active operations · Delhi · 2,000+ street animals",
     aboutHeading: "Meals That Keep Strays Alive",
@@ -372,6 +387,7 @@ export const LIVE_CAUSES = [
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Brick by Brick: Building Them a Home",
     titleLines: ["Brick by Brick:", "Building Them a Home"] as const,
+    cardTitle: "Brick by Brick",
     org: "Animal Care",
     location: "Gurgaon, Haryana",
     raised: "₹10,000",
@@ -383,6 +399,8 @@ export const LIVE_CAUSES = [
     alt: "Animal Care Centre construction site in Gurgaon with bricks and project sign",
     summary:
       "₹10 per brick for the boundary wall on a 17,500 sq ft stray rescue and rehab plot in Gurgaon   part of Animal Care’s Zero Rabies mission.",
+    cardDescription:
+      "Sponsors bricks for a stray rescue and rehab centre boundary wall in Gurgaon.",
     trustBadges: ["Verified Welfare Partner", "Zero Rabies Mission", "Gurgaon Plot"],
     operations: "Active operations · Gurgaon · Boundary wall → full centre",
     aboutHeading: "A Wall That Becomes a Home",
@@ -422,6 +440,7 @@ export const LIVE_CAUSES = [
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Emergency Animal Rescue",
     titleLines: null,
+    cardTitle: "Emergency Rescue",
     org: "Animal Care",
     location: "Uttarakhand & Punjab",
     raised: "₹3,20,000",
@@ -433,6 +452,8 @@ export const LIVE_CAUSES = [
     alt: "Animal Care rescuers wading through floodwater on an emergency response",
     summary:
       "Emergency rescue and rehabilitation for animals in crisis   communities for communities, with a verified welfare partner.",
+    cardDescription:
+      "Funds emergency rescue and rehabilitation for animals affected by floods and crises.",
     trustBadges: ["Verified NGO Partner", "Emergency Response", "Direct Donations"],
     operations: "Active operations · Uttarakhand & Punjab · 500+ rescue animals",
     aboutHeading: "When Crises Hit Animals Too",
@@ -475,17 +496,16 @@ export type CampaignCardData = Pick<
   | "category"
   | "categoryClassName"
   | "title"
-  | "titleLines"
+  | "cardTitle"
   | "org"
   | "location"
-  | "raised"
-  | "goal"
-  | "percent"
   | "supporters"
-  | "daysLeft"
   | "src"
   | "alt"
->;
+  | "cardDescription"
+> & {
+  impactHighlight: LiveCause["impact"][number];
+};
 
 export function getLiveCause(id: string): LiveCause | undefined {
   if (id === "flood-relief-uttarakhand") {
@@ -508,14 +528,12 @@ export function toCampaignCard(cause: LiveCause): CampaignCardData {
     category: cause.category,
     categoryClassName: cause.categoryClassName,
     title: cause.title,
-    titleLines: cause.titleLines,
+    cardTitle: cause.cardTitle,
+    cardDescription: cause.cardDescription,
     org: cause.org,
     location: cause.location,
-    raised: cause.raised,
-    goal: cause.goal,
-    percent: cause.percent,
     supporters: cause.supporters,
-    daysLeft: cause.daysLeft,
+    impactHighlight: cause.impact[0],
     src: cause.src,
     alt: cause.alt,
   };

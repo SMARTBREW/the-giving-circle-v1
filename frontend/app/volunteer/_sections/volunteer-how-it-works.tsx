@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import SectionIntro from "@/components/section-intro";
 import ChampionHowItWorksIcon from "@/components/champion-how-it-works-icon";
@@ -34,7 +34,7 @@ export default function VolunteerHowItWorks() {
                   <ChampionHowItWorksIcon iconSrc={step.iconSrc} />
 
                   {!isLast ? (
-                    <Image
+                    <CldImage
                       src={arrowSrc}
                       alt=""
                       width={280}

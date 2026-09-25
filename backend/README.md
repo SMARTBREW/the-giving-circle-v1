@@ -53,7 +53,8 @@ SMTP verify runs on startup (warn only). Mongo failure exits the process.
 
 Endpoints (fields match current frontend apply forms):
 
-- `POST /api/submit/cause-champion` — `fullName`, `email`, `mobile`, `city`, `selectedCauseId`, `selectedReasonId`, `otherCauseDetail?`, `otherReasonDetail?`, `agreed`
+- `POST /api/submit/cause-champion` — `fullName`, `email`, `mobile`, `city`, `selectedCauseId`, `selectedReasonId`, `otherCauseDetail?`, `otherReasonDetail?`, `agreed`, optional `referredByInviteCode`, `visitorKey`. Response includes `inviteCode` + `inviteUrl`.
+- `POST /api/submit/champion-referral-open` — `inviteCode`, `visitorKey` (records that someone opened a shared invite link before submitting)
 - `POST /api/submit/ngo-partner` — `organizationName`, `country`, `contactPerson`, `email`, `phone`, `selectedFocusId`, `otherFocusDetail?`, `agreed`
 - `POST /api/submit/animal-welfare-partner` — directory listing fields
 - `POST /api/submit/pehli-class-champion` → stored as `formType: cause_champion` with `payload.campaign = "pehli-class"`

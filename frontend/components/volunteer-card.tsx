@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 export default function VolunteerCard({
@@ -18,11 +18,12 @@ export default function VolunteerCard({
     <li className="relative w-full min-w-0 min-[90rem]:h-[23.4375rem] min-[90rem]:w-[18.5rem]">
       <div className="flex w-full flex-col overflow-hidden rounded-[0.75rem] border border-[#d9e1e2] bg-[#FFFFFF] min-[90rem]:border-0 min-[90rem]:bg-transparent">
         <div className="relative aspect-[4/3] w-full overflow-hidden min-[56.25rem]:aspect-[3/4] min-[90rem]:aspect-auto min-[90rem]:h-[21.0625rem] min-[90rem]:rounded-[0.75rem]">
-          <Image
+          <CldImage
             src={src}
             alt={alt}
             fill
             sizes="(max-width: 767px) 100vw, (max-width: 899px) 50vw, (max-width: 1439px) 25vw, 18.5rem"
+            loading="lazy"
             className={`object-cover ${objectPosition}`}
           />
         </div>

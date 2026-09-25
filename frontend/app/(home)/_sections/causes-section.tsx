@@ -10,8 +10,8 @@ export default function CausesSection() {
     <section id="causes" className="w-full bg-gray-100">
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-14 min-[90rem]:h-[51.25rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[4rem]">
         <SectionIntro
-          eyebrow="Our Causes"
-          title="Causes That Need You"
+          eyebrow="Causes that need you"
+          title="Support what is closest to your heart"
           subtitle="Find a cause you care about and see where your support can make a difference."
         />
         <ul className="mt-6 flex w-full flex-col gap-4 sm:mt-8 sm:gap-5 md:flex-row md:flex-wrap md:justify-center md:gap-5 min-[56.25rem]:mt-8 min-[56.25rem]:flex-nowrap min-[56.25rem]:gap-3 lg:mt-10 lg:gap-4 min-[90rem]:mt-8 min-[90rem]:gap-6">

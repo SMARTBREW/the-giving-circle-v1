@@ -65,22 +65,22 @@ export const PARTNER_APPLY = {
         required: true,
       },
       country: {
-        label: "Country",
+        label: "Where you live",
         placeholder: "India",
         required: true,
       },
       contactPerson: {
-        label: "Contact Person Name",
+        label: "Your full name",
         placeholder: "Full name",
         required: true,
       },
       email: {
-        label: "Email Address",
+        label: "Your personal email",
         placeholder: "hello@yourngo.org",
         required: true,
       },
       phone: {
-        label: "Phone Number",
+        label: "Your contact number",
         placeholder: "98103 53603",
         required: true,
       },

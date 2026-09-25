@@ -14,6 +14,8 @@ _client: AsyncIOMotorClient | None = None
 _db: AsyncIOMotorDatabase | None = None
 
 FORM_SUBMISSIONS = "form_submissions"
+CHAMPION_INVITES = "champion_invites"
+CHAMPION_REFERRAL_EVENTS = "champion_referral_events"
 BLOG_POSTS = "blog_posts"
 ANIMAL_WELFARE_PARTNERS = "animal_welfare_partners"
 
@@ -42,6 +44,22 @@ async def connect_mongo(settings: Settings | None = None) -> AsyncIOMotorDatabas
 async def ensure_indexes(db: AsyncIOMotorDatabase) -> None:
     await db[FORM_SUBMISSIONS].create_index([("createdAt", -1)])
     await db[FORM_SUBMISSIONS].create_index([("formType", 1), ("createdAt", -1)])
+    await db[FORM_SUBMISSIONS].create_index(
+        [("formType", 1), ("payload.inviteCode", 1)],
+        unique=True,
+        partialFilterExpression={
+            "formType": "cause_champion",
+            "payload.inviteCode": {"$type": "string"},
+        },
+    )
+    await db[CHAMPION_INVITES].create_index("inviteCode", unique=True)
+    await db[CHAMPION_INVITES].create_index([("ownerEmail", 1), ("createdAt", -1)])
+    await db[CHAMPION_REFERRAL_EVENTS].create_index(
+        [("inviteCode", 1), ("visitorKey", 1)], unique=True
+    )
+    await db[CHAMPION_REFERRAL_EVENTS].create_index(
+        [("inviteCode", 1), ("status", 1), ("openedAt", -1)]
+    )
     await db[BLOG_POSTS].create_index("slug", unique=True)
     await db[ANIMAL_WELFARE_PARTNERS].create_index("id", unique=True)
     await db[ANIMAL_WELFARE_PARTNERS].create_index(

@@ -72,10 +72,19 @@ const nextConfig: NextConfig = {
         ? { exclude: ["error", "warn"] }
         : false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
+    ],
+    ...(isStaticExport ? { unoptimized: true } : {}),
+  },
   ...(isStaticExport
     ? {
         output: "export" as const,
-        images: { unoptimized: true },
         trailingSlash: true,
       }
     : {

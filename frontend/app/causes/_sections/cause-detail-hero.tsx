@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import FadeInSection from "@/components/fade-in-section";
 import CauseFundingCard from "./cause-funding-card";
@@ -52,7 +52,7 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
         <div className="mt-8 grid w-full grid-cols-1 items-stretch gap-6 min-[56.25rem]:mt-10 min-[56.25rem]:grid-cols-[minmax(0,1fr)_minmax(16rem,min(22rem,38%))] min-[56.25rem]:gap-6 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,min(24.75rem,36%))] lg:gap-8 min-[90rem]:mt-12 min-[90rem]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] min-[90rem]:gap-14">
           <FadeInSection className="flex min-w-0 min-[56.25rem]:h-full">
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] sm:rounded-[1.25rem] min-[56.25rem]:aspect-auto min-[56.25rem]:h-full min-[56.25rem]:min-h-[22rem] min-[90rem]:rounded-[1.5rem]">
-              <Image
+              <CldImage
                 src={cause.src}
                 alt={cause.alt}
                 fill

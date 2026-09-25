@@ -42,10 +42,11 @@ yarn-error.log*
 .staging-auth
 .staging-auth.env
 
-# local staging deploy (keep off GitHub)
-deploy-s3-dev.sh
-scripts/
+# local deploy scripts + ops docs (keep off GitHub)
+deploy*.sh
+DEPLOYMENT.md
 docs/
+scripts/
 
 # vercel
 .vercel

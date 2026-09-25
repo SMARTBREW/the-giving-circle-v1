@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import type { ReactNode } from "react";
 import PageSection from "@/components/page-section";
 import SectionIntro from "@/components/section-intro";
@@ -51,7 +51,7 @@ export default function SplitMediaSection({
       </div>
 
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] md:w-[42%] md:self-stretch md:aspect-auto lg:w-[44%]">
-        <Image
+        <CldImage
           src={src}
           alt={alt}
           fill

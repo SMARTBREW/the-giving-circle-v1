@@ -5,8 +5,8 @@ export default function ReachSection() {
   return (
     <ReachBand
       id="reach"
-      eyebrow="Our Reach"
-      title="One Circle, Countless Lives"
+      eyebrow="Our impact"
+      title="Circles creating change"
       stats={REACH_STATS}
     />
   );

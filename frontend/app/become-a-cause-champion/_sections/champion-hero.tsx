@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { CHAMPION_PAGE_HERO, PoppinsFont, SEGOE_UI_CLASS } from "@/constants";
@@ -93,7 +93,7 @@ export default function ChampionHero() {
         <FadeInSection
           className={`relative mx-auto aspect-[4/3] w-full max-w-[26rem] shrink-0 overflow-hidden rounded-[1.25rem] sm:aspect-[16/10] sm:max-w-[34rem] sm:rounded-[1.5rem] md:max-w-[40rem] min-[56.25rem]:mx-0 min-[56.25rem]:aspect-auto min-[56.25rem]:h-auto min-[56.25rem]:min-h-[28rem] min-[56.25rem]:w-[min(46%,26rem)] min-[56.25rem]:max-w-none min-[56.25rem]:self-stretch lg:w-[min(46%,30rem)] min-[90rem]:min-h-0 min-[90rem]:w-[32.125rem] min-[90rem]:self-auto min-[90rem]:rounded-[2rem] ${PAGE_HERO_COL_H}`}
         >
-          <Image
+          <CldImage
             src={src}
             alt={alt}
             fill

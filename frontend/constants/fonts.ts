@@ -5,6 +5,7 @@ export const InterFont = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const InstrumentSerif = Instrument_Serif({
@@ -13,6 +14,7 @@ export const InstrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-instrument-serif",
+  preload: false,
 });
 
 export const PoppinsFont = Poppins({
@@ -20,6 +22,7 @@ export const PoppinsFont = Poppins({
   weight: ["400"],
   display: "swap",
   variable: "--font-poppins",
+  preload: false,
 });
 
 export const SatoshiBold = InterFont;

@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneInput, {
   isValidPhoneNumber,
   type Value as PhoneValue,
@@ -25,7 +25,16 @@ import {
   type ChampionApplyCauseId,
   type ChampionApplyReasonId,
 } from "@/constants";
-import { submitCauseChampion } from "@/lib/api";
+import {
+  submitCauseChampion,
+  trackChampionReferralOpen,
+} from "@/lib/api";
+import {
+  clearRememberedChampionReferral,
+  getOrCreateVisitorKey,
+  getRememberedChampionReferral,
+  rememberChampionReferral,
+} from "@/lib/champion-referral";
 import { logger } from "@/lib/logger";
 
 type FormStep = 1 | 2 | 3 | 4;
@@ -135,6 +144,7 @@ export default function ChampionApplyForm() {
   } = CHAMPION_APPLY;
   const searchParams = useSearchParams();
   const reasonParam = searchParams.get("reason");
+  const referralParam = searchParams.get("ref");
   const presetReason = isChampionApplyPresetReason(reasonParam)
     ? reasonParam
     : null;
@@ -161,8 +171,23 @@ export default function ChampionApplyForm() {
   const [city, setCity] = useState(step3.cities[0] as string);
   const [agreed, setAgreed] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [inviteDisplayUrl, setInviteDisplayUrl] = useState("");
+  const [inviteShareUrl, setInviteShareUrl] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!referralParam) return;
+    rememberChampionReferral(referralParam);
+    const visitorKey = getOrCreateVisitorKey();
+    const code = referralParam.trim().toUpperCase();
+    if (!visitorKey || !/^TGC[A-F0-9]{8}$/.test(code)) return;
+    void trackChampionReferralOpen({ inviteCode: code, visitorKey }).catch(
+      () => {
+        // Soft-fail: never block the apply form for tracking errors
+      },
+    );
+  }, [referralParam]);
 
   const progressStep = (() => {
     if (currentStep === 4) return totalSteps;
@@ -216,7 +241,9 @@ export default function ChampionApplyForm() {
     setSubmitError(null);
     setIsSubmitting(true);
     try {
-      await submitCauseChampion({
+      const referredByInviteCode = getRememberedChampionReferral() ?? undefined;
+      const visitorKey = getOrCreateVisitorKey() || undefined;
+      const result = await submitCauseChampion({
         fullName: fullName.trim(),
         email: email.trim(),
         mobile,
@@ -230,7 +257,16 @@ export default function ChampionApplyForm() {
           ? { otherReasonDetail: otherReasonDetail.trim() }
           : {}),
         agreed: true,
+        ...(referredByInviteCode ? { referredByInviteCode } : {}),
+        ...(visitorKey ? { visitorKey } : {}),
       });
+      const shareUrl = result.inviteUrl ?? "";
+      const displayUrl =
+        result.inviteDisplayUrl ??
+        shareUrl.replace(/^https?:\/\//, "");
+      setInviteShareUrl(shareUrl);
+      setInviteDisplayUrl(displayUrl);
+      clearRememberedChampionReferral();
       setCurrentStep(4);
     } catch (err) {
       const message =
@@ -245,8 +281,9 @@ export default function ChampionApplyForm() {
   };
 
   const handleCopy = async () => {
+    if (!inviteShareUrl) return;
     try {
-      await navigator.clipboard.writeText(`https://${thanks.inviteUrl}`);
+      await navigator.clipboard.writeText(inviteShareUrl);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -460,7 +497,7 @@ export default function ChampionApplyForm() {
             homeHref={thanks.homeHref}
             inviteLabel={thanks.inviteLabel}
             inviteHint={thanks.inviteHint}
-            inviteUrl={thanks.inviteUrl}
+            inviteUrl={inviteDisplayUrl}
             copyLabel={thanks.copyLabel}
             copied={copied}
             onCopy={() => void handleCopy()}
@@ -513,7 +550,7 @@ export default function ChampionApplyForm() {
       <section className="fixed inset-0 z-10 hidden min-h-0 min-w-0 overflow-hidden bg-[#FFFFFF] md:flex">
         <aside className="flex h-full w-[min(16rem,26%)] min-w-0 shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-[#D9E1E2] bg-[#E8F7F8] px-3.5 pt-4 pb-4 sm:px-4 lg:w-[min(18.5rem,24%)] lg:px-5 lg:pt-5 lg:pb-5 min-[90rem]:w-[30.125rem] min-[90rem]:px-16 min-[90rem]:pt-10 min-[90rem]:pb-10">
             <Link href="/" className="inline-flex max-w-full shrink-0 items-center">
-              <Image
+              <CldImage
                 src="/images/Frame 2071857645.png"
                 alt="The Giving Circle"
                 width={220}
@@ -645,7 +682,7 @@ export default function ChampionApplyForm() {
                       <div className="mt-3 flex h-11 w-full min-w-0 overflow-hidden rounded-xl border border-[var(--Main-CTA-button,#02938c)] bg-[#FFFFFF] sm:mt-4 sm:h-12 sm:rounded-2xl min-[90rem]:mt-8 min-[90rem]:h-[4.5rem] min-[90rem]:rounded-[1rem]">
                         <input
                           readOnly
-                          value={thanks.inviteUrl}
+                          value={inviteDisplayUrl}
                           className={`${SEGOE_UI_CLASS} w-0 min-w-0 flex-1 truncate bg-transparent px-3 text-[0.8125rem] text-[#4a5558] outline-none sm:px-4 sm:text-[0.9375rem] min-[90rem]:px-5 min-[90rem]:text-[1rem]`}
                         />
                         <button
@@ -731,7 +768,7 @@ export default function ChampionApplyForm() {
                                   className={optionButtonClass(isSelected)}
                                 >
                                   <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden lg:h-9 lg:w-9 min-[90rem]:h-11 min-[90rem]:w-11">
-                                    <Image
+                                    <CldImage
                                       src={cause.iconSrc}
                                       alt=""
                                       width={44}
@@ -802,7 +839,7 @@ export default function ChampionApplyForm() {
                                   className={optionButtonClass(isSelected)}
                                 >
                                   <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden lg:h-9 lg:w-9 min-[90rem]:h-11 min-[90rem]:w-11">
-                                    <Image
+                                    <CldImage
                                       src={reason.iconSrc}
                                       alt=""
                                       width={44}

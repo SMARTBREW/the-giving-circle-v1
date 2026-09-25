@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import { useState } from "react";
 import PhoneInput, {
@@ -385,7 +385,7 @@ export default function PartnerApplyForm() {
       <section className="fixed inset-0 z-10 hidden min-h-0 min-w-0 overflow-hidden bg-[#FFFFFF] md:flex">
         <aside className="flex h-full w-[min(17.5rem,28%)] min-w-0 shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-[#D9E1E2] bg-[#E8F7F8] px-4 pt-5 pb-5 sm:px-5 lg:w-[min(20rem,26%)] lg:px-6 lg:pt-7 lg:pb-7 min-[90rem]:w-[30.125rem] min-[90rem]:px-16 min-[90rem]:pt-10 min-[90rem]:pb-10">
             <Link href="/" className="inline-flex w-fit shrink-0 items-center">
-              <Image
+              <CldImage
                 src="/images/Frame 2071857645.png"
                 alt="The Giving Circle"
                 width={220}
@@ -562,7 +562,7 @@ export default function PartnerApplyForm() {
                                   className={optionButtonClass(isSelected)}
                                 >
                                   <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden lg:h-9 lg:w-9 min-[90rem]:h-11 min-[90rem]:w-11">
-                                    <Image
+                                    <CldImage
                                       src={focus.iconSrc}
                                       alt=""
                                       width={44}

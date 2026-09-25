@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import SectionIntro from "@/components/section-intro";
 import { CHAMPION_TRUST, SEGOE_UI_CLASS } from "@/constants";
@@ -29,7 +29,7 @@ export default function ChampionTrust() {
                 }`}
               >
                 <span className="relative flex h-16 w-16 items-center justify-center overflow-hidden">
-                  <Image
+                  <CldImage
                     src={feature.iconSrc}
                     alt=""
                     width={64}

@@ -1,3 +1,5 @@
+import { config } from "@/lib/config";
+
 type LogLevel = "debug" | "info" | "warn" | "error";
 
 interface LogData {
@@ -40,7 +42,8 @@ class Logger {
 
   private async sendToService(logData: LogData) {
     try {
-      await fetch("/api/logs", {
+      const base = config.apiUrl.replace(/\/$/, "");
+      await fetch(`${base}/api/client-logs`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(logData),

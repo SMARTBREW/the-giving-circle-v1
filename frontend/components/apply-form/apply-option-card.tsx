@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 function OptionRadio({ selected }: { selected: boolean }) {
@@ -41,7 +41,7 @@ export default function ApplyOptionCard({
       }`}
     >
       <span className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden sm:h-10 sm:w-10">
-        <Image
+        <CldImage
           src={iconSrc}
           alt=""
           width={40}

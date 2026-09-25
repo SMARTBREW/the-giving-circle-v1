@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import { SEGOE_UI_CLASS } from "@/constants";
 
 export default function HowItWorksStep({
@@ -15,7 +15,7 @@ export default function HowItWorksStep({
   return (
     <li className="relative flex w-full flex-col items-center">
       <span className="relative z-10 -translate-y-2 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[#0ba5bb] bg-[#FFFFFF] sm:-translate-y-2.5 sm:h-20 sm:w-20 min-[56.25rem]:h-[4.5rem] min-[56.25rem]:w-[4.5rem] lg:-translate-y-3 lg:h-[5rem] lg:w-[5rem] min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]">
-        <Image
+        <CldImage
           src={iconSrc}
           alt=""
           width={120}

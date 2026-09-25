@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import { AnimatePresence, motion } from "framer-motion";
 import { SEGOE_UI_CLASS, type StoryArticle, type StoryStatIcon } from "@/constants";
 
@@ -169,11 +169,12 @@ export default function StoryCard({
 }) {
   const imageBlock = (
     <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-[1rem] border border-[#d9e1e2] sm:aspect-[16/10] md:aspect-auto md:h-[32rem] md:w-[min(46%,26rem)] md:self-start lg:h-[36rem] lg:w-[min(44%,28rem)] min-[90rem]:aspect-[4/5] min-[90rem]:h-auto min-[90rem]:w-[38%]">
-      <Image
+      <CldImage
         src={story.src}
         alt={story.alt}
         fill
         sizes="(max-width: 767px) 100vw, (max-width: 1439px) 46vw, 38vw"
+        loading="lazy"
         className={`object-cover ${story.objectPosition || "object-center"}`}
       />
 

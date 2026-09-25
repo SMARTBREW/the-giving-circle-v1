@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { CAUSES_HERO, PoppinsFont, SEGOE_UI_CLASS } from "@/constants";
@@ -89,7 +89,7 @@ export default function CausesHero() {
         <FadeInSection
           className={`relative mx-auto aspect-[4/3] w-full max-w-[26rem] shrink-0 overflow-hidden rounded-[1.25rem] sm:aspect-[16/10] sm:max-w-[34rem] sm:rounded-[1.5rem] md:max-w-[40rem] min-[56.25rem]:mx-0 min-[56.25rem]:aspect-[3/4] min-[56.25rem]:h-[clamp(20rem,52dvh,34rem)] min-[56.25rem]:w-[min(46%,26rem)] min-[56.25rem]:max-w-none lg:h-[clamp(24rem,58dvh,38.5rem)] lg:w-[min(46%,30rem)] lg:aspect-auto min-[90rem]:w-[32.125rem] min-[90rem]:rounded-[2rem] ${PAGE_HERO_COL_H}`}
         >
-          <Image
+          <CldImage
             src={src}
             alt={alt}
             fill

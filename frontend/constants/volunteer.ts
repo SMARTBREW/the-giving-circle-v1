@@ -5,7 +5,7 @@ export const VOLUNTEER_PAGE_HERO = {
   titleAccent: "Matter.",
   subtitle:
     "Give your time, skills, and energy to verified causes. Walk with communities, support NGO partners, and help our circle create change on the ground.",
-  primaryCta: { label: "Become a Volunteer", href: "/#contact" },
+  primaryCta: { label: "Become a Volunteer", href: "/contact" },
   secondaryCta: { label: "Explore Causes", href: "/causes" },
   src: "/images/volunteer/surendra-sukhraj-animal-care.jpg",
   alt: "Surendra Sukhraj with a rescued dog during animal care work",
@@ -69,7 +69,7 @@ export const VOLUNTEER_MEET = {
   subtitle:
     "Teachers, doctors, students, and professionals lending time and heart to verified causes across India.",
   ctaLabel: "Become a Volunteer",
-  href: "/#contact",
+  href: "/contact",
 } as const;
 
 export const VOLUNTEER_CTA = {
@@ -80,5 +80,5 @@ export const VOLUNTEER_CTA = {
   subtitle:
     "Tell us where you want to help. We’ll connect you with a verified partner and a clear place to start.",
   ctaLabel: "Become a Volunteer",
-  href: "/#contact",
+  href: "/contact",
 } as const;

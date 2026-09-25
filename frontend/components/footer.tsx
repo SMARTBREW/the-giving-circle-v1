@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import {
   FOOTER_BLURB,
@@ -136,10 +136,7 @@ function FooterLinkList({
 
 export default function Footer() {
   return (
-    <footer
-      id="contact"
-      className="w-full min-w-0 bg-[#FFFFFF] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0"
-    >
+    <footer className="w-full min-w-0 bg-[#FFFFFF] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0">
       <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8 md:px-10 md:pt-12 md:pb-10 lg:px-12 lg:pt-12 lg:pb-10 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
         {/* Brand left; link columns share the remaining width (not flush-right). */}
         <div className="flex w-full min-w-0 flex-col gap-8 sm:gap-9 lg:flex-row lg:items-start lg:gap-12 min-[90rem]:gap-16">
@@ -148,11 +145,12 @@ export default function Footer() {
               href="/"
               className="block h-10 w-full max-w-[11.5rem] sm:h-11 sm:max-w-[13rem] md:h-12 md:max-w-[14.5rem] min-[90rem]:h-[4.25rem] min-[90rem]:max-w-[18rem]"
             >
-              <Image
+              <CldImage
                 src="/images/gc-logo-final.png"
                 alt="The Giving Circle"
                 width={1893}
                 height={439}
+                sizes="(min-width: 90rem) 18rem, 14rem"
                 className="h-full w-full object-contain object-left"
               />
             </Link>

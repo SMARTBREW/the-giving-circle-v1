@@ -12,10 +12,9 @@ export default function MomentsSection({
     <section id="moments" className={`w-full ${className}`}>
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
-          eyebrow="Meaningful Moments"
-          title="Celebrate. Remember. Give."
-          subtitle="The flowers fade. Start a fundraiser instead, and let the people who love you give where your heart already is."
-        />
+          eyebrow="Cherish what matters"
+          title="Make your special moments count"
+          subtitle="Celebrate a milestone, honour a memory, or mark a special day by making a difference"        />
         {/*
           Stack below 70rem so ~1055px / 150% zoom keep full-width nowrap CTAs.
           3-up from 70rem covers 110% (~1309) without cramped labels.

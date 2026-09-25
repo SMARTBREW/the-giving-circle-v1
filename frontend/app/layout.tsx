@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import AppShell from "@/components/app-shell";
-import { InterFont, InstrumentSerif, PoppinsFont, SITE } from "@/constants";
+import { InterFont, PoppinsFont, SITE } from "@/constants";
 import { config } from "@/lib/config";
 import "./globals.css";
 
@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: SITE.name,
   description: SITE.description,
   metadataBase: new URL(SITE.url),
+  icons: {
+    icon: [{ url: "/icon", type: "image/png", sizes: "32x32" }],
+  },
   ...(isStaging
     ? {
         robots: {
@@ -52,7 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${InterFont.variable} ${InstrumentSerif.variable} ${PoppinsFont.variable}`}
+      className={`${InterFont.variable} ${PoppinsFont.variable}`}
     >
       <body className={InterFont.className}>
         <ThemeProvider>

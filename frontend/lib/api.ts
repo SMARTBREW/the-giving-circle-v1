@@ -6,15 +6,21 @@ export type ApiResponse = {
   message: string;
 };
 
+export type CauseChampionResponse = ApiResponse & {
+  inviteCode?: string;
+  inviteUrl?: string;
+  inviteDisplayUrl?: string;
+};
+
 function apiUrl(path: string): string {
   const base = config.apiUrl.replace(/\/$/, "");
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-export async function postJson<TBody extends Record<string, unknown>>(
-  path: string,
-  body: TBody,
-): Promise<ApiResponse> {
+export async function postJson<
+  TBody extends Record<string, unknown>,
+  TResponse extends ApiResponse = ApiResponse,
+>(path: string, body: TBody): Promise<TResponse> {
   let response: Response;
   try {
     response = await fetch(apiUrl(path), {
@@ -29,13 +35,13 @@ export async function postJson<TBody extends Record<string, unknown>>(
   }
 
   const raw = await response.text();
-  const data = safeJsonParse<ApiResponse>(raw, {
+  const data = safeJsonParse<TResponse>(raw, {
     success: false,
     message:
       response.headers.get("content-type")?.includes("application/json")
         ? "Something went wrong. Please try again."
         : `API returned ${response.status}. Check NEXT_PUBLIC_API_URL (expected FastAPI, not Next.js).`,
-  });
+  } as TResponse);
 
   if (!response.ok || !data.success) {
     throw new Error(
@@ -56,6 +62,8 @@ export type CauseChampionPayload = {
   otherCauseDetail?: string;
   otherReasonDetail?: string;
   agreed: true;
+  referredByInviteCode?: string;
+  visitorKey?: string;
 };
 
 export type NgoPartnerPayload = {
@@ -70,9 +78,31 @@ export type NgoPartnerPayload = {
 };
 
 export function submitCauseChampion(payload: CauseChampionPayload) {
-  return postJson("/api/submit/cause-champion", payload);
+  return postJson<CauseChampionPayload, CauseChampionResponse>(
+    "/api/submit/cause-champion",
+    payload,
+  );
 }
 
 export function submitNgoPartner(payload: NgoPartnerPayload) {
   return postJson("/api/submit/ngo-partner", payload);
+}
+
+export type ContactPayload = {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+  agree: true;
+};
+
+export function submitContact(payload: ContactPayload) {
+  return postJson("/api/submit/contact", payload);
+}
+
+export function trackChampionReferralOpen(payload: {
+  inviteCode: string;
+  visitorKey: string;
+}) {
+  return postJson("/api/submit/champion-referral-open", payload);
 }

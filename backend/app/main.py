@@ -16,7 +16,7 @@ from app.config import get_settings
 from app.db.mongo import close_mongo, connect_mongo
 from app.email.smtp import verify_smtp
 from app.middleware.rate_limit import RateLimitMiddleware, SlidingWindowLimiter
-from app.routers import animal_welfare, blog, forms, health
+from app.routers import animal_welfare, blog, client_logs, forms, health
 from app.services import animal_welfare_store, blog_store
 
 settings = get_settings()
@@ -140,6 +140,7 @@ app.add_middleware(
 
 app.include_router(health.router)
 app.include_router(forms.router)
+app.include_router(client_logs.router)
 app.include_router(blog.router)
 app.include_router(animal_welfare.router)
 

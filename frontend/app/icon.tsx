@@ -14,10 +14,11 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#FCC010",
-          color: "#0f0f0f",
-          fontSize: 18,
+          background: "#02938c",
+          color: "#ffffff",
+          fontSize: 14,
           fontWeight: 700,
+          fontFamily: "Georgia, serif",
         }}
       >
         GC

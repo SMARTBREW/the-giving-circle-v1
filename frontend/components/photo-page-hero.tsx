@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import CtaArrow from "@/components/cta-arrow";
@@ -32,7 +32,7 @@ export default function PhotoPageHero({
     <section
       className={`relative isolate min-h-[min(70vh,28rem)] w-full overflow-hidden sm:min-h-[min(36rem,70vh)] md:min-h-[min(38rem,72vh)] min-[56.25rem]:min-h-[min(36rem,70vh)] min-[90rem]:min-h-[min(48rem,80vh)] ${PAGE_HERO_BLEED}`}
     >
-      <Image
+      <CldImage
         src={src}
         alt={alt}
         fill

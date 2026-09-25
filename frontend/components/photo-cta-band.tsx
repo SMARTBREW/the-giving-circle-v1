@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import CtaButton from "@/components/cta-button";
 import { SEGOE_UI_CLASS } from "@/constants";
@@ -37,27 +37,30 @@ export default function PhotoCtaBand({
     <section className="relative isolate aspect-[6/5] min-h-[min(22rem,70vh)] w-full overflow-hidden sm:aspect-auto sm:min-h-[min(26rem,65vh)] md:min-h-[min(28rem,65vh)] min-[56.25rem]:min-h-[min(26rem,62vh)] lg:min-h-[min(28rem,64vh)] min-[90rem]:min-h-[29.625rem]">
       {mobileSrc ? (
         <>
-          <Image
+          <CldImage
             src={mobileSrc}
             alt={alt}
             fill
             sizes="100vw"
+            loading="lazy"
             className={`object-cover sm:hidden ${mobileObjectPosition}`}
           />
-          <Image
+          <CldImage
             src={src}
             alt={alt}
             fill
             sizes="100vw"
+            loading="lazy"
             className={`hidden object-cover sm:block ${objectPosition}`}
           />
         </>
       ) : (
-        <Image
+        <CldImage
           src={src}
           alt={alt}
           fill
           sizes="100vw"
+          loading="lazy"
           className={`object-cover ${objectPosition}`}
         />
       )}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { motion } from "framer-motion";
@@ -133,11 +133,12 @@ export default function Header() {
               className="block h-10 w-[10.5rem] shrink-0 sm:h-11 sm:w-[11.75rem] md:h-11 md:w-[12rem] min-[56.25rem]:h-10 min-[56.25rem]:w-[10.75rem] lg:h-11 lg:w-[12.5rem] min-[90rem]:h-[3.75rem] min-[90rem]:w-[16.5rem]"
               onClick={closeMobile}
             >
-              <Image
+              <CldImage
                 src="/images/gc-logo-final.png"
                 alt="The Giving Circle"
                 width={1893}
                 height={439}
+                sizes="(min-width: 90rem) 16.5rem, (min-width: 1024px) 12.5rem, 11rem"
                 className="h-full w-full object-contain object-left"
                 priority
               />

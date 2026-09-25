@@ -1,23 +1,27 @@
-import Link from "next/link";
-import { InterFont } from "@/constants";
+import type { Metadata } from "next";
+import NotFoundPage from "@/components/not-found-page";
+
+export const metadata: Metadata = {
+  title: "Page not found | The Giving Circle",
+  description:
+    "This URL is not on The Giving Circle. Explore verified NGOs and live causes to donate with confidence.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
+  openGraph: {
+    title: "Page not found | The Giving Circle",
+    description:
+      "Head back to verified causes and NGO listings on The Giving Circle.",
+  },
+};
 
 export default function NotFound() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-[4.5rem]">
-      <h2
-        className={`text-4xl font-bold mb-4 tracking-[-0.06em] ${InterFont.className}`}
-      >
-        This page is not in our circle
-      </h2>
-      <p className="text-[var(--Dark-Charcoal,#1c2426)] mb-8">
-        We could not find what you were looking for.
-      </p>
-      <Link
-        href="/"
-        className="inline-flex items-center justify-center rounded-[0.5rem] bg-[var(--Main-CTA-button,#02938c)] px-8 py-3 text-white"
-      >
-        Back home
-      </Link>
-    </div>
-  );
+  return <NotFoundPage />;
 }

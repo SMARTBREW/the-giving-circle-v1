@@ -1,8 +1,8 @@
 export const ABOUT_WHY_WE_GATHER = {
-  eyebrow: "About",
+  eyebrow: "About Us",
   title: "India's Leading Giving Platform",
   subtitle:
-    "Bridging community giving with verified causes, where Cause Champions create a circle of support for social impact across India.",
+    "The Giving Circle connects people directly with verified, 80G-registered NGOs across India. Every rupee goes straight to the cause you choose.",
   src: "/images/Smileshero.jpg",
   alt: "Children in our circle smiling together",
   ctaLabel: "Champion a Cause",

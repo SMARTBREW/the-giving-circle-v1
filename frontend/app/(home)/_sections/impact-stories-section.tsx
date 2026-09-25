@@ -10,7 +10,7 @@ export default function ImpactStoriesSection() {
     <section id="stories" className="w-full bg-[#FFFFFF]">
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[74.25rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
-          eyebrow="Impact Stories"
+          eyebrow="Impact in action"
           title="Real Stories. Lasting Impact."
           subtitle="Discover how Cause Champions and verified NGOs are turning collective support into meaningful outcomes."
         />

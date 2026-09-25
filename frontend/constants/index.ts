@@ -74,6 +74,7 @@ export {
 } from "./champion";
 export { PARTNER_APPLY } from "./partner";
 export type { PartnerApplyFocusId } from "./partner";
+export { CONTACT_APPLY } from "./contact";
 export {
   SITE_FAQS,
   ALL_FAQS,
@@ -102,7 +103,7 @@ export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-[500] te
 export const SITE = {
   name: "The Giving Circle",
   shortName: "TGC",
-  url: "https://thegivingcircle.in",
+  url: "https://www.thegivingcircle.in",
   founded: 2022,
   tagline: "A Stronger Circle. A Greater Impact.",
   description:
@@ -125,7 +126,7 @@ export const GET_INVOLVED_LINKS = [
 export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[var(--Dark-Charcoal,#1c2426)]`;
 
 export const FOOTER_BLURB =
-  "A trusted social impact platform connecting people with verified NGOs, meaningful causes, and ways to get involved across India.";
+  "A trusted social impact platform that connects people directly with verified NGOs and meaningful causes across India.";
 
 export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} text-[1.125rem] leading-7 font-[500] tracking-normal uppercase text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem] sm:leading-[1.75rem]`;
 
@@ -139,7 +140,7 @@ export const FOOTER_QUICK_LINKS = [
   { href: "/stories", label: "Impact Stories" },
   { href: "/blog", label: "Blogs" },
   { href: "/faqs", label: "FAQs" },
-  { href: "/#contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
 ] as const;
 
 export const FOOTER_CONTACT = [
@@ -189,9 +190,8 @@ export const SUPPORT_CAUSE_BAND = {
   src: SUPPORT_CAUSE_PHOTO,
   mobileSrc: SUPPORT_CAUSE_PHOTO_MOBILE,
   alt: "Schoolchildren in our circle, smiling together",
-  title: "Your Giving Can Change a Life.",
-  subtitle:
-    "Every verified donation helps children, families, and communities\naccess better education, healthcare, and opportunities.",
+  title: "Your Giving Circle Can Change a Life",
+  subtitle: "Help create a ripple of positive change",
   ctaLabel: "Support a Cause",
   href: "/causes",
 } as const;
@@ -199,21 +199,21 @@ export const SUPPORT_CAUSE_BAND = {
 export const MOMENT_CARDS = [
   {
     title: "Birthday",
-    body: "Turn your celebration into support for a cause you care about, and bring your circle along.",
+    body: "This birthday bring your loved ones together to support a cause you care about",
     ctaLabel: "Start a Birthday Fundraiser",
     iconSrc: "/images/moments/birthday-v3.png",
     href: "/champion/apply?reason=birthday",
   },
   {
     title: "Anniversary",
-    body: "Mark your journey together by supporting a cause you care about, and bring your circle along.",
+    body: "Celebrate your journey by giving back to a cause that matters to both of you",
     ctaLabel: "Start an Anniversary Fundraiser",
     iconSrc: "/images/moments/anniversary-v3.png",
     href: "/champion/apply?reason=anniversary",
   },
   {
     title: "Remembrance",
-    body: "Honour a loved one’s memory through a cause that mattered to them, and bring your circle together in support.",
+    body: "Honour a loved one’s memory by giving to a cause that was close to their heart",
     ctaLabel: "Start a Remembrance Fundraiser",
     iconSrc: "/images/moments/remembrance-v3.png",
     href: "/champion/apply?reason=remembrance",
@@ -262,24 +262,42 @@ export const VOLUNTEERS = [
     alt: "Surendra Sukhraj with a rescued dog during animal care work",
   },
   {
-    name: "Priya Sharma",
-    role: "ngo-1",
-    src: "/images/testmi/953105c0d2ea2d9d1703198bae02e59fa2c87e63.png",
-    alt: "Priya Sharma standing in a classroom in front of a chalkboard",
+    name: "Radhika Sethi",
+    role: "Volunteer - Wings of Hope",
+    src: "/images/volunteer/radhika-sethi.jpeg",
+    alt: "Radhika Sethi, volunteer with Wings of Hope",
   },
   {
-    name: "Bhushan Khurana",
-    role: "ngo-2",
-    src: "/images/testmi/f846f5578286c4f1943dd07a272ad57a92cd1b3a.png",
-    alt: "Bhushan Khurana smiling at a laptop in an office",
+    name: "Vanshu Saini",
+    role: "Passionate about Animals",
+    src: "/images/volunteer/vanshu-saini-animals.jpg",
+    alt: "Vanshu Saini with a mountain dog in the Himalayas",
   },
   {
-    name: "Ayesha Mehta",
-    role: "ngo-3",
-    src: "/images/testmi/099e4d57b98ec71c66eb071e71b13ef69b282c7d.png",
-    alt: "Ayesha Mehta in a clinic wearing a lab coat and stethoscope",
+    name: "Ruhaan Sharma",
+    role: "Nature Enthusiast",
+    src: "/images/volunteer/ruhaan-sharma.png",
+    alt: "Ruhaan Sharma, nature enthusiast",
   },
   // Muted for now — swap back in when ready:
+  // {
+  //   name: "Ayesha Mehta",
+  //   role: "ngo-3",
+  //   src: "/images/testmi/099e4d57b98ec71c66eb071e71b13ef69b282c7d.png",
+  //   alt: "Ayesha Mehta in a clinic wearing a lab coat and stethoscope",
+  // },
+  // {
+  //   name: "Priya Sharma",
+  //   role: "ngo-1",
+  //   src: "/images/testmi/953105c0d2ea2d9d1703198bae02e59fa2c87e63.png",
+  //   alt: "Priya Sharma standing in a classroom in front of a chalkboard",
+  // },
+  // {
+  //   name: "Bhushan Khurana",
+  //   role: "ngo-2",
+  //   src: "/images/testmi/f846f5578286c4f1943dd07a272ad57a92cd1b3a.png",
+  //   alt: "Bhushan Khurana smiling at a laptop in an office",
+  // },
   // {
   //   name: "Sanjay Bosu Mullick",
   //   role: "Founder - ICFG",
@@ -291,12 +309,6 @@ export const VOLUNTEERS = [
   //   role: "Founder - JWP",
   //   src: "/images/volunteer/jyotsna-chatterji-jwp.jpg",
   //   alt: "Jyotsna Chatterji of JWP speaking at an event",
-  // },
-  // {
-  //   name: "Vanshu Saini",
-  //   role: "Passionate about Animals",
-  //   src: "/images/volunteer/vanshu-saini-animals.jpg",
-  //   alt: "Vanshu Saini with a mountain dog in the Himalayas",
   // },
 ] as const;
 

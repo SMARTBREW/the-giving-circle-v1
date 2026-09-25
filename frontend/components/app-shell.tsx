@@ -14,7 +14,9 @@ const HEADER_OFFSET =
 export default function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const isFormShell =
-    pathname.startsWith("/champion/apply") || pathname.startsWith("/partner");
+    pathname.startsWith("/champion/apply") ||
+    pathname.startsWith("/partner") ||
+    pathname.startsWith("/contact");
 
   useEffect(() => {
     if (!isFormShell) return;

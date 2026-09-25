@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import { SEGOE_UI_CLASS } from "@/constants";
 
@@ -19,11 +19,12 @@ export default function CauseCard({
   return (
     <li className="group relative aspect-[4/3] w-full overflow-hidden isolate rounded-[1rem] border border-[#d9e1e2] transition-all duration-300 hover:border-[var(--Main-CTA-button,#02938c)] md:aspect-[3/4] md:max-h-[min(24rem,55dvh)] md:w-[calc(50%-0.625rem)] min-[56.25rem]:aspect-auto min-[56.25rem]:h-[clamp(14rem,42dvh,18rem)] min-[56.25rem]:max-h-none min-[56.25rem]:min-w-0 min-[56.25rem]:w-auto min-[56.25rem]:flex-1 lg:h-[clamp(15rem,45dvh,20rem)] min-[90rem]:h-[21.75rem]">
       <Link href={destination} className="absolute -inset-px block">
-        <Image
+        <CldImage
           src={src}
           alt={alt}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 899px) 50vw, 25vw"
+          loading="lazy"
           className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
         <span className="absolute inset-0 bg-[linear-gradient(360deg,rgba(0,0,0,0.85)_10%,rgba(0,0,0,0)_28%)]" />
