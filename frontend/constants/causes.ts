@@ -7,23 +7,6 @@ export const CAUSES_PAGE = {
 
 export const CAUSE_FILTER_ALL = "All";
 
-export const CAUSES_HERO = {
-  eyebrow: "Live Causes",
-  titleLine1: "Verified Causes.",
-  titleLine2: "Real Impact.",
-  subtitle:
-    "Every cause is run by a verified NGO. Champion one with your circle, and watch collective giving reach communities across India.",
-  primaryCta: { label: "Browse Causes", href: "#live-causes" },
-  secondaryCta: { label: "Champion a Cause", href: "/champion/apply" },
-  src: "/images/causes/_DSC9767.jpg",
-  alt: "A schoolgirl reading in class, smiling toward the camera",
-  stats: [
-    { value: "7+", label: "Live Causes" },
-    { value: "80,000+", label: "Lives Impacted" },
-    { value: "₹300L+", label: "Funds Mobilised" },
-  ],
-} as const;
-
 export const CAUSES_LIST_INTRO = {
   eyebrow: "Live Causes",
   title: "Pick a Cause to Champion",
@@ -75,24 +58,24 @@ export const CAUSE_CATEGORY_CARDS = [
 export const LIVE_CAUSES = [
   {
     id: "wings-of-hope",
-    category: "Women’s Health",
+    category: "Education & Health",
     categoryClassName: "text-[var(--Brand-Coral,#e62b4f)]",
     title: "Wings of Hope: Menstrual Health So Girls Stay in School",
     titleLines: ["Wings of Hope: Menstrual Health", "So Girls Stay in School"] as const,
     cardTitle: "Wings of Hope",
     org: "JWP",
-    location: "Delhi & NCR",
+    location: "8 States",
     raised: "₹4,80,000",
     goal: "₹6,50,000",
     percent: 74,
-    supporters: "234 Supporters",
+    supporters: "3,079 Supporters",
     daysLeft: "22 Days Left",
     src: "/images/causes/womens-health.jpg",
     alt: "Schoolgirls smiling in class holding handmade pouches",
     summary:
       "Every month, thousands of girls miss school when periods begin. Wings of Hope funds menstrual health education and reusable hygiene kits so girls stay in class with dignity.",
     cardDescription:
-      "Keeps girls in school through their periods with reusable pads and menstrual health support.",
+      "No girl should leave school because she got her period. We give her pads, workshops and counselling, so she stays in class and keeps chasing her dreams.",
     trustBadges: ["Tax Benefits · 80G", "Verified NGO Partner", "15+ Years Active"],
     operations: "Active operations · Delhi & NCR, India",
     aboutHeading: "When Periods Become Barriers",
@@ -101,7 +84,8 @@ export const LIVE_CAUSES = [
       "Studies in Delhi NCR show many girls miss five or more school days every month during menstruation. Schools often lack proper sanitation, families cannot always afford products, and taboos keep conversations closed. Wings of Hope responds with education, kits, and community support   so girls do not lose their future over something preventable.",
     ],
     impact: [
-      { value: "22,418", label: "Girls Empowered" },
+      { value: "3,079", label: "Supporters" },
+      { value: "30,000+", label: "Girls Empowered" },
       { value: "200+", label: "Workshops" },
       { value: "2,000+", label: "Product Kits" },
       { value: "95%", label: "Better Attendance" },
@@ -144,19 +128,19 @@ export const LIVE_CAUSES = [
     titleLines: ["PehliClass: Into Formal School,", "On Time"] as const,
     cardTitle: "PehliClass",
     org: "JWP",
-    location: "Noida · Delhi NCR",
+    location: "Noida (Uttar Pradesh)",
     raised: "₹2,85,000",
     goal: "₹5,00,000",
     percent: 57,
-    supporters: "142 Supporters",
+    supporters: "2,500+ Beneficiaries",
     daysLeft: "28 Days Left",
     src: "/images/causes/IMG-20240404-WA0014.jpg",
     alt: "Schoolchildren smiling in class at the learning centre",
     summary:
       "Every parent remembers the first day of school. For thousands of children, that day never comes. #PehliClass is JWP’s path from out-of-school to a real classroom at Mera Sahara, Nithari.",
     cardDescription:
-      "Helps out-of-school children close learning gaps and enrol into formal school on time.",
-    trustBadges: ["Tax Benefits · 80G", "Verified Partner Listing", "48+ Years Active"],
+      "Every child deserves to be in a school. PehliClass finds the children who are out of school, gets them ready, and enrols them in a formal school.",
+    trustBadges: ["Tax Benefits · 80G", "Verified Partner Listing", "49 Years Active"],
     operations: "Active operations · Mera Sahara Bridge Learning Centre, Nithari · Delhi NCR",
     aboutHeading: "When the School Gate Stays Shut",
     about: [
@@ -164,7 +148,8 @@ export const LIVE_CAUSES = [
       "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school   into their first formal class, on time. Where girls cannot attend regular school, JWP opens NIOS and IGNOU pathways so education continues.",
     ],
     impact: [
-      { value: "48+", label: "Years of Impact" },
+      { value: "49", label: "Years of Impact" },
+      { value: "2,500+", label: "Beneficiaries" },
       { value: "1 year", label: "Max Bridge Stay" },
       { value: "₹19,000", label: "Full Bridge Year" },
       { value: "₹1,600", label: "Per Child / Month" },
@@ -235,6 +220,7 @@ export const LIVE_CAUSES = [
       "The Institute of Community Forest Governance (ICFG) works on the ground with over 2,000 village organisations   empowering forest dwellers with legal rights, planting indigenous saplings, protecting natural biodiversity, and fostering sustainable livelihoods so communities and ecosystems thrive together.",
     ],
     impact: [
+      { value: "284", label: "Supporters" },
       { value: "2,000+", label: "Villages Mobilised" },
       { value: "10,000+", label: "Hectares Protected" },
       { value: "50,000+", label: "Saplings Planted" },
@@ -272,17 +258,17 @@ export const LIVE_CAUSES = [
   },
   {
     id: "pawsitive-protectors",
-    category: "Animal Welfare",
+    category: "Animal & Community Welfare",
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Pawsitive Protectors",
     titleLines: null,
     cardTitle: "Pawsitive Protectors",
     org: "Animal Care",
-    location: "Mumbai, Maharashtra",
+    location: "6 States",
     raised: "₹3,90,000",
     goal: "₹5,20,000",
     percent: 75,
-    supporters: "312 Supporters",
+    supporters: "1,584 Supporters",
     daysLeft: "18 Days Left",
     src: "/images/causes/pawsitive-protectors.jpg",
     alt: "A caregiver treating a rescued dog at an Animal Care shelter",
@@ -298,7 +284,8 @@ export const LIVE_CAUSES = [
       "Collective giving funds the work on the ground. Supporters can visit, meet the animals, and walk with volunteers while updates flow back to every circle.",
     ],
     impact: [
-      { value: "7,126", label: "Animals Helped" },
+      { value: "1,584", label: "Supporters" },
+      { value: "12,300+", label: "Animals Helped" },
       { value: "1,500+", label: "In Active Care" },
       { value: "142K+", label: "People Protected" },
       { value: "98", label: "Impact Score" },
@@ -336,11 +323,11 @@ export const LIVE_CAUSES = [
     titleLines: null,
     cardTitle: "Bowls of Hope",
     org: "Animal Care",
-    location: "Delhi",
+    location: "Haryana",
     raised: "₹6,20,000",
     goal: "₹7,80,000",
     percent: 79,
-    supporters: "445 Supporters",
+    supporters: "205 Supporters",
     daysLeft: "20 Days Left",
     src: "/images/causes/bowls-of-hope.jpg",
     alt: "Rescued dogs drinking from metal bowls at a feeding station",
@@ -356,7 +343,8 @@ export const LIVE_CAUSES = [
       "Every contribution goes directly to the NGO. Champions invite their circle to multiply the impact and follow updates as animals recover.",
     ],
     impact: [
-      { value: "1,859", label: "Bowls Installed" },
+      { value: "205", label: "Supporters" },
+      { value: "1,000+", label: "Bowls Installed" },
       { value: "2,000+", label: "Street Animals" },
       { value: "Daily", label: "Shelter Feeding" },
       { value: "92", label: "Impact Score" },
@@ -383,7 +371,7 @@ export const LIVE_CAUSES = [
   },
   {
     id: "brick-by-brick",
-    category: "Animal Welfare",
+    category: "Animal Shelter",
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
     title: "Brick by Brick: Building Them a Home",
     titleLines: ["Brick by Brick:", "Building Them a Home"] as const,
@@ -393,14 +381,14 @@ export const LIVE_CAUSES = [
     raised: "₹10,000",
     goal: "₹50,000",
     percent: 20,
-    supporters: "12 Supporters",
+    supporters: "92 Supporters",
     daysLeft: "45 Days Left",
     src: "/images/causes/brick-by-brick.jpeg",
     alt: "Animal Care Centre construction site in Gurgaon with bricks and project sign",
     summary:
       "₹10 per brick for the boundary wall on a 17,500 sq ft stray rescue and rehab plot in Gurgaon   part of Animal Care’s Zero Rabies mission.",
     cardDescription:
-      "Sponsors bricks for a stray rescue and rehab centre boundary wall in Gurgaon.",
+      "Help us build a rescue shelter, a hospital and a rehabilitation centre for the strays of Gurgaon, Brick by Brick.",
     trustBadges: ["Verified Welfare Partner", "Zero Rabies Mission", "Gurgaon Plot"],
     operations: "Active operations · Gurgaon · Boundary wall → full centre",
     aboutHeading: "A Wall That Becomes a Home",
@@ -409,7 +397,8 @@ export const LIVE_CAUSES = [
       "Cause Champions can invite their network to sponsor bricks and watch the shelter take shape with transparent updates from a verified partner.",
     ],
     impact: [
-      { value: "1,000", label: "Bricks Laid" },
+      { value: "92", label: "Supporters" },
+      { value: "30,000", label: "Bricks Laid" },
       { value: "17,500", label: "Sq Ft Plot" },
       { value: "₹10", label: "Per Brick" },
       { value: "85", label: "Impact Score" },
@@ -436,24 +425,24 @@ export const LIVE_CAUSES = [
   },
   {
     id: "flood-animal-rescue",
-    category: "Animal Welfare",
+    category: "Rescue & Rehabilitation",
     categoryClassName: "text-[var(--Brand-Green-Teal,#02938c)]",
-    title: "Emergency Animal Rescue",
+    title: "Rescue on Call",
     titleLines: null,
-    cardTitle: "Emergency Rescue",
+    cardTitle: "Rescue on Call",
     org: "Animal Care",
-    location: "Uttarakhand & Punjab",
+    location: "Delhi & NCR",
     raised: "₹3,20,000",
     goal: "₹4,50,000",
     percent: 71,
-    supporters: "198 Supporters",
+    supporters: "2,318+ Supporters",
     daysLeft: "15 Days Left",
     src: "/images/causes/emergency-animal-rescue.png",
     alt: "Animal Care rescuers wading through floodwater on an emergency response",
     summary:
       "Emergency rescue and rehabilitation for animals in crisis   communities for communities, with a verified welfare partner.",
     cardDescription:
-      "Funds emergency rescue and rehabilitation for animals affected by floods and crises.",
+      "Animals hurt in accidents or disasters are brought to our shelter. Help us rescue, treat and feed them.",
     trustBadges: ["Verified NGO Partner", "Emergency Response", "Direct Donations"],
     operations: "Active operations · Uttarakhand & Punjab · 500+ rescue animals",
     aboutHeading: "When Crises Hit Animals Too",
@@ -462,7 +451,8 @@ export const LIVE_CAUSES = [
       "Cause Champions rally their networks so Animal Care can respond quickly   treatment, shelter, and follow-up care   with gifts going directly to the NGO.",
     ],
     impact: [
-      { value: "812", label: "Animals Rescued" },
+      { value: "2,318+", label: "Supporters" },
+      { value: "1,890+", label: "Animals Rescued" },
       { value: "500+", label: "Crisis-Affected" },
       { value: "99", label: "Impact Score" },
       { value: "8 mo", label: "Response Window" },
@@ -499,12 +489,11 @@ export type CampaignCardData = Pick<
   | "cardTitle"
   | "org"
   | "location"
-  | "supporters"
   | "src"
   | "alt"
   | "cardDescription"
 > & {
-  impactHighlight: LiveCause["impact"][number];
+  stats: [LiveCause["impact"][number], LiveCause["impact"][number]];
 };
 
 export function getLiveCause(id: string): LiveCause | undefined {
@@ -532,8 +521,7 @@ export function toCampaignCard(cause: LiveCause): CampaignCardData {
     cardDescription: cause.cardDescription,
     org: cause.org,
     location: cause.location,
-    supporters: cause.supporters,
-    impactHighlight: cause.impact[0],
+    stats: [cause.impact[0], cause.impact[1]],
     src: cause.src,
     alt: cause.alt,
   };

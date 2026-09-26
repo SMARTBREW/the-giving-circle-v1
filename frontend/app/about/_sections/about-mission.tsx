@@ -5,7 +5,7 @@ import { ABOUT_MISSION, ABOUT_VISION, SEGOE_UI_CLASS } from "@/constants";
 export default function AboutMission() {
   return (
     <PageSection
-      tone="white"
+      tone="gray"
       innerClassName="flex flex-col gap-10 sm:gap-12 md:flex-row md:items-stretch md:gap-0 lg:gap-0"
     >
       <div className="flex min-w-0 flex-1 flex-col md:pr-10 lg:pr-14 min-[90rem]:pr-16">

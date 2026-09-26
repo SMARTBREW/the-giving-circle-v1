@@ -31,7 +31,7 @@ export const BLOG_CTA = {
   alt: "Schoolchildren in our circle, smiling together",
   title: "Ready to Give with Confidence?",
   subtitle:
-    "Explore verified causes, start a giving circle, and support outcomes you can follow.",
+    "Explore verified causes, start a giving circle, and support\noutcomes you can see and follow.",
   ctaLabel: "Explore Live Causes",
   href: "/causes",
   objectPosition: "object-center",

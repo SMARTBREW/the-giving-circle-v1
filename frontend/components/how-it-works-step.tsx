@@ -29,7 +29,7 @@ export default function HowItWorksStep({
         {title}
       </h3>
       <p
-        className={`${SEGOE_UI_CLASS} mt-3 max-w-[18rem] text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#FFFFFF] sm:mt-3.5 sm:max-w-[20rem] sm:text-[1rem] sm:leading-7 min-[56.25rem]:mt-3 min-[56.25rem]:max-w-[14rem] min-[56.25rem]:text-[0.875rem] min-[56.25rem]:leading-5 lg:mt-3.5 lg:max-w-[15rem] lg:text-[0.9375rem] lg:leading-6 min-[90rem]:mt-4 min-[90rem]:h-[3.5rem] min-[90rem]:w-[16.125rem] min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[1.75rem]`}
+        className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[22rem] whitespace-pre-line text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#FFFFFF] sm:mt-3.5 sm:max-w-[24rem] sm:text-[1rem] sm:leading-7 min-[56.25rem]:mt-3 min-[56.25rem]:max-w-[20rem] min-[56.25rem]:text-[0.875rem] min-[56.25rem]:leading-5 lg:mt-3.5 lg:max-w-[21rem] lg:text-[0.9375rem] lg:leading-6 min-[90rem]:mt-4 min-[90rem]:h-[3.5rem] min-[90rem]:w-[22rem] min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[1.75rem]`}
       >
         {body}
       </p>

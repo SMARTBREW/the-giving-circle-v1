@@ -1,10 +1,14 @@
 "use client";
 
+import { Quote } from "lucide-react";
 import { useState } from "react";
 import CldImage from "@/components/cld-image";
 import FadeInSection from "@/components/fade-in-section";
 import SectionIntro from "@/components/section-intro";
 import { CHAMPION_VOICES, SEGOE_UI_CLASS } from "@/constants";
+
+const QUOTE_ICON_CLASS =
+  "h-8 w-8 shrink-0 text-[var(--Main-CTA-button,#02938c)] sm:h-9 sm:w-9 min-[90rem]:h-10 min-[90rem]:w-10";
 
 function NavArrow({
   direction,
@@ -45,7 +49,7 @@ function NavArrow({
 }
 
 export default function ChampionVoices() {
-  const { eyebrow, title, subtitle, quoteSrc, testimonials } = CHAMPION_VOICES;
+  const { eyebrow, title, subtitle, testimonials } = CHAMPION_VOICES;
   const [index, setIndex] = useState(0);
   const active = testimonials[index];
 
@@ -90,21 +94,18 @@ export default function ChampionVoices() {
               </div>
 
               <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col items-start justify-center px-5 py-6 sm:px-7 sm:py-8 md:px-8 min-[56.25rem]:px-6 min-[56.25rem]:py-6 lg:px-8 lg:py-8 min-[90rem]:px-8 min-[90rem]:py-10">
-                <div className="relative mb-4 h-8 w-10 shrink-0 sm:mb-5 sm:h-9 sm:w-11 min-[90rem]:mb-5 min-[90rem]:h-10 min-[90rem]:w-10">
-                  <CldImage
-                    src={quoteSrc}
-                    alt=""
-                    fill
-                    sizes="40px"
-                    className="object-contain object-left"
-                  />
-                </div>
+                <Quote aria-hidden className={`mb-4 sm:mb-5 min-[90rem]:mb-5 ${QUOTE_ICON_CLASS}`} />
 
                 <p
                   className={`${SEGOE_UI_CLASS} shrink-0 text-[1.0625rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.1875rem] sm:leading-7 lg:text-[1.25rem] lg:leading-8 min-[90rem]:w-full min-[90rem]:max-w-[33.5rem] min-[90rem]:text-[1.375rem] min-[90rem]:leading-8`}
                 >
                   {active.quote}
                 </p>
+
+                <Quote
+                  aria-hidden
+                  className={`mt-4 rotate-180 self-end sm:mt-5 min-[90rem]:mt-5 ${QUOTE_ICON_CLASS}`}
+                />
 
                 <div className="mt-5 flex w-full max-w-[32rem] items-center gap-3 sm:mt-6 sm:gap-4 min-[90rem]:mt-8">
                   <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14 min-[90rem]:h-[4.5rem] min-[90rem]:w-[4.5rem]">

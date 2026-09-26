@@ -33,23 +33,23 @@ export const ABOUT_CORE_VALUES_INTRO = {
 export const ABOUT_CORE_VALUES = [
   {
     title: "Transparency",
-    body: "Complete visibility into every donation and its impact, so you always know where your giving goes.",
-    icon: "transparency" as const,
+    body: "Complete visibility into every donation and its real-world impact, so you always know exactly where your giving goes.",
+    iconSrc: "/images/core-values/transparency.png",
   },
   {
     title: "Accountability",
-    body: "Rigorous verification of all partners and philanthropic activities, every step of the way.",
-    icon: "accountability" as const,
+    body: "Rigorous verification of all partners and philanthropic activities we support, at every step of the way.",
+    iconSrc: "/images/core-values/accountability.png",
   },
   {
     title: "Integrity",
-    body: "An unwavering commitment to ethical practices that keeps our circle trustworthy and strong.",
-    icon: "integrity" as const,
+    body: "An unwavering commitment to ethical practices that keeps our giving circle trustworthy, open, and strong.",
+    iconSrc: "/images/core-values/integrity.png",
   },
   {
     title: "Community",
-    body: "Building genuine relationships between Cause Champions, NGOs, and the communities they support.",
-    icon: "community" as const,
+    body: "Building genuine, lasting relationships between Cause Champions, NGOs, and the communities they support together.",
+    iconSrc: "/images/core-values/community.png",
   },
 ] as const;
 

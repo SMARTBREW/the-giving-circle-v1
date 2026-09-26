@@ -1,12 +1,15 @@
 import publicIds from "@/constants/cloudinary-public-ids.json";
+import imageMap from "@/constants/cloudinary-image-map.json";
 import videoIds from "@/constants/cloudinary-video-ids.json";
 
 const CLOUD_NAME =
   process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME?.trim() || "dcdhhylin";
 
 type PublicIdMap = Record<string, string>;
+type ImageMapEntry = { public_id?: string; version?: number | string };
 
 const PUBLIC_IDS = publicIds as PublicIdMap;
+const IMAGE_MAP = imageMap as Record<string, ImageMapEntry>;
 const VIDEO_IDS = videoIds as PublicIdMap;
 
 /** Cap for full-bleed heroes / CTAs (single URL, no srcset on static export). */
@@ -25,12 +28,13 @@ export type CloudinaryTransformOptions = {
 /**
  * Build an optimized Cloudinary delivery URL for a local `/images/...` path.
  * Falls back to the local path when the asset is not in the upload map.
+ * Includes asset version when known so overwrites bust CDN / Next image cache.
  */
 export function cloudinarySrc(
   src: string,
   options: CloudinaryTransformOptions = {},
 ): string {
-  if (!src.startsWith("/images/")) return src;
+  if (!src || !src.startsWith("/images/")) return src;
 
   const publicId = PUBLIC_IDS[src];
   if (!publicId || !CLOUD_NAME) return src;
@@ -46,7 +50,10 @@ export function cloudinarySrc(
     parts.push(`h_${Math.min(Math.round(options.height), MAX_FULL_BLEED_WIDTH)}`);
   }
 
-  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${parts.join(",")}/${publicId}`;
+  const version = IMAGE_MAP[src]?.version;
+  const versionSegment = version != null ? `v${version}/` : "";
+
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${parts.join(",")}/${versionSegment}${publicId}`;
 }
 
 /**

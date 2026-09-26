@@ -2,89 +2,9 @@
 
 import CldImage from "@/components/cld-image";
 import { AnimatePresence, motion } from "framer-motion";
-import { SEGOE_UI_CLASS, type StoryArticle, type StoryStatIcon } from "@/constants";
+import { SEGOE_UI_CLASS, type StoryArticle } from "@/constants";
 
-function StatIcon({ icon }: { icon: StoryStatIcon }) {
-  const stroke = "var(--Brand-Green-Teal,#02938c)";
-
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className="h-5 w-5 shrink-0 sm:h-[1.375rem] sm:w-[1.375rem]"
-    >
-      {icon === "people" ? (
-        <>
-          <circle cx="9" cy="8" r="3" stroke={stroke} strokeWidth="1.75" />
-          <circle cx="16" cy="9" r="2.5" stroke={stroke} strokeWidth="1.75" />
-          <path
-            d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"
-            stroke={stroke}
-            strokeWidth="1.75"
-            strokeLinecap="round"
-          />
-          <path
-            d="M14 19c0-2.2 1.6-3.8 3.8-4"
-            stroke={stroke}
-            strokeWidth="1.75"
-            strokeLinecap="round"
-          />
-        </>
-      ) : null}
-      {icon === "pin" ? (
-        <>
-          <path
-            d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z"
-            stroke={stroke}
-            strokeWidth="1.75"
-            strokeLinejoin="round"
-          />
-          <circle cx="12" cy="11" r="2" stroke={stroke} strokeWidth="1.75" />
-        </>
-      ) : null}
-      {icon === "ribbon" ? (
-        <>
-          <circle cx="12" cy="9" r="4.5" stroke={stroke} strokeWidth="1.75" />
-          <path
-            d="M9.5 12.5 8 20l4-2.5L16 20l-1.5-7.5"
-            stroke={stroke}
-            strokeWidth="1.75"
-            strokeLinejoin="round"
-          />
-        </>
-      ) : null}
-      {icon === "chart" ? (
-        <path
-          d="M4 18V8M10 18V4M16 18v-7M20 18H3"
-          stroke={stroke}
-          strokeWidth="1.75"
-          strokeLinecap="round"
-        />
-      ) : null}
-      {icon === "check" ? (
-        <>
-          <circle cx="12" cy="12" r="8" stroke={stroke} strokeWidth="1.75" />
-          <path
-            d="M8.5 12.5 11 15l4.5-5"
-            stroke={stroke}
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </>
-      ) : null}
-      {icon === "heart" ? (
-        <path
-          d="M12 20s-6.5-4.2-8.5-8A4.5 4.5 0 0 1 12 7.5 4.5 4.5 0 0 1 20.5 12c-2 3.8-8.5 8-8.5 8Z"
-          stroke={stroke}
-          strokeWidth="1.75"
-          strokeLinejoin="round"
-        />
-      ) : null}
-    </svg>
-  );
-}
+const META_ICON_CLASS = "h-5 w-5 shrink-0";
 
 function BuildingIcon() {
   return (
@@ -92,16 +12,16 @@ function BuildingIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="h-4 w-4 shrink-0"
+      className={META_ICON_CLASS}
     >
       <path
-        d="M4 20V8l8-4 8 4v12"
+        d="M5 19V9.5L12 6l7 3.5V19"
         stroke="var(--Brand-Green-Teal,#02938c)"
         strokeWidth="1.75"
         strokeLinejoin="round"
       />
       <path
-        d="M9 20v-5h6v5M10 10h.01M14 10h.01M10 13h.01M14 13h.01"
+        d="M10 19v-4h4v4M11 11h.01M13 11h.01M11 13.5h.01M13 13.5h.01"
         stroke="var(--Brand-Green-Teal,#02938c)"
         strokeWidth="1.75"
         strokeLinecap="round"
@@ -116,15 +36,21 @@ function PinMetaIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="h-4 w-4 shrink-0"
+      className={META_ICON_CLASS}
     >
       <path
-        d="M12 21s5-4.5 5-9a5 5 0 1 0-10 0c0 4.5 5 9 5 9Z"
+        d="M12 19.5s4.25-3.8 4.25-7.6a4.25 4.25 0 1 0-8.5 0c0 3.8 4.25 7.6 4.25 7.6Z"
         stroke="var(--Subheading,#4a5558)"
         strokeWidth="1.75"
         strokeLinejoin="round"
       />
-      <circle cx="12" cy="12" r="1.75" stroke="var(--Subheading,#4a5558)" strokeWidth="1.75" />
+      <circle
+        cx="12"
+        cy="11.9"
+        r="1.5"
+        stroke="var(--Subheading,#4a5558)"
+        strokeWidth="1.75"
+      />
     </svg>
   );
 }
@@ -135,19 +61,19 @@ function CalendarIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="h-4 w-4 shrink-0"
+      className={META_ICON_CLASS}
     >
       <rect
-        x="3.5"
-        y="5"
-        width="17"
-        height="15"
+        x="5"
+        y="6"
+        width="14"
+        height="13"
         rx="2"
         stroke="var(--Subheading,#4a5558)"
         strokeWidth="1.75"
       />
       <path
-        d="M8 3.5V7M16 3.5V7M3.5 10h17"
+        d="M9 4.5V7M15 4.5V7M5 10h14"
         stroke="var(--Subheading,#4a5558)"
         strokeWidth="1.75"
         strokeLinecap="round"
@@ -244,8 +170,7 @@ export default function StoryCard({
 
       <ul className="mt-5 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-5 min-[56.25rem]:grid-cols-4 min-[56.25rem]:gap-3 min-[90rem]:gap-3">
         {story.stats.map((stat) => (
-          <li key={stat.label} className="flex flex-col gap-1.5">
-            <StatIcon icon={stat.icon} />
+          <li key={stat.label} className="flex flex-col gap-1">
             <span
               className={`${SEGOE_UI_CLASS} text-[1rem] font-[700] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem]`}
             >

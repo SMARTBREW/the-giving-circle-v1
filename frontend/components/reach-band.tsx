@@ -15,15 +15,19 @@ export default function ReachBand({
   title: string;
   subtitle?: string;
   stats: readonly { value: string; label: string }[];
-  tone?: "alternate" | "white";
+  tone?: "alternate" | "white" | "dark";
 }) {
+  const isDark = tone === "dark";
+
   return (
     <section
       id={id}
       className={
-        tone === "white"
-          ? "w-full bg-[#FFFFFF]"
-          : "w-full bg-gray-100"
+        isDark
+          ? "w-full bg-[#1C2426]"
+          : tone === "white"
+            ? "w-full bg-[#FFFFFF]"
+            : "w-full bg-gray-100"
       }
     >
       <FadeInSection
@@ -31,7 +35,12 @@ export default function ReachBand({
           subtitle ? "" : "min-[90rem]:h-[26.25rem]"
         }`}
       >
-        <SectionIntro eyebrow={eyebrow} title={title} subtitle={subtitle} />
+        <SectionIntro
+          tone={isDark ? "onDark" : "default"}
+          eyebrow={eyebrow}
+          title={title}
+          subtitle={subtitle}
+        />
         <ul className="mt-10 grid w-full grid-cols-2 self-stretch sm:mt-10 min-[56.25rem]:grid-cols-4 min-[56.25rem]:gap-0 lg:mt-12">
           {stats.map((stat, index) => (
             <ReachStat
@@ -39,6 +48,7 @@ export default function ReachBand({
               value={stat.value}
               label={stat.label}
               index={index}
+              onDark={isDark}
             />
           ))}
         </ul>

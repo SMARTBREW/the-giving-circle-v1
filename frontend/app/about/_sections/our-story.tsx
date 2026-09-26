@@ -4,6 +4,7 @@ import { ABOUT_OUR_STORY } from "@/constants";
 export default function OurStory() {
   return (
     <SplitMediaSection
+      tone="gray"
       eyebrow={ABOUT_OUR_STORY.eyebrow}
       title={ABOUT_OUR_STORY.title}
       subtitle={ABOUT_OUR_STORY.subtitle}

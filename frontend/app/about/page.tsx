@@ -44,7 +44,7 @@ export default function AboutPage() {
         eyebrow={ABOUT_NUMBERS.eyebrow}
         title={ABOUT_NUMBERS.title}
         stats={REACH_STATS}
-        tone="white"
+        tone="dark"
       />
       <VolunteerBand
         eyebrow={ABOUT_TEAM.eyebrow}
@@ -52,16 +52,17 @@ export default function AboutPage() {
         subtitle={ABOUT_TEAM.subtitle}
         ctaLabel={ABOUT_TEAM.ctaLabel}
         href={ABOUT_TEAM.href}
+        className="bg-[#FFFFFF]"
       />
       <AboutMission />
-      <PartnersSection className="bg-gray-100" />
+      <PartnersSection className="bg-[#FFFFFF]" />
       <FaqsSection
         id="about-faqs"
         eyebrow={eyebrow}
         title={title}
         subtitle={subtitle}
         items={items}
-        className="bg-[#FFFFFF]"
+        className="bg-gray-100"
       />
       <PhotoCtaBand
         src={ABOUT_VISION_CTA.src}

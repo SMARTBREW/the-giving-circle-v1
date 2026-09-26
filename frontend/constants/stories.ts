@@ -48,10 +48,10 @@ export const STORY_ARTICLES = [
       "Cause Champions and Joint Women’s Programme bring menstrual health education into classrooms, so girls return to school with dignity, knowledge, and support.",
     highlight: { value: "30,000+", label: "Women & Girls Served" },
     stats: [
-      { icon: "people" as const, value: "30,000+", label: "Women & Girls Reached" },
-      { icon: "pin" as const, value: "7", label: "States Covered" },
-      { icon: "ribbon" as const, value: "200+", label: "Health Educators Trained" },
-      { icon: "chart" as const, value: "95%", label: "School Attendance Rate" },
+      { value: "30,000+", label: "Women & Girls Reached" },
+      { value: "7", label: "States Covered" },
+      { value: "200+", label: "Health Educators Trained" },
+      { value: "95%", label: "School Attendance Rate" },
     ],
     quote: {
       text: "Before this program, I used to miss school every month and felt ashamed. Now I have dignity, knowledge, and I'm helping other girls in my community. Wings of Hope gave me my confidence back.",
@@ -78,10 +78,10 @@ export const STORY_ARTICLES = [
       "Cause Champions stand with Animal Care for stray vaccination, emergency rescues, and ongoing care that protects animals and neighbourhoods together.",
     highlight: { value: "1,891+", label: "Animals Rescued" },
     stats: [
-      { icon: "check" as const, value: "12,344+", label: "Strays Vaccinated" },
-      { icon: "heart" as const, value: "200+", label: "Caregivers Vaccinated" },
-      { icon: "people" as const, value: "142,520", label: "People Protected" },
-      { icon: "pin" as const, value: "Delhi & NCR", label: "Shelter Residents" },
+      { value: "12,344+", label: "Strays Vaccinated" },
+      { value: "200+", label: "Caregivers Vaccinated" },
+      { value: "142,520", label: "People Protected" },
+      { value: "Delhi & NCR", label: "Shelter Residents" },
     ],
     quote: {
       text: "When we found Max with a broken leg, we thought we'd lost him. Thanks to Animal Care, he's now healthy and the most loved member of our family.",
@@ -108,10 +108,10 @@ export const STORY_ARTICLES = [
       "Under the Forest Rights Act, ICFG and Cause Champions empower tribal forest communities to secure legal rights, plant indigenous saplings, and restore ecosystems.",
     highlight: { value: "2,000+", label: "Villages Mobilised" },
     stats: [
-      { icon: "pin" as const, value: "2,000+", label: "Villages Mobilised" },
-      { icon: "check" as const, value: "10,000+", label: "Hectares Protected" },
-      { icon: "heart" as const, value: "50,000+", label: "Native Trees Planted" },
-      { icon: "people" as const, value: "100%", label: "Community Run" },
+      { value: "2,000+", label: "Villages Mobilised" },
+      { value: "10,000+", label: "Hectares Protected" },
+      { value: "50,000+", label: "Native Trees Planted" },
+      { value: "100%", label: "Community Run" },
     ],
     quote: {
       text: "The Forest Rights Act has changed the life of the forest dwellers of Chaingada, fostering self-reliance and environmental sustainability.",
@@ -170,4 +170,3 @@ export const IMPACT_STORIES = IMPACT_STORY_CARD_META.map((meta) => {
 });
 
 export type StoryArticle = (typeof STORY_ARTICLES)[number];
-export type StoryStatIcon = StoryArticle["stats"][number]["icon"];

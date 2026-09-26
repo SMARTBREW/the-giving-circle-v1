@@ -226,18 +226,18 @@ select.champion-apply-field.apply-field-mobile {
   box-shadow: 0 0 0 1000px #ffffff inset;
 }
 
-/* Infinite Marquee Animation */
+/* Infinite Marquee Animation — track must be exactly 2 identical halves */
 @keyframes marquee {
   from {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 45s linear infinite;
   will-change: transform;
 }
 

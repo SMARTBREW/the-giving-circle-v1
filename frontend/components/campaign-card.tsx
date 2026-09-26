@@ -1,4 +1,3 @@
-import Image from "next/image";
 import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import CtaButton from "@/components/cta-button";
@@ -35,54 +34,60 @@ function ImpactIcon() {
 
 function LocationIcon() {
   return (
-    <span className="relative inline-flex h-4 w-3 shrink-0 items-center justify-center">
-      <Image
-        src="/images/champions/location-pin.svg"
-        alt=""
-        width={12}
-        height={16}
-        className="h-4 w-3 object-contain"
-      />
-      <Image
-        src="/images/champions/location-dot.svg"
-        alt=""
-        width={4}
-        height={4}
-        className="absolute top-[0.3rem] left-1/2 h-1 w-1 -translate-x-1/2 object-contain"
-      />
+    <span className="relative inline-flex h-4 w-3 shrink-0 items-center justify-center" aria-hidden>
+      <svg
+        viewBox="0 0 14 20"
+        fill="none"
+        className="h-4 w-3"
+      >
+        <path
+          d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM2 7C2 4.24 4.24 2 7 2C9.76 2 12 4.24 12 7C12 9.88 9.12 14.19 7 16.88C4.92 14.21 2 9.85 2 7Z"
+          fill="#45564B"
+        />
+      </svg>
+      <svg
+        viewBox="0 0 5 5"
+        fill="none"
+        className="absolute top-[0.3rem] left-1/2 h-1 w-1 -translate-x-1/2"
+      >
+        <path
+          d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z"
+          fill="#45564B"
+        />
+      </svg>
     </span>
   );
 }
 
 function VerifiedBadge() {
   return (
-    <span className="relative inline-flex h-[1.3125rem] w-[1.375rem] shrink-0 items-center justify-center">
-      <Image
-        src="/images/champions/verified-badge.svg"
-        alt=""
-        width={22}
-        height={21}
-        className="h-full w-full object-contain"
-      />
-      <Image
-        src="/images/champions/verified-check.svg"
-        alt=""
-        width={12}
-        height={9}
-        className="absolute top-1/2 left-1/2 h-[0.5625rem] w-3 -translate-x-1/2 -translate-y-1/2 object-contain"
-      />
+    <span
+      className="relative inline-flex h-[1.3125rem] w-[1.375rem] shrink-0 items-center justify-center"
+      aria-hidden
+    >
+      <svg viewBox="0 0 22 21" fill="none" className="h-full w-full">
+        <path
+          d="M22 10.49L19.56 7.7L19.9 4.01L16.29 3.19L14.4 0L11 1.46L7.6 0L5.71 3.19L2.1 4L2.44 7.7L0 10.49L2.44 13.28L2.1 16.98L5.71 17.8L7.6 21L11 19.53L14.4 20.99L16.29 17.8L19.9 16.98L19.56 13.29L22 10.49ZM18.05 11.97L17.49 12.62L17.57 13.47L17.75 15.42L15.85 15.85L15.01 16.04L14.57 16.78L13.58 18.46L11.8 17.69L11 17.35L10.21 17.69L8.43 18.46L7.44 16.79L7 16.05L6.16 15.86L4.26 15.43L4.44 13.47L4.52 12.62L3.96 11.97L2.67 10.5L3.96 9.02L4.52 8.37L4.43 7.51L4.25 5.57L6.15 5.14L6.99 4.95L7.43 4.21L8.42 2.53L10.2 3.3L11 3.64L11.79 3.3L13.57 2.53L14.56 4.21L15 4.95L15.84 5.14L17.74 5.57L17.56 7.52L17.48 8.37L18.04 9.02L19.33 10.49L18.05 11.97Z"
+          fill="#166534"
+        />
+      </svg>
+      <svg
+        viewBox="0 0 12 9"
+        fill="none"
+        className="absolute top-1/2 left-1/2 h-[0.5625rem] w-3 -translate-x-1/2 -translate-y-1/2"
+      >
+        <path
+          d="M3.8 5.88L1.48 3.55L0 5.04L3.8 8.85L11.14 1.49L9.66 0L3.8 5.88Z"
+          fill="#166534"
+        />
+      </svg>
     </span>
   );
 }
 
-function supportersCount(supporters: string): string {
-  const match = supporters.match(/^([\d,]+)/);
-  return match?.[1] ?? supporters;
-}
-
 export default function CampaignCard({ card }: { card: CampaignCardData }) {
   const href = `/causes/${card.id}`;
-  const count = supportersCount(card.supporters);
+  const [statPrimary, statSecondary] = card.stats;
 
   return (
     <article className="group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[var(--Main-CTA-button,#02938c)] hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.12)]">
@@ -152,28 +157,28 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
         <div className="mt-4 grid min-w-0 grid-cols-2 gap-2.5 sm:mt-5 sm:gap-3">
           <div className="flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center rounded-xl bg-[#E8F7F8] px-2 py-3 sm:min-h-[5.25rem] sm:rounded-2xl sm:px-3 sm:py-3.5">
             <p
-              className={`${SEGOE_UI_CLASS} text-[1.375rem] font-[700] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem]`}
+              className={`${SEGOE_UI_CLASS} max-w-full truncate text-[1.375rem] font-[700] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem]`}
             >
-              {count}
+              {statPrimary.value}
             </p>
             <p
-              className={`${SEGOE_UI_CLASS} mt-2 inline-flex items-center gap-1 text-[0.75rem] font-[500] leading-none text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
+              className={`${SEGOE_UI_CLASS} mt-2 inline-flex max-w-full items-center justify-center gap-1 whitespace-nowrap text-[0.75rem] font-[500] leading-none text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
             >
               <PeopleIcon />
-              Supporters
+              <span>{statPrimary.label}</span>
             </p>
           </div>
           <div className="flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center rounded-xl bg-[#E8F7F8] px-2 py-3 sm:min-h-[5.25rem] sm:rounded-2xl sm:px-3 sm:py-3.5">
             <p
               className={`${SEGOE_UI_CLASS} max-w-full truncate text-[1.375rem] font-[700] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem]`}
             >
-              {card.impactHighlight.value}
+              {statSecondary.value}
             </p>
             <p
               className={`${SEGOE_UI_CLASS} mt-2 inline-flex max-w-full items-center justify-center gap-1 whitespace-nowrap text-[0.75rem] font-[500] leading-none text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
             >
               <ImpactIcon />
-              <span>{card.impactHighlight.label}</span>
+              <span>{statSecondary.label}</span>
             </p>
           </div>
         </div>

@@ -1,7 +1,6 @@
 export { InterFont, InstrumentSerif, PoppinsFont, SatoshiBold } from "./fonts";
 export { CAUSES_PAGE, CAUSE_FILTER_ALL } from "./causes";
 export {
-  CAUSES_HERO,
   CAUSES_LIST_INTRO,
   CAUSES_REACH,
   CAUSES_CTA,
@@ -40,7 +39,7 @@ export {
   STORIES_REACH,
   STORIES_CTA,
 } from "./stories";
-export type { StoryArticle, StoryStatIcon } from "./stories";
+export type { StoryArticle } from "./stories";
 export {
   BLOG_ARTICLES,
   BLOG_HERO,
@@ -199,21 +198,21 @@ export const SUPPORT_CAUSE_BAND = {
 export const MOMENT_CARDS = [
   {
     title: "Birthday",
-    body: "This birthday bring your loved ones together to support a cause you care about",
+    body: "This birthday bring your loved ones\ntogether to support a cause\nyou\u00A0care\u00A0about.",
     ctaLabel: "Start a Birthday Fundraiser",
     iconSrc: "/images/moments/birthday-v3.png",
     href: "/champion/apply?reason=birthday",
   },
   {
     title: "Anniversary",
-    body: "Celebrate your journey by giving back to a cause that matters to both of you",
+    body: "Celebrate your journey by giving back to a cause that matters\u00A0to\u00A0both\u00A0of\u00A0you.",
     ctaLabel: "Start an Anniversary Fundraiser",
     iconSrc: "/images/moments/anniversary-v3.png",
     href: "/champion/apply?reason=anniversary",
   },
   {
     title: "Remembrance",
-    body: "Honour a loved one’s memory by giving to a cause that was close to their heart",
+    body: "Honour a loved one’s memory by giving to a cause that was close\u00A0to\u00A0their\u00A0heart.",
     ctaLabel: "Start a Remembrance Fundraiser",
     iconSrc: "/images/moments/remembrance-v3.png",
     href: "/champion/apply?reason=remembrance",
@@ -230,17 +229,17 @@ export const REACH_STATS = [
 export const HOW_IT_WORKS_STEPS = [
   {
     title: "1. Find a Cause",
-    body: "Explore verified causes and choose one that matters to you.",
+    body: "Explore\u00A0verified\u00A0causes\u00A0and\u00A0choose\u00A0one\nthat\u00A0matters\u00A0to\u00A0you.",
     iconSrc: "/images/how-it-works/find-cause-v2.png",
   },
   {
     title: "2. Choose How to Support",
-    body: "Donate to an NGO or rally your circle as a Cause Champion.",
+    body: "Donate\u00A0to\u00A0an\u00A0NGO\u00A0or\u00A0rally\u00A0your\u00A0circle\nas\u00A0a\u00A0Cause\u00A0Champion.",
     iconSrc: "/images/how-it-works/choose-support-v2.png",
   },
   {
     title: "3. Follow the Impact",
-    body: "Follow updates and see the difference your support creates.",
+    body: "Follow\u00A0updates\u00A0and\u00A0see\u00A0the\u00A0difference\nyour\u00A0support\u00A0creates.",
     iconSrc: "/images/how-it-works/follow-impact-v2.png",
   },
 ] as const;
@@ -312,51 +311,39 @@ export const VOLUNTEERS = [
   // },
 ] as const;
 
-export const PARTNER_LOGO_SETS = [
-  [
-    {
-      src: "/images/partners/PehliClass-CampaignLogo-Org-JWP.png",
-      alt: "Pehli Class",
-    },
-    {
-      src: "/images/partners/WingsofHope-CampaignLogo-Org-JWP.png.png",
-      alt: "Wings of Hope",
-    },
-    {
-      src: "/images/partners/PawsitiveProtector-CampaignLogo-Org-AnimalCare.png",
-      alt: "Pawsitive Protectors",
-    },
-    {
-      src: "/images/partners/JWP-Org-Logo.png",
-      alt: "Joint Women's Programme",
-    },
-    {
-      src: "/images/partners/ICFG-Org-Logo.png",
-      alt: "Institute of Community Forest Governance",
-    },
-  ],
-  [
-    {
-      src: "/images/partners/BrickByBrick-CampaignLogo-Org-AnimalCare.png",
-      alt: "Brick by Brick",
-    },
-    {
-      src: "/images/partners/BowlsofHope-CampaignLogo-Org-AnimalCare.png",
-      alt: "Bowls of Hope",
-    },
-    {
-      src: "/images/partners/AnimalCare-Org-Logo.png",
-      alt: "AnimalCare",
-    },
-    {
-      src: "/images/partners/PehliClass-CampaignLogo-Org-JWP.png",
-      alt: "Pehli Class",
-    },
-    {
-      src: "/images/partners/WingsofHope-CampaignLogo-Org-JWP.png.png",
-      alt: "Wings of Hope",
-    },
-  ],
+export const PARTNER_LOGOS = [
+  {
+    src: "/images/partners/AnimalCare-Org-Logo.png",
+    alt: "AnimalCare",
+  },
+  {
+    src: "/images/partners/PehliClass-CampaignLogo-Org-JWP.png",
+    alt: "Pehli Class",
+  },
+  {
+    src: "/images/partners/BrickByBrick-CampaignLogo-Org-AnimalCare.png",
+    alt: "Brick by Brick",
+  },
+  {
+    src: "/images/partners/WingsofHope-CampaignLogo-Org-JWP.png.png",
+    alt: "Wings of Hope",
+  },
+  {
+    src: "/images/partners/ICFG-Org-Logo.png",
+    alt: "Institute of Community Forest Governance",
+  },
+  {
+    src: "/images/partners/BowlsofHope-CampaignLogo-Org-AnimalCare.png",
+    alt: "Bowls of Hope",
+  },
+  {
+    src: "/images/partners/JWP-Org-Logo.png",
+    alt: "Joint Women's Programme",
+  },
+  {
+    src: "/images/partners/PawsitiveProtector-CampaignLogo-Org-AnimalCare.png",
+    alt: "Pawsitive Protectors",
+  },
 ] as const;
 
 export const CHAMPION_STEPS = [

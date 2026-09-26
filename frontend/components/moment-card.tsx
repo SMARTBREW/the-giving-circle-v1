@@ -79,7 +79,7 @@ export default function MomentCard({
           {title}
         </h3>
         <p
-          className={`${SEGOE_UI_CLASS} relative z-10 mt-4 w-full text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-5 sm:text-[1rem] sm:leading-7 min-[70rem]:mt-4 min-[70rem]:flex-1 min-[70rem]:text-[0.9375rem] min-[70rem]:leading-6 min-[90rem]:mt-5 min-[90rem]:h-[6rem] min-[90rem]:max-w-[20.75rem] min-[90rem]:flex-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem]`}
+          className={`${SEGOE_UI_CLASS} relative z-10 mt-4 w-full whitespace-pre-line text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-5 sm:text-[1rem] sm:leading-7 min-[70rem]:mt-4 min-[70rem]:flex-1 min-[70rem]:text-[0.9375rem] min-[70rem]:leading-6 min-[90rem]:mt-5 min-[90rem]:h-[6rem] min-[90rem]:max-w-[20.75rem] min-[90rem]:flex-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[2rem]`}
         >
           {body}
         </p>

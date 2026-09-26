@@ -90,7 +90,6 @@ export const CHAMPION_VOICES = {
   title: "What Our Champions Say",
   subtitle:
     "Real experiences from people who used their networks to support causes they care about.",
-  quoteSrc: "/images/champions/quote.png",
   testimonials: [
     {
       quote:

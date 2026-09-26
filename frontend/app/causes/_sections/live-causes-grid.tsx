@@ -40,6 +40,7 @@ export default function LiveCausesGrid() {
       id="live-causes"
       tone="gray"
       fade={false}
+      pad="tight-top"
       innerClassName="flex flex-col items-center"
     >
       <SectionIntro

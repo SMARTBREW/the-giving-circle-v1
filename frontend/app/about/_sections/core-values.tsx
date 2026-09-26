@@ -5,7 +5,7 @@ import { ABOUT_CORE_VALUES, ABOUT_CORE_VALUES_INTRO } from "@/constants";
 
 export default function CoreValues() {
   return (
-    <PageSection tone="gray">
+    <PageSection tone="white">
       <SectionIntro
         eyebrow={ABOUT_CORE_VALUES_INTRO.eyebrow}
         title={ABOUT_CORE_VALUES_INTRO.title}
@@ -18,7 +18,7 @@ export default function CoreValues() {
             key={value.title}
             title={value.title}
             body={value.body}
-            icon={value.icon}
+            iconSrc={value.iconSrc}
           />
         ))}
       </ul>

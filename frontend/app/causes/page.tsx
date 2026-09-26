@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import PhotoCtaBand from "@/components/photo-cta-band";
-import CausesHero from "./_sections/causes-hero";
 import LiveCausesGrid from "./_sections/live-causes-grid";
 import { CAUSES_CTA } from "@/constants";
 
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 export default function CausesPage() {
   return (
     <>
-      <CausesHero />
       <Suspense
         fallback={
           <section className="w-full bg-gray-100 px-4 py-16 text-center text-[var(--Subheading,#4a5558)]">

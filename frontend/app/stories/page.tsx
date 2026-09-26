@@ -32,7 +32,7 @@ export default function StoriesPage() {
         objectPosition="object-[50%_10%] sm:object-[50%_14%]"
       />
       <StoriesArticles />
-      <MomentsSection />
+      <MomentsSection className="bg-[#FFFFFF]" />
       <ReachBand
         eyebrow={STORIES_REACH.eyebrow}
         title={STORIES_REACH.title}

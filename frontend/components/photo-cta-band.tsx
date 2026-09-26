@@ -97,44 +97,46 @@ export default function PhotoCtaBand({
         </>
       ) : null}
       <FadeInSection
-        className={`absolute inset-y-0 left-0 right-0 z-[1] mx-auto flex w-full max-w-[90rem] flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 md:px-12 md:py-12 min-[56.25rem]:px-10 min-[56.25rem]:py-12 lg:px-14 lg:py-14 min-[90rem]:px-[6.25rem] min-[90rem]:py-0 ${
+        className={`absolute inset-y-0 left-0 right-0 z-[1] mx-auto flex w-full max-w-[90rem] flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 md:px-12 md:py-12 min-[56.25rem]:px-10 min-[56.25rem]:py-12 lg:px-14 lg:py-14 min-[90rem]:px-[6.25rem] ${
           isLeft
             ? "items-center text-center min-[56.25rem]:items-start min-[56.25rem]:text-left"
-            : "items-center text-center min-[90rem]:block min-[90rem]:px-0"
+            : "items-center text-center"
         }`}
       >
-        <h2
-          className={`w-full font-['Georgia'] font-[700] tracking-[0.5px] text-[#FFFFFF] text-[1.75rem] leading-[2.25rem] max-w-[20.5rem] sm:max-w-[28rem] sm:text-[2.125rem] sm:leading-[2.625rem] md:max-w-[34rem] md:text-[2.25rem] md:leading-[2.75rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[1.875rem] min-[56.25rem]:leading-[2.375rem] lg:max-w-[min(38rem,48%)] lg:text-[2.25rem] lg:leading-[2.75rem] min-[90rem]:max-w-none min-[90rem]:text-[3rem] min-[90rem]:leading-none ${
-            isLeft
-              ? "min-[56.25rem]:text-left min-[90rem]:w-[33rem]"
-              : "text-center min-[90rem]:absolute min-[90rem]:top-[5.5rem] min-[90rem]:left-[30.3125rem] min-[90rem]:h-[6.875rem] min-[90rem]:w-[29.375rem]"
-          }`}
-        >
-          {title}
-        </h2>
-        <p
-          className={`${SEGOE_UI_CLASS} mt-3 w-full whitespace-pre-line font-[400] tracking-[0.0025em] text-[#FFFFFF] text-[0.9375rem] leading-6 max-w-[22rem] sm:mt-4 sm:max-w-[34rem] sm:text-[1.0625rem] sm:leading-7 md:max-w-[36rem] md:text-[1.0625rem] md:leading-7 min-[56.25rem]:mt-3.5 min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[0.9375rem] min-[56.25rem]:leading-6 lg:mt-4 lg:max-w-[min(40rem,50%)] lg:text-[1.0625rem] lg:leading-7 min-[90rem]:mt-4 min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-9 ${
-            isLeft
-              ? "min-[56.25rem]:text-left min-[90rem]:w-[40rem]"
-              : "text-center min-[90rem]:absolute min-[90rem]:top-[13.875rem] min-[90rem]:left-1/2 min-[90rem]:mt-0 min-[90rem]:h-[4.5rem] min-[90rem]:w-[40rem] min-[90rem]:-translate-x-1/2"
-          }`}
-        >
-          {subtitle}
-        </p>
         <div
-          className={`mt-6 sm:mt-7 min-[56.25rem]:mt-6 lg:mt-7 ${
+          className={`flex w-full flex-col gap-6 ${
             isLeft
-              ? "min-[90rem]:mt-8"
-              : "min-[90rem]:absolute min-[90rem]:top-[19.875rem] min-[90rem]:left-1/2 min-[90rem]:mt-0 min-[90rem]:-translate-x-1/2"
+              ? "items-center min-[56.25rem]:items-start"
+              : "items-center"
           }`}
         >
-          <CtaButton
-            href={href}
-            className="h-11 rounded-full px-7 py-3 text-[0.875rem] sm:h-12 sm:px-8 min-[56.25rem]:h-11 min-[56.25rem]:px-6 min-[56.25rem]:text-[0.875rem] lg:h-12 lg:px-8 lg:text-[length:inherit] min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-9 min-[90rem]:py-[1.125rem] min-[90rem]:text-[length:inherit]"
-            labelClassName="font-[700]"
+          <h2
+            className={`w-full font-['Georgia'] font-[700] tracking-[0.5px] text-[#FFFFFF] text-[1.75rem] leading-[1.15] max-w-[20.5rem] sm:max-w-[28rem] sm:text-[2.125rem] md:max-w-[34rem] md:text-[2.25rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[1.875rem] lg:max-w-[min(38rem,48%)] lg:text-[2.25rem] min-[90rem]:max-w-none min-[90rem]:text-[3rem] min-[90rem]:leading-[1.15] ${
+              isLeft
+                ? "min-[56.25rem]:text-left min-[90rem]:w-[33rem]"
+                : "text-center min-[90rem]:w-auto min-[90rem]:max-w-[36rem]"
+            }`}
           >
-            {ctaLabel}
-          </CtaButton>
+            {title}
+          </h2>
+          <p
+            className={`${SEGOE_UI_CLASS} w-full whitespace-pre-line font-[400] tracking-[0.0025em] text-[#FFFFFF] text-[0.9375rem] leading-[1.5] max-w-[22rem] sm:max-w-[34rem] sm:text-[1.0625rem] md:max-w-[36rem] md:text-[1.0625rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[0.9375rem] lg:max-w-[min(40rem,50%)] lg:text-[1.0625rem] min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[1.5] ${
+              isLeft
+                ? "min-[56.25rem]:text-left min-[90rem]:w-[40rem]"
+                : "text-center min-[90rem]:w-[40rem]"
+            }`}
+          >
+            {subtitle}
+          </p>
+          <div>
+            <CtaButton
+              href={href}
+              className="h-11 rounded-full px-7 py-3 text-[0.875rem] sm:h-12 sm:px-8 min-[56.25rem]:h-11 min-[56.25rem]:px-6 min-[56.25rem]:text-[0.875rem] lg:h-12 lg:px-8 lg:text-[length:inherit] min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-9 min-[90rem]:py-[1.125rem] min-[90rem]:text-[length:inherit]"
+              labelClassName="font-[700]"
+            >
+              {ctaLabel}
+            </CtaButton>
+          </div>
         </div>
       </FadeInSection>
     </section>
