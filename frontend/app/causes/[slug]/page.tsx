@@ -172,14 +172,6 @@ export default async function CauseDetailPage({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thegivingcircle.in" },
-          { "@type": "ListItem", "position": 2, "name": "Causes", "item": "https://www.thegivingcircle.in/causes" },
-          { "@type": "ListItem", "position": 3, "name": cause.title, "item": canonicalUrl },
-        ],
-      },
-      {
         "@type": "NGO",
         "name": cause.org,
         "description": cause.summary,
@@ -200,7 +192,6 @@ export default async function CauseDetailPage({
         "url": canonicalUrl,
         "inLanguage": "en-IN",
         "isPartOf": { "@type": "WebSite", "name": "The Giving Circle", "url": "https://www.thegivingcircle.in" },
-        "breadcrumb": { "@type": "BreadcrumbList" },
         ...(cause.faqs.length > 0 ? {
           "mainEntity": cause.faqs.map((faq) => ({
             "@type": "Question",
