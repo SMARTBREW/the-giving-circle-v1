@@ -17,7 +17,7 @@ export default function PageSection({
   children,
 }: {
   id?: string;
-  tone?: "white" | "gray";
+  tone?: "white" | "gray" | "alternate";
   className?: string;
   innerClassName?: string;
   /** `tight-top` reduces top padding when a page has no hero above. */
@@ -25,7 +25,12 @@ export default function PageSection({
   fade?: boolean;
   children: ReactNode;
 }) {
-  const background = tone === "gray" ? "bg-gray-100" : "bg-[#FFFFFF]";
+  const background =
+    tone === "gray"
+      ? "bg-gray-100"
+      : tone === "alternate"
+        ? "bg-[var(--Alternate-color,#F5F5F5)]"
+        : "bg-[#FFFFFF]";
   const padClass = pad === "tight-top" ? SECTION_PAD_TIGHT_TOP : SECTION_PAD;
   const contentClassName = `${padClass} ${innerClassName}`;
 

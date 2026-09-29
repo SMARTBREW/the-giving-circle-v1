@@ -1,0 +1,135 @@
+# robots.txt for thegivingcircle.in
+# Last reviewed: 2026-09-28
+
+# Default: full crawl access for all standard search bots
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+# --- AI crawlers / LLM training + retrieval bots: explicitly allowed ---
+# (repeats the same Disallow rules as above so these bots follow the
+# same policy rather than accidentally getting broader access)
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: GoogleOther
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Bytespider
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: FacebookBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Diffbot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: Timpibot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: YouBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /api/
+Disallow: /*?reason=
+
+# Sitemap
+Sitemap: https://www.thegivingcircle.in/sitemap.xml

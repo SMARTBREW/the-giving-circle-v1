@@ -1,0 +1,50 @@
+# The Giving Circle
+
+> Bring your circle together to raise funds for meaningful change with verified NGOs.
+
+> The Giving Circle is a platform designed to empower individuals and groups to champion causes and raise funds for verified non-governmental organizations (NGOs). It facilitates the creation of fundraising circles, allowing users to unite with friends, family, or colleagues to support a cause they care about. The platform emphasizes transparency and impact, ensuring that contributions directly benefit meaningful change.
+This service is ideal for individuals who want to make a difference but need a structured way to organize fundraising efforts, and for NGOs seeking a reliable platform to connect with potential donors. Key use cases include celebrating special occasions like birthdays or anniversaries by fundraising, creating memorial funds, or simply rallying a community around a shared passion for a specific cause. The Giving Circle aims to make collective giving accessible, engaging, and impactful.
+
+## Core Pages
+- [Home](https://www.thegivingcircle.in/): Overview of the platform, featured causes, and entry points to donate, volunteer, or fundraise.
+- [About](https://www.thegivingcircle.in/about/): Who runs The Giving Circle and how causes are selected and vetted.
+- [Causes](https://www.thegivingcircle.in/causes/): Full directory of active giving campaigns.
+- [Stories](https://www.thegivingcircle.in/stories/): Impact stories and updates from supported projects and beneficiaries.
+- [FAQs](https://www.thegivingcircle.in/faqs/): Common questions on donating, tax receipts, and how funds are used.
+- [Contact](https://www.thegivingcircle.in/contact/): Contact details for donor and partner queries.
+
+## Causes
+- [Wings of Hope](https://www.thegivingcircle.in/causes/wings-of-hope/)
+- [Pehli Class](https://www.thegivingcircle.in/causes/pehli-class/): Early/first-year schooling access for children.
+- [Community Forest Governance](https://www.thegivingcircle.in/causes/community-forest-governance/): Forest rights and local stewardship of forest land.
+- [Pawsitive Protectors](https://www.thegivingcircle.in/causes/pawsitive-protectors/): Animal welfare and street-animal protection.
+- [Bowls of Hope](https://www.thegivingcircle.in/causes/bowls-of-hope/): Feeding program for animals or vulnerable communities.
+- [Brick by Brick](https://www.thegivingcircle.in/causes/brick-by-brick/): Infrastructure/shelter-building project.
+- [Flood & Animal Rescue](https://www.thegivingcircle.in/causes/flood-animal-rescue/): Emergency rescue and relief during flooding.
+
+## Get Involved
+- [Become a Cause Champion](https://www.thegivingcircle.in/become-a-cause-champion/): Peer-to-peer fundraising for a cause, tied to a personal occasion.
+  - [Apply — Birthday](https://www.thegivingcircle.in/champion/apply/?reason=birthday)
+  - [Apply — Anniversary](https://www.thegivingcircle.in/champion/apply/?reason=anniversary)
+  - [Apply — In Remembrance](https://www.thegivingcircle.in/champion/apply/?reason=remembrance)
+  - [Apply — General](https://www.thegivingcircle.in/champion/apply/)
+- [Partner With Us](https://www.thegivingcircle.in/partner/): Corporate/CSR and organizational partnership options.
+- [Volunteer](https://www.thegivingcircle.in/volunteer/): Ways to volunteer time or skills with supported causes.
+
+## Blog
+- [Blog Home](https://www.thegivingcircle.in/blog/)
+- [Meaningful Summer Projects in India](https://www.thegivingcircle.in/blog/meaningful-summer-projects-india/)
+- [A Parent's Guide to a Meaningful Summer in India](https://www.thegivingcircle.in/blog/parents-guide-meaningful-summer-india/)
+- [Community Service for College Applications in India](https://www.thegivingcircle.in/blog/community-service-college-applications-india/)
+- [Volunteer Project Ideas for Students in India](https://www.thegivingcircle.in/blog/volunteer-project-ideas-students-india/)
+- [CAS / Duke of Edinburgh Volunteer Certificate in India](https://www.thegivingcircle.in/blog/cas-duke-of-edinburgh-volunteer-certificate-india/)
+- [How to Donate for Child Education in India (80G)](https://www.thegivingcircle.in/blog/how-to-donate-for-child-education-in-india-80g/)
+- [How to Donate for Women's Empowerment in India](https://www.thegivingcircle.in/blog/how-to-donate-for-women-empowerment-india/)
+- [How to Donate to NGOs in India](https://www.thegivingcircle.in/blog/how-to-donate-to-ngos-india/)
+- [Verified NGOs in Delhi](https://www.thegivingcircle.in/blog/verified-ngos-in-delhi/)
+- [CSR Projects in India](https://www.thegivingcircle.in/blog/csr-projects-in-india/)
+- [What Is a Philanthropist? (India context)](https://www.thegivingcircle.in/blog/what-is-a-philanthropist-india/)
+- [What Is Philanthropy? (India context)](https://www.thegivingcircle.in/blog/what-is-philanthropy-india/)
+
+## Optional
+- [Sitemap](https://www.thegivingcircle.in/sitemap.xml)

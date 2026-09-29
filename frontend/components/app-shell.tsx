@@ -51,7 +51,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
         className={`relative z-0 ${
           isFormShell
             ? "fixed inset-0 flex min-h-0 min-w-0 flex-col overflow-hidden"
-            : `overflow-x-clip bg-[#F5F5F5] ${HEADER_OFFSET}`
+            : `overflow-x-clip bg-[var(--Alternate-color,#F5F5F5)] ${HEADER_OFFSET}`
         }`}
       >
         {children}

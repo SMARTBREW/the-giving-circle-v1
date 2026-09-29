@@ -75,6 +75,18 @@ export { PARTNER_APPLY } from "./partner";
 export type { PartnerApplyFocusId } from "./partner";
 export { CONTACT_APPLY } from "./contact";
 export {
+  PRIVACY_PAGE,
+  PRIVACY_INTRO,
+  PRIVACY_SECTIONS,
+} from "./privacy";
+export type { PrivacyBlock, PrivacySection } from "./privacy";
+export {
+  TERMS_PAGE,
+  TERMS_INTRO,
+  TERMS_SECTIONS,
+} from "./terms";
+export type { TermsBlock, TermsSection } from "./terms";
+export {
   SITE_FAQS,
   ALL_FAQS,
   FAQ_ITEMS,
@@ -161,9 +173,9 @@ export const FOOTER_CONTACT = [
 ] as const;
 
 export const FOOTER_LEGAL_LINKS = [
-  { href: "/#", label: "Privacy Policy" },
-  { href: "/#", label: "Terms Of Service" },
-  { href: "/#", label: "Sitemap" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-service", label: "Terms Of Service" },
+  { href: "/sitemap.xml", label: "Sitemap" },
 ] as const;
 
 export const FOOTER_SOCIAL_LINKS = [
