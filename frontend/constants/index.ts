@@ -175,7 +175,7 @@ export const FOOTER_CONTACT = [
 export const FOOTER_LEGAL_LINKS = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-of-service", label: "Terms Of Service" },
-  { href: "/sitemap.xml", label: "Sitemap" },
+  { href: "/sitemap.html", label: "Sitemap" },
 ] as const;
 
 export const FOOTER_SOCIAL_LINKS = [
