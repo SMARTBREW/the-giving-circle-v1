@@ -8,12 +8,14 @@ import {
   BLOG_HERO,
   BLOG_REACH,
   REACH_STATS,
+  SITE,
 } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Blog | The Giving Circle",
   description:
     "Practical, trust-first giving guides for families, students, and donors across India: 80G, verified NGOs, Young Champions, and collective impact.",
+  alternates: { canonical: `${SITE.url}/blog/` },
 };
 
 export default function BlogPage() {

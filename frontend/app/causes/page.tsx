@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import PhotoCtaBand from "@/components/photo-cta-band";
 import LiveCausesGrid from "./_sections/live-causes-grid";
-import { CAUSES_CTA } from "@/constants";
+import { CAUSES_CTA, SITE } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Live Causes | The Giving Circle",
   description:
     "Explore verified causes across education, women’s health, animal welfare, and disaster relief. Champion a campaign and give directly to NGO partners.",
+  alternates: { canonical: `${SITE.url}/causes/` },
 };
 
 export default function CausesPage() {

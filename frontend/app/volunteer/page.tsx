@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MomentsSection from "@/app/(home)/_sections/moments-section";
 import PartnersSection from "@/app/(home)/_sections/partners-section";
 import FaqsSection from "@/app/(home)/_sections/faqs-section";
-import { VOLUNTEER_FAQS } from "@/constants";
+import { SITE, VOLUNTEER_FAQS } from "@/constants";
 import VolunteerHero from "./_sections/volunteer-hero";
 import VolunteerHowItWorks from "./_sections/volunteer-how-it-works";
 import VolunteerTrust from "./_sections/volunteer-trust";
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Volunteer With Us | The Giving Circle",
   description:
     "Give your time and skills to verified causes across India. Volunteer with NGO partners on education, women’s health, animal welfare, and disaster relief.",
+  alternates: { canonical: `${SITE.url}/volunteer/` },
 };
 
 export default function VolunteerPage() {

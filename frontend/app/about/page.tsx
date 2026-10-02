@@ -15,12 +15,14 @@ import {
   ABOUT_VISION_CTA,
   ABOUT_WHY_WE_GATHER,
   REACH_STATS,
+  SITE,
 } from "@/constants";
 
 export const metadata: Metadata = {
   title: "About Us | The Giving Circle",
   description:
     "India's leading community giving platform, bridging Cause Champions with verified NGOs for transparent, measurable social impact since 2022.",
+  alternates: { canonical: `${SITE.url}/about/` },
 };
 
 export default function AboutPage() {

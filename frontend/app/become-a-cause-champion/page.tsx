@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MomentsSection from "@/app/(home)/_sections/moments-section";
 import PartnersSection from "@/app/(home)/_sections/partners-section";
 import FaqsSection from "@/app/(home)/_sections/faqs-section";
-import { CHAMPION_FAQS } from "@/constants";
+import { CHAMPION_FAQS, SITE } from "@/constants";
 import ChampionHero from "./_sections/champion-hero";
 import ChampionHowItWorks from "./_sections/champion-how-it-works";
 import ChampionCampaigns from "./_sections/champion-campaigns";
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Become a Cause Champion | The Giving Circle",
   description:
     "Turn your circle into impact. Become a Cause Champion for a verified cause, inspire your network, and help create meaningful change across India.",
+  alternates: { canonical: `${SITE.url}/become-a-cause-champion/` },
 };
 
 export default function ChampionPage() {

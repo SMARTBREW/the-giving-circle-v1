@@ -104,12 +104,12 @@ export async function generateMetadata({
     description: seo.description,
     keywords: seo.keywords,
     alternates: {
-      canonical: `https://www.thegivingcircle.in/causes/${slug}`,
+      canonical: `https://www.thegivingcircle.in/causes/${slug}/`,
     },
     openGraph: {
       title: seo.title,
       description: seo.description,
-      url: `https://www.thegivingcircle.in/causes/${slug}`,
+      url: `https://www.thegivingcircle.in/causes/${slug}/`,
       siteName: "The Giving Circle",
       images: [
         {
@@ -162,7 +162,7 @@ export default async function CauseDetailPage({
     .slice(0, 3)
     .map(toCampaignCard);
 
-  const canonicalUrl = `https://www.thegivingcircle.in/causes/${slug}`;
+  const canonicalUrl = `https://www.thegivingcircle.in/causes/${slug}/`;
   const seo = CAUSE_SEO[slug] ?? { title: cause.title, description: cause.summary, keywords: "" };
   const ogImageUrl = cause.src.startsWith("/")
     ? `https://www.thegivingcircle.in${cause.src}`

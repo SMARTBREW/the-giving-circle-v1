@@ -6,6 +6,7 @@ import MomentsSection from "@/app/(home)/_sections/moments-section";
 import StoriesArticles from "./_sections/stories-articles";
 import {
   REACH_STATS,
+  SITE,
   STORIES_CTA,
   STORIES_HERO,
   STORIES_REACH,
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: "Impact Stories | The Giving Circle",
   description:
     "Real stories of Cause Champions and verified NGOs turning collective giving into lasting impact across India.",
+  alternates: { canonical: `${SITE.url}/stories/` },
 };
 
 export default function StoriesPage() {

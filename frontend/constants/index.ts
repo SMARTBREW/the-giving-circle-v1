@@ -87,6 +87,19 @@ export {
 } from "./terms";
 export type { TermsBlock, TermsSection } from "./terms";
 export {
+  NGOS_PAGE,
+  NGOS_CAUSES,
+  NGOS_CITIES,
+  NGOS_GUIDES,
+  NGOS_TRUST,
+  NGOS_FAQS,
+  NGOS_CITY_DELHI,
+  NGOS_CITY_GURUGRAM,
+  NGOS_CITY_NOIDA,
+  NGOS_CITY_FARIDABAD,
+} from "./ngos";
+export type { NgosCityPage, NgosIconName } from "./ngos";
+export {
   SITE_FAQS,
   ALL_FAQS,
   FAQ_ITEMS,
@@ -132,6 +145,11 @@ export const GET_INVOLVED_LINKS = [
   { href: "/become-a-cause-champion", label: "Become a Cause Champion" },
   { href: "/partner", label: "Partner as an NGO" },
   { href: "/volunteer", label: "Volunteer With Us" },
+] as const;
+
+export const FOOTER_GET_INVOLVED_LINKS = [
+  ...GET_INVOLVED_LINKS,
+  { href: "/ngos", label: "NGO Directory" },
 ] as const;
 
 export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[var(--Dark-Charcoal,#1c2426)]`;

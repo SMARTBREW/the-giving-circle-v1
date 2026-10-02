@@ -47,7 +47,7 @@ export async function generateMetadata({
     return { title: "Article | The Giving Circle" };
   }
 
-  const canonicalUrl = `https://www.thegivingcircle.in/blog/${slug}`;
+  const canonicalUrl = `https://www.thegivingcircle.in/blog/${slug}/`;
   const ogImageUrl = blogOgImageUrl(
     "image" in article ? article.image : undefined,
   );
@@ -109,7 +109,7 @@ export default async function BlogArticlePage({
     3,
   );
 
-  const canonicalUrl = `https://www.thegivingcircle.in/blog/${slug}`;
+  const canonicalUrl = `https://www.thegivingcircle.in/blog/${slug}/`;
   const ogImageUrl = blogOgImageUrl(
     "image" in article ? article.image : undefined,
   );

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | The Giving Circle",
   description:
     "How The Giving Circle collects, uses, shares and protects personal data for donors, Cause Champions, volunteers and NGO partners.",
-  alternates: { canonical: `${SITE.url}/privacy-policy` },
+  alternates: { canonical: `${SITE.url}/privacy-policy/` },
 };
 
 function PrivacyBlocks({ blocks }: { blocks: PrivacyBlock[] }) {

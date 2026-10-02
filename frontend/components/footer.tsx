@@ -9,7 +9,7 @@ import {
   FOOTER_LINK_CLASS,
   FOOTER_QUICK_LINKS,
   FOOTER_SOCIAL_LINKS,
-  GET_INVOLVED_LINKS,
+  FOOTER_GET_INVOLVED_LINKS,
 } from "@/constants";
 
 function SocialIcon({
@@ -173,7 +173,7 @@ export default function Footer() {
           </div>
 
           <div className="grid min-w-0 flex-1 grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-9 lg:grid-cols-3 lg:gap-x-6 xl:gap-x-8 min-[90rem]:gap-x-10">
-            <FooterLinkList heading="Get Involved" links={GET_INVOLVED_LINKS} />
+            <FooterLinkList heading="Get Involved" links={FOOTER_GET_INVOLVED_LINKS} />
             <FooterLinkList heading="Quick Links" links={FOOTER_QUICK_LINKS} />
 
             <div className="min-w-0">
@@ -214,7 +214,8 @@ export default function Footer() {
             ))}
           </ul>
           <p className={`${FOOTER_LINK_CLASS} min-w-0 lg:order-1`}>
-            © 2026 The Giving Circle Community Platform. All Rights Reserved.
+            © {new Date().getFullYear()} The Giving Circle Community Platform. All
+            Rights Reserved.
           </p>
         </div>
       </div>
