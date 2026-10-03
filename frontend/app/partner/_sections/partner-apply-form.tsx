@@ -338,7 +338,7 @@ export default function PartnerApplyForm() {
 
   return (
     <>
-      {/* Phone only — Figma mobile chrome */}
+      {/* Phone only - Figma mobile chrome */}
       <div className="fixed inset-0 z-10 flex min-h-0 min-w-0 flex-col overflow-hidden bg-[#FFFFFF] md:hidden">
         {currentStep === 3 ? (
           <ApplyMobileThanks
@@ -381,7 +381,7 @@ export default function PartnerApplyForm() {
         )}
       </div>
 
-      {/* Desktop — full viewport so sidebar fill + border reach the bottom */}
+      {/* Desktop - full viewport so sidebar fill + border reach the bottom */}
       <section className="fixed inset-0 z-10 hidden min-h-0 min-w-0 overflow-hidden bg-[#FFFFFF] md:flex">
         <aside className="flex h-full w-[min(17.5rem,28%)] min-w-0 shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-[#D9E1E2] bg-[#E8F7F8] px-4 pt-5 pb-5 sm:px-5 lg:w-[min(20rem,26%)] lg:px-6 lg:pt-7 lg:pb-7 min-[90rem]:w-[30.125rem] min-[90rem]:px-16 min-[90rem]:pt-10 min-[90rem]:pb-10">
             <Link href="/" className="inline-flex w-fit shrink-0 items-center">

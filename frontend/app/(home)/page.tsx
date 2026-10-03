@@ -11,7 +11,7 @@ import PartnersSection from "./_sections/partners-section";
 import FaqsSection from "./_sections/faqs-section";
 import SupportCauseSection from "./_sections/support-cause-section";
 
-/** Homepage only — Metadata API drops the trailing slash on the site root. */
+/** Homepage only - Metadata API drops the trailing slash on the site root. */
 const HOME_CANONICAL = `${SITE.url}/`;
 
 export default function HomePage() {

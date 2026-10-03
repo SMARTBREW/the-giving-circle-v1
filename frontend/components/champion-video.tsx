@@ -16,7 +16,7 @@ export default function ChampionVideo({ className }: { className: string }) {
     if (!video) return;
 
     // Attach the Cloudinary URL only after the user asks to play.
-    // video.src is "" until set — do not call play() before the file is ready
+    // video.src is "" until set - do not call play() before the file is ready
     // or Chrome throws NotSupportedError ("no supported source was found").
     if (!video.getAttribute("src")) {
       video.src = VIDEO_SRC;
@@ -44,7 +44,7 @@ export default function ChampionVideo({ className }: { className: string }) {
     try {
       await video.play();
     } catch {
-      // Autoplay / interrupted play — controls stay available once started.
+      // Autoplay / interrupted play - controls stay available once started.
     }
   }
 

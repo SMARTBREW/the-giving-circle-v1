@@ -1,5 +1,5 @@
 /**
- * CloudFront Function (viewer-request) — SEO 301 redirects for S3 static hosting.
+ * CloudFront Function (viewer-request) - SEO 301 redirects for S3 static hosting.
  * Attach to distribution E1N8EZN5Z7I1E7 on viewer-request.
  */
 var CANONICAL_HOST = 'www.thegivingcircle.in';

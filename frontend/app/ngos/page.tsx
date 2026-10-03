@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "NGO Directory India | The Giving Circle",
   description:
-    "Find verified, transparent NGOs by city or cause. Background-checked partners with FCRA, 80G, and audited financials — so your donation creates trackable impact.",
+    "Find verified, transparent NGOs by city or cause. Background-checked partners with FCRA, 80G, and audited financials - so your donation creates trackable impact.",
   alternates: { canonical: `${SITE.url}/ngos/` },
 };
 

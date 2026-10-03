@@ -24,10 +24,10 @@ This service is ideal for individuals who want to make a difference but need a s
 
 ## Get Involved
 - [Become a Cause Champion](https://www.thegivingcircle.in/become-a-cause-champion/): Peer-to-peer fundraising for a cause, tied to a personal occasion.
-  - [Apply — Birthday](https://www.thegivingcircle.in/champion/apply/?reason=birthday)
-  - [Apply — Anniversary](https://www.thegivingcircle.in/champion/apply/?reason=anniversary)
-  - [Apply — In Remembrance](https://www.thegivingcircle.in/champion/apply/?reason=remembrance)
-  - [Apply — General](https://www.thegivingcircle.in/champion/apply/)
+  - [Apply - Birthday](https://www.thegivingcircle.in/champion/apply/?reason=birthday)
+  - [Apply - Anniversary](https://www.thegivingcircle.in/champion/apply/?reason=anniversary)
+  - [Apply - In Remembrance](https://www.thegivingcircle.in/champion/apply/?reason=remembrance)
+  - [Apply - General](https://www.thegivingcircle.in/champion/apply/)
 - [Partner With Us](https://www.thegivingcircle.in/partner/): Corporate/CSR and organizational partnership options.
 - [Volunteer](https://www.thegivingcircle.in/volunteer/): Ways to volunteer time or skills with supported causes.
 

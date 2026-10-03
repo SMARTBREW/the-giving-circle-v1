@@ -61,7 +61,7 @@ export const CAUSE_DETAIL_CONTENT = {
     responseHeading: "The Promise: One Year, Then a Real Classroom",
     response: [
       "At Mera Sahara, each child stays for a maximum of one year. In that year the programme closes academic gaps, secures documentation, and accompanies families through enrolment into government or private school   into their first formal class, on time.",
-      "Where girls cannot attend regular school, JWP opens NIOS for Classes 9–12 and IGNOU for higher education   so education continues even when daily attendance is blocked by family circumstances.",
+      "Where girls cannot attend regular school, JWP opens NIOS for Classes 9-12 and IGNOU for higher education   so education continues even when daily attendance is blocked by family circumstances.",
       "About ₹1,600 per month or ₹19,000 for the year is positioned to cover structured support at the centre and enrolment-related accompaniment as described by JWP.",
     ],
     whyNowHeading: "Why #PehliClass, Why Now",

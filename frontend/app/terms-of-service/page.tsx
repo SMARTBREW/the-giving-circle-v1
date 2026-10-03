@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Terms of Use | The Giving Circle",
   description:
-    "Terms of Use for The Giving Circle platform — donations, Cause Champions, volunteers, NGO partners, and community giving in India.",
+    "Terms of Use for The Giving Circle platform - donations, Cause Champions, volunteers, NGO partners, and community giving in India.",
   alternates: { canonical: `${SITE.url}/terms-of-service/` },
 };
 

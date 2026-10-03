@@ -179,7 +179,7 @@ export const LIVE_CAUSES = [
       {
         question: "What if a girl cannot attend a regular school?",
         answer:
-          "Where girls cannot attend regular school, JWP opens NIOS for Classes 9–12 and IGNOU for higher education so learning continues even when daily attendance is blocked by family circumstances.",
+          "Where girls cannot attend regular school, JWP opens NIOS for Classes 9-12 and IGNOU for higher education so learning continues even when daily attendance is blocked by family circumstances.",
       },
       {
         question: "Is my donation eligible for 80G?",

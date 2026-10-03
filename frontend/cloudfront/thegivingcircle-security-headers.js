@@ -1,5 +1,5 @@
 /**
- * CloudFront Function (viewer-response) — security headers for static S3 origin.
+ * CloudFront Function (viewer-response) - security headers for static S3 origin.
  * Free-tier distributions cannot attach custom Response Headers Policies;
  * this function applies the same CSP/HSTS/etc. on every response.
  */

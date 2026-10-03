@@ -2,14 +2,14 @@ export const TERMS_PAGE = {
   eyebrow: "Legal",
   title: "Terms of Use",
   lastUpdated: "28 September 2026",
-  /** Controller named in these Terms — update if a separate registered entity is confirmed. */
+  /** Controller named in these Terms - update if a separate registered entity is confirmed. */
   legalEntity: "The Giving Circle",
   siteUrl: "www.thegivingcircle.in",
   email: "hello@thegivingcircle.in",
   phone: "+91 98103 53603",
   phoneHref: "tel:+919810353603",
   location: "Gurugram, Haryana",
-  supportHours: "Monday–Friday, 9:00 AM–6:00 PM IST",
+  supportHours: "Monday-Friday, 9:00 AM-6:00 PM IST",
   jurisdiction: "Gurugram, Haryana",
 } as const;
 

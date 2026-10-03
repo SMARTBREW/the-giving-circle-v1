@@ -1,7 +1,7 @@
 /**
  * Site FAQ source of truth.
  * Visible answer text must match FAQPage JSON-LD word for word.
- * Stable `id` slugs are permanent deep-link anchors — do not renumber or rename lightly.
+ * Stable `id` slugs are permanent deep-link anchors - do not renumber or rename lightly.
  */
 
 export type FaqLink = {
@@ -202,7 +202,7 @@ export function faqsByIds(ids: readonly SiteFaqId[]): FaqEntry[] {
   return ids.map((id) => FAQ_BY_ID[id]);
 }
 
-/** Full /faqs page — all entries, stable order */
+/** Full /faqs page - all entries, stable order */
 export const ALL_FAQS: readonly FaqEntry[] = SITE_FAQS;
 
 export const FAQS_PAGE = {
@@ -212,7 +212,7 @@ export const FAQS_PAGE = {
     "Answers about Cause Champions, donations, 80G receipts, volunteering, and how we verify NGO partners.",
 } as const;
 
-/** Home section — high-intent overview */
+/** Home section - high-intent overview */
 export const HOME_FAQ_IDS = [
   "what-is-the-giving-circle",
   "how-do-i-start-a-fundraiser-for-an-ngo-in-india",

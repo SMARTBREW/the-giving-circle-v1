@@ -21,7 +21,7 @@ export type CloudinaryTransformOptions = {
   /** Requested delivery width in pixels (already includes retina if desired). */
   width?: number;
   height?: number;
-  /** Crop/fit mode — default limit (never upscale past original). */
+  /** Crop/fit mode - default limit (never upscale past original). */
   crop?: "limit" | "fill" | "fit";
 };
 

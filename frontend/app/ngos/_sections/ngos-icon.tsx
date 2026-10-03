@@ -46,7 +46,7 @@ const ICONS: Record<NgosIconName, LucideIcon> = {
   community: Users,
 };
 
-/** One size for every NGO directory icon — no per-item overrides. */
+/** One size for every NGO directory icon - no per-item overrides. */
 export default function NgosIcon({ name }: { name: NgosIconName }) {
   const Icon = ICONS[name];
   return (

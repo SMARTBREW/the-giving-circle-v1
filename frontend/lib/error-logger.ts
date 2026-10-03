@@ -22,6 +22,6 @@ export function logErrorToService(error: {
       timestamp: error.timestamp,
     }),
   }).catch(() => {
-    // Swallow — never break the UI if logging fails
+    // Swallow - never break the UI if logging fails
   });
 }

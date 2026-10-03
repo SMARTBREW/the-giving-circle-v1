@@ -6,7 +6,7 @@ import { cloudinarySrc } from "@/lib/cloudinary";
 const HERO_MOBILE = cloudinarySrc("/images/hero-mobile.png", { width: 750 });
 const HERO_DESKTOP = cloudinarySrc("/images/hero-desktop.png", { width: 1400 });
 
-// Phone + small tablet (<900px): no in-hero buttons — sticky bar is the CTA.
+// Phone + small tablet (<900px): no in-hero buttons - sticky bar is the CTA.
 //
 // Figma hero is 1440×886. From sm up the section keeps that ratio (capped by
 // max-h-dvh). Copy/CTAs use cqh but are capped in rem so large/tall laptops
@@ -14,7 +14,7 @@ const HERO_DESKTOP = cloudinarySrc("/images/hero-desktop.png", { width: 1400 });
 //
 // Mid-zoom (< lg, ≥56.25rem): compact rem copy + stronger photo lift.
 //
-// <picture> so the browser downloads only mobile *or* desktop — not both.
+// <picture> so the browser downloads only mobile *or* desktop - not both.
 export default function Hero() {
   return (
     <section className="relative -mt-[5.5rem] h-dvh w-full overflow-x-hidden overflow-hidden bg-[#F6F3EE] pt-[5.5rem] [container-type:size] sm:-mt-[6.25rem] sm:aspect-[1440/886] sm:h-auto sm:max-h-dvh sm:pt-[6.25rem] md:-mt-[6.75rem] md:max-h-dvh md:pt-[6.75rem] lg:-mt-[7rem] lg:pt-[7rem] min-[90rem]:-mt-[8.75rem] min-[90rem]:max-h-dvh min-[90rem]:pt-[8.75rem]">

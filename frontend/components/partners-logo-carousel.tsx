@@ -5,7 +5,7 @@ import { PARTNER_LOGOS } from "@/constants";
 
 /**
  * One sequence, duplicated once. Animates by -50% for a seamless loop.
- * Same gap between every pair — including last → first at the loop seam.
+ * Same gap between every pair - including last → first at the loop seam.
  */
 const TRACK_LOGOS = [...PARTNER_LOGOS, ...PARTNER_LOGOS];
 

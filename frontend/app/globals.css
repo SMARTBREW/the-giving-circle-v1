@@ -5,7 +5,7 @@
 }
 
 :root {
-  /* Brand Colours (Web) — from TGC color guide */
+  /* Brand Colours (Web) - from TGC color guide */
   --Giving-Blue: #0b619a;
   --Giving-Teal: #0ba5bb;
   --Circle-Green: #02938c;
@@ -74,7 +74,7 @@ body {
   display: none;
 }
 
-/* Champion apply — shared fields */
+/* Champion apply - shared fields */
 .champion-apply-field,
 .champion-apply-field:focus,
 .champion-apply-field:focus-visible {
@@ -125,7 +125,7 @@ select.champion-apply-field.apply-field-mobile {
   caret-color: #4a5558;
 }
 
-/* Champion apply — phone field (react-phone-number-input) */
+/* Champion apply - phone field (react-phone-number-input) */
 .champion-phone-input.PhoneInput {
   margin-top: 0.5rem;
   height: 3.5rem;
@@ -226,7 +226,7 @@ select.champion-apply-field.apply-field-mobile {
   box-shadow: 0 0 0 1000px #ffffff inset;
 }
 
-/* Infinite Marquee Animation — track must be exactly 2 identical halves */
+/* Infinite Marquee Animation - track must be exactly 2 identical halves */
 @keyframes marquee {
   from {
     transform: translateX(0);

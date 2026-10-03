@@ -15,7 +15,7 @@ export default function ChampionSection() {
       {/*
         Phone: column fills the viewport through the CTA (above the sticky bar);
         leftover height goes into step gaps. Small mt keeps video just under the button.
-        Tablet md–lg: side-by-side. Desktop: full type + tall video.
+        Tablet md-lg: side-by-side. Desktop: full type + tall video.
       */}
       <FadeInSection className="relative mx-auto flex h-full w-full max-w-[90rem] flex-col px-4 sm:px-8 md:flex-row md:items-center md:gap-5 md:px-10 md:py-10 lg:gap-8 lg:px-12 lg:py-8 min-[90rem]:gap-12 min-[90rem]:px-[6.25rem] min-[90rem]:py-10">
         <div className="flex h-[calc(100dvh-8.75rem)] w-full flex-col items-center pt-6 sm:pt-8 md:h-auto md:min-h-0 md:w-[50%] md:min-w-0 md:shrink md:items-start md:justify-center md:py-0 lg:w-auto lg:flex-1">

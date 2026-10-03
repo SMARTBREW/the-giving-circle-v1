@@ -308,7 +308,7 @@ export const VOLUNTEERS = [
     src: "/images/volunteer/ruhaan-sharma.png",
     alt: "Ruhaan Sharma, nature enthusiast",
   },
-  // Muted for now — swap back in when ready:
+  // Muted for now - swap back in when ready:
   // {
   //   name: "Ayesha Mehta",
   //   role: "ngo-3",

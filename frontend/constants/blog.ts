@@ -234,10 +234,10 @@ export const BLOG_ARTICLES = [
         id: "section-1",
         heading: "The short answer",
         paragraphs: [
-          "Based on what admissions offices have publicly stated, community service can help with US and UK university applications—but probably not in the way many Indian families assume.",
+          "Based on what admissions offices have publicly stated, community service can help with US and UK university applications - but probably not in the way many Indian families assume.",
           "Among families applying abroad, service has become something close to a default. The consultant recommends it. The neighbour's daughter who got into her first-choice university did it. The school WhatsApp group circulates forwards about it. So families add it to the pile.",
           "The challenge is that admissions readers at the universities most Indian families target have seen these dutifully-added activities for many years. Public guidance from a number of selective universities has emphasized depth over breadth and sustained engagement over short bursts. What gets noticed is involvement that looks chosen, not assigned.",
-          "In short: This post offers general perspective for families navigating university applications. Admissions outcomes depend on many factors beyond extracurricular involvement, and The Giving Circle does not represent that participating in any volunteer programme—ours or anyone else's—guarantees or improves admission to any specific institution.",
+          "In short: This post offers general perspective for families navigating university applications. Admissions outcomes depend on many factors beyond extracurricular involvement, and The Giving Circle does not represent that participating in any volunteer programme - ours or anyone else's - guarantees or improves admission to any specific institution.",
         ],
       },
       {
@@ -256,8 +256,8 @@ export const BLOG_ARTICLES = [
           "The two scenarios below are illustrative rather than drawn from any individual student. They describe patterns that appear in different forms across applications we read about and observe.",
         ],
         list: [
-          "Pattern one — assembled: A student does several short internships and volunteer stints across one or two summers. Two weeks at a hospital. A week at a think tank. A short volunteer trip. The Common App essay reaches for general lessons about empathy or perspective. Supervisor relationships are shallow because there wasn't time for them to develop. The application reads as careful but assembled.",
-          "Pattern two — lived: A student commits to one cause across a summer and keeps the relationship going through the school year. They notice a specific gap in how the organization works and propose something. The proposal takes a few iterations to land. By the next summer, the student is doing more than they were asked to do. The essay focuses on one specific moment or conversation that the work made possible. The application reads as someone who has lived inside a question.",
+          "Pattern one - assembled: A student does several short internships and volunteer stints across one or two summers. Two weeks at a hospital. A week at a think tank. A short volunteer trip. The Common App essay reaches for general lessons about empathy or perspective. Supervisor relationships are shallow because there wasn't time for them to develop. The application reads as careful but assembled.",
+          "Pattern two - lived: A student commits to one cause across a summer and keeps the relationship going through the school year. They notice a specific gap in how the organization works and propose something. The proposal takes a few iterations to land. By the next summer, the student is doing more than they were asked to do. The essay focuses on one specific moment or conversation that the work made possible. The application reads as someone who has lived inside a question.",
           "The total hours invested are not always dramatically different between these two patterns. The depth is.",
         ],
       },
@@ -289,11 +289,11 @@ export const BLOG_ARTICLES = [
           "For families with younger children, the most underrated move is starting now and letting the involvement compound.",
         ],
         list: [
-          "Wings of Hope — menstrual health and girls' education",
-          "Bowls of Hope — stray animal feeding and community care",
-          "Pawsitive Protectors — vaccination and street-animal outreach",
-          "#PehliClass with JWP — bridge programmes into formal school",
-          "Brick by Brick — animal-shelter build programmes with AnimalCare India",
+          "Wings of Hope - menstrual health and girls' education",
+          "Bowls of Hope - stray animal feeding and community care",
+          "Pawsitive Protectors - vaccination and street-animal outreach",
+          "#PehliClass with JWP - bridge programmes into formal school",
+          "Brick by Brick - animal-shelter build programmes with AnimalCare India",
         ],
       },
       {
@@ -325,7 +325,7 @@ export const BLOG_ARTICLES = [
           {
             question: "What makes a community service essay stand out?",
             answer:
-              "The stronger essays avoid generic declarations about personal growth or sudden empathy. Instead, they often zoom in on a close scene—a specific person, a conversation, or a question the student didn't know how to answer—and follow how that curiosity shaped their subsequent actions and ongoing thinking.",
+              "The stronger essays avoid generic declarations about personal growth or sudden empathy. Instead, they often zoom in on a close scene - a specific person, a conversation, or a question the student didn't know how to answer - and follow how that curiosity shaped their subsequent actions and ongoing thinking.",
           },
           {
             question:
@@ -381,7 +381,7 @@ export const BLOG_ARTICLES = [
         id: "section-1",
         heading: "Why Child Education Donations Matter",
         paragraphs: [
-          "When children stay in school, families can break the cycle of poverty over time. Education funding doesn’t only cover textbooks—it supports attendance, learning, and long-term pathways to livelihoods.",
+          "When children stay in school, families can break the cycle of poverty over time. Education funding doesn’t only cover textbooks - it supports attendance, learning, and long-term pathways to livelihoods.",
           "As of mid-2026, approximately 13% of children aged 6-14 remain out of school, showing a slight improvement but underscoring the ongoing necessity for educational support through targeted donations.",
           "A recent study by the Ministry of Education indicates that each additional year of schooling can increase a child's future income by up to 12%, showcasing even greater economic benefits from educational support.",
           "The impact of education relies on the quality of execution. Therefore, it is crucial to select a verified NGO and track your donation's progress.",
@@ -418,7 +418,7 @@ export const BLOG_ARTICLES = [
         heading: "How to Choose a Verified NGO",
         paragraphs: [
           "A 'verified' NGO should meet documentation and transparency standards. On The Giving Circle, we focus on causes where verification and reporting mitigate uncertainty.",
-          "Before donating, look for clear beneficiary focus, documented operations, and regular updates that showcase outcomes—not just announcements.",
+          "Before donating, look for clear beneficiary focus, documented operations, and regular updates that showcase outcomes - not just announcements.",
           "In short: Prefer NGOs that provide regular utilization and impact reports to clarify what your funds supported.",
         ],
       },
@@ -745,7 +745,7 @@ export const BLOG_ARTICLES = [
     title:
       "Philanthropist Meaning in India: 80G Gifts, CSR & Giving Circles (Not Just Billionaires)",
     summary:
-      "India-specific breakdown: philanthropist vs donor, how CSR reshaped volunteering budgets, recurring giving with 80G receipts, and links to verified NGOs—so Google snippets match Indian tax terminology.",
+      "India-specific breakdown: philanthropist vs donor, how CSR reshaped volunteering budgets, recurring giving with 80G receipts, and links to verified NGOs - so Google snippets match Indian tax terminology.",
     image: "/images/blog/ChatGPT_Image_May_25_2026_02_42_12_PM.png",
     imageAlt:
       "Community members in India coming together to practice collective philanthropy and giving",
@@ -756,7 +756,7 @@ export const BLOG_ARTICLES = [
         paragraphs: [
           "A philanthropist is someone who actively works to promote the welfare of others - typically through donations of money, time, or expertise to causes they care about.",
           "The word comes from the Greek \"philanthropia\" meaning love of humanity. But in practice, a philanthropist is simply someone who gives with intention and purpose - not just randomly.",
-          "For Indian taxpayers, philanthropy also overlaps with receipts: recurring gifts to trusts with valid 80G approval can qualify for deductions within current Income-tax limits—a topic general AI snippets often skip.",
+          "For Indian taxpayers, philanthropy also overlaps with receipts: recurring gifts to trusts with valid 80G approval can qualify for deductions within current Income-tax limits - a topic general AI snippets often skip.",
           "Philanthropy in the traditional sense was associated with billionaires and large foundations. That picture is changing fast, especially in India.",
           "In short: You do not need a large fortune to be a philanthropist. Giving with intention and consistency is what defines it.",
         ],
@@ -772,7 +772,7 @@ export const BLOG_ARTICLES = [
       },
       {
         id: "section-3",
-        heading: "India Tax Context (80G) — Information, Not Legal Advice",
+        heading: "India Tax Context (80G) - Information, Not Legal Advice",
         paragraphs: [
           "Section 80G and related rules change with Finance Acts; eligibility also depends on whether the donee is approved for the year you donate. Use this article for orientation only and confirm limits, eligible shares, and filings with a qualified tax adviser.",
           "When you donate through The Giving Circle partner campaigns that display 80G eligibility, keep digital receipts with your records just as you would for any charitable gift.",
@@ -786,7 +786,7 @@ export const BLOG_ARTICLES = [
           "A recurring donation of ₹500 per month from 100 people creates a consistent ₹50,000 monthly fund that an NGO can plan around. That predictability is often more valuable than a one-time large gift.",
         ],
         list: [
-          "Start with ₹200–₹500 per month - that is enough to make a real difference",
+          "Start with ₹200-₹500 per month - that is enough to make a real difference",
           "Recurring giving is more impactful than one-time donations",
           "Choose a cause you genuinely care about, not just the most popular one",
           "Ask for impact reports and updates - accountable giving is better giving",
@@ -833,7 +833,7 @@ export const BLOG_ARTICLES = [
             question:
               "What is the difference between a philanthropist and a donor?",
             answer:
-              "A donor often gives occasionally or reactively in response to an appeal. A philanthropist approaches giving strategically and intentionally—often focusing on specific outcomes, supporting verified organizations over time, or pooling collective resources to create systemic change.",
+              "A donor often gives occasionally or reactively in response to an appeal. A philanthropist approaches giving strategically and intentionally-often focusing on specific outcomes, supporting verified organizations over time, or pooling collective resources to create systemic change.",
           },
           {
             question: "Can I be a philanthropist with a small income in India?",
@@ -1299,14 +1299,14 @@ export const BLOG_ARTICLES = [
         id: "section-2",
         heading: "What Counts as Service",
         paragraphs: [
-          "Common principles apply across these frameworks. The work has to be voluntary — no compensation, no academic credit, no payment in any form. It has to benefit a community or cause outside the student and the student's family. It has to be supervised by someone outside the family. It has to be documented as the work happens, not reconstructed at the end. And it has to involve genuine reflection, not just a log of hours.",
+          "Common principles apply across these frameworks. The work has to be voluntary - no compensation, no academic credit, no payment in any form. It has to benefit a community or cause outside the student and the student's family. It has to be supervised by someone outside the family. It has to be documented as the work happens, not reconstructed at the end. And it has to involve genuine reflection, not just a log of hours.",
           "What is generally excluded:",
         ],
         list: [
           "Helping at family events or internal school activities without external impact",
           "Social media activity without underlying work in the community",
           "Unsupervised \"research\" hours with no verifiable output or supervisor",
-          "Work that was compensated in any way — including goods, gifts, or favours",
+          "Work that was compensated in any way - including goods, gifts, or favours",
           "Hours that cannot be independently verified by a named supervisor",
         ],
       },
@@ -1328,9 +1328,9 @@ export const BLOG_ARTICLES = [
         id: "section-4",
         heading: "A Note on Certificate-Mill Programmes",
         paragraphs: [
-          "There are programmes — some marketed heavily to Indian families — whose primary deliverable is a certificate in exchange for a fee. Some of these are legitimate. Many are not.",
+          "There are programmes - some marketed heavily to Indian families - whose primary deliverable is a certificate in exchange for a fee. Some of these are legitimate. Many are not.",
           "A useful test: can the organization be verified on the NGO Darpan portal or the Ministry of Corporate Affairs portal? Does it have publicly available audited accounts? Does it have a track record longer than its brochure suggests?",
-          "A certificate from a programme that exists primarily to issue certificates may carry less weight than no certificate at all. A CAS coordinator who receives documentation they cannot verify will ask questions — or simply not accept the hours.",
+          "A certificate from a programme that exists primarily to issue certificates may carry less weight than no certificate at all. A CAS coordinator who receives documentation they cannot verify will ask questions - or simply not accept the hours.",
         ],
       },
       {
@@ -1346,7 +1346,7 @@ export const BLOG_ARTICLES = [
         heading: "Practical Advice by Framework",
         paragraphs: [
           "For IB students starting CAS: the Service strand often has the thinnest evidence among the three CAS components. A sustained summer with one campaign, with reflections written as the work happens, can address this. Use concrete language in reflections, not the generic register. \"I learned about inequality\" is not a reflection. \"The supervisor told me that of the twenty girls who dropped out of school last year, fourteen cited period-related absences\" is.",
-          "For DofE candidates: plan the calendar backward from the deadline. Bronze, Silver, and Gold each have minimum durations. Starting early in the season generally helps. Make sure the supervisor you identify is willing and reachable throughout — losing a supervisor mid-engagement is the most common avoidable disruption.",
+          "For DofE candidates: plan the calendar backward from the deadline. Bronze, Silver, and Gold each have minimum durations. Starting early in the season generally helps. Make sure the supervisor you identify is willing and reachable throughout - losing a supervisor mid-engagement is the most common avoidable disruption.",
           "For PVSA aspirants: track hours weekly, in writing. Students consistently undercount when they estimate at the end. The hour thresholds for the teen levels are achievable with sustained summer involvement plus continuation through one school term.",
         ],
       },
@@ -1375,7 +1375,7 @@ export const BLOG_ARTICLES = [
           {
             question: "What are the current PVSA hour requirements for Indian teens?",
             answer:
-              "Under current PVSA guidelines, teens aged 11–15 generally require 50–74 hours for Bronze, 75–99 hours for Silver, and 100+ hours for Gold within a 12-month period. Young adults aged 16–25 require 100–174 hours for Bronze, 175–249 hours for Silver, and 250+ hours for Gold. Confirm specific guidelines with your certifying organization.",
+              "Under current PVSA guidelines, teens aged 11-15 generally require 50-74 hours for Bronze, 75-99 hours for Silver, and 100+ hours for Gold within a 12-month period. Young adults aged 16-25 require 100-174 hours for Bronze, 175-249 hours for Silver, and 250+ hours for Gold. Confirm specific guidelines with your certifying organization.",
           },
         ],
       },
@@ -1423,7 +1423,7 @@ export const BLOG_ARTICLES = [
         id: "section-1",
         heading: "1. Menstrual Hygiene",
         paragraphs: [
-          "Menstruation continues to contribute to school absence and dropouts — 23 million underprivileged girls every year. The causes are partly material (access to products) and partly cultural (silence, stigma, inadequate information).",
+          "Menstruation continues to contribute to school absence and dropouts - 23 million underprivileged girls every year. The causes are partly material (access to products) and partly cultural (silence, stigma, inadequate information).",
           "Projects worth doing:",
         ],
         list: [
@@ -1451,7 +1451,7 @@ export const BLOG_ARTICLES = [
         id: "section-3",
         heading: "3. Hunger",
         paragraphs: [
-          "Hunger in urban India is largely a problem of distribution and what nutritionists describe as hidden hunger — enough calories, not enough micronutrients. The interesting work is often in the logistics and the mapping, not just the moment of giving food.",
+          "Hunger in urban India is largely a problem of distribution and what nutritionists describe as hidden hunger - enough calories, not enough micronutrients. The interesting work is often in the logistics and the mapping, not just the moment of giving food.",
           "Projects worth doing:",
         ],
         list: [
@@ -1482,7 +1482,7 @@ export const BLOG_ARTICLES = [
           "Projects worth doing:",
         ],
         list: [
-          "Pick one topic — phonics, basic arithmetic, environmental science. Design a five-session module. Teach it. Refine it after session two when you discover it isn't working the way you thought.",
+          "Pick one topic - phonics, basic arithmetic, environmental science. Design a five-session module. Teach it. Refine it after session two when you discover it isn't working the way you thought.",
           "Build low-cost teaching aids the NGO can use after you leave: game-based math materials, story cards, simple science kits.",
           "Run a small reading programme with weekly progress tracking. Don't try to scale it. Twenty children, twelve weeks, careful records.",
           "Develop short video lessons in the local language and hand the files over to the NGO.",
@@ -1628,7 +1628,7 @@ export const BLOG_ARTICLES = [
         list: [
           "This week: have the \"what bothers you\" conversation, without the laptop open.",
           "Next week: commit to one cause. Contact a registered NGO or sign up through a structured platform.",
-          "First week of summer: begin — even two or three hours — to establish the habit before it can be deferred.",
+          "First week of summer: begin - even two or three hours - to establish the habit before it can be deferred.",
           "July: look for one tangible output to produce by the end of August. Let your child define what it is.",
           "August: save the output. Ask your child to write three pages about what they noticed. These become the spine of the eventual application essay.",
         ],

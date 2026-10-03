@@ -26,7 +26,7 @@ export const NGOS_PAGE = {
   eyebrow: "NGO Directory",
   title: "NGO Directory India",
   subtitle:
-    "Find verified, transparent NGOs by city or cause. Every organisation on The Giving Circle is background-checked — FCRA, 80G, audited financials — so your donation creates real, trackable impact.",
+    "Find verified, transparent NGOs by city or cause. Every organisation on The Giving Circle is background-checked - FCRA, 80G, audited financials - so your donation creates real, trackable impact.",
   badges: [
     "FCRA & 80G Verified",
     "100% Transparency",
@@ -46,13 +46,13 @@ export const NGOS_CAUSES = {
   items: [
     {
       title: "Pehli Class · Child Education",
-      body: "JWP bridge programme — underprivileged and out-of-school children into formal school (verified · 80G where applicable).",
+      body: "JWP bridge programme - underprivileged and out-of-school children into formal school (verified · 80G where applicable).",
       href: "/causes/pehli-class/",
       icon: "education" as const,
     },
     {
       title: "Brick by Brick · Animal Shelter Gurgaon",
-      body: "Animal Care — ₹10/brick boundary wall for a 17,500 sq ft stray rescue centre · rabies mission · 80G where applicable.",
+      body: "Animal Care - ₹10/brick boundary wall for a 17,500 sq ft stray rescue centre · rabies mission · 80G where applicable.",
       href: "/causes/brick-by-brick/",
       icon: "shelter" as const,
     },
@@ -237,16 +237,16 @@ export const NGOS_CITY_DELHI: NgosCityPage = {
   },
   leading: {
     eyebrow: "Overview",
-    title: "Leading NGOs in Delhi — Verified & Trusted",
-    body: "Delhi NCR concentrates India's largest informal settlements alongside corporate CSR headquarters. NGOs here work on girl-child education in Okhla, menstrual health in resettlement colonies, and pan-city animal rescue on NH corridors. Donors should look for partners with published ward-level programme data — not just \"Delhi\" as a label.",
+    title: "Leading NGOs in Delhi - Verified & Trusted",
+    body: "Delhi NCR concentrates India's largest informal settlements alongside corporate CSR headquarters. NGOs here work on girl-child education in Okhla, menstrual health in resettlement colonies, and pan-city animal rescue on NH corridors. Donors should look for partners with published ward-level programme data - not just \"Delhi\" as a label.",
   },
   featured: {
     eyebrow: "Programmes",
     title: "Featured programmes in Delhi",
     items: [
-      "JWP Wings of Hope — menstrual health & education (South Delhi)",
-      "AnimalCare India — rescue and vaccination across NCR",
-      "Pehli Class bridge centre — Nithari, Noida border",
+      "JWP Wings of Hope - menstrual health & education (South Delhi)",
+      "AnimalCare India - rescue and vaccination across NCR",
+      "Pehli Class bridge centre - Nithari, Noida border",
     ],
   },
   whyDonate: {
@@ -386,13 +386,13 @@ export const NGOS_CITY_DELHI: NgosCityPage = {
       id: "delhi-tax-deductible",
       question: "Are donations tax-deductible?",
       answer:
-        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime — a tax adviser can confirm what applies to you.",
+        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime - a tax adviser can confirm what applies to you.",
     },
     {
       id: "delhi-impact",
       question: "How do I know my donation created impact?",
       answer:
-        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes — not only how funds were spent.",
+        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes - not only how funds were spent.",
     },
   ],
 };
@@ -402,11 +402,11 @@ export const NGOS_CITY_GURUGRAM: NgosCityPage = {
   city: "Gurugram",
   metaTitle: "Verified NGOs in Gurugram (Gurgaon) | The Giving Circle",
   metaDescription:
-    "Corporate hub, large informal settlements, and peri-urban wards need trusted NGOs. Every partner listed here meets our verification bar—ideal for salaries CSR, volunteering, or one-off donations.",
+    "Corporate hub, large informal settlements, and peri-urban wards need trusted NGOs. Every partner listed here meets our verification bar - ideal for salaries CSR, volunteering, or one-off donations.",
   hero: {
     title: "Verified NGOs in Gurugram (Gurgaon)",
     subtitle:
-      "Corporate hub, large informal settlements, and peri-urban wards need trusted NGOs. Every partner listed here meets our verification bar—ideal for salaries CSR, volunteering, or one-off donations.",
+      "Corporate hub, large informal settlements, and peri-urban wards need trusted NGOs. Every partner listed here meets our verification bar - ideal for salaries CSR, volunteering, or one-off donations.",
     badges: [
       "FCRA & 80G Verified",
       "Transparent Reporting",
@@ -420,14 +420,14 @@ export const NGOS_CITY_GURUGRAM: NgosCityPage = {
   },
   leading: {
     eyebrow: "Overview",
-    title: "Leading NGOs in Gurugram — Verified & Trusted",
-    body: "Gurugram's mix of glass towers and urban villages creates sharp inequality — migrant workers' children out of school, injured strays on expressways, and CSR budgets seeking audited local partners. AnimalCare's Brick by Brick shelter build is anchored here on a 17,500 sq ft plot for long-term rehabilitation.",
+    title: "Leading NGOs in Gurugram - Verified & Trusted",
+    body: "Gurugram's mix of glass towers and urban villages creates sharp inequality - migrant workers' children out of school, injured strays on expressways, and CSR budgets seeking audited local partners. AnimalCare's Brick by Brick shelter build is anchored here on a 17,500 sq ft plot for long-term rehabilitation.",
   },
   featured: {
     eyebrow: "Programmes",
     title: "Featured programmes in Gurugram",
     items: [
-      "Brick by Brick — stray rescue centre boundary wall campaign",
+      "Brick by Brick - stray rescue centre boundary wall campaign",
       "Corporate volunteering days for skills clinics and site builds",
       "Highway rescue coordination with NCR ambulance networks",
     ],
@@ -569,13 +569,13 @@ export const NGOS_CITY_GURUGRAM: NgosCityPage = {
       id: "gurugram-tax-deductible",
       question: "Are donations tax-deductible?",
       answer:
-        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime — a tax adviser can confirm what applies to you.",
+        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime - a tax adviser can confirm what applies to you.",
     },
     {
       id: "gurugram-impact",
       question: "How do I know my donation created impact?",
       answer:
-        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes — not only how funds were spent.",
+        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes - not only how funds were spent.",
     },
   ],
 };
@@ -603,14 +603,14 @@ export const NGOS_CITY_NOIDA: NgosCityPage = {
   },
   leading: {
     eyebrow: "Overview",
-    title: "Leading NGOs in Noida — Verified & Trusted",
-    body: "Noida and Greater Noida absorb families priced out of Delhi — and with them, children who miss formal admission windows. Bridge programmes like #PehliClass at Mera Sahara pair documentation support with classroom catch-up before enrolment into UP or Delhi schools.",
+    title: "Leading NGOs in Noida - Verified & Trusted",
+    body: "Noida and Greater Noida absorb families priced out of Delhi - and with them, children who miss formal admission windows. Bridge programmes like #PehliClass at Mera Sahara pair documentation support with classroom catch-up before enrolment into UP or Delhi schools.",
   },
   featured: {
     eyebrow: "Programmes",
     title: "Featured programmes in Noida",
     items: [
-      "#PehliClass / JWP — formal school bridge at Nithari",
+      "#PehliClass / JWP - formal school bridge at Nithari",
       "Feeding and vaccination routes from Delhi NCR animal NGOs",
       "CSR-friendly education blocks for Noida Extension corporates",
     ],
@@ -752,13 +752,13 @@ export const NGOS_CITY_NOIDA: NgosCityPage = {
       id: "noida-tax-deductible",
       question: "Are donations tax-deductible?",
       answer:
-        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime — a tax adviser can confirm what applies to you.",
+        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime - a tax adviser can confirm what applies to you.",
     },
     {
       id: "noida-impact",
       question: "How do I know my donation created impact?",
       answer:
-        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes — not only how funds were spent.",
+        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes - not only how funds were spent.",
     },
   ],
 };
@@ -786,7 +786,7 @@ export const NGOS_CITY_FARIDABAD: NgosCityPage = {
   },
   leading: {
     eyebrow: "Overview",
-    title: "Leading NGOs in Faridabad — Verified & Trusted",
+    title: "Leading NGOs in Faridabad - Verified & Trusted",
     body: "Faridabad's industrial belt and Ballabgarh periphery host dense worker colonies where NGOs focus on livelihoods, health camps, and peri-urban animal welfare. Verified partners here often serve both Haryana and Delhi border communities.",
   },
   featured: {
@@ -935,13 +935,13 @@ export const NGOS_CITY_FARIDABAD: NgosCityPage = {
       id: "faridabad-tax-deductible",
       question: "Are donations tax-deductible?",
       answer:
-        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime — a tax adviser can confirm what applies to you.",
+        "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime - a tax adviser can confirm what applies to you.",
     },
     {
       id: "faridabad-impact",
       question: "How do I know my donation created impact?",
       answer:
-        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes — not only how funds were spent.",
+        "Donations go directly to the partner NGO. On The Giving Circle you can follow live causes and receive updates on programme progress so you see outcomes - not only how funds were spent.",
     },
   ],
 };
@@ -957,7 +957,7 @@ export const NGOS_FAQS: readonly FaqEntry[] = [
     id: "ngos-tax-deductible",
     question: "Are donations through The Giving Circle tax-deductible?",
     answer:
-      "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime — a tax adviser can confirm what applies to you.",
+      "Where the recipient NGO holds valid Section 80G approval, eligible donations may qualify for a tax deduction. The NGO issues the receipt and Form 10BE. Deduction rules depend on your tax regime - a tax adviser can confirm what applies to you.",
   },
   {
     id: "ngos-csr",

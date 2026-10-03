@@ -2,7 +2,7 @@ export const PRIVACY_PAGE = {
   eyebrow: "Legal",
   title: "Privacy Policy",
   lastUpdated: "28 September 2026",
-  /** Controller named in this policy — update if a separate registered entity is confirmed. */
+  /** Controller named in this policy - update if a separate registered entity is confirmed. */
   legalEntity: "The Giving Circle",
   siteUrl: "www.thegivingcircle.in",
 } as const;

@@ -1,6 +1,6 @@
 import type { FaqEntry } from "@/constants/faqs";
 
-/** FAQPage JSON-LD — `text` must match visible answer copy word for word. */
+/** FAQPage JSON-LD - `text` must match visible answer copy word for word. */
 export default function FaqJsonLd({ items }: { items: readonly FaqEntry[] }) {
   if (!items.length) return null;
 

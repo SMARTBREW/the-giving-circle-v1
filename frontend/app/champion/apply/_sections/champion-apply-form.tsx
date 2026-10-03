@@ -486,7 +486,7 @@ export default function ChampionApplyForm() {
 
   return (
     <>
-      {/* Phone only — Figma mobile chrome */}
+      {/* Phone only - Figma mobile chrome */}
       <div className="fixed inset-0 z-10 flex min-h-0 min-w-0 flex-col overflow-hidden bg-[#FFFFFF] md:hidden">
         {currentStep === 4 ? (
           <ApplyMobileThanks
@@ -546,7 +546,7 @@ export default function ChampionApplyForm() {
         )}
       </div>
 
-      {/* Desktop — full viewport so sidebar fill + border reach the bottom */}
+      {/* Desktop - full viewport so sidebar fill + border reach the bottom */}
       <section className="fixed inset-0 z-10 hidden min-h-0 min-w-0 overflow-hidden bg-[#FFFFFF] md:flex">
         <aside className="flex h-full w-[min(16rem,26%)] min-w-0 shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-[#D9E1E2] bg-[#E8F7F8] px-3.5 pt-4 pb-4 sm:px-4 lg:w-[min(18.5rem,24%)] lg:px-5 lg:pt-5 lg:pb-5 min-[90rem]:w-[30.125rem] min-[90rem]:px-16 min-[90rem]:pt-10 min-[90rem]:pb-10">
             <Link href="/" className="inline-flex max-w-full shrink-0 items-center">
