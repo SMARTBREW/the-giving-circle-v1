@@ -36,7 +36,6 @@ UI and layout follow **Figma**. This repo holds the product story, engineering c
 ```
 frontend/          Next.js 15 (port 3000)
 backend/           FastAPI public API (port 3001, /api)
-.cursor/rules/     Frontend, backend, and product conventions
 ```
 
 ```bash
