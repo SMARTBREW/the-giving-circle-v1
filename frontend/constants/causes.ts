@@ -103,19 +103,34 @@ export const LIVE_CAUSES = [
     },
     faqs: [
       {
-        question: "How does Wings of Hope keep girls in school?",
+        question: 'What does "vetted by The Giving Circle" mean?',
         answer:
-          "Trained health ambassadors run age-appropriate workshops, distribute reusable pad kits where needed, and coordinate with schools and families so girls are not pushed out by shame or lack of products.",
+          "Our own team checked JWP's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and JWP has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
       },
       {
-        question: "Is my donation eligible for 80G?",
+        question: "Will I get an 80G receipt?",
         answer:
-          "Eligible donations are receipted under 80G by the verified NGO partner where applicable, because gifts go directly to Joint Women’s Programme.",
+          "Yes. Your gift goes directly to Joint Women's Programme through its own payment gateway. JWP issues your 80G receipt for eligible donations.",
       },
       {
-        question: "Where does the money go?",
+        question: "Where does my donation go?",
         answer:
-          "Contributions support workshops, product kits, community sessions, and follow-up tracking. Donations go directly to the NGO   The Giving Circle does not hold your gift as an intermediary wallet.",
+          "Every contribution goes directly to Joint Women's Programme, into its own bank account. Funds support menstrual health workshops, reusable pad kits, community sessions, and follow-up so girls keep attending school.",
+      },
+      {
+        question: "Why reusable pads?",
+        answer:
+          "Reusable pads last for years, cost families less over time, and cut waste. Each kit comes with a simple demo on use and care so girls can manage periods with dignity and stay in class.",
+      },
+      {
+        question: "Where does Wings of Hope work?",
+        answer:
+          "The programme runs through schools, local partners and community sessions, with a strong focus across Delhi NCR and partner regions where JWP already works with girls and families.",
+      },
+      {
+        question: "Can I raise funds for Wings of Hope with my circle?",
+        answer:
+          "Yes. As a Cause Champion you can pool gifts with friends, family or colleagues and fund this live cause together. Every contribution still goes directly to JWP.",
       },
     ],
     featured: true,

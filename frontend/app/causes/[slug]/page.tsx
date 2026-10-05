@@ -8,6 +8,17 @@ import CtaArrow from "@/components/cta-arrow";
 import PhotoCtaBand from "@/components/photo-cta-band";
 import FaqsAccordion from "@/components/faqs-accordion";
 import CauseDetailHero from "../_sections/cause-detail-hero";
+import WingsOfHopeHero from "../_sections/wings-of-hope-hero";
+import WingsOfHopeAbout from "../_sections/wings-of-hope-about";
+import WingsOfHopeTheory from "../_sections/wings-of-hope-theory";
+import WingsOfHopeHow from "../_sections/wings-of-hope-how";
+import WingsOfHopeVoices from "../_sections/wings-of-hope-voices";
+import WingsOfHopeSupport from "../_sections/wings-of-hope-support";
+import WingsOfHopeVetting from "../_sections/wings-of-hope-vetting";
+import WingsOfHopeImpact from "../_sections/wings-of-hope-impact";
+import WingsOfHopeLearn from "../_sections/wings-of-hope-learn";
+import WingsOfHopeFaqs from "../_sections/wings-of-hope-faqs";
+import WingsOfHopeCtaExplore from "../_sections/wings-of-hope-cta-explore";
 import CauseDetailAbout from "../_sections/cause-detail-about";
 import CauseDetailSections from "../_sections/cause-detail-sections";
 import {
@@ -209,11 +220,30 @@ export default async function CauseDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <CauseDetailHero cause={cause} />
-      <CauseDetailAbout cause={cause} />
-      {detail ? <CauseDetailSections cause={cause} detail={detail} /> : null}
+      {cause.id === "wings-of-hope" ? (
+        <WingsOfHopeHero />
+      ) : (
+        <CauseDetailHero cause={cause} />
+      )}
+      {cause.id === "wings-of-hope" ? (
+        <WingsOfHopeAbout />
+      ) : (
+        <CauseDetailAbout cause={cause} />
+      )}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeTheory /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeHow /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeVoices /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeSupport /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeVetting /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeImpact /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeLearn /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeFaqs /> : null}
+      {cause.id === "wings-of-hope" ? <WingsOfHopeCtaExplore /> : null}
+      {cause.id !== "wings-of-hope" && detail ? (
+        <CauseDetailSections cause={cause} detail={detail} />
+      ) : null}
 
-      {cause.faqs.length > 0 ? (
+      {cause.id !== "wings-of-hope" && cause.faqs.length > 0 ? (
         <PageSection tone="gray" id="cause-faqs">
           <SectionIntro
             eyebrow="Questions About This Cause"
@@ -227,7 +257,7 @@ export default async function CauseDetailPage({
         </PageSection>
       ) : null}
 
-      {related.length > 0 ? (
+      {cause.id !== "wings-of-hope" && related.length > 0 ? (
         <PageSection tone="white">
           <SectionIntro
             eyebrow="More Live Causes"
@@ -256,15 +286,17 @@ export default async function CauseDetailPage({
         </PageSection>
       ) : null}
 
-      <PhotoCtaBand
-        src={CAUSES_CTA.src}
-        mobileSrc={CAUSES_CTA.mobileSrc}
-        alt={CAUSES_CTA.alt}
-        title={CAUSES_CTA.title}
-        subtitle={CAUSES_CTA.subtitle}
-        ctaLabel={CAUSES_CTA.ctaLabel}
-        href={CAUSES_CTA.href}
-      />
+      {cause.id !== "wings-of-hope" ? (
+        <PhotoCtaBand
+          src={CAUSES_CTA.src}
+          mobileSrc={CAUSES_CTA.mobileSrc}
+          alt={CAUSES_CTA.alt}
+          title={CAUSES_CTA.title}
+          subtitle={CAUSES_CTA.subtitle}
+          ctaLabel={CAUSES_CTA.ctaLabel}
+          href={CAUSES_CTA.href}
+        />
+      ) : null}
     </>
   );
 }

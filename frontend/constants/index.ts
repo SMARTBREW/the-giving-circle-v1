@@ -100,6 +100,21 @@ export {
 } from "./ngos";
 export type { NgosCityPage, NgosIconName } from "./ngos";
 export {
+  WINGS_SECTION,
+  WINGS_OF_HOPE_HERO,
+  WINGS_OF_HOPE_ABOUT,
+  WINGS_OF_HOPE_THEORY,
+  WINGS_OF_HOPE_HOW,
+  WINGS_OF_HOPE_VOICES,
+  WINGS_OF_HOPE_SUPPORT,
+  WINGS_OF_HOPE_VETTING,
+  WINGS_OF_HOPE_IMPACT,
+  WINGS_OF_HOPE_LEARN,
+  WINGS_OF_HOPE_FAQS,
+  WINGS_OF_HOPE_CTA,
+  WINGS_OF_HOPE_EXPLORE,
+} from "./wings-of-hope";
+export {
   SITE_FAQS,
   ALL_FAQS,
   FAQ_ITEMS,

@@ -1,11 +1,22 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import CtaButton from "@/components/cta-button";
 
 /**
  * Phone / touch tablet sticky CTA.
  * Hidden on fine-pointer desktops so browser zoom (which shrinks CSS width below lg)
  * does not resurrect this bar over the Cause Champion section.
+ * Hidden on Wings of Hope detail - that page has its own Donate sticky bar.
  */
 export default function MobileStickyCta() {
+  const pathname = usePathname();
+  const isWingsDetail =
+    pathname === "/causes/wings-of-hope" ||
+    pathname === "/causes/wings-of-hope/";
+
+  if (isWingsDetail) return null;
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 rounded-t-[1.25rem] border-t border-[#d9e1e2] bg-[#FFFFFF] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
       <CtaButton
