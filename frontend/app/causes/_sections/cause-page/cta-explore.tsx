@@ -2,13 +2,11 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import CldImage from "@/components/cld-image";
 import PageSection from "@/components/page-section";
-import {
-  SEGOE_UI_CLASS,
-  WINGS_OF_HOPE_CTA,
-  WINGS_OF_HOPE_EXPLORE,
-  WINGS_SECTION,
-  getLiveCause,
-} from "@/constants";
+import type {
+  CausePageCtaContent,
+  CausePageExploreContent,
+} from "@/constants/cause-page";
+import { CAUSE_SECTION, SEGOE_UI_CLASS, getLiveCause } from "@/constants";
 
 function ExploreCard({
   id,
@@ -64,14 +62,18 @@ function ExploreCard({
   );
 }
 
-export default function WingsOfHopeCtaExplore() {
-  const cta = WINGS_OF_HOPE_CTA;
-  const explore = WINGS_OF_HOPE_EXPLORE;
+export default function CausePageCtaExplore({
+  cta,
+  explore,
+}: {
+  cta: CausePageCtaContent;
+  explore: CausePageExploreContent;
+}) {
 
   return (
     <PageSection
       tone="alternate"
-      innerClassName={`${WINGS_SECTION.pad} gap-10 sm:gap-12 lg:gap-14`}
+      innerClassName={`${CAUSE_SECTION.pad} gap-10 sm:gap-12 lg:gap-14`}
     >
       <div className="flex w-full flex-col gap-6 rounded-[1.25rem] bg-[var(--Circle-Green,#02938c)] px-5 py-7 sm:gap-7 sm:rounded-[1.5rem] sm:px-7 sm:py-8 md:flex-row md:items-center md:justify-between md:gap-10 md:px-8 md:py-9 lg:rounded-[2rem] lg:px-10 lg:py-10 min-[90rem]:px-12 min-[90rem]:py-12">
         <div className="min-w-0 flex-1">
@@ -103,11 +105,11 @@ export default function WingsOfHopeCtaExplore() {
       </div>
 
       <div className="w-full">
-        <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.eyebrow}`}>
+        <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>
           {explore.eyebrow}
         </p>
-        <h2 className={WINGS_SECTION.title}>{explore.title}</h2>
-        <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.body}`}>
+        <h2 className={CAUSE_SECTION.title}>{explore.title}</h2>
+        <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.body}`}>
           {explore.body}
         </p>
 

@@ -1,17 +1,22 @@
 import PageSection from "@/components/page-section";
-import { SEGOE_UI_CLASS, WINGS_OF_HOPE_ABOUT, WINGS_SECTION } from "@/constants";
+import type { CausePageAboutContent } from "@/constants/cause-page";
+import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
 
-export default function WingsOfHopeAbout() {
-  const { eyebrow, title, body, cards } = WINGS_OF_HOPE_ABOUT;
+export default function CausePageAbout({
+  content,
+}: {
+  content: CausePageAboutContent;
+}) {
+  const { eyebrow, title, body, cards } = content;
 
   return (
     <PageSection
       tone="white"
-      innerClassName={`${WINGS_SECTION.pad} !pb-4 sm:!pb-6 md:!pb-8 lg:!pb-8 min-[90rem]:!pb-10`}
+      innerClassName={`${CAUSE_SECTION.pad} !pb-4 sm:!pb-6 md:!pb-8 lg:!pb-8 min-[90rem]:!pb-10`}
     >
-      <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.eyebrow}`}>{eyebrow}</p>
-      <h2 className={WINGS_SECTION.title}>{title}</h2>
-      <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.body} lg:max-w-[38rem]`}>
+      <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>{eyebrow}</p>
+      <h2 className={CAUSE_SECTION.title}>{title}</h2>
+      <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.body} lg:max-w-[38rem]`}>
         {body}
       </p>
 

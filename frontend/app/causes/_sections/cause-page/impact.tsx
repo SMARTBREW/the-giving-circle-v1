@@ -1,6 +1,33 @@
 import CldImage from "@/components/cld-image";
 import PageSection from "@/components/page-section";
-import { SEGOE_UI_CLASS, WINGS_OF_HOPE_IMPACT, WINGS_SECTION } from "@/constants";
+import type { CausePageImpactContent } from "@/constants/cause-page";
+import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
+
+function SocialGlyph({ label, className = "" }: { label: string; className?: string }) {
+  if (label === "X") {
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
+        <path d="M13.68 10.66 20.3 3h-1.57l-5.75 6.65L8.4 3H3.5l6.95 10.12L3.5 21h1.57l6.07-7.02L15.6 21h4.9l-6.82-10.34ZM11.94 13.06l-.7-.99L5.64 4.17h2.4l4.5 6.4.7 1-5.9 6.82h-2.4l6.99-8.33Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden className={className}>
+      <rect
+        x="2.75"
+        y="2.75"
+        width="18.5"
+        height="18.5"
+        rx="5.25"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
+      <circle cx="12" cy="12" r="4.25" stroke="currentColor" strokeWidth="1.75" />
+      <circle cx="17.35" cy="6.65" r="1.15" fill="currentColor" />
+    </svg>
+  );
+}
 
 function MediaSlot({
   label,
@@ -68,24 +95,33 @@ function GalleryCell({
   return <MediaSlot label={label} className={className} />;
 }
 
-export default function WingsOfHopeImpact() {
-  const { founder, eyebrow, title, body, stats, gallery, instagram } =
-    WINGS_OF_HOPE_IMPACT;
+export default function CausePageImpact({
+  content,
+}: {
+  content: CausePageImpactContent;
+}) {
+  const { founder, eyebrow, title, body, stats, gallery, instagram } = content;
 
   return (
     <PageSection
       tone="white"
-      innerClassName={`${WINGS_SECTION.pad} gap-8 sm:gap-10 lg:gap-12`}
+      innerClassName={`${CAUSE_SECTION.pad} gap-8 sm:gap-10 lg:gap-12`}
     >
       <div className="flex w-full flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-6 lg:gap-8">
-        <div className="relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden rounded-full border border-dashed border-[var(--Circle-Green,#02938c)] bg-[repeating-linear-gradient(-45deg,#e8f4f8,#e8f4f8_6px,#eef2f2_6px,#eef2f2_12px)] sm:h-[6.5rem] sm:w-[6.5rem] lg:h-[7.5rem] lg:w-[7.5rem]">
+        <div
+          className={`relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden rounded-full sm:h-[6.5rem] sm:w-[6.5rem] lg:h-[7.5rem] lg:w-[7.5rem] ${
+            founder.photoSrc
+              ? "border border-[#d9e1e2]"
+              : "border border-dashed border-[var(--Circle-Green,#02938c)] bg-[repeating-linear-gradient(-45deg,#e8f4f8,#e8f4f8_6px,#eef2f2_6px,#eef2f2_12px)]"
+          }`}
+        >
           {founder.photoSrc ? (
             <CldImage
               src={founder.photoSrc}
               alt={founder.photoAlt}
               fill
               sizes="120px"
-              className="object-cover"
+              className="object-cover object-[center_20%]"
             />
           ) : (
             <span
@@ -102,7 +138,7 @@ export default function WingsOfHopeImpact() {
         </div>
 
         <blockquote className="min-w-0 flex-1">
-          <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.eyebrow}`}>
+          <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>
             {founder.eyebrow}
           </p>
           <p className="mt-2.5 font-['Georgia'] text-[1.0625rem] leading-7 font-[400] tracking-normal italic text-[var(--Main-headings,#1c2426)] sm:mt-3 sm:text-[1.1875rem] sm:leading-8 lg:text-[1.25rem] lg:leading-8">
@@ -119,17 +155,36 @@ export default function WingsOfHopeImpact() {
             >
               {founder.role}
             </p>
+            <ul className="mt-3 flex flex-wrap items-center gap-2 sm:mt-3.5">
+              {founder.social.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Joint Women's Programme on ${item.label}`}
+                    className={`${SEGOE_UI_CLASS} inline-flex h-9 items-center gap-2 rounded-full border border-[#d9e1e2] bg-[#FFFFFF] px-3 text-[0.8125rem] font-[600] leading-none text-[var(--Main-headings,#1c2426)] transition-colors hover:border-[var(--Subheading,#4a5558)] sm:h-10 sm:px-3.5 sm:text-[0.875rem]`}
+                  >
+                    <SocialGlyph
+                      label={item.label}
+                      className="h-3.5 w-3.5 shrink-0"
+                    />
+                    {item.handle}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </footer>
         </blockquote>
       </div>
 
       <div className="flex w-full flex-col gap-5 sm:gap-6 lg:gap-8">
         <div className="w-full">
-          <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.eyebrow}`}>
+          <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>
             {eyebrow}
           </p>
-          <h2 className={WINGS_SECTION.title}>{title}</h2>
-          <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.body}`}>{body}</p>
+          <h2 className={CAUSE_SECTION.title}>{title}</h2>
+          <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.body}`}>{body}</p>
 
           <ul className="mt-6 grid w-full grid-cols-2 overflow-hidden rounded-[0.875rem] border border-[#d9e1e2] bg-[#FFFFFF] sm:mt-8 sm:rounded-[1rem] lg:grid-cols-4">
             {stats.map((stat, index) => (
@@ -185,14 +240,16 @@ export default function WingsOfHopeImpact() {
 
         <div className="flex w-full flex-col gap-4 rounded-[0.875rem] border border-[#d9e1e2] bg-[#F7F9F9] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:rounded-[1rem] sm:px-5 sm:py-5 lg:px-6">
           <div className="flex min-w-0 items-center gap-3 sm:gap-3.5">
-            <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full sm:h-12 sm:w-12">
-              <CldImage
-                src="/images/causes/woh-logo-roundel.png"
-                alt=""
-                fill
-                sizes="48px"
-                className="object-cover"
-              />
+            <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] sm:h-12 sm:w-12">
+              {instagram.logoSrc ? (
+                <CldImage
+                  src={instagram.logoSrc}
+                  alt=""
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
+              ) : null}
             </span>
             <span className="min-w-0">
               <span

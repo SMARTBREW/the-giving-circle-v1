@@ -3,7 +3,8 @@ import { Star } from "lucide-react";
 import CldImage from "@/components/cld-image";
 import CtaButton from "@/components/cta-button";
 import FadeInSection from "@/components/fade-in-section";
-import { SEGOE_UI_CLASS, WINGS_OF_HOPE_HERO } from "@/constants";
+import type { CausePageHeroContent } from "@/constants/cause-page";
+import { SEGOE_UI_CLASS } from "@/constants";
 import { PAGE_HERO_BLEED } from "@/lib/page-hero-layout";
 
 function InstagramGlyph({ className = "" }: { className?: string }) {
@@ -81,21 +82,21 @@ function MediaSlot({
   );
 }
 
-function LogoSlot() {
+function CampaignLogo({ src }: { src: string | null }) {
   return (
-    <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full sm:h-12 sm:w-12 lg:h-14 lg:w-14">
-      <CldImage
-        src="/images/causes/woh-logo-roundel.png"
-        alt=""
-        fill
-        sizes="56px"
-        className="object-cover"
-      />
+    <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] sm:h-12 sm:w-12 lg:h-14 lg:w-14">
+      {src ? (
+        <CldImage src={src} alt="" fill sizes="56px" className="object-cover" />
+      ) : null}
     </span>
   );
 }
 
-export default function WingsOfHopeHero() {
+export default function CausePageHero({
+  content,
+}: {
+  content: CausePageHeroContent;
+}) {
   const {
     category,
     title,
@@ -108,8 +109,10 @@ export default function WingsOfHopeHero() {
     primaryCta,
     secondaryCta,
     instagram,
+    campaignLogo,
     media,
-  } = WINGS_OF_HOPE_HERO;
+    stickyDonate,
+  } = content;
 
   return (
     <>
@@ -204,7 +207,7 @@ export default function WingsOfHopeHero() {
               rel="noopener noreferrer"
               className="mt-4 inline-flex min-h-11 items-center gap-3 self-start sm:mt-5 min-[56.25rem]:mt-4.5 lg:mt-5"
             >
-              <LogoSlot />
+              <CampaignLogo src={campaignLogo.src} />
               <span className="min-w-0">
                 <span
                   className={`${SEGOE_UI_CLASS} flex items-center gap-1.5 text-[0.8125rem] font-[400] leading-5 text-[var(--Subheading,#4a5558)]`}
@@ -251,12 +254,12 @@ export default function WingsOfHopeHero() {
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#d9e1e2] bg-[#FFFFFF] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
         <CtaButton
-          href={WINGS_OF_HOPE_HERO.stickyDonate.href}
+          href={stickyDonate.href}
           smoothScroll
           className="h-12 w-full !rounded-lg sm:h-14"
           labelClassName="font-[700]"
         >
-          {WINGS_OF_HOPE_HERO.stickyDonate.label}
+          {stickyDonate.label}
         </CtaButton>
       </div>
     </>

@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import CldImage from "@/components/cld-image";
 import PageSection from "@/components/page-section";
-import { SEGOE_UI_CLASS, WINGS_OF_HOPE_VOICES, WINGS_SECTION } from "@/constants";
+import type { CausePageVoicesContent } from "@/constants/cause-page";
+import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
 
 const ROLE_TONE = {
   student: "bg-[rgba(230,43,79,0.12)] text-[var(--Giving-Red,#e62b4f)]",
@@ -76,8 +77,12 @@ function PlayIcon({ className = "" }: { className?: string }) {
   );
 }
 
-export default function WingsOfHopeVoices() {
-  const { eyebrow, title, body, footer, items } = WINGS_OF_HOPE_VOICES;
+export default function CausePageVoices({
+  content,
+}: {
+  content: CausePageVoicesContent;
+}) {
+  const { eyebrow, title, body, footer, items } = content;
   const scrollerRef = useRef<HTMLUListElement>(null);
 
   const scrollByCard = (dir: -1 | 1) => {
@@ -89,12 +94,12 @@ export default function WingsOfHopeVoices() {
   };
 
   return (
-    <PageSection tone="alternate" innerClassName={WINGS_SECTION.pad}>
+    <PageSection tone="alternate" innerClassName={CAUSE_SECTION.pad}>
       <div className="flex w-full flex-col gap-4 sm:gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
         <div className="min-w-0 flex-1">
-          <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.eyebrow}`}>{eyebrow}</p>
-          <h2 className={WINGS_SECTION.title}>{title}</h2>
-          <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.body}`}>{body}</p>
+          <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>{eyebrow}</p>
+          <h2 className={CAUSE_SECTION.title}>{title}</h2>
+          <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.body}`}>{body}</p>
         </div>
 
         <div className="hidden shrink-0 gap-2 lg:flex">
@@ -122,10 +127,8 @@ export default function WingsOfHopeVoices() {
             <li
               key={`${item.role}-${item.name}-${item.detail}`}
               data-voice-card
-              className={`flex h-[20rem] w-[min(100%,19rem)] shrink-0 snap-start flex-col rounded-[0.875rem] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:w-[min(100%,21rem)] sm:rounded-[1rem] sm:p-6 lg:w-[calc((100%-2.5rem)/3)] ${
-                isVideo
-                  ? "border border-transparent bg-[#0A1E33]"
-                  : "border border-[#d9e1e2] bg-[#FFFFFF]"
+              className={`flex h-[20rem] w-[min(100%,19rem)] shrink-0 snap-start flex-col rounded-[0.875rem] border border-[#d9e1e2] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:w-[min(100%,21rem)] sm:rounded-[1rem] sm:p-6 lg:w-[calc((100%-2.5rem)/3)] ${
+                isVideo ? "bg-[#0A1E33]" : "bg-[#FFFFFF]"
               }`}
             >
               <span
@@ -136,7 +139,7 @@ export default function WingsOfHopeVoices() {
 
               <div className="mt-5 flex flex-1 flex-col justify-center sm:mt-6">
                 <p
-                  className={`text-center font-['Georgia'] text-[1.125rem] leading-7 font-[400] tracking-normal italic sm:text-[1.25rem] sm:leading-8 lg:text-[1.3125rem] lg:leading-8 ${
+                  className={`text-left font-['Georgia'] text-[1.125rem] leading-7 font-[400] tracking-normal italic sm:text-[1.25rem] sm:leading-8 lg:text-[1.3125rem] lg:leading-8 ${
                     isVideo ? "text-[#FFFFFF]" : "text-[var(--Main-headings,#1c2426)]"
                   }`}
                 >
@@ -146,7 +149,7 @@ export default function WingsOfHopeVoices() {
                 {isVideo && item.videoHref ? (
                   <a
                     href={item.videoHref}
-                    className={`${SEGOE_UI_CLASS} mt-5 inline-flex items-center justify-center gap-2 self-center text-[0.9375rem] font-[600] leading-5 text-[#FFFFFF] transition-opacity hover:opacity-90 sm:mt-6 sm:text-[1rem]`}
+                    className={`${SEGOE_UI_CLASS} mt-5 inline-flex items-center gap-2 self-start text-[0.9375rem] font-[600] leading-5 text-[#FFFFFF] transition-opacity hover:opacity-90 sm:mt-6 sm:text-[1rem]`}
                   >
                     <PlayIcon className="h-7 w-7 shrink-0 text-[#7ec8e3]" />
                     Watch her story
@@ -154,11 +157,7 @@ export default function WingsOfHopeVoices() {
                 ) : null}
               </div>
 
-              <div
-                className={`mt-5 border-t pt-4 sm:mt-6 sm:pt-5 ${
-                  isVideo ? "border-white/20" : "border-[#d9e1e2]"
-                }`}
-              >
+              <div className="mt-5 border-t border-[#d9e1e2] pt-4 sm:mt-6 sm:pt-5">
                 <div className="flex items-center gap-3 sm:gap-3.5">
                   {item.photoSrc ? (
                     <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14">

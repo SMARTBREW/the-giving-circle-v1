@@ -100,6 +100,11 @@ export {
 } from "./ngos";
 export type { NgosCityPage, NgosIconName } from "./ngos";
 export {
+  getCausePageContent,
+} from "./cause-page";
+export type { CausePageContent } from "./cause-page";
+export {
+  CAUSE_SECTION,
   WINGS_SECTION,
   WINGS_OF_HOPE_HERO,
   WINGS_OF_HOPE_ABOUT,

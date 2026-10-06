@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { Droplet, GraduationCap, MessageCircle } from "lucide-react";
 import PageSection from "@/components/page-section";
-import { SEGOE_UI_CLASS, WINGS_OF_HOPE_SUPPORT, WINGS_SECTION } from "@/constants";
+import type { CausePageSupportContent } from "@/constants/cause-page";
+import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
 
 function formatInr(amount: number) {
   return `₹${amount.toLocaleString("en-IN")}`;
@@ -17,9 +18,13 @@ function BenefitIcon({ icon }: { icon: "pads" | "care" | "workshops" }) {
   return <GraduationCap className={className} strokeWidth={1.75} aria-hidden />;
 }
 
-export default function WingsOfHopeSupport() {
+export default function CausePageSupport({
+  content,
+}: {
+  content: CausePageSupportContent;
+}) {
   const { eyebrow, impactSuffix, amounts, donateHref, benefits, footer } =
-    WINGS_OF_HOPE_SUPPORT;
+    content;
   const [selected, setSelected] = useState(0);
   const active = amounts[selected];
 
@@ -28,12 +33,12 @@ export default function WingsOfHopeSupport() {
       id="support"
       tone="white"
       className="scroll-mt-28"
-      innerClassName={WINGS_SECTION.pad}
+      innerClassName={CAUSE_SECTION.pad}
     >
       <div className="w-full rounded-[1.25rem] border border-[#d9e1e2] bg-[#FFFFFF] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:rounded-[1.5rem] sm:p-6 md:p-8 lg:p-10">
         <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
           <div className="min-w-0 flex flex-col">
-            <p className={`${SEGOE_UI_CLASS} ${WINGS_SECTION.eyebrow}`}>
+            <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>
               {eyebrow}
             </p>
 

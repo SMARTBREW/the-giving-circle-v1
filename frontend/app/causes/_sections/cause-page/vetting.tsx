@@ -1,6 +1,8 @@
 import { Check } from "lucide-react";
 import PageSection from "@/components/page-section";
-import { SEGOE_UI_CLASS, WINGS_OF_HOPE_VETTING, WINGS_SECTION } from "@/constants";
+import type { CausePageVettingContent } from "@/constants/cause-page";
+import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
+import { sanitizeUrl } from "@/lib/sanitize";
 
 function SealCheck({ className = "" }: { className?: string }) {
   return (
@@ -28,7 +30,11 @@ function SealCheck({ className = "" }: { className?: string }) {
   );
 }
 
-export default function WingsOfHopeVetting() {
+export default function CausePageVetting({
+  content,
+}: {
+  content: CausePageVettingContent;
+}) {
   const {
     eyebrow,
     title,
@@ -37,14 +43,14 @@ export default function WingsOfHopeVetting() {
     checks,
     documents,
     goodToKnow,
-  } = WINGS_OF_HOPE_VETTING;
+  } = content;
 
   return (
     <PageSection
       id="vetting"
       tone="alternate"
       className="scroll-mt-28"
-      innerClassName={WINGS_SECTION.pad}
+      innerClassName={CAUSE_SECTION.pad}
     >
       <div className="overflow-hidden rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] sm:rounded-[1.25rem]">
         <div className="p-4 sm:p-5 md:p-6 lg:p-7">
@@ -107,42 +113,50 @@ export default function WingsOfHopeVetting() {
           </div>
 
           <ul className="mt-5 border-t border-[#d9e1e2] sm:mt-6">
-            {documents.map((doc) => (
-              <li
-                key={doc.badge}
-                className="flex flex-col gap-2 border-b border-[#d9e1e2] py-2.5 last:border-b-0 sm:flex-row sm:items-center sm:gap-3 sm:py-3"
-              >
-                <span
-                  className={`${SEGOE_UI_CLASS} flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--Circle-Green,#02938c)] px-1 text-center text-[0.5625rem] font-[700] leading-tight tracking-tight text-[var(--Circle-Green,#02938c)] sm:h-10 sm:w-10 sm:text-[0.625rem]`}
-                >
-                  {doc.badge}
-                </span>
+            {documents.map((doc) => {
+              const href = sanitizeUrl(doc.href);
+              const isExternal = href.startsWith("http");
 
-                <div className="min-w-0 flex-1">
-                  <p
-                    className={`${SEGOE_UI_CLASS} text-[0.8125rem] font-[700] leading-4 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[0.875rem] sm:leading-5`}
-                  >
-                    {doc.title}
-                  </p>
-                  <p
-                    className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)]`}
-                  >
-                    No. {doc.number} ·{" "}
-                    <span className="font-[600] text-[var(--Circle-Green,#02938c)]">
-                      Checked
-                    </span>{" "}
-                    · {doc.note}
-                  </p>
-                </div>
-
-                <a
-                  href={doc.href}
-                  className={`${SEGOE_UI_CLASS} shrink-0 text-[0.8125rem] font-[600] leading-4 tracking-normal text-[var(--Circle-Green,#02938c)] transition-opacity hover:opacity-80`}
+              return (
+                <li
+                  key={doc.badge}
+                  className="flex flex-col gap-2 border-b border-[#d9e1e2] py-2.5 last:border-b-0 sm:flex-row sm:items-center sm:gap-3 sm:py-3"
                 >
-                  View PDF
-                </a>
-              </li>
-            ))}
+                  <span
+                    className={`${SEGOE_UI_CLASS} flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--Circle-Green,#02938c)] px-1 text-center text-[0.5625rem] font-[700] leading-tight tracking-tight text-[var(--Circle-Green,#02938c)] sm:h-10 sm:w-10 sm:text-[0.625rem]`}
+                  >
+                    {doc.badge}
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className={`${SEGOE_UI_CLASS} text-[0.8125rem] font-[700] leading-4 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[0.875rem] sm:leading-5`}
+                    >
+                      {doc.title}
+                    </p>
+                    <p
+                      className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)]`}
+                    >
+                      No. {doc.number} ·{" "}
+                      <span className="font-[600] text-[var(--Circle-Green,#02938c)]">
+                        Checked
+                      </span>{" "}
+                      · {doc.note}
+                    </p>
+                  </div>
+
+                  <a
+                    href={href}
+                    {...(isExternal
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className={`${SEGOE_UI_CLASS} shrink-0 text-[0.8125rem] font-[600] leading-4 tracking-normal text-[var(--Circle-Green,#02938c)] transition-opacity hover:opacity-80`}
+                  >
+                    View PDF
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 

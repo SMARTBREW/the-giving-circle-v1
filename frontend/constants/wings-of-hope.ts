@@ -1,7 +1,7 @@
 /** Wings of Hope campaign detail - redesign copy. */
 
-/** Shared section chrome — one scale across the Wings cause page. */
-export const WINGS_SECTION = {
+/** Shared section chrome — one scale across cause detail pages. */
+export const CAUSE_SECTION = {
   pad: "flex w-full flex-col items-stretch !pt-4 sm:!pt-6 md:!pt-8 lg:!pt-8 min-[90rem]:!pt-10",
   padTightY:
     "flex w-full flex-col items-stretch !pt-4 sm:!pt-6 md:!pt-8 lg:!pt-8 min-[90rem]:!pt-10 !pb-4 sm:!pb-6 md:!pb-8 lg:!pb-8 min-[90rem]:!pb-10",
@@ -15,6 +15,9 @@ export const WINGS_SECTION = {
   bodyOnDark:
     "mt-2.5 max-w-[36rem] text-[0.875rem] font-[400] leading-6 tracking-normal text-white/85 sm:mt-3 sm:text-[0.9375rem] sm:leading-6 md:text-[1rem] md:leading-7",
 } as const;
+
+/** @deprecated Use CAUSE_SECTION */
+export const WINGS_SECTION = CAUSE_SECTION;
 
 export const WINGS_OF_HOPE_HERO = {
   category: "Education & Health",
@@ -48,6 +51,9 @@ export const WINGS_OF_HOPE_HERO = {
     handle: "@wingsofhope.india",
     href: "https://www.instagram.com/wingsofhope.india/",
     label: "Follow the campaign",
+  },
+  campaignLogo: {
+    src: "/images/causes/woh-logo-roundel.png",
   },
   media: {
     src: "/images/causes/woh-hero-original.png",
@@ -129,21 +135,18 @@ export const WINGS_OF_HOPE_HOW = {
   body: "Three programmes that work together in every community Wings of Hope reaches.",
   cards: [
     {
-      photoLabel: "Photo: pad distribution",
       title: "Pad Drives",
       body: "Free reusable, biodegradable pads, shared through schools, local NGOs and government partners, with a demo on use and care.",
       src: "/images/causes/woh-how-pad-distribute.png",
       alt: "Schoolgirls holding reusable pad kits at a Wings of Hope distribution drive",
     },
     {
-      photoLabel: "Photo: classroom workshop",
       title: "Awareness Workshops",
       body: "Friendly, age-appropriate sessions on menstrual health and hygiene, in schools and communities.",
       src: "/images/causes/woh-how-classroom.png",
       alt: "Classroom menstrual health workshop with girls raising their hands",
     },
     {
-      photoLabel: "Photo: mothers' session",
       title: "Community & Counselling",
       body: "Health camps and parent sessions that replace myths with facts, plus one-to-one counselling for girls.",
       src: "/images/causes/woh-how-mothers.png",
@@ -186,8 +189,7 @@ export const WINGS_OF_HOPE_VOICES = {
       role: "Student · Video",
       roleTone: "studentVideo",
       variant: "video",
-      quote:
-        "[A 30 to 60 second clip of a girl in her own words, filmed with her guardian's consent.]",
+      quote: "[A girl in her own words, filmed with guardian consent.]",
       name: "[First name only]",
       detail: "Class [9], [town]",
       photoSrc: null as string | null,
@@ -296,42 +298,42 @@ export const WINGS_OF_HOPE_VETTING = {
       title: "80G certificate",
       number: "[number]",
       note: "your gift gets a 50% tax deduction",
-      href: "#",
+      href: "https://drive.google.com/file/d/1bk-Dwexazh__lGN96kcH4vvQeWNNG1cc/view?usp=sharing",
     },
     {
       badge: "12AB",
       title: "12AB registration",
       number: "[number]",
       note: "tax-exempt status under Income Tax Act",
-      href: "#",
+      href: "https://drive.google.com/file/d/1SLS7J1XSdNDjqq7faO8RSesIoPaYl-im/view?usp=sharing",
     },
     {
       badge: "CSR-1",
       title: "CSR-1 approval",
       number: "[number]",
       note: "eligible for corporate CSR funding",
-      href: "#",
+      href: "https://drive.google.com/file/d/14Y_nyaN70VoPzhn8HeQ_I3kN1YXdwAjY/view?usp=sharing",
     },
     {
       badge: "FCRA",
       title: "FCRA certificate",
       number: "[number]",
       note: "cleared to receive foreign contributions",
-      href: "#",
+      href: "https://drive.google.com/file/d/1xvrmInUuCjaHzZQh2f3cJLWP5IJP5l-o/view?usp=sharing",
     },
     {
       badge: "NGO Darpan",
       title: "NGO Darpan",
       number: "[number]",
       note: "listed on the government NGO portal",
-      href: "#",
+      href: "https://drive.google.com/file/d/1nQv3hvwvHMWyAS9qEXMS_ubs5SgCHuv3/view?usp=sharing",
     },
     {
       badge: "Reg.",
       title: "Society registration",
       number: "[number]",
       note: "registered as a society under applicable law",
-      href: "#",
+      href: "https://drive.google.com/file/d/1bMP7lLq5uLAv7pTh7F8-aZBerVUn9ioi/view?usp=sharing",
     },
   ] as const,
   goodToKnow:
@@ -347,8 +349,20 @@ export const WINGS_OF_HOPE_IMPACT = {
       "A two or three line quote from Jyotsna Chatterji on why JWP took up menstrual health. JWP to supply.",
     name: "Jyotsna Chatterji",
     role: "Founder and Director, Joint Women's Programme · Former Professor, Calcutta University",
-    photoSrc: null as string | null,
+    photoSrc: "/images/volunteer/jyotsna-chatterji-jwp.jpg" as string | null,
     photoAlt: "Jyotsna Chatterji, Founder Director of Joint Women's Programme",
+    social: [
+      {
+        label: "X",
+        handle: "@JWP_India",
+        href: "https://x.com/jwp_india",
+      },
+      {
+        label: "Instagram",
+        handle: "@jwpindia",
+        href: "https://www.instagram.com/jwpindia/",
+      },
+    ] as const,
   },
   eyebrow: "Impact So Far",
   title: "Real Drives. Real Change.",
@@ -409,14 +423,14 @@ export const WINGS_OF_HOPE_LEARN = {
       poster: "/images/causes/woh-learn-cloth-pad-poster.jpg",
     },
     {
-      title: "Washing and Drying It Safely",
-      body: "Why sunlight matters, what to avoid.",
+      title: "A School Pad Drive",
+      body: "Kits shared with girls after the workshop.",
       src: "/images/causes/woh-learn-washing.mp4",
       poster: "/images/causes/woh-learn-washing-poster.jpg",
     },
     {
-      title: "Talking to Your Daughter",
-      body: "For parents, before her first period.",
+      title: "A Mothers' Session",
+      body: "Parents learning how to support their daughters.",
       src: "/images/causes/woh-learn-talking.mp4",
       poster: "/images/causes/woh-learn-talking-poster.jpg",
     },

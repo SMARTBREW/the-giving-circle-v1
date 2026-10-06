@@ -1,32 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PageSection from "@/components/page-section";
-import SectionIntro from "@/components/section-intro";
-import CampaignCard from "@/components/campaign-card";
-import CtaButton from "@/components/cta-button";
-import CtaArrow from "@/components/cta-arrow";
-import PhotoCtaBand from "@/components/photo-cta-band";
-import FaqsAccordion from "@/components/faqs-accordion";
-import CauseDetailHero from "../_sections/cause-detail-hero";
-import WingsOfHopeHero from "../_sections/wings-of-hope-hero";
-import WingsOfHopeAbout from "../_sections/wings-of-hope-about";
-import WingsOfHopeTheory from "../_sections/wings-of-hope-theory";
-import WingsOfHopeHow from "../_sections/wings-of-hope-how";
-import WingsOfHopeVoices from "../_sections/wings-of-hope-voices";
-import WingsOfHopeSupport from "../_sections/wings-of-hope-support";
-import WingsOfHopeVetting from "../_sections/wings-of-hope-vetting";
-import WingsOfHopeImpact from "../_sections/wings-of-hope-impact";
-import WingsOfHopeLearn from "../_sections/wings-of-hope-learn";
-import WingsOfHopeFaqs from "../_sections/wings-of-hope-faqs";
-import WingsOfHopeCtaExplore from "../_sections/wings-of-hope-cta-explore";
-import CauseDetailAbout from "../_sections/cause-detail-about";
-import CauseDetailSections from "../_sections/cause-detail-sections";
+import CauseDetailTemplate from "../_sections/cause-page/cause-detail-template";
 import {
-  CAUSES_CTA,
   LIVE_CAUSES,
-  getCauseDetailContent,
+  getCausePageContent,
   getLiveCause,
-  toCampaignCard,
 } from "@/constants";
 
 export function generateStaticParams() {
@@ -161,20 +139,15 @@ export default async function CauseDetailPage({
   const cause = getLiveCause(slug);
   if (!cause) notFound();
 
-  const detail = getCauseDetailContent(cause.id);
-
-  const related = LIVE_CAUSES.filter((item) => item.id !== cause.id)
-    .filter((item) => item.category === cause.category)
-    .concat(
-      LIVE_CAUSES.filter(
-        (item) => item.id !== cause.id && item.category !== cause.category,
-      ),
-    )
-    .slice(0, 3)
-    .map(toCampaignCard);
+  const pageContent = getCausePageContent(cause.id);
+  if (!pageContent) notFound();
 
   const canonicalUrl = `https://www.thegivingcircle.in/causes/${slug}/`;
-  const seo = CAUSE_SEO[slug] ?? { title: cause.title, description: cause.summary, keywords: "" };
+  const seo = CAUSE_SEO[slug] ?? {
+    title: cause.title,
+    description: cause.summary,
+    keywords: "",
+  };
   const ogImageUrl = cause.src.startsWith("/")
     ? `https://www.thegivingcircle.in${cause.src}`
     : cause.src;
@@ -184,32 +157,38 @@ export default async function CauseDetailPage({
     "@graph": [
       {
         "@type": "NGO",
-        "name": cause.org,
-        "description": cause.summary,
-        "url": canonicalUrl,
-        "logo": "https://www.thegivingcircle.in/logo.png",
-        "image": ogImageUrl,
-        "areaServed": cause.location,
-        "potentialAction": {
+        name: cause.org,
+        description: cause.summary,
+        url: canonicalUrl,
+        logo: "https://www.thegivingcircle.in/logo.png",
+        image: ogImageUrl,
+        areaServed: cause.location,
+        potentialAction: {
           "@type": "DonateAction",
-          "target": canonicalUrl,
-          "name": `Donate to ${cause.title}`,
+          target: canonicalUrl,
+          name: `Donate to ${cause.title}`,
         },
       },
       {
         "@type": "WebPage",
-        "name": seo.title,
-        "description": seo.description,
-        "url": canonicalUrl,
-        "inLanguage": "en-IN",
-        "isPartOf": { "@type": "WebSite", "name": "The Giving Circle", "url": "https://www.thegivingcircle.in" },
-        ...(cause.faqs.length > 0 ? {
-          "mainEntity": cause.faqs.map((faq) => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
-          })),
-        } : {}),
+        name: seo.title,
+        description: seo.description,
+        url: canonicalUrl,
+        inLanguage: "en-IN",
+        isPartOf: {
+          "@type": "WebSite",
+          name: "The Giving Circle",
+          url: "https://www.thegivingcircle.in",
+        },
+        ...(cause.faqs.length > 0
+          ? {
+              mainEntity: cause.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+              })),
+            }
+          : {}),
       },
     ],
   };
@@ -220,83 +199,7 @@ export default async function CauseDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {cause.id === "wings-of-hope" ? (
-        <WingsOfHopeHero />
-      ) : (
-        <CauseDetailHero cause={cause} />
-      )}
-      {cause.id === "wings-of-hope" ? (
-        <WingsOfHopeAbout />
-      ) : (
-        <CauseDetailAbout cause={cause} />
-      )}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeTheory /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeHow /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeVoices /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeSupport /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeVetting /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeImpact /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeLearn /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeFaqs /> : null}
-      {cause.id === "wings-of-hope" ? <WingsOfHopeCtaExplore /> : null}
-      {cause.id !== "wings-of-hope" && detail ? (
-        <CauseDetailSections cause={cause} detail={detail} />
-      ) : null}
-
-      {cause.id !== "wings-of-hope" && cause.faqs.length > 0 ? (
-        <PageSection tone="gray" id="cause-faqs">
-          <SectionIntro
-            eyebrow="Questions About This Cause"
-            title="Frequently Asked Questions"
-            subtitle="Clarity on where gifts go, how the programme works, and how your circle can champion it."
-            titleAs="h3"
-          />
-          <div className="mt-8 w-full sm:mt-10 lg:mt-12">
-            <FaqsAccordion items={cause.faqs} />
-          </div>
-        </PageSection>
-      ) : null}
-
-      {cause.id !== "wings-of-hope" && related.length > 0 ? (
-        <PageSection tone="white">
-          <SectionIntro
-            eyebrow="More Live Causes"
-            title="Keep Exploring"
-            subtitle="Other verified campaigns your circle can champion next."
-          />
-          <ul className="mt-8 grid w-full grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-6 min-[90rem]:gap-6">
-            {related.map((card) => (
-              <li key={card.id} className="min-w-0">
-                <CampaignCard card={card} />
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex justify-center sm:mt-10">
-            <CtaButton
-              href="/causes"
-              variant="outline"
-              hoverFill
-              className="h-12 gap-2 bg-[#FFFFFF] px-8 py-3 sm:h-14"
-              labelClassName="font-[700]"
-            >
-              View All Live Causes
-              <CtaArrow />
-            </CtaButton>
-          </div>
-        </PageSection>
-      ) : null}
-
-      {cause.id !== "wings-of-hope" ? (
-        <PhotoCtaBand
-          src={CAUSES_CTA.src}
-          mobileSrc={CAUSES_CTA.mobileSrc}
-          alt={CAUSES_CTA.alt}
-          title={CAUSES_CTA.title}
-          subtitle={CAUSES_CTA.subtitle}
-          ctaLabel={CAUSES_CTA.ctaLabel}
-          href={CAUSES_CTA.href}
-        />
-      ) : null}
+      <CauseDetailTemplate content={pageContent} />
     </>
   );
 }
