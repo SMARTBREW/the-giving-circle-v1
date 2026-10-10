@@ -27,7 +27,9 @@ export default function CauseDetailTemplate({ content }: CauseDetailTemplateProp
       <CausePageSupport content={content.support} />
       <CausePageVetting content={content.vetting} />
       <CausePageImpact content={content.impact} />
-      <CausePageLearn content={content.learn} />
+      {content.learn.videos.length > 0 ? (
+        <CausePageLearn content={content.learn} />
+      ) : null}
       <CausePageFaqs content={content.faqs} />
       <CausePageCtaExplore cta={content.cta} explore={content.explore} />
     </>

@@ -151,3 +151,22 @@ function widthFromSizesAttribute(sizes: string): number | undefined {
 export function hasCloudinaryAsset(src: string): boolean {
   return src.startsWith("/images/") && Boolean(PUBLIC_IDS[src]);
 }
+
+const SITE_ORIGIN = "https://www.thegivingcircle.in";
+
+/** Absolute URL for Open Graph / JSON-LD — prefer Cloudinary when mapped. */
+export function absoluteMediaUrl(
+  src: string,
+  options: CloudinaryTransformOptions = {},
+): string {
+  const resolved = cloudinarySrc(src, options);
+  if (resolved.startsWith("http://") || resolved.startsWith("https://")) {
+    return resolved;
+  }
+  if (resolved.startsWith("/")) return `${SITE_ORIGIN}${resolved}`;
+  return resolved;
+}
+
+/** Site mark for structured data (Cloudinary — /logo.png is not deployed). */
+export const SITE_LOGO_URL =
+  "https://res.cloudinary.com/dcdhhylin/image/upload/f_auto,q_auto,w_512/tgc/logo-mark";

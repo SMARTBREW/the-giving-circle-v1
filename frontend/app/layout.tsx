@@ -11,7 +11,7 @@ import "./globals.css";
 const isStaging = process.env.NEXT_PUBLIC_SITE_ENV === "staging";
 
 export const metadata: Metadata = {
-  title: SITE.name,
+  title: SITE.seoTitle,
   description: SITE.description,
   metadataBase: new URL(SITE.url),
   icons: {
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
       }
     : {}),
   openGraph: {
-    title: SITE.name,
+    title: SITE.seoTitle,
     description: SITE.description,
     url: SITE.url,
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE.name,
+    title: SITE.seoTitle,
     description: SITE.description,
   },
 };

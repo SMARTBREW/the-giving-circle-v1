@@ -31,9 +31,7 @@ export default function CausePageAbout({
             >
               {card.label}
             </p>
-            <h3
-              className={`${SEGOE_UI_CLASS} mt-1.5 text-[1.0625rem] font-[700] leading-6 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-2 sm:text-[1.125rem] sm:leading-7`}
-            >
+            <h3 className="mt-1.5 font-['Georgia'] text-[1.0625rem] font-[700] leading-6 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-2 sm:text-[1.125rem] sm:leading-7">
               {card.title}
             </h3>
             <p

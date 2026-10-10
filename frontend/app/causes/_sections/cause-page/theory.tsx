@@ -20,7 +20,7 @@ export default function CausePageTheory({
 
         <h2 className={CAUSE_SECTION.titleOnDark}>
           <span className="block">{titleLine1}</span>
-          <span className="block">{titleLine2}</span>
+          {titleLine2 ? <span className="block">{titleLine2}</span> : null}
         </h2>
 
         <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.bodyOnDark}`}>
@@ -43,7 +43,11 @@ export default function CausePageTheory({
               />
               <div className="min-w-0 flex-1">
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase text-[var(--Giving-Red,#e62b4f)] sm:text-[0.6875rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase sm:text-[0.6875rem] ${
+                    step.outcome
+                      ? "text-[#7ec8e3]"
+                      : "text-[var(--Giving-Red,#e62b4f)]"
+                  }`}
                 >
                   {step.label}
                 </p>
@@ -83,7 +87,11 @@ export default function CausePageTheory({
                 ) : null}
               </div>
               <p
-                className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase text-[var(--Giving-Red,#e62b4f)] min-[90rem]:text-[0.6875rem]`}
+                className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase min-[90rem]:text-[0.6875rem] ${
+                  step.outcome
+                    ? "text-[#7ec8e3]"
+                    : "text-[var(--Giving-Red,#e62b4f)]"
+                }`}
               >
                 {step.label}
               </p>
@@ -104,7 +112,7 @@ export default function CausePageTheory({
         </ol>
 
         <p
-          className={`${SEGOE_UI_CLASS} mt-8 max-w-[48rem] text-[0.8125rem] font-[400] leading-5 tracking-normal text-white/80 sm:mt-10 sm:text-[0.875rem] sm:leading-6 lg:mt-12`}
+          className={`${SEGOE_UI_CLASS} mt-8 max-w-[48rem] border-t border-white/15 pt-6 text-[0.8125rem] font-[400] leading-5 tracking-normal text-white/70 sm:mt-10 sm:pt-7 sm:text-[0.875rem] sm:leading-6 lg:mt-12`}
         >
           {footer}
         </p>

@@ -5,9 +5,9 @@ import LiveCausesGrid from "./_sections/live-causes-grid";
 import { CAUSES_CTA, SITE } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "Live Causes | The Giving Circle",
+  title: "Find Causes That Matter | Support Verified NGOs in India",
   description:
-    "Explore verified causes across education, women’s health, animal welfare, and disaster relief. Champion a campaign and give directly to NGO partners.",
+    "Find verified NGOs and meaningful causes across India, from education and animal welfare to women’s health. Choose a cause and make an impact today.",
   alternates: { canonical: `${SITE.url}/causes/` },
 };
 

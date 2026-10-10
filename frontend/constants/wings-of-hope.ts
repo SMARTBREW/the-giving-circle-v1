@@ -10,10 +10,10 @@ export const CAUSE_SECTION = {
   title:
     "mt-2.5 w-full max-w-[36rem] font-['Georgia'] text-[1.625rem] font-[700] leading-8 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-3 sm:text-[1.875rem] sm:leading-9 md:text-[2.125rem] md:leading-[2.5rem] lg:text-[2.25rem] lg:leading-[2.75rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]",
   titleOnDark:
-    "mt-2.5 w-full max-w-[36rem] font-['Georgia'] text-[1.625rem] font-[700] leading-8 tracking-normal text-[#FFFFFF] sm:mt-3 sm:text-[1.875rem] sm:leading-9 md:text-[2.125rem] md:leading-[2.5rem] lg:text-[2.25rem] lg:leading-[2.75rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]",
+    "mt-2.5 w-full max-w-[42rem] font-['Georgia'] text-[1.625rem] font-[700] leading-8 tracking-normal text-[#FFFFFF] sm:mt-3 sm:text-[1.875rem] sm:leading-9 md:text-[2.125rem] md:leading-[2.5rem] lg:text-[2.25rem] lg:leading-[2.75rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]",
   body: "mt-2.5 max-w-[36rem] text-[0.875rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-3 sm:text-[0.9375rem] sm:leading-6 md:text-[1rem] md:leading-7",
   bodyOnDark:
-    "mt-2.5 max-w-[36rem] text-[0.875rem] font-[400] leading-6 tracking-normal text-white/85 sm:mt-3 sm:text-[0.9375rem] sm:leading-6 md:text-[1rem] md:leading-7",
+    "mt-2.5 max-w-[42rem] text-[0.875rem] font-[400] leading-6 tracking-normal text-white/85 sm:mt-3 sm:text-[0.9375rem] sm:leading-6 md:text-[1rem] md:leading-7",
 } as const;
 
 /** @deprecated Use CAUSE_SECTION */
@@ -53,10 +53,10 @@ export const WINGS_OF_HOPE_HERO = {
     label: "Follow the campaign",
   },
   campaignLogo: {
-    src: "/images/causes/woh-logo-roundel.png",
+    src: "/images/causes/woh-logo-roundel.jpg",
   },
   media: {
-    src: "/images/causes/woh-hero-original.png",
+    src: "/images/causes/woh-hero-original.jpg",
     alt: "A schoolgirl holding a Wings of Hope hygiene kit pouch",
     caption: "From a Wings of Hope drive",
   },
@@ -137,19 +137,19 @@ export const WINGS_OF_HOPE_HOW = {
     {
       title: "Pad Drives",
       body: "Free reusable, biodegradable pads, shared through schools, local NGOs and government partners, with a demo on use and care.",
-      src: "/images/causes/woh-how-pad-distribute.png",
+      src: "/images/causes/woh-how-pad-distribute.jpg",
       alt: "Schoolgirls holding reusable pad kits at a Wings of Hope distribution drive",
     },
     {
       title: "Awareness Workshops",
       body: "Friendly, age-appropriate sessions on menstrual health and hygiene, in schools and communities.",
-      src: "/images/causes/woh-how-classroom.png",
+      src: "/images/causes/woh-how-classroom.jpg",
       alt: "Classroom menstrual health workshop with girls raising their hands",
     },
     {
       title: "Community & Counselling",
       body: "Health camps and parent sessions that replace myths with facts, plus one-to-one counselling for girls.",
-      src: "/images/causes/woh-how-mothers.png",
+      src: "/images/causes/woh-how-mothers.jpg",
       alt: "Mothers and community members at a Wings of Hope session",
     },
   ] as const,
@@ -243,7 +243,8 @@ export const WINGS_OF_HOPE_SUPPORT = {
     { amount: 4500, label: "3 girls" },
     { amount: 15000, label: "10 girls" },
   ] as const,
-  donateHref: "#",
+  donateHref:
+    "https://give.jwpindia.org/donate/give-girls-wings-of-h-1ak3mg?source=TGC",
   benefits: [
     {
       icon: "pads" as const,
@@ -268,8 +269,8 @@ export const WINGS_OF_HOPE_SUPPORT = {
 export const WINGS_OF_HOPE_VETTING = {
   eyebrow: "Verified Partner",
   title: "Vetted by The Giving Circle",
-  body: "Before this cause went live, our team checked Joint Women's Programme the same way we check every partner: documents, a real office visit, and a conversation with the people who run it.",
-  lastReviewed: "[month year]",
+  body: "For almost five decades, JWP has worked with women and girls who were told their lives were already decided. Wings of Hope exists to prove otherwise. We don't stop at the school gate. We stay with each girl through her education, her skills and her first steps into work, until independence is hers. To everyone who joins us: You are giving a girl her wings.",
+  lastReviewed: "",
   checks: [
     {
       title: "Registration and tax documents checked",
@@ -277,7 +278,7 @@ export const WINGS_OF_HOPE_VETTING = {
     },
     {
       title: "Office visited by our team",
-      body: "[address] · [date]",
+      body: "Visited in person by The Giving Circle team.",
     },
     {
       title: "Leadership interviewed",
@@ -285,7 +286,7 @@ export const WINGS_OF_HOPE_VETTING = {
     },
     {
       title: "Field work seen",
-      body: "[place, date] - so the programme matches what is promised.",
+      body: "Programme activity seen on the ground so the work matches what is promised.",
     },
     {
       title: "Written commitment to share updates",
@@ -296,43 +297,43 @@ export const WINGS_OF_HOPE_VETTING = {
     {
       badge: "80G",
       title: "80G certificate",
-      number: "[number]",
+      number: "",
       note: "your gift gets a 50% tax deduction",
       href: "https://drive.google.com/file/d/1bk-Dwexazh__lGN96kcH4vvQeWNNG1cc/view?usp=sharing",
     },
     {
       badge: "12AB",
       title: "12AB registration",
-      number: "[number]",
+      number: "",
       note: "tax-exempt status under Income Tax Act",
       href: "https://drive.google.com/file/d/1SLS7J1XSdNDjqq7faO8RSesIoPaYl-im/view?usp=sharing",
     },
     {
       badge: "CSR-1",
       title: "CSR-1 approval",
-      number: "[number]",
+      number: "",
       note: "eligible for corporate CSR funding",
       href: "https://drive.google.com/file/d/14Y_nyaN70VoPzhn8HeQ_I3kN1YXdwAjY/view?usp=sharing",
     },
     {
       badge: "FCRA",
       title: "FCRA certificate",
-      number: "[number]",
+      number: "",
       note: "cleared to receive foreign contributions",
       href: "https://drive.google.com/file/d/1xvrmInUuCjaHzZQh2f3cJLWP5IJP5l-o/view?usp=sharing",
     },
     {
       badge: "NGO Darpan",
       title: "NGO Darpan",
-      number: "[number]",
+      number: "",
       note: "listed on the government NGO portal",
       href: "https://drive.google.com/file/d/1nQv3hvwvHMWyAS9qEXMS_ubs5SgCHuv3/view?usp=sharing",
     },
     {
       badge: "Reg.",
-      title: "Society registration",
-      number: "[number]",
-      note: "registered as a society under applicable law",
+      title: "Registration certificate",
+      number: "",
+      note: "certified copy of registration on file",
       href: "https://drive.google.com/file/d/1bMP7lLq5uLAv7pTh7F8-aZBerVUn9ioi/view?usp=sharing",
     },
   ] as const,
@@ -346,7 +347,7 @@ export const WINGS_OF_HOPE_IMPACT = {
     initials: "JC",
     portraitLabel: "Portrait from JWP",
     quote:
-      "A two or three line quote from Jyotsna Chatterji on why JWP took up menstrual health. JWP to supply.",
+      "For almost five decades, JWP has worked with women and girls who were told their lives were already decided. Wings of Hope exists to prove otherwise. We don't stop at the school gate. We stay with each girl through her education, her skills and her first steps into work, until independence is hers. To everyone who joins us: You are giving a girl her wings.",
     name: "Jyotsna Chatterji",
     role: "Founder and Director, Joint Women's Programme · Former Professor, Calcutta University",
     photoSrc: "/images/volunteer/jyotsna-chatterji-jwp.jpg" as string | null,
@@ -368,36 +369,36 @@ export const WINGS_OF_HOPE_IMPACT = {
   title: "Real Drives. Real Change.",
   body: "Updates from the field, shared with every circle.",
   stats: [
-    { value: "30,000+", label: "girls reached", confirm: true },
-    { value: "200+", label: "workshops", confirm: true },
+    { value: "30,000+", label: "girls reached", confirm: false },
+    { value: "200+", label: "workshops", confirm: false },
     { value: "3,079", label: "supporters here", confirm: false },
     { value: "1977", label: "JWP at work since", confirm: false },
   ] as const,
   gallery: {
     featured: {
-      label: "Latest · School drive · [date]",
-      src: "/images/causes/woh-impact-school-drive.png",
+      label: "Latest · School drive",
+      src: "/images/causes/woh-impact-school-drive.jpg",
       alt: "Schoolgirls at B.S.M. Public School Nithari after a Wings of Hope drive",
       featured: true,
     },
     items: [
       {
-        label: "Workshop · [date]",
-        src: "/images/causes/woh-impact-workshop.png",
+        label: "Workshop",
+        src: "/images/causes/woh-impact-workshop.jpg",
         alt: "Training-of-trainers workshop with community members in Burmu",
       },
       {
-        label: "Mothers' session · [date]",
-        src: "/images/causes/woh-impact-mothers-session.png",
+        label: "Mothers' session",
+        src: "/images/causes/woh-impact-mothers-session.jpg",
         alt: "Mothers seated for a community session led by Wings of Hope facilitators",
       },
       {
-        label: "Pad demo · [date]",
-        src: "/images/causes/woh-impact-pad-demo.png",
+        label: "Pad demo",
+        src: "/images/causes/woh-impact-pad-demo.jpg",
         alt: "Facilitator demonstrating a reusable cloth pad at a session",
       },
       {
-        label: "Health camp · [date]",
+        label: "Health camp",
         src: null as string | null,
         alt: "Health camp",
       },
@@ -455,7 +456,7 @@ export const WINGS_OF_HOPE_FAQS = {
     {
       question: "Where does my donation go?",
       answer:
-        "Every contribution goes directly to Joint Women's Programme, into its own bank account. Funds support menstrual health workshops, reusable pad kits, community sessions, and follow-up so girls keep attending school.",
+        "Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
     },
     {
       question: "Why reusable pads?",

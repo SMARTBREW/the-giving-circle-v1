@@ -162,7 +162,7 @@ export default function CausePageImpact({
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Joint Women's Programme on ${item.label}`}
+                    aria-label={`${founder.name} on ${item.label}`}
                     className={`${SEGOE_UI_CLASS} inline-flex h-9 items-center gap-2 rounded-full border border-[#d9e1e2] bg-[#FFFFFF] px-3 text-[0.8125rem] font-[600] leading-none text-[var(--Main-headings,#1c2426)] transition-colors hover:border-[var(--Subheading,#4a5558)] sm:h-10 sm:px-3.5 sm:text-[0.875rem]`}
                   >
                     <SocialGlyph
@@ -202,14 +202,9 @@ export default function CausePageImpact({
                   {stat.value}
                 </p>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-2 flex flex-wrap items-center gap-1.5 text-[0.8125rem] font-[400] leading-4 text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-4 text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
                 >
-                  <span>{stat.label}</span>
-                  {stat.confirm ? (
-                    <span className="rounded bg-[var(--Giving-Red,#e62b4f)] px-1.5 py-0.5 text-[0.5625rem] font-[700] leading-none tracking-[0.04em] uppercase text-[#FFFFFF]">
-                      Confirm
-                    </span>
-                  ) : null}
+                  {stat.label}
                 </p>
               </li>
             ))}

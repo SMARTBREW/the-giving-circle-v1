@@ -161,7 +161,7 @@ export default async function BlogArticlePage({
           url: "https://www.thegivingcircle.in",
           logo: {
             "@type": "ImageObject",
-            url: "https://www.thegivingcircle.in/logo.png",
+            url: "https://res.cloudinary.com/dcdhhylin/image/upload/f_auto,q_auto,w_512/tgc/logo-mark",
           },
         },
         author: {

@@ -83,6 +83,7 @@ export default function CausePageVoices({
   content: CausePageVoicesContent;
 }) {
   const { eyebrow, title, body, footer, items } = content;
+  const videoCtaLabel = content.videoCtaLabel ?? "Watch her story";
   const scrollerRef = useRef<HTMLUListElement>(null);
 
   const scrollByCard = (dir: -1 | 1) => {
@@ -152,7 +153,7 @@ export default function CausePageVoices({
                     className={`${SEGOE_UI_CLASS} mt-5 inline-flex items-center gap-2 self-start text-[0.9375rem] font-[600] leading-5 text-[#FFFFFF] transition-opacity hover:opacity-90 sm:mt-6 sm:text-[1rem]`}
                   >
                     <PlayIcon className="h-7 w-7 shrink-0 text-[#7ec8e3]" />
-                    Watch her story
+                    {videoCtaLabel}
                   </a>
                 ) : null}
               </div>

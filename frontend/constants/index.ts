@@ -150,8 +150,10 @@ export const SITE = {
   url: "https://www.thegivingcircle.in",
   founded: 2022,
   tagline: "A Stronger Circle. A Greater Impact.",
+  /** Homepage `<title>` — not the short brand name used in UI. */
+  seoTitle: "Support Verified NGOs & Causes in India | The Giving Circle",
   description:
-    "Champion a cause backed by a verified NGO, bring your circle together, and help raise funds for meaningful change.",
+    "Connect with verified NGOs and meaningful causes across India. Support a cause, raise funds or become a Cause Champion and help create lasting social impact.",
 } as const;
 
 export const NAV_LINKS = [
@@ -217,10 +219,7 @@ export const FOOTER_LEGAL_LINKS = [
 ] as const;
 
 export const FOOTER_SOCIAL_LINKS = [
-  { label: "Facebook", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "Instagram", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/the.giving.circle/" },
 ] as const;
 
 export const CHAMPION_PHOTO = "/images/cta images/24cd8db82cca8c8ff709461cd6a0ce14e96b9b3e.png";

@@ -12,9 +12,9 @@ import ChampionMeet from "./_sections/champion-meet";
 import ChampionCta from "./_sections/champion-cta";
 
 export const metadata: Metadata = {
-  title: "Become a Cause Champion | The Giving Circle",
+  title: "Become a Cause Champion & Make an Impact | The Giving Circle",
   description:
-    "Turn your circle into impact. Become a Cause Champion for a verified cause, inspire your network, and help create meaningful change across India.",
+    "Become a Cause Champion with The Giving Circle. Choose a verified cause, rally your circle and raise support for an NGO. Start your giving journey today.",
   alternates: { canonical: `${SITE.url}/become-a-cause-champion/` },
 };
 

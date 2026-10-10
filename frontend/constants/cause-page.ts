@@ -1,4 +1,18 @@
 import {
+  GUARDIANS_OF_THE_GREEN_ABOUT,
+  GUARDIANS_OF_THE_GREEN_CTA,
+  GUARDIANS_OF_THE_GREEN_EXPLORE,
+  GUARDIANS_OF_THE_GREEN_FAQS,
+  GUARDIANS_OF_THE_GREEN_HERO,
+  GUARDIANS_OF_THE_GREEN_HOW,
+  GUARDIANS_OF_THE_GREEN_IMPACT,
+  GUARDIANS_OF_THE_GREEN_LEARN,
+  GUARDIANS_OF_THE_GREEN_SUPPORT,
+  GUARDIANS_OF_THE_GREEN_THEORY,
+  GUARDIANS_OF_THE_GREEN_VETTING,
+  GUARDIANS_OF_THE_GREEN_VOICES,
+} from "./guardians-of-the-green";
+import {
   WINGS_OF_HOPE_ABOUT,
   WINGS_OF_HOPE_CTA,
   WINGS_OF_HOPE_EXPLORE,
@@ -78,6 +92,8 @@ export type CausePageVoicesContent = {
   title: string;
   body: string;
   footer: string;
+  /** Video card CTA; defaults to “Watch her story” in the shared template. */
+  videoCtaLabel?: string;
   items: readonly {
     role: string;
     roleTone:
@@ -97,13 +113,15 @@ export type CausePageVoicesContent = {
   }[];
 };
 
+export type CausePageSupportIcon = "pads" | "care" | "workshops" | "sprout" | "shield";
+
 export type CausePageSupportContent = {
   eyebrow: string;
   impactSuffix: string;
   amounts: readonly { amount: number; label: string }[];
   donateHref: string;
   benefits: readonly {
-    icon: "pads" | "care" | "workshops";
+    icon: CausePageSupportIcon;
     title: string;
     body: string;
   }[];
@@ -224,7 +242,7 @@ export type CausePageContent = {
 
 const ORG_NAME: Record<string, string> = {
   JWP: "Joint Women's Programme",
-  ICFG: "Initiative for Community Forest Governance",
+  ICFG: "Institute of Community Forest Governance",
   "Animal Care": "Animal Care",
 };
 
@@ -403,7 +421,7 @@ export function buildCausePageDraft(cause: LiveCause): CausePageContent {
           variant: "quote",
           quote: "[Quote from a programme lead or counsellor.]",
           name: "[Name]",
-          detail: `${orgName}`,
+          detail: orgName,
           photoSrc: null,
           photoAlt: "Partner portrait",
           videoHref: null,
@@ -475,7 +493,10 @@ export function buildCausePageDraft(cause: LiveCause): CausePageContent {
         { amount: 4500, label: "Circle gift" },
         { amount: 15000, label: "Drive gift" },
       ],
-      donateHref: "#",
+      donateHref:
+        cause.id === "community-forest-governance"
+          ? "https://give.icfgindia.org/donate/raise-guardians-of-th-ublrmceg?source=TGC"
+          : "#",
       benefits: [
         {
           icon: "pads",
@@ -594,23 +615,23 @@ export function buildCausePageDraft(cause: LiveCause): CausePageContent {
       eyebrow: "Impact So Far",
       title: "Real Drives. Real Change.",
       body: "Updates from the field, shared with every circle.",
-      stats: cause.impact.slice(0, 4).map((stat, index) => ({
+      stats: cause.impact.slice(0, 4).map((stat) => ({
         value: stat.value,
         label: stat.label.toLowerCase(),
-        confirm: index < 2,
+        confirm: false,
       })),
       gallery: {
         featured: {
-          label: "Latest drive · [date]",
+          label: "Latest drive",
           src: null,
           alt: `${name} featured photo`,
           featured: true,
         },
         items: [
-          { label: "Field update · [date]", src: null, alt: "Field update" },
-          { label: "Workshop · [date]", src: null, alt: "Workshop" },
-          { label: "Community · [date]", src: null, alt: "Community" },
-          { label: "Follow-up · [date]", src: null, alt: "Follow-up" },
+          { label: "Field update", src: null, alt: "Field update" },
+          { label: "Workshop", src: null, alt: "Workshop" },
+          { label: "Community", src: null, alt: "Community" },
+          { label: "Follow-up", src: null, alt: "Follow-up" },
         ],
       },
       instagram: {
@@ -689,7 +710,7 @@ const WINGS_PAGE: CausePageContent = {
     ...WINGS_OF_HOPE_IMPACT,
     instagram: {
       ...WINGS_OF_HOPE_IMPACT.instagram,
-      logoSrc: "/images/causes/woh-logo-roundel.png",
+      logoSrc: "/images/causes/woh-logo-roundel.jpg",
     },
   },
   learn: WINGS_OF_HOPE_LEARN,
@@ -698,8 +719,24 @@ const WINGS_PAGE: CausePageContent = {
   explore: WINGS_OF_HOPE_EXPLORE,
 };
 
+const GUARDIANS_PAGE: CausePageContent = {
+  hero: GUARDIANS_OF_THE_GREEN_HERO,
+  about: GUARDIANS_OF_THE_GREEN_ABOUT,
+  theory: GUARDIANS_OF_THE_GREEN_THEORY,
+  how: GUARDIANS_OF_THE_GREEN_HOW,
+  voices: GUARDIANS_OF_THE_GREEN_VOICES,
+  support: GUARDIANS_OF_THE_GREEN_SUPPORT,
+  vetting: GUARDIANS_OF_THE_GREEN_VETTING,
+  impact: GUARDIANS_OF_THE_GREEN_IMPACT,
+  learn: GUARDIANS_OF_THE_GREEN_LEARN,
+  faqs: GUARDIANS_OF_THE_GREEN_FAQS,
+  cta: GUARDIANS_OF_THE_GREEN_CTA,
+  explore: GUARDIANS_OF_THE_GREEN_EXPLORE,
+};
+
 const CAUSE_PAGE_OVERRIDES: Partial<Record<string, CausePageContent>> = {
   "wings-of-hope": WINGS_PAGE,
+  "community-forest-governance": GUARDIANS_PAGE,
 };
 
 export function getCausePageContent(causeId: string): CausePageContent | undefined {

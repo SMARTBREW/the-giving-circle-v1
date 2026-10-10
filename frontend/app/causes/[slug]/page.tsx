@@ -6,10 +6,17 @@ import {
   getCausePageContent,
   getLiveCause,
 } from "@/constants";
+import { absoluteMediaUrl, SITE_LOGO_URL } from "@/lib/cloudinary";
 
 export function generateStaticParams() {
   return LIVE_CAUSES.map((cause) => ({ slug: cause.id }));
 }
+
+const ORG_FULL_NAME: Record<string, string> = {
+  JWP: "Joint Women's Programme",
+  ICFG: "Institute of Community Forest Governance",
+  "Animal Care": "Animal Care",
+};
 
 /** Per-cause SEO metadata   title ≤60 chars, description ~155 chars, OG image from cause asset. */
 const CAUSE_SEO: Record<
@@ -17,55 +24,59 @@ const CAUSE_SEO: Record<
   { title: string; description: string; keywords: string }
 > = {
   "wings-of-hope": {
-    title: "Wings of Hope: Menstrual Health for Girls | The Giving Circle",
+    title: "Wings of Hope: ₹1,500 Helps One Girl Stay in Class",
     description:
-      "22,000+ girls empowered across Delhi NCR. Champion menstrual health education & reusable kits with JWP so girls stay in school every month. Donate via 80G NGO.",
+      "Give children the chance to learn, grow and look ahead with hope. Discover Wings of Hope and see how you can support children who need it most.",
     keywords:
       "menstrual health India, period poverty Delhi, girls education NGO India, Wings of Hope JWP, 80G donation, reusable sanitary kits, school attendance girls India",
   },
   "pehli-class": {
-    title: "PehliClass: First Day of School for Every Child | The Giving Circle",
+    title: "Help a Child Get Into School | Support PehliClass",
     description:
-      "Bridge out-of-school children into formal classrooms at Mera Sahara, Nithari (Delhi NCR). ₹1,600/month sponsors one child's full bridge year with JWP. 80G eligible.",
+      "A missing birth certificate or Aadhaar can shut the school gate on a child. PehliClass in Nithari fixes the papers, closes the gap and gets them enrolled",
     keywords:
       "out-of-school children India, bridge school Nithari, JWP education NGO, first generation learner India, school enrolment Delhi NCR, 80G donation education, PehliClass",
   },
   "community-forest-governance": {
-    title: "Forest Rights and Community Governance by ICFG | The Giving Circle",
+    title: "Community Forest Governance | Support Forest Communities",
     description:
-      "2,000+ villages mobilised, 10,000+ hectares protected in Jharkhand. Champion tribal forest rights with ICFG under FRA 2006. 50,000+ saplings planted   donate directly.",
+      "Support local communities working on forest conservation, natural resource management and sustainable livelihoods through community-led forest governance.",
     keywords:
-      "community forest governance India, Forest Rights Act 2006, ICFG tribal rights, forest conservation Jharkhand, indigenous forest dwellers, FRA donation, sapling India",
+      "Guardians of the Green, community forest governance India, ICFG Jharkhand, native tree planting, Adivasi guardians, FRA 2006, 80G donation forest",
   },
   "pawsitive-protectors": {
-    title: "Pawsitive Protectors: Street Animal Vaccinations | The Giving Circle",
+    title: "Pawsitive Protectors | Support Animal Welfare in India",
     description:
-      "7,126 animals helped, 142,000+ people protected. Champion free rabies vaccinations for street animals in Mumbai with Animal Care NGO. Zero Rabies mission. Donate now.",
+      "Help animals get food, medical care and protection through Pawsitive Protectors. Support animals facing neglect, injury or hardship and donate today.",
     keywords:
       "street animal welfare India, rabies vaccination Mumbai, Animal Care NGO, stray dog care India, community animal welfare, 80G animal welfare donation, Zero Rabies India",
   },
   "bowls-of-hope": {
-    title: "Bowls of Hope: Daily Feeding for Stray Animals | The Giving Circle",
+    title: "Feed Stray Animals Daily: Fill a Bowl Today | Bowls of Hope",
     description:
-      "1,859 feeding bowls installed for 2,000+ Delhi strays. Champion daily meals and veterinary care at Animal Care shelters. Every gift goes directly to the NGO.",
+      "Turn a birthday or anniversary into meals for shelter strays. Start a free fundraiser for Bowls of Hope Every gift goes straight to Animal Care.",
     keywords:
       "stray animal feeding Delhi, animal shelter donation India, Animal Care feeding programme, street dog welfare Delhi, animal welfare NGO India, bowls of hope donation",
   },
   "brick-by-brick": {
-    title: "Brick by Brick: Build an Animal Shelter in Gurgaon | The Giving Circle",
+    title: "Build an Animal Shelter in Gurgaon | Brick by Brick",
     description:
-      "₹10 sponsors one brick on a 17,500 sq ft Animal Care rescue plot in Gurgaon. Champion the boundary wall for India's Zero Rabies mission. Watch every brick laid.",
+      "Support an animal shelter in Gurgaon, one brick at a time. Your donation helps build a safe home for injured and vulnerable stray animals. Donate today.",
     keywords:
       "animal shelter Gurgaon, Zero Rabies India, Animal Care rescue centre, sponsor a brick India, stray animal shelter build, animal welfare donation Haryana",
   },
   "flood-animal-rescue": {
-    title: "Emergency Animal Rescue: Floods India | The Giving Circle",
+    title: "Donate for Flood Animal Rescue in India | Rescue on Call",
     description:
-      "812 animals rescued in Uttarakhand & Punjab. Champion emergency rescue and rehabilitation for flood-affected animals with Animal Care. Urgent, verified, direct donations.",
+      "Donate for emergency animal rescue during floods in India. Animal Care's Rescue on Call pulls animals out of flood zones, treats them and shelters them.",
     keywords:
       "flood animal rescue India, Uttarakhand animal welfare, emergency pet rescue flood India, disaster animal relief NGO, Animal Care Uttarakhand Punjab, flood relief donation",
   },
 };
+
+function causeOgImageUrl(src: string) {
+  return absoluteMediaUrl(src, { width: 1200, height: 630, crop: "fill" });
+}
 
 export async function generateMetadata({
   params,
@@ -84,9 +95,7 @@ export async function generateMetadata({
     keywords: `${cause.category} NGO India, donate ${cause.category.toLowerCase()}, The Giving Circle`,
   };
 
-  const ogImageUrl = cause.src.startsWith("/")
-    ? `https://www.thegivingcircle.in${cause.src}`
-    : cause.src;
+  const ogImageUrl = causeOgImageUrl(cause.src);
 
   return {
     title: seo.title,
@@ -148,19 +157,18 @@ export default async function CauseDetailPage({
     description: cause.summary,
     keywords: "",
   };
-  const ogImageUrl = cause.src.startsWith("/")
-    ? `https://www.thegivingcircle.in${cause.src}`
-    : cause.src;
+  const ogImageUrl = causeOgImageUrl(cause.src);
+  const orgName = ORG_FULL_NAME[cause.org] ?? cause.org;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "NGO",
-        name: cause.org,
+        name: orgName,
         description: cause.summary,
         url: canonicalUrl,
-        logo: "https://www.thegivingcircle.in/logo.png",
+        logo: SITE_LOGO_URL,
         image: ogImageUrl,
         areaServed: cause.location,
         potentialAction: {

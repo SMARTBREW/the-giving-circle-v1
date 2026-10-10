@@ -21,6 +21,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https: blob:",
+  "media-src 'self' https://res.cloudinary.com blob:",
   // Allow the FastAPI public API (forms / blog / animal welfare)
   `connect-src 'self' ${apiOrigin()} https://vitals.vercel-insights.com https://va.vercel-scripts.com`,
   "frame-ancestors 'none'",

@@ -182,21 +182,21 @@ export default function CausePageHero({
               ))}
             </ul>
 
-            <div className="mt-4 flex w-full flex-col gap-2.5 sm:mt-5 sm:flex-row sm:flex-wrap sm:gap-3 min-[56.25rem]:mt-4.5 lg:mt-5">
+            <div className="mt-4 flex w-full flex-row gap-2 sm:mt-5 sm:gap-2.5 min-[56.25rem]:mt-4.5 lg:mt-5 lg:gap-3">
               <CtaButton
                 href={primaryCta.href}
                 smoothScroll
-                className="h-11 min-h-11 w-full rounded-full px-5 text-[0.875rem] sm:h-12 sm:w-auto sm:min-w-0 sm:flex-1 sm:px-6 sm:text-[0.9375rem] min-[56.25rem]:h-11 min-[56.25rem]:flex-none min-[56.25rem]:px-5 min-[56.25rem]:text-[0.8125rem] lg:h-12 lg:px-6 lg:text-[0.9375rem] min-[90rem]:px-7"
-                labelClassName="font-[700]"
+                className="h-11 min-w-0 flex-1 rounded-full px-2 !text-[0.625rem] sm:h-12 sm:px-2.5 sm:!text-[0.6875rem] lg:px-4 lg:!text-[0.8125rem] min-[90rem]:px-5 min-[90rem]:!text-[0.875rem]"
+                labelClassName="whitespace-nowrap font-[700]"
               >
                 {primaryCta.label}
               </CtaButton>
               <CtaButton
                 href={secondaryCta.href}
-                className="h-11 min-h-11 w-full !rounded-full !border-transparent !bg-[var(--Giving-Red,#e62b4f)] px-5 text-[0.875rem] !text-[#FFFFFF] sm:h-12 sm:w-auto sm:min-w-0 sm:flex-1 sm:px-6 sm:text-[0.9375rem] min-[56.25rem]:h-11 min-[56.25rem]:flex-none min-[56.25rem]:px-5 min-[56.25rem]:text-[0.8125rem] lg:h-12 lg:px-6 lg:text-[0.9375rem] min-[90rem]:px-7"
-                labelClassName="gap-2 font-[700]"
+                className="h-11 min-w-0 flex-1 !rounded-full !border-transparent !bg-[var(--Giving-Red,#e62b4f)] px-2 !text-[0.625rem] !text-[#FFFFFF] sm:h-12 sm:px-2.5 sm:!text-[0.6875rem] lg:px-4 lg:!text-[0.8125rem] min-[90rem]:px-5 min-[90rem]:!text-[0.875rem]"
+                labelClassName="gap-1.5 whitespace-nowrap font-[700]"
               >
-                <Star className="h-3.5 w-3.5 fill-current" aria-hidden />
+                <Star className="h-3 w-3 shrink-0 fill-current sm:h-3.5 sm:w-3.5" aria-hidden />
                 {secondaryCta.label}
               </CtaButton>
             </div>

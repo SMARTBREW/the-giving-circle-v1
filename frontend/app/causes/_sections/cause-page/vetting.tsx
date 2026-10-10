@@ -77,14 +77,16 @@ export default function CausePageVetting({
                 {body}
               </p>
 
-              <p
-                className={`${SEGOE_UI_CLASS} mt-2 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-2.5 sm:text-[0.8125rem]`}
-              >
-                Last reviewed:{" "}
-                <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
-                  {lastReviewed}
-                </span>
-              </p>
+              {lastReviewed ? (
+                <p
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-2.5 sm:text-[0.8125rem]`}
+                >
+                  Last reviewed:{" "}
+                  <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+                    {lastReviewed}
+                  </span>
+                </p>
+              ) : null}
             </div>
 
             <ul className="flex min-w-0 flex-col gap-2.5 sm:gap-3">
@@ -137,7 +139,9 @@ export default function CausePageVetting({
                     <p
                       className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)]`}
                     >
-                      No. {doc.number} ·{" "}
+                      {doc.number && !doc.number.includes("[") ? (
+                        <>No. {doc.number} · </>
+                      ) : null}
                       <span className="font-[600] text-[var(--Circle-Green,#02938c)]">
                         Checked
                       </span>{" "}
@@ -152,7 +156,7 @@ export default function CausePageVetting({
                       : {})}
                     className={`${SEGOE_UI_CLASS} shrink-0 text-[0.8125rem] font-[600] leading-4 tracking-normal text-[var(--Circle-Green,#02938c)] transition-opacity hover:opacity-80`}
                   >
-                    View PDF
+                    View document
                   </a>
                 </li>
               );
