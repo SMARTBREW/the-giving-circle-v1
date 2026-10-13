@@ -98,12 +98,15 @@ export function NgosCardShell({
   href: string;
   children: ReactNode;
 }) {
+  // Native <a> (not next/link): static export soft-nav fetches *.txt / index.txt.
+  // CloudFront SEO redirects once 301'd those to /ngos; browsers cache that 301 and
+  // Link clicks stay stuck. Full document navigation uses the HTML page (200).
   return (
-    <Link
+    <a
       href={href}
       className="group flex h-full flex-col rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] p-5 shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--Circle-Green,#02938c)] hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.08)] sm:rounded-[1.25rem] sm:p-6"
     >
       {children}
-    </Link>
+    </a>
   );
 }

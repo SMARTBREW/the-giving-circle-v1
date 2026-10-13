@@ -19,7 +19,9 @@ function handler(event) {
       statusDescription: 'Moved Permanently',
       headers: {
         location: { value: BASE + path },
-        'cache-control': { value: 'public, max-age=3600' },
+        // Do not long-cache redirects — a bad 301 (e.g. soft-nav .txt → /ngos)
+        // sticks in browsers for an hour+ and breaks Link clicks.
+        'cache-control': { value: 'private, max-age=0, must-revalidate' },
       },
     };
   }
@@ -38,7 +40,7 @@ function handler(event) {
       statusDescription: 'Moved Permanently',
       headers: {
         location: { value: BASE + uri + suffix },
-        'cache-control': { value: 'public, max-age=3600' },
+        'cache-control': { value: 'private, max-age=0, must-revalidate' },
       },
     };
   }
@@ -71,6 +73,17 @@ function handler(event) {
   }
 
   function resolveNgoSlug(slug) {
+    // Real App Router city pages (do not redirect these)
+    if (
+      slug === 'best-ngo-in-delhi' ||
+      slug === 'best-ngo-in-gurugram' ||
+      slug === 'best-ngo-in-noida' ||
+      slug === 'best-ngo-in-faridabad' ||
+      slug === 'top-ngo-in-gurugram' ||
+      slug === 'verified-ngo-in-delhi'
+    ) {
+      return slug;
+    }
     var variantPrefixes = [
       'top-ngo-in-',
       'verified-ngo-in-',
@@ -84,14 +97,6 @@ function handler(event) {
     }
     if (slug === 'ngo-in-noida') return 'best-ngo-in-noida';
     if (slug === 'ngo-in-gurugram') return 'best-ngo-in-gurugram';
-    if (
-      slug === 'best-ngo-in-delhi' ||
-      slug === 'best-ngo-in-gurugram' ||
-      slug === 'best-ngo-in-noida' ||
-      slug === 'best-ngo-in-faridabad'
-    ) {
-      return slug;
-    }
     return '';
   }
 
@@ -122,10 +127,9 @@ function handler(event) {
     '/ngos/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
     '/animal-emergency': '/animal-emergency.html',
     '/ngos/top-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
-    '/ngos/verified-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
     '/ngos/trusted-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
     '/ngos/leading-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
-    '/ngos/top-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
+    // top-ngo-in-gurugram + verified-ngo-in-delhi are real App Router pages
     '/ngos/verified-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
     '/ngos/trusted-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
     '/ngos/leading-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
@@ -157,13 +161,17 @@ function handler(event) {
   }
 
   if (path.indexOf('/ngos/') === 0 && path !== '/ngos') {
-    var ngoSlug = path.slice('/ngos/'.length);
-    var resolvedSlug = resolveNgoSlug(ngoSlug);
-    if (resolvedSlug && resolvedSlug !== ngoSlug) {
-      return redirect('/ngos/' + resolvedSlug);
-    }
-    if (!resolvedSlug) {
-      return redirect('/ngos');
+    var ngoRest = path.slice('/ngos/'.length);
+    // Next.js soft nav fetches /ngos/<slug>.txt and /ngos/<slug>/index.txt —
+    // never redirect those or client-side Link clicks stay stuck on /ngos.
+    if (ngoRest.indexOf('.') === -1) {
+      var resolvedSlug = resolveNgoSlug(ngoRest);
+      if (resolvedSlug && resolvedSlug !== ngoRest) {
+        return redirect('/ngos/' + resolvedSlug);
+      }
+      if (!resolvedSlug) {
+        return redirect('/ngos');
+      }
     }
   }
 

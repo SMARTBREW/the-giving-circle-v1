@@ -55,9 +55,9 @@ export function NgosBrowseCities() {
         subtitle={subtitle}
         titleAs="h2"
       />
-      <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+      <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
         {items.map((item) => (
-          <li key={item.city}>
+          <li key={item.href}>
             <NgosCardShell href={item.href}>
               <NgosIcon name="city" />
               <h3

@@ -102,6 +102,16 @@ export const NGOS_CITIES = {
       href: "/ngos/best-ngo-in-faridabad/",
       cta: "Best NGOs →",
     },
+    {
+      city: "Top NGO · Gurugram",
+      href: "/ngos/top-ngo-in-gurugram/",
+      cta: "Top NGOs →",
+    },
+    {
+      city: "Verified NGO · Delhi",
+      href: "/ngos/verified-ngo-in-delhi/",
+      cta: "Verified NGOs →",
+    },
   ],
 } as const;
 
