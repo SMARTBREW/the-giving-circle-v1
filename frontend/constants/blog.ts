@@ -3,7 +3,7 @@ export const BLOG_HERO = {
   title: "The Giving Circle Blog",
   subtitle:
     "Practical, trust-first guides for families, students, and donors: education and 80G, verified NGO partnerships, internships with impact, Cause Champions and Young Champions, and summers that colleges can recognise for the right reasons.",
-  src: "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
+  src: "/images/causes/_shared/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
   alt: "A schoolgirl smiling in class, representing learning and community giving",
   ctaLabel: "Browse Guides",
   ctaHref: "#guides",
@@ -194,7 +194,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "#PehliClass · donate for education India",
-        href: "/causes/pehli-class",
+        href: "/causes/wings-of-hope",
       },
       {
         title: "Become a Cause Champion",
@@ -476,7 +476,7 @@ export const BLOG_ARTICLES = [
     relatedLinks: [
       {
         title: "Donate for Education India →",
-        href: "/causes/pehli-class",
+        href: "/causes/wings-of-hope",
       },
       {
         title: "Verified NGOs Directory →",
@@ -865,11 +865,11 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "#PehliClass · donate for education India →",
-        href: "/causes/pehli-class",
+        href: "/causes/wings-of-hope",
       },
       {
         title: "Brick by Brick · Animal Care Gurgaon shelter →",
-        href: "/causes/brick-by-brick",
+        href: "/causes",
       },
       {
         title: "Verified NGO list (India) →",
@@ -1256,7 +1256,7 @@ export const BLOG_ARTICLES = [
       },
       {
         title: "#PehliClass · donate for education India →",
-        href: "/causes/pehli-class",
+        href: "/causes/wings-of-hope",
       },
       {
         title: "Brick by Brick · Animal Care Gurgaon shelter →",

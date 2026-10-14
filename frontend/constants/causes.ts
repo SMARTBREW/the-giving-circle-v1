@@ -35,22 +35,22 @@ export const CAUSES_CTA = {
 export const CAUSE_CATEGORY_CARDS = [
   {
     label: "Education",
-    src: "/images/causes/IMG-20240404-WA0014.jpg",
+    src: "/images/causes/pehli-class/IMG-20240404-WA0014.jpg",
     alt: "Schoolchildren smiling together in class",
   },
   {
     label: "Animal Welfare",
-    src: "/images/causes/WhatsApp_Image_2025-12-12_at_14.16.18.jpg",
+    src: "/images/causes/pehli-class/WhatsApp_Image_2025-12-12_at_14.16.18.jpg",
     alt: "A volunteer smiling with a rescued dog",
   },
   {
     label: "Women’s Health",
-    src: "/images/causes/womens-health.jpg",
+    src: "/images/causes/wings-of-hope/womens-health.jpg",
     alt: "Schoolgirls smiling in class holding handmade pouches",
   },
   {
     label: "Forest Rights",
-    src: "/images/causes/forest-rights.jpg",
+    src: "/images/causes/guardians-of-the-green/forest-rights.jpg",
     alt: "A young woman carrying woven baskets through a forest",
   },
 ] as const;
@@ -70,7 +70,7 @@ export const LIVE_CAUSES = [
     percent: 74,
     supporters: "3,079 Supporters",
     daysLeft: "22 Days Left",
-    src: "/images/causes/womens-health.jpg",
+    src: "/images/causes/wings-of-hope/womens-health.jpg",
     alt: "Schoolgirls smiling in class holding handmade pouches",
     summary:
       "Every month, thousands of girls miss school when periods begin. Wings of Hope funds menstrual health education and reusable hygiene kits so girls stay in class with dignity.",
@@ -149,8 +149,8 @@ export const LIVE_CAUSES = [
     percent: 57,
     supporters: "2,500+ Beneficiaries",
     daysLeft: "28 Days Left",
-    src: "/images/causes/IMG-20240404-WA0014.jpg",
-    alt: "Schoolchildren smiling in class at the learning centre",
+    src: "/images/causes/pehli-class/pehli-hero.jpg",
+    alt: "Children at Mera Sahara Centre in Noida holding their Ganesha drawings",
     summary:
       "Every parent remembers the first day of school. For thousands of children, that day never comes. #PehliClass is JWP’s path from out-of-school to a real classroom at Mera Sahara, Nithari.",
     cardDescription:
@@ -221,7 +221,7 @@ export const LIVE_CAUSES = [
     percent: 72,
     supporters: "284 Supporters",
     daysLeft: "16 Days Left",
-    src: "/images/causes/gotg-hero.jpg",
+    src: "/images/causes/guardians-of-the-green/gotg-hero.jpg",
     alt: "A young girl planting a native sapling on community forest land in Jharkhand",
     summary:
       "Young Adivasi guardians plant native trees on community forest land in Jharkhand and care for them for three years. Every ₹1,000 plants one tree and helps a child grow into its guardian.",
@@ -285,12 +285,12 @@ export const LIVE_CAUSES = [
     percent: 75,
     supporters: "1,584 Supporters",
     daysLeft: "18 Days Left",
-    src: "/images/causes/pawsitive-protectors.jpg",
-    alt: "A caregiver treating a rescued dog at an Animal Care shelter",
+    src: "/images/causes/pawsitive-protectors/pawsitive-hero.jpg",
+    alt: "A street dog resting outdoors, cared for through Animal Care’s Pawsitive Protectors work",
     summary:
       "Protecting street animals and communities with free rabies vaccinations, deworming, and care through Animal Care’s community helpline network.",
     cardDescription:
-      "Protects street animals and communities with free rabies vaccinations and care.",
+      "Street dogs share our streets, and our safety. We vaccinate them against rabies, deworm them and fit reflective collars, so animals and neighbourhoods stay safer together.",
     trustBadges: ["Verified NGO Partner", "80G Where Eligible", "Zero Rabies Mission"],
     operations: "Active operations · Mumbai & Delhi NCR · 1,500+ animals",
     aboutHeading: "Vaccinate, Treat, Protect",
@@ -328,7 +328,7 @@ export const LIVE_CAUSES = [
           "Yes. Contributions go directly to Animal Care. The Giving Circle verifies partners and helps Cause Champions report impact.",
       },
     ],
-    featured: false,
+    featured: true,
   },
   {
     id: "bowls-of-hope",
@@ -344,7 +344,7 @@ export const LIVE_CAUSES = [
     percent: 79,
     supporters: "205 Supporters",
     daysLeft: "20 Days Left",
-    src: "/images/causes/bowls-of-hope.jpg",
+    src: "/images/causes/bowls-of-hope/bowls-of-hope.jpg",
     alt: "Rescued dogs drinking from metal bowls at a feeding station",
     summary:
       "Daily feeding and care at Animal Care shelters for strays   nutritious meals and veterinary support through collective giving.",
@@ -398,7 +398,7 @@ export const LIVE_CAUSES = [
     percent: 20,
     supporters: "92 Supporters",
     daysLeft: "45 Days Left",
-    src: "/images/causes/brick-by-brick.jpeg",
+    src: "/images/causes/brick-by-brick/brick-by-brick.jpeg",
     alt: "Animal Care Centre construction site in Gurgaon with bricks and project sign",
     summary:
       "₹10 per brick for the boundary wall on a 17,500 sq ft stray rescue and rehab plot in Gurgaon   part of Animal Care’s Zero Rabies mission.",
@@ -452,7 +452,7 @@ export const LIVE_CAUSES = [
     percent: 71,
     supporters: "2,318+ Supporters",
     daysLeft: "15 Days Left",
-    src: "/images/causes/emergency-animal-rescue.png",
+    src: "/images/causes/flood-animal-rescue/emergency-animal-rescue.png",
     alt: "Animal Care rescuers wading through floodwater on an emergency response",
     summary:
       "Emergency rescue and rehabilitation for animals in crisis   communities for communities, with a verified welfare partner.",
@@ -494,6 +494,16 @@ export const LIVE_CAUSES = [
   },
 ] as const;
 
+/**
+ * Causes kept in LIVE_CAUSES (copy, media, pages) but hidden from the public site
+ * until real campaign data is ready. Remove an id here to unmute — no other deletes needed.
+ */
+export const MUTED_CAUSE_IDS = [
+  "bowls-of-hope",
+  "brick-by-brick",
+  "flood-animal-rescue",
+] as const;
+
 export type LiveCause = (typeof LIVE_CAUSES)[number];
 export type CampaignCardData = Pick<
   LiveCause,
@@ -511,6 +521,14 @@ export type CampaignCardData = Pick<
   stats: [LiveCause["impact"][number], LiveCause["impact"][number]];
 };
 
+export function isCauseMuted(id: string): boolean {
+  return (MUTED_CAUSE_IDS as readonly string[]).includes(id);
+}
+
+export function getVisibleCauses(): LiveCause[] {
+  return LIVE_CAUSES.filter((cause) => !isCauseMuted(cause.id));
+}
+
 export function getLiveCause(id: string): LiveCause | undefined {
   if (id === "flood-relief-uttarakhand") {
     return LIVE_CAUSES.find((cause) => cause.id === "community-forest-governance");
@@ -519,11 +537,11 @@ export function getLiveCause(id: string): LiveCause | undefined {
 }
 
 export function getFeaturedCauses(): LiveCause[] {
-  return LIVE_CAUSES.filter((cause) => cause.featured);
+  return getVisibleCauses().filter((cause) => cause.featured);
 }
 
 export function getCauseCategories(): string[] {
-  return [...new Set(LIVE_CAUSES.map((cause) => cause.category))];
+  return [...new Set(getVisibleCauses().map((cause) => cause.category))];
 }
 
 export function toCampaignCard(cause: LiveCause): CampaignCardData {

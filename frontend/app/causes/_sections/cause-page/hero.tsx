@@ -233,7 +233,7 @@ export default function CausePageHero({
                   fill
                   priority
                   sizes="(max-width: 639px) 92vw, (max-width: 1023px) 420px, 32rem"
-                  className="object-cover object-[center_72%]"
+                  className="object-cover"
                 />
                 <span
                   className={`${SEGOE_UI_CLASS} absolute right-2.5 bottom-2.5 rounded-full bg-[rgba(28,36,38,0.72)] px-2.5 py-1 text-[0.6875rem] font-[500] leading-none text-white sm:right-3 sm:bottom-3 sm:px-3 sm:py-1.5 sm:text-[0.75rem]`}

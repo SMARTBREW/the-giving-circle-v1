@@ -45,15 +45,15 @@ export const NGOS_CAUSES = {
   subtitle: "Discover NGOs based on the issues you care about most.",
   items: [
     {
-      title: "Pehli Class · Child Education",
-      body: "JWP bridge programme - underprivileged and out-of-school children into formal school (verified · 80G where applicable).",
-      href: "/causes/pehli-class/",
+      title: "Wings of Hope · Menstrual Health",
+      body: "JWP - menstrual health education and reusable kits so girls stay in school with dignity (verified · 80G where applicable).",
+      href: "/causes/wings-of-hope/",
       icon: "education" as const,
     },
     {
-      title: "Brick by Brick · Animal Shelter Gurgaon",
-      body: "Animal Care - ₹10/brick boundary wall for a 17,500 sq ft stray rescue centre · rabies mission · 80G where applicable.",
-      href: "/causes/brick-by-brick/",
+      title: "Guardians of the Green · Forest Rights",
+      body: "ICFG - community forest governance, native tree planting and Adivasi livelihoods (verified · 80G where applicable).",
+      href: "/causes/community-forest-governance/",
       icon: "shelter" as const,
     },
     {

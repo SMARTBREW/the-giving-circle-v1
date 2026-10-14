@@ -13,6 +13,32 @@ import {
   GUARDIANS_OF_THE_GREEN_VOICES,
 } from "./guardians-of-the-green";
 import {
+  PAWSITIVE_PROTECTORS_ABOUT,
+  PAWSITIVE_PROTECTORS_CTA,
+  PAWSITIVE_PROTECTORS_FAQS,
+  PAWSITIVE_PROTECTORS_HERO,
+  PAWSITIVE_PROTECTORS_HOW,
+  PAWSITIVE_PROTECTORS_IMPACT,
+  PAWSITIVE_PROTECTORS_LEARN,
+  PAWSITIVE_PROTECTORS_SUPPORT,
+  PAWSITIVE_PROTECTORS_THEORY,
+  PAWSITIVE_PROTECTORS_VETTING,
+  PAWSITIVE_PROTECTORS_VOICES,
+} from "./pawsitive-protectors";
+import {
+  PEHLI_CLASS_ABOUT,
+  PEHLI_CLASS_CTA,
+  PEHLI_CLASS_FAQS,
+  PEHLI_CLASS_HERO,
+  PEHLI_CLASS_HOW,
+  PEHLI_CLASS_IMPACT,
+  PEHLI_CLASS_LEARN,
+  PEHLI_CLASS_SUPPORT,
+  PEHLI_CLASS_THEORY,
+  PEHLI_CLASS_VETTING,
+  PEHLI_CLASS_VOICES,
+} from "./pehli-class";
+import {
   WINGS_OF_HOPE_ABOUT,
   WINGS_OF_HOPE_CTA,
   WINGS_OF_HOPE_EXPLORE,
@@ -26,7 +52,12 @@ import {
   WINGS_OF_HOPE_VETTING,
   WINGS_OF_HOPE_VOICES,
 } from "./wings-of-hope";
-import { LIVE_CAUSES, type LiveCause } from "./causes";
+import {
+  LIVE_CAUSES,
+  getVisibleCauses,
+  isCauseMuted,
+  type LiveCause,
+} from "./causes";
 
 export type CausePageHeroContent = {
   category: string;
@@ -113,7 +144,17 @@ export type CausePageVoicesContent = {
   }[];
 };
 
-export type CausePageSupportIcon = "pads" | "care" | "workshops" | "sprout" | "shield";
+export type CausePageSupportIcon =
+  | "pads"
+  | "care"
+  | "workshops"
+  | "sprout"
+  | "shield"
+  | "syringe"
+  | "collar"
+  | "home"
+  | "book"
+  | "file";
 
 export type CausePageSupportContent = {
   eyebrow: string;
@@ -251,7 +292,8 @@ function orgFullName(org: string) {
 }
 
 function exploreFor(causeId: string): CausePageExploreContent["causes"] {
-  return LIVE_CAUSES.filter((item) => item.id !== causeId)
+  return getVisibleCauses()
+    .filter((item) => item.id !== causeId)
     .slice(0, 3)
     .map((item) => ({
       id: item.id,
@@ -259,6 +301,15 @@ function exploreFor(causeId: string): CausePageExploreContent["causes"] {
       meta: `${item.category} · By ${item.org}`,
       photoLabel: `${item.cardTitle} photo`,
     }));
+}
+
+function visibleExplore(
+  explore: CausePageExploreContent,
+): CausePageExploreContent {
+  return {
+    ...explore,
+    causes: explore.causes.filter((item) => !isCauseMuted(item.id)),
+  };
 }
 
 /** Placeholder page content until campaign copy and media are supplied. */
@@ -710,13 +761,13 @@ const WINGS_PAGE: CausePageContent = {
     ...WINGS_OF_HOPE_IMPACT,
     instagram: {
       ...WINGS_OF_HOPE_IMPACT.instagram,
-      logoSrc: "/images/causes/woh-logo-roundel.jpg",
+      logoSrc: "/images/causes/wings-of-hope/woh-logo-roundel.jpg",
     },
   },
   learn: WINGS_OF_HOPE_LEARN,
   faqs: WINGS_OF_HOPE_FAQS,
   cta: WINGS_OF_HOPE_CTA,
-  explore: WINGS_OF_HOPE_EXPLORE,
+  explore: visibleExplore(WINGS_OF_HOPE_EXPLORE),
 };
 
 const GUARDIANS_PAGE: CausePageContent = {
@@ -731,7 +782,7 @@ const GUARDIANS_PAGE: CausePageContent = {
   learn: GUARDIANS_OF_THE_GREEN_LEARN,
   faqs: GUARDIANS_OF_THE_GREEN_FAQS,
   cta: GUARDIANS_OF_THE_GREEN_CTA,
-  explore: GUARDIANS_OF_THE_GREEN_EXPLORE,
+  explore: visibleExplore(GUARDIANS_OF_THE_GREEN_EXPLORE),
 };
 
 const CAUSE_PAGE_OVERRIDES: Partial<Record<string, CausePageContent>> = {
@@ -745,5 +796,52 @@ export function getCausePageContent(causeId: string): CausePageContent | undefin
 
   const cause = LIVE_CAUSES.find((item) => item.id === causeId);
   if (!cause) return undefined;
-  return buildCausePageDraft(cause);
+
+  const draft = buildCausePageDraft(cause);
+
+  // Pawsitive: filled sections on the shared template; remaining sections from draft data.
+  if (causeId === "pawsitive-protectors") {
+    return {
+      ...draft,
+      hero: {
+        ...PAWSITIVE_PROTECTORS_HERO,
+        campaignLogo: { src: PAWSITIVE_PROTECTORS_HERO.campaignLogo.src },
+        media: { ...PAWSITIVE_PROTECTORS_HERO.media },
+      },
+      about: PAWSITIVE_PROTECTORS_ABOUT,
+      theory: PAWSITIVE_PROTECTORS_THEORY,
+      how: PAWSITIVE_PROTECTORS_HOW,
+      voices: PAWSITIVE_PROTECTORS_VOICES,
+      support: PAWSITIVE_PROTECTORS_SUPPORT,
+      vetting: PAWSITIVE_PROTECTORS_VETTING,
+      impact: PAWSITIVE_PROTECTORS_IMPACT,
+      learn: PAWSITIVE_PROTECTORS_LEARN,
+      faqs: PAWSITIVE_PROTECTORS_FAQS,
+      cta: PAWSITIVE_PROTECTORS_CTA,
+    };
+  }
+
+  // Pehli Class: filled sections on the shared template; remaining sections from draft data.
+  if (causeId === "pehli-class") {
+    return {
+      ...draft,
+      hero: {
+        ...PEHLI_CLASS_HERO,
+        campaignLogo: { src: PEHLI_CLASS_HERO.campaignLogo.src },
+        media: { ...PEHLI_CLASS_HERO.media },
+      },
+      about: PEHLI_CLASS_ABOUT,
+      theory: PEHLI_CLASS_THEORY,
+      how: PEHLI_CLASS_HOW,
+      voices: PEHLI_CLASS_VOICES,
+      support: PEHLI_CLASS_SUPPORT,
+      vetting: PEHLI_CLASS_VETTING,
+      impact: PEHLI_CLASS_IMPACT,
+      learn: PEHLI_CLASS_LEARN,
+      faqs: PEHLI_CLASS_FAQS,
+      cta: PEHLI_CLASS_CTA,
+    };
+  }
+
+  return draft;
 }

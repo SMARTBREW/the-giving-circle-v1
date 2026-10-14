@@ -15,7 +15,7 @@ import {
 import { cloudinarySrc } from "@/lib/cloudinary";
 
 const DEFAULT_OG_IMAGE = cloudinarySrc(
-  "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
+  "/images/causes/_shared/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png",
   { width: 1200 },
 );
 

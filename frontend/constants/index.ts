@@ -6,6 +6,9 @@ export {
   CAUSES_CTA,
   CAUSE_CATEGORY_CARDS,
   LIVE_CAUSES,
+  MUTED_CAUSE_IDS,
+  isCauseMuted,
+  getVisibleCauses,
   getLiveCause,
   getFeaturedCauses,
   getCauseCategories,
@@ -120,6 +123,32 @@ export {
   WINGS_OF_HOPE_EXPLORE,
 } from "./wings-of-hope";
 export {
+  PAWSITIVE_PROTECTORS_HERO,
+  PAWSITIVE_PROTECTORS_ABOUT,
+  PAWSITIVE_PROTECTORS_THEORY,
+  PAWSITIVE_PROTECTORS_HOW,
+  PAWSITIVE_PROTECTORS_VOICES,
+  PAWSITIVE_PROTECTORS_SUPPORT,
+  PAWSITIVE_PROTECTORS_VETTING,
+  PAWSITIVE_PROTECTORS_IMPACT,
+  PAWSITIVE_PROTECTORS_LEARN,
+  PAWSITIVE_PROTECTORS_FAQS,
+  PAWSITIVE_PROTECTORS_CTA,
+} from "./pawsitive-protectors";
+export {
+  PEHLI_CLASS_HERO,
+  PEHLI_CLASS_ABOUT,
+  PEHLI_CLASS_THEORY,
+  PEHLI_CLASS_HOW,
+  PEHLI_CLASS_VOICES,
+  PEHLI_CLASS_SUPPORT,
+  PEHLI_CLASS_VETTING,
+  PEHLI_CLASS_IMPACT,
+  PEHLI_CLASS_LEARN,
+  PEHLI_CLASS_FAQS,
+  PEHLI_CLASS_CTA,
+} from "./pehli-class";
+export {
   SITE_FAQS,
   ALL_FAQS,
   FAQ_ITEMS,
@@ -232,7 +261,7 @@ export const SUPPORT_CAUSE_PHOTO_MOBILE =
   "/images/support-cause-mobile.png";
 
 export const EDUCATION_PHOTO =
-  "/images/causes/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png";
+  "/images/causes/_shared/92db69bff355c2fc20daf700e27d23cf0f6b57dd.png";
 
 export const SUPPORT_CAUSE_BAND = {
   src: SUPPORT_CAUSE_PHOTO,

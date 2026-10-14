@@ -171,7 +171,7 @@ function SleepingCat() {
 
 const CAUSE_LINKS = [
   { title: "Medical Cause", href: "/causes/wings-of-hope" },
-  { title: "Education Cause", href: "/causes/pehli-class" },
+  { title: "Forest Cause", href: "/causes/community-forest-governance" },
   { title: "Cancer Funding", href: "/causes" },
   { title: "Social Impact Plan", href: "/become-a-cause-champion" },
 ] as const;

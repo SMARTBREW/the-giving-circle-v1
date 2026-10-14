@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CauseDetailTemplate from "../_sections/cause-page/cause-detail-template";
 import {
-  LIVE_CAUSES,
   getCausePageContent,
   getLiveCause,
+  getVisibleCauses,
+  isCauseMuted,
 } from "@/constants";
 import { absoluteMediaUrl, SITE_LOGO_URL } from "@/lib/cloudinary";
 
 export function generateStaticParams() {
-  return LIVE_CAUSES.map((cause) => ({ slug: cause.id }));
+  // Muted causes stay in LIVE_CAUSES / source; omit from public export until unmuted.
+  return getVisibleCauses().map((cause) => ({ slug: cause.id }));
 }
 
 const ORG_FULL_NAME: Record<string, string> = {
@@ -146,7 +148,7 @@ export default async function CauseDetailPage({
 }) {
   const { slug } = await params;
   const cause = getLiveCause(slug);
-  if (!cause) notFound();
+  if (!cause || isCauseMuted(cause.id)) notFound();
 
   const pageContent = getCausePageContent(cause.id);
   if (!pageContent) notFound();

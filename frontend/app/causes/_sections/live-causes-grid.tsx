@@ -9,14 +9,15 @@ import PageSection from "@/components/page-section";
 import {
   CAUSE_FILTER_ALL,
   CAUSES_LIST_INTRO,
-  LIVE_CAUSES,
   getCauseCategories,
+  getVisibleCauses,
   toCampaignCard,
 } from "@/constants";
 
 export default function LiveCausesGrid() {
   const searchParams = useSearchParams();
   const categories = useMemo(() => getCauseCategories(), []);
+  const causes = useMemo(() => getVisibleCauses(), []);
   const options = useMemo(
     () => [CAUSE_FILTER_ALL, ...categories],
     [categories],
@@ -32,8 +33,8 @@ export default function LiveCausesGrid() {
 
   const visible =
     filter === CAUSE_FILTER_ALL
-      ? LIVE_CAUSES
-      : LIVE_CAUSES.filter((cause) => cause.category === filter);
+      ? causes
+      : causes.filter((cause) => cause.category === filter);
 
   return (
     <PageSection

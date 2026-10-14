@@ -2,11 +2,16 @@
 
 import { useState } from "react";
 import {
+  BookOpen,
+  CircleDot,
   Droplet,
+  FileCheck,
   GraduationCap,
+  Home,
   MessageCircle,
   ShieldCheck,
   Sprout,
+  Syringe,
 } from "lucide-react";
 import PageSection from "@/components/page-section";
 import type {
@@ -28,6 +33,16 @@ function BenefitIcon({ icon }: { icon: CausePageSupportIcon }) {
     return <Sprout className={className} strokeWidth={1.75} aria-hidden />;
   if (icon === "shield")
     return <ShieldCheck className={className} strokeWidth={1.75} aria-hidden />;
+  if (icon === "syringe")
+    return <Syringe className={className} strokeWidth={1.75} aria-hidden />;
+  if (icon === "collar")
+    return <CircleDot className={className} strokeWidth={1.75} aria-hidden />;
+  if (icon === "home")
+    return <Home className={className} strokeWidth={1.75} aria-hidden />;
+  if (icon === "book")
+    return <BookOpen className={className} strokeWidth={1.75} aria-hidden />;
+  if (icon === "file")
+    return <FileCheck className={className} strokeWidth={1.75} aria-hidden />;
   return <GraduationCap className={className} strokeWidth={1.75} aria-hidden />;
 }
 
@@ -178,7 +193,9 @@ export default function CausePageSupport({
                 if (donateDisabled) event.preventDefault();
               }}
             >
-              {donateDisabled ? "Enter an amount to donate" : "Donate"}
+              {donateDisabled
+                ? "Enter an amount to donate"
+                : `Donate ${formatInr(activeAmount)}`}
             </a>
           </div>
 

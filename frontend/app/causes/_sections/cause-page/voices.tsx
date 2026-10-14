@@ -53,7 +53,23 @@ function NavArrow({
   );
 }
 
-function PhotoSlot({ onDark = false }: { onDark?: boolean }) {
+function initialsFromName(name: string) {
+  return name
+    .replace(/^ms\.?\s+/i, "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+}
+
+function PhotoSlot({
+  onDark = false,
+  initials,
+}: {
+  onDark?: boolean;
+  initials?: string;
+}) {
   return (
     <span
       aria-hidden
@@ -63,7 +79,7 @@ function PhotoSlot({ onDark = false }: { onDark?: boolean }) {
           : "border-[#d9e1e2] text-[var(--Subheading,#4a5558)]"
       }`}
     >
-      Photo
+      {initials || "Photo"}
     </span>
   );
 }
@@ -171,7 +187,10 @@ export default function CausePageVoices({
                       />
                     </span>
                   ) : (
-                    <PhotoSlot onDark={isVideo} />
+                    <PhotoSlot
+                      onDark={isVideo}
+                      initials={initialsFromName(item.name)}
+                    />
                   )}
                   <span className="min-w-0">
                     <span

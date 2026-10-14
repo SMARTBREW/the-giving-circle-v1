@@ -29,10 +29,10 @@ export const GUARDIANS_OF_THE_GREEN_HERO = {
     label: "Follow the campaign",
   },
   campaignLogo: {
-    src: "/images/causes/gotg-logo-roundel.png" as string | null,
+    src: "/images/causes/guardians-of-the-green/gotg-logo-roundel.png" as string | null,
   },
   media: {
-    src: "/images/causes/gotg-hero.jpg" as string | null,
+    src: "/images/causes/guardians-of-the-green/gotg-hero.jpg" as string | null,
     alt: "A young girl planting a native sapling on community forest land in Jharkhand",
     caption: "Photo: ICFG, Jharkhand",
   },
@@ -113,19 +113,19 @@ export const GUARDIANS_OF_THE_GREEN_HOW = {
     {
       title: "Bal Akhra Training",
       body: "Three days at ICFG's residential centre in Budmu, every year for three years: forest mapping, nurseries, seed balls, medicinal plants and the Gram Sabha.",
-      src: "/images/causes/gotg-how-bal-akhra.jpg" as string | null,
+      src: "/images/causes/guardians-of-the-green/gotg-how-bal-akhra.jpg" as string | null,
       alt: "Young guardians holding certificates after Bal Akhra training in Jharkhand",
     },
     {
       title: "Native Groves",
       body: "Each guardian plants 20 saplings of the trees that belong here, with tree guards, on their village's community forest land.",
-      src: "/images/causes/gotg-how-native-groves.jpg" as string | null,
+      src: "/images/causes/guardians-of-the-green/gotg-how-native-groves.jpg" as string | null,
       alt: "Community members planting native saplings on forest land",
     },
     {
       title: "Three Years of Care",
       body: "The village Bal Akhra waters, fences and watches the grove, and any sapling that fails is replanted.",
-      src: "/images/causes/gotg-how-three-years.jpg" as string | null,
+      src: "/images/causes/guardians-of-the-green/gotg-how-three-years.jpg" as string | null,
       alt: "Young women tending saplings in a community forest grove",
     },
   ] as const,
@@ -146,7 +146,7 @@ export const GUARDIANS_OF_THE_GREEN_VOICES = {
         "Today, on Environment Day, 5 June, I planted a lemon tree. Jai Johar, Jharkhand!",
       name: "Babli",
       detail: "Bal Akhra Secretary, Baniyadih, Chatra",
-      photoSrc: "/images/causes/gotg-voice-babli.jpg" as string | null,
+      photoSrc: "/images/causes/guardians-of-the-green/gotg-voice-babli.jpg" as string | null,
       photoAlt: "Babli planting a lemon sapling on Environment Day",
       videoHref: null as string | null,
     },
@@ -158,7 +158,7 @@ export const GUARDIANS_OF_THE_GREEN_VOICES = {
         "Now I know every tree in my grove by name. My Jamun is taller than me!",
       name: "Aditya Birsa",
       detail: "Guardian",
-      photoSrc: "/images/causes/gotg-voice-aditya.jpg" as string | null,
+      photoSrc: "/images/causes/guardians-of-the-green/gotg-voice-aditya.jpg" as string | null,
       photoAlt: "Aditya Birsa planting a jamun sapling",
       videoHref: null as string | null,
     },
@@ -170,7 +170,7 @@ export const GUARDIANS_OF_THE_GREEN_VOICES = {
         "My grandmother planted Mahua for me. Now I am planting it for the children after me.",
       name: "Sunita Munda",
       detail: "Jharkhand",
-      photoSrc: "/images/causes/gotg-voice-sunita.jpg" as string | null,
+      photoSrc: "/images/causes/guardians-of-the-green/gotg-voice-sunita.jpg" as string | null,
       photoAlt: "Sunita Munda planting a mahua sapling",
       videoHref: null as string | null,
     },
@@ -299,7 +299,7 @@ export const GUARDIANS_OF_THE_GREEN_IMPACT = {
     quote: "Drink the milk of Mother Earth, don't suck her blood.",
     name: "Samar (Sanjay) Bosu Mullick",
     role: "Founder, Jharkhand Jangal Bachao Andolan and Institute of Community Forest Governance",
-    photoSrc: "/images/causes/gotg-founder.jpg" as string | null,
+    photoSrc: "/images/causes/guardians-of-the-green/gotg-founder.jpg" as string | null,
     photoAlt:
       "Samar (Sanjay) Bosu Mullick, Founder of Institute of Community Forest Governance",
     social: [] as const,
@@ -316,29 +316,29 @@ export const GUARDIANS_OF_THE_GREEN_IMPACT = {
   gallery: {
     featured: {
       label: "World Environment Day · Ranchi",
-      src: "/images/causes/gotg-impact-wed.jpg" as string | null,
+      src: "/images/causes/guardians-of-the-green/gotg-impact-wed.jpg" as string | null,
       alt: "Young people holding saplings at a World Environment Day planting in Ranchi",
       featured: true,
     },
     items: [
       {
         label: "With the sal",
-        src: "/images/causes/gotg-impact-sal.jpg" as string | null,
+        src: "/images/causes/guardians-of-the-green/gotg-impact-sal.jpg" as string | null,
         alt: "Young guardians measuring a sal tree in the forest",
       },
       {
         label: "Gram Sabha meeting",
-        src: "/images/causes/gotg-impact-gram-sabha.jpg" as string | null,
+        src: "/images/causes/guardians-of-the-green/gotg-impact-gram-sabha.jpg" as string | null,
         alt: "Women seated in a Gram Sabha meeting outdoors",
       },
       {
         label: "Celebration",
-        src: "/images/causes/gotg-impact-celebration.jpg" as string | null,
+        src: "/images/causes/guardians-of-the-green/gotg-impact-celebration.jpg" as string | null,
         alt: "Community celebration with traditional drums",
       },
       {
         label: "Women's collective",
-        src: "/images/causes/gotg-impact-women.jpg" as string | null,
+        src: "/images/causes/guardians-of-the-green/gotg-impact-women.jpg" as string | null,
         alt: "Women from a village collective holding harvested forest produce",
       },
     ] as const,
@@ -348,7 +348,7 @@ export const GUARDIANS_OF_THE_GREEN_IMPACT = {
     href: "https://www.instagram.com/guardians.of.green/",
     body: "Follow the groves as they grow, in photos and reels.",
     cta: "Follow on Instagram",
-    logoSrc: "/images/causes/gotg-logo-roundel.png" as string | null,
+    logoSrc: "/images/causes/guardians-of-the-green/gotg-logo-roundel.png" as string | null,
   },
 } as const;
 
