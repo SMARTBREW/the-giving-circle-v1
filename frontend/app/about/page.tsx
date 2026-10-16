@@ -54,10 +54,10 @@ export default function AboutPage() {
         subtitle={ABOUT_TEAM.subtitle}
         ctaLabel={ABOUT_TEAM.ctaLabel}
         href={ABOUT_TEAM.href}
-        className="bg-[#FFFFFF]"
+        className="bg-white"
       />
       <AboutMission />
-      <PartnersSection className="bg-[#FFFFFF]" />
+      <PartnersSection className="bg-white" />
       <FaqsSection
         id="about-faqs"
         eyebrow={eyebrow}

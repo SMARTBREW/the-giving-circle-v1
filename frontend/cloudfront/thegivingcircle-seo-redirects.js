@@ -122,8 +122,6 @@ function handler(event) {
     '/ngo/animalcare-india': '/causes/pawsitive-protectors',
     '/animalcare-ngo-detail': '/causes/pawsitive-protectors',
     // Muted cause detail pages (content kept in repo; unmute via MUTED_CAUSE_IDS)
-    '/causes/bowls-of-hope': '/causes',
-    '/causes/brick-by-brick': '/causes',
     '/causes/flood-animal-rescue': '/causes',
     '/ngo-in-noida': '/ngos/best-ngo-in-noida',
     '/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',

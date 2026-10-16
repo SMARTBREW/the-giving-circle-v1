@@ -4,7 +4,7 @@ import MomentCard from "@/components/moment-card";
 import { MOMENT_CARDS } from "@/constants";
 
 export default function MomentsSection({
-  className = "bg-[#FFFFFF]",
+  className = "bg-white",
 }: {
   className?: string;
 }) {

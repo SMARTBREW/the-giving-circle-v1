@@ -24,7 +24,7 @@ export default function VolunteerPage() {
       <VolunteerHero />
       <VolunteerHowItWorks />
       <VolunteerTrust />
-      <MomentsSection className="bg-[#FFFFFF]" />
+      <MomentsSection className="bg-white" />
       <VolunteerMeet />
       <PartnersSection />
       <FaqsSection

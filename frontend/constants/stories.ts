@@ -70,7 +70,7 @@ export const STORY_ARTICLES = [
   {
     id: "pawsitive-protectors",
     tag: "Animal Welfare",
-    tagClassName: "bg-[var(--Brand-Green-Teal,#02938c)]",
+    tagClassName: "bg-circle",
     org: "Animal Care",
     location: "Mumbai, Maharashtra",
     title: "Pawsitive Protectors: Saving Lives One Animal at a Time",
@@ -100,7 +100,7 @@ export const STORY_ARTICLES = [
   {
     id: "community-forest-governance",
     tag: "Forest Rights",
-    tagClassName: "bg-[var(--Brand-Green-Teal,#02938c)]",
+    tagClassName: "bg-circle",
     org: "ICFG",
     location: "Jharkhand & Central India",
     title: "Community Forest Governance: Protecting Forests, Empowering People",

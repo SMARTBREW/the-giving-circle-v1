@@ -34,7 +34,7 @@ export default function ImpactStoryCard({
     >
       <Link
         href={href}
-        className="group relative block h-full w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2]"
+        className="group relative block h-full w-full overflow-hidden rounded-[1rem] border border-line"
       >
         <CldImage
           src={src}
@@ -58,23 +58,23 @@ export default function ImpactStoryCard({
               className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center rounded-full px-2.5 py-1 ${tagClassName}`}
             >
               <span
-                className={`${SEGOE_UI_CLASS} text-[0.6875rem] leading-none font-[700] tracking-normal whitespace-nowrap text-[#FFFFFF] sm:text-[0.75rem]`}
+                className={`${SEGOE_UI_CLASS} text-[0.6875rem] leading-none font-bold tracking-normal whitespace-nowrap text-white sm:text-[0.75rem]`}
               >
                 {tag}
               </span>
             </span>
             <span
-              className={`${SEGOE_UI_CLASS} w-full text-left text-[0.9375rem] leading-5 font-[700] tracking-normal text-[#FFFFFF] sm:text-[0.875rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.0625rem] lg:leading-6 min-[90rem]:text-[1.25rem] min-[90rem]:leading-7 line-clamp-2 ${
+              className={`${SEGOE_UI_CLASS} w-full text-left text-[0.9375rem] leading-5 font-bold tracking-normal text-white sm:text-[0.875rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.0625rem] lg:leading-6 min-[90rem]:text-[1.25rem] min-[90rem]:leading-7 line-clamp-2 ${
                 featured ? "min-[90rem]:w-[35.625rem]" : "min-[90rem]:w-[32.25rem]"
               }`}
             >
               {title}
             </span>
             <span
-              className={`${SEGOE_UI_CLASS} inline-flex items-center gap-1 border-b border-transparent text-[0.8125rem] leading-none font-[600] tracking-normal whitespace-nowrap text-[#FFFFFF] group-hover:border-[#FFFFFF] sm:text-[0.75rem] md:text-[0.8125rem] min-[90rem]:gap-1.5 min-[90rem]:text-[0.9375rem]`}
+              className={`${SEGOE_UI_CLASS} inline-flex items-center gap-1 border-b border-transparent text-[0.8125rem] leading-none font-semibold tracking-normal whitespace-nowrap text-white group-hover:border-[#FFFFFF] sm:text-[0.75rem] md:text-[0.8125rem] min-[90rem]:gap-1.5 min-[90rem]:text-[0.9375rem]`}
             >
               Read the story
-              <CtaArrow className="h-3 w-3 text-[#FFFFFF] min-[90rem]:h-3.5 min-[90rem]:w-3.5" />
+              <CtaArrow className="h-3 w-3 text-white min-[90rem]:h-3.5 min-[90rem]:w-3.5" />
             </span>
           </span>
         </span>

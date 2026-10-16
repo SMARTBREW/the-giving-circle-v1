@@ -53,7 +53,7 @@ export default function ChampionVideo({ className }: { className: string }) {
   }
 
   return (
-    <div className={`${className} bg-[#EEF2F2]`}>
+    <div className={`${className} bg-soft-grey`}>
       {!started ? (
         <CldImage
           src={CHAMPION_VIDEO_POSTER}
@@ -85,7 +85,7 @@ export default function ChampionVideo({ className }: { className: string }) {
           className="absolute inset-0 z-10 flex items-center justify-center"
           aria-label="Play video"
         >
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FFFFFF] shadow-sm sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20">
             <svg
               className="h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"
               viewBox="0 0 20 20"

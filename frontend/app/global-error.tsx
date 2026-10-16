@@ -31,18 +31,18 @@ export default function GlobalError({
 
   return (
     <html lang="en">
-      <body className="bg-[var(--Off-White,#f7f9f9)] text-[var(--Dark-Charcoal,#1c2426)]">
+      <body className="bg-off-white text-heading">
         <div className="flex min-h-screen flex-col items-center justify-center px-6">
-          <h2 className="mb-4 font-['Georgia'] text-2xl font-bold">
+          <h2 className="mb-4 font-georgia text-2xl font-bold">
             Something went wrong
           </h2>
-          <p className="mb-8 text-center text-[var(--Body-Grey,#4a5558)]">
+          <p className="mb-8 text-center text-subhead">
             We&apos;ve been notified and are working on it.
           </p>
           <button
             type="button"
             onClick={() => reset()}
-            className="rounded-lg bg-[var(--Circle-Green,#02938c)] px-8 py-3 text-white"
+            className="rounded-lg bg-circle px-8 py-3 text-white"
           >
             Try again
           </button>

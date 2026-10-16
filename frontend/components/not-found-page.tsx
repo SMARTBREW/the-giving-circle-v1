@@ -21,11 +21,11 @@ function CauseButton({ title, href, delay }: CauseButtonProps) {
     >
       <Link
         href={href}
-        className={`${SEGOE_UI_CLASS} group relative inline-flex items-center gap-2 px-6 py-3 text-lg font-medium text-[var(--Circle-Green,#02938c)] transition-colors duration-200 hover:text-[var(--Giving-Teal,#0ba5bb)]`}
+        className={`${SEGOE_UI_CLASS} group relative inline-flex items-center gap-2 px-6 py-3 text-lg font-medium text-circle transition-colors duration-200 hover:text-giving-teal`}
       >
         <span className="relative z-10">{title}</span>
         <motion.span
-          className="text-[var(--Giving-Teal,#0ba5bb)]"
+          className="text-giving-teal"
           initial={{ x: 0 }}
           whileHover={{ x: 5 }}
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
@@ -33,7 +33,7 @@ function CauseButton({ title, href, delay }: CauseButtonProps) {
           ›
         </motion.span>
         <motion.div
-          className="absolute inset-0 rounded-lg bg-[var(--Green-Tint,#e8f5f3)] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          className="absolute inset-0 rounded-lg bg-green-tint opacity-0 transition-opacity duration-200 group-hover:opacity-100"
           layoutId="button-bg"
         />
       </Link>
@@ -58,7 +58,7 @@ function SleepingCat() {
           width="48"
           height="36"
           viewBox="0 0 48 36"
-          className="text-[var(--Body-Grey,#4a5558)]"
+          className="text-subhead"
           aria-hidden="true"
         >
           <ellipse cx="24" cy="26" rx="16" ry="8" fill="currentColor" opacity="0.8" />
@@ -142,7 +142,7 @@ function SleepingCat() {
       </motion.div>
 
       <motion.div
-        className="absolute -top-2 -right-2 text-sm font-bold text-[var(--Body-Grey,#4a5558)]"
+        className="absolute -top-2 -right-2 text-sm font-bold text-subhead"
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: [0, 1, 0], y: [5, -5, -10] }}
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
@@ -150,7 +150,7 @@ function SleepingCat() {
         z
       </motion.div>
       <motion.div
-        className="absolute -top-4 right-0 text-xs font-bold text-[var(--Body-Grey,#4a5558)]"
+        className="absolute -top-4 right-0 text-xs font-bold text-subhead"
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: [0, 1, 0], y: [5, -5, -10] }}
         transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
@@ -158,7 +158,7 @@ function SleepingCat() {
         z
       </motion.div>
       <motion.div
-        className="absolute top-[-1.5rem] right-2 text-xs font-bold text-[var(--Body-Grey,#4a5558)]"
+        className="absolute top-[-1.5rem] right-2 text-xs font-bold text-subhead"
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: [0, 1, 0], y: [5, -5, -10] }}
         transition={{ duration: 2, repeat: Infinity, delay: 2 }}
@@ -214,19 +214,19 @@ export default function NotFoundPage() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.p
-            className={`${SEGOE_UI_CLASS} mb-2 text-lg text-[var(--Body-Grey,#4a5558)] md:text-xl`}
+            className={`${SEGOE_UI_CLASS} mb-2 text-lg text-subhead md:text-xl`}
             whileHover={{ scale: 1.02 }}
           >
             This page does not exist.
           </motion.p>
           <motion.h1
-            className="mb-4 font-['Georgia'] text-2xl font-bold text-[var(--Dark-Charcoal,#1c2426)] md:text-3xl"
+            className="mb-4 font-georgia text-2xl font-bold text-heading md:text-3xl"
             whileHover={{ scale: 1.02 }}
           >
             But your heart is in the right place!
           </motion.h1>
           <motion.p
-            className={`${SEGOE_UI_CLASS} mx-auto max-w-md text-sm text-[var(--Body-Grey,#4a5558)] md:text-base`}
+            className={`${SEGOE_UI_CLASS} mx-auto max-w-md text-sm text-subhead md:text-base`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -258,7 +258,7 @@ export default function NotFoundPage() {
           transition={{ duration: 4, repeat: Infinity, delay: 0 }}
         />
         <motion.div
-          className="absolute top-40 right-32 h-1 w-1 rounded-full bg-[var(--Circle-Green,#02938c)] opacity-20"
+          className="absolute top-40 right-32 h-1 w-1 rounded-full bg-circle opacity-20"
           animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0.05, 0.2] }}
           transition={{ duration: 3, repeat: Infinity, delay: 1 }}
         />

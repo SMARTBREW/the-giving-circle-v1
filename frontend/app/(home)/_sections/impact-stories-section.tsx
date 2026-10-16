@@ -7,7 +7,7 @@ import { IMPACT_STORIES } from "@/constants";
 
 export default function ImpactStoriesSection() {
   return (
-    <section id="stories" className="w-full bg-[#FFFFFF]">
+    <section id="stories" className="w-full bg-white">
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[74.25rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           eyebrow="Impact in action"
@@ -35,8 +35,8 @@ export default function ImpactStoriesSection() {
             href="/stories"
             variant="outline"
             hoverFill
-            className="h-12 w-full max-w-[18.75rem] rounded-full bg-[#FFFFFF] px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[18.75rem] min-[90rem]:px-10 min-[90rem]:py-5"
-            labelClassName="font-[600]"
+            className="h-12 w-full max-w-[18.75rem] rounded-full bg-white px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[18.75rem] min-[90rem]:px-10 min-[90rem]:py-5"
+            labelClassName="font-semibold"
           >
             View All Impact Stories
             <CtaArrow />

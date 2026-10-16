@@ -7,12 +7,12 @@ import type { CausePageVoicesContent } from "@/constants/cause-page";
 import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
 
 const ROLE_TONE = {
-  student: "bg-[rgba(230,43,79,0.12)] text-[var(--Giving-Red,#e62b4f)]",
-  studentVideo: "bg-[#FFFFFF] text-[var(--Giving-Red,#e62b4f)]",
-  parent: "bg-[rgba(11,97,154,0.12)] text-[var(--Giving-Blue,#0b619a)]",
-  teacher: "bg-[rgba(2,147,140,0.12)] text-[var(--Circle-Green,#02938c)]",
-  counsellor: "bg-[rgba(2,147,140,0.12)] text-[var(--Circle-Green,#02938c)]",
-  facilitator: "bg-[rgba(2,147,140,0.12)] text-[var(--Circle-Green,#02938c)]",
+  student: "bg-[rgba(230,43,79,0.12)] text-giving-red",
+  studentVideo: "bg-white text-giving-red",
+  parent: "bg-[rgba(11,97,154,0.12)] text-giving-blue",
+  teacher: "bg-[rgba(2,147,140,0.12)] text-circle",
+  counsellor: "bg-[rgba(2,147,140,0.12)] text-circle",
+  facilitator: "bg-[rgba(2,147,140,0.12)] text-circle",
 } as const;
 
 function NavArrow({
@@ -29,13 +29,13 @@ function NavArrow({
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#d9e1e2] bg-[#FFFFFF] transition-colors hover:border-[var(--Subheading,#4a5558)] sm:h-11 sm:w-11"
+      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line bg-white transition-colors hover:border-subhead sm:h-11 sm:w-11"
     >
       <svg
         aria-hidden
         viewBox="0 0 14 24"
         fill="none"
-        className="h-4 w-2.5 text-[var(--Main-headings,#1c2426)]"
+        className="h-4 w-2.5 text-heading"
       >
         <path
           d={
@@ -73,10 +73,10 @@ function PhotoSlot({
   return (
     <span
       aria-hidden
-      className={`${SEGOE_UI_CLASS} flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-dashed bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] text-[0.6875rem] font-[600] sm:h-14 sm:w-14 sm:text-[0.75rem] ${
+      className={`${SEGOE_UI_CLASS} flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-dashed bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] text-[0.6875rem] font-semibold sm:h-14 sm:w-14 sm:text-[0.75rem] ${
         onDark
           ? "border-white/50 text-white/80"
-          : "border-[#d9e1e2] text-[var(--Subheading,#4a5558)]"
+          : "border-line text-subhead"
       }`}
     >
       {initials || "Photo"}
@@ -144,20 +144,20 @@ export default function CausePageVoices({
             <li
               key={`${item.role}-${item.name}-${item.detail}`}
               data-voice-card
-              className={`flex h-[20rem] w-[min(100%,19rem)] shrink-0 snap-start flex-col rounded-[0.875rem] border border-[#d9e1e2] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:w-[min(100%,21rem)] sm:rounded-[1rem] sm:p-6 lg:w-[calc((100%-2.5rem)/3)] ${
-                isVideo ? "bg-[#0A1E33]" : "bg-[#FFFFFF]"
+              className={`flex h-[20rem] w-[min(100%,19rem)] shrink-0 snap-start flex-col rounded-[0.875rem] border border-line p-5 shadow-card sm:w-[min(100%,21rem)] sm:rounded-[1rem] sm:p-6 lg:w-[calc((100%-2.5rem)/3)] ${
+                isVideo ? "bg-[#0A1E33]" : "bg-white"
               }`}
             >
               <span
-                className={`${SEGOE_UI_CLASS} inline-flex w-fit rounded-md px-2.5 py-1 text-[0.6875rem] font-[700] leading-none tracking-[0.06em] uppercase sm:text-[0.75rem] ${ROLE_TONE[item.roleTone]}`}
+                className={`${SEGOE_UI_CLASS} inline-flex w-fit rounded-md px-2.5 py-1 text-[0.6875rem] font-bold leading-none tracking-[0.06em] uppercase sm:text-[0.75rem] ${ROLE_TONE[item.roleTone]}`}
               >
                 {item.role}
               </span>
 
               <div className="mt-5 flex flex-1 flex-col justify-center sm:mt-6">
                 <p
-                  className={`text-left font-['Georgia'] text-[1.125rem] leading-7 font-[400] tracking-normal italic sm:text-[1.25rem] sm:leading-8 lg:text-[1.3125rem] lg:leading-8 ${
-                    isVideo ? "text-[#FFFFFF]" : "text-[var(--Main-headings,#1c2426)]"
+                  className={`text-left font-georgia text-[1.125rem] leading-7 font-normal tracking-normal italic sm:text-[1.25rem] sm:leading-8 lg:text-[1.3125rem] lg:leading-8 ${
+                    isVideo ? "text-white" : "text-heading"
                   }`}
                 >
                   “{item.quote}”
@@ -166,7 +166,7 @@ export default function CausePageVoices({
                 {isVideo && item.videoHref ? (
                   <a
                     href={item.videoHref}
-                    className={`${SEGOE_UI_CLASS} mt-5 inline-flex items-center gap-2 self-start text-[0.9375rem] font-[600] leading-5 text-[#FFFFFF] transition-opacity hover:opacity-90 sm:mt-6 sm:text-[1rem]`}
+                    className={`${SEGOE_UI_CLASS} mt-5 inline-flex items-center gap-2 self-start text-[0.9375rem] font-semibold leading-5 text-white transition-opacity hover:opacity-90 sm:mt-6 sm:text-[1rem]`}
                   >
                     <PlayIcon className="h-7 w-7 shrink-0 text-[#7ec8e3]" />
                     {videoCtaLabel}
@@ -174,7 +174,7 @@ export default function CausePageVoices({
                 ) : null}
               </div>
 
-              <div className="mt-5 border-t border-[#d9e1e2] pt-4 sm:mt-6 sm:pt-5">
+              <div className="mt-5 border-t border-line pt-4 sm:mt-6 sm:pt-5">
                 <div className="flex items-center gap-3 sm:gap-3.5">
                   {item.photoSrc ? (
                     <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14">
@@ -194,17 +194,17 @@ export default function CausePageVoices({
                   )}
                   <span className="min-w-0">
                     <span
-                      className={`${SEGOE_UI_CLASS} block text-[0.9375rem] font-[700] leading-5 tracking-normal sm:text-[1rem] sm:leading-6 ${
+                      className={`${SEGOE_UI_CLASS} block text-[0.9375rem] font-bold leading-5 tracking-normal sm:text-[1rem] sm:leading-6 ${
                         isVideo
-                          ? "text-[#FFFFFF]"
-                          : "text-[var(--Main-headings,#1c2426)]"
+                          ? "text-white"
+                          : "text-heading"
                       }`}
                     >
                       {item.name}
                     </span>
                     <span
-                      className={`${SEGOE_UI_CLASS} mt-0.5 block text-[0.8125rem] font-[400] leading-5 tracking-normal sm:text-[0.875rem] ${
-                        isVideo ? "text-white/80" : "text-[var(--Subheading,#4a5558)]"
+                      className={`${SEGOE_UI_CLASS} mt-0.5 block text-[0.8125rem] font-normal leading-5 tracking-normal sm:text-[0.875rem] ${
+                        isVideo ? "text-white/80" : "text-subhead"
                       }`}
                     >
                       {item.detail}
@@ -219,7 +219,7 @@ export default function CausePageVoices({
 
       <div className="mt-4 flex items-center justify-between gap-3 sm:mt-5 lg:mt-6">
         <p
-          className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[400] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
+          className={`${SEGOE_UI_CLASS} text-[0.75rem] font-normal leading-5 tracking-normal text-subhead sm:text-[0.8125rem]`}
         >
           {footer}
         </p>

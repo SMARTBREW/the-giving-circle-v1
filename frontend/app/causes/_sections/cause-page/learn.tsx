@@ -11,14 +11,14 @@ function PlayIcon() {
   return (
     <span
       aria-hidden
-      className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FFFFFF] shadow-sm sm:h-14 sm:w-14"
+      className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm sm:h-14 sm:w-14"
     >
       <svg
         viewBox="0 0 12 14"
         fill="none"
         className="ml-0.5 h-4 w-3.5 sm:h-[1.125rem] sm:w-4"
       >
-        <path d="M0 0V14L12 7L0 0Z" fill="var(--Circle-Green,#02938c)" />
+        <path d="M0 0V14L12 7L0 0Z" fill="var(--color-circle)" />
       </svg>
     </span>
   );
@@ -89,7 +89,7 @@ function VideoCard({
 
         {!started && !poster ? (
           <span
-            className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-3 text-center text-[0.75rem] font-[600] leading-5 text-white/70`}
+            className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-3 text-center text-[0.75rem] font-semibold leading-5 text-white/70`}
           >
             Video
           </span>
@@ -124,12 +124,12 @@ function VideoCard({
       </div>
 
       <h3
-        className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-3.5 sm:text-[1rem] sm:leading-6`}
+        className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] font-bold leading-5 tracking-normal text-heading sm:mt-3.5 sm:text-[1rem] sm:leading-6`}
       >
         {title}
       </h3>
       <p
-        className={`${SEGOE_UI_CLASS} mt-1 text-[0.8125rem] font-[400] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.875rem] sm:leading-5`}
+        className={`${SEGOE_UI_CLASS} mt-1 text-[0.8125rem] font-normal leading-5 tracking-normal text-subhead sm:text-[0.875rem] sm:leading-5`}
       >
         {body}
       </p>

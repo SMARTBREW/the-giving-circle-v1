@@ -19,7 +19,7 @@ export default function FaqsPage() {
       title={title}
       subtitle={subtitle}
       items={ALL_FAQS}
-      className="bg-[#FFFFFF]"
+      className="bg-white"
       jsonLd
     />
   );

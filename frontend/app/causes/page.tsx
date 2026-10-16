@@ -16,7 +16,7 @@ export default function CausesPage() {
     <>
       <Suspense
         fallback={
-          <section className="w-full bg-gray-100 px-4 py-16 text-center text-[var(--Subheading,#4a5558)]">
+          <section className="w-full bg-gray-100 px-4 py-16 text-center text-subhead">
             Loading causes…
           </section>
         }

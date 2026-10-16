@@ -2,6 +2,31 @@
 
 @theme {
   --font-segoe: "Segoe UI", var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-georgia: Georgia, ui-serif, serif;
+
+  --color-heading: #1c2426;
+  --color-subhead: #4a5558;
+  --color-circle: #02938c;
+  --color-giving-red: #e62b4f;
+  --color-giving-blue: #0b619a;
+  --color-giving-teal: #0ba5bb;
+  --color-line: #d9e1e2;
+  --color-off-white: #f7f9f9;
+  --color-soft-grey: #eef2f2;
+  --color-green-tint: #e8f5f3;
+  --color-coral-tint: #fef0f1;
+  --color-alternate: #f5f5f5;
+
+  /* House & Sky-style aliases — same hex, shorter names */
+  --color-brand-green: #02938c;
+  --color-brand-charcoal: #1c2426;
+  --color-brand-muted: #4a5558;
+  --color-brand-red: #e62b4f;
+  --color-brand-blue: #0b619a;
+  --color-brand-soft: #e8f5f3;
+
+  --shadow-card: 0px 4px 20px 0px #0000000f;
+  --radius-card: 1rem;
 }
 
 :root {
@@ -65,6 +90,57 @@ body {
   color: var(--foreground);
 }
 
+/* Named recipes so pages compose instead of copying 12 utilities. */
+@layer components {
+  .tgc-page {
+    @apply mx-auto w-full max-w-[90rem] px-4 sm:px-8 md:px-10 lg:px-12 min-[90rem]:px-[6.25rem];
+  }
+
+  .tgc-section-pad {
+    @apply mx-auto w-full max-w-[90rem] px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem];
+  }
+
+  .tgc-section-pad-tight {
+    @apply mx-auto w-full max-w-[90rem] px-4 pt-2 pb-6 sm:px-8 sm:pt-4 sm:pb-12 md:px-10 md:pt-5 md:pb-14 lg:px-12 lg:pt-6 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-8 min-[90rem]:pb-[5rem];
+  }
+
+  .tgc-card {
+    @apply rounded-[1rem] border border-line bg-white shadow-card;
+  }
+
+  .tgc-eyebrow {
+    @apply font-segoe text-[0.75rem] font-bold uppercase tracking-[0.08em] text-circle;
+  }
+
+  .tgc-label {
+    @apply font-segoe text-[1rem] font-normal leading-none text-subhead md:text-[1.0625rem] lg:text-[1.125rem] min-[90rem]:text-[1.25rem];
+  }
+
+  .input-base {
+    @apply font-segoe h-12 w-full rounded border border-line bg-soft-grey px-4 text-[1rem] text-subhead outline-none placeholder:text-[#4A5558] focus:border-line focus:outline-none focus:ring-0 md:h-12 lg:h-14 min-[90rem]:h-16;
+  }
+
+  .input-on-white {
+    @apply font-segoe h-12 w-full rounded-xl border border-line bg-white px-4 text-[1rem] text-subhead outline-none placeholder:text-[#4A5558] focus:border-circle focus:outline-none focus:ring-0 sm:h-14;
+  }
+
+  .tgc-btn {
+    @apply inline-flex items-center justify-center rounded-[6.25rem] text-[0.9375rem] sm:text-[1rem] min-[90rem]:text-[1.125rem];
+  }
+
+  .tgc-btn-primary {
+    @apply inline-flex items-center justify-center rounded-[6.25rem] border border-transparent bg-circle text-[0.9375rem] text-white sm:text-[1rem] min-[90rem]:text-[1.125rem];
+  }
+
+  .tgc-btn-outline {
+    @apply inline-flex items-center justify-center rounded-[6.25rem] border border-solid border-circle bg-white text-[0.9375rem] text-circle sm:text-[1rem] min-[90rem]:text-[1.125rem];
+  }
+
+  .tgc-grid {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3;
+  }
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -75,6 +151,9 @@ body {
 }
 
 /* Champion apply - shared fields */
+.input-base,
+.input-base:focus,
+.input-base:focus-visible,
 .champion-apply-field,
 .champion-apply-field:focus,
 .champion-apply-field:focus-visible {
@@ -85,10 +164,27 @@ body {
   color-scheme: light;
 }
 
+select.input-base,
 select.champion-apply-field {
   background-color: #eef2f2;
 }
 
+.input-on-white,
+.input-on-white:focus,
+.input-on-white:focus-visible {
+  border-color: #d9e1e2;
+  outline: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  color-scheme: light;
+}
+
+.input-on-white:focus,
+.input-on-white:focus-visible {
+  border-color: var(--Main-CTA-button, #02938c);
+}
+
+.input-on-white.apply-field-mobile,
 .champion-apply-field.apply-field-mobile,
 .champion-apply-field.apply-field-mobile:focus,
 .champion-apply-field.apply-field-mobile:focus-visible {
@@ -106,6 +202,10 @@ select.champion-apply-field.apply-field-mobile {
   background-color: #ffffff;
 }
 
+.input-on-white:-webkit-autofill,
+.input-on-white:-webkit-autofill:hover,
+.input-on-white:-webkit-autofill:focus,
+.input-on-white:-webkit-autofill:active,
 .champion-apply-field.apply-field-mobile:-webkit-autofill,
 .champion-apply-field.apply-field-mobile:-webkit-autofill:hover,
 .champion-apply-field.apply-field-mobile:-webkit-autofill:focus,
@@ -114,6 +214,10 @@ select.champion-apply-field.apply-field-mobile {
   box-shadow: 0 0 0 1000px #ffffff inset;
 }
 
+.input-base:-webkit-autofill,
+.input-base:-webkit-autofill:hover,
+.input-base:-webkit-autofill:focus,
+.input-base:-webkit-autofill:active,
 .champion-apply-field:-webkit-autofill,
 .champion-apply-field:-webkit-autofill:hover,
 .champion-apply-field:-webkit-autofill:focus,

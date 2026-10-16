@@ -26,7 +26,7 @@ export default function ReachBand({
         isDark
           ? "w-full bg-[#1C2426]"
           : tone === "white"
-            ? "w-full bg-[#FFFFFF]"
+            ? "w-full bg-white"
             : "w-full bg-gray-100"
       }
     >

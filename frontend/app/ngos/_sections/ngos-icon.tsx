@@ -50,7 +50,7 @@ const ICONS: Record<NgosIconName, LucideIcon> = {
 export default function NgosIcon({ name }: { name: NgosIconName }) {
   const Icon = ICONS[name];
   return (
-    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--Green-Tint,#e8f5f3)] text-[var(--Circle-Green,#02938c)] sm:h-16 sm:w-16">
+    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-tint text-circle sm:h-16 sm:w-16">
       <Icon className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.75} aria-hidden />
     </span>
   );

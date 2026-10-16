@@ -35,7 +35,7 @@ function VerifiedSeal({ className = "" }: { className?: string }) {
       <svg viewBox="0 0 22 21" fill="none" className="h-full w-full">
         <path
           d="M22 10.49L19.56 7.7L19.9 4.01L16.29 3.19L14.4 0L11 1.46L7.6 0L5.71 3.19L2.1 4L2.44 7.7L0 10.49L2.44 13.28L2.1 16.98L5.71 17.8L7.6 21L11 19.53L14.4 20.99L16.29 17.8L19.9 16.98L19.56 13.29L22 10.49Z"
-          fill="var(--Circle-Green,#02938c)"
+          fill="var(--color-circle)"
         />
       </svg>
       <svg
@@ -64,16 +64,16 @@ function MediaSlot({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[1.25rem] border border-[#d9e1e2] bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_8px,#e8f4f8_8px,#e8f4f8_16px)] sm:rounded-[1.5rem] lg:rounded-[2rem] ${className}`}
+      className={`relative overflow-hidden rounded-[1.25rem] border border-line bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_8px,#e8f4f8_8px,#e8f4f8_16px)] sm:rounded-[1.5rem] lg:rounded-[2rem] ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-4 text-center text-[0.8125rem] font-[600] leading-5 text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+        className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-4 text-center text-[0.8125rem] font-semibold leading-5 text-subhead sm:text-[0.875rem]`}
       >
         {label}
       </span>
       {caption ? (
         <span
-          className={`${SEGOE_UI_CLASS} absolute right-2.5 bottom-2.5 rounded-full bg-[rgba(28,36,38,0.72)] px-2.5 py-1 text-[0.6875rem] font-[500] leading-none text-white sm:right-3 sm:bottom-3 sm:px-3 sm:py-1.5 sm:text-[0.75rem]`}
+          className={`${SEGOE_UI_CLASS} absolute right-2.5 bottom-2.5 rounded-full bg-[rgba(28,36,38,0.72)] px-2.5 py-1 text-[0.6875rem] font-medium leading-none text-white sm:right-3 sm:bottom-3 sm:px-3 sm:py-1.5 sm:text-[0.75rem]`}
         >
           {caption}
         </span>
@@ -82,7 +82,29 @@ function MediaSlot({
   );
 }
 
-function CampaignLogo({ src }: { src: string | null }) {
+function CampaignLogo({
+  src,
+  wide = false,
+}: {
+  src: string | null;
+  wide?: boolean;
+}) {
+  if (wide) {
+    return (
+      <span className="relative h-12 w-[8.25rem] shrink-0 overflow-hidden rounded-[0.75rem] bg-white sm:h-12 sm:w-[8.25rem]">
+        {src ? (
+          <CldImage
+            src={src}
+            alt=""
+            fill
+            sizes="132px"
+            className="object-contain"
+          />
+        ) : null}
+      </span>
+    );
+  }
+
   return (
     <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] sm:h-12 sm:w-12 lg:h-14 lg:w-14">
       {src ? (
@@ -123,49 +145,49 @@ export default function CausePageHero({
         <div className="mx-auto flex h-full w-full max-w-[90rem] flex-1 flex-col gap-6 px-4 pt-4 pb-5 sm:gap-7 sm:px-8 sm:pt-5 sm:pb-6 md:gap-8 md:px-10 md:pt-6 md:pb-8 min-[56.25rem]:flex-row min-[56.25rem]:items-start min-[56.25rem]:justify-center min-[56.25rem]:gap-6 min-[56.25rem]:px-10 min-[56.25rem]:pt-5 min-[56.25rem]:pb-8 lg:gap-8 lg:px-12 lg:pt-3 lg:pb-6 min-[90rem]:gap-14 min-[90rem]:px-[6.25rem] min-[90rem]:pt-2 min-[90rem]:pb-6">
           <FadeInSection className="flex min-h-0 w-full min-w-0 flex-col min-[56.25rem]:w-[min(100%,22rem)] min-[56.25rem]:shrink min-[56.25rem]:flex-none lg:w-[min(100%,32rem)] min-[90rem]:w-[36rem]">
             <p
-              className={`${SEGOE_UI_CLASS} text-[0.6875rem] font-[700] leading-4 tracking-[0.08em] uppercase text-[var(--Giving-Red,#e62b4f)] sm:text-[0.75rem] sm:leading-5 md:text-[0.8125rem]`}
+              className={`${SEGOE_UI_CLASS} text-[0.6875rem] font-bold leading-4 tracking-[0.08em] uppercase text-giving-red sm:text-[0.75rem] sm:leading-5 md:text-[0.8125rem]`}
             >
               {category}
             </p>
 
-            <h1 className="mt-2 w-full font-['Georgia'] text-[2.25rem] font-[700] leading-[2.625rem] tracking-[0.01em] text-[var(--Main-headings,#1c2426)] sm:mt-2.5 sm:text-[2.625rem] sm:leading-[3rem] md:text-[2.875rem] md:leading-[3.25rem] min-[56.25rem]:text-[2.25rem] min-[56.25rem]:leading-[2.625rem] lg:mt-2.5 lg:text-[clamp(2.25rem,4dvh,3.125rem)] lg:leading-[clamp(2.625rem,4.6dvh,3.5rem)] min-[90rem]:text-[3.375rem] min-[90rem]:leading-[3.75rem]">
+            <h1 className="mt-2 w-full font-georgia text-[2.25rem] font-bold leading-[2.625rem] tracking-[0.01em] text-heading sm:mt-2.5 sm:text-[2.625rem] sm:leading-[3rem] md:text-[2.875rem] md:leading-[3.25rem] min-[56.25rem]:text-[2.25rem] min-[56.25rem]:leading-[2.625rem] lg:mt-2.5 lg:text-[clamp(2.25rem,4dvh,3.125rem)] lg:leading-[clamp(2.625rem,4.6dvh,3.5rem)] min-[90rem]:text-[3.375rem] min-[90rem]:leading-[3.75rem]">
               {title}
             </h1>
 
             <p
-              className={`${SEGOE_UI_CLASS} mt-2 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-2.5 sm:text-[1rem] min-[56.25rem]:text-[0.9375rem] lg:mt-2.5 lg:text-[1rem]`}
+              className={`${SEGOE_UI_CLASS} mt-2 text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:mt-2.5 sm:text-[1rem] min-[56.25rem]:text-[0.9375rem] lg:mt-2.5 lg:text-[1rem]`}
             >
               {orgLine}{" "}
-              <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+              <span className="font-bold text-heading">
                 {orgName}
               </span>
             </p>
 
-            <p className="mt-2.5 font-['Georgia'] text-[1.25rem] font-[400] leading-7 tracking-normal italic text-[var(--Circle-Green,#02938c)] sm:mt-3 sm:text-[1.375rem] sm:leading-8 md:text-[1.5rem] md:leading-9 min-[56.25rem]:text-[1.1875rem] min-[56.25rem]:leading-7 lg:mt-3 lg:text-[clamp(1.25rem,2.4dvh,1.75rem)] lg:leading-[clamp(1.75rem,3dvh,2.25rem)]">
+            <p className="mt-2.5 font-georgia text-[1.25rem] font-normal leading-7 tracking-normal italic text-circle sm:mt-3 sm:text-[1.375rem] sm:leading-8 md:text-[1.5rem] md:leading-9 min-[56.25rem]:text-[1.1875rem] min-[56.25rem]:leading-7 lg:mt-3 lg:text-[clamp(1.25rem,2.4dvh,1.75rem)] lg:leading-[clamp(1.75rem,3dvh,2.25rem)]">
               {tagline}
             </p>
 
             <p
-              className={`${SEGOE_UI_CLASS} mt-2.5 w-full max-w-[36rem] text-[1rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-3 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] min-[56.25rem]:max-w-none min-[56.25rem]:text-[0.9375rem] min-[56.25rem]:leading-6 lg:mt-3 lg:text-[clamp(1rem,1.8dvh,1.125rem)] lg:leading-7`}
+              className={`${SEGOE_UI_CLASS} mt-2.5 w-full max-w-[36rem] text-[1rem] font-normal leading-6 tracking-normal text-subhead sm:mt-3 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] min-[56.25rem]:max-w-none min-[56.25rem]:text-[0.9375rem] min-[56.25rem]:leading-6 lg:mt-3 lg:text-[clamp(1rem,1.8dvh,1.125rem)] lg:leading-7`}
             >
               {pitch}
             </p>
 
             <Link
               href={vetting.href}
-              className="mt-4 flex w-full items-start gap-2.5 rounded-[0.875rem] border border-[#d9e1e2] bg-[#FFFFFF] p-3 shadow-[0px_4px_20px_0px_#0000000F] transition-[border-color,box-shadow] hover:border-[var(--Circle-Green,#02938c)] sm:mt-5 sm:items-center sm:gap-3 sm:rounded-[1rem] sm:p-3.5 min-[56.25rem]:mt-4 min-[56.25rem]:p-3 lg:mt-5"
+              className="mt-4 flex w-full items-start gap-2.5 rounded-[0.875rem] border border-line bg-white p-3 shadow-card transition-[border-color,box-shadow] hover:border-circle sm:mt-5 sm:items-center sm:gap-3 sm:rounded-[1rem] sm:p-3.5 min-[56.25rem]:mt-4 min-[56.25rem]:p-3 lg:mt-5"
             >
               <VerifiedSeal />
               <span
                 className={`${SEGOE_UI_CLASS} min-w-0 text-[0.8125rem] leading-5 tracking-normal sm:text-[0.875rem] min-[56.25rem]:text-[0.8125rem] lg:text-[0.875rem]`}
               >
-                <span className="font-[700] text-[var(--Circle-Green,#02938c)]">
+                <span className="font-bold text-circle">
                   {vetting.title}
                 </span>{" "}
-                <span className="font-[400] text-[var(--Subheading,#4a5558)]">
+                <span className="font-normal text-subhead">
                   {vetting.body}{" "}
                 </span>
-                <span className="font-[600] text-[var(--Circle-Green,#02938c)]">
+                <span className="font-semibold text-circle">
                   {vetting.ctaLabel} →
                 </span>
               </span>
@@ -175,7 +197,7 @@ export default function CausePageHero({
               {chips.map((chip) => (
                 <li
                   key={chip}
-                  className={`${SEGOE_UI_CLASS} rounded-full border border-[#d9e1e2] bg-[#FFFFFF] px-3 py-1.5 text-[0.75rem] font-[600] leading-none text-[var(--Main-headings,#1c2426)] sm:text-[0.8125rem]`}
+                  className={`${SEGOE_UI_CLASS} rounded-full border border-line bg-white px-3 py-1.5 text-[0.75rem] font-semibold leading-none text-heading sm:text-[0.8125rem]`}
                 >
                   {chip}
                 </li>
@@ -187,14 +209,14 @@ export default function CausePageHero({
                 href={primaryCta.href}
                 smoothScroll
                 className="h-11 min-w-0 flex-1 rounded-full px-2 !text-[0.625rem] sm:h-12 sm:px-2.5 sm:!text-[0.6875rem] lg:px-4 lg:!text-[0.8125rem] min-[90rem]:px-5 min-[90rem]:!text-[0.875rem]"
-                labelClassName="whitespace-nowrap font-[700]"
+                labelClassName="whitespace-nowrap font-bold"
               >
                 {primaryCta.label}
               </CtaButton>
               <CtaButton
                 href={secondaryCta.href}
-                className="h-11 min-w-0 flex-1 !rounded-full !border-transparent !bg-[var(--Giving-Red,#e62b4f)] px-2 !text-[0.625rem] !text-[#FFFFFF] sm:h-12 sm:px-2.5 sm:!text-[0.6875rem] lg:px-4 lg:!text-[0.8125rem] min-[90rem]:px-5 min-[90rem]:!text-[0.875rem]"
-                labelClassName="gap-1.5 whitespace-nowrap font-[700]"
+                className="h-11 min-w-0 flex-1 !rounded-full !border-transparent !bg-giving-red px-2 !text-[0.625rem] !text-white sm:h-12 sm:px-2.5 sm:!text-[0.6875rem] lg:px-4 lg:!text-[0.8125rem] min-[90rem]:px-5 min-[90rem]:!text-[0.875rem]"
+                labelClassName="gap-1.5 whitespace-nowrap font-bold"
               >
                 <Star className="h-3 w-3 shrink-0 fill-current sm:h-3.5 sm:w-3.5" aria-hidden />
                 {secondaryCta.label}
@@ -207,16 +229,16 @@ export default function CausePageHero({
               rel="noopener noreferrer"
               className="mt-4 inline-flex min-h-11 items-center gap-3 self-start sm:mt-5 min-[56.25rem]:mt-4.5 lg:mt-5"
             >
-              <CampaignLogo src={campaignLogo.src} />
+              <CampaignLogo src={campaignLogo.src} wide={campaignLogo.wide} />
               <span className="min-w-0">
                 <span
-                  className={`${SEGOE_UI_CLASS} flex items-center gap-1.5 text-[0.8125rem] font-[400] leading-5 text-[var(--Subheading,#4a5558)]`}
+                  className={`${SEGOE_UI_CLASS} flex items-center gap-1.5 text-[0.8125rem] font-normal leading-5 text-subhead`}
                 >
-                  <InstagramGlyph className="h-3.5 w-3.5 shrink-0 text-[var(--Main-headings,#1c2426)]" />
+                  <InstagramGlyph className="h-3.5 w-3.5 shrink-0 text-heading" />
                   {instagram.label}
                 </span>
                 <span
-                  className={`${SEGOE_UI_CLASS} mt-0.5 block break-all text-[0.9375rem] font-[700] leading-5 text-[var(--Main-headings,#1c2426)] sm:break-normal`}
+                  className={`${SEGOE_UI_CLASS} mt-0.5 block break-all text-[0.9375rem] font-bold leading-5 text-heading sm:break-normal`}
                 >
                   {instagram.handle}
                 </span>
@@ -236,7 +258,7 @@ export default function CausePageHero({
                   className="object-cover"
                 />
                 <span
-                  className={`${SEGOE_UI_CLASS} absolute right-2.5 bottom-2.5 rounded-full bg-[rgba(28,36,38,0.72)] px-2.5 py-1 text-[0.6875rem] font-[500] leading-none text-white sm:right-3 sm:bottom-3 sm:px-3 sm:py-1.5 sm:text-[0.75rem]`}
+                  className={`${SEGOE_UI_CLASS} absolute right-2.5 bottom-2.5 rounded-full bg-[rgba(28,36,38,0.72)] px-2.5 py-1 text-[0.6875rem] font-medium leading-none text-white sm:right-3 sm:bottom-3 sm:px-3 sm:py-1.5 sm:text-[0.75rem]`}
                 >
                   {media.caption}
                 </span>
@@ -252,12 +274,12 @@ export default function CausePageHero({
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#d9e1e2] bg-[#FFFFFF] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-white px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
         <CtaButton
           href={stickyDonate.href}
           smoothScroll
           className="h-12 w-full !rounded-lg sm:h-14"
-          labelClassName="font-[700]"
+          labelClassName="font-bold"
         >
           {stickyDonate.label}
         </CtaButton>

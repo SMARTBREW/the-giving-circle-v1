@@ -29,8 +29,8 @@ export default function CausesSection() {
             href="/causes"
             variant="outline"
             hoverFill
-            className="h-12 gap-2 bg-[#FFFFFF] px-8 py-3 sm:h-14 min-[90rem]:h-[4rem] min-[90rem]:px-10 min-[90rem]:py-5"
-            labelClassName="font-[600]"
+            className="h-12 gap-2 bg-white px-8 py-3 sm:h-14 min-[90rem]:h-[4rem] min-[90rem]:px-10 min-[90rem]:py-5"
+            labelClassName="font-semibold"
           >
             View All Causes
             <CtaArrow />

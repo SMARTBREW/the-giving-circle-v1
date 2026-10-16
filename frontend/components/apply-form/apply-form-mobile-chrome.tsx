@@ -64,16 +64,16 @@ export function ApplyHorizontalStepper({
                   aria-hidden
                   className={`absolute top-1/2 left-[calc(50%+1.125rem)] right-[calc(-50%+1.125rem)] h-0.5 -translate-y-1/2 ${
                     isComplete || isActive
-                      ? "bg-[var(--Main-CTA-button,#02938c)]"
+                      ? "bg-circle"
                       : "bg-[#d9e1e2]"
                   }`}
                 />
               ) : null}
               <span
-                className={`relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[0.8125rem] leading-none font-[700] ${SEGOE_UI_CLASS} ${
+                className={`relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[0.8125rem] leading-none font-bold ${SEGOE_UI_CLASS} ${
                   isComplete || isActive
-                    ? "bg-[var(--Main-CTA-button,#02938c)] text-[#FFFFFF]"
-                    : "border border-[#d9e1e2] bg-[#FFFFFF] text-[#4A5558]"
+                    ? "bg-circle text-white"
+                    : "border border-line bg-white text-[#4A5558]"
                 }`}
               >
                 {isComplete ? (
@@ -84,9 +84,9 @@ export function ApplyHorizontalStepper({
               </span>
             </div>
             <p
-              className={`${SEGOE_UI_CLASS} mt-2 whitespace-nowrap text-center text-[0.625rem] leading-none font-[600] sm:text-[0.6875rem] ${
+              className={`${SEGOE_UI_CLASS} mt-2 whitespace-nowrap text-center text-[0.625rem] leading-none font-semibold sm:text-[0.6875rem] ${
                 labelActive
-                  ? "text-[var(--Main-CTA-button,#02938c)]"
+                  ? "text-circle"
                   : "text-[#4A5558]"
               }`}
             >
@@ -115,18 +115,18 @@ export default function ApplyFormMobileChrome({
   footer: React.ReactNode;
 }) {
   return (
-    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-[#FFFFFF]">
+    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-white">
       <header className="shrink-0 px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3 sm:px-5">
         <div className="relative flex h-11 items-center justify-center">
           <Link
             href={backHref}
             aria-label="Go back"
-            className="absolute top-1/2 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg hover:bg-[#eef2f2]"
+            className="absolute top-1/2 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg hover:bg-soft-grey"
           >
             <BackChevron />
           </Link>
           <h1
-            className={`${SEGOE_UI_CLASS} max-w-[14rem] truncate text-center text-[1rem] leading-6 font-[700] text-[#4a5558] sm:max-w-[18rem] sm:text-[1.0625rem]`}
+            className={`${SEGOE_UI_CLASS} max-w-[14rem] truncate text-center text-[1rem] leading-6 font-bold text-subhead sm:max-w-[18rem] sm:text-[1.0625rem]`}
           >
             {title}
           </h1>
@@ -140,7 +140,7 @@ export default function ApplyFormMobileChrome({
         {children}
       </div>
 
-      <footer className="shrink-0 border-t border-[#D9E1E2] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-5 sm:pt-4">
+      <footer className="shrink-0 border-t border-line px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-5 sm:pt-4">
         {footer}
       </footer>
     </div>

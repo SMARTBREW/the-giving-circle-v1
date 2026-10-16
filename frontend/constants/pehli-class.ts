@@ -215,7 +215,7 @@ export const PEHLI_CLASS_VETTING = {
   eyebrow: "Verified NGO",
   title: "Vetted by The Giving Circle",
   body: "We only list NGOs our own team has checked, and not every organisation that applies makes it. Here is what we checked for Joint Women's Programme before this campaign went live.",
-  lastReviewed: "[month year]",
+  lastReviewed: "",
   checks: [
     {
       title: "Registration and tax documents checked, genuine and current",
@@ -223,7 +223,7 @@ export const PEHLI_CLASS_VETTING = {
     },
     {
       title: "Office visited by our team",
-      body: "D-45, Press Enclave, Saket, New Delhi · [date]",
+      body: "D-45, Press Enclave, Saket, New Delhi",
     },
     {
       title: "Leadership interviewed",
@@ -231,7 +231,7 @@ export const PEHLI_CLASS_VETTING = {
     },
     {
       title: "Field work seen",
-      body: "[place, date] · we see the work on the ground wherever we can",
+      body: "We see the work on the ground wherever we can",
     },
     {
       title: "Written commitment to share updates",

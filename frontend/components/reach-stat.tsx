@@ -33,14 +33,14 @@ export default function ReachStat({
       ) : null}
       <span
         aria-label={value}
-        className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center gap-1 text-[1.75rem] leading-none font-[700] tracking-[-0.025em] text-[#02938c] sm:gap-1.5 sm:text-[2.25rem] min-[56.25rem]:text-[1.75rem] lg:text-[2.25rem] min-[90rem]:text-[2.75rem] min-[90rem]:leading-[3.75rem] min-[90rem]:whitespace-nowrap`}
+        className={`${SEGOE_UI_CLASS} inline-flex items-center justify-center gap-1 text-[1.75rem] leading-none font-bold tracking-[-0.025em] text-[#02938c] sm:gap-1.5 sm:text-[2.25rem] min-[56.25rem]:text-[1.75rem] lg:text-[2.25rem] min-[90rem]:text-[2.75rem] min-[90rem]:leading-[3.75rem] min-[90rem]:whitespace-nowrap`}
       >
         <span aria-hidden>{mainValue}</span>
         {hasPlus ? <span aria-hidden>+</span> : null}
       </span>
       <span
-        className={`${SEGOE_UI_CLASS} mt-2 text-center text-[0.8125rem] leading-5 font-[400] tracking-normal capitalize sm:mt-3 sm:text-[1rem] sm:leading-6 min-[56.25rem]:mt-2 min-[56.25rem]:text-[0.8125rem] min-[56.25rem]:leading-5 lg:mt-3 lg:text-[1.125rem] lg:leading-7 min-[90rem]:mt-4 min-[90rem]:h-8 min-[90rem]:text-[1.25rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap ${
-          onDark ? "text-[#FFFFFF]" : "text-[#121212]"
+        className={`${SEGOE_UI_CLASS} mt-2 text-center text-[0.8125rem] leading-5 font-normal tracking-normal capitalize sm:mt-3 sm:text-[1rem] sm:leading-6 min-[56.25rem]:mt-2 min-[56.25rem]:text-[0.8125rem] min-[56.25rem]:leading-5 lg:mt-3 lg:text-[1.125rem] lg:leading-7 min-[90rem]:mt-4 min-[90rem]:h-8 min-[90rem]:text-[1.25rem] min-[90rem]:leading-8 min-[90rem]:whitespace-nowrap ${
+          onDark ? "text-white" : "text-[#121212]"
         }`}
       >
         {label}

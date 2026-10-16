@@ -29,6 +29,8 @@ function SocialGlyph({ label, className = "" }: { label: string; className?: str
   );
 }
 
+const GALLERY_LABEL_CLASS = `${SEGOE_UI_CLASS} absolute bottom-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded-full border border-line bg-white px-2.5 py-1 text-[0.6875rem] font-semibold leading-none text-heading sm:bottom-3 sm:left-3 sm:px-3 sm:py-1.5 sm:text-[0.75rem]`;
+
 function MediaSlot({
   label,
   className = "",
@@ -41,15 +43,11 @@ function MediaSlot({
       className={`relative overflow-hidden rounded-[0.875rem] bg-[repeating-linear-gradient(-45deg,#e8f4f8,#e8f4f8_8px,#eef2f2_8px,#eef2f2_16px)] sm:rounded-[1rem] ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-3 text-center text-[0.75rem] font-[600] leading-5 text-[var(--Subheading,#4a5558)]`}
+        className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-3 text-center text-[0.75rem] font-semibold leading-5 text-subhead`}
       >
         Photo
       </span>
-      <span
-        className={`${SEGOE_UI_CLASS} absolute bottom-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded-full bg-[var(--Circle-Green,#02938c)] px-2.5 py-1 text-[0.6875rem] font-[600] leading-none text-[#FFFFFF] sm:bottom-3 sm:left-3 sm:px-3 sm:text-[0.75rem]`}
-      >
-        {label}
-      </span>
+      <span className={GALLERY_LABEL_CLASS}>{label}</span>
     </div>
   );
 }
@@ -83,16 +81,44 @@ function GalleryCell({
           }
           className="object-cover object-center"
         />
-        <span
-          className={`${SEGOE_UI_CLASS} absolute bottom-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded-full bg-[var(--Circle-Green,#02938c)] px-2.5 py-1 text-[0.6875rem] font-[600] leading-none text-[#FFFFFF] sm:bottom-3 sm:left-3 sm:px-3 sm:text-[0.75rem]`}
-        >
-          {label}
-        </span>
+        <span className={GALLERY_LABEL_CLASS}>{label}</span>
       </div>
     );
   }
 
   return <MediaSlot label={label} className={className} />;
+}
+
+function InstagramLogo({
+  src,
+  wide = false,
+}: {
+  src: string | null;
+  wide?: boolean;
+}) {
+  if (wide) {
+    return (
+      <span className="relative h-12 w-[8.25rem] shrink-0 overflow-hidden rounded-[0.75rem] bg-white">
+        {src ? (
+          <CldImage
+            src={src}
+            alt=""
+            fill
+            sizes="132px"
+            className="object-contain"
+          />
+        ) : null}
+      </span>
+    );
+  }
+
+  return (
+    <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] sm:h-12 sm:w-12">
+      {src ? (
+        <CldImage src={src} alt="" fill sizes="48px" className="object-cover" />
+      ) : null}
+    </span>
+  );
 }
 
 export default function CausePageImpact({
@@ -101,6 +127,7 @@ export default function CausePageImpact({
   content: CausePageImpactContent;
 }) {
   const { founder, eyebrow, title, body, stats, gallery, instagram } = content;
+  const masonry = gallery.items.length > 4;
 
   return (
     <PageSection
@@ -111,8 +138,8 @@ export default function CausePageImpact({
         <div
           className={`relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden rounded-full sm:h-[6.5rem] sm:w-[6.5rem] lg:h-[7.5rem] lg:w-[7.5rem] ${
             founder.photoSrc
-              ? "border border-[#d9e1e2]"
-              : "border border-dashed border-[var(--Circle-Green,#02938c)] bg-[repeating-linear-gradient(-45deg,#e8f4f8,#e8f4f8_6px,#eef2f2_6px,#eef2f2_12px)]"
+              ? "border border-line"
+              : "border border-dashed border-circle bg-[repeating-linear-gradient(-45deg,#e8f4f8,#e8f4f8_6px,#eef2f2_6px,#eef2f2_12px)]"
           }`}
         >
           {founder.photoSrc ? (
@@ -127,10 +154,10 @@ export default function CausePageImpact({
             <span
               className={`${SEGOE_UI_CLASS} absolute inset-0 flex flex-col items-center justify-center px-2 text-center`}
             >
-              <span className="text-[1.25rem] font-[700] leading-none text-[var(--Circle-Green,#02938c)] sm:text-[1.5rem]">
+              <span className="text-[1.25rem] font-bold leading-none text-circle sm:text-[1.5rem]">
                 {founder.initials}
               </span>
-              <span className="mt-1 text-[0.5625rem] font-[600] leading-3 text-[var(--Subheading,#4a5558)] sm:text-[0.625rem]">
+              <span className="mt-1 text-[0.5625rem] font-semibold leading-3 text-subhead sm:text-[0.625rem]">
                 {founder.portraitLabel}
               </span>
             </span>
@@ -141,17 +168,17 @@ export default function CausePageImpact({
           <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>
             {founder.eyebrow}
           </p>
-          <p className="mt-2.5 font-['Georgia'] text-[1.0625rem] leading-7 font-[400] tracking-normal italic text-[var(--Main-headings,#1c2426)] sm:mt-3 sm:text-[1.1875rem] sm:leading-8 lg:text-[1.25rem] lg:leading-8">
+          <p className="mt-2.5 font-georgia text-[1.0625rem] leading-7 font-normal tracking-normal italic text-heading sm:mt-3 sm:text-[1.1875rem] sm:leading-8 lg:text-[1.25rem] lg:leading-8">
             “{founder.quote}”
           </p>
           <footer className="mt-3 sm:mt-4">
             <p
-              className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[700] leading-5 text-[var(--Main-headings,#1c2426)] sm:text-[1rem]`}
+              className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-bold leading-5 text-heading sm:text-[1rem]`}
             >
               {founder.name}
             </p>
             <p
-              className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.8125rem] font-[400] leading-5 text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+              className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.8125rem] font-normal leading-5 text-subhead sm:text-[0.875rem]`}
             >
               {founder.role}
             </p>
@@ -163,7 +190,7 @@ export default function CausePageImpact({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${founder.name} on ${item.label}`}
-                    className={`${SEGOE_UI_CLASS} inline-flex h-9 items-center gap-2 rounded-full border border-[#d9e1e2] bg-[#FFFFFF] px-3 text-[0.8125rem] font-[600] leading-none text-[var(--Main-headings,#1c2426)] transition-colors hover:border-[var(--Subheading,#4a5558)] sm:h-10 sm:px-3.5 sm:text-[0.875rem]`}
+                    className={`${SEGOE_UI_CLASS} inline-flex h-9 items-center gap-2 rounded-full border border-line bg-white px-3 text-[0.8125rem] font-semibold leading-none text-heading transition-colors hover:border-subhead sm:h-10 sm:px-3.5 sm:text-[0.875rem]`}
                   >
                     <SocialGlyph
                       label={item.label}
@@ -186,23 +213,23 @@ export default function CausePageImpact({
           <h2 className={CAUSE_SECTION.title}>{title}</h2>
           <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.body}`}>{body}</p>
 
-          <ul className="mt-6 grid w-full grid-cols-2 overflow-hidden rounded-[0.875rem] border border-[#d9e1e2] bg-[#FFFFFF] sm:mt-8 sm:rounded-[1rem] lg:grid-cols-4">
+          <ul className="mt-6 grid w-full grid-cols-2 overflow-hidden rounded-[0.875rem] border border-line bg-white sm:mt-8 sm:rounded-[1rem] lg:grid-cols-4">
             {stats.map((stat, index) => (
               <li
                 key={stat.label}
                 className={`flex flex-col px-4 py-5 sm:px-5 sm:py-6 lg:px-6 ${
-                  index % 2 === 1 ? "border-l border-[#d9e1e2]" : ""
-                } ${index < 2 ? "border-b border-[#d9e1e2] lg:border-b-0" : ""} ${
-                  index > 0 ? "lg:border-l lg:border-[#d9e1e2]" : ""
+                  index % 2 === 1 ? "border-l border-line" : ""
+                } ${index < 2 ? "border-b border-line lg:border-b-0" : ""} ${
+                  index > 0 ? "lg:border-l lg:border-line" : ""
                 }`}
               >
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[1.5rem] font-[700] leading-none tracking-normal text-[var(--Circle-Green,#02938c)] sm:text-[1.75rem] lg:text-[2rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[1.5rem] font-bold leading-none tracking-normal text-circle sm:text-[1.75rem] lg:text-[2rem]`}
                 >
                   {stat.value}
                 </p>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-4 text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-normal leading-4 text-subhead sm:text-[0.875rem]`}
                 >
                   {stat.label}
                 </p>
@@ -211,49 +238,66 @@ export default function CausePageImpact({
           </ul>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-4">
-          <GalleryCell
-            label={gallery.featured.label}
-            src={gallery.featured.src}
-            alt={gallery.featured.alt}
-            featured
-            className="aspect-[4/5] w-full lg:aspect-auto lg:h-full lg:min-h-[26rem]"
-          />
-          <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-4">
+        {masonry ? (
+          <ul className="grid w-full grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)] lg:auto-rows-[11.875rem] lg:gap-4">
+            <li className="min-w-0 col-span-2 lg:col-span-1 lg:row-span-2">
+              <GalleryCell
+                label={gallery.featured.label}
+                src={gallery.featured.src}
+                alt={gallery.featured.alt}
+                featured
+                className="aspect-[16/10] h-full w-full sm:aspect-[2/1] lg:aspect-auto"
+              />
+            </li>
             {gallery.items.map((item) => (
               <li key={item.label} className="min-w-0">
                 <GalleryCell
                   label={item.label}
                   src={item.src}
                   alt={item.alt}
-                  className="aspect-[4/3] w-full lg:aspect-auto lg:h-full lg:min-h-[12.5rem]"
+                  className="aspect-[4/3] h-full w-full lg:aspect-auto"
                 />
               </li>
             ))}
           </ul>
-        </div>
+        ) : (
+          <div className="grid w-full grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-4">
+            <GalleryCell
+              label={gallery.featured.label}
+              src={gallery.featured.src}
+              alt={gallery.featured.alt}
+              featured
+              className="aspect-[4/5] w-full lg:aspect-auto lg:h-full lg:min-h-[26rem]"
+            />
+            <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-4">
+              {gallery.items.map((item) => (
+                <li key={item.label} className="min-w-0">
+                  <GalleryCell
+                    label={item.label}
+                    src={item.src}
+                    alt={item.alt}
+                    className="aspect-[4/3] w-full lg:aspect-auto lg:h-full lg:min-h-[12.5rem]"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-        <div className="flex w-full flex-col gap-4 rounded-[0.875rem] border border-[#d9e1e2] bg-[#F7F9F9] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:rounded-[1rem] sm:px-5 sm:py-5 lg:px-6">
+        <div className="flex w-full flex-col gap-4 rounded-[0.875rem] border border-line bg-off-white px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:rounded-[1rem] sm:px-5 sm:py-5 lg:px-6">
           <div className="flex min-w-0 items-center gap-3 sm:gap-3.5">
-            <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-[repeating-linear-gradient(-45deg,#eef2f2,#eef2f2_4px,#e8f4f8_4px,#e8f4f8_8px)] sm:h-12 sm:w-12">
-              {instagram.logoSrc ? (
-                <CldImage
-                  src={instagram.logoSrc}
-                  alt=""
-                  fill
-                  sizes="48px"
-                  className="object-cover"
-                />
-              ) : null}
-            </span>
+            <InstagramLogo
+              src={instagram.logoSrc}
+              wide={instagram.logoWide}
+            />
             <span className="min-w-0">
               <span
-                className={`${SEGOE_UI_CLASS} block text-[0.9375rem] font-[700] leading-5 text-[var(--Main-headings,#1c2426)] sm:text-[1rem]`}
+                className={`${SEGOE_UI_CLASS} block text-[0.9375rem] font-bold leading-5 text-heading sm:text-[1rem]`}
               >
                 {instagram.handle}
               </span>
               <span
-                className={`${SEGOE_UI_CLASS} mt-0.5 block text-[0.8125rem] font-[400] leading-5 text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+                className={`${SEGOE_UI_CLASS} mt-0.5 block text-[0.8125rem] font-normal leading-5 text-subhead sm:text-[0.875rem]`}
               >
                 {instagram.body}
               </span>
@@ -264,7 +308,7 @@ export default function CausePageImpact({
             href={instagram.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${SEGOE_UI_CLASS} inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-[var(--Circle-Green,#02938c)] px-5 text-[0.875rem] font-[700] leading-none text-[#FFFFFF] transition-opacity hover:opacity-90 sm:h-12 sm:px-6 sm:text-[0.9375rem]`}
+            className={`${SEGOE_UI_CLASS} inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-circle px-5 text-[0.875rem] font-bold leading-none text-white transition-opacity hover:opacity-90 sm:h-12 sm:px-6 sm:text-[0.9375rem]`}
           >
             {instagram.cta}
           </a>

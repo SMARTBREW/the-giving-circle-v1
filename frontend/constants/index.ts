@@ -149,6 +149,32 @@ export {
   PEHLI_CLASS_CTA,
 } from "./pehli-class";
 export {
+  BOWLS_OF_HOPE_HERO,
+  BOWLS_OF_HOPE_ABOUT,
+  BOWLS_OF_HOPE_THEORY,
+  BOWLS_OF_HOPE_HOW,
+  BOWLS_OF_HOPE_VOICES,
+  BOWLS_OF_HOPE_SUPPORT,
+  BOWLS_OF_HOPE_VETTING,
+  BOWLS_OF_HOPE_IMPACT,
+  BOWLS_OF_HOPE_LEARN,
+  BOWLS_OF_HOPE_FAQS,
+  BOWLS_OF_HOPE_CTA,
+} from "./bowls-of-hope";
+export {
+  BRICK_BY_BRICK_HERO,
+  BRICK_BY_BRICK_ABOUT,
+  BRICK_BY_BRICK_THEORY,
+  BRICK_BY_BRICK_HOW,
+  BRICK_BY_BRICK_VOICES,
+  BRICK_BY_BRICK_SUPPORT,
+  BRICK_BY_BRICK_VETTING,
+  BRICK_BY_BRICK_IMPACT,
+  BRICK_BY_BRICK_LEARN,
+  BRICK_BY_BRICK_FAQS,
+  BRICK_BY_BRICK_CTA,
+} from "./brick-by-brick";
+export {
   SITE_FAQS,
   ALL_FAQS,
   FAQ_ITEMS,
@@ -162,6 +188,12 @@ export {
 } from "./faqs";
 export type { FaqEntry, FaqLink, SiteFaqId } from "./faqs";
 export {
+  ORGANIZATION_SCHEMA,
+  WEBSITE_SCHEMA,
+  CHAMPION_WEBPAGE_SCHEMA,
+  CHAMPION_BREADCRUMB_SCHEMA,
+} from "./schema";
+export {
   VOLUNTEER_PAGE_HERO,
   VOLUNTEER_HOW_IT_WORKS,
   VOLUNTEER_TRUST,
@@ -171,7 +203,7 @@ export {
 export type { CampaignCardData as ChampionCampaignCard } from "./causes";
 export const SEGOE_UI_CLASS = "font-segoe";
 
-export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-[500] text-[0.8125rem] text-[var(--Dark-Charcoal,#1c2426)] min-[90rem]:text-[1.125rem]`;
+export const NAV_ITEM_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap font-medium text-[0.8125rem] text-heading min-[90rem]:text-[1.125rem]`;
 
 export const SITE = {
   name: "The Giving Circle",
@@ -203,16 +235,16 @@ export const FOOTER_GET_INVOLVED_LINKS = [
   { href: "/ngos", label: "NGO Directory" },
 ] as const;
 
-export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-[400] text-[1rem] leading-[1.3125rem] text-[var(--Dark-Charcoal,#1c2426)]`;
+export const GET_INVOLVED_ITEM_CLASS = `${SEGOE_UI_CLASS} block font-normal text-[1rem] leading-[1.3125rem] text-heading`;
 
 export const FOOTER_BLURB =
   "A trusted social impact platform that connects people directly with verified NGOs and meaningful causes across India.";
 
-export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} text-[1.125rem] leading-7 font-[500] tracking-normal uppercase text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem] sm:leading-[1.75rem]`;
+export const FOOTER_HEADING_CLASS = `${SEGOE_UI_CLASS} text-[1.125rem] leading-7 font-medium tracking-normal uppercase text-heading sm:text-[1.25rem] sm:leading-[1.75rem]`;
 
-export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} break-words text-[1rem] leading-7 font-[400] tracking-normal text-[#4a5558]`;
+export const FOOTER_LINK_CLASS = `${SEGOE_UI_CLASS} break-words text-[1rem] leading-7 font-normal tracking-normal text-subhead`;
 
-export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#4a5558] sm:text-[1rem] sm:leading-7`;
+export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] leading-6 font-normal tracking-normal text-subhead sm:text-[1rem] sm:leading-7`;
 
 export const FOOTER_QUICK_LINKS = [
   { href: "/about", label: "About Us" },

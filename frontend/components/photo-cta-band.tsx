@@ -111,7 +111,7 @@ export default function PhotoCtaBand({
           }`}
         >
           <h2
-            className={`w-full font-['Georgia'] font-[700] tracking-[0.5px] text-[#FFFFFF] text-[1.75rem] leading-[1.15] max-w-[20.5rem] sm:max-w-[28rem] sm:text-[2.125rem] md:max-w-[34rem] md:text-[2.25rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[1.875rem] lg:max-w-[min(38rem,48%)] lg:text-[2.25rem] min-[90rem]:max-w-none min-[90rem]:text-[3rem] min-[90rem]:leading-[1.15] ${
+            className={`w-full font-georgia font-bold tracking-[0.5px] text-white text-[1.75rem] leading-[1.15] max-w-[20.5rem] sm:max-w-[28rem] sm:text-[2.125rem] md:max-w-[34rem] md:text-[2.25rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[1.875rem] lg:max-w-[min(38rem,48%)] lg:text-[2.25rem] min-[90rem]:max-w-none min-[90rem]:text-[3rem] min-[90rem]:leading-[1.15] ${
               isLeft
                 ? "min-[56.25rem]:text-left min-[90rem]:w-[33rem]"
                 : "text-center min-[90rem]:w-auto min-[90rem]:max-w-[36rem]"
@@ -120,7 +120,7 @@ export default function PhotoCtaBand({
             {title}
           </h2>
           <p
-            className={`${SEGOE_UI_CLASS} w-full whitespace-pre-line font-[400] tracking-[0.0025em] text-[#FFFFFF] text-[0.9375rem] leading-[1.5] max-w-[22rem] sm:max-w-[34rem] sm:text-[1.0625rem] md:max-w-[36rem] md:text-[1.0625rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[0.9375rem] lg:max-w-[min(40rem,50%)] lg:text-[1.0625rem] min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[1.5] ${
+            className={`${SEGOE_UI_CLASS} w-full whitespace-pre-line font-normal tracking-[0.0025em] text-white text-[0.9375rem] leading-[1.5] max-w-[22rem] sm:max-w-[34rem] sm:text-[1.0625rem] md:max-w-[36rem] md:text-[1.0625rem] min-[56.25rem]:max-w-[min(36rem,52%)] min-[56.25rem]:text-[0.9375rem] lg:max-w-[min(40rem,50%)] lg:text-[1.0625rem] min-[90rem]:max-w-none min-[90rem]:text-[1.125rem] min-[90rem]:leading-[1.5] ${
               isLeft
                 ? "min-[56.25rem]:text-left min-[90rem]:w-[40rem]"
                 : "text-center min-[90rem]:w-[40rem]"
@@ -132,7 +132,7 @@ export default function PhotoCtaBand({
             <CtaButton
               href={href}
               className="h-11 rounded-full px-7 py-3 text-[0.875rem] sm:h-12 sm:px-8 min-[56.25rem]:h-11 min-[56.25rem]:px-6 min-[56.25rem]:text-[0.875rem] lg:h-12 lg:px-8 lg:text-[length:inherit] min-[90rem]:h-[4rem] min-[90rem]:gap-2 min-[90rem]:px-9 min-[90rem]:py-[1.125rem] min-[90rem]:text-[length:inherit]"
-              labelClassName="font-[700]"
+              labelClassName="font-bold"
             >
               {ctaLabel}
             </CtaButton>

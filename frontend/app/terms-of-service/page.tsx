@@ -29,7 +29,7 @@ function TermsBlocks({ blocks }: { blocks: TermsBlock[] }) {
           return (
             <p
               key={index}
-              className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
+              className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
             >
               {privacyLinked
                 ? block.text.split(/(Privacy Policy)/).map((part, i) =>
@@ -37,7 +37,7 @@ function TermsBlocks({ blocks }: { blocks: TermsBlock[] }) {
                       <Link
                         key={i}
                         href="/privacy-policy"
-                        className="font-[500] text-[var(--Main-CTA-button,#02938c)] underline-offset-2 hover:underline"
+                        className="font-medium text-circle underline-offset-2 hover:underline"
                       >
                         Privacy Policy
                       </Link>
@@ -54,7 +54,7 @@ function TermsBlocks({ blocks }: { blocks: TermsBlock[] }) {
           return (
             <h3
               key={index}
-              className={`${SEGOE_UI_CLASS} mt-2 text-[1.0625rem] font-[600] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] sm:leading-8`}
+              className={`${SEGOE_UI_CLASS} mt-2 text-[1.0625rem] font-semibold leading-7 tracking-normal text-heading sm:text-[1.125rem] sm:leading-8`}
             >
               {block.text}
             </h3>
@@ -64,7 +64,7 @@ function TermsBlocks({ blocks }: { blocks: TermsBlock[] }) {
         return (
           <ul
             key={index}
-            className={`${SEGOE_UI_CLASS} list-disc space-y-2 pl-5 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:pl-6 sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
+            className={`${SEGOE_UI_CLASS} list-disc space-y-2 pl-5 text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:pl-6 sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
           >
             {block.items.map((item) => (
               <li key={item}>{item}</li>
@@ -88,15 +88,15 @@ export default function TermsOfServicePage() {
     >
       <div className="mx-auto w-full max-w-[48rem]">
         <p
-          className={`${SEGOE_UI_CLASS} text-[0.75rem] leading-[1.5rem] font-[700] tracking-[0.08em] uppercase text-[var(--Eyebrow-label,#02938c)] sm:text-[0.875rem] lg:text-[0.9375rem] min-[90rem]:text-[1rem]`}
+          className={`${SEGOE_UI_CLASS} text-[0.75rem] leading-[1.5rem] font-bold tracking-[0.08em] uppercase text-circle sm:text-[0.875rem] lg:text-[0.9375rem] min-[90rem]:text-[1rem]`}
         >
           {eyebrow}
         </p>
-        <h1 className="mt-4 font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-[700] tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[2rem] sm:leading-[2.75rem] md:text-[2.25rem] md:leading-[2.875rem] lg:text-[2.375rem] lg:leading-[3rem]">
+        <h1 className="mt-4 font-georgia text-[1.75rem] leading-[2.25rem] font-bold tracking-normal text-heading sm:text-[2rem] sm:leading-[2.75rem] md:text-[2.25rem] md:leading-[2.875rem] lg:text-[2.375rem] lg:leading-[3rem]">
           {title}
         </h1>
         <p
-          className={`${SEGOE_UI_CLASS} mt-3 text-[0.875rem] font-[500] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.9375rem]`}
+          className={`${SEGOE_UI_CLASS} mt-3 text-[0.875rem] font-medium leading-6 tracking-normal text-subhead sm:text-[0.9375rem]`}
         >
           Last Updated: {lastUpdated}
         </p>
@@ -111,7 +111,7 @@ export default function TermsOfServicePage() {
               className="scroll-mt-24 flex flex-col gap-4"
             >
               <h2
-                className={`${SEGOE_UI_CLASS} text-[1.125rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem] sm:leading-8`}
+                className={`${SEGOE_UI_CLASS} text-[1.125rem] font-bold leading-7 tracking-normal text-heading sm:text-[1.25rem] sm:leading-8`}
               >
                 {section.title}
               </h2>

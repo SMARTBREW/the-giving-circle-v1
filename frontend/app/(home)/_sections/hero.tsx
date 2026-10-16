@@ -47,13 +47,13 @@ export default function Hero() {
       </picture>
 
       <FadeInSection className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-2 sm:px-0 sm:pt-3 md:pt-4 lg:pt-6 min-[90rem]:pt-8">
-        <h1 className="w-full max-w-[20.5rem] text-center font-['Georgia'] text-[1.75rem] leading-[2.25rem] font-bold tracking-[0.02em] text-[var(--Main-headings,#1c2426)] [-webkit-text-stroke:0.45px_currentColor] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] sm:[-webkit-text-stroke:0] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[2.25rem] min-[56.25rem]:max-[89.99rem]:leading-[2.75rem] lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
+        <h1 className="w-full max-w-[20.5rem] text-center font-georgia text-[1.75rem] leading-[2.25rem] font-bold tracking-[0.02em] text-heading [-webkit-text-stroke:0.45px_currentColor] sm:w-[min(70.88cqh,100%)] sm:max-w-none sm:text-[min(7.22cqh,2.5rem)] sm:leading-[min(9.03cqh,3rem)] sm:[-webkit-text-stroke:0] min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[34rem] min-[56.25rem]:max-[89.99rem]:text-[2.25rem] min-[56.25rem]:max-[89.99rem]:leading-[2.75rem] lg:text-[2.5rem] lg:leading-[3rem] min-[90rem]:w-[min(70.88cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(7.22cqh,4rem)] min-[90rem]:leading-[min(9.03cqh,5rem)]">
           A Stronger Circle.
           <br />
           A Greater Impact.
         </h1>
         <p
-          className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20.5rem] text-center text-[0.9375rem] leading-6 font-[400] tracking-normal text-[#4a5558] sm:mt-3 sm:w-[min(77.2cqh,100%)] sm:max-w-none sm:text-[min(2.71cqh,1.125rem)] sm:leading-[min(4.51cqh,1.75rem)] min-[56.25rem]:max-[89.99rem]:mt-2.5 min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[30rem] min-[56.25rem]:max-[89.99rem]:text-[0.9375rem] min-[56.25rem]:max-[89.99rem]:leading-5 min-[90rem]:mt-4 min-[90rem]:w-[min(77.2cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(2.71cqh,1.5rem)] min-[90rem]:leading-[min(4.51cqh,2.25rem)]`}
+          className={`${SEGOE_UI_CLASS} mt-3 w-full max-w-[20.5rem] text-center text-[0.9375rem] leading-6 font-normal tracking-normal text-subhead sm:mt-3 sm:w-[min(77.2cqh,100%)] sm:max-w-none sm:text-[min(2.71cqh,1.125rem)] sm:leading-[min(4.51cqh,1.75rem)] min-[56.25rem]:max-[89.99rem]:mt-2.5 min-[56.25rem]:max-[89.99rem]:w-auto min-[56.25rem]:max-[89.99rem]:max-w-[30rem] min-[56.25rem]:max-[89.99rem]:text-[0.9375rem] min-[56.25rem]:max-[89.99rem]:leading-5 min-[90rem]:mt-4 min-[90rem]:w-[min(77.2cqh,100%)] min-[90rem]:max-w-none min-[90rem]:text-[min(2.71cqh,1.5rem)] min-[90rem]:leading-[min(4.51cqh,2.25rem)]`}
         >
           Champion a cause backed by a verified NGO, bring your circle together,
           and help raise funds for meaningful change.
@@ -63,7 +63,7 @@ export default function Hero() {
           <CtaButton
             href="/become-a-cause-champion"
             className="h-10 px-5 text-[0.8125rem] min-[90rem]:h-[min(7.22cqh,3.75rem)] min-[90rem]:gap-[0.9cqh] min-[90rem]:px-[min(4.06cqh,2.5rem)] min-[90rem]:text-[min(2.03cqh,1.125rem)]"
-            labelClassName="font-[700]"
+            labelClassName="font-bold"
           >
             Champion a Cause
           </CtaButton>
@@ -72,7 +72,7 @@ export default function Hero() {
             variant="outline"
             smoothScroll
             className="h-10 px-5 text-[0.8125rem] min-[90rem]:h-[min(7.22cqh,3.75rem)] min-[90rem]:px-[min(3.61cqh,2.25rem)] min-[90rem]:text-[min(2.03cqh,1.125rem)]"
-            labelClassName="font-[700]"
+            labelClassName="font-bold"
           >
             Explore Causes
           </CtaButton>

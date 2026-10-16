@@ -27,12 +27,12 @@ export function NgosBrowseCauses() {
             <NgosCardShell href={item.href}>
               <NgosIcon name={item.icon} />
               <h3
-                className={`${SEGOE_UI_CLASS} mt-4 text-[1.0625rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] sm:leading-8`}
+                className={`${SEGOE_UI_CLASS} mt-4 text-[1.0625rem] font-bold leading-7 tracking-normal text-heading sm:text-[1.125rem] sm:leading-8`}
               >
                 {item.title}
               </h3>
               <p
-                className={`${SEGOE_UI_CLASS} mt-2 flex-1 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                className={`${SEGOE_UI_CLASS} mt-2 flex-1 text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7`}
               >
                 {item.body}
               </p>
@@ -61,12 +61,12 @@ export function NgosBrowseCities() {
             <NgosCardShell href={item.href}>
               <NgosIcon name="city" />
               <h3
-                className={`${SEGOE_UI_CLASS} mt-4 text-[1.125rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem]`}
+                className={`${SEGOE_UI_CLASS} mt-4 text-[1.125rem] font-bold leading-7 tracking-normal text-heading sm:text-[1.25rem]`}
               >
                 {item.city}
               </h3>
               <span
-                className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] font-[600] leading-6 tracking-normal text-[var(--Main-CTA-button,#02938c)] transition-colors group-hover:text-[var(--Brand-Coral,#e62b4f)] sm:text-[1rem]`}
+                className={`${SEGOE_UI_CLASS} mt-3 text-[0.9375rem] font-semibold leading-6 tracking-normal text-circle transition-colors group-hover:text-giving-red sm:text-[1rem]`}
               >
                 {item.cta}
               </span>
@@ -96,17 +96,17 @@ export function NgosGuides() {
               <NgosIcon name="guide" />
 
               <h3
-                className={`${SEGOE_UI_CLASS} mt-4 text-[1.0625rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] sm:leading-8`}
+                className={`${SEGOE_UI_CLASS} mt-4 text-[1.0625rem] font-bold leading-7 tracking-normal text-heading sm:text-[1.125rem] sm:leading-8`}
               >
                 {item.title}
               </h3>
               <p
-                className={`${SEGOE_UI_CLASS} mt-2 flex-1 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                className={`${SEGOE_UI_CLASS} mt-2 flex-1 text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7`}
               >
                 {item.body}
               </p>
               <span
-                className={`${SEGOE_UI_CLASS} mt-4 text-[0.9375rem] font-[600] leading-6 tracking-normal text-[var(--Main-CTA-button,#02938c)] transition-colors group-hover:text-[var(--Brand-Coral,#e62b4f)]`}
+                className={`${SEGOE_UI_CLASS} mt-4 text-[0.9375rem] font-semibold leading-6 tracking-normal text-circle transition-colors group-hover:text-giving-red`}
               >
                 Read more →
               </span>
@@ -128,15 +128,15 @@ export function NgosTrust() {
       <ul className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-3">
         {items.map((item) => (
           <li key={item.title}>
-            <div className="flex h-full flex-col rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:rounded-[1.25rem] sm:p-6">
+            <div className="flex h-full flex-col rounded-[1rem] border border-line bg-white p-5 shadow-card sm:rounded-[1.25rem] sm:p-6">
               <NgosIcon name={item.icon} />
               <h3
-                className={`${SEGOE_UI_CLASS} mt-4 text-[1.0625rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem]`}
+                className={`${SEGOE_UI_CLASS} mt-4 text-[1.0625rem] font-bold leading-7 tracking-normal text-heading sm:text-[1.125rem]`}
               >
                 {item.title}
               </h3>
               <p
-                className={`${SEGOE_UI_CLASS} mt-2 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                className={`${SEGOE_UI_CLASS} mt-2 text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7`}
               >
                 {item.body}
               </p>

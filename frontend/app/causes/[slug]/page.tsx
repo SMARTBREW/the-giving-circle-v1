@@ -54,18 +54,18 @@ const CAUSE_SEO: Record<
       "street animal welfare India, rabies vaccination Mumbai, Animal Care NGO, stray dog care India, community animal welfare, 80G animal welfare donation, Zero Rabies India",
   },
   "bowls-of-hope": {
-    title: "Feed Stray Animals Daily: Fill a Bowl Today | Bowls of Hope",
+    title: "Fill a Bowl. Speed a Recovery | Bowls of Hope",
     description:
-      "Turn a birthday or anniversary into meals for shelter strays. Start a free fundraiser for Bowls of Hope Every gift goes straight to Animal Care.",
+      "Animals healing at the Animal Care Shelter need nutritious food every day. Bowls of Hope keeps their bowls full. Donate or champion the cause.",
     keywords:
-      "stray animal feeding Delhi, animal shelter donation India, Animal Care feeding programme, street dog welfare Delhi, animal welfare NGO India, bowls of hope donation",
+      "animal shelter feeding Delhi, Animal Care Bowls of Hope, recovery meals for street dogs, animal welfare NGO India, 80G animal donation, summer water bowls Delhi NCR",
   },
   "brick-by-brick": {
-    title: "Build an Animal Shelter in Gurgaon | Brick by Brick",
+    title: "Lay a Brick. Raise a Wall | Brick by Brick",
     description:
-      "Support an animal shelter in Gurgaon, one brick at a time. Your donation helps build a safe home for injured and vulnerable stray animals. Donate today.",
+      "Animal Care is building Shukrana in Gurugram — a shelter and hospital for street animals. Every ₹10 lays one brick in the boundary wall. Donate or champion the cause.",
     keywords:
-      "animal shelter Gurgaon, Zero Rabies India, Animal Care rescue centre, sponsor a brick India, stray animal shelter build, animal welfare donation Haryana",
+      "Shukrana Animal Care Centre, animal shelter Gurugram, sponsor a brick India, Animal Care Sector 78, street animal hospital Gurgaon, 80G animal welfare donation",
   },
   "flood-animal-rescue": {
     title: "Donate for Flood Animal Rescue in India | Rescue on Call",

@@ -13,7 +13,7 @@ function SealCheck({ className = "" }: { className?: string }) {
       <svg viewBox="0 0 22 21" fill="none" className="h-full w-full">
         <path
           d="M22 10.49L19.56 7.7L19.9 4.01L16.29 3.19L14.4 0L11 1.46L7.6 0L5.71 3.19L2.1 4L2.44 7.7L0 10.49L2.44 13.28L2.1 16.98L5.71 17.8L7.6 21L11 19.53L14.4 20.99L16.29 17.8L19.9 16.98L19.56 13.29L22 10.49Z"
-          fill="var(--Circle-Green,#02938c)"
+          fill="var(--color-circle)"
         />
       </svg>
       <svg
@@ -52,37 +52,37 @@ export default function CausePageVetting({
       className="scroll-mt-28"
       innerClassName={CAUSE_SECTION.pad}
     >
-      <div className="overflow-hidden rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] sm:rounded-[1.25rem]">
+      <div className="tgc-card overflow-hidden sm:rounded-[1.25rem]">
         <div className="p-4 sm:p-5 md:p-6 lg:p-7">
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-8">
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <SealCheck />
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase text-[var(--Circle-Green,#02938c)] sm:text-[0.6875rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[0.625rem] font-bold leading-4 tracking-[0.08em] uppercase text-circle sm:text-[0.6875rem]`}
                 >
                   {eyebrow}
                 </p>
               </div>
 
               <h2
-                className={`${SEGOE_UI_CLASS} mt-2 text-[1.125rem] font-[700] leading-6 tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-2.5 sm:text-[1.25rem] sm:leading-7 lg:text-[1.375rem] lg:leading-7`}
+                className={`${SEGOE_UI_CLASS} mt-2 text-[1.125rem] font-bold leading-6 tracking-normal text-heading sm:mt-2.5 sm:text-[1.25rem] sm:leading-7 lg:text-[1.375rem] lg:leading-7`}
               >
                 {title}
               </h2>
 
               <p
-                className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.875rem] sm:leading-5`}
+                className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-normal leading-5 tracking-normal text-subhead sm:text-[0.875rem] sm:leading-5`}
               >
                 {body}
               </p>
 
               {lastReviewed ? (
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-2.5 sm:text-[0.8125rem]`}
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.75rem] font-normal leading-4 tracking-normal text-subhead sm:mt-2.5 sm:text-[0.8125rem]`}
                 >
                   Last reviewed:{" "}
-                  <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+                  <span className="font-bold text-heading">
                     {lastReviewed}
                   </span>
                 </p>
@@ -93,18 +93,18 @@ export default function CausePageVetting({
               {checks.map((check) => (
                 <li key={check.title} className="flex items-start gap-2">
                   <Check
-                    className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--Circle-Green,#02938c)]"
+                    className="mt-0.5 h-3.5 w-3.5 shrink-0 text-circle"
                     strokeWidth={2.5}
                     aria-hidden
                   />
                   <div className="min-w-0">
                     <p
-                      className={`${SEGOE_UI_CLASS} text-[0.8125rem] font-[700] leading-4 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[0.875rem] sm:leading-5`}
+                      className={`${SEGOE_UI_CLASS} text-[0.8125rem] font-bold leading-4 tracking-normal text-heading sm:text-[0.875rem] sm:leading-5`}
                     >
                       {check.title}
                     </p>
                     <p
-                      className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem] sm:leading-5`}
+                      className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-normal leading-4 tracking-normal text-subhead sm:text-[0.8125rem] sm:leading-5`}
                     >
                       {check.body}
                     </p>
@@ -114,7 +114,7 @@ export default function CausePageVetting({
             </ul>
           </div>
 
-          <ul className="mt-5 border-t border-[#d9e1e2] sm:mt-6">
+          <ul className="mt-5 border-t border-line sm:mt-6">
             {documents.map((doc) => {
               const href = sanitizeUrl(doc.href);
               const isExternal = href.startsWith("http");
@@ -122,27 +122,27 @@ export default function CausePageVetting({
               return (
                 <li
                   key={doc.badge}
-                  className="flex flex-col gap-2 border-b border-[#d9e1e2] py-2.5 last:border-b-0 sm:flex-row sm:items-center sm:gap-3 sm:py-3"
+                  className="flex flex-col gap-2 border-b border-line py-2.5 last:border-b-0 sm:flex-row sm:items-center sm:gap-3 sm:py-3"
                 >
                   <span
-                    className={`${SEGOE_UI_CLASS} flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--Circle-Green,#02938c)] px-1 text-center text-[0.5625rem] font-[700] leading-tight tracking-tight text-[var(--Circle-Green,#02938c)] sm:h-10 sm:w-10 sm:text-[0.625rem]`}
+                    className={`${SEGOE_UI_CLASS} flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-circle px-1 text-center text-[0.5625rem] font-bold leading-tight tracking-tight text-circle sm:h-10 sm:w-10 sm:text-[0.625rem]`}
                   >
                     {doc.badge}
                   </span>
 
                   <div className="min-w-0 flex-1">
                     <p
-                      className={`${SEGOE_UI_CLASS} text-[0.8125rem] font-[700] leading-4 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[0.875rem] sm:leading-5`}
+                      className={`${SEGOE_UI_CLASS} text-[0.8125rem] font-bold leading-4 tracking-normal text-heading sm:text-[0.875rem] sm:leading-5`}
                     >
                       {doc.title}
                     </p>
                     <p
-                      className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)]`}
+                      className={`${SEGOE_UI_CLASS} mt-0.5 text-[0.75rem] font-normal leading-4 tracking-normal text-subhead`}
                     >
                       {doc.number && !doc.number.includes("[") ? (
                         <>No. {doc.number} · </>
                       ) : null}
-                      <span className="font-[600] text-[var(--Circle-Green,#02938c)]">
+                      <span className="font-semibold text-circle">
                         Checked
                       </span>{" "}
                       · {doc.note}
@@ -154,7 +154,7 @@ export default function CausePageVetting({
                     {...(isExternal
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className={`${SEGOE_UI_CLASS} shrink-0 text-[0.8125rem] font-[600] leading-4 tracking-normal text-[var(--Circle-Green,#02938c)] transition-opacity hover:opacity-80`}
+                    className={`${SEGOE_UI_CLASS} shrink-0 text-[0.8125rem] font-semibold leading-4 tracking-normal text-circle transition-opacity hover:opacity-80`}
                   >
                     View document
                   </a>
@@ -166,9 +166,9 @@ export default function CausePageVetting({
 
         <div className="bg-[rgba(2,147,140,0.08)] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 lg:px-7">
           <p
-            className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem] sm:leading-5`}
+            className={`${SEGOE_UI_CLASS} text-[0.75rem] font-normal leading-4 tracking-normal text-subhead sm:text-[0.8125rem] sm:leading-5`}
           >
-            <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+            <span className="font-bold text-heading">
               Good to know:
             </span>{" "}
             {goodToKnow}

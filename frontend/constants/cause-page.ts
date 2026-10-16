@@ -26,6 +26,32 @@ import {
   PAWSITIVE_PROTECTORS_VOICES,
 } from "./pawsitive-protectors";
 import {
+  BOWLS_OF_HOPE_ABOUT,
+  BOWLS_OF_HOPE_CTA,
+  BOWLS_OF_HOPE_FAQS,
+  BOWLS_OF_HOPE_HERO,
+  BOWLS_OF_HOPE_HOW,
+  BOWLS_OF_HOPE_IMPACT,
+  BOWLS_OF_HOPE_LEARN,
+  BOWLS_OF_HOPE_SUPPORT,
+  BOWLS_OF_HOPE_THEORY,
+  BOWLS_OF_HOPE_VETTING,
+  BOWLS_OF_HOPE_VOICES,
+} from "./bowls-of-hope";
+import {
+  BRICK_BY_BRICK_ABOUT,
+  BRICK_BY_BRICK_CTA,
+  BRICK_BY_BRICK_FAQS,
+  BRICK_BY_BRICK_HERO,
+  BRICK_BY_BRICK_HOW,
+  BRICK_BY_BRICK_IMPACT,
+  BRICK_BY_BRICK_LEARN,
+  BRICK_BY_BRICK_SUPPORT,
+  BRICK_BY_BRICK_THEORY,
+  BRICK_BY_BRICK_VETTING,
+  BRICK_BY_BRICK_VOICES,
+} from "./brick-by-brick";
+import {
   PEHLI_CLASS_ABOUT,
   PEHLI_CLASS_CTA,
   PEHLI_CLASS_FAQS,
@@ -76,7 +102,8 @@ export type CausePageHeroContent = {
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
   instagram: { handle: string; href: string; label: string };
-  campaignLogo: { src: string | null };
+  /** `wide` for landscape campaign lockups (e.g. Brick by Brick); default is a roundel. */
+  campaignLogo: { src: string | null; wide?: boolean };
   media: { src: string | null; alt: string; caption: string };
   stickyDonate: { label: string; href: string };
 };
@@ -224,6 +251,8 @@ export type CausePageImpactContent = {
     body: string;
     cta: string;
     logoSrc: string | null;
+    /** Match hero: landscape lockup instead of a roundel. */
+    logoWide?: boolean;
   };
 };
 
@@ -577,7 +606,7 @@ export function buildCausePageDraft(cause: LiveCause): CausePageContent {
       eyebrow: "Verified Partner",
       title: "Vetted by The Giving Circle",
       body: `Before this cause went live, our team checked ${orgName} the same way we check every partner: documents, a real office visit, and a conversation with the people who run it.`,
-      lastReviewed: "[month year]",
+      lastReviewed: "",
       checks: [
         {
           title: "Registration and tax documents checked",
@@ -585,7 +614,7 @@ export function buildCausePageDraft(cause: LiveCause): CausePageContent {
         },
         {
           title: "Office visited by our team",
-          body: "[address] · [date]",
+          body: "Office visit completed by our team",
         },
         {
           title: "Leadership interviewed",
@@ -593,7 +622,7 @@ export function buildCausePageDraft(cause: LiveCause): CausePageContent {
         },
         {
           title: "Field work seen",
-          body: "[place, date] — so the programme matches what is promised.",
+          body: "We see the work on the ground wherever we can, so the programme matches what is promised.",
         },
         {
           title: "Written commitment to share updates",
@@ -840,6 +869,53 @@ export function getCausePageContent(causeId: string): CausePageContent | undefin
       learn: PEHLI_CLASS_LEARN,
       faqs: PEHLI_CLASS_FAQS,
       cta: PEHLI_CLASS_CTA,
+    };
+  }
+
+  // Bowls of Hope: filled sections on the shared template; remaining sections from draft data.
+  if (causeId === "bowls-of-hope") {
+    return {
+      ...draft,
+      hero: {
+        ...BOWLS_OF_HOPE_HERO,
+        campaignLogo: { src: BOWLS_OF_HOPE_HERO.campaignLogo.src },
+        media: { ...BOWLS_OF_HOPE_HERO.media },
+      },
+      about: BOWLS_OF_HOPE_ABOUT,
+      theory: BOWLS_OF_HOPE_THEORY,
+      how: BOWLS_OF_HOPE_HOW,
+      voices: BOWLS_OF_HOPE_VOICES,
+      support: BOWLS_OF_HOPE_SUPPORT,
+      vetting: BOWLS_OF_HOPE_VETTING,
+      impact: BOWLS_OF_HOPE_IMPACT,
+      learn: BOWLS_OF_HOPE_LEARN,
+      faqs: BOWLS_OF_HOPE_FAQS,
+      cta: BOWLS_OF_HOPE_CTA,
+    };
+  }
+
+  // Brick by Brick: filled sections on the shared template; remaining sections from draft data.
+  if (causeId === "brick-by-brick") {
+    return {
+      ...draft,
+      hero: {
+        ...BRICK_BY_BRICK_HERO,
+        campaignLogo: {
+          src: BRICK_BY_BRICK_HERO.campaignLogo.src,
+          wide: BRICK_BY_BRICK_HERO.campaignLogo.wide,
+        },
+        media: { ...BRICK_BY_BRICK_HERO.media },
+      },
+      about: BRICK_BY_BRICK_ABOUT,
+      theory: BRICK_BY_BRICK_THEORY,
+      how: BRICK_BY_BRICK_HOW,
+      voices: BRICK_BY_BRICK_VOICES,
+      support: BRICK_BY_BRICK_SUPPORT,
+      vetting: BRICK_BY_BRICK_VETTING,
+      impact: BRICK_BY_BRICK_IMPACT,
+      learn: BRICK_BY_BRICK_LEARN,
+      faqs: BRICK_BY_BRICK_FAQS,
+      cta: BRICK_BY_BRICK_CTA,
     };
   }
 

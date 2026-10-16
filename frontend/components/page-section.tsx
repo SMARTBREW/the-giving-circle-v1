@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import FadeInSection from "@/components/fade-in-section";
 
-const SECTION_PAD =
-  "mx-auto w-full max-w-[90rem] px-4 pt-6 pb-6 sm:px-8 sm:pt-12 sm:pb-12 md:px-10 md:pt-14 md:pb-14 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]";
-
-const SECTION_PAD_TIGHT_TOP =
-  "mx-auto w-full max-w-[90rem] px-4 pt-2 pb-6 sm:px-8 sm:pt-4 sm:pb-12 md:px-10 md:pt-5 md:pb-14 lg:px-12 lg:pt-6 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-8 min-[90rem]:pb-[5rem]";
+const TONE_CLASS = {
+  white: "bg-white",
+  gray: "bg-gray-100",
+  alternate: "bg-alternate",
+} as const;
 
 export default function PageSection({
   id,
@@ -25,17 +25,11 @@ export default function PageSection({
   fade?: boolean;
   children: ReactNode;
 }) {
-  const background =
-    tone === "gray"
-      ? "bg-gray-100"
-      : tone === "alternate"
-        ? "bg-[var(--Alternate-color,#F5F5F5)]"
-        : "bg-[#FFFFFF]";
-  const padClass = pad === "tight-top" ? SECTION_PAD_TIGHT_TOP : SECTION_PAD;
+  const padClass = pad === "tight-top" ? "tgc-section-pad-tight" : "tgc-section-pad";
   const contentClassName = `${padClass} ${innerClassName}`;
 
   return (
-    <section id={id} className={`w-full ${background} ${className}`}>
+    <section id={id} className={`w-full ${TONE_CLASS[tone]} ${className}`}>
       {fade ? (
         <FadeInSection className={contentClassName}>{children}</FadeInSection>
       ) : (

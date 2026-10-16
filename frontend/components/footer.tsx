@@ -136,7 +136,7 @@ function FooterLinkList({
 
 export default function Footer() {
   return (
-    <footer className="w-full min-w-0 bg-[#FFFFFF] pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0">
+    <footer className="w-full min-w-0 bg-white pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0 [@media(hover:hover)_and_(pointer:fine)]:pb-0">
       <div className="mx-auto flex w-full min-w-0 max-w-[90rem] flex-col px-6 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8 md:px-10 md:pt-12 md:pb-10 lg:px-12 lg:pt-12 lg:pb-10 min-[90rem]:min-h-[29.75rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-0">
         {/* Brand left; link columns share the remaining width (not flush-right). */}
         <div className="flex w-full min-w-0 flex-col gap-8 sm:gap-9 lg:flex-row lg:items-start lg:gap-12 min-[90rem]:gap-16">
@@ -203,7 +203,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-[#D9E1E2] pt-5 sm:mt-12 sm:gap-5 sm:pt-6 lg:mt-12 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:pt-7 min-[90rem]:mt-auto min-[90rem]:gap-8 min-[90rem]:pt-8 min-[90rem]:pb-8">
+        <div className="mt-10 flex flex-col gap-4 border-t border-line pt-5 sm:mt-12 sm:gap-5 sm:pt-6 lg:mt-12 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:pt-7 min-[90rem]:mt-auto min-[90rem]:gap-8 min-[90rem]:pt-8 min-[90rem]:pb-8">
           <ul className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2 lg:order-2 lg:gap-x-8">
             {FOOTER_LEGAL_LINKS.map((link) => (
               <li key={link.label}>

@@ -20,7 +20,7 @@ export default function CausePageHow({
         {cards.map((card) => (
           <li
             key={card.title}
-            className="flex min-h-0 flex-col overflow-hidden rounded-[0.875rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] sm:rounded-[1rem]"
+            className="flex min-h-0 flex-col overflow-hidden rounded-[0.875rem] border border-line bg-white shadow-card sm:rounded-[1rem]"
           >
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-[repeating-linear-gradient(-45deg,#e8f4f8,#e8f4f8_8px,#eef2f2_8px,#eef2f2_16px)]">
               {card.src ? (
@@ -33,7 +33,7 @@ export default function CausePageHow({
                 />
               ) : (
                 <span
-                  className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-3 text-center text-[0.75rem] font-[600] leading-5 text-[var(--Subheading,#4a5558)]`}
+                  className={`${SEGOE_UI_CLASS} absolute inset-0 flex items-center justify-center px-3 text-center text-[0.75rem] font-semibold leading-5 text-subhead`}
                 >
                   Photo
                 </span>
@@ -41,12 +41,12 @@ export default function CausePageHow({
             </div>
             <div className="flex flex-1 flex-col p-4 sm:p-5">
               <h3
-                className={`${SEGOE_UI_CLASS} text-[1.0625rem] font-[700] leading-6 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] sm:leading-7`}
+                className={`${SEGOE_UI_CLASS} text-[1.0625rem] font-bold leading-6 tracking-normal text-heading sm:text-[1.125rem] sm:leading-7`}
               >
                 {card.title}
               </h3>
               <p
-                className={`${SEGOE_UI_CLASS} mt-1.5 text-[0.875rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-2 sm:text-[0.9375rem] sm:leading-6`}
+                className={`${SEGOE_UI_CLASS} mt-1.5 text-[0.875rem] font-normal leading-6 tracking-normal text-subhead sm:mt-2 sm:text-[0.9375rem] sm:leading-6`}
               >
                 {card.body}
               </p>

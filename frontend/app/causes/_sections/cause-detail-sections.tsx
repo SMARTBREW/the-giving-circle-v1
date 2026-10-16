@@ -27,7 +27,7 @@ export default function CauseDetailSections({
               key={para.slice(0, 48)}
               className={`${SEGOE_UI_CLASS} ${
                 index === 0 ? "mt-0" : "mt-4"
-              } text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
+              } text-[0.9375rem] leading-6 font-normal text-subhead sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
             >
               {para}
             </p>
@@ -44,17 +44,17 @@ export default function CauseDetailSections({
                   className="items-center px-5 py-6 text-center sm:px-6 sm:py-7"
                 >
                   <span
-                    className={`${SEGOE_UI_CLASS} relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-[1.25rem] font-[700] transition-transform duration-300 group-hover/cause-card:scale-110 ${accent.soft}`}
+                    className={`${SEGOE_UI_CLASS} relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-[1.25rem] font-bold transition-transform duration-300 group-hover/cause-card:scale-110 ${accent.soft}`}
                   >
                     {index + 1}
                   </span>
                   <h3
-                    className={`${SEGOE_UI_CLASS} relative z-10 mt-5 text-[1.125rem] font-[700] leading-7 text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem]`}
+                    className={`${SEGOE_UI_CLASS} relative z-10 mt-5 text-[1.125rem] font-bold leading-7 text-heading sm:text-[1.25rem]`}
                   >
                     {step.title}
                   </h3>
                   <p
-                    className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                    className={`${SEGOE_UI_CLASS} relative z-10 mt-3 text-[0.9375rem] leading-6 font-normal text-subhead sm:text-[1rem] sm:leading-7`}
                   >
                     {step.body}
                   </p>
@@ -83,7 +83,7 @@ export default function CauseDetailSections({
                   >
                     <span
                       aria-hidden
-                      className={`relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#FFFFFF] transition-transform duration-300 group-hover/cause-card:scale-110 ${accent.check}`}
+                      className={`relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover/cause-card:scale-110 ${accent.check}`}
                     >
                       <svg viewBox="0 0 12 12" fill="none" className="h-3 w-3">
                         <path
@@ -96,7 +96,7 @@ export default function CauseDetailSections({
                       </svg>
                     </span>
                     <p
-                      className={`${SEGOE_UI_CLASS} relative z-10 text-[0.9375rem] leading-6 font-[400] text-[var(--Main-headings,#1c2426)] sm:text-[1rem] sm:leading-7`}
+                      className={`${SEGOE_UI_CLASS} relative z-10 text-[0.9375rem] leading-6 font-normal text-heading sm:text-[1rem] sm:leading-7`}
                     >
                       {item}
                     </p>
@@ -123,21 +123,21 @@ export default function CauseDetailSections({
                 className="min-w-0"
               >
                 <blockquote
-                  className={`flex h-full flex-col rounded-[1rem] border-2 bg-[#FFFFFF] p-6 sm:p-7 ${accent.ring}`}
+                  className={`flex h-full flex-col rounded-[1rem] border-2 bg-white p-6 sm:p-7 ${accent.ring}`}
                 >
                   <p
-                    className={`${SEGOE_UI_CLASS} flex-1 text-[1rem] leading-7 font-[400] text-[var(--Main-headings,#1c2426)] sm:text-[1.0625rem] sm:leading-8`}
+                    className={`${SEGOE_UI_CLASS} flex-1 text-[1rem] leading-7 font-normal text-heading sm:text-[1.0625rem] sm:leading-8`}
                   >
                     “{item.text}”
                   </p>
-                  <footer className="mt-6 border-t border-[#D9E1E2] pt-5">
+                  <footer className="mt-6 border-t border-line pt-5">
                     <p
-                      className={`${SEGOE_UI_CLASS} text-[1rem] font-[700] text-[var(--Main-headings,#1c2426)]`}
+                      className={`${SEGOE_UI_CLASS} text-[1rem] font-bold text-heading`}
                     >
                       {item.author}
                     </p>
                     <p
-                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.875rem] font-[400] text-[var(--Paragraph,#4a5558)]`}
+                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.875rem] font-normal text-subhead`}
                     >
                       {item.role}
                     </p>
@@ -160,12 +160,12 @@ export default function CauseDetailSections({
             title={`About ${detail.partner.name}`}
           />
           <p
-            className={`${SEGOE_UI_CLASS} mt-6 text-[0.9375rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
+            className={`${SEGOE_UI_CLASS} mt-6 text-[0.9375rem] leading-6 font-normal text-subhead sm:text-[1rem] sm:leading-7 lg:text-[1.125rem] lg:leading-8`}
           >
             {detail.partner.blurb}
           </p>
           <p
-            className={`${SEGOE_UI_CLASS} mt-4 text-[0.875rem] leading-6 font-[400] text-[var(--Paragraph,#4a5558)] sm:text-[0.9375rem]`}
+            className={`${SEGOE_UI_CLASS} mt-4 text-[0.875rem] leading-6 font-normal text-subhead sm:text-[0.9375rem]`}
           >
             {detail.partner.note}
           </p>
@@ -177,15 +177,15 @@ export default function CauseDetailSections({
             return (
               <li
                 key={stat.label}
-                className={`flex flex-col items-center justify-center rounded-[1rem] border-2 bg-[#FFFFFF] px-4 py-5 text-center sm:py-6 ${accent.ring}`}
+                className={`flex flex-col items-center justify-center rounded-[1rem] border-2 bg-white px-4 py-5 text-center sm:py-6 ${accent.ring}`}
               >
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[1.75rem] font-[700] leading-none sm:text-[2rem] ${accent.value}`}
+                  className={`${SEGOE_UI_CLASS} text-[1.75rem] font-bold leading-none sm:text-[2rem] ${accent.value}`}
                 >
                   {stat.value}
                 </p>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-5 text-[var(--Paragraph,#4a5558)]`}
+                  className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-normal leading-5 text-subhead`}
                 >
                   {stat.label}
                 </p>

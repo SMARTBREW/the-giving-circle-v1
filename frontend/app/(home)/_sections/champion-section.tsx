@@ -10,7 +10,7 @@ export default function ChampionSection() {
   return (
     <section
       id="champion"
-      className="w-full scroll-mt-[5.5rem] bg-[#FFFFFF] sm:scroll-mt-[6.25rem] md:scroll-mt-[6.75rem] lg:scroll-mt-[7rem] min-[90rem]:h-dvh min-[90rem]:overflow-hidden"
+      className="w-full scroll-mt-[5.5rem] bg-white sm:scroll-mt-[6.25rem] md:scroll-mt-[6.75rem] lg:scroll-mt-[7rem] min-[90rem]:h-dvh min-[90rem]:overflow-hidden"
     >
       {/*
         Phone: column fills the viewport through the CTA (above the sticky bar);
@@ -48,7 +48,7 @@ export default function ChampionSection() {
             <CtaButton
               href="/champion/apply"
               className="mx-auto h-11 w-full max-w-[20rem] gap-2 px-6 py-3 text-[0.8125rem] sm:h-11 md:mx-0 md:h-10 md:w-auto md:max-w-none md:px-5 md:text-[0.8125rem] lg:h-12 lg:text-[0.9375rem] min-[90rem]:h-14 min-[90rem]:w-[18rem] min-[90rem]:px-8 min-[90rem]:py-4 min-[90rem]:text-[length:inherit]"
-              labelClassName="font-[700]"
+              labelClassName="font-bold"
             >
               Start Your Giving Journey
               <CtaArrow />
@@ -56,7 +56,7 @@ export default function ChampionSection() {
           </div>
         </div>
 
-        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] sm:mt-5 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(50%,28rem)] md:shrink-0 lg:w-[min(46%,33rem)] min-[90rem]:h-[40rem] min-[90rem]:w-[40rem] min-[90rem]:aspect-auto" />
+        <ChampionVideo className="relative mt-5 mb-20 aspect-[4/3] w-full overflow-hidden rounded-[1rem] border border-line sm:mt-5 sm:mb-24 md:mt-0 md:mb-0 md:aspect-square md:w-[min(50%,28rem)] md:shrink-0 lg:w-[min(46%,33rem)] min-[90rem]:h-[40rem] min-[90rem]:w-[40rem] min-[90rem]:aspect-auto" />
       </FadeInSection>
     </section>
   );

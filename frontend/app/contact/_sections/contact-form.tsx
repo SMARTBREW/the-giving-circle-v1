@@ -19,14 +19,14 @@ import { CONTACT_APPLY, SEGOE_UI_CLASS } from "@/constants";
 import { submitContact } from "@/lib/api";
 import { logger } from "@/lib/logger";
 
-const primaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-11 w-full items-center justify-center rounded-xl bg-[var(--Main-CTA-button,#02938c)] px-5 text-[1rem] leading-none font-[700] text-[#FFFFFF] transition-opacity disabled:cursor-not-allowed disabled:opacity-40 md:h-11 md:w-auto md:min-w-[9.75rem] md:rounded-lg lg:h-12 lg:min-w-[10.5rem] min-[90rem]:h-[3.75rem] min-[90rem]:min-w-[11.25rem] min-[90rem]:text-[1.125rem]`;
+const primaryBtnClass = `${SEGOE_UI_CLASS} inline-flex h-11 w-full items-center justify-center rounded-xl bg-circle px-5 text-[1rem] leading-none font-bold text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-40 md:h-11 md:w-auto md:min-w-[9.75rem] md:rounded-lg lg:h-12 lg:min-w-[10.5rem] min-[90rem]:h-[3.75rem] min-[90rem]:min-w-[11.25rem] min-[90rem]:text-[1.125rem]`;
 
-const fieldClass = `${SEGOE_UI_CLASS} champion-apply-field h-12 w-full rounded border border-[#d9e1e2] bg-[#eef2f2] px-4 text-[1rem] text-[#4a5558] outline-none placeholder:text-[#4A5558] focus:border-[#d9e1e2] focus:outline-none focus:ring-0 md:h-12 lg:h-14 min-[90rem]:h-16`;
+const fieldClass = "input-base";
 
-const fieldLabelClass = `${SEGOE_UI_CLASS} text-[1rem] leading-none font-[400] text-[#4a5558] md:text-[1.0625rem] lg:text-[1.125rem] min-[90rem]:text-[1.25rem]`;
+const fieldLabelClass = "tgc-label";
 
 const footerBarClass =
-  "mt-auto flex w-full shrink-0 flex-row flex-wrap items-center justify-end gap-3 border-t border-[#D9E1E2] bg-[#FFFFFF] pt-2.5 pb-2.5 md:gap-4 md:pt-3 md:pb-3 lg:pt-4 lg:pb-4 min-[90rem]:pt-5 min-[90rem]:pb-5";
+  "mt-auto flex w-full shrink-0 flex-row flex-wrap items-center justify-end gap-3 border-t border-line bg-white pt-2.5 pb-2.5 md:gap-4 md:pt-3 md:pb-3 lg:pt-4 lg:pb-4 min-[90rem]:pt-5 min-[90rem]:pb-5";
 
 function StepCheckIcon() {
   return (
@@ -130,7 +130,7 @@ export default function ContactApplyForm() {
           value={phone}
           onChange={setPhone}
           placeholder={form.phonePlaceholder}
-          className={`${SEGOE_UI_CLASS} PhoneInput champion-apply-field mt-2 h-12 w-full rounded border border-[#d9e1e2] bg-[#eef2f2] px-3 text-[1rem] text-[#4a5558] md:h-12 lg:h-14 min-[90rem]:h-16`}
+          className={`${SEGOE_UI_CLASS} PhoneInput champion-apply-field mt-2 h-12 w-full rounded border border-line bg-soft-grey px-3 text-[1rem] text-subhead md:h-12 lg:h-14 min-[90rem]:h-16`}
         />
       </div>
       <div>
@@ -144,7 +144,7 @@ export default function ContactApplyForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder={form.messagePlaceholder}
-          className={`${SEGOE_UI_CLASS} champion-apply-field mt-2 w-full resize-y rounded border border-[#d9e1e2] bg-[#eef2f2] px-4 py-3 text-[1rem] text-[#4a5558] outline-none placeholder:text-[#4A5558] focus:border-[#d9e1e2] focus:outline-none focus:ring-0 min-h-[8rem]`}
+          className={`${SEGOE_UI_CLASS} champion-apply-field mt-2 w-full resize-y rounded border border-line bg-soft-grey px-4 py-3 text-[1rem] text-subhead outline-none placeholder:text-[#4A5558] focus:border-line focus:outline-none focus:ring-0 min-h-[8rem]`}
         />
       </div>
       <label className="flex cursor-pointer items-start gap-3">
@@ -152,9 +152,9 @@ export default function ContactApplyForm() {
           type="checkbox"
           checked={agreed}
           onChange={(e) => setAgreed(e.target.checked)}
-          className="mt-1 h-4 w-4 shrink-0 accent-[var(--Main-CTA-button,#02938c)]"
+          className="mt-1 h-4 w-4 shrink-0 accent-circle"
         />
-        <span className={`${SEGOE_UI_CLASS} text-[0.9375rem] leading-6 text-[#4a5558]`}>
+        <span className={`${SEGOE_UI_CLASS} text-[0.9375rem] leading-6 text-subhead`}>
           {form.agreeLabel}
         </span>
       </label>
@@ -208,7 +208,7 @@ export default function ContactApplyForm() {
           value={phone}
           onChange={setPhone}
           placeholder={form.phonePlaceholder}
-          className={`${SEGOE_UI_CLASS} PhoneInput champion-apply-field mt-2 h-12 w-full rounded-xl border border-[#d9e1e2] bg-[#FFFFFF] px-3 text-[1rem] text-[#4a5558] sm:h-14`}
+          className={`${SEGOE_UI_CLASS} PhoneInput champion-apply-field mt-2 h-12 w-full rounded-xl border border-line bg-white px-3 text-[1rem] text-subhead sm:h-14`}
         />
       </div>
       <div>
@@ -222,7 +222,7 @@ export default function ContactApplyForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder={form.messagePlaceholder}
-          className={`${SEGOE_UI_CLASS} champion-apply-field mt-2 min-h-[8rem] w-full resize-y rounded-xl border border-[#d9e1e2] bg-[#FFFFFF] px-4 py-3 text-[1rem] text-[#4a5558] outline-none placeholder:text-[#4A5558]`}
+          className={`${SEGOE_UI_CLASS} champion-apply-field mt-2 min-h-[8rem] w-full resize-y rounded-xl border border-line bg-white px-4 py-3 text-[1rem] text-subhead outline-none placeholder:text-[#4A5558]`}
         />
       </div>
       <label className="flex cursor-pointer items-start gap-3">
@@ -230,9 +230,9 @@ export default function ContactApplyForm() {
           type="checkbox"
           checked={agreed}
           onChange={(e) => setAgreed(e.target.checked)}
-          className="mt-1 h-4 w-4 shrink-0 accent-[var(--Main-CTA-button,#02938c)]"
+          className="mt-1 h-4 w-4 shrink-0 accent-circle"
         />
-        <span className={`${SEGOE_UI_CLASS} text-[0.9375rem] leading-6 text-[#4a5558]`}>
+        <span className={`${SEGOE_UI_CLASS} text-[0.9375rem] leading-6 text-subhead`}>
           {form.agreeLabel}
         </span>
       </label>
@@ -276,7 +276,7 @@ export default function ContactApplyForm() {
             }
           >
             <h2
-              className={`${SEGOE_UI_CLASS} text-[1.375rem] leading-7 font-[700] tracking-normal text-[#4a5558] sm:text-[1.5rem] sm:leading-8`}
+              className={`${SEGOE_UI_CLASS} text-[1.375rem] leading-7 font-bold tracking-normal text-subhead sm:text-[1.5rem] sm:leading-8`}
             >
               {form.title}
             </h2>
@@ -286,8 +286,8 @@ export default function ContactApplyForm() {
       </div>
 
       {/* Desktop */}
-      <section className="fixed inset-0 z-10 hidden min-h-0 min-w-0 overflow-hidden bg-[#FFFFFF] md:flex">
-        <aside className="flex h-full w-[min(17.5rem,28%)] min-w-0 shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-[#D9E1E2] bg-[#E8F7F8] px-4 pt-5 pb-5 sm:px-5 lg:w-[min(20rem,26%)] lg:px-6 lg:pt-7 lg:pb-7 min-[90rem]:w-[30.125rem] min-[90rem]:px-16 min-[90rem]:pt-10 min-[90rem]:pb-10">
+      <section className="fixed inset-0 z-10 hidden min-h-0 min-w-0 overflow-hidden bg-white md:flex">
+        <aside className="flex h-full w-[min(17.5rem,28%)] min-w-0 shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-line bg-[#E8F7F8] px-4 pt-5 pb-5 sm:px-5 lg:w-[min(20rem,26%)] lg:px-6 lg:pt-7 lg:pb-7 min-[90rem]:w-[30.125rem] min-[90rem]:px-16 min-[90rem]:pt-10 min-[90rem]:pb-10">
           <Link href="/" className="inline-flex w-fit shrink-0 items-center">
             <CldImage
               src="/images/Frame 2071857645.png"
@@ -299,11 +299,11 @@ export default function ContactApplyForm() {
             />
           </Link>
 
-          <h1 className="mt-4 shrink-0 font-['Georgia'] text-[1.375rem] leading-7 font-[700] tracking-normal text-[#1C2426] lg:mt-5 lg:text-[1.625rem] lg:leading-8 min-[90rem]:mt-8 min-[90rem]:w-[15.8125rem] min-[90rem]:text-[2.125rem] min-[90rem]:leading-[2.75rem]">
+          <h1 className="mt-4 shrink-0 font-georgia text-[1.375rem] leading-7 font-bold tracking-normal text-[#1C2426] lg:mt-5 lg:text-[1.625rem] lg:leading-8 min-[90rem]:mt-8 min-[90rem]:w-[15.8125rem] min-[90rem]:text-[2.125rem] min-[90rem]:leading-[2.75rem]">
             {title}
           </h1>
           <p
-            className={`${SEGOE_UI_CLASS} mt-2 max-w-[22rem] shrink-0 text-[0.8125rem] leading-5 font-[400] text-[var(--Paragraph,#4a5558)] lg:mt-2.5 lg:text-[0.875rem] lg:leading-6 min-[90rem]:mt-3 min-[90rem]:w-[19.25rem] min-[90rem]:text-[0.9375rem] min-[90rem]:leading-7`}
+            className={`${SEGOE_UI_CLASS} mt-2 max-w-[22rem] shrink-0 text-[0.8125rem] leading-5 font-normal text-subhead lg:mt-2.5 lg:text-[0.875rem] lg:leading-6 min-[90rem]:mt-3 min-[90rem]:w-[19.25rem] min-[90rem]:text-[0.9375rem] min-[90rem]:leading-7`}
           >
             {subtitle}
           </p>
@@ -319,10 +319,10 @@ export default function ContactApplyForm() {
                 <li key={step.number} className="flex min-w-0 gap-3">
                   <div className="flex w-8 shrink-0 flex-col items-center">
                     <span
-                      className={`flex h-8 w-8 items-center justify-center rounded-full text-[0.9375rem] leading-none font-[700] ${
+                      className={`flex h-8 w-8 items-center justify-center rounded-full text-[0.9375rem] leading-none font-bold ${
                         isActive || isComplete
-                          ? "bg-[var(--Main-CTA-button,#02938c)] text-[#FFFFFF]"
-                          : "border border-[#d9e1e2] bg-[#FFFFFF] text-[#4A5558]"
+                          ? "bg-circle text-white"
+                          : "border border-line bg-white text-[#4A5558]"
                       } ${SEGOE_UI_CLASS}`}
                     >
                       {isComplete ? <StepCheckIcon /> : step.number}
@@ -330,7 +330,7 @@ export default function ContactApplyForm() {
                     {isLast ? null : (
                       <span
                         aria-hidden
-                        className="my-1 min-h-[1.75rem] w-0 flex-1 border-l-2 border-dotted border-[#d9e1e2]"
+                        className="my-1 min-h-[1.75rem] w-0 flex-1 border-l-2 border-dotted border-line"
                       />
                     )}
                   </div>
@@ -338,14 +338,14 @@ export default function ContactApplyForm() {
                     <p
                       className={`${SEGOE_UI_CLASS} flex h-8 items-center text-[0.9375rem] leading-none lg:text-[1rem] min-[90rem]:text-[1.125rem] ${
                         titleActive
-                          ? "font-[700] text-[var(--Main-CTA-button,#02938c)]"
-                          : "font-[600] text-[#00000080]"
+                          ? "font-bold text-circle"
+                          : "font-semibold text-[#00000080]"
                       }`}
                     >
                       {step.title}
                     </p>
                     <p
-                      className={`${SEGOE_UI_CLASS} mt-0.5 w-full text-[0.8125rem] leading-5 font-[400] text-[var(--Paragraph,#4a5558)] lg:text-[0.875rem] lg:leading-6 min-[90rem]:text-[0.9375rem]`}
+                      className={`${SEGOE_UI_CLASS} mt-0.5 w-full text-[0.8125rem] leading-5 font-normal text-subhead lg:text-[0.875rem] lg:leading-6 min-[90rem]:text-[0.9375rem]`}
                     >
                       {step.description}
                     </p>
@@ -358,10 +358,10 @@ export default function ContactApplyForm() {
 
         <div className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col overflow-hidden">
           {done ? (
-            <div className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto bg-[#FFFFFF] px-12 py-10 min-[90rem]:px-[6.25rem]">
+            <div className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto bg-white px-12 py-10 min-[90rem]:px-[6.25rem]">
               <div className="flex w-full max-w-[45rem] flex-col items-center min-[90rem]:w-[51rem] min-[90rem]:max-w-[51rem]">
                 <span
-                  className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-[var(--Brand-Green-Teal,#02938c)] min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]"
+                  className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-circle min-[90rem]:h-[6.25rem] min-[90rem]:w-[6.25rem]"
                   style={{
                     background:
                       "radial-gradient(circle at 40% 35%, rgba(2,147,140,0.18) 0%, rgba(2,147,140,0.07) 60%, rgba(2,147,140,0.03) 100%)",
@@ -383,23 +383,23 @@ export default function ContactApplyForm() {
                   </svg>
                 </span>
                 <h2
-                  className={`${SEGOE_UI_CLASS} mt-6 text-center text-[3rem] leading-none font-[700] text-[#4a5558]`}
+                  className={`${SEGOE_UI_CLASS} mt-6 text-center text-[3rem] leading-none font-bold text-subhead`}
                 >
                   {thanks.title}
                 </h2>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-6 text-center text-[1.5rem] leading-none font-[700] tracking-[0.5px] text-[var(--Main-CTA-button,#02938c)]`}
+                  className={`${SEGOE_UI_CLASS} mt-6 text-center text-[1.5rem] leading-none font-bold tracking-[0.5px] text-circle`}
                 >
                   {thanks.eyebrow}
                 </p>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-4 max-w-[32.375rem] text-center text-[1.125rem] leading-9 font-[400] text-[#4a5558]`}
+                  className={`${SEGOE_UI_CLASS} mt-4 max-w-[32.375rem] text-center text-[1.125rem] leading-9 font-normal text-subhead`}
                 >
                   {thanks.body}
                 </p>
                 <Link
                   href={thanks.homeHref}
-                  className={`${SEGOE_UI_CLASS} mt-10 inline-flex items-center gap-2 text-[1rem] font-[600] text-[var(--Main-CTA-button,#02938c)]`}
+                  className={`${SEGOE_UI_CLASS} mt-10 inline-flex items-center gap-2 text-[1rem] font-semibold text-circle`}
                 >
                   {thanks.homeLabel}
                   <span aria-hidden>→</span>
@@ -411,25 +411,25 @@ export default function ContactApplyForm() {
               <div className="flex min-h-0 w-full max-w-[55.8125rem] flex-1 flex-col overflow-hidden">
                 <div className="shrink-0">
                   <p
-                    className={`${SEGOE_UI_CLASS} text-[0.875rem] leading-5 font-[700] text-[var(--Brand-Green-Teal,#02938c)] lg:text-[0.9375rem] lg:leading-6 min-[90rem]:text-[1.125rem] min-[90rem]:leading-8`}
+                    className={`${SEGOE_UI_CLASS} text-[0.875rem] leading-5 font-bold text-circle lg:text-[0.9375rem] lg:leading-6 min-[90rem]:text-[1.125rem] min-[90rem]:leading-8`}
                   >
                     {form.progressLabel}
                   </p>
                   <div
-                    className="mt-1.5 h-2.5 w-full overflow-hidden rounded-2xl bg-[#EEF2F2] lg:mt-2 lg:h-3 min-[90rem]:mt-2.5 min-[90rem]:h-4"
+                    className="mt-1.5 h-2.5 w-full overflow-hidden rounded-2xl bg-soft-grey lg:mt-2 lg:h-3 min-[90rem]:mt-2.5 min-[90rem]:h-4"
                     role="progressbar"
                     aria-valuenow={1}
                     aria-valuemin={1}
                     aria-valuemax={1}
                     aria-label={form.progressLabel}
                   >
-                    <div className="h-full w-full rounded-2xl bg-[var(--Brand-Green-Teal,#02938c)]" />
+                    <div className="h-full w-full rounded-2xl bg-circle" />
                   </div>
                 </div>
 
                 <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pb-3">
                   <h2
-                    className={`${SEGOE_UI_CLASS} mt-4 text-[1.5rem] leading-7 font-[700] tracking-normal text-[#4a5558] lg:mt-5 lg:text-[1.75rem] lg:leading-8 min-[90rem]:mt-8 min-[90rem]:text-[2.5rem] min-[90rem]:leading-[1.15]`}
+                    className={`${SEGOE_UI_CLASS} mt-4 text-[1.5rem] leading-7 font-bold tracking-normal text-subhead lg:mt-5 lg:text-[1.75rem] lg:leading-8 min-[90rem]:mt-8 min-[90rem]:text-[2.5rem] min-[90rem]:leading-[1.15]`}
                   >
                     {form.title}
                   </h2>

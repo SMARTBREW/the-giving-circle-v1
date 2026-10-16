@@ -221,7 +221,7 @@ export const GUARDIANS_OF_THE_GREEN_VETTING = {
     },
     {
       title: "Office visited by our team",
-      body: "Simdega Bhawan, Kantatoli, Ranchi · [date]",
+      body: "Simdega Bhawan, Kantatoli, Ranchi",
     },
     {
       title: "Leadership interviewed",
@@ -229,7 +229,7 @@ export const GUARDIANS_OF_THE_GREEN_VETTING = {
     },
     {
       title: "Field work seen",
-      body: "[place, date] · we see the work on the ground wherever we can",
+      body: "We see the work on the ground wherever we can",
     },
     {
       title: "Written commitment to share updates",

@@ -14,17 +14,17 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
         >
           <div className="flex flex-col">
             <p
-              className={`${SEGOE_UI_CLASS} text-center text-[0.75rem] font-[700] leading-6 tracking-[0.08em] uppercase sm:text-[0.875rem] min-[56.25rem]:text-left min-[90rem]:text-[1rem] ${cause.categoryClassName}`}
+              className={`${SEGOE_UI_CLASS} text-center text-[0.75rem] font-bold leading-6 tracking-[0.08em] uppercase sm:text-[0.875rem] min-[56.25rem]:text-left min-[90rem]:text-[1rem] ${cause.categoryClassName}`}
             >
               {cause.category}
             </p>
 
-            <h1 className="mt-4 w-full text-center font-['Georgia'] text-[1.75rem] font-[700] leading-9 tracking-[0.01em] text-[var(--Main-headings,#1c2426)] sm:mt-5 sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3.25rem] min-[56.25rem]:mt-4 min-[56.25rem]:text-left min-[56.25rem]:text-[2.25rem] min-[56.25rem]:leading-[2.75rem] lg:mt-5 lg:text-[2.5rem] lg:leading-[3.125rem] min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:text-[clamp(2.5rem,5.5dvh,3.5rem)] min-[90rem]:leading-[clamp(3rem,6.5dvh,4.25rem)]">
+            <h1 className="mt-4 w-full text-center font-georgia text-[1.75rem] font-bold leading-9 tracking-[0.01em] text-heading sm:mt-5 sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3.25rem] min-[56.25rem]:mt-4 min-[56.25rem]:text-left min-[56.25rem]:text-[2.25rem] min-[56.25rem]:leading-[2.75rem] lg:mt-5 lg:text-[2.5rem] lg:leading-[3.125rem] min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:text-[clamp(2.5rem,5.5dvh,3.5rem)] min-[90rem]:leading-[clamp(3rem,6.5dvh,4.25rem)]">
               {cause.title}
             </h1>
 
             <p
-              className={`${SEGOE_UI_CLASS} mx-auto mt-4 max-w-[34rem] text-center text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#4a5558] sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8 min-[56.25rem]:mx-0 min-[56.25rem]:mt-4 min-[56.25rem]:max-w-none min-[56.25rem]:text-left min-[56.25rem]:text-[1rem] min-[56.25rem]:leading-7 lg:mt-5 lg:text-[1.125rem] lg:leading-8 min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:max-w-none min-[90rem]:text-[clamp(1.125rem,2.4dvh,1.5rem)] min-[90rem]:leading-[clamp(1.75rem,3.6dvh,2.5rem)]`}
+              className={`${SEGOE_UI_CLASS} mx-auto mt-4 max-w-[34rem] text-center text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8 min-[56.25rem]:mx-0 min-[56.25rem]:mt-4 min-[56.25rem]:max-w-none min-[56.25rem]:text-left min-[56.25rem]:text-[1rem] min-[56.25rem]:leading-7 lg:mt-5 lg:text-[1.125rem] lg:leading-8 min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:max-w-none min-[90rem]:text-[clamp(1.125rem,2.4dvh,1.5rem)] min-[90rem]:leading-[clamp(1.75rem,3.6dvh,2.5rem)]`}
             >
               {cause.summary}
             </p>
@@ -33,7 +33,7 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
               {cause.trustBadges.map((badge) => (
                 <li
                   key={badge}
-                  className={`${SEGOE_UI_CLASS} rounded-[6.25rem] border border-[#d9e1e2] bg-[#FFFFFF] px-3.5 py-1.5 text-[0.8125rem] font-[600] text-[var(--Main-headings,#1c2426)] transition-[border-color,box-shadow] duration-300 hover:border-[var(--Main-CTA-button,#02938c)] hover:shadow-[0_0_0_3px_rgba(11,165,187,0.15)] sm:text-[0.875rem]`}
+                  className={`${SEGOE_UI_CLASS} rounded-[6.25rem] border border-line bg-white px-3.5 py-1.5 text-[0.8125rem] font-semibold text-heading transition-[border-color,box-shadow] duration-300 hover:border-circle hover:shadow-[0_0_0_3px_rgba(11,165,187,0.15)] sm:text-[0.875rem]`}
                 >
                   {badge}
                 </li>
@@ -41,10 +41,10 @@ export default function CauseDetailHero({ cause }: { cause: LiveCause }) {
             </ul>
 
             <p
-              className={`${SEGOE_UI_CLASS} mt-5 text-center text-[0.875rem] font-[400] text-[var(--Paragraph,#4a5558)] sm:mt-6 sm:text-[0.9375rem] min-[56.25rem]:text-left min-[90rem]:mt-[clamp(1rem,2dvh,1.75rem)]`}
+              className={`${SEGOE_UI_CLASS} mt-5 text-center text-[0.875rem] font-normal text-subhead sm:mt-6 sm:text-[0.9375rem] min-[56.25rem]:text-left min-[90rem]:mt-[clamp(1rem,2dvh,1.75rem)]`}
             >
               By{" "}
-              <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+              <span className="font-bold text-heading">
                 {cause.org}
               </span>
               <span aria-hidden className="mx-2 text-[#d9e1e2]">

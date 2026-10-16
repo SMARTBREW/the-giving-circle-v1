@@ -31,7 +31,7 @@ export default function FaqItem({
     <li className={`w-full ${fullWidth ? "" : "min-[90rem]:w-[52.1875rem]"}`}>
       <details
         id={id}
-        className={`group w-full rounded-[0.875rem] border border-[var(--Divider,#D9E1E2)] bg-[#FFFFFF] shadow-[0px_5px_15px_0px_#00142F0F] sm:rounded-[1rem] ${
+        className={`group w-full rounded-[0.875rem] border border-[var(--Divider,#D9E1E2)] bg-white shadow-[0px_5px_15px_0px_#00142F0F] sm:rounded-[1rem] ${
           compact
             ? "py-3 sm:py-3.5"
             : "py-5 sm:py-6 md:py-8"
@@ -49,7 +49,7 @@ export default function FaqItem({
           }`}
         >
           <QuestionTag
-            className={`${SEGOE_UI_CLASS} min-w-0 flex-1 font-[500] tracking-normal text-[var(--Main-headings,#1c2426)] ${
+            className={`${SEGOE_UI_CLASS} min-w-0 flex-1 font-medium tracking-normal text-heading ${
               compact
                 ? "text-[0.875rem] leading-5 sm:text-[0.9375rem] sm:leading-6"
                 : "text-[1rem] leading-6 sm:text-[1.125rem] sm:leading-7 md:text-[1.25rem] md:leading-8"
@@ -59,7 +59,7 @@ export default function FaqItem({
           </QuestionTag>
           <span
             aria-hidden="true"
-            className={`relative flex shrink-0 items-center justify-center rounded-full border border-[var(--Main-CTA-button,#02938c)] bg-transparent ${
+            className={`relative flex shrink-0 items-center justify-center rounded-full border border-circle bg-transparent ${
               compact
                 ? "mt-0 h-7 w-7 sm:mt-0"
                 : "mt-0.5 h-8 w-8 sm:mt-0"
@@ -74,13 +74,13 @@ export default function FaqItem({
             >
               <path
                 d="M2.5 7H11.5M7 2.5V11.5"
-                stroke="var(--Main-CTA-button, #02938c)"
+                stroke="var(--color-circle)"
                 strokeWidth="1.5"
                 strokeLinecap="round"
               />
             </svg>
             <span
-              className={`hidden rounded-full bg-[var(--Main-CTA-button,#02938c)] group-open:block ${
+              className={`hidden rounded-full bg-circle group-open:block ${
                 compact ? "h-0.5 w-3" : "h-0.5 w-3.5"
               }`}
             />
@@ -90,7 +90,7 @@ export default function FaqItem({
         <FaqAnswerText
           text={answer}
           links={links}
-          className={`${SEGOE_UI_CLASS} font-[400] tracking-normal text-[var(--faq-answer,#121212A6)] ${
+          className={`${SEGOE_UI_CLASS} font-normal tracking-normal text-[var(--faq-answer,#121212A6)] ${
             compact
               ? "mt-2.5 px-3.5 text-[0.8125rem] leading-5 sm:mt-3 sm:px-4 sm:text-[0.875rem] sm:leading-5 md:px-5"
               : "mt-4 px-4 text-[0.9375rem] leading-6 sm:mt-5 sm:px-6 sm:text-[1rem] md:mt-6 md:px-8 min-[90rem]:px-10"

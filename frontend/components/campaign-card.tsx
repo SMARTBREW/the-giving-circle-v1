@@ -90,7 +90,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
   const [statPrimary, statSecondary] = card.stats;
 
   return (
-    <article className="group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border border-[#d9e1e2] bg-[#FFFFFF] shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[var(--Main-CTA-button,#02938c)] hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.12)]">
+    <article className="group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[1.25rem] border border-line bg-white shadow-card transition-all duration-300 ease-out hover:-translate-y-1 hover:border-circle hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.12)]">
       <Link
         href={href}
         className="relative aspect-[16/10] w-full shrink-0 overflow-hidden"
@@ -103,7 +103,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
         <span
-          className={`${SEGOE_UI_CLASS} absolute top-3 left-3 inline-flex h-8 items-center gap-1 rounded-full border border-[#d9e1e2] bg-[#FFFFFF] py-1 pr-3 pl-3 text-[0.75rem] font-[600] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:top-4 sm:left-4 sm:h-[2.125rem] sm:text-[0.8125rem]`}
+          className={`${SEGOE_UI_CLASS} absolute top-3 left-3 inline-flex h-8 items-center gap-1 rounded-full border border-line bg-white py-1 pr-3 pl-3 text-[0.75rem] font-semibold leading-none tracking-normal text-heading sm:top-4 sm:left-4 sm:h-[2.125rem] sm:text-[0.8125rem]`}
         >
           <VerifiedBadge />
           Verified
@@ -112,42 +112,42 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
 
       <div className="flex min-w-0 flex-1 flex-col px-4 pt-4 pb-4 sm:px-5 sm:pt-5 sm:pb-5 min-[90rem]:px-6 min-[90rem]:pt-5 min-[90rem]:pb-6">
         <p
-          className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[700] leading-none tracking-[0.08em] uppercase sm:text-[0.8125rem] ${card.categoryClassName}`}
+          className={`${SEGOE_UI_CLASS} text-[0.75rem] font-bold leading-none tracking-[0.08em] uppercase sm:text-[0.8125rem] ${card.categoryClassName}`}
         >
           {card.category}
         </p>
 
         <h3
-          className={`${SEGOE_UI_CLASS} mt-2.5 truncate text-[1.25rem] font-[700] leading-7 tracking-normal whitespace-nowrap text-[var(--Main-headings,#1c2426)] sm:mt-3 sm:text-[1.375rem] sm:leading-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8`}
+          className={`${SEGOE_UI_CLASS} mt-2.5 truncate text-[1.25rem] font-bold leading-7 tracking-normal whitespace-nowrap text-heading sm:mt-3 sm:text-[1.375rem] sm:leading-8 min-[90rem]:text-[1.5rem] min-[90rem]:leading-8`}
         >
           <Link
             href={href}
-            className="block truncate transition-colors hover:text-[var(--Main-CTA-button,#02938c)]"
+            className="block truncate transition-colors hover:text-circle"
           >
             {card.cardTitle}
           </Link>
         </h3>
 
         <p
-          className={`${SEGOE_UI_CLASS} mt-2 line-clamp-2 min-h-[3rem] text-[0.875rem] leading-6 font-[400] text-[var(--Subheading,#4a5558)] sm:mt-2.5 sm:min-h-[3rem] sm:text-[0.9375rem] sm:leading-6`}
+          className={`${SEGOE_UI_CLASS} mt-2 line-clamp-2 min-h-[3rem] text-[0.875rem] leading-6 font-normal text-subhead sm:mt-2.5 sm:min-h-[3rem] sm:text-[0.9375rem] sm:leading-6`}
         >
           {card.cardDescription}
         </p>
 
         <div
-          className={`${SEGOE_UI_CLASS} mt-3 flex min-w-0 flex-col gap-1.5 text-[0.8125rem] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-3 sm:gap-y-1 sm:text-[0.875rem] sm:leading-none`}
+          className={`${SEGOE_UI_CLASS} mt-3 flex min-w-0 flex-col gap-1.5 text-[0.8125rem] leading-5 tracking-normal text-subhead sm:mt-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-3 sm:gap-y-1 sm:text-[0.875rem] sm:leading-none`}
         >
           <span className="min-w-0 shrink-0">
-            <span className="font-[400]">By </span>
-            <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+            <span className="font-normal">By </span>
+            <span className="font-bold text-heading">
               {card.org}
             </span>
           </span>
-          <span className="inline-flex min-w-0 items-start gap-1.5 font-[400] sm:items-center">
+          <span className="inline-flex min-w-0 items-start gap-1.5 font-normal sm:items-center">
             <LocationIcon />
             <span className="min-w-0">
               In{" "}
-              <span className="font-[700] text-[var(--Main-headings,#1c2426)]">
+              <span className="font-bold text-heading">
                 {card.location}
               </span>
             </span>
@@ -157,12 +157,12 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
         <div className="mt-4 grid min-w-0 grid-cols-2 gap-2.5 sm:mt-5 sm:gap-3">
           <div className="flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center rounded-xl bg-[#E8F7F8] px-2 py-3 sm:min-h-[5.25rem] sm:rounded-2xl sm:px-3 sm:py-3.5">
             <p
-              className={`${SEGOE_UI_CLASS} max-w-full truncate text-[1.375rem] font-[700] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem]`}
+              className={`${SEGOE_UI_CLASS} max-w-full truncate text-[1.375rem] font-bold leading-none tracking-normal text-heading sm:text-[1.5rem]`}
             >
               {statPrimary.value}
             </p>
             <p
-              className={`${SEGOE_UI_CLASS} mt-2 inline-flex max-w-full items-center justify-center gap-1 whitespace-nowrap text-[0.75rem] font-[500] leading-none text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
+              className={`${SEGOE_UI_CLASS} mt-2 inline-flex max-w-full items-center justify-center gap-1 whitespace-nowrap text-[0.75rem] font-medium leading-none text-subhead sm:text-[0.8125rem]`}
             >
               <PeopleIcon />
               <span>{statPrimary.label}</span>
@@ -170,12 +170,12 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
           </div>
           <div className="flex min-h-[4.75rem] min-w-0 flex-col items-center justify-center rounded-xl bg-[#E8F7F8] px-2 py-3 sm:min-h-[5.25rem] sm:rounded-2xl sm:px-3 sm:py-3.5">
             <p
-              className={`${SEGOE_UI_CLASS} max-w-full truncate text-[1.375rem] font-[700] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem]`}
+              className={`${SEGOE_UI_CLASS} max-w-full truncate text-[1.375rem] font-bold leading-none tracking-normal text-heading sm:text-[1.5rem]`}
             >
               {statSecondary.value}
             </p>
             <p
-              className={`${SEGOE_UI_CLASS} mt-2 inline-flex max-w-full items-center justify-center gap-1 whitespace-nowrap text-[0.75rem] font-[500] leading-none text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
+              className={`${SEGOE_UI_CLASS} mt-2 inline-flex max-w-full items-center justify-center gap-1 whitespace-nowrap text-[0.75rem] font-medium leading-none text-subhead sm:text-[0.8125rem]`}
             >
               <ImpactIcon />
               <span>{statSecondary.label}</span>
@@ -187,7 +187,7 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
           <CtaButton
             href={href}
             className="h-12 w-full px-5 text-[0.9375rem] sm:h-12 min-[90rem]:h-14 min-[90rem]:text-[1rem]"
-            labelClassName="font-[700]"
+            labelClassName="font-bold"
           >
             View Cause
           </CtaButton>

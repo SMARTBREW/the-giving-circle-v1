@@ -27,25 +27,25 @@ export default function VolunteerHero() {
         >
           <div className="flex flex-col">
             <p
-              className={`${SEGOE_UI_CLASS} text-center text-[0.75rem] font-[700] leading-6 tracking-[0.08em] uppercase text-[var(--Eyebrow-label,#02938c)] sm:text-[0.875rem] min-[56.25rem]:text-left min-[90rem]:text-[1rem]`}
+              className={`${SEGOE_UI_CLASS} text-center text-[0.75rem] font-bold leading-6 tracking-[0.08em] uppercase text-circle sm:text-[0.875rem] min-[56.25rem]:text-left min-[90rem]:text-[1rem]`}
             >
               {eyebrow}
             </p>
 
-            <h1 className="mt-4 w-full text-center font-['Georgia'] text-[1.75rem] font-[700] leading-9 tracking-[0.01em] text-[var(--Main-headings,#1c2426)] sm:mt-5 sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3.25rem] min-[56.25rem]:mt-4 min-[56.25rem]:text-left min-[56.25rem]:text-[2.25rem] min-[56.25rem]:leading-[2.75rem] lg:mt-5 lg:text-[2.5rem] lg:leading-[3.125rem] min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:text-[clamp(2.75rem,6.2dvh,4rem)] min-[90rem]:leading-[clamp(3.25rem,7.6dvh,5rem)]">
+            <h1 className="mt-4 w-full text-center font-georgia text-[1.75rem] font-bold leading-9 tracking-[0.01em] text-heading sm:mt-5 sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3.25rem] min-[56.25rem]:mt-4 min-[56.25rem]:text-left min-[56.25rem]:text-[2.25rem] min-[56.25rem]:leading-[2.75rem] lg:mt-5 lg:text-[2.5rem] lg:leading-[3.125rem] min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:text-[clamp(2.75rem,6.2dvh,4rem)] min-[90rem]:leading-[clamp(3.25rem,7.6dvh,5rem)]">
               <span className="block min-[90rem]:whitespace-nowrap">
                 {titleLine1}
               </span>
               <span className="block min-[90rem]:whitespace-nowrap">
                 {titleLine2Before}
-                <span className="text-[var(--Main-CTA-button,#02938c)]">
+                <span className="text-circle">
                   {titleAccent}
                 </span>
               </span>
             </h1>
 
             <p
-              className={`${SEGOE_UI_CLASS} mx-auto mt-4 max-w-[34rem] text-center text-[0.9375rem] font-[400] leading-6 tracking-normal text-[#4a5558] sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8 min-[56.25rem]:mx-0 min-[56.25rem]:mt-4 min-[56.25rem]:max-w-none min-[56.25rem]:text-left min-[56.25rem]:text-[1rem] min-[56.25rem]:leading-7 lg:mt-5 lg:text-[1.125rem] lg:leading-8 min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:max-w-none min-[90rem]:text-[clamp(1.125rem,2.4dvh,1.5rem)] min-[90rem]:leading-[clamp(1.75rem,3.6dvh,2.5rem)]`}
+              className={`${SEGOE_UI_CLASS} mx-auto mt-4 max-w-[34rem] text-center text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8 min-[56.25rem]:mx-0 min-[56.25rem]:mt-4 min-[56.25rem]:max-w-none min-[56.25rem]:text-left min-[56.25rem]:text-[1rem] min-[56.25rem]:leading-7 lg:mt-5 lg:text-[1.125rem] lg:leading-8 min-[90rem]:mt-[clamp(1rem,2.2dvh,2rem)] min-[90rem]:w-[36rem] min-[90rem]:max-w-none min-[90rem]:text-[clamp(1.125rem,2.4dvh,1.5rem)] min-[90rem]:leading-[clamp(1.75rem,3.6dvh,2.5rem)]`}
             >
               {subtitle}
             </p>
@@ -54,15 +54,15 @@ export default function VolunteerHero() {
               <CtaButton
                 href={primaryCta.href}
                 className="h-12 w-full gap-2 px-6 sm:h-14 sm:w-auto sm:px-7 min-[56.25rem]:h-11 min-[56.25rem]:min-w-0 min-[56.25rem]:px-5 min-[56.25rem]:text-[0.8125rem] lg:h-12 lg:px-6 lg:text-[0.9375rem] min-[90rem]:h-[clamp(2.75rem,7dvh,4rem)] min-[90rem]:w-[16.9375rem] min-[90rem]:px-9 min-[90rem]:py-[1.125rem] min-[90rem]:text-[clamp(0.9375rem,2dvh,1.125rem)]"
-                labelClassName="font-[700]"
+                labelClassName="font-bold"
               >
                 {primaryCta.label}
               </CtaButton>
               <CtaButton
                 href={secondaryCta.href}
                 variant="outline"
-                className="h-12 w-full bg-[#FFFFFF] px-6 sm:h-14 sm:w-auto sm:px-7 min-[56.25rem]:h-11 min-[56.25rem]:min-w-0 min-[56.25rem]:px-5 min-[56.25rem]:text-[0.8125rem] lg:h-12 lg:px-6 lg:text-[0.9375rem] min-[90rem]:h-[clamp(2.75rem,7dvh,4rem)] min-[90rem]:w-[12.4375rem] min-[90rem]:px-0 min-[90rem]:text-[clamp(0.9375rem,2dvh,1.125rem)]"
-                labelClassName="font-[700]"
+                className="h-12 w-full bg-white px-6 sm:h-14 sm:w-auto sm:px-7 min-[56.25rem]:h-11 min-[56.25rem]:min-w-0 min-[56.25rem]:px-5 min-[56.25rem]:text-[0.8125rem] lg:h-12 lg:px-6 lg:text-[0.9375rem] min-[90rem]:h-[clamp(2.75rem,7dvh,4rem)] min-[90rem]:w-[12.4375rem] min-[90rem]:px-0 min-[90rem]:text-[clamp(0.9375rem,2dvh,1.125rem)]"
+                labelClassName="font-bold"
               >
                 {secondaryCta.label}
               </CtaButton>

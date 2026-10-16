@@ -18,11 +18,11 @@ export default function MobileStickyCta() {
   if (isWingsDetail) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 rounded-t-[1.25rem] border-t border-[#d9e1e2] bg-[#FFFFFF] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 rounded-t-[1.25rem] border-t border-line bg-white px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] sm:px-6 lg:hidden [@media(hover:hover)_and_(pointer:fine)]:hidden">
       <CtaButton
         href="/champion/apply"
         className="h-12 w-full !rounded-lg sm:h-14"
-        labelClassName="font-[700]"
+        labelClassName="font-bold"
       >
         Become a Cause Champion
       </CtaButton>

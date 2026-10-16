@@ -219,7 +219,7 @@ export const PAWSITIVE_PROTECTORS_VETTING = {
   eyebrow: "Verified Partner",
   title: "Vetted by The Giving Circle",
   body: "We only list NGOs our own team has checked, and not every organisation that applies makes it. Here is what we checked for Animal Care before this campaign went live.",
-  lastReviewed: "[month year]",
+  lastReviewed: "",
   checks: [
     {
       title: "Registration and tax documents checked, genuine and current",
@@ -227,7 +227,7 @@ export const PAWSITIVE_PROTECTORS_VETTING = {
     },
     {
       title: "Office visited by our team",
-      body: "Sultanpur, New Delhi · [date]",
+      body: "Sultanpur, New Delhi",
     },
     {
       title: "Leadership interviewed",
@@ -235,7 +235,7 @@ export const PAWSITIVE_PROTECTORS_VETTING = {
     },
     {
       title: "Field work seen",
-      body: "[place, date] · we see the work on the ground wherever we can",
+      body: "We see the work on the ground wherever we can",
     },
     {
       title: "Written commitment to share updates",

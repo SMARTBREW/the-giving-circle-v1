@@ -22,7 +22,7 @@ export default function VolunteerBand({
   href,
   people = VOLUNTEERS,
   className = "bg-gray-100",
-  ctaClassName = "h-12 w-full max-w-[17.25rem] rounded-full bg-[#FFFFFF] px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[17.25rem] min-[90rem]:px-10 min-[90rem]:py-5",
+  ctaClassName = "h-12 w-full max-w-[17.25rem] rounded-full bg-white px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[17.25rem] min-[90rem]:px-10 min-[90rem]:py-5",
 }: {
   id?: string;
   eyebrow: string;
@@ -59,7 +59,7 @@ export default function VolunteerBand({
             variant="outline"
             hoverFill
             className={ctaClassName}
-            labelClassName="gap-2 font-[600]"
+            labelClassName="gap-2 font-semibold"
           >
             {ctaLabel}
             <CtaArrow />

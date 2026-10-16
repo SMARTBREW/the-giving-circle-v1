@@ -8,7 +8,7 @@ import SectionIntro from "@/components/section-intro";
 import { CHAMPION_VOICES, SEGOE_UI_CLASS } from "@/constants";
 
 const QUOTE_ICON_CLASS =
-  "h-8 w-8 shrink-0 text-[var(--Main-CTA-button,#02938c)] sm:h-9 sm:w-9 min-[90rem]:h-10 min-[90rem]:w-10";
+  "h-8 w-8 shrink-0 text-circle sm:h-9 sm:w-9 min-[90rem]:h-10 min-[90rem]:w-10";
 
 function NavArrow({
   direction,
@@ -24,13 +24,13 @@ function NavArrow({
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#d9e1e2] bg-[#FFFFFF] transition-colors hover:border-[#4A5558] sm:h-14 sm:w-14 min-[90rem]:h-16 min-[90rem]:w-16"
+      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line bg-white transition-colors hover:border-[#4A5558] sm:h-14 sm:w-14 min-[90rem]:h-16 min-[90rem]:w-16"
     >
       <svg
         aria-hidden
         viewBox="0 0 14 24"
         fill="none"
-        className="h-[1.25rem] w-[0.75rem] text-[var(--Main-CTA-button,#02938c)] min-[90rem]:h-[1.458rem] min-[90rem]:w-[0.859rem]"
+        className="h-[1.25rem] w-[0.75rem] text-circle min-[90rem]:h-[1.458rem] min-[90rem]:w-[0.859rem]"
       >
         <path
           d={
@@ -59,14 +59,14 @@ export default function ChampionVoices() {
     setIndex((current) => (current + 1) % testimonials.length);
 
   return (
-    <section id="voices" className="w-full bg-[#FFFFFF]">
+    <section id="voices" className="w-full bg-white">
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:px-10 md:pt-16 md:pb-16 lg:px-12 lg:pt-16 lg:pb-16 min-[90rem]:h-[60.4375rem] min-[90rem]:px-[6.25rem] min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
         <SectionIntro
           eyebrow={eyebrow}
           title={title}
           subtitle={subtitle}
           titleClassName="text-[#1C2426] min-[90rem]:h-16 min-[90rem]:w-[39.75rem] min-[90rem]:whitespace-nowrap"
-          subtitleClassName="max-w-[35rem] text-[var(--Paragraph,#4a5558)] min-[90rem]:h-16 min-[90rem]:max-w-[35rem]"
+          subtitleClassName="max-w-[35rem] text-subhead min-[90rem]:h-16 min-[90rem]:max-w-[35rem]"
         />
 
         <div
@@ -81,7 +81,7 @@ export default function ChampionVoices() {
 
             <article
               key={active.name}
-              className="flex min-w-0 w-full flex-col overflow-hidden rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] min-[56.25rem]:max-w-[68.5rem] min-[56.25rem]:flex-row min-[56.25rem]:items-stretch min-[90rem]:h-[31.125rem] min-[90rem]:w-[68.5rem] min-[90rem]:max-w-none min-[90rem]:shrink-0 min-[90rem]:rounded-[1.5rem]"
+              className="flex min-w-0 w-full flex-col overflow-hidden rounded-[1rem] border border-line bg-white min-[56.25rem]:max-w-[68.5rem] min-[56.25rem]:flex-row min-[56.25rem]:items-stretch min-[90rem]:h-[31.125rem] min-[90rem]:w-[68.5rem] min-[90rem]:max-w-none min-[90rem]:shrink-0 min-[90rem]:rounded-[1.5rem]"
             >
               <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden min-[56.25rem]:aspect-auto min-[56.25rem]:min-h-[22rem] min-[56.25rem]:w-1/2 min-[56.25rem]:self-stretch lg:min-h-[24rem] min-[90rem]:h-full min-[90rem]:min-h-0 min-[90rem]:w-[32.25rem]">
                 <CldImage
@@ -97,7 +97,7 @@ export default function ChampionVoices() {
                 <Quote aria-hidden className={`mb-4 sm:mb-5 min-[90rem]:mb-5 ${QUOTE_ICON_CLASS}`} />
 
                 <p
-                  className={`${SEGOE_UI_CLASS} shrink-0 text-[1.0625rem] font-[700] leading-7 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.1875rem] sm:leading-7 lg:text-[1.25rem] lg:leading-8 min-[90rem]:w-full min-[90rem]:max-w-[33.5rem] min-[90rem]:text-[1.375rem] min-[90rem]:leading-8`}
+                  className={`${SEGOE_UI_CLASS} shrink-0 text-[1.0625rem] font-bold leading-7 tracking-normal text-heading sm:text-[1.1875rem] sm:leading-7 lg:text-[1.25rem] lg:leading-8 min-[90rem]:w-full min-[90rem]:max-w-[33.5rem] min-[90rem]:text-[1.375rem] min-[90rem]:leading-8`}
                 >
                   {active.quote}
                 </p>
@@ -119,12 +119,12 @@ export default function ChampionVoices() {
                   </span>
                   <span className="min-w-0 text-left">
                     <span
-                      className={`${SEGOE_UI_CLASS} block text-[1rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.125rem] min-[90rem]:text-[1.25rem] min-[90rem]:leading-6`}
+                      className={`${SEGOE_UI_CLASS} block text-[1rem] font-bold leading-5 tracking-normal text-heading sm:text-[1.125rem] min-[90rem]:text-[1.25rem] min-[90rem]:leading-6`}
                     >
                       {active.name}
                     </span>
                     <span
-                      className={`${SEGOE_UI_CLASS} mt-1 block text-[0.875rem] font-[400] leading-5 tracking-normal text-[var(--Paragraph,#4a5558)] sm:text-[1rem] min-[90rem]:mt-1.5 min-[90rem]:text-[1.0625rem] min-[90rem]:leading-5`}
+                      className={`${SEGOE_UI_CLASS} mt-1 block text-[0.875rem] font-normal leading-5 tracking-normal text-subhead sm:text-[1rem] min-[90rem]:mt-1.5 min-[90rem]:text-[1.0625rem] min-[90rem]:leading-5`}
                     >
                       {active.role}
                     </span>
@@ -160,7 +160,7 @@ export default function ChampionVoices() {
                   onClick={() => setIndex(dotIndex)}
                   className={`h-5 w-5 rounded-full transition-colors ${
                     isActive
-                      ? "bg-[var(--Main-CTA-button,#02938c)]"
+                      ? "bg-circle"
                       : "border border-[#4A5558] bg-transparent"
                   }`}
                 />

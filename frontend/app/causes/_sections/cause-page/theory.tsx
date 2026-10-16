@@ -2,9 +2,9 @@ import PageSection from "@/components/page-section";
 import type { CausePageTheoryContent } from "@/constants/cause-page";
 import { CAUSE_SECTION, SEGOE_UI_CLASS } from "@/constants";
 
-const DOT_RED = "bg-[var(--Giving-Red,#e62b4f)]";
+const DOT_RED = "bg-giving-red";
 const DOT_SKY = "bg-[#7ec8e3]";
-const LINE_RED = "bg-[var(--Giving-Red,#e62b4f)]";
+const LINE_RED = "bg-giving-red";
 
 export default function CausePageTheory({
   content,
@@ -43,23 +43,23 @@ export default function CausePageTheory({
               />
               <div className="min-w-0 flex-1">
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase sm:text-[0.6875rem] ${
+                  className={`${SEGOE_UI_CLASS} text-[0.625rem] font-bold leading-4 tracking-[0.08em] uppercase sm:text-[0.6875rem] ${
                     step.outcome
                       ? "text-[#7ec8e3]"
-                      : "text-[var(--Giving-Red,#e62b4f)]"
+                      : "text-giving-red"
                   }`}
                 >
                   {step.label}
                 </p>
                 <h3
-                  className={`${SEGOE_UI_CLASS} mt-1.5 text-[1rem] font-[700] leading-6 tracking-normal sm:text-[1.0625rem] sm:leading-7 ${
-                    step.outcome ? "text-[#7ec8e3]" : "text-[#FFFFFF]"
+                  className={`${SEGOE_UI_CLASS} mt-1.5 text-[1rem] font-bold leading-6 tracking-normal sm:text-[1.0625rem] sm:leading-7 ${
+                    step.outcome ? "text-[#7ec8e3]" : "text-white"
                   }`}
                 >
                   {step.title}
                 </h3>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-1.5 text-[0.8125rem] font-[400] leading-5 tracking-normal text-white/80 sm:text-[0.875rem] sm:leading-6`}
+                  className={`${SEGOE_UI_CLASS} mt-1.5 text-[0.8125rem] font-normal leading-5 tracking-normal text-white/80 sm:text-[0.875rem] sm:leading-6`}
                 >
                   {step.body}
                 </p>
@@ -87,23 +87,23 @@ export default function CausePageTheory({
                 ) : null}
               </div>
               <p
-                className={`${SEGOE_UI_CLASS} text-[0.625rem] font-[700] leading-4 tracking-[0.08em] uppercase min-[90rem]:text-[0.6875rem] ${
+                className={`${SEGOE_UI_CLASS} text-[0.625rem] font-bold leading-4 tracking-[0.08em] uppercase min-[90rem]:text-[0.6875rem] ${
                   step.outcome
                     ? "text-[#7ec8e3]"
-                    : "text-[var(--Giving-Red,#e62b4f)]"
+                    : "text-giving-red"
                 }`}
               >
                 {step.label}
               </p>
               <h3
-                className={`${SEGOE_UI_CLASS} mt-2 text-[1rem] font-[700] leading-6 tracking-normal min-[90rem]:text-[1.0625rem] min-[90rem]:leading-7 ${
-                  step.outcome ? "text-[#7ec8e3]" : "text-[#FFFFFF]"
+                className={`${SEGOE_UI_CLASS} mt-2 text-[1rem] font-bold leading-6 tracking-normal min-[90rem]:text-[1.0625rem] min-[90rem]:leading-7 ${
+                  step.outcome ? "text-[#7ec8e3]" : "text-white"
                 }`}
               >
                 {step.title}
               </h3>
               <p
-                className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-[400] leading-5 tracking-normal text-white/80 min-[90rem]:text-[0.875rem] min-[90rem]:leading-6`}
+                className={`${SEGOE_UI_CLASS} mt-2 text-[0.8125rem] font-normal leading-5 tracking-normal text-white/80 min-[90rem]:text-[0.875rem] min-[90rem]:leading-6`}
               >
                 {step.body}
               </p>
@@ -112,7 +112,7 @@ export default function CausePageTheory({
         </ol>
 
         <p
-          className={`${SEGOE_UI_CLASS} mt-8 max-w-[48rem] border-t border-white/15 pt-6 text-[0.8125rem] font-[400] leading-5 tracking-normal text-white/70 sm:mt-10 sm:pt-7 sm:text-[0.875rem] sm:leading-6 lg:mt-12`}
+          className={`${SEGOE_UI_CLASS} mt-8 max-w-[48rem] border-t border-white/15 pt-6 text-[0.8125rem] font-normal leading-5 tracking-normal text-white/70 sm:mt-10 sm:pt-7 sm:text-[0.875rem] sm:leading-6 lg:mt-12`}
         >
           {footer}
         </p>

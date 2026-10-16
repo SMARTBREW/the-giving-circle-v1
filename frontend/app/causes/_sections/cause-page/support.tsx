@@ -25,7 +25,7 @@ function formatInr(amount: number) {
 }
 
 function BenefitIcon({ icon }: { icon: CausePageSupportIcon }) {
-  const className = "h-5 w-5 shrink-0 text-[var(--Circle-Green,#02938c)] sm:h-6 sm:w-6";
+  const className = "h-5 w-5 shrink-0 text-circle sm:h-6 sm:w-6";
   if (icon === "pads") return <Droplet className={className} strokeWidth={1.75} aria-hidden />;
   if (icon === "care")
     return <MessageCircle className={className} strokeWidth={1.75} aria-hidden />;
@@ -79,19 +79,19 @@ export default function CausePageSupport({
       className="scroll-mt-28"
       innerClassName={CAUSE_SECTION.pad}
     >
-      <div className="w-full rounded-[1.25rem] border border-[#d9e1e2] bg-[#FFFFFF] p-5 shadow-[0px_4px_20px_0px_#0000000F] sm:rounded-[1.5rem] sm:p-6 md:p-8 lg:p-10">
+      <div className="w-full rounded-[1.25rem] border border-line bg-white p-5 shadow-card sm:rounded-[1.5rem] sm:p-6 md:p-8 lg:p-10">
         <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
           <div className="min-w-0 flex flex-col">
             <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>
               {eyebrow}
             </p>
 
-            <p className={`${SEGOE_UI_CLASS} mt-3 text-[2.5rem] font-[700] leading-none tracking-normal text-[var(--Circle-Green,#02938c)] sm:mt-4 sm:text-[3rem] lg:text-[3.5rem]`}>
+            <p className={`${SEGOE_UI_CLASS} mt-3 text-[2.5rem] font-bold leading-none tracking-normal text-circle sm:mt-4 sm:text-[3rem] lg:text-[3.5rem]`}>
               {amountLabel}
             </p>
 
             <p
-              className={`${SEGOE_UI_CLASS} mt-2.5 text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-3 sm:text-[1rem] sm:leading-7`}
+              className={`${SEGOE_UI_CLASS} mt-2.5 text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:mt-3 sm:text-[1rem] sm:leading-7`}
             >
               {impactSuffix}
             </p>
@@ -112,20 +112,22 @@ export default function CausePageSupport({
                     onClick={() => setSelected(index)}
                     className={`flex flex-col items-start rounded-[0.75rem] border px-3 py-3 text-left transition-colors sm:rounded-[0.875rem] sm:px-3.5 sm:py-3.5 ${
                       isActive
-                        ? "border-[var(--Circle-Green,#02938c)] bg-[rgba(2,147,140,0.08)]"
-                        : "border-[#d9e1e2] bg-[#FFFFFF] hover:border-[var(--Circle-Green,#02938c)]"
+                        ? "border-circle bg-[rgba(2,147,140,0.08)]"
+                        : "border-line bg-white hover:border-circle"
                     }`}
                   >
                     <span
-                      className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1rem]`}
+                      className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-bold leading-5 tracking-normal text-heading sm:text-[1rem]`}
                     >
                       {formatInr(option.amount)}
                     </span>
-                    <span
-                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
-                    >
-                      {option.label}
-                    </span>
+                    {option.label ? (
+                      <span
+                        className={`${SEGOE_UI_CLASS} mt-1 text-[0.75rem] font-normal leading-4 tracking-normal text-subhead sm:text-[0.8125rem]`}
+                      >
+                        {option.label}
+                      </span>
+                    ) : null}
                   </button>
                 );
               })}
@@ -136,17 +138,17 @@ export default function CausePageSupport({
                 onClick={() => setSelected("other")}
                 className={`flex flex-col items-start rounded-[0.75rem] border px-3 py-3 text-left transition-colors sm:rounded-[0.875rem] sm:px-3.5 sm:py-3.5 ${
                   selected === "other"
-                    ? "border-[var(--Circle-Green,#02938c)] bg-[rgba(2,147,140,0.08)]"
-                    : "border-[#d9e1e2] bg-[#FFFFFF] hover:border-[var(--Circle-Green,#02938c)]"
+                    ? "border-circle bg-[rgba(2,147,140,0.08)]"
+                    : "border-line bg-white hover:border-circle"
                 }`}
               >
                 <span
-                  className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-bold leading-5 tracking-normal text-heading sm:text-[1rem]`}
                 >
                   Other
                 </span>
                 <span
-                  className={`${SEGOE_UI_CLASS} mt-1 text-[0.75rem] font-[400] leading-4 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
+                  className={`${SEGOE_UI_CLASS} mt-1 text-[0.75rem] font-normal leading-4 tracking-normal text-subhead sm:text-[0.8125rem]`}
                 >
                   Enter amount
                 </span>
@@ -155,13 +157,13 @@ export default function CausePageSupport({
 
             {selected === "other" ? (
               <label
-                className={`${SEGOE_UI_CLASS} mt-3 flex h-12 items-center gap-2 rounded-full border border-[#d9e1e2] bg-[#FFFFFF] px-4 sm:mt-4 sm:h-14 sm:px-5 ${
+                className={`${SEGOE_UI_CLASS} mt-3 flex h-12 items-center gap-2 rounded-full border border-line bg-white px-4 sm:mt-4 sm:h-14 sm:px-5 ${
                   selected === "other" && customAmount && !customValid
-                    ? "border-[var(--Giving-Red,#e62b4f)]"
+                    ? "border-giving-red"
                     : ""
                 }`}
               >
-                <span className="shrink-0 text-[1rem] font-[600] text-[var(--Subheading,#4a5558)] sm:text-[1.0625rem]">
+                <span className="shrink-0 text-[1rem] font-semibold text-subhead sm:text-[1.0625rem]">
                   ₹
                 </span>
                 <input
@@ -173,7 +175,7 @@ export default function CausePageSupport({
                   onChange={(event) =>
                     setCustomAmount(event.target.value.replace(/[^\d]/g, ""))
                   }
-                  className="min-w-0 flex-1 bg-transparent text-[1rem] font-[600] leading-none text-[var(--Main-headings,#1c2426)] outline-none placeholder:font-[400] placeholder:text-[var(--Subheading,#4a5558)] sm:text-[1.0625rem]"
+                  className="min-w-0 flex-1 bg-transparent text-[1rem] font-semibold leading-none text-heading outline-none placeholder:font-normal placeholder:text-subhead sm:text-[1.0625rem]"
                 />
               </label>
             ) : null}
@@ -184,18 +186,16 @@ export default function CausePageSupport({
               {...(donateHref.startsWith("http")
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className={`${SEGOE_UI_CLASS} mt-5 inline-flex h-12 w-full items-center justify-center rounded-full px-6 text-[0.9375rem] font-[700] leading-none tracking-normal text-[#FFFFFF] transition-opacity sm:mt-6 sm:h-14 sm:text-[1rem] ${
+              className={`${SEGOE_UI_CLASS} mt-5 inline-flex h-12 w-full items-center justify-center rounded-full px-6 text-[0.9375rem] font-bold leading-none tracking-normal text-white transition-opacity sm:mt-6 sm:h-14 sm:text-[1rem] ${
                 donateDisabled
-                  ? "pointer-events-none bg-[#d9e1e2] text-[var(--Subheading,#4a5558)]"
-                  : "bg-[var(--Circle-Green,#02938c)] hover:opacity-90"
+                  ? "pointer-events-none bg-[#d9e1e2] text-subhead"
+                  : "bg-circle hover:opacity-90"
               }`}
               onClick={(event) => {
                 if (donateDisabled) event.preventDefault();
               }}
             >
-              {donateDisabled
-                ? "Enter an amount to donate"
-                : `Donate ${formatInr(activeAmount)}`}
+              {donateDisabled ? "Enter an amount to donate" : "Donate"}
             </a>
           </div>
 
@@ -206,12 +206,12 @@ export default function CausePageSupport({
                   <BenefitIcon icon={benefit.icon} />
                   <div className="min-w-0">
                     <p
-                      className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[700] leading-5 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1rem] sm:leading-6`}
+                      className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-bold leading-5 tracking-normal text-heading sm:text-[1rem] sm:leading-6`}
                     >
                       {benefit.title}
                     </p>
                     <p
-                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.8125rem] font-[400] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.875rem] sm:leading-6`}
+                      className={`${SEGOE_UI_CLASS} mt-1 text-[0.8125rem] font-normal leading-5 tracking-normal text-subhead sm:text-[0.875rem] sm:leading-6`}
                     >
                       {benefit.body}
                     </p>
@@ -221,7 +221,7 @@ export default function CausePageSupport({
             </ul>
 
             <p
-              className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[400] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem] sm:leading-5`}
+              className={`${SEGOE_UI_CLASS} text-[0.75rem] font-normal leading-5 tracking-normal text-subhead sm:text-[0.8125rem] sm:leading-5`}
             >
               {footer}
             </p>

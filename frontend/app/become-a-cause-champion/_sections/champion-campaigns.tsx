@@ -37,8 +37,8 @@ export default function ChampionCampaigns() {
             href={href}
             variant="outline"
             hoverFill
-            className="h-12 gap-2 bg-[#FFFFFF] px-8 py-3 sm:h-14 min-[90rem]:h-16 min-[90rem]:px-10"
-            labelClassName="font-[700]"
+            className="h-12 gap-2 bg-white px-8 py-3 sm:h-14 min-[90rem]:h-16 min-[90rem]:px-10"
+            labelClassName="font-bold"
           >
             {ctaLabel}
             <CtaArrow />

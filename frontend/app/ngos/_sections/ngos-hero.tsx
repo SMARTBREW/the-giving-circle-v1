@@ -15,35 +15,35 @@ export default function NgosHero() {
 
   return (
     <section
-      className={`relative w-full overflow-x-hidden bg-[#FFFFFF] ${PAGE_HERO_BLEED}`}
+      className={`relative w-full overflow-x-hidden bg-white ${PAGE_HERO_BLEED}`}
     >
       <FadeInSection className="mx-auto flex w-full max-w-[90rem] flex-col items-stretch px-4 pt-2 pb-6 sm:px-8 sm:pt-4 sm:pb-12 md:px-10 md:pt-5 md:pb-14 lg:px-12 lg:pt-6 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-8 min-[90rem]:pb-[5rem]">
         <nav
           aria-label="Breadcrumb"
-          className={`${SEGOE_UI_CLASS} text-left text-[0.8125rem] font-[500] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+          className={`${SEGOE_UI_CLASS} text-left text-[0.8125rem] font-medium leading-5 tracking-normal text-subhead sm:text-[0.875rem]`}
         >
           <Link
             href="/"
-            className="transition-colors hover:text-[var(--Main-CTA-button,#02938c)]"
+            className="transition-colors hover:text-circle"
           >
             Home
           </Link>
           <span aria-hidden className="mx-2 text-[#D9E1E2]">
             /
           </span>
-          <span className="text-[var(--Main-headings,#1c2426)]">NGO Directory</span>
+          <span className="text-heading">NGO Directory</span>
         </nav>
 
         <p
-          className={`${SEGOE_UI_CLASS} mt-5 text-left text-[0.75rem] font-[700] leading-[1.5rem] tracking-[0.08em] uppercase text-[var(--Eyebrow-label,#02938c)] sm:mt-6 sm:text-[0.875rem] lg:text-[0.9375rem] min-[90rem]:text-[1rem]`}
+          className={`${SEGOE_UI_CLASS} mt-5 text-left text-[0.75rem] font-bold leading-[1.5rem] tracking-[0.08em] uppercase text-circle sm:mt-6 sm:text-[0.875rem] lg:text-[0.9375rem] min-[90rem]:text-[1rem]`}
         >
           {eyebrow}
         </p>
-        <h1 className="mt-3 max-w-[40rem] text-left font-['Georgia'] text-[1.75rem] font-[700] leading-[2.25rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:mt-4 sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3rem] lg:text-[2.75rem] lg:leading-[3.25rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[3.75rem]">
+        <h1 className="mt-3 max-w-[40rem] text-left font-georgia text-[1.75rem] font-bold leading-[2.25rem] tracking-normal text-heading sm:mt-4 sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3rem] lg:text-[2.75rem] lg:leading-[3.25rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[3.75rem]">
           {title}
         </h1>
         <p
-          className={`${SEGOE_UI_CLASS} mt-4 max-w-[42rem] text-left text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8`}
+          className={`${SEGOE_UI_CLASS} mt-4 max-w-[42rem] text-left text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8`}
         >
           {subtitle}
         </p>
@@ -54,10 +54,10 @@ export default function NgosHero() {
             return (
               <li
                 key={badge}
-                className={`${SEGOE_UI_CLASS} inline-flex items-center gap-2 rounded-full border border-[#D9E1E2] bg-gray-100 px-3.5 py-2 text-[0.8125rem] font-[600] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[0.875rem]`}
+                className={`${SEGOE_UI_CLASS} inline-flex items-center gap-2 rounded-full border border-line bg-gray-100 px-3.5 py-2 text-[0.8125rem] font-semibold leading-none tracking-normal text-heading sm:text-[0.875rem]`}
               >
                 <Icon
-                  className="h-4 w-4 shrink-0 text-[var(--Circle-Green,#02938c)]"
+                  className="h-4 w-4 shrink-0 text-circle"
                   strokeWidth={2}
                   aria-hidden
                 />
@@ -71,7 +71,7 @@ export default function NgosHero() {
           <CtaButton
             href={primaryCta.href}
             className="h-11 w-full rounded-full px-7 py-3 text-[0.875rem] sm:h-12 sm:w-auto sm:px-8 sm:text-[1rem] min-[90rem]:h-[3.5rem] min-[90rem]:px-9"
-            labelClassName="gap-2 font-[700]"
+            labelClassName="gap-2 font-bold"
           >
             {primaryCta.label}
             <CtaArrow />
@@ -80,7 +80,7 @@ export default function NgosHero() {
             href={secondaryCta.href}
             variant="outline"
             className="h-11 w-full rounded-full px-7 py-3 text-[0.875rem] sm:h-12 sm:w-auto sm:px-8 sm:text-[1rem] min-[90rem]:h-[3.5rem] min-[90rem]:px-9"
-            labelClassName="gap-2 font-[700]"
+            labelClassName="gap-2 font-bold"
           >
             {secondaryCta.label}
             <CtaArrow />
@@ -104,7 +104,7 @@ export function NgosCardShell({
   return (
     <a
       href={href}
-      className="group flex h-full flex-col rounded-[1rem] border border-[#d9e1e2] bg-[#FFFFFF] p-5 shadow-[0px_4px_20px_0px_#0000000F] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--Circle-Green,#02938c)] hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.08)] sm:rounded-[1.25rem] sm:p-6"
+      className="group flex h-full flex-col rounded-[1rem] border border-line bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-circle hover:shadow-[0px_8px_30px_0px_rgba(0,0,0,0.08)] sm:rounded-[1.25rem] sm:p-6"
     >
       {children}
     </a>

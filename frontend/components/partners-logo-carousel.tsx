@@ -12,7 +12,7 @@ const TRACK_LOGOS = [...PARTNER_LOGOS, ...PARTNER_LOGOS];
 export default function PartnersLogoCarousel() {
   return (
     <div
-      className="group relative mx-auto w-full overflow-hidden bg-[#FFFFFF] py-4 sm:py-6"
+      className="group relative mx-auto w-full overflow-hidden bg-white py-4 sm:py-6"
       aria-roledescription="marquee"
       aria-label="Partner NGOs and campaigns"
     >

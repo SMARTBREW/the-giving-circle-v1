@@ -3,7 +3,7 @@ import SectionIntro from "@/components/section-intro";
 import PartnersLogoCarousel from "@/components/partners-logo-carousel";
 
 export default function PartnersSection({
-  className = "bg-[#FFFFFF]",
+  className = "bg-white",
 }: {
   className?: string;
 }) {

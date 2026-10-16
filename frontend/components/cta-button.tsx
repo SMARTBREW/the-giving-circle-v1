@@ -62,18 +62,14 @@ export default function CtaButton({
     <Link
       href={href}
       onClick={handleClick}
-      className={`inline-flex items-center justify-center rounded-[6.25rem] text-[0.9375rem] sm:text-[1rem] min-[90rem]:text-[1.125rem] ${
+      className={`${isOutline ? "tgc-btn-outline" : "tgc-btn-primary"} ${
         hoverFill
-          ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1),color_400ms_cubic-bezier(0.22,1,0.36,1),border-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--Circle-Green,#02938c)] hover:text-[#FFFFFF]"
+          ? "group [transition:background-color_400ms_cubic-bezier(0.22,1,0.36,1),color_400ms_cubic-bezier(0.22,1,0.36,1),border-color_400ms_cubic-bezier(0.22,1,0.36,1)] hover:bg-circle hover:text-white"
           : ""
-      } ${
-        isOutline
-          ? "border border-solid border-[var(--Circle-Green,#02938c)] bg-[#FFFFFF] text-[var(--Circle-Green,#02938c)]"
-          : "border border-transparent bg-[var(--Circle-Green,#02938c)] text-[#FFFFFF]"
       } ${className}`}
     >
       <span
-        className={`${SEGOE_UI_CLASS} relative z-[1] flex min-h-[1.5rem] min-w-0 shrink origin-center items-center justify-center gap-2 text-center text-[length:inherit] font-[600] tracking-normal text-current ${
+        className={`${SEGOE_UI_CLASS} relative z-[1] flex min-h-[1.5rem] min-w-0 shrink origin-center items-center justify-center gap-2 text-center text-[length:inherit] font-semibold tracking-normal text-current ${
           wrap
             ? "gap-1.5 text-balance leading-snug whitespace-normal"
             : "leading-none whitespace-normal min-[90rem]:whitespace-nowrap"

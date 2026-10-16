@@ -1,4 +1,6 @@
 import { SITE } from "@/constants";
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/constants/schema";
+import JsonLd from "@/components/json-ld";
 import Hero from "./_sections/hero";
 import ChampionSection from "./_sections/champion-section";
 import CausesSection from "./_sections/causes-section";
@@ -18,6 +20,8 @@ export default function HomePage() {
   return (
     <>
       <link rel="canonical" href={HOME_CANONICAL} />
+      <JsonLd data={{ ...ORGANIZATION_SCHEMA }} />
+      <JsonLd data={{ ...WEBSITE_SCHEMA }} />
       <Hero />
       <ChampionSection />
       <CausesSection />

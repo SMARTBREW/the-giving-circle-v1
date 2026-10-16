@@ -23,7 +23,9 @@ export default function CauseDetailTemplate({ content }: CauseDetailTemplateProp
       <CausePageAbout content={content.about} />
       <CausePageTheory content={content.theory} />
       <CausePageHow content={content.how} />
-      <CausePageVoices content={content.voices} />
+      {content.voices.items.length > 0 ? (
+        <CausePageVoices content={content.voices} />
+      ) : null}
       <CausePageSupport content={content.support} />
       <CausePageVetting content={content.vetting} />
       <CausePageImpact content={content.impact} />

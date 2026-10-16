@@ -205,26 +205,26 @@ export default async function BlogArticlePage({
       />
 
       <section className="w-full bg-gray-100">
-        <div className="mx-auto w-full max-w-[90rem] px-4 pt-8 pb-10 sm:px-8 sm:pt-10 sm:pb-12 md:px-10 md:pt-12 md:pb-14 lg:px-12 lg:pt-14 lg:pb-16 min-[90rem]:px-[6.25rem] min-[90rem]:pt-[4rem] min-[90rem]:pb-[4.5rem]">
+        <div className="tgc-page pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-14 lg:pt-14 lg:pb-16 min-[90rem]:pt-[4rem] min-[90rem]:pb-[4.5rem]">
           <nav
             aria-label="Breadcrumb"
-            className={`${SEGOE_UI_CLASS} flex flex-wrap items-center gap-2 text-[0.8125rem] font-[400] leading-none tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.875rem]`}
+            className={`${SEGOE_UI_CLASS} flex flex-wrap items-center gap-2 text-[0.8125rem] font-normal leading-none tracking-normal text-subhead sm:text-[0.875rem]`}
           >
             <Link
               href="/"
-              className="text-[var(--Brand-Green-Teal,#02938c)] transition-opacity hover:opacity-80"
+              className="text-circle transition-opacity hover:opacity-80"
             >
               Home
             </Link>
             <span aria-hidden="true">/</span>
             <Link
               href="/blog"
-              className="text-[var(--Brand-Green-Teal,#02938c)] transition-opacity hover:opacity-80"
+              className="text-circle transition-opacity hover:opacity-80"
             >
               Blog
             </Link>
             <span aria-hidden="true">/</span>
-            <span className="min-w-0 break-words text-[var(--Subheading,#4a5558)]">
+            <span className="min-w-0 break-words text-subhead">
               {article.title}
             </span>
           </nav>
@@ -232,14 +232,14 @@ export default async function BlogArticlePage({
           <FadeInSection className="mt-6 sm:mt-8">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <span
-                className={`${SEGOE_UI_CLASS} inline-flex items-center rounded-full bg-[rgba(2,147,140,0.12)] px-3 py-1.5 text-[0.75rem] font-[700] leading-none tracking-normal text-[var(--Brand-Green-Teal,#02938c)] sm:text-[0.8125rem]`}
+                className={`${SEGOE_UI_CLASS} inline-flex items-center rounded-full bg-[rgba(2,147,140,0.12)] px-3 py-1.5 text-[0.75rem] font-bold leading-none tracking-normal text-circle sm:text-[0.8125rem]`}
               >
                 {article.category}
               </span>
               {"author" in article && article.author ? (
                 <>
                   <span
-                    className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[500] leading-none tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[0.8125rem]`}
+                    className={`${SEGOE_UI_CLASS} text-[0.75rem] font-medium leading-none tracking-normal text-heading sm:text-[0.8125rem]`}
                   >
                     {article.author}
                   </span>
@@ -249,7 +249,7 @@ export default async function BlogArticlePage({
                 </>
               ) : null}
               <span
-                className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[400] leading-none tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[0.8125rem]`}
+                className={`${SEGOE_UI_CLASS} text-[0.75rem] font-normal leading-none tracking-normal text-subhead sm:text-[0.8125rem]`}
               >
                 Last updated: {article.updated}
               </span>
@@ -263,18 +263,18 @@ export default async function BlogArticlePage({
               }
             >
               <div>
-                <h1 className="max-w-[48rem] font-['Georgia'] text-[1.75rem] font-[700] leading-[2.25rem] tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3rem] lg:text-[2.75rem] lg:leading-[3.5rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[3.75rem]">
+                <h1 className="max-w-[48rem] font-georgia text-[1.75rem] font-bold leading-[2.25rem] tracking-normal text-heading sm:text-[2.25rem] sm:leading-[2.75rem] md:text-[2.5rem] md:leading-[3rem] lg:text-[2.75rem] lg:leading-[3.5rem] min-[90rem]:text-[3rem] min-[90rem]:leading-[3.75rem]">
                   {article.title}
                 </h1>
                 <p
-                  className={`${SEGOE_UI_CLASS} mt-4 max-w-[42rem] text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8`}
+                  className={`${SEGOE_UI_CLASS} mt-4 max-w-[42rem] text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:mt-5 sm:text-[1.0625rem] sm:leading-7 md:text-[1.125rem] md:leading-8`}
                 >
                   {article.summary}
                 </p>
               </div>
 
               {hasImage ? (
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-[#d9e1e2] shadow-[0_0.25rem_1.25rem_0_#0000000F] sm:rounded-[1.25rem]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem] border border-line shadow-[0_0.25rem_1.25rem_0_#0000000F] sm:rounded-[1.25rem]">
                   <CldImage
                     src={article.image as string}
                     alt={
@@ -294,15 +294,15 @@ export default async function BlogArticlePage({
         </div>
       </section>
 
-      <section className="w-full bg-[#FFFFFF]">
+      <section className="w-full bg-white">
         <div className="mx-auto w-full max-w-[56rem] px-4 pt-8 pb-10 sm:px-8 sm:pt-12 sm:pb-12 md:pt-14 md:pb-14 lg:pt-16 lg:pb-16 min-[90rem]:pt-[5rem] min-[90rem]:pb-[5rem]">
           {/* In This Article - placed directly above the main text */}
           <nav
             aria-label="Table of contents"
-            className="mb-10 rounded-[1rem] border border-[#D9E1E2] bg-[#E8F5F3] p-6 sm:mb-12 sm:rounded-[1.25rem] sm:p-8"
+            className="mb-10 rounded-[1rem] border border-line bg-[#E8F5F3] p-6 sm:mb-12 sm:rounded-[1.25rem] sm:p-8"
           >
             <p
-              className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[700] leading-none tracking-[0.08em] uppercase text-[var(--Eyebrow-label,#02938c)] sm:text-[0.8125rem]`}
+              className={`${SEGOE_UI_CLASS} text-[0.75rem] font-bold leading-none tracking-[0.08em] uppercase text-circle sm:text-[0.8125rem]`}
             >
               In This Article
             </p>
@@ -317,7 +317,7 @@ export default async function BlogArticlePage({
                   <li key={sec.heading}>
                     <a
                       href={`#${targetId}`}
-                      className={`${SEGOE_UI_CLASS} text-[0.875rem] font-[500] leading-5 tracking-normal text-[var(--Subheading,#4a5558)] transition-colors hover:text-[var(--Main-CTA-button,#02938c)] sm:text-[0.9375rem] sm:leading-6`}
+                      className={`${SEGOE_UI_CLASS} text-[0.875rem] font-medium leading-5 tracking-normal text-subhead transition-colors hover:text-circle sm:text-[0.9375rem] sm:leading-6`}
                     >
                       {index + 1}. {sec.heading}
                     </a>
@@ -365,14 +365,14 @@ export default async function BlogArticlePage({
                     <span id={sectionIndexId} className="relative -top-28 block invisible" />
                   ) : null}
 
-                  <h2 className="font-['Georgia'] text-[1.375rem] font-[700] leading-8 tracking-normal text-[var(--Main-headings,#1c2426)] sm:text-[1.5rem] sm:leading-9 md:text-[1.75rem] md:leading-10">
+                  <h2 className="font-georgia text-[1.375rem] font-bold leading-8 tracking-normal text-heading sm:text-[1.5rem] sm:leading-9 md:text-[1.75rem] md:leading-10">
                     {section.heading}
                   </h2>
                   <div className="mt-4 flex flex-col gap-4">
                     {section.paragraphs.map((para) => (
                       <p
                         key={para.slice(0, 48)}
-                        className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
+                        className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
                       >
                         {para}
                       </p>
@@ -383,7 +383,7 @@ export default async function BlogArticlePage({
                       {list.map((item) => (
                         <li
                           key={item.slice(0, 48)}
-                          className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                          className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7`}
                         >
                           {item}
                         </li>
@@ -405,7 +405,7 @@ export default async function BlogArticlePage({
 
                         return (
                           <div key={sub.subheading} className="mt-2">
-                            <h3 className="font-['Georgia'] text-[1.125rem] font-[700] leading-7 text-[var(--Main-headings,#1c2426)] sm:text-[1.25rem]">
+                            <h3 className="font-georgia text-[1.125rem] font-bold leading-7 text-heading sm:text-[1.25rem]">
                               {sub.subheading}
                             </h3>
                             {subParas ? (
@@ -413,7 +413,7 @@ export default async function BlogArticlePage({
                                 {subParas.map((p) => (
                                   <p
                                     key={p.slice(0, 48)}
-                                    className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                                    className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7`}
                                   >
                                     {p}
                                   </p>
@@ -425,7 +425,7 @@ export default async function BlogArticlePage({
                                 {subList.map((item) => (
                                   <li
                                     key={item.slice(0, 48)}
-                                    className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-[400] leading-6 tracking-normal text-[var(--Subheading,#4a5558)] sm:text-[1rem] sm:leading-7`}
+                                    className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7`}
                                   >
                                     {item}
                                   </li>
@@ -451,7 +451,7 @@ export default async function BlogArticlePage({
             {customRelatedLinks && customRelatedLinks.length > 0 ? (
               <div className="mt-10 border-t border-[#00000014] pt-8 sm:mt-12 sm:pt-10">
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[700] leading-none tracking-[0.08em] uppercase text-[var(--Eyebrow-label,#02938c)] sm:text-[0.8125rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[0.75rem] font-bold leading-none tracking-[0.08em] uppercase text-circle sm:text-[0.8125rem]`}
                 >
                   Related Reading
                 </p>
@@ -460,7 +460,7 @@ export default async function BlogArticlePage({
                     <li key={item.title}>
                       <Link
                         href={item.href}
-                        className={`${SEGOE_UI_CLASS} inline-flex max-w-full min-w-0 items-start gap-2 text-[0.9375rem] font-[600] leading-snug tracking-normal text-[var(--Main-CTA-button,#02938c)] transition-opacity hover:opacity-80 sm:text-[1rem]`}
+                        className={`${SEGOE_UI_CLASS} inline-flex max-w-full min-w-0 items-start gap-2 text-[0.9375rem] font-semibold leading-snug tracking-normal text-circle transition-opacity hover:opacity-80 sm:text-[1rem]`}
                       >
                         <span className="min-w-0 flex-1 text-balance">{item.title}</span>
                         <CtaArrow />
@@ -472,7 +472,7 @@ export default async function BlogArticlePage({
             ) : related.length > 0 ? (
               <div className="mt-10 border-t border-[#00000014] pt-8 sm:mt-12 sm:pt-10">
                 <p
-                  className={`${SEGOE_UI_CLASS} text-[0.75rem] font-[700] leading-none tracking-[0.08em] uppercase text-[var(--Eyebrow-label,#02938c)] sm:text-[0.8125rem]`}
+                  className={`${SEGOE_UI_CLASS} text-[0.75rem] font-bold leading-none tracking-[0.08em] uppercase text-circle sm:text-[0.8125rem]`}
                 >
                   Related Reading
                 </p>
@@ -481,7 +481,7 @@ export default async function BlogArticlePage({
                     <li key={item.id}>
                       <Link
                         href={`/blog/${item.id}`}
-                        className={`${SEGOE_UI_CLASS} inline-flex max-w-full min-w-0 items-start gap-2 text-[1rem] font-[600] leading-snug tracking-normal text-[var(--Main-CTA-button,#02938c)] transition-opacity hover:opacity-80 sm:text-[1.0625rem]`}
+                        className={`${SEGOE_UI_CLASS} inline-flex max-w-full min-w-0 items-start gap-2 text-[1rem] font-semibold leading-snug tracking-normal text-circle transition-opacity hover:opacity-80 sm:text-[1.0625rem]`}
                       >
                         <span className="min-w-0 flex-1 text-balance">{item.title}</span>
                         <CtaArrow />

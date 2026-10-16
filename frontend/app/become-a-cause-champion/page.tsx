@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import MomentsSection from "@/app/(home)/_sections/moments-section";
 import PartnersSection from "@/app/(home)/_sections/partners-section";
 import FaqsSection from "@/app/(home)/_sections/faqs-section";
+import JsonLd from "@/components/json-ld";
 import { CHAMPION_FAQS, SITE } from "@/constants";
+import {
+  CHAMPION_BREADCRUMB_SCHEMA,
+  CHAMPION_PAGE_URL,
+  CHAMPION_WEBPAGE_SCHEMA,
+} from "@/constants/schema";
 import ChampionHero from "./_sections/champion-hero";
 import ChampionHowItWorks from "./_sections/champion-how-it-works";
 import ChampionCampaigns from "./_sections/champion-campaigns";
@@ -23,6 +29,8 @@ export default function ChampionPage() {
 
   return (
     <>
+      <JsonLd data={{ ...CHAMPION_WEBPAGE_SCHEMA }} />
+      <JsonLd data={{ ...CHAMPION_BREADCRUMB_SCHEMA }} />
       <ChampionHero />
       <ChampionHowItWorks />
       <ChampionCampaigns />
@@ -37,6 +45,7 @@ export default function ChampionPage() {
         title={title}
         subtitle={subtitle}
         items={items}
+        jsonLdId={`${CHAMPION_PAGE_URL}#faq`}
       />
       <ChampionCta />
     </>
