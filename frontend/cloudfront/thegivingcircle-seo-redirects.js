@@ -108,6 +108,28 @@ function handler(event) {
     '/impact-stories-details': '/stories',
     '/what-is-a-giving-circle': '/about',
     '/giving-circle': '/about',
+    '/the-giving-circle': '/about',
+    // Google Search Console 404s - Volunteer
+    '/volunteer-opportunities-delhi': '/volunteer',
+    '/how-to-volunteer-india': '/volunteer',
+    // Google Search Console 404s - NGO Listings
+    '/top-verified-ngos-india-2026': '/ngos',
+    '/top-verified-ngos-india': '/ngos',
+    '/ngo-list': '/ngos',
+    '/verified-ngos-in-delhi': '/ngos/best-ngo-in-delhi',
+    '/top-ngos-in-delhi-2026': '/ngos/best-ngo-in-delhi',
+    // Google Search Console 404s - Cause Details
+    '/pawsitive-protectors-cause-details': '/causes/pawsitive-protectors',
+    '/bricks-by-bricks-cause-details': '/causes/brick-by-brick',
+    '/bowls-of-hope-cause-details': '/causes/bowls-of-hope',
+    '/flood-animal-rescue-cause-details': '/causes',
+    '/flood-relief-cause-details': '/causes',
+    // Google Search Console 404s - Other
+    '/ngo-partner': '/partner',
+    '/onboarding': '/become-a-cause-champion',
+    '/impact-stories/wings-of-hope': '/stories',
+    '/ngo-for-women-empowerment': '/causes/wings-of-hope',
+    '/csr-projects-in-india': '/causes',
     // Legacy SEO / old SPA paths
     '/local-seo': '/ngos',
     '/khushi-ngo-detail': '/causes/wings-of-hope',
