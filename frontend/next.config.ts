@@ -104,6 +104,11 @@ const nextConfig: NextConfig = {
               destination: "/become-a-cause-champion",
               permanent: true,
             },
+            {
+              source: "/stories",
+              destination: "/impact-stories",
+              permanent: true,
+            },
           ];
         },
       }),

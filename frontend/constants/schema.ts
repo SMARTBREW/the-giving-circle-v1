@@ -39,6 +39,56 @@ export const WEBSITE_SCHEMA = {
   inLanguage: "en-IN",
 } as const;
 
+function pageUrl(path: string): string {
+  if (path.startsWith("http")) {
+    return path.endsWith("/") ? path : `${path}/`;
+  }
+  const withSlash = path.startsWith("/") ? path : `/${path}`;
+  return `${SITE_URL}${withSlash.endsWith("/") ? withSlash : `${withSlash}/`}`;
+}
+
+export function webPageSchema(
+  path: string,
+  name: string,
+  description: string,
+): Record<string, unknown> {
+  const url = pageUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    description,
+    inLanguage: "en-IN",
+  };
+}
+
+export function breadcrumbSchema(
+  trail: readonly { name: string; path: string }[],
+): Record<string, unknown> {
+  const pageUrlValue = pageUrl(trail[trail.length - 1]?.path ?? "/");
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrlValue}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: ORIGIN,
+      },
+      ...trail.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 2,
+        name: crumb.name,
+        item: pageUrl(crumb.path),
+      })),
+    ],
+  };
+}
+
 export const CHAMPION_PAGE_PATH = "/become-a-cause-champion/";
 export const CHAMPION_PAGE_URL = `${SITE_URL}${CHAMPION_PAGE_PATH}`;
 

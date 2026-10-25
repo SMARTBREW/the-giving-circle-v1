@@ -13,12 +13,33 @@ function handler(event) {
     ? request.headers.host.value
     : CANONICAL_HOST;
 
-  function redirect(path) {
+  function querySuffix() {
+    var parts = [];
+    for (var key in qs) {
+      if (qs[key] && qs[key].value !== undefined) {
+        parts.push(qs[key].value === '' ? key : key + '=' + qs[key].value);
+      }
+    }
+    return parts.length ? '?' + parts.join('&') : '';
+  }
+
+  // Page URLs are canonical with a trailing slash. Files (.html, .txt, images) are not.
+  function withSlash(path) {
+    if (!path || path === '/') return '/';
+    var last = path.substring(path.lastIndexOf('/') + 1);
+    if (last.indexOf('.') !== -1) return path;
+    if (path.charAt(path.length - 1) === '/') return path;
+    return path + '/';
+  }
+
+  function redirect(path, keepQuery) {
+    var target = withSlash(path);
+    if (keepQuery !== false) target += querySuffix();
     return {
       statusCode: 301,
       statusDescription: 'Moved Permanently',
       headers: {
-        location: { value: BASE + path },
+        location: { value: BASE + target },
         // Do not long-cache redirects — a bad 301 (e.g. soft-nav .txt → /ngos)
         // sticks in browsers for an hour+ and breaks Link clicks.
         'cache-control': { value: 'private, max-age=0, must-revalidate' },
@@ -63,13 +84,13 @@ function handler(event) {
     ];
     for (var v = 0; v < variantPrefixes.length; v++) {
       if (slug.indexOf(variantPrefixes[v]) === 0) {
-        return '/ngos/best-ngo-in-' + slug.slice(variantPrefixes[v].length);
+        return '/ngos/best-ngo-in-' + slug.slice(variantPrefixes[v].length) + '/';
       }
     }
-    if (slug === 'ngo-in-noida') return '/ngos/best-ngo-in-noida';
-    if (slug === 'ngo-in-gurugram') return '/ngos/best-ngo-in-gurugram';
-    if (slug.indexOf('best-ngo-in-') === 0) return '/ngos/' + slug;
-    return '/ngos';
+    if (slug === 'ngo-in-noida') return '/ngos/best-ngo-in-noida/';
+    if (slug === 'ngo-in-gurugram') return '/ngos/best-ngo-in-gurugram/';
+    if (slug.indexOf('best-ngo-in-') === 0) return '/ngos/' + slug + '/';
+    return '/ngos/';
   }
 
   function resolveNgoSlug(slug) {
@@ -102,69 +123,69 @@ function handler(event) {
 
   var rules = {
     // Current site routes (legacy → new)
-    '/live-causes': '/causes',
-    '/champion': '/become-a-cause-champion',
-    '/impact-stories': '/stories',
-    '/impact-stories-details': '/stories',
-    '/what-is-a-giving-circle': '/about',
-    '/giving-circle': '/about',
-    '/the-giving-circle': '/about',
+    '/live-causes': '/causes/',
+    '/champion': '/become-a-cause-champion/',
+    '/stories': '/impact-stories/',
+    '/impact-stories-details': '/impact-stories/',
+    '/what-is-a-giving-circle': '/about/',
+    '/giving-circle': '/about/',
+    '/the-giving-circle': '/about/',
     // Google Search Console 404s - Volunteer
-    '/volunteer-opportunities-delhi': '/volunteer',
-    '/how-to-volunteer-india': '/volunteer',
+    '/volunteer-opportunities-delhi': '/volunteer/',
+    '/how-to-volunteer-india': '/volunteer/',
     // Google Search Console 404s - NGO Listings
-    '/top-verified-ngos-india-2026': '/ngos',
-    '/top-verified-ngos-india': '/ngos',
-    '/ngo-list': '/ngos',
-    '/verified-ngos-in-delhi': '/ngos/best-ngo-in-delhi',
-    '/top-ngos-in-delhi-2026': '/ngos/best-ngo-in-delhi',
+    '/top-verified-ngos-india-2026': '/ngos/',
+    '/top-verified-ngos-india': '/ngos/',
+    '/ngo-list': '/ngos/',
+    '/verified-ngos-in-delhi': '/ngos/best-ngo-in-delhi/',
+    '/top-ngos-in-delhi-2026': '/ngos/best-ngo-in-delhi/',
     // Google Search Console 404s - Cause Details
-    '/pawsitive-protectors-cause-details': '/causes/pawsitive-protectors',
-    '/bricks-by-bricks-cause-details': '/causes/brick-by-brick',
-    '/bowls-of-hope-cause-details': '/causes/bowls-of-hope',
-    '/flood-animal-rescue-cause-details': '/causes',
-    '/flood-relief-cause-details': '/causes',
+    '/pawsitive-protectors-cause-details': '/causes/pawsitive-protectors/',
+    '/bricks-by-bricks-cause-details': '/causes/brick-by-brick/',
+    '/bowls-of-hope-cause-details': '/causes/bowls-of-hope/',
+    '/flood-animal-rescue-cause-details': '/causes/',
+    '/flood-relief-cause-details': '/causes/',
     // Google Search Console 404s - Other
-    '/ngo-partner': '/partner',
-    '/onboarding': '/become-a-cause-champion',
-    '/impact-stories/wings-of-hope': '/stories',
-    '/ngo-for-women-empowerment': '/causes/wings-of-hope',
-    '/csr-projects-in-india': '/causes',
+    '/ngo-partner': '/partner/',
+    '/onboarding': '/become-a-cause-champion/',
+    '/impact-stories/wings-of-hope': '/impact-stories/',
+    '/ngo-for-women-empowerment': '/causes/wings-of-hope/',
+    '/csr-projects-in-india': '/causes/',
     // Legacy SEO / old SPA paths
-    '/local-seo': '/ngos',
-    '/khushi-ngo-detail': '/causes/wings-of-hope',
-    '/khushi-cause-details': '/causes/wings-of-hope',
-    '/jwp-cause-details': '/causes/wings-of-hope',
-    '/donate-for-education-india': '/causes/wings-of-hope',
-    '/pehli-class-cause-details': '/causes/pehli-class',
-    '/nonprofit-organizations': '/causes',
-    '/ngo-detail/1': '/causes/wings-of-hope',
-    '/ngo-detail/2': '/causes/pawsitive-protectors',
-    '/ngo-detail/3': '/causes/wings-of-hope',
-    '/ngo/animalcare-india': '/causes/pawsitive-protectors',
-    '/animalcare-ngo-detail': '/causes/pawsitive-protectors',
+    '/local-seo': '/ngos/',
+    '/khushi-ngo-detail': '/causes/wings-of-hope/',
+    '/khushi-cause-details': '/causes/wings-of-hope/',
+    '/jwp-cause-details': '/causes/wings-of-hope/',
+    '/donate-for-education-india': '/causes/wings-of-hope/',
+    '/pehli-class-cause-details': '/causes/pehli-class/',
+    '/nonprofit-organizations': '/causes/',
+    '/ngo-detail/1': '/causes/wings-of-hope/',
+    '/ngo-detail/2': '/causes/pawsitive-protectors/',
+    '/ngo-detail/3': '/causes/wings-of-hope/',
+    '/ngo/animalcare-india': '/causes/pawsitive-protectors/',
+    '/animalcare-ngo-detail': '/causes/pawsitive-protectors/',
     // Muted cause detail pages (content kept in repo; unmute via MUTED_CAUSE_IDS)
-    '/causes/flood-animal-rescue': '/causes',
-    '/ngo-in-noida': '/ngos/best-ngo-in-noida',
-    '/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
-    '/ngos/ngo-in-noida': '/ngos/best-ngo-in-noida',
-    '/ngos/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
+    '/causes/flood-animal-rescue': '/causes/',
+    '/ngo-in-noida': '/ngos/best-ngo-in-noida/',
+    '/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram/',
+    '/ngos/ngo-in-noida': '/ngos/best-ngo-in-noida/',
+    '/ngos/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram/',
     '/animal-emergency': '/animal-emergency.html',
-    '/ngos/top-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
-    '/ngos/trusted-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
-    '/ngos/leading-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
+    '/ngos/top-ngo-in-delhi': '/ngos/best-ngo-in-delhi/',
+    '/ngos/trusted-ngo-in-delhi': '/ngos/best-ngo-in-delhi/',
+    '/ngos/leading-ngo-in-delhi': '/ngos/best-ngo-in-delhi/',
     // top-ngo-in-gurugram + verified-ngo-in-delhi are real App Router pages
-    '/ngos/verified-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
-    '/ngos/trusted-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
-    '/ngos/leading-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
-    '/ngos/top-ngo-in-noida': '/ngos/best-ngo-in-noida',
-    '/ngos/verified-ngo-in-noida': '/ngos/best-ngo-in-noida',
-    '/ngos/trusted-ngo-in-noida': '/ngos/best-ngo-in-noida',
-    '/ngos/leading-ngo-in-noida': '/ngos/best-ngo-in-noida',
-    '/ngos/top-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad',
-    '/ngos/verified-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad',
-    '/ngos/trusted-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad',
-    '/ngos/leading-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad',
+    '/ngos/verified-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram/',
+    '/ngos/trusted-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram/',
+    '/ngos/leading-ngo-in-gurugram': '/ngos/best-ngo-in-gurugram/',
+    '/ngos/top-ngo-in-noida': '/ngos/best-ngo-in-noida/',
+    '/ngos/verified-ngo-in-noida': '/ngos/best-ngo-in-noida/',
+    '/ngos/trusted-ngo-in-noida': '/ngos/best-ngo-in-noida/',
+    '/ngos/leading-ngo-in-noida': '/ngos/best-ngo-in-noida/',
+    '/ngos/top-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad/',
+    '/ngos/verified-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad/',
+    '/ngos/trusted-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad/',
+    '/ngos/leading-ngo-in-faridabad': '/ngos/best-ngo-in-faridabad/',
   };
 
   if (rules[path]) {
@@ -177,11 +198,11 @@ function handler(event) {
   }
 
   if (path.indexOf('/ngo/') === 0 && path.toLowerCase().indexOf('jwp') !== -1) {
-    return redirect('/causes/wings-of-hope');
+    return redirect('/causes/wings-of-hope/');
   }
 
   if (path.indexOf('/ngo-detail/') === 0) {
-    return redirect('/causes');
+    return redirect('/causes/');
   }
 
   if (path.indexOf('/ngos/') === 0 && path !== '/ngos') {
@@ -191,17 +212,17 @@ function handler(event) {
     if (ngoRest.indexOf('.') === -1) {
       var resolvedSlug = resolveNgoSlug(ngoRest);
       if (resolvedSlug && resolvedSlug !== ngoRest) {
-        return redirect('/ngos/' + resolvedSlug);
+        return redirect('/ngos/' + resolvedSlug + '/');
       }
       if (!resolvedSlug) {
-        return redirect('/ngos');
+        return redirect('/ngos/');
       }
     }
   }
 
   // Block schema placeholder crawl (legacy SearchAction URL)
   if (path === '/causes' && qs.search && qs.search.value === '{search_term_string}') {
-    return redirect('/causes');
+    return redirect('/causes/', false);
   }
 
   // Pretty-URL rewrite for static (SSG) hosting on an S3 REST origin:
@@ -221,11 +242,11 @@ function handler(event) {
   var lastSlash = uri.lastIndexOf('/');
   var lastSegment = uri.substring(lastSlash + 1);
   if (lastSegment.indexOf('.') === -1) {
-    if (uri.charAt(uri.length - 1) === '/') {
-      request.uri = uri + 'index.html';
-    } else {
-      request.uri = uri + '/index.html';
+    // Canonical page URL is the trailing-slash form. Files and soft-nav .txt stay put.
+    if (uri.length > 1 && uri.charAt(uri.length - 1) !== '/') {
+      return redirect(uri);
     }
+    request.uri = uri + 'index.html';
   }
 
   return request;

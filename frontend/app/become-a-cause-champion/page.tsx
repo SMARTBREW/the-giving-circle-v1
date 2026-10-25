@@ -3,7 +3,7 @@ import MomentsSection from "@/app/(home)/_sections/moments-section";
 import PartnersSection from "@/app/(home)/_sections/partners-section";
 import FaqsSection from "@/app/(home)/_sections/faqs-section";
 import JsonLd from "@/components/json-ld";
-import { CHAMPION_FAQS, SITE } from "@/constants";
+import { CHAMPION_FAQS, CHAMPION_PAGE_FAQ_ITEMS, SITE } from "@/constants";
 import {
   CHAMPION_BREADCRUMB_SCHEMA,
   CHAMPION_PAGE_URL,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ChampionPage() {
-  const { eyebrow, title, subtitle, items } = CHAMPION_FAQS;
+  const { eyebrow, title, subtitle } = CHAMPION_FAQS;
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function ChampionPage() {
         eyebrow={eyebrow}
         title={title}
         subtitle={subtitle}
-        items={items}
+        items={CHAMPION_PAGE_FAQ_ITEMS}
         jsonLdId={`${CHAMPION_PAGE_URL}#faq`}
       />
       <ChampionCta />

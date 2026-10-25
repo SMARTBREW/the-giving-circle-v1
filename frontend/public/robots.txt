@@ -2,10 +2,13 @@
 # Last reviewed: 2026-09-28
 
 # Default: full crawl access for all standard search bots
+# /causes filter URLs (?category=) are kept out of the crawl
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 # --- AI crawlers / LLM training + retrieval bots: explicitly allowed ---
 # (repeats the same Disallow rules as above so these bots follow the
@@ -15,121 +18,169 @@ User-agent: GPTBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Claude-User
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Claude-SearchBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: GoogleOther
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Perplexity-User
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: CCBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: cohere-ai
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Bytespider
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Amazonbot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Applebot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Meta-ExternalAgent
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Meta-ExternalFetcher
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: FacebookBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Diffbot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: Timpibot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: YouBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: DuckAssistBot
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 User-agent: MistralAI-User
 Allow: /
 Disallow: /api/
 Disallow: /*?reason=
+Disallow: /*?category=
+Disallow: /*&category=
 
 # Sitemap
 Sitemap: https://www.thegivingcircle.in/sitemap.xml

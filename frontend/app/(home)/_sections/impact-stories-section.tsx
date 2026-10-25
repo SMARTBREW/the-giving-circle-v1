@@ -32,7 +32,7 @@ export default function ImpactStoriesSection() {
         </ul>
         <div className="mt-10 sm:mt-10 lg:mt-12">
           <CtaButton
-            href="/stories"
+            href="/impact-stories"
             variant="outline"
             hoverFill
             className="h-12 w-full max-w-[18.75rem] rounded-full bg-white px-6 py-3 sm:h-14 sm:px-8 min-[90rem]:h-[4rem] min-[90rem]:w-[18.75rem] min-[90rem]:px-10 min-[90rem]:py-5"

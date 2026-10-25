@@ -1,4 +1,4 @@
-/** Generic JSON-LD script tag for schema.org structured data. */
+/** JSON-LD in the initial HTML so crawlers see it without running JavaScript. */
 export default function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
     <script

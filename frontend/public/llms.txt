@@ -9,7 +9,7 @@ This service is ideal for individuals who want to make a difference but need a s
 - [Home](https://www.thegivingcircle.in/): Overview of the platform, featured causes, and entry points to donate, volunteer, or fundraise.
 - [About](https://www.thegivingcircle.in/about/): Who runs The Giving Circle and how causes are selected and vetted.
 - [Causes](https://www.thegivingcircle.in/causes/): Full directory of active giving campaigns.
-- [Stories](https://www.thegivingcircle.in/stories/): Impact stories and updates from supported projects and beneficiaries.
+- [Impact Stories](https://www.thegivingcircle.in/impact-stories/): Impact stories and updates from supported projects and beneficiaries.
 - [FAQs](https://www.thegivingcircle.in/faqs/): Common questions on donating, tax receipts, and how funds are used.
 - [Contact](https://www.thegivingcircle.in/contact/): Contact details for donor and partner queries.
 

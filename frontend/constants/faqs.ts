@@ -262,6 +262,76 @@ export const CHAMPION_FAQS = {
   items: faqsByIds(CHAMPION_FAQ_IDS),
 } as const;
 
+/**
+ * /become-a-cause-champion/ only.
+ * Visible answers and FAQPage JSON-LD must stay word for word.
+ * Do not reuse these on other pages — those pages keep the shared FAQ copy.
+ */
+export const CHAMPION_PAGE_FAQ_ITEMS = [
+  {
+    id: "champion-page-what-is-a-cause-champion",
+    question: "What is a Cause Champion?",
+    answer:
+      "A Cause Champion is a volunteer fundraiser who picks a verified cause, sets a fundraising target and shares their fundraising page with their network.",
+  },
+  {
+    id: "champion-page-does-it-cost-anything",
+    question: "Does it cost anything to start a fundraiser?",
+    answer:
+      "No. Starting a fundraiser is free. There is no joining fee, no charge for the fundraising page or poster, and no minimum fundraising target.",
+  },
+  {
+    id: "champion-page-what-support",
+    question: "What support do I get to run my fundraiser?",
+    answer:
+      "Cause Champions receive a fundraising page with a personal link, a personalised poster and support from The Giving Circle team throughout the fundraiser.",
+  },
+  {
+    id: "champion-page-what-if-i-do-not-raise",
+    question: "What if I do not raise the amount I pledged?",
+    answer:
+      "Nothing happens and you owe nothing. The amount you pledge is a fundraising target, not a financial commitment.",
+  },
+  {
+    id: "champion-page-birthday-wedding",
+    question:
+      "Can I start a fundraiser for my birthday, wedding or another occasion?",
+    answer:
+      "Yes. You can start a fundraiser for a birthday, wedding, anniversary, personal milestone, run or in memory of someone.",
+  },
+  {
+    id: "champion-page-someone-elses-name",
+    question: "Can I raise funds in someone else's name, for family or friends?",
+    answer:
+      "Yes. You can dedicate your fundraiser to a family member, friend or someone you want to honour or remember.",
+  },
+  {
+    id: "champion-page-students",
+    question: "Can school and college students start a fundraiser?",
+    answer:
+      "Yes. Students can start a fundraiser. Anyone under 18 needs consent from a parent or guardian.",
+  },
+  {
+    id: "champion-page-certificate",
+    question: "Do I get a certificate for volunteering or fundraising?",
+    answer:
+      "Yes. At the end of the fundraiser, The Giving Circle issues a certificate jointly with the partner NGO.",
+  },
+  {
+    id: "champion-page-where-does-donation-go",
+    question: "Where does my donation go?",
+    answer:
+      "Donations go directly to the partner NGO through the NGO's own payment gateway and bank account.",
+  },
+  {
+    id: "champion-page-how-much-time",
+    question:
+      "How much time does fundraising take, and how long does my fundraiser run?",
+    answer:
+      "It takes very little of your time and is entirely flexible. We create the communication material, and you share it with your network on WhatsApp, Instagram and other social media. You decide how long to keep your fundraiser running. There is no fixed term and no minimum period.",
+  },
+] as const satisfies readonly FaqEntry[];
+
 export const VOLUNTEER_FAQ_IDS = [
   "how-can-i-volunteer-with-an-ngo-in-india",
   "what-is-a-cause-champion",

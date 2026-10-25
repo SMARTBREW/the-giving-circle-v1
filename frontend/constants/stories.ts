@@ -165,7 +165,7 @@ export const IMPACT_STORIES = IMPACT_STORY_CARD_META.map((meta) => {
     src: story.src,
     alt: story.alt,
     objectPosition: story.objectPosition,
-    href: `/stories#${story.id}`,
+    href: `/impact-stories/#${story.id}`,
   };
 });
 

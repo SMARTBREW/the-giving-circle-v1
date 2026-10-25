@@ -181,6 +181,7 @@ export {
   FAQS_PAGE,
   ABOUT_FAQS,
   CHAMPION_FAQS,
+  CHAMPION_PAGE_FAQ_ITEMS,
   VOLUNTEER_FAQS,
   PARTNER_FAQS,
   faqsByIds,
@@ -220,7 +221,7 @@ export const SITE = {
 export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/causes", label: "Live Causes" },
-  { href: "/stories", label: "Impact Stories" },
+  { href: "/impact-stories", label: "Impact Stories" },
   { href: "/blog", label: "Blogs" },
 ] as const;
 
@@ -249,7 +250,7 @@ export const FOOTER_BLURB_CLASS = `${SEGOE_UI_CLASS} w-full text-[0.9375rem] lea
 export const FOOTER_QUICK_LINKS = [
   { href: "/about", label: "About Us" },
   { href: "/causes", label: "Live Causes" },
-  { href: "/stories", label: "Impact Stories" },
+  { href: "/impact-stories", label: "Impact Stories" },
   { href: "/blog", label: "Blogs" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },

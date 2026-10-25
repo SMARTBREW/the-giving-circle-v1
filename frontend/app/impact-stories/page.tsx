@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Impact Stories | The Giving Circle",
   description:
     "Real stories of Cause Champions and verified NGOs turning collective giving into lasting impact across India.",
-  alternates: { canonical: `${SITE.url}/stories/` },
+  alternates: { canonical: `${SITE.url}/impact-stories/` },
 };
 
 export default function StoriesPage() {
