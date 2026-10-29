@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { SEGOE_UI_CLASS } from "@/constants";
+import { getVisibleCauses, SEGOE_UI_CLASS } from "@/constants";
 
 interface CauseButtonProps {
   title: string;
@@ -169,12 +169,10 @@ function SleepingCat() {
   );
 }
 
-const CAUSE_LINKS = [
-  { title: "Medical Cause", href: "/causes/wings-of-hope" },
-  { title: "Forest Cause", href: "/causes/community-forest-governance" },
-  { title: "Cancer Funding", href: "/causes" },
-  { title: "Social Impact Plan", href: "/become-a-cause-champion" },
-] as const;
+const CAUSE_LINKS = getVisibleCauses().map((cause) => ({
+  title: cause.cardTitle,
+  href: `/causes/${cause.id}`,
+}));
 
 export default function NotFoundPage() {
   return (
@@ -223,7 +221,7 @@ export default function NotFoundPage() {
             className="mb-4 font-georgia text-2xl font-bold text-heading md:text-3xl"
             whileHover={{ scale: 1.02 }}
           >
-            But your heart is in the right place!
+            Our causes
           </motion.h1>
           <motion.p
             className={`${SEGOE_UI_CLASS} mx-auto max-w-md text-sm text-subhead md:text-base`}

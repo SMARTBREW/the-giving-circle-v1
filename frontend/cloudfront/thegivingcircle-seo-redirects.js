@@ -26,6 +26,7 @@ function handler(event) {
   // Page URLs are canonical with a trailing slash. Files (.html, .txt, images) are not.
   function withSlash(path) {
     if (!path || path === '/') return '/';
+    if (path === '/icon' || path === '/apple-icon') return path;
     var last = path.substring(path.lastIndexOf('/') + 1);
     if (last.indexOf('.') !== -1) return path;
     if (path.charAt(path.length - 1) === '/') return path;
@@ -47,23 +48,10 @@ function handler(event) {
     };
   }
 
-  // 1. Force canonical host: apex (and any non-www) -> https://www
-  if (host !== CANONICAL_HOST) {
-    var parts = [];
-    for (var key in qs) {
-      if (qs[key] && qs[key].value !== undefined) {
-        parts.push(qs[key].value === '' ? key : key + '=' + qs[key].value);
-      }
-    }
-    var suffix = parts.length ? '?' + parts.join('&') : '';
-    return {
-      statusCode: 301,
-      statusDescription: 'Moved Permanently',
-      headers: {
-        location: { value: BASE + uri + suffix },
-        'cache-control': { value: 'private, max-age=0, must-revalidate' },
-      },
-    };
+  // Apex and any non-www host must land on www, with the same slash and legacy rules.
+  function canonicalPass() {
+    if (host === CANONICAL_HOST) return request;
+    return redirect(uri);
   }
 
   // Strip trailing slash for matching (except root)
@@ -236,7 +224,7 @@ function handler(event) {
     '/favicon.ico': true,
   };
   if (ASSET_EXACT[path] || ASSET_EXACT[uri]) {
-    return request;
+    return canonicalPass();
   }
 
   var lastSlash = uri.lastIndexOf('/');
@@ -249,5 +237,5 @@ function handler(event) {
     request.uri = uri + 'index.html';
   }
 
-  return request;
+  return canonicalPass();
 }
