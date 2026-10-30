@@ -33,9 +33,6 @@ export const WEBSITE_SCHEMA = {
   url: ORIGIN,
   name: SITE_NAME,
   description: SCHEMA_ORG_DESCRIPTION,
-  publisher: {
-    "@id": `${SITE_URL}/#organization`,
-  },
   inLanguage: "en-IN",
 } as const;
 

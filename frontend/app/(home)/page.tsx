@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import JsonLd from "@/components/json-ld";
+import { SITE } from "@/constants";
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/constants/schema";
+
+export const metadata: Metadata = {
+  alternates: { canonical: `${SITE.url}/` },
+};
 import Hero from "./_sections/hero";
 import ChampionSection from "./_sections/champion-section";
 import CausesSection from "./_sections/causes-section";
