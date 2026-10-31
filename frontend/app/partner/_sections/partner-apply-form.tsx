@@ -473,7 +473,7 @@ export default function PartnerApplyForm() {
                     >
                       <path
                         d="M10 25.5 18.5 34 38 13"
-                        stroke="#02938c"
+                        stroke="#02768c"
                         strokeWidth="3.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"

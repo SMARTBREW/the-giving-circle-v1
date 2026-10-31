@@ -25,9 +25,9 @@ const CATEGORY_STYLES: Record<
     bar: "bg-circle",
   },
   "CSR for Companies": {
-    pill: "bg-[rgba(230,43,79,0.1)] text-[#e62b4f]",
-    accent: "text-[#e62b4f]",
-    bar: "bg-[#e62b4f]",
+    pill: "bg-[rgba(230,43,79,0.1)] text-[#d4284a]",
+    accent: "text-[#d4284a]",
+    bar: "bg-[#d4284a]",
   },
   "Family & Parent Guide": {
     pill: "bg-[rgba(139,69,19,0.1)] text-[#8B4513]",

@@ -23,6 +23,12 @@ export type CloudinaryTransformOptions = {
   height?: number;
   /** Crop/fit mode - default limit (never upscale past original). */
   crop?: "limit" | "fill" | "fit";
+  /** Used with fill so the delivered crop matches object-cover. */
+  gravity?: "center" | "auto";
+  /** Cloudinary quality. Omit for q_auto:eco. */
+  quality?: number;
+  /** f_auto negotiates a format. f_webp forces WebP when auto still returns JPEG. */
+  format?: "auto" | "webp";
 };
 
 /**
@@ -40,8 +46,13 @@ export function cloudinarySrc(
   if (!publicId || !CLOUD_NAME) return src;
 
   const crop = options.crop ?? "limit";
-  // eco = smaller files; f_auto picks WebP/AVIF when the browser supports it
-  const parts = ["f_auto", "q_auto:eco", `c_${crop}`];
+  const format = options.format === "webp" ? "f_webp" : "f_auto";
+  const quality =
+    options.quality && options.quality > 0
+      ? `q_${Math.round(options.quality)}`
+      : "q_auto:eco";
+  const cropPart = options.gravity ? `c_${crop},g_${options.gravity}` : `c_${crop}`;
+  const parts = [format, quality, cropPart];
 
   if (options.width && options.width > 0) {
     parts.push(`w_${Math.min(Math.round(options.width), MAX_FULL_BLEED_WIDTH)}`);

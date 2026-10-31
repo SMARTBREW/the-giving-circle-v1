@@ -83,6 +83,17 @@ const nextConfig: NextConfig = {
     ],
     ...(isStaticExport ? { unoptimized: true } : {}),
   },
+  webpack: (config, { isServer, webpack }) => {
+    if (!isServer) {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /[\\/]next[\\/]dist[\\/]build[\\/]polyfills[\\/]polyfill-module(?:\.js)?$/,
+          path.resolve(__dirname, "lib/empty-polyfill.js"),
+        ),
+      );
+    }
+    return config;
+  },
   ...(isStaticExport
     ? {
         output: "export" as const,

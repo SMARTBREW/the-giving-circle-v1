@@ -3,7 +3,6 @@
 import CldImage from "@/components/cld-image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
-import { motion } from "framer-motion";
 import CtaButton from "@/components/cta-button";
 import {
   GET_INVOLVED_ITEM_CLASS,
@@ -15,7 +14,7 @@ import {
 const NAV_LINK_CLASS = `${SEGOE_UI_CLASS} whitespace-nowrap px-1.5 py-2 text-[0.8125rem] font-semibold text-subhead transition-colors hover:text-heading lg:px-2 lg:text-[0.9375rem] min-[90rem]:px-3 min-[90rem]:text-[1.0625rem]`;
 
 const NAV_CTA_CLASS =
-  "h-9 !rounded-lg !bg-[#e62b4f] px-3 !text-[0.6875rem] sm:h-9 sm:px-3.5 sm:!text-[0.75rem] lg:h-10 lg:px-4 lg:!text-[0.8125rem] min-[90rem]:h-12 min-[90rem]:px-5 min-[90rem]:!text-[0.9375rem]";
+  "h-9 !rounded-lg !bg-[#d4284a] px-3 !text-[0.6875rem] sm:h-9 sm:px-3.5 sm:!text-[0.75rem] lg:h-10 lg:px-4 lg:!text-[0.8125rem] min-[90rem]:h-12 min-[90rem]:px-5 min-[90rem]:!text-[0.9375rem]";
 
 function MenuIcon({ open }: { open: boolean }) {
   return open ? (
@@ -110,10 +109,7 @@ export default function Header() {
 
   return (
     <>
-      <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      <header
       className={`fixed inset-x-0 z-50 transition-[top] duration-500 ${
         scrolled ? "top-0 sm:top-2.5 md:top-3" : "top-0 sm:top-3.5 md:top-4"
       }`}
@@ -140,7 +136,6 @@ export default function Header() {
                 height={439}
                 sizes="(min-width: 90rem) 16.5rem, (min-width: 1024px) 12.5rem, 11rem"
                 className="h-full w-full object-contain object-left"
-                priority
               />
             </Link>
 
@@ -271,7 +266,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </motion.header>
+    </header>
     </>
   );
 }

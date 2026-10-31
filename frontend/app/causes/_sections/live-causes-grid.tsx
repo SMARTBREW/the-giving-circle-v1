@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import CampaignCard from "@/components/campaign-card";
 import FilterChips from "@/components/filter-chips";
 import SectionIntro from "@/components/section-intro";
@@ -15,7 +14,6 @@ import {
 } from "@/constants";
 
 export default function LiveCausesGrid() {
-  const searchParams = useSearchParams();
   const categories = useMemo(() => getCauseCategories(), []);
   const causes = useMemo(() => getVisibleCauses(), []);
   const options = useMemo(
@@ -24,12 +22,14 @@ export default function LiveCausesGrid() {
   );
   const [filter, setFilter] = useState(CAUSE_FILTER_ALL);
 
+  // Read ?category= after paint. useSearchParams() bails this list out of the
+  // static HTML, so the cards popped in later and shoved the page down.
   useEffect(() => {
-    const category = searchParams.get("category");
+    const category = new URLSearchParams(window.location.search).get("category");
     if (category && categories.includes(category)) {
       setFilter(category);
     }
-  }, [searchParams, categories]);
+  }, [categories]);
 
   const visible =
     filter === CAUSE_FILTER_ALL
@@ -55,9 +55,12 @@ export default function LiveCausesGrid() {
       </div>
 
       <ul className="mt-8 grid w-full grid-cols-1 gap-5 sm:mt-10 md:grid-cols-2 md:gap-5 min-[56.25rem]:grid-cols-3 min-[56.25rem]:gap-4 lg:mt-12 lg:gap-5 min-[90rem]:gap-6">
-        {visible.map((cause) => (
+        {visible.map((cause, index) => (
           <li key={cause.id} className="min-w-0">
-            <CampaignCard card={toCampaignCard(cause)} />
+            <CampaignCard
+              card={toCampaignCard(cause)}
+              priority={index === 0}
+            />
           </li>
         ))}
       </ul>

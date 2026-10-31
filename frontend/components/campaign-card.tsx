@@ -85,7 +85,14 @@ function VerifiedBadge() {
   );
 }
 
-export default function CampaignCard({ card }: { card: CampaignCardData }) {
+export default function CampaignCard({
+  card,
+  priority = false,
+}: {
+  card: CampaignCardData;
+  /** First card is the mobile LCP image. */
+  priority?: boolean;
+}) {
   const href = `/causes/${card.id}`;
   const [statPrimary, statSecondary] = card.stats;
 
@@ -100,6 +107,11 @@ export default function CampaignCard({ card }: { card: CampaignCardData }) {
           alt={card.alt}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1439px) 45vw, 24.75rem"
+          priority={priority}
+          fetchPriority={priority ? "high" : "low"}
+          format="webp"
+          quality={45}
+          aspectRatio={16 / 10}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
         <span

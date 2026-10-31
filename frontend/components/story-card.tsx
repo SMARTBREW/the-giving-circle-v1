@@ -1,7 +1,6 @@
 "use client";
 
 import CldImage from "@/components/cld-image";
-import { AnimatePresence, motion } from "framer-motion";
 import { SEGOE_UI_CLASS, type StoryArticle } from "@/constants";
 
 const META_ICON_CLASS = "h-5 w-5 shrink-0";
@@ -209,35 +208,30 @@ export default function StoryCard({
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-full border border-[#02938c] bg-white px-6 text-[0.875rem] font-semibold leading-none tracking-normal text-[#02938c] transition-colors hover:bg-[#02938c] hover:text-white sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
+          className={`${SEGOE_UI_CLASS} inline-flex h-12 w-full items-center justify-center rounded-full border border-circle bg-white px-6 text-[0.875rem] font-semibold leading-none tracking-normal text-circle transition-colors hover:bg-circle hover:text-white sm:h-14 sm:w-auto sm:px-8 sm:text-[0.9375rem]`}
         >
           {expanded ? "Show Less" : "Read Full Story"}
         </button>
       </div>
 
-      <AnimatePresence initial={false}>
-        {expanded ? (
-          <motion.div
-            key="full-story"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="overflow-hidden border-t border-[#00000014] mt-3 pt-3 sm:mt-4 sm:pt-4 md:mt-6 md:pt-6"
-          >
-            <div className="flex flex-col gap-4">
-              {story.body.map((para) => (
-                <p
-                  key={para.slice(0, 48)}
-                  className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
-                >
-                  {para}
-                </p>
-              ))}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+          expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-3 flex flex-col gap-4 border-t border-[#00000014] pt-3 sm:mt-4 sm:pt-4 md:mt-6 md:pt-6">
+            {story.body.map((para) => (
+              <p
+                key={para.slice(0, 48)}
+                className={`${SEGOE_UI_CLASS} text-[0.9375rem] font-normal leading-6 tracking-normal text-subhead sm:text-[1rem] sm:leading-7 lg:text-[1.0625rem] lg:leading-8`}
+              >
+                {para}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 

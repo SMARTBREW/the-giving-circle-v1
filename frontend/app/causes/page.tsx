@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import PhotoCtaBand from "@/components/photo-cta-band";
 import LiveCausesGrid from "./_sections/live-causes-grid";
 import { CAUSES_CTA, SITE } from "@/constants";
@@ -14,17 +13,10 @@ export const metadata: Metadata = {
 export default function CausesPage() {
   return (
     <>
-      <Suspense
-        fallback={
-          <section className="w-full bg-gray-100 px-4 py-16 text-center text-subhead">
-            Loading causes…
-          </section>
-        }
-      >
-        <LiveCausesGrid />
-      </Suspense>
+      <LiveCausesGrid />
       <PhotoCtaBand
         src={CAUSES_CTA.src}
+        mobileSrc={CAUSES_CTA.mobileSrc}
         alt={CAUSES_CTA.alt}
         title={CAUSES_CTA.title}
         subtitle={CAUSES_CTA.subtitle}

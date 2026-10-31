@@ -6,6 +6,8 @@ export const InterFont = Inter({
   display: "swap",
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
+  // Body text uses Selawik. Do not preload Inter ahead of the hero image.
+  preload: false,
 });
 
 export const InstrumentSerif = Instrument_Serif({
@@ -35,6 +37,8 @@ export const SegoeUI = localFont({
     { path: "../fonts/selawkb.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-segoe-loaded",
-  display: "swap",
+  display: "optional",
   fallback: ["Segoe UI", "sans-serif"],
+  // CSS discovers this after first paint. A preload competes with the hero image.
+  preload: false,
 });

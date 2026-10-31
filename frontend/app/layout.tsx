@@ -4,7 +4,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import AppShell from "@/components/app-shell";
-import { InterFont, PoppinsFont, SITE } from "@/constants";
+import { PoppinsFont, SITE } from "@/constants";
+import { SegoeUI } from "@/constants/fonts";
 import { config } from "@/lib/config";
 import "./globals.css";
 
@@ -61,13 +62,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${InterFont.variable} ${PoppinsFont.variable}`}
+      className={`${SegoeUI.variable} ${PoppinsFont.variable}`}
     >
-      <body className={InterFont.className}>
+      <head>
+        <link
+          rel="preconnect"
+          href="https://res.cloudinary.com"
+          crossOrigin=""
+        />
+      </head>
+      <body>
         <ThemeProvider>
           <AppShell>{children}</AppShell>
         </ThemeProvider>
-        {config.features.enableAnalytics && (
+        {config.features.enableAnalytics &&
+          process.env.NEXT_OUTPUT !== "export" && (
           <>
             <SpeedInsights />
             <Analytics />

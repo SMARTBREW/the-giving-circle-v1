@@ -1,21 +1,7 @@
-"use client";
-
 import CldImage from "@/components/cld-image";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import CtaButton from "@/components/cta-button";
 import CtaArrow from "@/components/cta-arrow";
 import { SEGOE_UI_CLASS } from "@/constants";
-
-const cardMotion = {
-  rest: { y: 0 },
-  hover: { y: -12 },
-};
-
-const ringMotion = {
-  rest: { opacity: 0 },
-  hover: { opacity: 1 },
-};
 
 const articleClass =
   "tgc-card relative flex h-full w-full flex-col items-center overflow-hidden px-5 pt-8 pb-7 transition-colors duration-300 group-hover/moment:border-circle sm:px-6 sm:pt-9 sm:pb-8 md:px-8 md:pt-10 md:pb-10 min-[70rem]:px-5 min-[70rem]:pt-9 min-[70rem]:pb-8 min-[90rem]:h-[27.5rem] min-[90rem]:px-6 min-[90rem]:pt-8 min-[90rem]:pb-8";
@@ -46,40 +32,15 @@ export default function MomentCard({
   ctaLabel: string;
   href: string;
 }) {
-  const [hoverMotion, setHoverMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px) and (hover: hover)");
-    const sync = () => setHoverMotion(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
-
   return (
-    <motion.div
-      initial="rest"
-      whileHover={hoverMotion ? "hover" : undefined}
-      className="group/moment relative h-full w-full"
-    >
-      <motion.article
-        variants={cardMotion}
-        transition={{
-          type: "spring",
-          stiffness: 170,
-          damping: 24,
-          mass: 0.85,
-        }}
-        className={articleClass}
+    <div className="group/moment relative h-full w-full">
+      <article
+        className={`${articleClass} transition-transform duration-300 ease-out lg:group-hover/moment:-translate-y-3`}
       >
-        {hoverMotion ? (
-          <motion.span
-            aria-hidden
-            variants={ringMotion}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="pointer-events-none absolute -inset-[1px] z-20 rounded-[1rem] border border-circle"
-          />
-        ) : null}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -inset-px z-20 rounded-[1rem] border border-circle opacity-0 transition-opacity duration-300 lg:group-hover/moment:opacity-100"
+        />
         <span className={iconClass}>
           <CldImage
             src={iconSrc}
@@ -103,7 +64,7 @@ export default function MomentCard({
             <CtaArrow className="shrink-0" />
           </CtaButton>
         </div>
-      </motion.article>
-    </motion.div>
+      </article>
+    </div>
   );
 }

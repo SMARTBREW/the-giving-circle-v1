@@ -1,59 +1,25 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { getVisibleCauses, SEGOE_UI_CLASS } from "@/constants";
 
-interface CauseButtonProps {
-  title: string;
-  href: string;
-  delay: number;
-}
-
-function CauseButton({ title, href, delay }: CauseButtonProps) {
+function CauseButton({ title, href }: { title: string; href: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <Link
+      href={href}
+      className={`${SEGOE_UI_CLASS} group relative inline-flex items-center gap-2 px-6 py-3 text-lg font-medium text-circle transition-colors duration-200 hover:text-giving-teal`}
     >
-      <Link
-        href={href}
-        className={`${SEGOE_UI_CLASS} group relative inline-flex items-center gap-2 px-6 py-3 text-lg font-medium text-circle transition-colors duration-200 hover:text-giving-teal`}
-      >
-        <span className="relative z-10">{title}</span>
-        <motion.span
-          className="text-giving-teal"
-          initial={{ x: 0 }}
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400, damping: 20 }}
-        >
-          ›
-        </motion.span>
-        <motion.div
-          className="absolute inset-0 rounded-lg bg-green-tint opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-          layoutId="button-bg"
-        />
-      </Link>
-    </motion.div>
+      <span className="relative z-10">{title}</span>
+      <span className="text-giving-teal transition-transform duration-200 group-hover:translate-x-1">
+        ›
+      </span>
+      <span className="absolute inset-0 rounded-lg bg-green-tint opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+    </Link>
   );
 }
 
 function SleepingCat() {
   return (
-    <motion.div
-      className="relative mx-4 h-20 w-20"
-      initial={{ scale: 0, rotate: -10 }}
-      animate={{ scale: 1, rotate: 0 }}
-      transition={{ duration: 0.8, delay: 0.5, type: "spring", stiffness: 200 }}
-    >
-      <motion.div
-        className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-full bg-[var(--Teal-Tint,#e8f7f8)]"
-        animate={{ scale: [1, 1.02, 1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      >
+    <div className="relative mx-4 h-20 w-20">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-full bg-[var(--Teal-Tint,#e8f7f8)]">
         <svg
           width="48"
           height="36"
@@ -139,33 +105,11 @@ function SleepingCat() {
             opacity="0.8"
           />
         </svg>
-      </motion.div>
-
-      <motion.div
-        className="absolute -top-2 -right-2 text-sm font-bold text-subhead"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: [0, 1, 0], y: [5, -5, -10] }}
-        transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-      >
-        z
-      </motion.div>
-      <motion.div
-        className="absolute -top-4 right-0 text-xs font-bold text-subhead"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: [0, 1, 0], y: [5, -5, -10] }}
-        transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
-      >
-        z
-      </motion.div>
-      <motion.div
-        className="absolute top-[-1.5rem] right-2 text-xs font-bold text-subhead"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: [0, 1, 0], y: [5, -5, -10] }}
-        transition={{ duration: 2, repeat: Infinity, delay: 2 }}
-      >
-        z
-      </motion.div>
-    </motion.div>
+      </div>
+      <span className="absolute -top-2 -right-2 text-sm font-bold text-subhead">z</span>
+      <span className="absolute -top-4 right-0 text-xs font-bold text-subhead">z</span>
+      <span className="absolute top-[-1.5rem] right-2 text-xs font-bold text-subhead">z</span>
+    </div>
   );
 }
 
@@ -178,93 +122,34 @@ export default function NotFoundPage() {
   return (
     <div className="relative flex min-h-[calc(100dvh-5.5rem)] items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--Off-White,#f7f9f9)] to-[var(--Green-Tint,#e8f5f3)] px-4 sm:min-h-[calc(100dvh-6.25rem)] md:min-h-[calc(100dvh-6.75rem)] lg:min-h-[calc(100dvh-7rem)] min-[90rem]:min-h-[calc(100dvh-8.75rem)]">
       <div className="relative mx-auto max-w-4xl text-center">
-        <motion.div
-          className="mb-8 flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-        >
-          <motion.span
-            className="select-none text-9xl font-bold text-[#b7e0dc] md:text-[12rem]"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+        <div className="mb-8 flex items-center justify-center">
+          <span className="select-none text-9xl font-bold text-[#b7e0dc] md:text-[12rem]">
             4
-          </motion.span>
-
+          </span>
           <SleepingCat />
-
-          <motion.span
-            className="select-none text-9xl font-bold text-[#b7e0dc] md:text-[12rem]"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <span className="select-none text-9xl font-bold text-[#b7e0dc] md:text-[12rem]">
             4
-          </motion.span>
-        </motion.div>
+          </span>
+        </div>
 
-        <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <motion.p
-            className={`${SEGOE_UI_CLASS} mb-2 text-lg text-subhead md:text-xl`}
-            whileHover={{ scale: 1.02 }}
-          >
+        <div className="mb-12">
+          <p className={`${SEGOE_UI_CLASS} mb-2 text-lg text-subhead md:text-xl`}>
             This page does not exist.
-          </motion.p>
-          <motion.h1
-            className="mb-4 font-georgia text-2xl font-bold text-heading md:text-3xl"
-            whileHover={{ scale: 1.02 }}
-          >
+          </p>
+          <h1 className="mb-4 font-georgia text-2xl font-bold text-heading md:text-3xl">
             Our causes
-          </motion.h1>
-          <motion.p
-            className={`${SEGOE_UI_CLASS} mx-auto max-w-md text-sm text-subhead md:text-base`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
+          </h1>
+          <p className={`${SEGOE_UI_CLASS} mx-auto max-w-md text-sm text-subhead md:text-base`}>
             Tap below to find out how your social giving can transform
             someone&apos;s life through our community support platform.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-4 md:gap-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          {CAUSE_LINKS.map((item, index) => (
-            <CauseButton
-              key={item.title}
-              title={item.title}
-              href={item.href}
-              delay={1.4 + index * 0.2}
-            />
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          {CAUSE_LINKS.map((item) => (
+            <CauseButton key={item.title} title={item.title} href={item.href} />
           ))}
-        </motion.div>
-
-        <motion.div
-          className="absolute top-20 left-20 h-2 w-2 rounded-full bg-[var(--Giving-Teal,#0ba5bb)] opacity-30"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.1, 0.3] }}
-          transition={{ duration: 4, repeat: Infinity, delay: 0 }}
-        />
-        <motion.div
-          className="absolute top-40 right-32 h-1 w-1 rounded-full bg-circle opacity-20"
-          animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0.05, 0.2] }}
-          transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-        />
-        <motion.div
-          className="absolute bottom-32 left-16 h-2 w-2 rounded-full bg-[var(--Teal-Tint,#e8f7f8)] opacity-25"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.1, 0.25] }}
-          transition={{ duration: 5, repeat: Infinity, delay: 2 }}
-        />
+        </div>
       </div>
     </div>
   );

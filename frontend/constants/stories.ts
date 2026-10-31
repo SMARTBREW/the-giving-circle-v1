@@ -40,7 +40,7 @@ export const STORY_ARTICLES = [
   {
     id: "wings-of-hope",
     tag: "Women’s Health",
-    tagClassName: "bg-[#e62b4f]",
+    tagClassName: "bg-[#d4284a]",
     org: "JWP",
     location: "Multiple States, India",
     title: "Wings of Hope: Breaking Barriers Through Menstrual Health Education",

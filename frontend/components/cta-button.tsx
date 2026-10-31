@@ -61,6 +61,7 @@ export default function CtaButton({
   return (
     <Link
       href={href}
+      prefetch={false}
       onClick={handleClick}
       className={`${isOutline ? "tgc-btn-outline" : "tgc-btn-primary"} ${
         hoverFill
