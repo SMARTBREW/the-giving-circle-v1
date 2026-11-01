@@ -106,7 +106,7 @@ export default function CampaignCard({
           src={card.src}
           alt={card.alt}
           fill
-          sizes="(max-width: 767px) 100vw, (max-width: 1439px) 45vw, 24.75rem"
+          sizes="(max-width: 639px) calc(100vw - 2rem - 2px), (max-width: 767px) calc(100vw - 4rem - 2px), (max-width: 1439px) 45vw, 24.75rem"
           priority={priority}
           fetchPriority={priority ? "high" : "low"}
           format="webp"

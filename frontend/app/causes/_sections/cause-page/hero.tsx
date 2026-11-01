@@ -254,7 +254,9 @@ export default function CausePageHero({
                   alt={media.alt}
                   fill
                   priority
-                  sizes="(max-width: 639px) 92vw, (max-width: 1023px) 420px, 32rem"
+                  format="webp"
+                  quality={40}
+                  sizes="(max-width: 639px) min(100vw - 2rem, 22rem), (max-width: 1023px) 420px, 32rem"
                   className="object-cover"
                 />
                 <span

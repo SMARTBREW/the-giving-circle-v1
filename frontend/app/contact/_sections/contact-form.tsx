@@ -159,7 +159,7 @@ export default function ContactApplyForm() {
         </span>
       </label>
       {submitError ? (
-        <p className={`${SEGOE_UI_CLASS} text-[0.9375rem] text-[#d4284a]`}>
+        <p className={`${SEGOE_UI_CLASS} text-[0.9375rem] text-[#c9244a]`}>
           {submitError}
         </p>
       ) : null}
@@ -237,7 +237,7 @@ export default function ContactApplyForm() {
         </span>
       </label>
       {submitError ? (
-        <p className={`${SEGOE_UI_CLASS} text-[0.9375rem] text-[#d4284a]`}>
+        <p className={`${SEGOE_UI_CLASS} text-[0.9375rem] text-[#c9244a]`}>
           {submitError}
         </p>
       ) : null}

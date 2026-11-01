@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import AppShell from "@/components/app-shell";
 import { PoppinsFont, SITE } from "@/constants";
-import { SegoeUI } from "@/constants/fonts";
 import { config } from "@/lib/config";
 import "./globals.css";
 
@@ -62,7 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${SegoeUI.variable} ${PoppinsFont.variable}`}
+      className={PoppinsFont.variable}
     >
       <head>
         <link

@@ -10,7 +10,7 @@ type CldImageProps = Omit<ImageProps, "src"> & {
 };
 
 /** Widths the browser can choose from. Static export has no Next image optimizer. */
-const SRCSET_WIDTHS = [96, 128, 160, 256, 384, 480, 640, 750, 960, 1200, 1400];
+const SRCSET_WIDTHS = [96, 128, 160, 256, 384, 480, 640, 664, 750, 960, 1200, 1400];
 
 /**
  * Drop-in next/image wrapper: `/images/...` paths resolve to Cloudinary

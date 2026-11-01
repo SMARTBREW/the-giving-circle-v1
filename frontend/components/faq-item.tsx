@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { SEGOE_UI_CLASS } from "@/constants";
 import type { FaqLink } from "@/constants/faqs";
 import FaqAnswerText from "@/components/faq-answer-text";
@@ -25,8 +22,6 @@ export default function FaqItem({
   fullWidth?: boolean;
   compact?: boolean;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
-
   return (
     <li className={`w-full ${fullWidth ? "" : "min-[90rem]:w-[52.1875rem]"}`}>
       <details
@@ -36,10 +31,7 @@ export default function FaqItem({
             ? "py-3 sm:py-3.5"
             : "py-5 sm:py-6 md:py-8"
         }`}
-        open={open}
-        onToggle={(event) => {
-          setOpen(event.currentTarget.open);
-        }}
+        {...(defaultOpen ? { open: true } : {})}
       >
         <summary
           className={`flex w-full cursor-pointer list-none items-start justify-between text-left sm:items-center [&::-webkit-details-marker]:hidden ${

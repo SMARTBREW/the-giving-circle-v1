@@ -16,7 +16,7 @@ export default function CausePageTheory({
   return (
     <PageSection tone="alternate" innerClassName={CAUSE_SECTION.padTightY}>
       <div className="w-full rounded-[1.25rem] bg-[#0A1E33] px-5 py-8 sm:rounded-[1.5rem] sm:px-8 sm:py-10 md:px-10 md:py-12 lg:rounded-[2rem] lg:px-12 lg:py-14 min-[90rem]:px-14 min-[90rem]:py-16">
-        <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrow}`}>{eyebrow}</p>
+        <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.eyebrowOnDark}`}>{eyebrow}</p>
 
         <h2 className={CAUSE_SECTION.titleOnDark}>
           <span className="block">{titleLine1}</span>
@@ -44,9 +44,7 @@ export default function CausePageTheory({
               <div className="min-w-0 flex-1">
                 <p
                   className={`${SEGOE_UI_CLASS} text-[0.625rem] font-bold leading-4 tracking-[0.08em] uppercase sm:text-[0.6875rem] ${
-                    step.outcome
-                      ? "text-[#7ec8e3]"
-                      : "text-giving-red"
+                    step.outcome ? "text-[#7ec8e3]" : "text-white"
                   }`}
                 >
                   {step.label}
@@ -88,9 +86,7 @@ export default function CausePageTheory({
               </div>
               <p
                 className={`${SEGOE_UI_CLASS} text-[0.625rem] font-bold leading-4 tracking-[0.08em] uppercase min-[90rem]:text-[0.6875rem] ${
-                  step.outcome
-                    ? "text-[#7ec8e3]"
-                    : "text-giving-red"
+                  step.outcome ? "text-[#7ec8e3]" : "text-white"
                 }`}
               >
                 {step.label}

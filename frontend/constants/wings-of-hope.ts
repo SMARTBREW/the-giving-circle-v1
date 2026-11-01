@@ -7,6 +7,8 @@ export const CAUSE_SECTION = {
     "flex w-full flex-col items-stretch !pt-4 sm:!pt-6 md:!pt-8 lg:!pt-8 min-[90rem]:!pt-10 !pb-4 sm:!pb-6 md:!pb-8 lg:!pb-8 min-[90rem]:!pb-10",
   eyebrow:
     "text-[0.6875rem] font-bold leading-4 tracking-[0.08em] uppercase text-giving-red sm:text-[0.75rem] sm:leading-5",
+  eyebrowOnDark:
+    "text-[0.6875rem] font-bold leading-4 tracking-[0.08em] uppercase text-white sm:text-[0.75rem] sm:leading-5",
   title:
     "mt-2.5 w-full max-w-[36rem] font-georgia text-[1.625rem] font-bold leading-8 tracking-normal text-heading sm:mt-3 sm:text-[1.875rem] sm:leading-9 md:text-[2.125rem] md:leading-[2.5rem] lg:text-[2.25rem] lg:leading-[2.75rem] min-[90rem]:text-[2.5rem] min-[90rem]:leading-[3rem]",
   titleOnDark:

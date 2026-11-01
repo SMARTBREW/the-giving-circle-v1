@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-segoe: var(--font-segoe-loaded), "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-segoe: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --font-georgia: Georgia, ui-serif, serif;
 
   --color-heading: #1c2426;
   --color-subhead: #4a5558;
   --color-circle: #02768c;
-  --color-giving-red: #d4284a;
+  --color-giving-red: #c9244a;
   --color-giving-blue: #0b619a;
   --color-giving-teal: #0ba5bb;
   --color-line: #d9e1e2;
@@ -21,7 +21,7 @@
   --color-brand-green: #02768c;
   --color-brand-charcoal: #1c2426;
   --color-brand-muted: #4a5558;
-  --color-brand-red: #d4284a;
+  --color-brand-red: #c9244a;
   --color-brand-blue: #0b619a;
   --color-brand-soft: #e8f5f3;
 
@@ -34,7 +34,7 @@
   --Giving-Blue: #0b619a;
   --Giving-Teal: #0ba5bb;
   --Circle-Green: #02768c;
-  --Giving-Red: #d4284a;
+  --Giving-Red: #c9244a;
   --Warm-Coral: #f05961;
 
   /* Neutrals (Web) */

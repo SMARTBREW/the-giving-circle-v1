@@ -19,12 +19,12 @@ export const CAUSE_CARD_ACCENTS = [
     value: "text-circle",
   },
   {
-    ring: "border-[var(--Brand-Coral,#d4284a)]",
+    ring: "border-[var(--Brand-Coral,#c9244a)]",
     hoverBorder:
-      "group-hover/cause-card:border-[var(--Brand-Coral,#d4284a)] group-hover/cause-card:ring-1 group-hover/cause-card:ring-inset group-hover/cause-card:ring-[var(--Brand-Coral,#d4284a)]",
-    bar: "bg-[var(--Brand-Coral,#d4284a)]",
+      "group-hover/cause-card:border-[var(--Brand-Coral,#c9244a)] group-hover/cause-card:ring-1 group-hover/cause-card:ring-inset group-hover/cause-card:ring-[var(--Brand-Coral,#c9244a)]",
+    bar: "bg-[var(--Brand-Coral,#c9244a)]",
     soft: "bg-[rgba(230,43,79,0.12)] text-giving-red",
-    check: "bg-[var(--Brand-Coral,#d4284a)]",
+    check: "bg-[var(--Brand-Coral,#c9244a)]",
     value: "text-giving-red",
   },
   {

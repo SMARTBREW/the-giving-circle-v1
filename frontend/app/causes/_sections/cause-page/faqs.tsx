@@ -21,7 +21,7 @@ export default function CausePageFaqs({
       <p className={`${SEGOE_UI_CLASS} ${CAUSE_SECTION.body}`}>{body}</p>
 
       <div className="mt-6 w-full sm:mt-8 lg:mt-10">
-        <FaqsAccordion items={[...items]} fullWidth />
+        <FaqsAccordion items={[...items]} fullWidth questionAs="h3" />
       </div>
     </PageSection>
   );
