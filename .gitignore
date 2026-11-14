@@ -45,8 +45,9 @@ yarn-error.log*
 # local deploy scripts + ops docs (keep off GitHub)
 deploy*.sh
 DEPLOYMENT.md
-docs/
+/docs/
 scripts/
+# NGO vetting PDFs live in frontend/public/docs/ and must ship with the site.
 
 # vercel
 .vercel
