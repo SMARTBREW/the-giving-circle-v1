@@ -19,7 +19,7 @@ function handler(event) {
   };
   headers['content-security-policy'] = {
     value:
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://res.cloudinary.com https:; media-src 'self' blob: https://res.cloudinary.com; connect-src 'self' https://api.thegivingcircle.in https://vitals.vercel-insights.com https://va.vercel-scripts.com https://res.cloudinary.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://res.cloudinary.com https:; media-src 'self' blob: https://res.cloudinary.com; connect-src 'self' https://api.thegivingcircle.in https://vitals.vercel-insights.com https://va.vercel-scripts.com https://res.cloudinary.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests",
   };
 
   return response;

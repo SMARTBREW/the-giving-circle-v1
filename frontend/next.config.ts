@@ -17,13 +17,13 @@ function apiOrigin(): string {
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https: blob:",
   "media-src 'self' https://res.cloudinary.com blob:",
-  // Allow the FastAPI public API (forms / blog / animal welfare)
-  `connect-src 'self' ${apiOrigin()} https://vitals.vercel-insights.com https://va.vercel-scripts.com`,
+  // Allow the FastAPI public API (forms / blog / animal welfare) + GA4
+  `connect-src 'self' ${apiOrigin()} https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

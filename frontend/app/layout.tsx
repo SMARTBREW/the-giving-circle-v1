@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import AppShell from "@/components/app-shell";
+import GoogleAnalytics from "@/components/google-analytics";
 import { PoppinsFont, SITE } from "@/constants";
 import { config } from "@/lib/config";
 import "./globals.css";
@@ -69,6 +70,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://res.cloudinary.com"
           crossOrigin=""
         />
+        {/* GA4 in document <head> (sitewide). Works on S3/CloudFront export; Vercel Analytics does not. */}
+        <GoogleAnalytics />
       </head>
       <body>
         <ThemeProvider>
