@@ -411,34 +411,72 @@ export const WINGS_OF_HOPE_FAQS = {
   body: "Clarity on where your gift goes, how the programme works, and how your circle can champion it.",
   items: [
     {
-      question: 'What does "vetted by The Giving Circle" mean?',
+      question:
+        "How much does it cost to support one girl's menstrual hygiene for a year?",
       answer:
-        "Our own team checked JWP's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and JWP has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
+        "₹1,500 supports one girl for a full year through Wings of Hope. It covers reusable sanitary pads, menstrual health education and counselling to help her stay in school during her periods. You can support one girl or several, directly on the Wings of Hope campaign page on The Giving Circle.",
     },
     {
-      question: "Will I get an 80G receipt?",
+      question: "How does menstrual hygiene affect girls' education in India?",
       answer:
-        "Yes. Your gift goes directly to Joint Women's Programme through its own payment gateway. JWP issues your 80G receipt for eligible donations.",
+        "When girls lack sanitary products, private toilets or basic menstrual health information, many miss school during their periods, and repeated absences can push them to drop out. Wings of Hope addresses this with reusable pads, awareness workshops and counselling.",
+    },
+    {
+      question:
+        "How does Wings of Hope help girls stay in school during their periods?",
+      answer:
+        "Each girl in the programme receives reusable sanitary pads, practical guidance on menstrual hygiene, and counselling to help her manage her period with confidence. The team also works with parents, teachers and communities to reduce stigma around menstruation, so girls feel supported to attend school every day of the month.",
+    },
+    {
+      question:
+        "Why does Wings of Hope give reusable pads instead of disposable ones?",
+      answer:
+        "Reusable cloth pads last between 1 and 2 years with proper washing and drying, so one kit supports a girl far longer than a monthly supply of disposables. That cuts the recurring cost for families who often cannot afford pads every month, or who live where supplies are hard to find, and reduces sanitary waste in communities with limited disposal options.",
+    },
+    {
+      question: "Who makes the reusable pads?",
+      answer:
+        "JWP trains local women to stitch the reusable pads, giving them a livelihood of their own. Each pad supports two women: the girl who uses it and the woman who made it.",
+    },
+    {
+      question: "Can companies support Wings of Hope through CSR?",
+      answer:
+        "Yes. JWP holds a CSR-1 registration, so companies can support Wings of Hope as part of their CSR. Companies looking at a larger contribution can contact JWP to discuss it.",
+    },
+    {
+      question: "Is my donation to Wings of Hope eligible for 80G tax benefits?",
+      answer:
+        "Yes. The Joint Women's Programme is registered under Section 80G, so donations to Wings of Hope qualify for a 50% tax deduction, within the limits set by the Income Tax Act. The deduction is available only to people filing under the old tax regime. The NGO issues the 80G receipt for the financial year in which you donate. Please provide your PAN when donating so the receipt can be issued.",
+    },
+    {
+      question: "Is the Joint Women's Programme a genuine, registered NGO?",
+      answer:
+        "Yes. Joint Women's Programme has worked on women's and girls' welfare in India since 1977, and its work has been recognised by former President of India Shri Ram Nath Kovind. It is registered on NGO Darpan and holds valid 12A, 80G, FCRA and CSR-1 registrations. You can view its certificates at jwpindia.org/certificates. Wings of Hope is its menstrual hygiene and girls' education campaign.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+        "Donations go directly to the Joint Women's Programme through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold or process donation funds at any stage. Donations are used for the Wings of Hope programme: reusable pads, menstrual health workshops and counselling for girls.",
     },
     {
-      question: "Why reusable pads?",
+      question: "How many girls has Wings of Hope supported?",
       answer:
-        "Reusable pads last for years, cost families less over time, and cut waste. Each kit comes with a simple demo on use and care so girls can manage periods with dignity and stay in class.",
+        "So far over 30,000 girls have been reached through Wings of Hope.",
     },
     {
-      question: "Where does Wings of Hope work?",
+      question: "Can I donate monthly?",
       answer:
-        "The programme runs through schools, local partners and community sessions, with a strong focus across Delhi NCR and partner regions where JWP already works with girls and families.",
+        "Yes. You can set up a monthly donation on the Wings of Hope page and support a girl through the year.",
     },
     {
-      question: "Can I raise funds for Wings of Hope with my circle?",
+      question: "Can I donate to Wings of Hope from outside India?",
       answer:
-        "Yes. As a Cause Champion you can pool gifts with friends, family or colleagues and fund this live cause together. Every contribution still goes directly to JWP.",
+        "Yes, if you are an Indian citizen donating from an Indian bank account. Foreign contributions, including donations from foreign nationals or from non-Indian bank accounts, cannot be accepted through this campaign.",
+    },
+    {
+      question: "Can I raise funds for Wings of Hope?",
+      answer:
+        "Yes. You can become a Cause Champion, a volunteer fundraiser for Wings of Hope. You pledge a number of girls you would like to support, and The Giving Circle creates and manages a fundraising page in your name for you to share with friends and family. There is no financial liability on you if you don't reach your pledge.",
     },
   ] as const,
 } as const;

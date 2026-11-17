@@ -350,34 +350,60 @@ export const PAWSITIVE_PROTECTORS_FAQS = {
   body: "Clarity on where your gift goes, how the programme works, and how your circle can champion it.",
   items: [
     {
-      question: 'What does "vetted by The Giving Circle" mean?',
+      question: "How much does it cost to vaccinate a stray dog?",
       answer:
-        "Our own team checked Animal Care's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and Animal Care has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
+        "Through Pawsitive Protectors, ₹1,000 protects one street dog. It covers an anti-rabies vaccination, deworming and, for many dogs, a reflective collar. It also helps pay for anti-rabies shots for the feeders and caregivers who look after these dogs.",
     },
     {
-      question: "Will I get an 80G receipt?",
+      question: "Why vaccinate street dogs instead of removing them?",
       answer:
-        "Yes. Animal Care holds a valid 80G certificate, and the receipt comes directly from Animal Care to the email address you give when you donate. 80G is a deduction under the old tax regime; your tax adviser can confirm what applies to you.",
+        "When about 70% of the dogs in an area are vaccinated, rabies stops spreading among them. Removing dogs doesn't work, because new, unvaccinated dogs move into the empty space. Vaccinated dogs who stay in their area protect the whole neighbourhood.",
+    },
+    {
+      question: "How do reflective collars help protect stray dogs?",
+      answer:
+        "Reflective collars make street dogs visible to drivers at night, which helps reduce road accidents. Pawsitive Protectors collars many of the dogs it vaccinates and deworms, especially those living near busy roads.",
+    },
+    {
+      question: "How can I get stray dogs in my area vaccinated?",
+      answer:
+        "Animal Care runs Pawsitive Protectors drives mostly across Delhi NCR, and also in Mumbai, Bangalore and Hyderabad. Drives are organised together with local feeders, wherever funding and logistics allow. If you feed or care for street dogs in one of these cities, you can reach out to Animal Care through the campaign page, and every gift helps bring a drive to one more neighbourhood.",
+    },
+    {
+      question:
+        "Is my donation to Pawsitive Protectors eligible for 80G tax benefits?",
+      answer:
+        "Yes. Animal Care Trust is registered under Section 80G, so donations to Pawsitive Protectors qualify for a 50% tax deduction, within the limits set by the Income Tax Act. The deduction is available only to people filing under the old tax regime. The NGO issues the 80G receipt for the financial year in which you donate. Please provide your PAN when donating so the receipt can be issued.",
+    },
+    {
+      question: "Is Animal Care a genuine, registered NGO?",
+      answer:
+        "Yes. Animal Care is a registered trust in New Delhi. It is registered on NGO Darpan and holds valid 80G and CSR-1 registrations. Pawsitive Protectors is its campaign for rabies-free neighbourhoods.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Straight to the NGO. Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+        "Donations go directly to Animal Care through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold or process donation funds at any stage. Donations are used for the Pawsitive Protectors programme: vaccinations, deworming and reflective collars for street dogs.",
     },
     {
-      question: "Do you run drives in my city?",
+      question: "Can I donate to Pawsitive Protectors from outside India?",
       answer:
-        "The Animal Care team works across Delhi NCR and has run anti-rabies drives in Mumbai. A drive in a new area depends on the number of street dogs there, and is set up together with the local feeders. Write to us and the team will take it from there.",
+        "Yes, if you are an Indian citizen donating from an Indian bank account. Foreign contributions, including donations from foreign nationals or from non-Indian bank accounts, cannot be accepted through this campaign.",
     },
     {
-      question: "Who does the vaccinating?",
+      question: "Can I raise funds for Pawsitive Protectors?",
       answer:
-        "The Animal Care team and its vets. Cause Champions raise funds and spread the word; they are not asked to handle animals.",
+        "Yes. You can become a Cause Champion, a volunteer fundraiser for Pawsitive Protectors. You pledge a number of dogs you would like to protect, and The Giving Circle creates and manages a fundraising page in your name for you to share with friends and family. There is no financial liability on you if you don't reach your pledge.",
     },
     {
-      question: "Can I raise funds for Pawsitive Protectors with my circle?",
+      question: "How can our housing society become rabies-free?",
       answer:
-        "Yes. Become a Cause Champion: tell us how much you would like to raise, and we set up your fundraising page and materials to share on WhatsApp, Instagram or anywhere you like. It costs nothing, and someone from our team stays with you through it.",
+        "Rabies stops spreading when most of the dogs in an area are vaccinated, so it takes a neighbourhood effort. Residents can pool support through Pawsitive Protectors, or one resident can become a Cause Champion and invite the whole society to join.",
+    },
+    {
+      question: "Why are feeders vaccinated too?",
+      answer:
+        "Feeders and caregivers handle street dogs every day, so they face the highest risk of a bite or scratch. Part of every Pawsitive Protectors gift helps pay for their anti-rabies shots, so the people who care for these dogs are protected as well.",
     },
   ] as const,
 } as const;

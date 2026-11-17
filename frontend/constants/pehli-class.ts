@@ -357,44 +357,54 @@ export const PEHLI_CLASS_FAQS = {
   body: "Clarity on where your gift goes, how the programme works, and how your circle can champion it.",
   items: [
     {
-      question: 'What does "vetted by The Giving Circle" mean?',
+      question: "How can I sponsor a child's education in India?",
       answer:
-        "Our own team checked JWP's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and JWP has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
+        "You can sponsor a child through PehliClass, an education campaign by Joint Women's Programme (JWP), listed on The Giving Circle. PehliClass brings out-of-school children in Noida into formal school: children who dropped out, and children who have never sat in a classroom. ₹1,600 a month, or ₹19,000 a year, supports one child.",
     },
     {
-      question: "Will I get an 80G receipt?",
+      question: "How much does it cost to sponsor a child's education for a year?",
       answer:
-        "Yes. JWP holds a valid 80G certificate, and the receipt comes directly from JWP to the email address you give when you donate. Add your PAN when you donate so the receipt can be issued. 80G is a deduction under the old tax regime; your tax adviser can confirm what applies to you.",
+        "₹19,000 supports one child for a full year through PehliClass, or ₹1,600 a month. It covers the child's classes, learning materials and support with school enrolment. You can support one child or several, directly on the PehliClass campaign page on The Giving Circle.",
+    },
+    {
+      question: "Can a child get school admission without a birth certificate?",
+      answer:
+        "Under the Right to Education Act, no child can be denied admission to school for lack of proof of age. In practice, many families are still turned away because they don't have a birth certificate, Aadhaar or a transfer certificate. PehliClass helps families through this paperwork so the child can enrol.",
+    },
+    {
+      question: "What is the RTE Act and the 25% quota in private schools?",
+      answer:
+        "The Right of Children to Free and Compulsory Education Act, 2009 guarantees free education to every child aged 6 to 14. It also reserves 25% of seats in private schools for children from economically weaker sections. PehliClass helped 15+ children secure RTE seats for the 2026-27 school year.",
+    },
+    {
+      question: "How many children has PehliClass helped?",
+      answer:
+        "In 2025-26, PehliClass helped 147 children get admission into formal school.",
+    },
+    {
+      question: "Is my donation to PehliClass eligible for 80G tax benefits?",
+      answer:
+        "Yes. The Joint Women's Programme is registered under Section 80G, so donations to PehliClass qualify for a 50% tax deduction, within the limits set by the Income Tax Act. The deduction is available only to people filing under the old tax regime. The NGO issues the 80G receipt for the financial year in which you donate. Please provide your PAN when donating so the receipt can be issued.",
+    },
+    {
+      question: "Is the Joint Women's Programme a genuine, registered NGO?",
+      answer:
+        "Yes. Joint Women's Programme has worked on women's and children's welfare in India since 1977. It is registered on NGO Darpan and holds valid 12A, 80G, FCRA and CSR-1 registrations. PehliClass is its campaign to bring out-of-school children into formal education.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Straight to the NGO. Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+        "Donations go directly to the Joint Women's Programme through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold or process donation funds at any stage. Donations are used for the PehliClass programme.",
     },
     {
-      question: "What exactly does a gift pay for?",
+      question: "Can I donate to PehliClass from outside India?",
       answer:
-        "JWP puts the cost of bridging one child into a mainstream classroom at ₹19,000 for a full year: the bridge classes, help with missing documents, and the admission itself. You can give once, or every month, and a monthly gift can be cancelled at any time.",
+        "Yes, if you are an Indian citizen donating from an Indian bank account. Foreign contributions, including donations from foreign nationals or from non-Indian bank accounts, cannot be accepted through this campaign.",
     },
     {
-      question: "Who are the children?",
+      question: "Can I raise funds for PehliClass?",
       answer:
-        "First-generation learners, children who dropped out, and children who have never been inside a classroom, from the communities around JWP's Mera Sahara centre in Nithari, Noida. Many were turned away for a missing document, or because no one helped them close the learning gap.",
-    },
-    {
-      question: "What happens after the year?",
-      answer:
-        "Every child stays at the centre for one year at most. By then the aim is a seat in a government or private school, including the seats private schools keep free under the Right to Education Act. JWP keeps working with parents so that children who get into school stay there.",
-    },
-    {
-      question: "What about older girls?",
-      answer:
-        "Some adolescent girls cannot go back to a regular school because of responsibilities at home. For them, JWP opens a route through open schooling with NIOS (Classes 9 to 12) and on to higher education with IGNOU.",
-    },
-    {
-      question: "Can I raise funds for Pehli Class with my circle?",
-      answer:
-        "Yes. Become a Cause Champion: tell us how much you would like to raise, and we set up your fundraising page and materials to share on WhatsApp, Instagram or anywhere you like. It costs nothing, and someone from our team stays with you through it.",
+        "Yes. You can become a Cause Champion, a volunteer fundraiser for PehliClass. You pledge a number of children you would like to support, and The Giving Circle creates and manages a fundraising page in your name for you to share with friends and family. There is no financial liability on you if you don't reach your pledge.",
     },
   ] as const,
 } as const;

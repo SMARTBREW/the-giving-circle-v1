@@ -366,39 +366,60 @@ export const GUARDIANS_OF_THE_GREEN_FAQS = {
   body: "Clarity on where your gift goes, how the programme works, and how your circle can champion it.",
   items: [
     {
-      question: 'What does "vetted by The Giving Circle" mean?',
+      question: "How much does it cost to plant a tree in India?",
       answer:
-        "Our own team checked ICFG's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and ICFG has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
+        "Through Guardians of the Green, ₹1,000 plants one native tree. It covers the sapling, a tree guard, three years of care by a young guardian, and replanting if a sapling fails. You can plant one tree or a whole grove on the campaign page.",
     },
     {
-      question: "Will I get an 80G receipt?",
+      question: "Who are the young forest guardians?",
       answer:
-        "Yes. ICFG holds a valid 80G certificate, and the receipt comes directly from ICFG to the email address you give when you donate. 80G is a deduction under the old tax regime; your tax adviser can confirm what applies to you.",
+        "They are Adivasi children from Jharkhand, trained by ICFG to raise and protect native trees. Each guardian looks after a grove of 20 native saplings over three years, learning the traditional forest knowledge of their own community along the way.",
+    },
+    {
+      question: "What is a Bal Akhra?",
+      answer:
+        "A Bal Akhra is ICFG's three-day residential training for young guardians, held every year of the programme at its learning centre in Budmu, Jharkhand. Children learn about the forest's trees, medicinal plants and traditional knowledge, and take a pledge to protect the forest.",
+    },
+    {
+      question: "Which native trees are planted?",
+      answer:
+        "Each grove is chosen from 27 indigenous species that suit the village's land, picked for fruit, medicine and livelihood. They include Mahua, Jamun, Amla, Bel, Kathal (jackfruit), Imli (tamarind), Kend, Piyar (chironji), Peepal and Bargad (banyan), trees that have fed, healed and sheltered Jharkhand's forest communities for generations.",
+    },
+    {
+      question:
+        "Is my donation to Guardians of the Green eligible for 80G tax benefits?",
+      answer:
+        "Yes. ICFG is registered under Section 80G, so donations to Guardians of the Green qualify for a 50% tax deduction, within the limits set by the Income Tax Act. The deduction is available only to people filing under the old tax regime. The NGO issues the 80G receipt for the financial year in which you donate. Please provide your PAN when donating so the receipt can be issued.",
+    },
+    {
+      question: "Is ICFG a genuine, registered NGO?",
+      answer:
+        "Yes. The Institute of Community Forest Governance is a registered trust, rooted in Jharkhand since 2006. It is registered on NGO Darpan and holds valid 12AB, 80G, FCRA and CSR-1 registrations. Guardians of the Green is its campaign to raise native forests with young Adivasi guardians.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Straight to the NGO. Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+        "Donations go directly to ICFG through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold or process donation funds at any stage. Donations are used for the Guardians of the Green programme: saplings, tree guards, guardian training and three years of care.",
     },
     {
-      question: "What exactly does ₹1,000 pay for?",
+      question: "Can I donate to Guardians of the Green from outside India?",
       answer:
-        "One tree's share of a guardian's three years. Raising one guardian costs ₹20,160 over three years (₹560 a month), and each guardian looks after 20 trees, so ₹1,000 covers about one tree: the sapling and its guard, the guardian's training, and three years of care and replanting.",
+        "Yes, if you are an Indian citizen donating from an Indian bank account. Foreign contributions, including donations from foreign nationals or from non-Indian bank accounts, cannot be accepted through this campaign.",
     },
     {
-      question: "Who are the guardians?",
+      question: "Can I raise funds for Guardians of the Green?",
       answer:
-        "Adivasi children aged 14 to 17 from the villages where the trees are planted. They are trained in their village Bal Akhra, ICFG's youth assembly, attend a three-day residential camp every year, and graduate at Sarhul, the spring festival of the sal tree, after three years.",
+        "Yes. You can become a Cause Champion, a volunteer fundraiser for Guardians of the Green. You pledge a number of trees you would like to plant, and The Giving Circle creates and manages a fundraising page in your name for you to share with friends and family. There is no financial liability on you if you don't reach your pledge.",
     },
     {
-      question: "Why Jharkhand?",
+      question: "Why do so many tree-planting drives fail?",
       answer:
-        "Its forests matter far beyond the state, feeding rivers that flow on to West Bengal and Odisha. And the people to bring them back are already there: ICFG has worked with Jharkhand's forest communities since 2006, and villages can govern their own forests under the Forest Rights Act.",
+        "Planting is the easy part. Most saplings are lost in their first few years to drought, grazing or neglect, because no one is there to look after them. In Guardians of the Green, every tree has a young guardian who waters, protects and replants it for three years.",
     },
     {
-      question: "Can I raise funds for Guardians of the Green with my circle?",
+      question: "Can I plant a tree in someone's name as a gift?",
       answer:
-        "Yes. Become a Cause Champion: tell us how much you would like to raise, and we set up your fundraising page and materials to share on WhatsApp, Instagram or anywhere you like. It costs nothing, and someone from our team stays with you through it.",
+        "Yes. You can plant a native tree for a birthday, an anniversary, a festival or in memory of someone, and dedicate it in their name. A young guardian in Jharkhand will raise and care for it for three years, so it is a gift that keeps growing long after the day itself.",
     },
   ] as const,
 } as const;

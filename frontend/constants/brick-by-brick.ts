@@ -329,39 +329,54 @@ export const BRICK_BY_BRICK_FAQS = {
   body: "Clarity on where your gift goes, what is being built, and how your circle can champion it.",
   items: [
     {
-      question: 'What does "vetted by The Giving Circle" mean?',
+      question: "How much does it cost to donate a brick for an animal shelter?",
       answer:
-        "Our own team checked Animal Care's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and Animal Care has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
+        "One brick costs ₹10. Donations start at ₹500, which buys 50 bricks, and ₹1,000 buys 100. Your bricks go into the boundary wall, the first stage of construction.",
     },
     {
-      question: "Will I get an 80G receipt?",
+      question: "What is Shukrana Animal Care Centre?",
       answer:
-        "Yes. Animal Care holds a valid 80G certificate, and the receipt comes directly from Animal Care to the email address you give when you donate. 80G is a deduction under the old tax regime; your tax adviser can confirm what applies to you.",
+        "Shukrana is the shelter and hospital Animal Care is building for street animals in Gurugram. It is planned with treatment and surgery areas, isolation wards for infectious diseases, recovery kennels and an adoption section, with space for 100 to 110 dogs as well as cats and other animals.",
+    },
+    {
+      question: "Where is the shelter being built?",
+      answer:
+        "In Sector 78, Gurugram, near the Leopard Trail. The Bhoomi Poojan was held on 22 February 2026, and construction is going ahead in phases, starting with the boundary wall.",
+    },
+    {
+      question: "Which animals will Shukrana treat?",
+      answer:
+        "Street animals that need serious care: dogs hurt in road accidents, animals with parvo, distemper or maggot wounds, and paralysed animals who need long-term rehabilitation.",
+    },
+    {
+      question: "When will Shukrana open?",
+      answer:
+        "Shukrana is being built in phases. The boundary wall comes first, followed by treatment rooms and recovery kennels. Every brick donated moves the next phase closer.",
+    },
+    {
+      question: "Is my donation to Brick by Brick eligible for 80G tax benefits?",
+      answer:
+        "Yes. Animal Care Trust is registered under Section 80G, so donations to Brick by Brick qualify for a 50% tax deduction, within the limits set by the Income Tax Act. The deduction is available only to people filing under the old tax regime. The NGO issues the 80G receipt for the financial year in which you donate. Please provide your PAN when donating so the receipt can be issued.",
+    },
+    {
+      question: "Is Animal Care a genuine, registered NGO?",
+      answer:
+        "Yes. Animal Care is a registered trust in New Delhi. It is registered on NGO Darpan and holds valid 80G and CSR-1 registrations. Brick by Brick is its campaign to build Shukrana Animal Care Centre.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Straight to the NGO. Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+        "Donations go directly to Animal Care through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold or process donation funds at any stage. Donations are used to build Shukrana Animal Care Centre.",
     },
     {
-      question: 'What does "₹10 = 1 brick" mean?',
+      question: "Can I raise funds for Brick by Brick?",
       answer:
-        "It is the simplest way to see what your gift builds. Every ₹10 goes into the boundary wall, the first stage of Shukrana: bricks, cement and the labour to lay them. The smallest gift on the donate page is ₹500, which is 50 bricks. You can give once or every month.",
+        "Yes. You can become a Cause Champion, a volunteer fundraiser for Brick by Brick. You pledge a number of bricks you would like to raise, and The Giving Circle creates and manages a fundraising page in your name for you to share with friends and family. There is no financial liability on you if you don't reach your pledge.",
     },
     {
-      question: "Where is Shukrana, and what will it do?",
+      question: "Can companies contribute to building the shelter through CSR?",
       answer:
-        "Shukrana is in Sector 78, near the Leopard Trail in Gurugram. It will be a shelter and hospital for street animals that are injured in accidents, have maggot wounds, parvovirus or distemper, or are paralysed, with isolation wards, a surgery room, recovery kennels and an adoption area.",
-    },
-    {
-      question: "How will I know the wall is going up?",
-      answer:
-        "Animal Care shares photos and videos from the site as work moves ahead. You will find them on this page and on Instagram at @pawsitiveprotectors.",
-    },
-    {
-      question: "Can I raise funds for Brick by Brick with my circle?",
-      answer:
-        "Yes. Become a Cause Champion: tell us how much you would like to raise, and we set up your fundraising page and materials to share on WhatsApp, Instagram or anywhere you like. It costs nothing, and someone from our team stays with you through it.",
+        "Yes. Animal Care holds a CSR-1 registration, so companies can support Brick by Brick as part of their CSR. Companies interested in a larger contribution can contact Animal Care to discuss it.",
     },
   ] as const,
 } as const;

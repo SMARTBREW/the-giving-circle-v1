@@ -117,7 +117,6 @@ export default function CausePageVetting({
           <ul className="mt-5 border-t border-line sm:mt-6">
             {documents.map((doc) => {
               const href = sanitizeUrl(doc.href);
-              const isExternal = href.startsWith("http");
 
               return (
                 <li
@@ -151,9 +150,8 @@ export default function CausePageVetting({
 
                   <a
                     href={href}
-                    {...(isExternal
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`${SEGOE_UI_CLASS} shrink-0 text-[0.8125rem] font-semibold leading-4 tracking-normal text-circle transition-opacity hover:opacity-80`}
                   >
                     View document

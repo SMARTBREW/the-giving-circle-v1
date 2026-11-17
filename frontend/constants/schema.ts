@@ -119,3 +119,83 @@ export const CHAMPION_BREADCRUMB_SCHEMA = {
     },
   ],
 } as const;
+
+export const CAUSES_PAGE_PATH = "/causes/";
+export const CAUSES_PAGE_URL = `${SITE_URL}${CAUSES_PAGE_PATH}`;
+
+export const CAUSES_COLLECTION_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${CAUSES_PAGE_URL}#webpage`,
+  url: CAUSES_PAGE_URL,
+  name: "Find Causes That Matter | Support Verified NGOs in India",
+  description:
+    "Find verified NGOs and meaningful causes across India, from education and animal welfare to women’s health. Choose a cause and make an impact today.",
+  inLanguage: "en-IN",
+} as const;
+
+export const CAUSES_ITEM_LIST_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${CAUSES_PAGE_URL}#itemlist`,
+  name: "Live Causes",
+  numberOfItems: 6,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Wings of Hope",
+      url: `${SITE_URL}/causes/wings-of-hope/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "PehliClass",
+      url: `${SITE_URL}/causes/pehli-class/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Guardians of the Green",
+      url: `${SITE_URL}/causes/community-forest-governance/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Pawsitive Protectors",
+      url: `${SITE_URL}/causes/pawsitive-protectors/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "Bowls of Hope",
+      url: `${SITE_URL}/causes/bowls-of-hope/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 6,
+      name: "Brick by Brick",
+      url: `${SITE_URL}/causes/brick-by-brick/`,
+    },
+  ],
+} as const;
+
+export const CAUSES_BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${CAUSES_PAGE_URL}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: ORIGIN,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Live Causes",
+      item: CAUSES_PAGE_URL,
+    },
+  ],
+} as const;

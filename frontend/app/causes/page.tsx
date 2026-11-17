@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/json-ld";
 import PhotoCtaBand from "@/components/photo-cta-band";
 import LiveCausesGrid from "./_sections/live-causes-grid";
-import { CAUSES_CTA, SITE } from "@/constants";
+import {
+  CAUSES_BREADCRUMB_SCHEMA,
+  CAUSES_COLLECTION_PAGE_SCHEMA,
+  CAUSES_CTA,
+  CAUSES_ITEM_LIST_SCHEMA,
+  SITE,
+} from "@/constants";
 
 export const metadata: Metadata = {
   title: "Find Causes That Matter | Support Verified NGOs in India",
@@ -13,6 +20,9 @@ export const metadata: Metadata = {
 export default function CausesPage() {
   return (
     <>
+      <JsonLd data={{ ...CAUSES_COLLECTION_PAGE_SCHEMA }} />
+      <JsonLd data={{ ...CAUSES_ITEM_LIST_SCHEMA }} />
+      <JsonLd data={{ ...CAUSES_BREADCRUMB_SCHEMA }} />
       <LiveCausesGrid />
       <PhotoCtaBand
         src={CAUSES_CTA.src}

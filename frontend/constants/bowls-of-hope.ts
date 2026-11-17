@@ -311,39 +311,49 @@ export const BOWLS_OF_HOPE_FAQS = {
   body: "Clarity on where your gift goes, how the programme works, and how your circle can champion it.",
   items: [
     {
-      question: 'What does "vetted by The Giving Circle" mean?',
+      question: "How much does it cost to feed a rescued animal?",
       answer:
-        "Our own team checked Animal Care's registration and tax documents, visited its office, and interviewed the people who run it. We see the work on the ground wherever we can, and Animal Care has committed in writing to share updates. Vetting is not a financial audit; we do not examine the NGO's accounts.",
+        "You can give ₹1,000, ₹5,000 or ₹10,000 or more to provide care and food support for sick and injured animals at the Animal Care Shelter, including vet-prescribed supplements where needed.",
     },
     {
-      question: "Will I get an 80G receipt?",
+      question: "Can I feed animals on my birthday or another special day?",
       answer:
-        "Yes. Animal Care holds a valid 80G certificate, and the receipt comes directly from Animal Care to the email address you give when you donate. 80G is a deduction under the old tax regime; your tax adviser can confirm what applies to you.",
+        "Yes. Many people mark a birthday, an anniversary or a festival by feeding animals. A gift to Bowls of Hope on your special day can carry the occasion and a name of your choice, and provides care and food support for sick and injured animals at the Animal Care Shelter.",
+    },
+    {
+      question: "Can I donate in memory of my pet?",
+      answer:
+        "Yes. Many people honour a pet they have lost by caring for an animal who needs it now. A gift to Bowls of Hope can carry your pet's name, and feeds a sick or injured animal at the Animal Care Shelter while it heals, a way to pass on the love your pet gave you.",
+    },
+    {
+      question: "Is my donation to Bowls of Hope eligible for 80G tax benefits?",
+      answer:
+        "Yes. Animal Care Trust is registered under Section 80G, so donations to Bowls of Hope qualify for a 50% tax deduction, within the limits set by the Income Tax Act. The deduction is available only to people filing under the old tax regime. The NGO issues the 80G receipt for the financial year in which you donate. Please provide your PAN when donating so the receipt can be issued.",
+    },
+    {
+      question: "Is Animal Care a genuine, registered NGO?",
+      answer:
+        "Yes. Animal Care is a registered trust in New Delhi. It is registered on NGO Darpan and holds valid 80G and CSR-1 registrations. Bowls of Hope is its campaign to feed sick and injured animals at its shelter.",
     },
     {
       question: "Where does my donation go?",
       answer:
-        "Straight to the NGO. Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+        "Donations go directly to Animal Care through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold or process donation funds at any stage. Donations are used for the Bowls of Hope programme: meals, supplements and feeding care at the shelter.",
     },
     {
-      question: "What exactly does ₹1,200 pay for?",
+      question: "Can I donate to Bowls of Hope from outside India?",
       answer:
-        "Care and food support for recovering animals at the Animal Care Shelter: nutritious meals (₹750), recovery supplements (₹150), hand-feeding by a caregiver (₹125), feeding bowls and hygiene (₹75), cooking fuel and storage (₹50), and logistics (₹50). You can give once or every month, and a monthly gift can be cancelled at any time.",
+        "Yes, if you are an Indian citizen donating from an Indian bank account. Foreign contributions, including donations from foreign nationals or from non-Indian bank accounts, cannot be accepted through this campaign.",
     },
     {
-      question: "Which animals does it feed?",
+      question: "Can I raise funds for Bowls of Hope?",
       answer:
-        "Street animals in Animal Care's shelter care: dogs and cats recovering from accidents, attacks, surgery or illness, and those who cannot go back to the street and live at the shelter for life.",
+        "Yes. You can become a Cause Champion, a volunteer fundraiser for Bowls of Hope. You pledge an amount you would like to raise, and The Giving Circle creates and manages a fundraising page in your name for you to share with friends and family. There is no financial liability on you if you don't reach your pledge.",
     },
     {
-      question: "What about the water bowls?",
+      question: "Why do some shelter animals need to be hand-fed?",
       answer:
-        "Bowls of Hope began with water. Every summer, when the heat is at its worst, Animal Care also places water bowls for street animals across Delhi, Gurgaon and Noida, with volunteers to refill them daily. More than 1,002 have been placed so far.",
-    },
-    {
-      question: "Can I raise funds for Bowls of Hope with my circle?",
-      answer:
-        "Yes. Become a Cause Champion: tell us how much you would like to raise, and we set up your fundraising page and materials to share on WhatsApp, Instagram or anywhere you like. It costs nothing, and someone from our team stays with you through it.",
+        "Animals recovering from surgery, paralysis, jaw injuries or serious illness are often too weak to eat on their own. Caregivers at the Animal Care Shelter feed them by hand, meal by meal, until they can manage alone. Bowls of Hope pays for that food and that care.",
     },
   ] as const,
 } as const;

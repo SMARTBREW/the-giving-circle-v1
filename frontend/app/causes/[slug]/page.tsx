@@ -1,24 +1,49 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/json-ld";
 import CauseDetailTemplate from "../_sections/cause-page/cause-detail-template";
 import {
+  BOWLS_OF_HOPE_BREADCRUMB_SCHEMA,
+  BOWLS_OF_HOPE_DONATE_SCHEMA,
+  BOWLS_OF_HOPE_FAQ_SCHEMA,
+  BOWLS_OF_HOPE_NGO_SCHEMA,
+  BOWLS_OF_HOPE_WEBPAGE_SCHEMA,
+  BRICK_BY_BRICK_BREADCRUMB_SCHEMA,
+  BRICK_BY_BRICK_DONATE_SCHEMA,
+  BRICK_BY_BRICK_FAQ_SCHEMA,
+  BRICK_BY_BRICK_NGO_SCHEMA,
+  BRICK_BY_BRICK_WEBPAGE_SCHEMA,
   getCausePageContent,
   getLiveCause,
   getVisibleCauses,
+  GUARDIANS_OF_THE_GREEN_BREADCRUMB_SCHEMA,
+  GUARDIANS_OF_THE_GREEN_DONATE_SCHEMA,
+  GUARDIANS_OF_THE_GREEN_FAQ_SCHEMA,
+  GUARDIANS_OF_THE_GREEN_NGO_SCHEMA,
+  GUARDIANS_OF_THE_GREEN_WEBPAGE_SCHEMA,
   isCauseMuted,
+  PAWSITIVE_PROTECTORS_BREADCRUMB_SCHEMA,
+  PAWSITIVE_PROTECTORS_DONATE_SCHEMA,
+  PAWSITIVE_PROTECTORS_FAQ_SCHEMA,
+  PAWSITIVE_PROTECTORS_NGO_SCHEMA,
+  PAWSITIVE_PROTECTORS_WEBPAGE_SCHEMA,
+  PEHLI_CLASS_BREADCRUMB_SCHEMA,
+  PEHLI_CLASS_DONATE_SCHEMA,
+  PEHLI_CLASS_FAQ_SCHEMA,
+  PEHLI_CLASS_NGO_SCHEMA,
+  PEHLI_CLASS_WEBPAGE_SCHEMA,
+  WINGS_OF_HOPE_BREADCRUMB_SCHEMA,
+  WINGS_OF_HOPE_DONATE_SCHEMA,
+  WINGS_OF_HOPE_FAQ_SCHEMA,
+  WINGS_OF_HOPE_NGO_SCHEMA,
+  WINGS_OF_HOPE_WEBPAGE_SCHEMA,
 } from "@/constants";
-import { absoluteMediaUrl, SITE_LOGO_URL } from "@/lib/cloudinary";
+import { absoluteMediaUrl } from "@/lib/cloudinary";
 
 export function generateStaticParams() {
   // Muted causes stay in LIVE_CAUSES / source; omit from public export until unmuted.
   return getVisibleCauses().map((cause) => ({ slug: cause.id }));
 }
-
-const ORG_FULL_NAME: Record<string, string> = {
-  JWP: "Joint Women's Programme",
-  ICFG: "Institute of Community Forest Governance",
-  "Animal Care": "Animal Care",
-};
 
 /** Per-cause SEO metadata   title ≤60 chars, description ~155 chars, OG image from cause asset. */
 const CAUSE_SEO: Record<
@@ -153,63 +178,84 @@ export default async function CauseDetailPage({
   const pageContent = getCausePageContent(cause.id);
   if (!pageContent) notFound();
 
-  const canonicalUrl = `https://www.thegivingcircle.in/causes/${slug}/`;
-  const seo = CAUSE_SEO[slug] ?? {
-    title: cause.title,
-    description: cause.summary,
-    keywords: "",
-  };
-  const ogImageUrl = causeOgImageUrl(cause.src);
-  const orgName = ORG_FULL_NAME[cause.org] ?? cause.org;
+  // Per-cause SEO sheet: five separate scripts (never one @graph).
+  if (slug === "wings-of-hope") {
+    return (
+      <>
+        <JsonLd data={{ ...WINGS_OF_HOPE_NGO_SCHEMA }} />
+        <JsonLd data={{ ...WINGS_OF_HOPE_DONATE_SCHEMA }} />
+        <JsonLd data={{ ...WINGS_OF_HOPE_BREADCRUMB_SCHEMA }} />
+        <JsonLd data={{ ...WINGS_OF_HOPE_WEBPAGE_SCHEMA }} />
+        <JsonLd data={{ ...WINGS_OF_HOPE_FAQ_SCHEMA }} />
+        <CauseDetailTemplate content={pageContent} />
+      </>
+    );
+  }
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "NGO",
-        name: orgName,
-        description: cause.summary,
-        url: canonicalUrl,
-        logo: SITE_LOGO_URL,
-        image: ogImageUrl,
-        areaServed: cause.location,
-        potentialAction: {
-          "@type": "DonateAction",
-          target: canonicalUrl,
-          name: `Donate to ${cause.title}`,
-        },
-      },
-      {
-        "@type": "WebPage",
-        name: seo.title,
-        description: seo.description,
-        url: canonicalUrl,
-        inLanguage: "en-IN",
-        isPartOf: {
-          "@type": "WebSite",
-          name: "The Giving Circle",
-          url: "https://www.thegivingcircle.in",
-        },
-        ...(cause.faqs.length > 0
-          ? {
-              mainEntity: cause.faqs.map((faq) => ({
-                "@type": "Question",
-                name: faq.question,
-                acceptedAnswer: { "@type": "Answer", text: faq.answer },
-              })),
-            }
-          : {}),
-      },
-    ],
-  };
+  if (slug === "pehli-class") {
+    return (
+      <>
+        <JsonLd data={{ ...PEHLI_CLASS_NGO_SCHEMA }} />
+        <JsonLd data={{ ...PEHLI_CLASS_DONATE_SCHEMA }} />
+        <JsonLd data={{ ...PEHLI_CLASS_BREADCRUMB_SCHEMA }} />
+        <JsonLd data={{ ...PEHLI_CLASS_WEBPAGE_SCHEMA }} />
+        <JsonLd data={{ ...PEHLI_CLASS_FAQ_SCHEMA }} />
+        <CauseDetailTemplate content={pageContent} />
+      </>
+    );
+  }
 
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <CauseDetailTemplate content={pageContent} />
-    </>
-  );
+  if (slug === "community-forest-governance") {
+    return (
+      <>
+        <JsonLd data={{ ...GUARDIANS_OF_THE_GREEN_NGO_SCHEMA }} />
+        <JsonLd data={{ ...GUARDIANS_OF_THE_GREEN_DONATE_SCHEMA }} />
+        <JsonLd data={{ ...GUARDIANS_OF_THE_GREEN_BREADCRUMB_SCHEMA }} />
+        <JsonLd data={{ ...GUARDIANS_OF_THE_GREEN_WEBPAGE_SCHEMA }} />
+        <JsonLd data={{ ...GUARDIANS_OF_THE_GREEN_FAQ_SCHEMA }} />
+        <CauseDetailTemplate content={pageContent} />
+      </>
+    );
+  }
+
+  if (slug === "pawsitive-protectors") {
+    return (
+      <>
+        <JsonLd data={{ ...PAWSITIVE_PROTECTORS_NGO_SCHEMA }} />
+        <JsonLd data={{ ...PAWSITIVE_PROTECTORS_DONATE_SCHEMA }} />
+        <JsonLd data={{ ...PAWSITIVE_PROTECTORS_BREADCRUMB_SCHEMA }} />
+        <JsonLd data={{ ...PAWSITIVE_PROTECTORS_WEBPAGE_SCHEMA }} />
+        <JsonLd data={{ ...PAWSITIVE_PROTECTORS_FAQ_SCHEMA }} />
+        <CauseDetailTemplate content={pageContent} />
+      </>
+    );
+  }
+
+  if (slug === "bowls-of-hope") {
+    return (
+      <>
+        <JsonLd data={{ ...BOWLS_OF_HOPE_NGO_SCHEMA }} />
+        <JsonLd data={{ ...BOWLS_OF_HOPE_DONATE_SCHEMA }} />
+        <JsonLd data={{ ...BOWLS_OF_HOPE_BREADCRUMB_SCHEMA }} />
+        <JsonLd data={{ ...BOWLS_OF_HOPE_WEBPAGE_SCHEMA }} />
+        <JsonLd data={{ ...BOWLS_OF_HOPE_FAQ_SCHEMA }} />
+        <CauseDetailTemplate content={pageContent} />
+      </>
+    );
+  }
+
+  if (slug === "brick-by-brick") {
+    return (
+      <>
+        <JsonLd data={{ ...BRICK_BY_BRICK_NGO_SCHEMA }} />
+        <JsonLd data={{ ...BRICK_BY_BRICK_DONATE_SCHEMA }} />
+        <JsonLd data={{ ...BRICK_BY_BRICK_BREADCRUMB_SCHEMA }} />
+        <JsonLd data={{ ...BRICK_BY_BRICK_WEBPAGE_SCHEMA }} />
+        <JsonLd data={{ ...BRICK_BY_BRICK_FAQ_SCHEMA }} />
+        <CauseDetailTemplate content={pageContent} />
+      </>
+    );
+  }
+
+  return <CauseDetailTemplate content={pageContent} />;
 }
