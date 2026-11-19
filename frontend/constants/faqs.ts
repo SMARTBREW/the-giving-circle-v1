@@ -124,13 +124,13 @@ export const SITE_FAQS = [
     id: "where-does-my-donation-go",
     question: "Where does my donation go?",
     answer:
-      "Straight to the NGO. Donations go directly to the partner NGO through the NGO's own payment gateway and into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
+      "Donations go directly to the NGO. They are made through the NGO's own payment gateway and go into the NGO's own bank account. The Giving Circle does not receive, hold, or process donation funds at any stage.",
   },
   {
     id: "will-i-get-an-80g-tax-exemption-receipt",
     question: "Will I get an 80G tax exemption receipt for my donation?",
     answer:
-      "Yes. We only work with NGOs that hold a valid 80G certificate, and the receipt is issued directly by the NGO rather than by The Giving Circle, because your donation is made through the NGO's own payment gateway. It reaches you on the email address you give when you donate, so do check it is correct.\n\n80G is claimed against the financial year in which you give, not the year you file. A gift made on 30 March belongs to the financial year that is ending; one made on 2 April belongs to the next.\n\nOne thing worth knowing: 80G is a deduction under the old tax regime. If you file under the new regime you will not be able to claim it, though your donation reaches the cause exactly the same way. Your tax adviser is the right person to confirm what applies to you.",
+      "Yes. The Giving Circle only works with NGOs that hold a valid 80G certificate. The receipt is issued directly by the NGO because the donation is made through the NGO's own payment gateway. It is sent to the email address provided when you donate. 80G is claimed against the financial year in which you make the donation. A donation made on 30 March belongs to the financial year that is ending, while one made on 2 April belongs to the next financial year. The 80G deduction is available under the old tax regime; it cannot be claimed under the new tax regime.",
   },
   {
     id: "can-i-get-a-refund-on-my-donation",
